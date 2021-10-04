@@ -5,7 +5,7 @@ router.route("/home").get((req, res) => {
   res.render('home')
 });
 router.route("/adminheader").get((req, res) => {
-  res.render('layout/adminheader')
+  res.render('admin')
 });
 
 module.exports = router;
