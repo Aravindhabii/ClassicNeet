@@ -67,12 +67,6 @@ app.use(flash());
 app.use("/", userRoutes);
 app.use("/", authentication);
 
-app.get('/viewcount',(req,res)=>{
 
-})
-
-app.get("/view", (req, res) => {
-  
-});
 
 app.listen(8080, () => console.log(`SERVER IS RUNNING ON PORT 8080`));

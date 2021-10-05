@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const mysql = require("mysql");
-const jws = require("jsonwebtoken");
+// const jws = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const dotenv = require("dotenv");
 const {isloggedin} = require("../middleware.js");
+const { response } = require("express");
 
 console.log( isloggedin );
 const yepp = "yes";
@@ -43,7 +44,7 @@ router
         console.log(hashedPassword);
 
         db.query(
-          "INSERT INTO users SET ? ",
+          "INSERT INTO users SET ?",
           { username: username, email: email, password: hashedPassword },
           (err, results) => {
             if (err) {
@@ -65,7 +66,7 @@ router
   })
   .post(async (req, res) => {
     const { password, username } = req.body;
-    const emailinuse = "This email is already in use";
+    // const emailinuse = "This email is already in use";
     const hasedpass = await bcrypt.hash(password, 8);
     db.query(
       "SELECT * FROM users WHERE username = ?",
@@ -91,9 +92,48 @@ router
     );
   });
 
-router.route("/admin").get(isloggedin,(req, res) => {
-  // console.log(req.session.loginuser);
-  res.send(`helooo from admin ${req.session.loginuser}`);
+// router.route("/admin").get(isloggedin,(req, res) => {
+//   res.render('sqlreg');
+// }).post((req,res)=>{
+  
+// })
+
+router.route("/admin").get((req, res) => {
+  const imganame = "image1";
+  db.query("SELECT * FROM homeslider WHERE imgname = ?",[imganame],
+    (error,response) =>{
+      if(error){
+        console.log(imganame);
+        console.log(error);
+      }
+      else{
+        const image = response[0].sliderimg.toString("base64").split('=')[0];
+        console.log(image);
+        res.render('sqlreg',{img:image})
+      }
+    })
+    
+
+}).post((req,res)=>{
+  const { imagename, sliderimg } = req.body;
+  // db.query("SELECT email FROM homeslider WHERE imgname")
+  console.log(imagename, sliderimg);
+  db.query(
+    "INSERT INTO homeslider SET ?",
+    { imgname: imagename, sliderimg: sliderimg },
+    (err, results) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(results);
+        return res.render("home");
+      }
+    }
+  );
+  
 });
 
+
+
 module.exports = router;
+
