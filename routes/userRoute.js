@@ -4,9 +4,8 @@ const router = express.Router();
 router.route("/home").get((req, res) => {
   res.render('home')
 });
-
-
-
-// router.route("/").get((req, res) => {});
+router.route("/adminheader").get((req, res) => {
+  res.render('admin')
+});
 
 module.exports = router;
