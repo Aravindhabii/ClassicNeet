@@ -63,6 +63,19 @@ app.use('/', authentication);
 
 app.get('/viewcount', (req, res) => {});
 
-app.get('/view', (req, res) => {});
+app.use('/', userRoutes);
+app.use('/', authentication);
+
+//cloudinary
+const multer = require('multer');
+const { storage } = require('./cloudianry');
+const upload = multer({ storage });
+app
+	.get('/', (req, res) => {
+		res.render('cloudinary');
+	})
+	.post('/', upload.single('image'), (req, res) => {
+		console.log(req.file);
+	});
 
 app.listen(8080, () => console.log(`SERVER IS RUNNING ON PORT 8080`));
