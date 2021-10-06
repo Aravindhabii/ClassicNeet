@@ -72,7 +72,7 @@ const { storage } = require('./cloudianry');
 const upload = multer({ storage });
 app
 	.get('/', (req, res) => {
-		res.render('cloudinary');
+		res.render('successStories');
 	})
 	.post('/', upload.single('image'), (req, res) => {
 		console.log(req.file);

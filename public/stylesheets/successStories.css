@@ -1,0 +1,24 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.section1 {
+	height: 100vh;
+	width: 100%;
+	position: relative;
+}
+
+.circle {
+	height: 100vh;
+	width: 100vh;
+	border-radius: 50vh;
+	position: absolute;
+	left: -50%;
+	background: linear-gradient(
+		rgba(26, 43, 70, 0.86),
+		rgba(2, 138, 213, 1),
+		rgba(239, 231, 220, 0.71)
+	);
+}
