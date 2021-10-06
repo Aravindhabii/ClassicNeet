@@ -1,0 +1,119 @@
+.dashboard{
+    width: 100%;
+    height: 86vh;
+    display:flex;
+}
+
+/* Menubar */
+.MenuBar{
+    border-right: 2px solid #fff;
+    width: 17%;
+    display: flex;
+    position: relative;
+	justify-content: space-around;
+    align-items: center;
+	min-height:91vh;
+	font-size: 20px;
+}
+.Homepage{
+    width: 70%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MenuBar a{
+    text-decoration: none;
+}
+.MenuBar li{
+    list-style: none;
+}
+.home span{
+    position: relative;
+    left: 13%;
+}
+.courses span{
+    position: relative;
+    left: 13%;
+}
+.AboutUs span{
+    position: relative;
+    left: 13%;
+}
+.DemoVideos span{
+    position: relative;
+    left: 13%;
+}
+.SuccessStories span{
+    position: relative;
+    left: 13%;
+}
+.Results span{
+    position: relative;
+    left: 13%;
+}
+.ContactUs span{
+    position: relative;
+    left: 13%;
+}
+/* Sliderrevoluion */
+.sliderrevolution{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sliderrevolution h2{
+    bottom: 80%;
+    position: absolute;
+    left: 20%; 
+}
+.grid {
+	position: absolute;
+    left: 43%;
+    top: 11%;
+	width: 35%;
+	height: 89vh;
+	display: grid;
+	grid-template-areas:
+		"cont1 cont2 cont3";
+	align-content: center;
+	justify-content: center;
+}
+
+.item1 {
+	grid-area: cont1;
+
+}
+.item2 {
+	grid-area: cont2;
+}
+.item3 {
+	grid-area: cont3;
+}
+.grid-item {
+	height: 64vh;
+	width: 23vw;
+    font-size: 20px;
+	display: flex;
+	justify-content: center;
+	box-shadow: 0px 0px 0px 2px;
+    color: #fff;
+}
+button{
+    width: 145px;
+    padding: 6px 0;
+    border-radius: 25px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    border: 2px solid white;
+    background-color: white;
+    color: #0061FF;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    right: 8%;
+    bottom: 2%;
+}
