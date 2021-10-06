@@ -92,11 +92,7 @@ router
     );
   });
 
-// router.route("/admin").get(isloggedin,(req, res) => {
-//   res.render('sqlreg');
-// }).post((req,res)=>{
-  
-// })
+
 
 router.route("/admin").get((req, res) => {
   const imganame = "image1";
@@ -132,6 +128,49 @@ router.route("/admin").get((req, res) => {
   );
   
 });
+
+
+
+
+const multer = require("multer");
+const { storage } = require("../cloudianry");
+const upload = multer({ storage });
+
+
+router
+  .route("/homeslider")
+  .get((req, res) => {
+    
+    
+    res.render("cloudinary");
+  })
+  .post(upload.single("sliderimg"), (req, res) => {
+    console.log(req.file.path);
+    console.log(req.file.fieldname);
+    const path = req.file.path;
+    const fieldname = req.file.fieldname
+
+
+     db.query(
+       "INSERT INTO homeslider SET ?",
+       { imgname: fieldname, sliderimg: path },
+       (err, results) => {
+        if (err) {
+          console.log(err);
+        }else{
+          console.log(results);
+          res.redirect('/home')
+        }
+
+       }
+     );
+
+
+  });
+
+
+
+
 
 
 

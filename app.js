@@ -11,7 +11,7 @@ const admin = require('firebase-admin');
 const mysql = require('mysql');
 const dotenv = require('dotenv');
 
-dotenv.config({ path: './.env' });
+dotenv.config();
 
 const serviceAccount = require('./serviceAccountKey.json');
 const { database } = require('firebase-admin');
@@ -59,7 +59,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(flash());
 
 app.use('/', userRoutes);
-app.use('/', authentication);
+app.use('/ClassicNeetAccademy', authentication);
 
 app.get('/viewcount', (req, res) => {});
 
@@ -67,15 +67,16 @@ app.use('/', userRoutes);
 app.use('/', authentication);
 
 //cloudinary
-const multer = require('multer');
-const { storage } = require('./cloudianry');
-const upload = multer({ storage });
-app
-	.get('/', (req, res) => {
-		res.render('successStories');
-	})
-	.post('/', upload.single('image'), (req, res) => {
-		console.log(req.file);
-	});
+// const multer = require('multer');
+// const { storage } = require('./cloudianry');
+// const upload = multer({ storage });
+// app
+//   .get("/homeslider", (req, res) => {
+//     res.render("cloudinary");
+//   })
+//   .post("/homeslider", upload.single("sliderimg"), (req, res) => {
+//     console.log(req.file.path);
+// 	console.log(req.file.fieldname)
+//   });
 
 app.listen(8080, () => console.log(`SERVER IS RUNNING ON PORT 8080`));

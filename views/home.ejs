@@ -13,13 +13,15 @@
 
 <body>
     <%- include('./layout/header') %>
-    
+    <svg xmlns="http://www.w3.org/2000/svg" class="uparrow" viewBox="0 0 20 20" fill="#1E2886">
+		<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd" />
+	</svg>
 	<!-- slideshow -->
 	<!-- Swiper -->
 	<section class="swipersection">
 		<div class="swiper mySwiper">
 			<div class="swiper-wrapper">
-				<div class="swiper-slide slide1">
+				<!-- <div class="swiper-slide slide1">
 					<img class="swiper1img" src="images/home/sliderimage1.jpg" alt="" />
 				</div>
 				<div class="swiper-slide slide2">
@@ -31,7 +33,12 @@
 				</div>
 				<div class="swiper-slide slide4">
 					<img class="swiper1img" src="images/home/sliderimage3.jpg" alt="" />
+				</div> -->
+				<% img.forEach(image => { %>
+				 <div class="swiper-slide slide4">
+					<img class="swiper1img slide1" src='<%=image.sliderimg%>'  alt="" />
 				</div>
+				<% }) %>
 
 			</div>
 			<!-- <div class="swiper-button-next"></div>
@@ -341,3 +348,5 @@
 	</body>
 	
 	</html>
+
+

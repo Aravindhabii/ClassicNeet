@@ -1,3 +1,16 @@
+.uparrow{
+  padding: 2rem 4rem 0 4rem;
+  font-size: 10px;
+  height: 90px;
+  display: block;
+  flex-direction: column;
+  bottom: 3rem;
+  right: 0rem;
+  position: fixed;
+  transition: 0.4s;
+  z-index: 99999;
+  color: #fff;
+}
 /* Swiper  */
 .swiper {
   width: 86% !important;
