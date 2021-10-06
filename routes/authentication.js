@@ -140,8 +140,8 @@ const upload = multer({ storage });
 router
   .route("/homeslider")
   .get((req, res) => {
-    
 
+    
 
     res.render("cloudinary");
   })

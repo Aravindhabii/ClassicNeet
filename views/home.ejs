@@ -19,7 +19,7 @@
 	<section class="swipersection">
 		<div class="swiper mySwiper">
 			<div class="swiper-wrapper">
-				<div class="swiper-slide slide1">
+				<!-- <div class="swiper-slide slide1">
 					<img class="swiper1img" src="images/home/sliderimage1.jpg" alt="" />
 				</div>
 				<div class="swiper-slide slide2">
@@ -31,7 +31,13 @@
 				</div>
 				<div class="swiper-slide slide4">
 					<img class="swiper1img" src="images/home/sliderimage3.jpg" alt="" />
+				</div> -->
+				<% img.forEach(image => { %>
+				 <div class="swiper-slide slide4">
+					<img class="swiper1img" src="https://res.cloudinary.com/duziczmgw/image/upload/v1633515541/ClassicNeetAcademy/z81t8xtujlvqknv0cif" alt="" />
 				</div>
+				<% }) %>
+
 
 			</div>
 			<!-- <div class="swiper-button-next"></div>
