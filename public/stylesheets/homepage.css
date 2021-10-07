@@ -60,6 +60,8 @@
 	position: relative;
 	width: 100vw;
 	height: 100vh;
+  top: 1%;
+    right: 1%;
 }
 
 .swipersection {
@@ -113,6 +115,7 @@
   align-items: center;
   justify-content: center;
   background: #2B72E4;
+  border-radius: 20px;
 }
 
 .marqueetext{
@@ -149,6 +152,15 @@
   
   
   
+}
+.hexa1 {
+  border: 1px solid #2B72E4;
+}
+.hexa2 {
+  border: 1px solid #60EFFF;
+}
+.hexa3 {
+  border: 1px solid #106DFF;
 }
 .section-2::after {
   content: '';
@@ -237,7 +249,7 @@
   margin: 2rem 0rem;
   line-height: 2rem;
   border-radius: 20px;
-  background-color: #ffffff50;
+  background-color: #ffffff;
   text-decoration: none;
 }
 .news-box .section2 .div-1 img {
@@ -294,10 +306,10 @@
   
   position: relative;
   top: 63%;
-  width: 150vw;
-  
+  width: 121vw;
   height: 30vh;
   padding: 1%;
+  right: 0%;
   font-size: 24px;
   display: flex;
   justify-content: center;
@@ -352,17 +364,28 @@
   width: 50%;
   height: 50%;
 }
+/* .right {
+  position: relative;
+   right: -8%;
+  width: 50%;
+  height: 73%; 
+} */
 .right {
   position: relative;
-  right: 0%;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.hexaimg {
   width: 50%;
-  height: 90%;
 }
 .hexa {
   /* top: 0; */
   position: relative;
-  height: 100%;
-  width: 50%;
+  height: 73%;
+  width: 42%;
 }
 .hexadiv {
   position: relative;
@@ -370,26 +393,28 @@
   width: 95%;
 }
 .spill {
-  position: absolute;
-  top: 20%;
-  left: 0;
-  width: 60%;
-  height: 108vh;
+  position: relative;
+  top: 1%;
+  left: 7px;
+  width: 63%;
+  height: 87vh;
 }
 
 .spill1 {
   position: absolute;
   right: 0%;
   top: 0%;
-  right: 15%;
-  top: 19%;
+  right: -1%;
+  top: 0%;
 }
 .spill2 {
   position: absolute;
   right: 0%;
   top: 0%;
-  right: 20%;
-  top: 113%;
+  right: 0%;
+  top: 93%;
+  transform: scale(1.05);
+ 
 }
 .neet-toppers {
   height: 40vh;
@@ -414,7 +439,19 @@
   width: 460px;
   background-color: salmon;
 }
-
+.flexTop {
+  position: relative;
+  height: 70%;
+  width: 900px;
+  left: 1%;
+  
+}
+.flexContent {
+  height: 30%;
+  background-color: turquoise;
+  margin-top: 10px;
+  border-radius: 20px;
+}
 .neet-toppers > h1 {
   font-size: 2.5rem;
 }
