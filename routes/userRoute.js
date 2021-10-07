@@ -56,13 +56,11 @@ router.route("/adminheader").get((req, res) => {
       }
       // console.log(response[0].sliderimg);
       console.log(arr);
-      res.render("admin", { img: arr });
+      // res.render("admin", { img: arr });
+      
     }
+    res.render('admin')
   });
-
-
-
-  
 });
 router.route("/aboutus").get((req, res) => {
   res.render('aboutus')
@@ -78,6 +76,9 @@ router.route("/Demovideos").get((req, res) => {
 });
 router.route("/results").get((req, res) => {
   res.render('results')
+});
+router.route("/contactus").get((req, res) => {
+  res.render('contactus')
 });
 
 module.exports = router;
