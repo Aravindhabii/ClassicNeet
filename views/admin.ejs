@@ -75,9 +75,26 @@
           <div class="sliderrevolution">
             <h2>Slider Revolution</h2> 
             	<div class="grid1">
-                    <div class="grid-item1 item1">Current Images</div>
-                    <div class="grid-item1 item2">New Image</div>
-                    <div class="grid-item1 item3">Updates</div>
+                    <div class="grid-item1 item1">
+                        <p>Current Images</p> 
+                        <% img.forEach((image,index) => { %>
+                            <p><%= image.imgname + parseInt(index+1) %></p>
+                        <% }) %>
+                    </div>
+                    <div class="grid-item1 item2">
+                        <p>New Image</p> 
+                        <input type="file" id="image" name="sliderimg" required />
+                        <input type="file" id="image" name="sliderimg" required />
+                        <input type="file" id="image" name="sliderimg" required />
+                        <input type="file" id="image" name="sliderimg" required />
+                    </div>
+                    <div class="grid-item1 item3">
+                        <p>Updates</p> 
+                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;" />
+                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
+                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
+                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
+                    </div>
                 </div>
                 <div class="subbutton1">
                     <button type="button">Submit</button>
