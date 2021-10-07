@@ -7,11 +7,12 @@
 /* Menubar */
 .MenuBar{
     border-right: 2px solid #fff;
-    width: 17%;
+    width: 19%;
     display: flex;
     position: absolute;
 	font-size: 20px;
 }
+
 .MenuBar a{
     text-decoration: none;
 }
