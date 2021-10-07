@@ -1,0 +1,95 @@
+.section2 {
+    position: relative;
+    height: 140vh;
+    width: 100%;
+    
+      /* background:blue; */
+  }
+  
+  .gridcontainer {
+      position: relative;
+    width: 100%;
+    height: 100%;    
+    display: grid;
+    grid-template-areas:
+      "cont1 cont2"
+      "cont3 cont4"
+      "cont5 cont6"
+      "cont7 cont8";
+      /* -ms-grid-row-align: center;
+      -ms-grid-column-align: center; */
+      align-items: center;
+      justify-content: space-around;
+  }
+  
+  .gridbox {
+      position: relative;
+      height: 10rem;
+      width: 22rem;
+      border: 1px solid black;
+      display: flex;
+      align-items: center;
+  }
+  
+  .griditem1 {
+    grid-area: cont1;
+    /* background: #000; */
+  }
+  .griditem2 {
+    grid-area: cont2;
+    /* background: white; */
+  }
+  .griditem3 {
+    grid-area: cont3;
+    /* background: #000; */
+    flex-direction: row-reverse;
+  }
+  .griditem4 {
+    grid-area: cont4;
+    /* background: white; */
+    flex-direction: row-reverse;
+  }
+  .griditem5 {
+    grid-area: cont5;
+    /* background: #000; */
+  }
+  .griditem6 {
+    grid-area: cont6;
+    /* background: white; */
+  }
+  .griditem7 {
+    grid-area: cont7;
+    /* background: #000; */
+    flex-direction: row-reverse;
+  }
+  .griditem8 {
+    grid-area: cont8;
+    /* background: white; */
+    flex-direction: row-reverse;
+  }
+  
+  
+  .gridbox img{
+      height: 100%;
+      width: 50%;
+  }
+  
+  .gridbox span{
+      height: 100%;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .gridbox > span > p{
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 3;
+  }
+  
+  .gridbox > span > h3{
+      font-size: 19px;
+  }
+  
