@@ -1,0 +1,144 @@
+.video {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 9rem 0rem 0rem 0rem;
+    flex-direction: column;
+  }
+  .video h1 {
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 35px;
+    width: 35%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+  /* visionmission */
+  .visionmission {
+    width: 100%;
+    height: 70vh;
+    background: url("images/aboutus/leader.jpg");
+    background-size: cover;
+    background-position: 0px 54%;
+    position: relative;
+  }
+  .vision {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .visionspan {
+    width: 100%;
+  }
+  
+  .vision h2 {
+    color: #000000;
+    padding: 4% 5%;
+  }
+  .vision p {
+    width: 70%;
+    height: 10vh;
+    word-spacing: 5px;
+    line-break: normal;
+    line-height: 110%;
+  }
+  /* mission */
+  .mission h2 {
+    color: black;
+    padding: 4% 5%;
+  }
+  .mission p {
+    width: 70%;
+    height: 10vh;
+    word-spacing: 5px;
+    line-break: normal;
+    line-height: 110%;
+  }
+  .mission {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .missionspan {
+    width: 100%;
+  }
+  /* Our Journey */
+  .timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+  }
+  .timeline h2 {
+    color: #568036;
+    padding: 4% 3% 1% 5%;
+  }
+  .timeline span {
+    width: 90px;
+    height: 80px;
+  }
+  .timeline span img {
+    padding-left: 26rem;
+    height: 100%;
+    padding-bottom: 0rem;
+  }
+  .cards1 p {
+    width: 90%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 48%;
+    padding-top: 5%;
+  }
+  .cards2 p {
+    width: 90%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 48%;
+    padding-top: 5%;
+  }
+  .cards3 p {
+    width: 90%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 48%;
+    padding-top: 5%;
+  }
+  .cards4 p {
+    width: 90%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 48%;
+    padding-top: 5%;
+  }
+  .leaders h2 {
+    color: #568036;
+    padding: 5% 5%;
+  }
+  .leaders span img {
+    width: 60%;
+    height: 80vh;
+  }
+  .leaders span {
+    display: flex;
+    height: 90vh;
+    width: 100%;
+    justify-content: center;
+  }
