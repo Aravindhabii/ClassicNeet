@@ -9,36 +9,7 @@ const db = mysql.createConnection({
   database: "classicneetauth",
 });
 
-
 router.route("/home").get((req, res) => {
-  
-
-  db.query(
-    "SELECT * FROM homeslider",
-    (error, response) => {
-      var arr = []
-      if (error) {
-        // console.log(imganame);
-        console.log(error);
-      } else {
-        console.log(response.length);
-        for(let i = 0; i <= response.length-1 ; i++){
-          
-          var image = {sliderimg:response[i].sliderimg, imgname: response[i].imgname}
-          // console.log(image);
-          arr.push(image)
-        }
-        // console.log(response[0].sliderimg);
-        console.log(arr);
-        res.render("home",{img : arr});
-      }
-    }
-  );
-  
-});
-
-
-router.route("/adminheader").get((req, res) => {
   db.query("SELECT * FROM homeslider", (error, response) => {
     var arr = [];
     if (error) {
@@ -56,15 +27,30 @@ router.route("/adminheader").get((req, res) => {
       }
       // console.log(response[0].sliderimg);
       console.log(arr);
+      res.render("home", { img: arr });
+    }
+  });
+});
+
+router.route("/adminheader").get((req, res) => {
+  db.query("SELECT * FROM homeslider", (error, response) => {
+    var arr = [];
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(response.length);
+      for (let i = 0; i <= response.length - 1; i++) {
+        var image = {
+          sliderimg: response[i].sliderimg,
+          imgname: response[i].imgname,
+          cloudinaryName: response[i].cloudinaryname,
+        };
+        arr.push(image);
+      }
+      console.log(arr);
       res.render("admin", { img: arr });
     }
   });
-
-
-
-  
 });
 
 module.exports = router;
-
-
