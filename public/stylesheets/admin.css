@@ -6,7 +6,7 @@
 
 /* Menubar */
 .MenuBar{
-    border-right: 2px solid #fff;
+    border-right: 2px solid #33DDFF;
     width: 19%;
     display: flex;
     position: absolute;
@@ -99,7 +99,7 @@
     flex-direction: column;
     align-items: center;
 	box-shadow: 0px 0px 0px 2px;
-    color: #fff;
+    color:#33DDFF ;
 }
 .subbutton1 button{
     width: 145px;
@@ -156,7 +156,9 @@
 	width: 30vw;
     font-size: 20px;
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
 	box-shadow: 0px 0px 0px 2px;
     color: #fff;
 }
@@ -219,12 +221,17 @@
 .item5 {
 	grid-area: cont5;
 }
+/* .item6 {
+	grid-area: cont6;
+} */
 .grid-item3 {
 	height: 64vh;
 	width: 15vw;
     font-size: 20px;
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
 	box-shadow: 0px 0px 0px 2px;
     color: #fff;
 }
@@ -243,7 +250,7 @@
     align-items: center;
     justify-content: center;
     right: 12%;
-    top:274%;
+    top:275%;
 }
 /* Neet Achievments */
 .NeetAchievements{
@@ -293,11 +300,84 @@
 	width: 10vw;
     font-size: 20px;
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
 	box-shadow: 0px 0px 0px 2px;
     color: #fff;
 }
 .subbutton4 button{
+    width: 145px;
+    padding: 6px 0;
+    border-radius: 25px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    border: 2px solid ;
+    background-color: white;
+    color: #0061FF;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    right: 12%;
+    top:321%;
+}
+/* Students Testimonial */
+.StudentsTestimonials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 100%;
+}
+.StudentsTestimonials h2{
+    top: 350%;
+    position: absolute;
+    left: 20%; 
+}
+.grid5 {
+	position: absolute;
+    left: 40%;
+    top:360%;
+	width: 40%;
+	height: 72vh;
+	display: grid;
+	grid-template-areas:
+		"cont1 cont2 cont3 cont4 cont5 cont6";
+	align-content: center;
+	justify-content: center;
+}
+.item1 {
+	grid-area: cont1;
+}
+.item2 {
+	grid-area: cont2;
+}
+.item3 {
+	grid-area: cont3;
+}
+.item4 {
+	grid-area: cont4;
+}
+.item5 {
+	grid-area: cont5;
+}
+.item6 {
+	grid-area: cont6;
+}
+.grid-item5 {
+	height: 18vh;
+	width: 10vw;
+    font-size: 20px;
+    display: flex;
+	justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+	box-shadow: 0px 0px 0px 2px;
+    color: #fff;
+}
+.subbutton5 button{
     width: 145px;
     padding: 6px 0;
     border-radius: 25px;
@@ -312,5 +392,5 @@
     align-items: center;
     justify-content: center;
     right: 12%;
-    top:320%;
+    top:400%;
 }

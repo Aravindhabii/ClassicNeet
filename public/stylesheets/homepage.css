@@ -51,12 +51,17 @@
   width: 100%;
   background: url("../images/home/sliderimage5.jpg") left/cover;
 } */
-
+/* .contentTop {
+  background-color: skyblue;
+  padding: 5rem;
+} */
 
 .swiper-wrapper {
 	position: relative;
 	width: 100vw;
 	height: 100vh;
+  top: 1%;
+    right: 1%;
 }
 
 .swipersection {
@@ -69,10 +74,13 @@
 }
 
 .swiper1img {
-  position: absolute;
+  position: relative;
   /* display: inline; */
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   object-fit: cover;
 }
 
@@ -100,21 +108,27 @@
 .background {
   position: absolute;
   right: 0;
-  height: 100%;
+  top: 0;
+  height: 70%;
   width: 70%;
-  background: #1e2886;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2B72E4;
+  border-radius: 20px;
 }
 
 .marqueetext{
     font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: row;
-  border: 2px solid black;
+  /* border: 2px solid black; */
+  box-shadow: 5px 5px 20px rgba(4, 113, 255, 0.5);
   border-radius: 20px;
-  padding: 20px;
-  background: #1E2886;
+  padding: 15px;
+  background: #2B72E4;
   color: white;
-  width: 92%;
+  width: 100%;
 }
 
 .marqueetext a{
@@ -128,38 +142,115 @@
 .section-2 {
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 5rem;
+  background: url('../images/home/TopAir.png') center;
+  background-size: 170%;
+  
+  
+  
 }
-
+.hexa1 {
+  border: 1px solid #2B72E4;
+}
+.hexa2 {
+  border: 1px solid #60EFFF;
+}
+.hexa3 {
+  border: 1px solid #106DFF;
+}
+.section-2::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.315);
+  z-index: 1;
+}
 .CalanderEvents{
   position: absolute;
   top: 6%;
   right: 16%;
+  
+  
+}
+.calenderMain {
+  position: absolute;
+  margin-top: 1rem;
+  top: 15%;
+  left: 10%;
+
+}
+.date {
+  background-color: #2B72E4;
+  color: white;
+  height: 100%;
+  width: 20%;
+  padding: 1.8rem;
+  border-radius: 20px 0px 20px 0px;
+  font-size: 20px;
+}
+.backgroundMain {
+  background-color: #F9FBFA;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  
+}
+.calenderCard {
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 60px rgba(4, 113, 255, 0.2);
+  /* padding: 2rem; */
+  border-radius: 20px;
+  width: 30rem;
+  margin-top: 1rem;
+  /* border: 1px solid #1E2886; */
+}
+.calenderCard:hover {
+
+  transform: scale(1.1);
+  box-shadow: 2px 2px 60px rgba(4, 113, 255, 0.2);
+}
+.calender:hover .date {
+
 }
 
 .calandersvg{
-  top: 14%;
-  left: 25%;
+  top: 10%;
+  left: 20%;
   position: absolute;
 }
 
 .news-box {
   overflow-y: scroll;
-  border: 1px solid black;
-  padding: 3rem;
-  height: 25rem;
-  width: 25rem;
-  background-color: #1E2886;
-  color: white;
+  /* border: 1px solid black; */
+  border-radius: 20px;
+  padding: 2rem;
+  height: 30rem;
+  width: 30rem;
+  box-shadow: 5px 5px 60px rgba(4, 113, 255, 0.6);
+  background-color: #2B72E4;
+  /* background: linear-gradient( #e7f44a, #040404,#FFFFFF); */
+  color: rgb(255, 255, 255);
   font-family: "Roboto", sans-serif;
-  text-decoration: 2px underline rgb(255, 38, 0);
+  /* text-decoration: 2px underline rgb(0, 0, 0); */
+}
+.news-box p:hover {
+  text-decoration: 2px underline rgb(0, 0, 0);
 }
 .news-box p {
-  padding-bottom: 2rem;
+  color: black;
+  border: 1px solid rgb(255, 255, 255);
+  padding: 2rem 1rem;
+  margin: 2rem 0rem;
+  line-height: 2rem;
+  border-radius: 20px;
+  background-color: #ffffff;
+  text-decoration: none;
 }
 .news-box .section2 .div-1 img {
   position: relative;
@@ -175,19 +266,34 @@
   justify-content: center;
   align-items: center;
   /* background-color: black; */
-  margin-bottom: 5rem;
+  margin-bottom: 15rem;
+  z-index: 5;
+  
 }
 .section-2 .div-1 {
+
   position: relative;
   width: 50%;
   height: 100%;
   align-items: flex-start;
   justify-content: flex-start;
   display: flex;
-  padding-left: 6rem;
+  z-index: 5;
+  margin-bottom: 12rem;
+  /* box-shadow: 5px 5px 20px rgba(4, 113, 255, 0.5); */
+  /* background-color: #1E2886; */
+  /* padding-left: 6rem; */
+}
+.section-2 .div-1 h1 {
+  /* margin-top: 1.5rem; */
+  margin-right: 10rem;
+}
+.section-2 .div-1 .calandersvg {
+  margin-top: 3rem;
 }
 .div-2-title {
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+  /* border: 1px solid #1E2886; */
 }
 .space {
   width: 60%;
@@ -197,9 +303,13 @@
 
 /* Admission */
 .admission {
-  width: 100%;
+  
+  position: relative;
+  top: 63%;
+  width: 121vw;
   height: 30vh;
-  padding: 3%;
+  padding: 1%;
+  right: 0%;
   font-size: 24px;
   display: flex;
   justify-content: center;
@@ -208,7 +318,7 @@
 /* courses */
 .Hexagon {
   position: relative;
-  width: 100%;
+  width: 90%;
   height: 150vh;
   display: flex;
 }
@@ -223,7 +333,7 @@
   transform: translateY(0%);
 }
 .hexadiv1 h3 {
-  padding-left: 21%;
+  padding-left: 10%;
   font-size: 31px;
 }
 .hexadiv2 h3 {
@@ -231,7 +341,7 @@
   font-size: 31px;
 }
 .hexadiv3 h3 {
-  padding-left: 21%;
+  padding-left: 10%;
   font-size: 31px;
 }
 .hexadiv2 {
@@ -254,17 +364,28 @@
   width: 50%;
   height: 50%;
 }
+/* .right {
+  position: relative;
+   right: -8%;
+  width: 50%;
+  height: 73%; 
+} */
 .right {
   position: relative;
-  right: 0%;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.hexaimg {
   width: 50%;
-  height: 90%;
 }
 .hexa {
   /* top: 0; */
   position: relative;
-  height: 100%;
-  width: 50%;
+  height: 73%;
+  width: 42%;
 }
 .hexadiv {
   position: relative;
@@ -272,26 +393,28 @@
   width: 95%;
 }
 .spill {
-  position: absolute;
-  top: 40%;
-  left: 0;
-  width: 50%;
-  height: 108vh;
+  position: relative;
+  top: 1%;
+  left: 7px;
+  width: 63%;
+  height: 87vh;
 }
 
 .spill1 {
   position: absolute;
   right: 0%;
   top: 0%;
-  right: 15%;
-  top: 19%;
+  right: -1%;
+  top: 0%;
 }
 .spill2 {
   position: absolute;
   right: 0%;
   top: 0%;
-  right: 20%;
-  top: 113%;
+  right: 0%;
+  top: 93%;
+  transform: scale(1.05);
+ 
 }
 .neet-toppers {
   height: 40vh;
@@ -299,11 +422,36 @@
   margin: 2rem 0;
   padding: 0 10%;
   display: flex;
+  /* background-color: rgba(4, 113, 255, 0.2); */
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-
+.flex {
+  position: relative;
+  background-color: silver;
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+}
+.top {
+  height: 100%;
+  width: 460px;
+  background-color: salmon;
+}
+.flexTop {
+  position: relative;
+  height: 70%;
+  width: 900px;
+  left: 1%;
+  
+}
+.flexContent {
+  height: 30%;
+  background-color: turquoise;
+  margin-top: 10px;
+  border-radius: 20px;
+}
 .neet-toppers > h1 {
   font-size: 2.5rem;
 }
@@ -478,7 +626,7 @@
 
 .studentsh1 {
   margin-top: 2rem;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 
 .imghead {
@@ -638,12 +786,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 17vh;
+  height: 5vh;
 }
 
 .calender_img{
-  height: 20rem;
-  width: 20rem;
+  height: 25rem;
+  width: 25rem;
   position: absolute;
   left: 42%;
   top: 22%;
@@ -670,7 +818,7 @@
 
 .mySwiper2 {
   width: 100% !important;
-  height: 80vh !important;
+  height: 60vh !important;
 }
 
 .mySwiper2 .swiper-wrapper{

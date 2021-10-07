@@ -78,9 +78,10 @@
             	<div class="grid1">
                     <div class="grid-item1 item1">
                         <p>Current Images</p> 
-                        <% img.forEach((image,index) => { %>
-                            <p><%= image.imgname + parseInt(index+1) %></p>
-                        <% }) %>
+                        <p>slider Image1</p>
+                        <p>slider Image2</p>
+                        <p>slider Image3</p>
+                        <p>slider Image4</p>
                     </div>
                     <div class="grid-item1 item2">
                         <p>New Image</p>
@@ -102,8 +103,20 @@
           <div class="Latestupdates">
             <h2>Latest updates</h2> 
             	<div class="grid2">
-                    <div class="grid-item2 item1">Current Link</div>
-                    <div class="grid-item2 item2">Updates</div>
+                    <div class="grid-item2 item1">
+                        <p>Current Link</p>
+                        <p>Link1</p>
+                        <p>Link2</p>
+                        <p>Link3</p>
+                        <p>Link4</p>
+                    </div>
+                    <div class="grid-item2 item2">
+                        <p>Updates</p>
+                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;" />
+                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
+                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
+                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
+                    </div>
                 </div>
                 <div class="subbutton2">
                     <button type="button">Submit</button>
@@ -112,11 +125,32 @@
           <div class="OurToppers">
             <h2>OurToppers</h2> 
             	<div class="grid3">
-                    <div class="grid-item3 item1">Name</div>
-                    <div class="grid-item3 item2">Score</div>
-                    <div class="grid-item3 item3">Collage Name</div>
-                    <div class="grid-item3 item4">Image</div>
-                    <div class="grid-item3 item5">Update</div>
+                    <div class="grid-item3 item1">
+                        <p>Name</p>
+                    </div>
+                    <div class="grid-item3 item2">
+                        <p>Score</p>
+                    </div>
+                    <div class="grid-item3 item3">
+                        <p>Collage Name</p>
+                    </div>       
+                    <div class="grid-item3 item4">
+                        <p>Current Image</p>
+                    </div>
+                    <div class="grid-item3 item5">
+                        <p>New Image</p>
+                        <input type="file" id="image" name="sliderimg" required />
+                        <input type="file" id="image" name="sliderimg" required />
+                        <input type="file" id="image" name="sliderimg" required />
+                        <input type="file" id="image" name="sliderimg" required />
+                    </div>
+                    <!-- <div class="grid-item3 item6">
+                        <p>Update</p>
+                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;" />
+                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
+                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
+                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
+                    </div> -->
                 </div>
                 <div class="subbutton3">
                     <button type="button">Submit</button>
@@ -125,33 +159,59 @@
           <div class="NeetAchievements">
             <h2>Neet Achievements</h2> 
             	<div class="grid4">
-                    <div class="grid-item4 item1">Current Image</div>
-                    <div class="grid-item4 item2">New Image</div>  
-                    <div class="grid-item4 item3">MBBS Seat</div>
-                    <div class="grid-item4 item4">Consecutive Years</div>
-                    <div class="grid-item4 item5">Success rate</div>
-                    <div class="grid-item4 item6">No. of Admission</div>
-                    <div class="grid-item4 item7">Update</div>
+                    <div class="grid-item4 item1">
+                        <p>Current Image</p>
+                    </div>
+                    <div class="grid-item4 item2">
+                        <p>New Image</p>
+                    </div>  
+                    <div class="grid-item4 item3">
+                        <p>MBBS Seat</p>
+                    </div>
+                    <div class="grid-item4 item4">
+                        <p>Consecutive Years</p>
+                    </div>
+                    <div class="grid-item4 item5">
+                        <p>Success rate</p>
+                    </div>
+                    <div class="grid-item4 item6">
+                        <p>No. of Admission</p>
+                    </div>
+                    <div class="grid-item4 item7">
+                        <p>Update</p>
+                    </div>
                 </div>
                 <div class="subbutton4">
                     <button type="button">Submit</button>
                 </div>
           </div>
-          <div class="Students testimonials">
+          <div class="StudentsTestimonials">
             <h2>Students testimonials</h2> 
             	<div class="grid5">
-                    <div class="grid-item5 item1">Current Image</div>
-                    <div class="grid-item5 item2">New Image</div>  
-                    <div class="grid-item5 item4">Name</div>
-                    <div class="grid-item5 item5">Content</div>
-                    <div class="grid-item5 item6">Success rate</div>
-                    <div class="grid-item5 item7">No.of Admission</div>
-                    <div class="grid-item5 item3">Update</div>
+                    <div class="grid-item5 item1">
+                        <p>Current Image</p>
+                    </div>
+                    <div class="grid-item5 item2">
+                        <p>New Image</p>
+                    </div>  
+                    <div class="grid-item5 item3">
+                        <p>Name</p>
+                    </div>
+                    <div class="grid-item5 item5">
+                        <p>Content</p>
+                    </div>
+                    <div class="grid-item5 item3">
+                        <p>College Name</p>
+                    </div>
+                    <div class="grid-item5 item3">
+                        <li class=""><a href=""><b>Watch On Youtube!</b></a></li>
+                    </div>
                 </div>
-                <div class="subbutton4">
+                <div class="subbutton5">
                     <button type="button">Submit</button>
                 </div>
-          </div></form>
+          </div>
+          
     </section>   
     <script src="javascripts/adminPanel.js"></script>
 </body>
