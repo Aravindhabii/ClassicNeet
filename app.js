@@ -8,33 +8,33 @@ const { authenticate } = require('passport');
 const userRoutes = require('./routes/userRoute');
 const authentication = require('./routes/authentication');
 const admin = require('firebase-admin');
-const mysql = require('mysql');
+// const mysql = require('mysql');
 const dotenv = require('dotenv');
 
 dotenv.config();
 
-const serviceAccount = require('./serviceAccountKey.json');
-const { database } = require('firebase-admin');
+// const serviceAccount = require('./serviceAccountKey.json');
+// const { database } = require('firebase-admin');
 
-const db = mysql.createConnection({
-	host: process.env.DATABASE_HOST,
-	user: process.env.DATABASE_USER,
-	password: process.env.DATABASE_PASSWORD,
-	database: process.env.DATABASE
-});
+// const db = mysql.createConnection({
+// 	host: process.env.DATABASE_HOST,
+// 	user: process.env.DATABASE_USER,
+// 	password: process.env.DATABASE_PASSWORD,
+// 	database: process.env.DATABASE
+// });
 
-db.connect((err) => {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log('Mysql connected');
-	}
-});
+// db.connect((err) => {
+// 	if (err) {
+// 		console.log(err);
+// 	} else {
+// 		console.log('Mysql connected');
+// 	}
+// });
 
-admin.initializeApp({
-	credential: admin.credential.cert(serviceAccount),
-	databaseURL: 'https://classicneet-e8e04-default-rtdb.firebaseio.com'
-});
+// admin.initializeApp({
+// 	credential: admin.credential.cert(serviceAccount),
+// 	databaseURL: 'https://classicneet-e8e04-default-rtdb.firebaseio.com'
+// });
 
 const app = express();
 
