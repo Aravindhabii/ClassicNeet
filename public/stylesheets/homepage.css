@@ -106,9 +106,22 @@
 }
 
 .marqueetext{
+    font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: row;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  background: #1E2886;
+  color: white;
+  width: 92%;
 }
+
+.marqueetext a{
+  color: yellow;
+
+}
+
 
 
 /* section-2  latest updates*/
@@ -122,6 +135,17 @@
   padding: 0 5rem;
 }
 
+.CalanderEvents{
+  position: absolute;
+  top: 6%;
+  right: 16%;
+}
+
+.calandersvg{
+  top: 14%;
+  left: 25%;
+  position: absolute;
+}
 
 .news-box {
   overflow-y: scroll;
@@ -129,7 +153,10 @@
   padding: 3rem;
   height: 25rem;
   width: 25rem;
-  background-color: white;
+  background-color: #1E2886;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  text-decoration: 2px underline rgb(255, 38, 0);
 }
 .news-box p {
   padding-bottom: 2rem;
@@ -612,6 +639,21 @@
   justify-content: center;
   align-items: center;
   height: 17vh;
+}
+
+.calender_img{
+  height: 20rem;
+  width: 20rem;
+  position: absolute;
+  left: 42%;
+  top: 22%;
+  z-index: -1;
+}
+
+.imgsvg{
+  position: absolute;
+  right: 0%;
+  top: 0%;
 }
 
 /* swiper2 */
