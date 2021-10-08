@@ -185,6 +185,7 @@ footer {
 	margin-top: 2rem;
 	justify-content: space-around;
 }
+
 .address-container {
 	width: 18%;
 	display: flex;
@@ -194,7 +195,7 @@ footer {
 }
 
 .address-container h1 {
-	text-align: center;
+	text-align: left;
 	text-decoration: underline;
 }
 

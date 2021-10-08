@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 const mysql = require("mysql");
 const dotenv = require("dotenv");
@@ -82,23 +82,24 @@ router.route("/adminheader").get((req, res) => {
     res.render('admin')
   });
 });
-router.route("/aboutus").get((req, res) => {
-  res.render('aboutus')
+router.route('/aboutus').get((req, res) => {
+	res.render('aboutus');
 });
-router.route("/coursesNEET").get((req, res) => {
-  res.render('coursesNEET')
+router.route('/coursesNEET').get((req, res) => {
+	res.render('coursesNEET');
 });
-router.route("/coursesIIT&Medical").get((req, res) => {
-  res.render('coursesIIT&Medical')
+router.route('/coursesIIT&Medical').get((req, res) => {
+	res.render('coursesIIT&Medical');
 });
-router.route("/Demovideos").get((req, res) => {
-  res.render('Demovideos')
+router.route('/Demovideos').get((req, res) => {
+	res.render('Demovideos');
 });
-router.route("/results").get((req, res) => {
-  res.render('results')
+router.route('/results').get((req, res) => {
+	res.render('results');
 });
-router.route("/contactus").get((req, res) => {
-  res.render('contactus')
+router.route('/contactus').get((req, res) => {
+	res.render('contactus');
 });
+
 
 module.exports = router;

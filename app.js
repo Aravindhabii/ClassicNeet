@@ -73,4 +73,8 @@ app.use("/", authentication);
 // 	console.log(req.file.fieldname)
 //   });
 
+app.get('/stories',(req,res)=>{
+	res.render('successStories')
+})
+
 app.listen(8080, () => console.log(`SERVER IS RUNNING ON PORT 8080`));
