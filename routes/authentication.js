@@ -10,13 +10,13 @@ const { response } = require("express");
 console.log(isloggedin);
 const yepp = "yes";
 
-dotenv.config({ path: "../.env" });
+dotenv.config({ path: "./.env" });
 
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "classicneetauth",
+  host: process.env.DATABASE_HOST,
+  user: process.env.DATABASE_USER,
+  password: process.env.DATABASE_PASSWORD,
+  database: process.env.DATABASE,
 });
 
 router
@@ -182,5 +182,13 @@ router
 //     });
 //   }
 // });
+
+router
+  .route("/latestupdatesform")
+  .get((req, res) => {
+  res.render("latestupdatesform");
+
+
+  });
 
 module.exports = router;
