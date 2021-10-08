@@ -72,10 +72,10 @@ router.route("/adminheader").get((req, res) => {
         arr.push(image);
       }
       console.log(arr);
-      // res.render("admin", { img: arr });
+      res.render("admin", { img: arr });
       
     }
-    res.render('admin')
+    // res.render('admin')
   });
 });
 router.route('/aboutus').get((req, res) => {
