@@ -20,7 +20,9 @@ h4 {
 p,a{
    color: white;
 }
+
 /* Menu Bar */
+
 .Menu{
     display: flex;
     width: 100%;
@@ -28,6 +30,8 @@ p,a{
     border-bottom: 2px solid #fff;
     
 }
+
+
 .Menu svg{
     width: 50px;
     height: 40px;
