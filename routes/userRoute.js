@@ -10,26 +10,26 @@ const mysql = require('mysql');
 // });
 
 router.route("/home").get((req, res) => {
-  db.query("SELECT * FROM homeslider", (error, response) => {
-    var arr = [];
-    if (error) {
-      // console.log(imganame);
-      console.log(error);
-    } else {
-      console.log(response.length);
-      for (let i = 0; i <= response.length - 1; i++) {
-        var image = {
-          sliderimg: response[i].sliderimg,
-          imgname: response[i].imgname,
-        };
-        // console.log(image);
-        arr.push(image);
-      }
-      // console.log(response[0].sliderimg);
-      console.log(arr);
-      res.render("home", { img: arr });
-    }
-  });
+  // db.query("SELECT * FROM homeslider", (error, response) => {
+  //   var arr = [];
+  //   if (error) {
+  //     // console.log(imganame);
+  //     console.log(error);
+  //   } else {
+  //     console.log(response.length);
+  //     for (let i = 0; i <= response.length - 1; i++) {
+  //       var image = {
+  //         sliderimg: response[i].sliderimg,
+  //         imgname: response[i].imgname,
+  //       };
+  //       // console.log(image);
+  //       arr.push(image);
+  //     }
+  //     // console.log(response[0].sliderimg);
+  //     console.log(arr);
+  //     res.render("home", { img: arr });
+  //   }
+  // });
   
 
   // db.query(
@@ -49,11 +49,11 @@ router.route("/home").get((req, res) => {
   //       }
         // console.log(response[0].sliderimg);
         // console.log(arr);,{img : arr}
-        // res.render("home");
+       
       // }
     // }
   // );
-  
+  res.render("home");
 });
 
 router.route("/adminheader").get((req, res) => {
