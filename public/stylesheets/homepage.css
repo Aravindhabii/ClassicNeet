@@ -1000,3 +1000,54 @@
   height: 100%;
   object-fit: cover;
 } */
+.topperCard {
+  /* background-color: slategray; */
+  height: 70vh;
+  display: flex;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+.topper1 {
+  width: 40%;
+  height: 50%;
+  /* background-color: springgreen; */
+  display: flex;
+  box-shadow: 5px 5px 60px rgba(0, 0, 0, 0.3);
+}
+.topper2 {
+  width: 40%;
+  height: 50%;
+  /* background-color: rgb(142, 202, 172); */
+  display: flex;
+  box-shadow: 5px 5px 60px rgba(0, 0, 0, 0.3);
+}
+.topperImg {
+  background-color: #97D9FC;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.topperImg img {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+
+}
+.topperContent {
+  /* background-color: rgb(177, 27, 177); */
+  width: 60%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  
+}
