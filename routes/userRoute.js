@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
-// const mysql = require("mysql");
+const mysql = require("mysql");
 
-// const db = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   password: "",
-//   database: "classicneetauth",
-// });
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "classicneetauth",
+});
 
 router.route("/home").get((req, res) => {
   db.query("SELECT * FROM homeslider", (error, response) => {

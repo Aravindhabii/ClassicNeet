@@ -22,13 +22,13 @@ const db = mysql.createConnection({
   database: "classicneetauth",
 });
 
-// db.connect((err) => {
-// 	if (err) {
-// 		console.log(err);
-// 	} else {
-// 		console.log('Mysql connected');
-// 	}
-// });
+db.connect((err) => {
+	if (err) {
+		console.log(err);
+	} else {
+		console.log('Mysql connected');
+	}
+});
 
 const app = express();
 
