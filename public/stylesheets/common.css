@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 * {
 	box-sizing: border-box;
 	padding: 0%;
@@ -33,10 +33,12 @@ nav {
 }
 
 .navlinks {
+	position: relative;
 	display: flex;
 	width: 75%;
 	justify-content: space-around;
 	list-style: none;
+	left: 4%;
 }
 
 .navlinks {
@@ -46,10 +48,30 @@ nav {
 .navlinks a {
 	color:#1E2886;
 	text-decoration: none;
-	letter-spacing: 1px;
+	/* letter-spacing: 1px; */
 	font-weight: 1200;
+	font-size: 20px;
+	font-family: "Roboto", sans-serif;
+	padding: 1.2rem;
+	border-radius: 10px;
+	
 }
-
+/* .navlinks a:hover {
+	background-color: #369AFE;
+	color: white;
+}
+.navlinks a:nth-child(2):hover {
+	background-color: #000000;
+	color: white;
+} */
+.even:hover{
+	background-color: #369AFE;
+	color: white;
+}
+.odd:hover{
+	background-color: #60EFFF;
+	color: rgb(0, 0, 0);
+}
 .hamburger {
 	display: none;
 }
