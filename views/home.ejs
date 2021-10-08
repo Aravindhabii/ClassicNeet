@@ -8,6 +8,8 @@
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="stylesheets/homepage.css" />
 	<link rel="stylesheet" href="stylesheets/common.css" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
 	<title>ClassicNeetAcademy</title>
 </head>
 
@@ -22,57 +24,54 @@
 			</svg>
 			<!-- slideshow -->
 			<!-- Swiper -->
-			<section class="swipersection">
-				
-				<div class="swiper-wrapper">
-					<!-- <div class="flexTop">
-						<div  class="flexContent">Neet</div>
-						<div class="flexContent">IIT & Medical<br>Foundation</div>
-						<div class="flexContent">IIT-JEE</div>
-					</div> -->
-					<div class="left">
+			
+			<section class="home">
+				<div class="homeLeft">
 						
-						<img class="building" src="images/build.png" alt="">
-						<img class="building2" src="images/build2.png" alt="">
-						<img class="building3" src="images/build3.png" alt="">
-						<div class="spilldiv">
-							<img class="spill " src="images/home/spill.png" alt="">
-						</div>
-						<div class="spilldiv1">
-							<img class="spill1" src="images/home/spill1.png" alt="">
-						</div>
-						<div class="spill2">
-							<img class="spill2" src="images/home/spill2.png" alt="">
-						</div>
+					<!-- <img class="building" src="images/build.png" alt=""> -->
+					<!-- <img class="building2" src="images/build2.png" alt=""> -->
+					<!-- <img class="building3" src="images/build3.png" alt=""> -->
+					<div class="spilldiv">
+						<img class="blob1" src="images/home/spill.png" alt="">
 					</div>
+						<img class="blob2" src="images/home/spill1.png" alt="">
 					
 					
-					<!-- <div class="swiper-slide slide1">
-						<img class="swiper1img" src="images/home/sliderimage1.jpg" alt="" />
-					</div>
-					<div class="swiper-slide slide2">
-						<img class="swiper1img" src="images/home/sliderimage2.jpg" alt="" />
-					</div>
-					<div class="swiper-slide slide3">
-						<img class="swiper1img" src="images/home/sliderimage4.jpg" alt="" />
-		
-					</div>
-					<div class="swiper-slide slide4">
-						<img class="swiper1img" src="images/home/sliderimage3.jpg" alt="" />
-					</div>  -->
-				
-				
-				<div class="background">
-					<img class="swiper1img" src="images/3.jpg" alt="" /> 
+						<img class="blob3" src="images/home/spill2.png" alt="">
+					
 				</div>
-				<section class="admission">
-					<marquee class="marqueetext" vspace="30%" onmousedown="stop();"
-					onmouseup="start();">
-						<p> Admission Open ! <a href="./index.html">JOIN NOW </a> &nbsp; &ensp; Admission Open ! <a
-								href="./index.html">JOIN NOW </a>&nbsp; &ensp; Admission Open ! <a href="./index.html">JOIN
-								NOW</a></p>
-					</marquee>
-				</section>
+				<div class="homeRight">
+					<div class="sliderRev">
+						<div id="carouselExampleControls" class="carousel slide p-absolute" data-bs-ride="carousel">
+						<div class="carousel-inner">
+						  <div class="carousel-item active">
+							<img src="images/home/carousel/1.jpg" class="d-block w-100" alt="...">
+						  </div>
+						  <!-- <div class="carousel-item">
+							<img src="..." class="d-block w-100" alt="...">
+						  </div>
+						  <div class="carousel-item">
+							<img src="..." class="d-block w-100" alt="...">
+						  </div> -->
+						</div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+						  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						  <span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+						  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+						  <span class="visually-hidden">Next</span>
+						</button>
+					  </div>
+					</div>
+					<div class="scroll"><marquee class="marqueetext" vspace="30%" onmousedown="stop();"
+						onmouseup="start();">
+							<p> Admission Open ! <a href="./index.html">JOIN NOW </a> &nbsp; &ensp; Admission Open ! <a
+									href="./index.html">JOIN NOW </a>&nbsp; &ensp; Admission Open ! <a href="./index.html">JOIN
+									NOW</a></p>
+						</marquee></div>
+				</div>
+
 			</section>
 			
 			
@@ -391,6 +390,7 @@
 
 	<!-- <%- include('./layout/footer') %> -->
 	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
 	<script src="javascripts/index.js"></script>
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<script src="javascripts/common.js"></script>
