@@ -362,6 +362,30 @@
   display: flex;
   justify-content: center;
 }
+.building {
+  height: 48%;
+  width: 50%;
+  top: 54%;
+  position: absolute;
+  z-index: 5;
+  left: 11%;
+}
+.building2 {
+  height: 41%;
+  width: 50%;
+  top: 8%;
+  position: absolute;
+  z-index: 5;
+  left: 55%;
+}
+.building3 {
+  height: 48%;
+  width: 50%;
+  top: 98%;
+  position: absolute;
+  z-index: 5;
+  left: 54%;
+}
 .cardsDiv {
   display: flex;
   margin: 5rem 0rem;
