@@ -1,88 +1,86 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const mysql = require("mysql");
-const bcrypt = require("bcryptjs");
-const dotenv = require("dotenv");
-const { isloggedin } = require("../middleware.js");
-const { response } = require("express");
-const db = require("../database");
+const mysql = require('mysql');
+const bcrypt = require('bcryptjs');
+const dotenv = require('dotenv');
+const { isloggedin } = require('../middleware.js');
+const { response } = require('express');
+const db = require('../database');
 
 console.log(isloggedin);
-const yepp = "yes";
-
-
-router
-  .route("/register")
-  .get((req, res) => {
-    res.render("register");
-  })
-  .post((req, res) => {
-    const { email, password, username } = req.body;
-    const emailinuse = "This email is already in use";
-    // console.log(req.body);
-    db.query(
-      "SELECT email FROM users WHERE email = ?",
-      [email],
-      async (err, results) => {
-        if (err) {
-          console.log(err);
-        }
-        if (results.length > 0) {
-          return res.render("login", { emailinuse });
-          console.log(results);
-        }
-
-        let hashedPassword = await bcrypt.hash(password, 8);
-        console.log(hashedPassword);
-
-        db.query(
-          "INSERT INTO users SET ?",
-          { username: username, email: email, password: hashedPassword },
-          (err, results) => {
-            if (err) {
-              console.log(err);
-            } else {
-              // console.log(results);
-              return res.render("home");
-            }
-          }
-        );
-      }
-    );
-  });
+const yepp = 'yes';
 
 router
-  .route("/login")
-  .get((req, res) => {
-    res.render("login");
-  })
-  .post(async (req, res) => {
-    const { password, username } = req.body;
-    // const emailinuse = "This email is already in use";
-    const hasedpass = await bcrypt.hash(password, 8);
-    db.query(
-      "SELECT * FROM users WHERE username = ?",
-      [username],
-      (err, result) => {
-        const passcon = bcrypt.compare(
-          password,
-          hasedpass,
-          function (err, result) {
-            console.log();
-            if (result) {
-              console.log(result);
-              const loginuser = "Yes";
-              req.session.loginuser = loginuser;
-              console.log(req.session.loginuser);
-              res.redirect("/admin");
-            } else {
-              res.redirect("/login");
-            }
-          }
-        );
-      }
-    );
-  });
+	.route('/register')
+	.get((req, res) => {
+		res.render('register');
+	})
+	.post((req, res) => {
+		const { email, password, username } = req.body;
+		const emailinuse = 'This email is already in use';
+		// console.log(req.body);
+		db.query(
+			'SELECT email FROM users WHERE email = ?',
+			[email],
+			async (err, results) => {
+				if (err) {
+					console.log(err);
+				}
+				if (results.length > 0) {
+					return res.render('login', { emailinuse });
+					console.log(results);
+				}
+
+				let hashedPassword = await bcrypt.hash(password, 8);
+				console.log(hashedPassword);
+
+				db.query(
+					'INSERT INTO users SET ?',
+					{ username: username, email: email, password: hashedPassword },
+					(err, results) => {
+						if (err) {
+							console.log(err);
+						} else {
+							// console.log(results);
+							return res.render('home');
+						}
+					}
+				);
+			}
+		);
+	});
+
+router
+	.route('/login')
+	.get((req, res) => {
+		res.render('login');
+	})
+	.post(async (req, res) => {
+		const { password, username } = req.body;
+		// const emailinuse = "This email is already in use";
+		const hasedpass = await bcrypt.hash(password, 8);
+		db.query(
+			'SELECT * FROM users WHERE username = ?',
+			[username],
+			(err, result) => {
+				const passcon = bcrypt.compare(
+					password,
+					hasedpass,
+					function (err, result) {
+						if (result) {
+							console.log(result);
+							const loginuser = 'Yes';
+							req.session.loginuser = loginuser;
+							console.log(req.session.loginuser);
+							res.redirect('/admin');
+						} else {
+							res.redirect('/login');
+						}
+					}
+				);
+			}
+		);
+	});
 
 // router
 //   .route("/admin")
@@ -121,67 +119,65 @@ router
 //     );
 //   });
 
-const multer = require("multer");
-const { storage, cloudinary } = require("../cloudianry");
+const multer = require('multer');
+const { storage, cloudinary } = require('../cloudianry');
 const upload = multer({ storage });
 
 router
-  .route("/homeslider")
-  .get((req, res) => {
-    res.render("cloudinary");
-  })
-  .post(upload.single("sliderimg"), (req, res) => {
-    console.log(req.file.path);
-    console.log(req.file.fieldname);
-    const path = req.file.path;
-    const fieldname = req.file.fieldname;
-    const cloudinaryName = req.file.filename.split("/")[1];
-    // console.log(req.files);
+	.route('/homeslider')
+	.get((req, res) => {
+		res.render('cloudinary');
+	})
+	.post(upload.single('sliderimg'), (req, res) => {
+		console.log(req.file);
+		console.log(req.file.fieldname);
+		const path = req.file.path;
+		const fieldname = req.file.fieldname;
+		const cloudinaryName = req.file.filename.split('/')[1];
+		// console.log(req.files);
 
-    db.query(
-      "INSERT INTO homeslider SET ?",
-      { imgname: fieldname, sliderimg: path, cloudinaryname: cloudinaryName },
-      (err, results) => {
-        if (err) {
-          console.log(err);
-        } else {
-          console.log(results);
-          res.redirect("/home");
-        }
-      }
-    );
-  });
+		db.query(
+			'INSERT INTO homeslider SET ?',
+			{ imgname: fieldname, sliderimg: path, cloudinaryname: cloudinaryName },
+			(err, results) => {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log(results);
+					res.redirect('/home');
+				}
+			}
+		);
+	});
 
-router.post("/imgupdate", upload.single("sliderimg"), (req, res) => {
-  console.log(req.files);
-  if (typeof (req.body.sliderimg === "string")) {
-    cloudinary.uploader.destroy(req.body.checkbox);
-    db.query("UPDATE homeslider SET sliderimg = ? WHERE cloudinaryname = ?", [
-      req.file.path,
-      req.body.checkbox,
-    ]);
-  } else {
-    req.body.sliderimg.forEach((img, index1) => {
-      req.body.checkbox.forEach((check, index2) => {
-        if (index1 === index2) {
-          cloudinary.uploader.destroy(check);
-          db.query(
-            "UPDATE homeslider SET sliderimg = ? WHERE cloudinaryname = ?",
-            [req.file.path, check]
-          );
-        }
-      });
-    });
-  }
+router.post('/imgupdate', upload.single('sliderimg'), (req, res) => {
+	console.log(req.body.checkbox);
+	if (typeof (req.body.sliderimg === 'string')) {
+		cloudinary.uploader.destroy(req.body.checkbox);
+		db.query('UPDATE homeslider SET sliderimg = ? WHERE cloudinaryname = ?', [
+			req.file.path,
+			req.body.checkbox
+		]);
+	} else {
+		req.body.sliderimg.forEach((img, index1) => {
+			req.body.checkbox.forEach((check, index2) => {
+				if (index1 === index2) {
+					cloudinary.uploader.destroy(check);
+					db.query(
+						'UPDATE homeslider SET sliderimg = ? WHERE cloudinaryname = ?',
+						[req.file.path, check]
+					);
+				}
+			});
+		});
+	}
 });
 
 router
-  .route("/latestupdatesform")
-  .get((req, res) => {
-    res.render("latestupdatesform");
-  })
-  .post((req, res) => {
-    
-  });
+	.route('/latestupdatesform')
+	.get((req, res) => {
+		res.render('latestupdatesform');
+	})
+	.post((req, res) => {});
 
 module.exports = router;
