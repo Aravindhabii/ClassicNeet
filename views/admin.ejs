@@ -72,6 +72,7 @@
       </ul>
     </div> 
     <div class="Homepage">
+        <form action="/imgupdate" method="post" class="imgform">
           <div class="sliderrevolution">
             <h2>Slider Revolution</h2> 
             	<div class="grid1">
@@ -83,22 +84,20 @@
                         <p>slider Image4</p>
                     </div>
                     <div class="grid-item1 item2">
-                        <p>New Image</p> 
-                        <input type="file" id="image" name="sliderimg" required />
-                        <input type="file" id="image" name="sliderimg" required />
-                        <input type="file" id="image" name="sliderimg" required />
-                        <input type="file" id="image" name="sliderimg" required />
+                        <p>New Image</p>
+                        <% img.forEach(i => { %>
+                            <input type="file" id="image" name="sliderimg" required />
+                        <% }) %>
                     </div>
                     <div class="grid-item1 item3">
                         <p>Updates</p> 
-                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;" />
-                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
-                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
-                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
+                        <% img.forEach(i => { %>
+                            <input type="checkbox" id="checkbox" class='updatesCheckbox' name="checkbox" value='<%= i.cloudinaryName %>' required style="height: 20px; width: 20px;" />
+                        <% }) %>
                     </div>
                 </div>
                 <div class="subbutton1">
-                    <button type="button">Submit</button>
+                    <button type="submit">Submit</button>
                 </div>
           </div>
           <div class="Latestupdates">
@@ -214,5 +213,6 @@
           </div>
           
     </section>   
+    <script src="javascripts/adminPanel.js"></script>
 </body>
 </html>

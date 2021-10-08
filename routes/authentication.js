@@ -4,19 +4,19 @@ const mysql = require("mysql");
 // const jws = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const dotenv = require("dotenv");
-const {isloggedin} = require("../middleware.js");
+const { isloggedin } = require("../middleware.js");
 const { response } = require("express");
 
-console.log( isloggedin );
+console.log(isloggedin);
 const yepp = "yes";
 
-dotenv.config({ path: "../.env" });
+dotenv.config({ path: "./.env" });
 
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "classicneetauth",
+  host: process.env.DATABASE_HOST,
+  user: process.env.DATABASE_USER,
+  password: process.env.DATABASE_PASSWORD,
+  database: process.env.DATABASE,
 });
 
 router
@@ -92,87 +92,103 @@ router
     );
   });
 
-
-
-router.route("/admin").get((req, res) => {
-  const imganame = "image1";
-  db.query("SELECT * FROM homeslider WHERE imgname = ?",[imganame],
-    (error,response) =>{
-      if(error){
-        console.log(imganame);
-        console.log(error);
+router
+  .route("/admin")
+  .get((req, res) => {
+    const imganame = "image1";
+    db.query(
+      "SELECT * FROM homeslider WHERE imgname = ?",
+      [imganame],
+      (error, response) => {
+        if (error) {
+          console.log(imganame);
+          console.log(error);
+        } else {
+          const image = response[0].sliderimg.toString("base64").split("=")[0];
+          console.log(image);
+          res.render("sqlreg", { img: image });
+        }
       }
-      else{
-        const image = response[0].sliderimg.toString("base64").split('=')[0];
-        console.log(image);
-        res.render('sqlreg',{img:image})
+    );
+  })
+  .post((req, res) => {
+    const { imagename, sliderimg } = req.body;
+    // db.query("SELECT email FROM homeslider WHERE imgname")
+    console.log(imagename, sliderimg);
+    db.query(
+      "INSERT INTO homeslider SET ?",
+      { imgname: imagename, sliderimg: sliderimg },
+      (err, results) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(results);
+          return res.render("home");
+        }
       }
-    })
-    
-
-}).post((req,res)=>{
-  const { imagename, sliderimg } = req.body;
-  // db.query("SELECT email FROM homeslider WHERE imgname")
-  console.log(imagename, sliderimg);
-  db.query(
-    "INSERT INTO homeslider SET ?",
-    { imgname: imagename, sliderimg: sliderimg },
-    (err, results) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log(results);
-        return res.render("home");
-      }
-    }
-  );
-  
-});
-
-
-
+    );
+  });
 
 const multer = require("multer");
-const { storage } = require("../cloudianry");
+const { storage, cloudinary } = require("../cloudianry");
 const upload = multer({ storage });
-
 
 router
   .route("/homeslider")
   .get((req, res) => {
-    
-    
     res.render("cloudinary");
   })
   .post(upload.single("sliderimg"), (req, res) => {
     console.log(req.file.path);
     console.log(req.file.fieldname);
     const path = req.file.path;
-    const fieldname = req.file.fieldname
+    const fieldname = req.file.fieldname;
+    const cloudinaryName = req.file.filename.split("/")[1];
+    // console.log(req.files);
 
-
-     db.query(
-       "INSERT INTO homeslider SET ?",
-       { imgname: fieldname, sliderimg: path },
-       (err, results) => {
+    db.query(
+      "INSERT INTO homeslider SET ?",
+      { imgname: fieldname, sliderimg: path, cloudinaryname: cloudinaryName },
+      (err, results) => {
         if (err) {
           console.log(err);
-        }else{
+        } else {
           console.log(results);
-          res.redirect('/home')
+          res.redirect("/home");
         }
+      }
+    );
+  });
 
-       }
-     );
+// router.post("/imgupdate", upload.single("sliderimg"), (req, res) => {
+//   console.log(req.files);
+//   if (typeof (req.body.sliderimg === "string")) {
+//     cloudinary.uploader.destroy(req.body.checkbox);
+//     db.query("UPDATE homeslider SET sliderimg = ? WHERE cloudinaryname = ?", [
+//       req.file.path,
+//       req.body.checkbox,
+//     ]);
+//   } else {
+//     req.body.sliderimg.forEach((img, index1) => {
+//       req.body.checkbox.forEach((check, index2) => {
+//         if (index1 === index2) {
+//           cloudinary.uploader.destroy(check);
+//           db.query(
+//             "UPDATE homeslider SET sliderimg = ? WHERE cloudinaryname = ?",
+//             [req.file.path, check]
+//           );
+//         }
+//       });
+//     });
+//   }
+// });
+
+router
+  .route("/latestupdatesform")
+  .get((req, res) => {
+  res.render("latestupdatesform");
 
 
   });
 
-
-
-
-
-
-
 module.exports = router;
-
