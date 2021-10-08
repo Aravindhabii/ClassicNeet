@@ -181,7 +181,7 @@ router
     res.render("latestupdatesform");
   })
   .post((req, res) => {
-    
+     db.query()
   });
 
 module.exports = router;
