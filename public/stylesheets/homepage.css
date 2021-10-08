@@ -211,16 +211,18 @@
 }
 
 .marqueetext {
-	font-family: 'Roboto', sans-serif;
-	display: flex;
-	flex-direction: row;
-	/* border: 2px solid black; */
-	box-shadow: 5px 5px 20px rgba(4, 113, 255, 0.5);
-	border-radius: 20px;
-	padding: 15px;
-	background: #2b72e4;
-	color: white;
-	width: 100%;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: row;
+  /* border: 2px solid black; */
+  box-shadow: 5px 5px 20px rgb(4 113 255 / 50%);
+  border-radius: 20px;
+  padding: 18px;
+  background: #2b72e4;
+  color: white;
+  height: 100%;
+  font-size: 20px;
+  width: 100%;
 }
 
 .marqueetext a {
@@ -231,13 +233,14 @@
 .section-2 {
 	position: relative;
 	width: 100%;
-	height: 100vh;
+	height: 90vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 0 5rem;
 	/* background: url("../images/home/TopAir.png") center; */
 	background-size: 170%;
+  background-color: #F9FBFA;
 }
 .hexa1 {
 	border: 1px solid #2b72e4;
@@ -338,16 +341,16 @@
 	height: 65vh;
 }
 .section-2 .div-2 {
-	position: relative;
-	width: 50%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	/* background-color: black; */
-	margin-bottom: 15rem;
-	z-index: 5;
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: black; */
+  /* margin-bottom: 15rem; */
+  z-index: 5;
 }
 .section-2 .div-1 {
 	position: relative;
@@ -357,14 +360,16 @@
 	justify-content: flex-start;
 	display: flex;
 	z-index: 5;
-	margin-bottom: 12rem;
+  margin-bottom: 2rem;
 	/* box-shadow: 5px 5px 20px rgba(4, 113, 255, 0.5); */
 	/* background-color: #1E2886; */
 	/* padding-left: 6rem; */
 }
 .section-2 .div-1 h1 {
-	/* margin-top: 1.5rem; */
-	margin-right: 10rem;
+  
+    margin-top: 1.5rem;
+    margin-right: 10rem;
+
 }
 .section-2 .div-1 .calandersvg {
 	margin-top: 3rem;
@@ -680,7 +685,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 10rem 0px;
+	margin: 8rem 0px;
 	position: relative;
 }
 
@@ -1022,7 +1027,7 @@
 } */
 .topperCard {
   /* background-color: slategray; */
-  height: 70vh;
+  height: 40vh;
   display: flex;
   width: 80%;
   margin-left: auto;
@@ -1030,33 +1035,52 @@
   position: relative;
   justify-content: space-around;
   align-items: center;
+  margin-top: 5rem;
   
 }
 .topper1 {
   width: 40%;
-  height: 50%;
+  height: 90%;
   /* background-color: springgreen; */
   display: flex;
-  box-shadow: 5px 5px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 5px 60px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
 }
 .topper2 {
   width: 40%;
-  height: 50%;
+  height: 90%;
   /* background-color: rgb(142, 202, 172); */
   display: flex;
-  box-shadow: 5px 5px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 60px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
 }
 .topperImg {
-  background-color: #97D9FC;
+  background-color: #0061FF;
   width: 50%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 20px 0px 0px 20px;
+}
+.topperImg2 {
+  background-color: #60EFFF;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px 0px 0px 20px;
 }
 .topperImg img {
   width: 80%;
-  height: 80%;
+  height: 70%;
+  border-radius: 50%;
+
+}
+.topperImg2 img {
+  width: 80%;
+  height: 70%;
   border-radius: 50%;
 
 }
@@ -1079,8 +1103,12 @@
   font-size: 20px;
   font-weight: 600;
 }
-.mark
+.marks
 {
   font-size: 20px;
   font-weight: 600;
+  
+}
+.section-2 h1 {
+  font-size: 1.5rem;
 }
