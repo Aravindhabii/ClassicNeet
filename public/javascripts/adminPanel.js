@@ -10,7 +10,3 @@
 //     }
 //   });
 // });
-var la = ["l", "o", "a", "v"];
-la.forEach((a, icn) => {
-  console.log(icn);
-});

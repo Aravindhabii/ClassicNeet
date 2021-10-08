@@ -11,23 +11,17 @@ const admin = require("firebase-admin");
 const mysql = require("mysql");
 const dotenv = require("dotenv");
 const mariadb = require("mariadb");
+const db = require('./database');
+
 
 dotenv.config();
 
-
-const db = mysql.createConnection({
-  host: process.env.DATABASE_HOST,
-  user: process.env.DATABASE_USER,
-  password: process.env.DATABASE_PASSWORD,
-  database: process.env.DATABASE,
-});
-
 db.connect((err) => {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log('Mysql connected');
-	}
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("Mysql connected");
+  }
 });
 
 const app = express();
@@ -51,9 +45,6 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(flash());
-
-app.use("/", userRoutes);
-app.use("/ClassicNeetAccademy", authentication);
 
 app.get("/viewcount", (req, res) => {});
 
