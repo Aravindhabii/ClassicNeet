@@ -160,6 +160,7 @@ router.post('/imgupdate', upload.single('sliderimg'), (req, res) => {
 		]);
 	} else {
 		req.body.sliderimg.forEach((img, index1) => {
+			0.3;
 			req.body.checkbox.forEach((check, index2) => {
 				if (index1 === index2) {
 					cloudinary.uploader.destroy(check);
