@@ -1,4 +1,4 @@
-.uparrow{
+.uparrow {
   padding: 2rem 4rem 0 4rem;
   font-size: 10px;
   height: 90px;
@@ -16,8 +16,8 @@
   width: 86% !important;
   height: 96% !important;
   display: flex;
-	justify-content: center;
-	align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /* .slide1{
@@ -55,15 +55,89 @@
   background-color: skyblue;
   padding: 5rem;
 } */
-
-.swiper-wrapper {
-	position: relative;
-	width: 100vw;
-	height: 100vh;
-  top: 1%;
-    right: 1%;
+.home {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+.homeLeft {
+  position: relative;
+  width: 30%;
+  height: 100%;
+  /* background-color: rosybrown; */
 }
 
+.homeRight {
+  width: 70%;
+  height: 100%;
+  /* background-color: rgb(213, 216, 226); */
+}
+.blob1 {
+  position: absolute;
+  top: 1%;
+  /* left: 7px; */
+  width: 63%;
+  height: 86vh;
+
+}
+.blob2 {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  right: 3%;
+  top: 0%;
+}
+.blob3 {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  right: 5%;
+  top: 50%;
+  transform: scale(1.05);
+}
+.sliderRev {
+  margin-top: 1rem;
+  background-color: #2B72E4;
+  height: 70%;
+  width: 100%;
+  margin-left: auto;
+  /* margin-right: auto; */
+  border-radius: 20px;
+  position: relative;
+}
+.scroll {
+  position: relative;
+  background-color: #2B72E4;
+  width: 100%;
+  margin-left: auto;
+  height: 9vh;
+  border-radius: 20px;
+  margin-top: 1.5rem;
+}
+.slide {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  top: 1%;
+  right: 1%;
+}
+.swiper-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  top: 1%;
+  right: 1%;
+}
+.section-1 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
 .swipersection {
   position: relative;
   width: 100%;
@@ -84,25 +158,24 @@
   object-fit: cover;
 }
 
-
 .swiper-slide {
-	text-align: center;
-	font-size: 18px;
-	/* background: #fff; */
+  text-align: center;
+  font-size: 18px;
+  /* background: #fff; */
 
-	/* Center slide text vertically */
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	-webkit-justify-content: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	-webkit-align-items: center;
-	align-items: center;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 
 .background {
@@ -114,29 +187,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #2B72E4;
+  background: #2b72e4;
   border-radius: 20px;
 }
 
-.marqueetext{
-    font-family: "Roboto", sans-serif;
+.marqueetext {
+  font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: row;
   /* border: 2px solid black; */
   box-shadow: 5px 5px 20px rgba(4, 113, 255, 0.5);
   border-radius: 20px;
   padding: 15px;
-  background: #2B72E4;
+  background: #2b72e4;
   color: white;
   width: 100%;
 }
 
-.marqueetext a{
+.marqueetext a {
   color: yellow;
-
 }
-
-
 
 /* section-2  latest updates*/
 .section-2 {
@@ -147,45 +217,39 @@
   justify-content: center;
   align-items: center;
   padding: 0 5rem;
-  background: url('../images/home/TopAir.png') center;
+  /* background: url("../images/home/TopAir.png") center; */
   background-size: 170%;
-  
-  
-  
 }
 .hexa1 {
-  border: 1px solid #2B72E4;
+  border: 1px solid #2b72e4;
 }
 .hexa2 {
-  border: 1px solid #60EFFF;
+  border: 1px solid #60efff;
 }
 .hexa3 {
-  border: 1px solid #106DFF;
+  border: 1px solid #106dff;
 }
 .section-2::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.315);
+  background-color: rgba(255, 255, 255, 0.615);
   z-index: 1;
 }
-.CalanderEvents{
+.CalanderEvents {
   position: absolute;
   top: 6%;
   right: 16%;
-  
-  
 }
 .calenderMain {
   position: absolute;
   margin-top: 1rem;
   top: 15%;
   left: 10%;
-
 }
 .date {
-  background-color: #2B72E4;
+  background-color: #2b72e4;
   color: white;
   height: 100%;
   width: 20%;
@@ -194,11 +258,10 @@
   font-size: 20px;
 }
 .backgroundMain {
-  background-color: #F9FBFA;
+  background-color: #f9fbfa;
   position: relative;
   height: 100%;
   width: 100%;
-  
 }
 .calenderCard {
   display: flex;
@@ -211,15 +274,13 @@
   /* border: 1px solid #1E2886; */
 }
 .calenderCard:hover {
-
   transform: scale(1.1);
   box-shadow: 2px 2px 60px rgba(4, 113, 255, 0.2);
 }
-.calender:hover .date {
+/* .calender:hover .date {
+} */
 
-}
-
-.calandersvg{
+.calandersvg {
   top: 10%;
   left: 20%;
   position: absolute;
@@ -233,7 +294,7 @@
   height: 30rem;
   width: 30rem;
   box-shadow: 5px 5px 60px rgba(4, 113, 255, 0.6);
-  background-color: #2B72E4;
+  background-color: #2b72e4;
   /* background: linear-gradient( #e7f44a, #040404,#FFFFFF); */
   color: rgb(255, 255, 255);
   font-family: "Roboto", sans-serif;
@@ -268,10 +329,8 @@
   /* background-color: black; */
   margin-bottom: 15rem;
   z-index: 5;
-  
 }
 .section-2 .div-1 {
-
   position: relative;
   width: 50%;
   height: 100%;
@@ -303,7 +362,6 @@
 
 /* Admission */
 .admission {
-  
   position: relative;
   top: 63%;
   width: 121vw;
@@ -370,17 +428,104 @@
   width: 50%;
   height: 73%; 
 } */
+.HexagonDiv {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.building {
+  height: 48%;
+  width: 50%;
+  top: 54%;
+  position: absolute;
+  z-index: 5;
+  left: 11%;
+}
+.building2 {
+  height: 41%;
+  width: 50%;
+  top: 8%;
+  position: absolute;
+  z-index: 5;
+  left: 55%;
+}
+.building3 {
+  height: 48%;
+  width: 50%;
+  top: 98%;
+  position: absolute;
+  z-index: 5;
+  left: 54%;
+}
+.cardsDiv {
+  display: flex;
+  margin: 5rem 0rem;
+}
+.imgHeader {
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+.box1,
+.box2,
+.box3 {
+  display: flex;
+  transition: all 0.5s ease-in-out;
+  justify-content: center;
+  position: relative;
+}
 .right {
   position: relative;
   display: flex;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-
 }
 .hexaimg {
-  width: 50%;
+  width: 70%;
+  transition: 0.5s all ease-in-out;
 }
+.box1:hover,
+.box2:hover,
+.box3:hover {
+  transform: scale(1.2);
+}
+.box1:hover .imgContent,
+.box2:hover .imgContent,
+.box3:hover .imgContent {
+  background-color: rgba(255, 255, 255, 0.893);
+}
+.box1:hover p,
+.box2:hover p,
+.box3:hover p {
+  height: 4rem;
+}
+.hexaimg img {
+  box-shadow: 2px 2px 60px rgba(0, 0, 0, 0.9);
+}
+.imgContent {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(0, 0, 0);
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s ease-in-out;
+  border-radius: 20px;
+  /* background-color: rgb(255, 255, 255); */
+}
+.imgContent p {
+  height: 0;
+  transition: all 0.5s ease-in-out;
+  transform-origin: top;
+  overflow: hidden;
+
+}
+
 .hexa {
   /* top: 0; */
   position: relative;
@@ -414,7 +559,6 @@
   right: 0%;
   top: 93%;
   transform: scale(1.05);
- 
 }
 .neet-toppers {
   height: 40vh;
@@ -444,7 +588,6 @@
   height: 70%;
   width: 900px;
   left: 1%;
-  
 }
 .flexContent {
   height: 30%;
@@ -484,14 +627,13 @@
   height: 9rem;
   position: relative;
   background: url("../images/home/SREYA\ PRIYADHARSHINI\ G.jpg") left/cover;
-
 }
 
 .topper-image_2 {
   width: 9rem;
   height: 9rem;
   position: relative;
-  background: url("../images/home/SHARULATA\ P.jpg") center/cover; 
+  background: url("../images/home/SHARULATA\ P.jpg") center/cover;
   /* background: #000; */
 }
 
@@ -789,7 +931,7 @@
   height: 5vh;
 }
 
-.calender_img{
+.calender_img {
   height: 25rem;
   width: 25rem;
   position: absolute;
@@ -798,7 +940,7 @@
   z-index: -1;
 }
 
-.imgsvg{
+.imgsvg {
   position: absolute;
   right: 0%;
   top: 0%;
@@ -806,8 +948,7 @@
 
 /* swiper2 */
 
-.swiper2
-{
+.swiper2 {
   height: 100vh !important;
   width: 70vw !important;
   overflow: hidden;
@@ -821,13 +962,12 @@
   height: 60vh !important;
 }
 
-.mySwiper2 .swiper-wrapper{
+.mySwiper2 .swiper-wrapper {
   width: 100%;
   height: 100vh;
 }
 
-
-.mySwiper2 .swiper-slide{
+.mySwiper2 .swiper-slide {
   width: 50vw;
   height: 90%;
   text-align: center;
@@ -848,7 +988,7 @@
   align-items: center;
 }
 
-.imghead img{
+.imghead img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
