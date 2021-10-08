@@ -10,7 +10,7 @@
 
 </head>
 <body>
-    <%- include('./layout/adminheader') %>
+    <form%- include('./layout/adminheader') %>
     <section class="dashboard">
     <div class="MenuBar">
         <ul>
@@ -72,16 +72,16 @@
       </ul>
     </div> 
     <div class="Homepage">
-        <form action="/imgupdate" method="post" class="imgform">
+        <form action="/imgupdate" method="post" class="imgform" enctype="multipart/form-data">
           <div class="sliderrevolution">
             <h2>Slider Revolution</h2> 
             	<div class="grid1">
                     <div class="grid-item1 item1">
-                        <p>Current Images</p> 
-                        <p>slider Image1</p>
-                        <p>slider Image2</p>
-                        <p>slider Image3</p>
-                        <p>slider Image4</p>
+                        <p>Current Image</p>
+                        <% img.forEach(i => { %>
+                            <p><%= i.imgname %> </p>
+                        <% }) %>
+                       
                     </div>
                     <div class="grid-item1 item2">
                         <p>New Image</p>
@@ -99,6 +99,7 @@
                 <div class="subbutton1">
                     <button type="submit">Submit</button>
                 </div>
+            </form>
           </div>
           <div class="Latestupdates">
             <h2>Latest updates</h2> 
