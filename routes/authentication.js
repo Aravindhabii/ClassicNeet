@@ -1,23 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const mysql = require("mysql");
-// const jws = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const dotenv = require("dotenv");
 const { isloggedin } = require("../middleware.js");
 const { response } = require("express");
+const db = require("../database");
 
 console.log(isloggedin);
 const yepp = "yes";
 
-dotenv.config({ path: "./.env" });
-
-const db = mysql.createConnection({
-  host: process.env.DATABASE_HOST,
-  user: process.env.DATABASE_USER,
-  password: process.env.DATABASE_PASSWORD,
-  database: process.env.DATABASE,
-});
 
 router
   .route("/register")
@@ -186,9 +178,10 @@ router.post("/imgupdate", upload.single("sliderimg"), (req, res) => {
 router
   .route("/latestupdatesform")
   .get((req, res) => {
-  res.render("latestupdatesform");
-
-
+    res.render("latestupdatesform");
+  })
+  .post((req, res) => {
+    
   });
 
 module.exports = router;
