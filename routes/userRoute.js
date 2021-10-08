@@ -96,6 +96,9 @@ router.route('/results').get((req, res) => {
 router.route('/contactus').get((req, res) => {
 	res.render('contactus');
 });
+router.route('/successstories').get((req, res) => {
+	res.render('successStories');
+});
 
 
 module.exports = router;
