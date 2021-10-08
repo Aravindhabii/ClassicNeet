@@ -92,42 +92,42 @@ router
     );
   });
 
-router
-  .route("/admin")
-  .get((req, res) => {
-    const imganame = "image1";
-    db.query(
-      "SELECT * FROM homeslider WHERE imgname = ?",
-      [imganame],
-      (error, response) => {
-        if (error) {
-          console.log(imganame);
-          console.log(error);
-        } else {
-          const image = response[0].sliderimg.toString("base64").split("=")[0];
-          console.log(image);
-          res.render("sqlreg", { img: image });
-        }
-      }
-    );
-  })
-  .post((req, res) => {
-    const { imagename, sliderimg } = req.body;
-    // db.query("SELECT email FROM homeslider WHERE imgname")
-    console.log(imagename, sliderimg);
-    db.query(
-      "INSERT INTO homeslider SET ?",
-      { imgname: imagename, sliderimg: sliderimg },
-      (err, results) => {
-        if (err) {
-          console.log(err);
-        } else {
-          console.log(results);
-          return res.render("home");
-        }
-      }
-    );
-  });
+// router
+//   .route("/admin")
+//   .get((req, res) => {
+//     const imganame = "image1";
+//     db.query(
+//       "SELECT * FROM homeslider WHERE imgname = ?",
+//       [imganame],
+//       (error, response) => {
+//         if (error) {
+//           console.log(imganame);
+//           console.log(error);
+//         } else {
+//           const image = response[0].sliderimg.toString("base64").split("=")[0];
+//           console.log(image);
+//           res.render("sqlreg", { img: image });
+//         }
+//       }
+//     );
+//   })
+//   .post((req, res) => {
+//     const { imagename, sliderimg } = req.body;
+//     // db.query("SELECT email FROM homeslider WHERE imgname")
+//     console.log(imagename, sliderimg);
+//     db.query(
+//       "INSERT INTO homeslider SET ?",
+//       { imgname: imagename, sliderimg: sliderimg },
+//       (err, results) => {
+//         if (err) {
+//           console.log(err);
+//         } else {
+//           console.log(results);
+//           return res.render("home");
+//         }
+//       }
+//     );
+//   });
 
 const multer = require("multer");
 const { storage, cloudinary } = require("../cloudianry");
@@ -160,28 +160,28 @@ router
     );
   });
 
-// router.post("/imgupdate", upload.single("sliderimg"), (req, res) => {
-//   console.log(req.files);
-//   if (typeof (req.body.sliderimg === "string")) {
-//     cloudinary.uploader.destroy(req.body.checkbox);
-//     db.query("UPDATE homeslider SET sliderimg = ? WHERE cloudinaryname = ?", [
-//       req.file.path,
-//       req.body.checkbox,
-//     ]);
-//   } else {
-//     req.body.sliderimg.forEach((img, index1) => {
-//       req.body.checkbox.forEach((check, index2) => {
-//         if (index1 === index2) {
-//           cloudinary.uploader.destroy(check);
-//           db.query(
-//             "UPDATE homeslider SET sliderimg = ? WHERE cloudinaryname = ?",
-//             [req.file.path, check]
-//           );
-//         }
-//       });
-//     });
-//   }
-// });
+router.post("/imgupdate", upload.single("sliderimg"), (req, res) => {
+  console.log(req.files);
+  if (typeof (req.body.sliderimg === "string")) {
+    cloudinary.uploader.destroy(req.body.checkbox);
+    db.query("UPDATE homeslider SET sliderimg = ? WHERE cloudinaryname = ?", [
+      req.file.path,
+      req.body.checkbox,
+    ]);
+  } else {
+    req.body.sliderimg.forEach((img, index1) => {
+      req.body.checkbox.forEach((check, index2) => {
+        if (index1 === index2) {
+          cloudinary.uploader.destroy(check);
+          db.query(
+            "UPDATE homeslider SET sliderimg = ? WHERE cloudinaryname = ?",
+            [req.file.path, check]
+          );
+        }
+      });
+    });
+  }
+});
 
 router
   .route("/latestupdatesform")
