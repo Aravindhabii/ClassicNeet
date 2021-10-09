@@ -55,52 +55,52 @@ const multer = require("multer");
 const { storage, cloudinary } = require("../cloudinary");
 const upload = multer({ storage });
 router
-  .route("/admin/sliderrevolution")
-  .get((req, res) => {
-    db.query("SELECT * FROM homeslider", (error, response) => {
-      var arr = [];
-      if (error) {
-        console.log(error);
-      } else {
-        console.log(response.length);
-        for (let i = 0; i <= response.length - 1; i++) {
-          var image = {
-            sliderimg: response[i].sliderimg,
-            imgname: response[i].imgname,
-            cloudinaryName: response[i].cloudinaryname,
-          };
-          arr.push(image);
-        }
-        console.log(arr);
-        res.render("admin/home/sliderRevolution", { img: arr });
-      }
-    });
-  })
-  .post(upload.single("sliderimg"), (req, res) => {
-    if (typeof (req.body.sliderimg === "string")) {
-      cloudinary.uploader.destroy(req.body.checkbox);
-      db.query(
-        "UPDATE homeslider SET sliderimg = ? AND imgname = ? WHERE cloudinaryname = ?",
-        [req.file.path, req.file.originalname, req.body.checkbox]
-      );
-      res.render("admin/home/sliderRevolution");
-    } else {
-      req.body.sliderimg.forEach((img, index1) => {
-        0.3;
-        req.body.checkbox.forEach(async (check, index2) => {
-          if (index1 === index2) {
-            console.log(check);
-            await cloudinary.uploader.destroy(check);
-            db.query(
-              "UPDATE homeslider SET sliderimg = ? WHERE cloudinaryname = ?",
-              [req.file.path, check]
-            );
-          }
-        });
-      });
-      res.render("admin/home/sliderRevolution");
-    }
-  });
+	.route('/admin/sliderrevolution')
+	.get((req, res) => {
+		db.query('SELECT * FROM homeslider', (error, response) => {
+			var arr = [];
+			if (error) {
+				console.log(error);
+			} else {
+				console.log(response.length);
+				for (let i = 0; i <= response.length - 1; i++) {
+					var image = {
+						sliderimg: response[i].sliderimg,
+						imgname: response[i].imgname,
+						cloudinaryName: response[i].cloudinaryname
+					};
+					arr.push(image);
+				}
+				console.log(arr);
+				res.render('admin/home/sliderRevolution', { img: arr });
+			}
+		});
+	})
+	.post(upload.single('sliderimg'), (req, res) => {
+		if (typeof (req.body.sliderimg === 'string')) {
+			cloudinary.uploader.destroy(req.body.checkbox);
+			db.query(
+				'UPDATE homeslider SET sliderimg = ? AND imgname = ? WHERE cloudinaryname = ?',
+				[req.file.path, req.file.originalname, req.body.checkbox]
+			);
+			res.render('admin/home/sliderRevolution');
+		} else {
+			req.body.sliderimg.forEach((img, index1) => {
+				0.3;
+				req.body.checkbox.forEach(async (check, index2) => {
+					if (index1 === index2) {
+						console.log(check);
+						await cloudinary.uploader.destroy(check);
+						db.query(
+							'UPDATE homeslider SET sliderimg ? WHERE cloudinaryname = ?',
+							[req.file.path, check]
+						);
+					}
+				});
+			});
+			res.render('admin/home/sliderRevolution');
+		}
+	});
 
 router
   .route("/admin/latestupdates")
@@ -161,6 +161,12 @@ router.route("/results").get((req, res) => {
 });
 router.route("/contactus").get((req, res) => {
   res.render("contactus");
+});
+router.route('/successstories').get((req, res) => {
+	res.render('successStories');
+});
+router.route('/404error').get((req, res) => {
+	res.render('404error');
 });
 
 module.exports = router;
