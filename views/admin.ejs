@@ -10,6 +10,8 @@
 
 </head>
 <body>
+
+
     <form%- include('./layout/adminheader') %>
     <section class="dashboard">
     <div class="MenuBar">
@@ -79,14 +81,17 @@
                     <div class="grid-item1 item1">
                         <p>Current Image</p>
                         <% img.forEach(i => { %>
-                            <p><%= i.imgname %> </p>
+                            <p class="onclickimg"><%= i.imgname %></p>
+                            <div class="popupimg"><img src="<%= i.sliderimg %>" alt="image"></div>
+
                         <% }) %>
                        
                     </div>
                     <div class="grid-item1 item2">
                         <p>New Image</p>
                         <% img.forEach(i => { %>
-                            <input type="file" id="image" name="sliderimg" required />
+                            <input type="file" id="image" class="fileimg" name="sliderimg" required />
+                            <p> </p>
                         <% }) %>
                     </div>
                     <div class="grid-item1 item3">

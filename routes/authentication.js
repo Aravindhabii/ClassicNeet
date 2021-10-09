@@ -175,10 +175,12 @@ router.post('/imgupdate', upload.single('sliderimg'), (req, res) => {
 });
 
 router
-	.route('/latestupdatesform')
-	.get((req, res) => {
-		res.render('latestupdatesform');
-	})
-	.post((req, res) => {});
+  .route("/latestupdatesform")
+  .get((req, res) => {
+    res.render("latestupdatesform");
+  })
+  .post((req, res) => {
+     db.query()
+  });
 
 module.exports = router;
