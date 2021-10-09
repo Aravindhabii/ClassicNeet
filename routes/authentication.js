@@ -81,7 +81,9 @@ router
 			}
 		);
 	});
-
+const multer = require('multer');
+const { storage, cloudinary } = require('../cloudinary');
+const upload = multer({ storage });
 // router
 //   .route("/admin")
 //   .get((req, res) => {
@@ -119,10 +121,6 @@ router
 //     );
 //   });
 
-const multer = require('multer');
-const { storage, cloudinary } = require('../cloudianry');
-const upload = multer({ storage });
-
 router
 	.route('/homeslider')
 	.get((req, res) => {
@@ -149,32 +147,6 @@ router
 		);
 	});
 
-router.post('/imgupdate', upload.single('sliderimg'), (req, res) => {
-	if (typeof (req.body.sliderimg === 'string')) {
-		cloudinary.uploader.destroy(req.body.checkbox);
-		db.query(
-			'UPDATE homeslider SET sliderimg = ? AND imgname = ? WHERE cloudinaryname = ?',
-			[req.file.path, req.file.originalname, req.body.checkbox]
-		);
-		res.redirect('/adminheader');
-	} else {
-		req.body.sliderimg.forEach((img, index1) => {
-			0.3;
-			req.body.checkbox.forEach(async (check, index2) => {
-				if (index1 === index2) {
-					console.log(check);
-					await cloudinary.uploader.destroy(check);
-					db.query(
-						'UPDATE homeslider SET sliderimg = ? WHERE cloudinaryname = ?',
-						[req.file.path, check]
-					);
-				}
-			});
-		});
-		res.redirect('/adminheader');
-	}
-});
-
 router
 	.route('/latestupdatesform')
 	.get((req, res) => {
@@ -182,17 +154,6 @@ router
 	})
 	.post((req, res) => {
 		const link = req.body;
-		db.query(
-			"INSERT INTO latest_updates SET = ?"[latestupdates = link],(err,result)=>{
-				if(err){
-					console.log(err);
-				}
-				else if(result){
-					console.log(result)
-					res.rendirect('/admin')
-				}
-			}
-		)
+		
 	});
-
 module.exports = router;

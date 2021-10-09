@@ -1,0 +1,43 @@
+.MenuBar {
+	border-right: 2px solid #33ddff;
+	width: 20%;
+	display: flex;
+	position: relative;
+	font-size: 20px;
+	flex-direction: row;
+}
+
+.MenuBar a {
+	text-decoration: none;
+}
+.MenuBar li {
+	list-style: none;
+}
+.home span {
+	position: relative;
+	left: 13%;
+}
+.courses span {
+	position: relative;
+	left: 13%;
+}
+.AboutUs span {
+	position: relative;
+	left: 13%;
+}
+.DemoVideos span {
+	position: relative;
+	left: 13%;
+}
+.SuccessStories span {
+	position: relative;
+	left: 13%;
+}
+.Results span {
+	position: relative;
+	left: 13%;
+}
+.ContactUs span {
+	position: relative;
+	left: 13%;
+}

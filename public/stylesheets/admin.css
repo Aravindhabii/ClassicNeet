@@ -4,49 +4,15 @@
 	display: flex;
 }
 
-/* Menubar */
-.MenuBar {
-	border-right: 2px solid #33ddff;
-	width: 19%;
+.mainsection{
+	width: 100%;
+	height: 100vh;
+	position: relative;
 	display: flex;
-	position: absolute;
-	font-size: 20px;
 }
 
-.MenuBar a {
-	text-decoration: none;
-}
-.MenuBar li {
-	list-style: none;
-}
-.home span {
-	position: relative;
-	left: 13%;
-}
-.courses span {
-	position: relative;
-	left: 13%;
-}
-.AboutUs span {
-	position: relative;
-	left: 13%;
-}
-.DemoVideos span {
-	position: relative;
-	left: 13%;
-}
-.SuccessStories span {
-	position: relative;
-	left: 13%;
-}
-.Results span {
-	position: relative;
-	left: 13%;
-}
-.ContactUs span {
-	position: relative;
-	left: 13%;
-}
+/* Menubar */
+
 .Homepage {
 	width: 100%;
 	height: auto;
@@ -137,20 +103,27 @@
 /* Latest updates */
 .Latestupdates {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	height: 70vh;
+	width: 45%;
+}
+
+.popupdiv{
+	position: fixed;
+	height: 100%;
 	width: 100%;
 }
+
+
 .Latestupdates h2 {
-	top: 104%;
-	position: absolute;
+	position: relative;
 	left: 20%;
 }
 .grid2 {
-	position: absolute;
+	position: relative;
 	left: 40%;
-	top: 101%;
 	width: 40%;
 	height: 89vh;
 	display: grid;
