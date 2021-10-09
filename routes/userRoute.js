@@ -1,58 +1,58 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const mysql = require('mysql');
-const dotenv = require('dotenv');
-const db = require('../database');
+const mysql = require("mysql");
+const dotenv = require("dotenv");
+const db = require("../database");
 
-dotenv.config({ path: './.env' });
+dotenv.config({ path: "./.env" });
 
-router.route('/home').get((req, res) => {
-	db.query('SELECT * FROM homeslider', (error, response) => {
-		var arr = [];
-		if (error) {
-			// console.log(imganame);
-			console.log(error);
-		} else {
-			console.log(response.length);
-			for (let i = 0; i <= response.length - 1; i++) {
-				var image = {
-					sliderimg: response[i].sliderimg,
-					imgname: response[i].imgname
-				};
-				// console.log(image);
-				arr.push(image);
-			}
-			// console.log(response[0].sliderimg);
-			console.log(arr);
-			res.render('home', { img: arr });
-		}
-	});
+router.route("/home").get((req, res) => {
+  db.query("SELECT * FROM homeslider", (error, response) => {
+    var arr = [];
+    if (error) {
+      // console.log(imganame);
+      console.log(error);
+    } else {
+      console.log(response.length);
+      for (let i = 0; i <= response.length - 1; i++) {
+        var image = {
+          sliderimg: response[i].sliderimg,
+          imgname: response[i].imgname,
+        };
+        // console.log(image);
+        arr.push(image);
+      }
+      // console.log(response[0].sliderimg);
+      console.log(arr);
+      res.render("home", { img: arr });
+    }
+  });
 
-	// db.query(
-	//   "SELECT * FROM homeslider",
-	//   (error, response) => {
-	//     var arr = []
-	//     if (error) {
-	//       // console.log(imganame);
-	//       console.log(error);
-	//     } else {
-	//       console.log(response.length);
-	//       for(let i = 0; i <= response.length-1 ; i++){
+  // db.query(
+  //   "SELECT * FROM homeslider",
+  //   (error, response) => {
+  //     var arr = []
+  //     if (error) {
+  //       // console.log(imganame);
+  //       console.log(error);
+  //     } else {
+  //       console.log(response.length);
+  //       for(let i = 0; i <= response.length-1 ; i++){
 
-	//         var image = {sliderimg:response[i].sliderimg, imgname: response[i].imgname}
-	//         // console.log(image);
-	//         arr.push(image)
-	//       }
-	// console.log(response[0].sliderimg);
-	// console.log(arr);,{img : arr}
-	// res.render("home");
-	// }
-	// }
-	// );
+  //         var image = {sliderimg:response[i].sliderimg, imgname: response[i].imgname}
+  //         // console.log(image);
+  //         arr.push(image)
+  //       }
+  // console.log(response[0].sliderimg);
+  // console.log(arr);,{img : arr}
+  // res.render("home");
+  // }
+  // }
+  // );
 });
 
-const multer = require('multer');
-const { storage, cloudinary } = require('../cloudinary');
+const multer = require("multer");
+const { storage, cloudinary } = require("../cloudinary");
 const upload = multer({ storage });
 router
 	.route('/admin/sliderrevolution')
@@ -92,7 +92,7 @@ router
 						console.log(check);
 						await cloudinary.uploader.destroy(check);
 						db.query(
-							'UPDATE homeslider SET sliderimg = ? WHERE cloudinaryname = ?',
+							'UPDATE homeslider SET sliderimg ? WHERE cloudinaryname = ?',
 							[req.file.path, check]
 						);
 					}
@@ -102,42 +102,71 @@ router
 		}
 	});
 
-router.route('/admin/latestupdates').get((req, res) => {
-	res.render('admin/home/latestUpdates');
+router
+  .route("/admin/latestupdates")
+  .get((req, res) => {
+	  db.query("SELECT * FROM latest_updates", (err,response)=>{
+		  if (err) {
+			  console.log(err);
+		  }else{
+			  console.log(response);
+		  }
+	  })
+    res.render("admin/home/latestUpdates");
+  })
+  .post((req, res) => {
+    const link = req.body.link;
+    db.query(
+      "INSERT INTO latest_updates SET = ?" [latestupdates = link],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+        } else if (result) {
+          console.log(result);
+          res.redirect("/latestUpdates");
+        }
+      }
+    );
+  });
+
+router.route("/admin/ourtoppers").get((req, res) => {
+  res.render("admin/home/ourToppers");
 });
 
-router.route('/admin/ourtoppers').get((req, res) => {
-	res.render('admin/home/ourToppers');
+router
+  .route("/admin/neetachievements")
+  .get((req, res) => {
+    res.render("admin/home/neetAchievements");
+  })
+  .post((req, res) => {});
+
+router.route("/admin/studenttestimonials").get((req, res) => {
+  res.render("admin/home/studentTestimonials");
 });
 
-router.route('/admin/neetachievements').get((req, res) => {
-	res.render('admin/home/neetAchievements');
+router.route("/aboutus").get((req, res) => {
+  res.render("aboutus");
 });
-
-router.route('/admin/studenttestimonials').get((req, res) => {
-	res.render('admin/home/studentTestimonials');
+router.route("/coursesNEET").get((req, res) => {
+  res.render("coursesNEET");
 });
-
-router.route('/aboutus').get((req, res) => {
-	res.render('aboutus');
+router.route("/coursesIIT&Medical").get((req, res) => {
+  res.render("coursesIIT&Medical");
 });
-router.route('/coursesNEET').get((req, res) => {
-	res.render('coursesNEET');
+router.route("/Demovideos").get((req, res) => {
+  res.render("Demovideos");
 });
-router.route('/coursesIIT&Medical').get((req, res) => {
-	res.render('coursesIIT&Medical');
+router.route("/results").get((req, res) => {
+  res.render("results");
 });
-router.route('/coursesJEE').get((req, res) => {
-	res.render('coursesJEE');
+router.route("/contactus").get((req, res) => {
+  res.render("contactus");
 });
-router.route('/Demovideos').get((req, res) => {
-	res.render('Demovideos');
+router.route('/successstories').get((req, res) => {
+	res.render('successStories');
 });
-router.route('/results').get((req, res) => {
-	res.render('results');
-});
-router.route('/contactus').get((req, res) => {
-	res.render('contactus');
+router.route('/404error').get((req, res) => {
+	res.render('404error');
 });
 
 module.exports = router;

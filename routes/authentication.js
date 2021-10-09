@@ -153,6 +153,7 @@ router
 		res.render('latestupdatesform');
 	})
 	.post((req, res) => {
-		db.query();
+		const link = req.body;
+		
 	});
 module.exports = router;

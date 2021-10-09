@@ -74,7 +74,7 @@ a {
 /* Menubar */
 .MenuBar {
 	border-right: 2px solid #fff;
-	width: 17%;
+	/* width: 17%; */
 	display: flex;
 	position: relative;
 	justify-content: space-around;

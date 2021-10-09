@@ -11,17 +11,23 @@
 	</head>
 	<body>
 		<%- include('../../layout/adminheader') %> 
-        <%-include('../../layout/adminSidebar') %>
+        
+		<section class="mainsection">
+			<%-include('../../layout/adminSidebar') %>
 		<div class="Latestupdates">
+			<div class="popupdiv">
+				<input type="text" name="uploadlink" >
+			</div>
+
+
+
 			<h2>Latest updates</h2>
 			<div class="grid2">
 				<div class="grid-item2 item1">
 					<p>Current Link</p>
-					<p>Link1</p>
-					<p>Link2</p>
-					<p>Link3</p>
-					<p>Link4</p>
+					<input type="text" id="linkinput" value="">
 				</div>
+				
 				<div class="grid-item2 item2">
 					<p>Updates</p>
 					<input
@@ -58,6 +64,7 @@
 				<button type="button">Submit</button>
 			</div>
 		</div>
+		</section>
 
 		<script src="../../javascripts/adminPanel.js"></script>
 	</body>
