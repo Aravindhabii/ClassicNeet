@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Admin</title>
+		<link rel="stylesheet" href="../../stylesheets/adminheader.css" />
+		<link rel="stylesheet" href="../../stylesheets/admin.css" />
+		<link rel="stylesheet" href="../../stylesheets/adminSideBar.css" />
+	</head>
+	<body>
+		<%- include('../../layout/adminheader') %> 
+        <%-include('../../layout/adminSidebar') %>
+		<div class="Latestupdates">
+			<h2>Latest updates</h2>
+			<div class="grid2">
+				<div class="grid-item2 item1">
+					<p>Current Link</p>
+					<p>Link1</p>
+					<p>Link2</p>
+					<p>Link3</p>
+					<p>Link4</p>
+				</div>
+				<div class="grid-item2 item2">
+					<p>Updates</p>
+					<input
+						type="checkbox"
+						id="checkbox"
+						name="checkbox"
+						required
+						style="height: 20px; width: 20px"
+					/>
+					<input
+						type="checkbox"
+						id="checkbox"
+						name="checkbox"
+						required
+						style="height: 20px; width: 20px"
+					/>
+					<input
+						type="checkbox"
+						id="checkbox"
+						name="checkbox"
+						required
+						style="height: 20px; width: 20px"
+					/>
+					<input
+						type="checkbox"
+						id="checkbox"
+						name="checkbox"
+						required
+						style="height: 20px; width: 20px"
+					/>
+				</div>
+			</div>
+			<div class="subbutton2">
+				<button type="button">Submit</button>
+			</div>
+		</div>
+
+		<script src="../../javascripts/adminPanel.js"></script>
+	</body>
+</html>

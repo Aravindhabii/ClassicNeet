@@ -1,82 +1,40 @@
-.dashboard{
-    width: 100%;
-    height: 300vh;
-    display:flex;
+.dashboard {
+	width: 100%;
+	height: 300vh;
+	display: flex;
 }
 
 /* Menubar */
-.MenuBar{
-    border-right: 2px solid #33DDFF;
-    width: 19%;
-    display: flex;
-    position: absolute;
-	font-size: 20px;
-}
 
-.MenuBar a{
-    text-decoration: none;
-}
-.MenuBar li{
-    list-style: none;
-}
-.home span{
-    position: relative;
-    left: 13%;
-}
-.courses span{
-    position: relative;
-    left: 13%;
-}
-.AboutUs span{
-    position: relative;
-    left: 13%;
-}
-.DemoVideos span{
-    position: relative;
-    left: 13%;
-}
-.SuccessStories span{
-    position: relative;
-    left: 13%;
-}
-.Results span{
-    position: relative;
-    left: 13%;
-}
-.ContactUs span{
-    position: relative;
-    left: 13%;
-}
-.Homepage{
-    width: 100%;
-    height: auto;
-    overflow-y: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.Homepage {
+	width: 100%;
+	height: auto;
+	overflow-y: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 /* Sliderrevoluion */
-.sliderrevolution{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
+.sliderrevolution {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
 }
-.sliderrevolution h2{
-    bottom: 80%;
-    position: absolute;
-    left: 20%; 
+.sliderrevolution h2 {
+	bottom: 80%;
+	position: absolute;
+	left: 20%;
 }
 .grid1 {
 	position: absolute;
-    left: 43%;
-    top: 11%;
+	left: 43%;
+	top: 11%;
 	width: 35%;
 	height: 89vh;
 	display: grid;
-	grid-template-areas:
-		"cont1 cont2 cont3";
+	grid-template-areas: 'cont1 cont2 cont3';
 	align-content: center;
 	justify-content: center;
 }
@@ -92,78 +50,75 @@
 .grid-item1 {
 	height: 64vh;
 	width: 23vw;
-    font-size: 20px;
+	font-size: 20px;
 	display: flex;
 	justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
+	flex-direction: column;
+	align-items: center;
 	box-shadow: 0px 0px 0px 2px;
-    color:#33DDFF ;
+	color: #33ddff;
 }
 
-.popupimg{
-    position: fixed;
-    height: 80vh;
-    width: 80vw;
-    right: 50%;
-    transform: translateX(50%);
-    display: none;
-    z-index: 20px;
-    
+.popupimg {
+	position: fixed;
+	height: 80vh;
+	width: 80vw;
+	right: 50%;
+	transform: translateX(50%);
+	display: none;
+	z-index: 20px;
 }
 
-.popupimg img{
-    height: 100%;
-    width: 100%;
-    
+.popupimg img {
+	height: 100%;
+	width: 100%;
 }
 
-.subbutton1 button{
-    width: 145px;
-    padding: 6px 0;
-    border-radius: 25px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 25px;
-    border: 2px solid white;
-    background-color: white;
-    color: #0061FF;
-    display: flex;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    right: 8%;
-    bottom: 2%;
+.subbutton1 button {
+	width: 145px;
+	padding: 6px 0;
+	border-radius: 25px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 25px;
+	border: 2px solid white;
+	background-color: white;
+	color: #0061ff;
+	display: flex;
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+	right: 8%;
+	bottom: 2%;
+	display: none;
 }
 /* Latest updates */
-.Latestupdates{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    width: 100%;
+.Latestupdates {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70vh;
+	width: 100%;
 }
-.Latestupdates h2{
-    top: 104%;
-    position: absolute;
-    left: 20%; 
+.Latestupdates h2 {
+	top: 104%;
+	position: absolute;
+	left: 20%;
 }
 .grid2 {
 	position: absolute;
-    left: 40%;
-    top: 101%;
+	left: 40%;
+	top: 101%;
 	width: 40%;
 	height: 89vh;
 	display: grid;
-	grid-template-areas:
-		"cont1 cont2 cont3";
+	grid-template-areas: 'cont1 cont2 cont3';
 	align-content: center;
 	justify-content: center;
 }
 
 .item1 {
 	grid-area: cont1;
-
 }
 .item2 {
 	grid-area: cont2;
@@ -171,60 +126,58 @@
 .grid-item2 {
 	height: 64vh;
 	width: 30vw;
-    font-size: 20px;
+	font-size: 20px;
 	display: flex;
 	justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
+	flex-direction: column;
+	align-items: center;
 	box-shadow: 0px 0px 0px 2px;
-    color: #fff;
+	color: #fff;
 }
-.subbutton2 button{
-    width: 145px;
-    padding: 6px 0;
-    border-radius: 25px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 25px;
-    border: 2px solid white;
-    background-color: white;
-    color: #0061FF;
-    display: flex;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    right: 12%;
-    top: 182%;
+.subbutton2 button {
+	width: 145px;
+	padding: 6px 0;
+	border-radius: 25px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 25px;
+	border: 2px solid white;
+	background-color: white;
+	color: #0061ff;
+	display: flex;
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+	right: 12%;
+	top: 182%;
 }
 /* Our Toppers */
-.OurToppers{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    width: 100%;
+.OurToppers {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70vh;
+	width: 100%;
 }
-.OurToppers h2{
-    top: 192%;
-    position: absolute;
-    left: 20%; 
+.OurToppers h2 {
+	top: 192%;
+	position: absolute;
+	left: 20%;
 }
 .grid3 {
 	position: absolute;
-    left: 40%;
-    top: 192%;
+	left: 40%;
+	top: 192%;
 	width: 40%;
 	height: 89vh;
 	display: grid;
-	grid-template-areas:
-		"cont1 cont2 cont3 cont4 cont5";
+	grid-template-areas: 'cont1 cont2 cont3 cont4 cont5';
 	align-content: center;
 	justify-content: center;
 }
 
 .item1 {
 	grid-area: cont1;
-
 }
 .item2 {
 	grid-area: cont2;
@@ -244,53 +197,52 @@
 .grid-item3 {
 	height: 64vh;
 	width: 15vw;
-    font-size: 20px;
+	font-size: 20px;
 	display: flex;
 	justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
+	flex-direction: column;
+	align-items: center;
 	box-shadow: 0px 0px 0px 2px;
-    color: #fff;
+	color: #fff;
 }
-.subbutton3 button{
-    width: 145px;
-    padding: 6px 0;
-    border-radius: 25px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 25px;
-    border: 2px solid white;
-    background-color: white;
-    color: #0061FF;
-    display: flex;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    right: 12%;
-    top:275%;
+.subbutton3 button {
+	width: 145px;
+	padding: 6px 0;
+	border-radius: 25px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 25px;
+	border: 2px solid white;
+	background-color: white;
+	color: #0061ff;
+	display: flex;
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+	right: 12%;
+	top: 275%;
 }
 /* Neet Achievments */
-.NeetAchievements{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    width: 100%;
+.NeetAchievements {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70vh;
+	width: 100%;
 }
-.NeetAchievements h2{
-    top: 285%;
-    position: absolute;
-    left: 20%; 
+.NeetAchievements h2 {
+	top: 285%;
+	position: absolute;
+	left: 20%;
 }
 .grid4 {
 	position: absolute;
-    left: 40%;
-    top: 270%;
+	left: 40%;
+	top: 270%;
 	width: 40%;
 	height: 72vh;
 	display: grid;
-	grid-template-areas:
-		"cont1 cont2 cont3 cont4 cont5 cont6 cont7";
+	grid-template-areas: 'cont1 cont2 cont3 cont4 cont5 cont6 cont7';
 	align-content: center;
 	justify-content: center;
 }
@@ -315,53 +267,52 @@
 .grid-item4 {
 	height: 18vh;
 	width: 10vw;
-    font-size: 20px;
+	font-size: 20px;
 	display: flex;
 	justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
+	flex-direction: column;
+	align-items: center;
 	box-shadow: 0px 0px 0px 2px;
-    color: #fff;
+	color: #fff;
 }
-.subbutton4 button{
-    width: 145px;
-    padding: 6px 0;
-    border-radius: 25px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 25px;
-    border: 2px solid ;
-    background-color: white;
-    color: #0061FF;
-    display: flex;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    right: 12%;
-    top:321%;
+.subbutton4 button {
+	width: 145px;
+	padding: 6px 0;
+	border-radius: 25px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 25px;
+	border: 2px solid;
+	background-color: white;
+	color: #0061ff;
+	display: flex;
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+	right: 12%;
+	top: 321%;
 }
 /* Students Testimonial */
-.StudentsTestimonials{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    width: 100%;
+.StudentsTestimonials {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70vh;
+	width: 100%;
 }
-.StudentsTestimonials h2{
-    top: 350%;
-    position: absolute;
-    left: 20%; 
+.StudentsTestimonials h2 {
+	top: 350%;
+	position: absolute;
+	left: 20%;
 }
 .grid5 {
 	position: absolute;
-    left: 40%;
-    top:360%;
+	left: 40%;
+	top: 360%;
 	width: 40%;
 	height: 72vh;
 	display: grid;
-	grid-template-areas:
-		"cont1 cont2 cont3 cont4 cont5 cont6";
+	grid-template-areas: 'cont1 cont2 cont3 cont4 cont5 cont6';
 	align-content: center;
 	justify-content: center;
 }
@@ -386,28 +337,28 @@
 .grid-item5 {
 	height: 18vh;
 	width: 10vw;
-    font-size: 20px;
-    display: flex;
+	font-size: 20px;
+	display: flex;
 	justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
+	flex-direction: column;
+	align-items: center;
 	box-shadow: 0px 0px 0px 2px;
-    color: #fff;
+	color: #fff;
 }
-.subbutton5 button{
-    width: 145px;
-    padding: 6px 0;
-    border-radius: 25px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 25px;
-    border: 2px solid white;
-    background-color: white;
-    color: #0061FF;
-    display: flex;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    right: 12%;
-    top:400%;
+.subbutton5 button {
+	width: 145px;
+	padding: 6px 0;
+	border-radius: 25px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 25px;
+	border: 2px solid white;
+	background-color: white;
+	color: #0061ff;
+	display: flex;
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+	right: 12%;
+	top: 400%;
 }

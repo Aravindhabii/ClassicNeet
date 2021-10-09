@@ -73,10 +73,7 @@ var swiper2 = new Swiper(".mySwiper2", {
     el: ".swiper-pagination",
     clickable: true,
   },
-  autoplay: {
-    delay: 8000,
-    disableOnInteraction: false,
-  },
+  
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",

@@ -78,7 +78,7 @@
 } */
 .home {
 	position: relative;
-	height: 100vh;
+	height: 90vh;
 	width: 100%;
 	display: flex;
 }
@@ -112,13 +112,13 @@
 	right: 0%;
 	top: 0%;
 	right: 5%;
-	top: 50%;
+	top: 55%;
 	transform: scale(1.05);
 }
 .sliderRev {
 	margin-top: 1rem;
 	background-color: #2b72e4;
-	height: 70%;
+	height: 80%;
 	width: 100%;
 	margin-left: auto;
 	/* margin-right: auto; */
@@ -256,19 +256,19 @@
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(255, 255, 255, 0.615);
+	background-color: #F9FBFA;
 	z-index: 1;
 }
 .CalanderEvents {
-	position: absolute;
-	top: 6%;
-	right: 16%;
+	text-align: center;
+	/* top: 6%;
+	right: 16%; */
 }
 .calenderMain {
-	position: absolute;
-	margin-top: 1rem;
+	position: relative;
+	/* margin-top: 1rem;
 	top: 15%;
-	left: 10%;
+	left: 10%; */
 }
 .calenderContent {
 	text-align: center;
@@ -288,11 +288,23 @@
 	color: white;
 	height: 100%;
 	width: 20%;
-	padding: 1.6rem;
+	padding: .85rem;
 	border-radius: 20px 0px 20px 0px;
 	font-size: 22px;
   text-align: center;
   transition: .3s all ease-in-out;
+
+}
+p {
+	margin-bottom: 0rem !important;
+}
+.month {
+	font-size: 14px;
+	font-weight: 600;
+}
+.dateMain {
+	font-size: 24px;
+	font-weight: 600;
 }
 .backgroundMain {
 	background-color: #f9fbfa;
@@ -358,35 +370,35 @@
 	width: 100%;
 	height: 65vh;
 }
-.section-2 .div-2 {
+.sec-2 .div-2 {
   position: relative;
-  width: 50%;
-  height: 100%;
+  
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background-color: black; */
+  
   /* margin-bottom: 15rem; */
   z-index: 5;
 }
-.section-2 .div-1 {
+.sec-2 .div-1 {
 	position: relative;
-	width: 50%;
-	height: 100%;
-	align-items: flex-start;
+
+	/* align-items: flex-start;
 	justify-content: flex-start;
-	display: flex;
+	display: flex; */
 	z-index: 5;
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
 	/* box-shadow: 5px 5px 20px rgba(4, 113, 255, 0.5); */
 	/* background-color: #1E2886; */
 	/* padding-left: 6rem; */
 }
-.section-2 .div-1 h1 {
+.sec-2 .div-1 h1 {
   
-    margin-top: 1.5rem;
-    margin-right: 10rem;
+   margin-bottom: 3rem;
+   font-size: 30px;
+     /* margin-right: 10rem; */
     
 
 }
@@ -395,7 +407,7 @@
 }
 .div-2-title {
 	margin-bottom: 3rem;
-	/* font-size: 20px; */
+	font-size: 30px;
 	/* border: 1px solid #1E2886; */
 }
 .space {
@@ -420,8 +432,8 @@
 /* courses */
 .Hexagon {
 	position: relative;
-	width: 90%;
-	height: 150vh;
+	width: 100%;
+	/* height: 150vh; */
 	display: flex;
 }
 
@@ -473,7 +485,7 @@
   height: 73%; 
 } */
 .HexagonDiv {
-	width: 80%;
+	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
@@ -502,28 +514,89 @@
 .building3 {
 	height: 23%;
 	width: 50%;
-	top: 51%;
+	top: 57%;
 	position: absolute;
 	z-index: 5;
 	left: 51%;
   opacity: .3;
 }
 .cardsDiv {
+	position: relative;
 	display: flex;
 	margin: 5rem 0rem;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 70vh;
+	width: 100% ;
+	
 }
+/* .cardsDiv {
+	position: relative;
+	display: flex;
+	margin: 5rem 0rem;
+	align-items: center;
+	justify-content: space-evenly;
+	height: 70vh;
+	width: 100% ;
+	
+} */
 .imgHeader {
 	text-align: center;
 	color: rgb(0, 0, 0);
+	font-size: 20px;
+	margin-top: 1.5rem;
 }
 .box1,
 .box2,
 .box3 {
-	display: flex;
+	
 	transition: all 0.5s ease-in-out;
-	justify-content: center;
+	
+	text-align: center;
+	
 	position: relative;
 }
+/* .box1,
+.box2,
+.box3 {
+	height: 25rem;
+	width: 22rem;
+	transition: all 0.5s ease-in-out;
+	
+	text-align: center;
+	box-shadow: 5px 5px 100px rgba(0, 0, 0, 0.2);
+	position: relative;
+	display: flex;
+	/* justify-content: center;
+	align-items: center; 
+	
+} 
+/* .box1 {
+	background: url('../images/home/jee.jpg') center/cover;
+}
+.box2 {
+	background: url('../images/home/iit\ &medical.jpg') center/cover;
+}.box3 {
+	background: url('../images/home/neet.jpg') center/cover;
+} */
+.box1 h3,
+.box2 h3,
+.box3 h3 {
+	font-size: 25px;
+	
+	z-index: 5;
+}
+/* .box1::after,
+.box2::after,
+.box3::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left:0;
+	background: rgba(0, 0, 0, 0.3);
+}  */
 .right {
 	position: relative;
 	display: flex;
@@ -532,27 +605,26 @@
 	margin-right: auto;
 }
 .hexaimg {
-	width: 70%;
+	width: 80%;
+	/* height: 100%; */
 	transition: 0.5s all ease-in-out;
+	
+	/* clip-path: circle(40%); */
+	transition: all .3s ease-in-out;
 }
-.box1:hover,
+/* .hexaimg:hover {
+	clip-path: circle(100%);
+} */
+/* .box1:hover,
 .box2:hover,
-.box3:hover {
-	transform: scale(1.2);
-}
-.box1:hover .imgContent,
-.box2:hover .imgContent,
-.box3:hover .imgContent {
-	background-color: rgba(255, 255, 255, 0.893);
-}
-.box1:hover p,
-.box2:hover p,
-.box3:hover p {
-	height: 4rem;
-}
+.box3:hover .box1 img {
+	border-radius: 100%;
+} */
+
 .hexaimg img {
 	box-shadow: 2px 2px 60px rgba(0, 0, 0, 0.9);
-	
+	border-radius: 100%;
+	overflow: hidden;
 }
 .imgContent {
 	position: absolute;
@@ -794,8 +866,8 @@
 .testimonials {
 	border: 1px solid black;
 	border-radius: 14px;
-	height: 15rem;
-	width: 20rem;
+	height: 14rem;
+	width: 24rem;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -1131,7 +1203,12 @@
 .name {
   font-size: 20px;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
+}
+.college {
+	font-size: 20px;
+	font-weight: 400;
+	margin-bottom: .5rem !important;
 }
 .score {
   font-size: 20px;
@@ -1165,4 +1242,18 @@
 	margin-left: auto;
 	margin-right: auto;
 	
+}
+.sec-2 {
+	/* background-color: blanchedalmond; */
+	height: 86vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+.updates {
+
+}
+.social {
+	position: relative;
+	top: 50%;
 }

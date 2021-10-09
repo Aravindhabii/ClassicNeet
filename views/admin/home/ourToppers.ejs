@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../../stylesheets/adminheader.css" />
+    <link rel="stylesheet" href="../../stylesheets/admin.css" />
+    <link rel="stylesheet" href="../../stylesheets/adminSideBar.css" />
+</head>
+<body>	<%- include('../../layout/adminheader') %> 
+    <%-include('../../layout/adminSidebar') %>
+    <div class="OurToppers">
+        <h2>OurToppers</h2> 
+        <form action="/ourtoppers?_method=PUT" method="post" enctype="multipart/form-data">
+            <div class="grid3">
+                <div class="grid-item3 item1">
+                    <p>Name</p>
+                </div>
+                <div class="grid-item3 item2">
+                    <p>Score</p>
+                </div>
+                <div class="grid-item3 item3">
+                    <p>Collage Name</p>
+                </div>       
+                <div class="grid-item3 item4">
+                    <p>Current Image</p>
+                </div>
+                <div class="grid-item3 item5">
+                    <p>New Image</p>
+                    <input type="file" id="image" name="sliderimg" required />    
+                </div>
+                <!-- <div class="grid-item3 item6">
+                    <p>Update</p>
+                    <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;" />
+                    <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
+                    <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
+                    <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
+                </div> -->
+            </div></form>
+            <div class="subbutton3">
+                <button type="button">Add</button>
+                <button type="button">Remove</button>
+                <button type="button">Submit</button>
+            </div>
+      </div>
+      <script src="../../javascripts/adminPanel.js"></script>
+</body>
+</html>
