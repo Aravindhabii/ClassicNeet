@@ -10,7 +10,23 @@
 //     }
 //   });
 // });
-var la = ["l", "o", "a", "v"];
-la.forEach((a, icn) => {
-  console.log(icn);
+
+
+const popup = document.querySelector(".popupimg");
+const popupimg = document.querySelector('.popupimg img');
+const trigger = document.querySelector('.onclickimg');
+const fileimg = document.querySelector(".fileimg");
+const Homepage = document.querySelector(".Homepage");
+
+
+
+fileimg.addEventListener('onchange',(e)=>{
+    console.log(e); 
+})
+
+
+trigger.addEventListener("click", () => {
+  console.log("hello");
+  popup.style.display = "block";
+Homepage.style.backdropFilter = 'blur(20px)';
 });
