@@ -24,17 +24,6 @@ db.connect((err) => {
   }
 });
 
-<<<<<<< HEAD
-db.connect((err) => {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log('Mysql connected');
-	}
-});
-
-=======
->>>>>>> 0938c967301b50282f2f4100d9c168bb0e0e46db
 const app = express();
 
 const sessionConfig = {

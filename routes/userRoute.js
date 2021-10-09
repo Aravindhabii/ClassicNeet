@@ -93,5 +93,8 @@ router.route('/contactus').get((req, res) => {
 router.route('/successstories').get((req, res) => {
 	res.render('successStories');
 });
+router.route('/404error').get((req, res) => {
+	res.render('404error');
+});
 
 module.exports = router;
