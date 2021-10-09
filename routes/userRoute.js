@@ -180,5 +180,11 @@ router.route('/results').get((req, res) => {
 router.route('/contactus').get((req, res) => {
 	res.render('contactus');
 });
+router.route('/successstories').get((req, res) => {
+	res.render('successStories');
+});
+router.route('/404error').get((req, res) => {
+	res.render('404error');
+});
 
 module.exports = router;

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin panel</title>
+    <link rel="stylesheet" href="stylesheets/adminheader.css"/>
+    <link rel="stylesheet" href="stylesheets/admin.css"/>
+
+</head>
+<body>
+
+
+    <%- include('./layout/adminheader') %>
+    <section class="dashboard">
+    <div class="MenuBar">
+        <ul>
+            <div class="home">
+                <li class=""><a href=""><h4>HOME</h4></a></li>
+                <span>
+                    <li class=""><a href="">Slider Revolution</a></li>
+                    <li class=""><a href="">Latest Updates</a></li>
+                    <li class=""><a href="">Our Toppers</a></li>
+                    <li class=""><a href="">Neet Achievements</a></li>
+                    <li class=""><a href="">Students Testimonials</a></li>
+                </span>
+            </div>
+            <div class="courses">
+                <li class=""><a href=""><h4>COURSES</h4></a></li>
+                <span>
+                    <li class=""><a href="">Courses Neet</a></li>
+                    <li class=""><a href="">Courses jee</a></li>
+                    <li class=""><a href="">Courses iit & medical</a></li>
+                </span>
+            </div>
+            <div class="AboutUs">
+                <li class=""><a href=""><h4>ABOUT US</h4></a></li>
+                <span>
+                    <li class=""><a href="">History</a></li>
+                    <li class=""><a href="">Our Leaders</a></li>
+                </span>
+            </div>
+            <div class="DemoVideos">
+                <li class=""><a href=""><h4>DEMO VIDEOS</h4></a></li>
+                <span>
+                    <li class=""><a href="">Videos</a></li>
+                </span>
+            </div>
+            <div class="SuccessStories">
+                <li class=""><a href=""><h4>SUCCESS STORIES</h4></a></li>
+                <span>
+                    <li class=""><a href="">Image</a></li>
+                    <li class=""><a href="">Videos</a></li>
+                </span>
+            </div>
+            <div class="Results">
+                <li class=""><a href=""><h4>RESULTS</h4></a></li>
+                <span>
+                    <li class=""><a href="">Image</a></li>
+                    <li class=""><a href="">Name</a></li>
+                    <li class=""><a href="">Neet Scores</a></li>
+                    <li class=""><a href="">Collage Group</a></li>
+                </span>
+            </div>
+            <div class="ContactUs">
+                <li class=""><a href=""><h4>CONTACT US</h4></a></li>
+                <span>
+                    <li class=""><a href="">Name</a></li>
+                    <li class=""><a href="">Phone Number</a></li>
+                    <li class=""><a href="">Message</a></li>
+                </span>
+            </div>
+      </ul>
+    </div> 
+    <div class="Homepage">
+        <form action="/imgupdate" method="post" class="imgform" enctype="multipart/form-data">
+          <div class="sliderrevolution">
+            <h2>Slider Revolution</h2> 
+            	<div class="grid1">
+                    <div class="grid-item1 item1">
+                        <p>Current Image</p>
+                        <% img.forEach(i => { %>
+                            <p class="onclickimg"><%= i.imgname %></p>
+                            <div class="popupimg"><img src="<%= i.sliderimg %>" alt="image"></div>
+
+                        <% }) %>
+                       
+                    </div>
+                    <div class="grid-item1 item2">
+                        <p>New Image</p>
+                        <% img.forEach(i => { %>
+                            <input type="file" id="image" class="fileimg" name="sliderimg" required />
+                            <p> </p>
+                        <% }) %>
+                    </div>4
+
+                    <div class="grid-item1 item3">
+                        <p>Updates</p> 
+                        <% img.forEach(i => { %>
+                            <input type="checkbox" id="checkbox" class='updatesCheckbox' name="checkbox" value='<%= i.cloudinaryName %>' required style="height: 20px; width: 20px;" />
+                        <% }) %>
+                    </div>
+                </div>
+                <div class="subbutton1">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+          </div>
+          <div class="Latestupdates">
+            <h2>Latest updates</h2> 
+            	<div class="grid2">
+                    <div class="grid-item2 item1">
+                        <p>Current Link</p>
+                        <p>Link1</p>
+                        <p>Link2</p>
+                        <p>Link3</p>
+                        <p>Link4</p>
+                    </div>
+                    <div class="grid-item2 item2">
+                        <p>Updates</p>
+                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;" />
+                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
+                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
+                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
+                    </div>
+                </div>
+                <div class="subbutton2">
+                    <button type="button">Submit</button>
+                </div>
+          </div>
+          <div class="OurToppers">
+            <h2>OurToppers</h2> 
+            	<div class="grid3">
+                    <div class="grid-item3 item1">
+                        <p>Name</p>
+                    </div>
+                    <div class="grid-item3 item2">
+                        <p>Score</p>
+                    </div>
+                    <div class="grid-item3 item3">
+                        <p>Collage Name</p>
+                    </div>       
+                    <div class="grid-item3 item4">
+                        <p>Current Image</p>
+                    </div>
+                    <div class="grid-item3 item5">
+                        <p>New Image</p>
+                        <input type="file" id="image" name="sliderimg" required />
+                        <input type="file" id="image" name="sliderimg" required />
+                        <input type="file" id="image" name="sliderimg" required />
+                        <input type="file" id="image" name="sliderimg" required />
+                    </div>
+                    <div class="grid-item3 item6">
+                        <p>Update</p>
+                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;" />
+                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
+                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
+                        <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
+                    </div>
+                </div>
+                <div class="subbutton3">
+                    <button type="button">Submit</button>
+                </div>
+          </div>
+          <div class="NeetAchievements">
+            <h2>Neet Achievements</h2> 
+            	<div class="grid4">
+                    <div class="grid-item4 item1">
+                        <p>Current Image</p>
+                    </div>
+                    <div class="grid-item4 item2">
+                        <p>New Image</p>
+                    </div>  
+                    <div class="grid-item4 item3">
+                        <p>MBBS Seat</p>
+                    </div>
+                    <div class="grid-item4 item4">
+                        <p>Consecutive Years</p>
+                    </div>
+                    <div class="grid-item4 item5">
+                        <p>Success rate</p>
+                    </div>
+                    <div class="grid-item4 item6">
+                        <p>No. of Admission</p>
+                    </div>
+                    <div class="grid-item4 item7">
+                        <p>Update</p>
+                    </div>
+                </div>
+                <div class="subbutton4">
+                    <button type="button">Submit</button>
+                </div>
+          </div>
+          <div class="StudentsTestimonials">
+            <h2>Students testimonials</h2> 
+            	<div class="grid5">
+                    <div class="grid-item5 item1">
+                        <p>Current Image</p>
+                    </div>
+                    <div class="grid-item5 item2">
+                        <p>New Image</p>
+                    </div>  
+                    <div class="grid-item5 item3">
+                        <p>Name</p>
+                    </div>
+                    <div class="grid-item5 item5">
+                        <p>Content</p>
+                    </div>
+                    <div class="grid-item5 item3">
+                        <p>College Name</p>
+                    </div>
+                    <div class="grid-item5 item3">
+                        <li class=""><a href=""><b>Watch On Youtube!</b></a></li>
+                    </div>
+                </div>
+                <div class="subbutton5">
+                    <button type="button">Submit</button>
+                </div>
+          </div>
+          
+    </section>   
+    <script src="javascripts/adminPanel.js"></script>
+</body>
+</html>
