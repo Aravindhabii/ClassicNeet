@@ -5,48 +5,7 @@
 }
 
 /* Menubar */
-.MenuBar {
-	border-right: 2px solid #33ddff;
-	width: 19%;
-	display: flex;
-	position: absolute;
-	font-size: 20px;
-}
 
-.MenuBar a {
-	text-decoration: none;
-}
-.MenuBar li {
-	list-style: none;
-}
-.home span {
-	position: relative;
-	left: 13%;
-}
-.courses span {
-	position: relative;
-	left: 13%;
-}
-.AboutUs span {
-	position: relative;
-	left: 13%;
-}
-.DemoVideos span {
-	position: relative;
-	left: 13%;
-}
-.SuccessStories span {
-	position: relative;
-	left: 13%;
-}
-.Results span {
-	position: relative;
-	left: 13%;
-}
-.ContactUs span {
-	position: relative;
-	left: 13%;
-}
 .Homepage {
 	width: 100%;
 	height: auto;
