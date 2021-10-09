@@ -22,9 +22,10 @@
 }
 
 .carousel-inner {
-	width: 95% !important;
-	height: 90%;
+	width: 97% !important;
+	height: 94%;
 	border-radius: 20px;
+	/* box-shadow: 5px 5px 60px rgba(0, 0, 0, 0.3); */
 }
 
 .carousel {
@@ -362,7 +363,7 @@ p {
 	margin: 2rem 0rem;
 	line-height: 2rem;
 	border-radius: 20px;
-	background-color: #ffffff;
+	background-color: #ffffff98;
 	text-decoration: none;
 }
 .news-box .section2 .div-1 img {
@@ -397,7 +398,7 @@ p {
 .sec-2 .div-1 h1 {
   
    margin-bottom: 3rem;
-   font-size: 30px;
+   font-size: 25px;
      /* margin-right: 10rem; */
     
 
@@ -407,7 +408,7 @@ p {
 }
 .div-2-title {
 	margin-bottom: 3rem;
-	font-size: 30px;
+	font-size: 25px;
 	/* border: 1px solid #1E2886; */
 }
 .space {
@@ -509,7 +510,7 @@ p {
   position: absolute;
   z-index: 5;
   left: 52%;
-  opacity: .3;
+  opacity: .5;
 }
 .building3 {
 	height: 23%;
@@ -518,7 +519,7 @@ p {
 	position: absolute;
 	z-index: 5;
 	left: 51%;
-  opacity: .3;
+  opacity: .5;
 }
 .cardsDiv {
 	position: relative;
@@ -544,9 +545,9 @@ p {
 	text-align: center;
 	color: rgb(0, 0, 0);
 	font-size: 20px;
-	margin-top: 1.5rem;
+	/* margin-top: 1.5rem; */
 }
-.box1,
+/* .box1,
 .box2,
 .box3 {
 	
@@ -555,19 +556,19 @@ p {
 	text-align: center;
 	
 	position: relative;
-}
-/* .box1,
+} */
+.box1,
 .box2,
 .box3 {
 	height: 25rem;
 	width: 22rem;
 	transition: all 0.5s ease-in-out;
-	
 	text-align: center;
 	box-shadow: 5px 5px 100px rgba(0, 0, 0, 0.2);
 	position: relative;
 	display: flex;
-	/* justify-content: center;
+	flex-direction: column;
+	justify-content: space-around;
 	align-items: center; 
 	
 } 
@@ -582,7 +583,7 @@ p {
 .box1 h3,
 .box2 h3,
 .box3 h3 {
-	font-size: 25px;
+	font-size: 20px;
 	
 	z-index: 5;
 }
@@ -605,10 +606,10 @@ p {
 	margin-right: auto;
 }
 .hexaimg {
-	width: 80%;
-	/* height: 100%; */
+	width: 95%;
+	height: 70%;
 	transition: 0.5s all ease-in-out;
-	
+	margin: .5rem;
 	/* clip-path: circle(40%); */
 	transition: all .3s ease-in-out;
 }
@@ -1233,7 +1234,7 @@ p {
 	margin-left: auto;
 	margin-right: auto;
 	height: 80vh;
-	border-radius: 20px;
+	border-radius:20px;
 	box-shadow: 5px 5px 100px rgba(0, 0, 0, 0.3);
 }
 .markFlex {
@@ -1256,4 +1257,16 @@ p {
 .social {
 	position: relative;
 	top: 50%;
+}
+.read {
+	background:linear-gradient(60deg,#02c3d8,#0061FF);
+	color: white;
+	text-decoration: none;
+	border-radius: 20px;
+	padding: .5rem 1rem;
+	margin-bottom: 1rem;
+}
+.read:hover {
+	background:black;
+	color: white;
 }

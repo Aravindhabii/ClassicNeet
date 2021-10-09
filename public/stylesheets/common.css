@@ -39,6 +39,7 @@ nav {
   justify-content: space-around;
   list-style: none;
   left: 4%;
+  padding-top: 1rem;
 }
 
 .navlinks {
@@ -52,7 +53,7 @@ nav {
   font-weight: 1200;
   font-size: 20px;
   font-family: "Roboto", sans-serif;
-  padding: 1.2rem;
+  padding: 1rem;
   border-radius: 20px 0px 20px 0px;
 }
 /* .navlinks a:hover {

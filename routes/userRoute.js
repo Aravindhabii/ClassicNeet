@@ -127,6 +127,9 @@ router.route('/coursesNEET').get((req, res) => {
 router.route('/coursesIIT&Medical').get((req, res) => {
 	res.render('coursesIIT&Medical');
 });
+router.route('/coursesJEE').get((req, res) => {
+	res.render('coursesJEE');
+});
 router.route('/Demovideos').get((req, res) => {
 	res.render('Demovideos');
 });
