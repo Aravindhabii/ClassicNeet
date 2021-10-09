@@ -53,7 +53,7 @@ nav {
   font-size: 20px;
   font-family: "Roboto", sans-serif;
   padding: 1.2rem;
-  border-radius: 10px;
+  border-radius: 20px 0px 20px 0px;
 }
 /* .navlinks a:hover {
 	background-color: #369AFE;
