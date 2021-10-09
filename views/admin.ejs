@@ -10,7 +10,7 @@
 
 </head>
 <body>
-
+<div class="preview"></div>
 
     <%- include('./layout/adminheader') %>
     <section class="dashboard">
@@ -82,7 +82,8 @@
                         <p>Current Image</p>
                         <% img.forEach(i => { %>
                             <p class="onclickimg"><%= i.imgname %></p>
-                            <div class="popupimg"><img src="<%= i.sliderimg %>" alt="image"></div>
+                            <span class="currentPreviewSpan">Preview</span>
+                            <span class="currentSliderimgurl"><%= i.sliderimg %> </span>
 
                         <% }) %>
                        
@@ -90,14 +91,15 @@
                     <div class="grid-item1 item2">
                         <p>New Image</p>
                         <% img.forEach(i => { %>
-                            <input type="file" id="image" class="fileimg" name="sliderimg" required />
-                            <p> </p>
+                            <input type="file" id="image" accept="image/*" class="fileimg" name="sliderimg" />
+                            <span class="previewSpan">Preview</span>
+                            <span class="sliderimgurl"></span>
                         <% }) %>
                     </div>
                     <div class="grid-item1 item3">
                         <p>Updates</p> 
                         <% img.forEach(i => { %>
-                            <input type="checkbox" id="checkbox" class='updatesCheckbox' name="checkbox" value='<%= i.cloudinaryName %>' required style="height: 20px; width: 20px;" />
+                            <input type="checkbox" id="checkbox" class='updatesCheckbox' name="checkbox" value='<%= i.cloudinaryName %>' style="height: 20px; width: 20px;" />
                         <% }) %>
                     </div>
                 </div>
