@@ -181,7 +181,18 @@ router
 		res.render('latestupdatesform');
 	})
 	.post((req, res) => {
-		db.query();
+		const link = req.body;
+		db.query(
+			"INSERT INTO latest_updates SET = ?"[latestupdates = link],(err,result)=>{
+				if(err){
+					console.log(err);
+				}
+				else if(result){
+					console.log(result)
+					res.rendirect('/admin')
+				}
+			}
+		)
 	});
 
 module.exports = router;
