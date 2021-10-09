@@ -92,7 +92,7 @@ router
 						console.log(check);
 						await cloudinary.uploader.destroy(check);
 						db.query(
-							'UPDATE homeslider SET sliderimg = ? WHERE cloudinaryname = ?',
+							'UPDATE homeslider SET sliderimg ? WHERE cloudinaryname = ?',
 							[req.file.path, check]
 						);
 					}
@@ -106,9 +106,53 @@ router.route('/admin/latestupdates').get((req, res) => {
 	res.render('admin/home/latestUpdates');
 });
 
-router.route('/admin/ourtoppers').get((req, res) => {
-	res.render('admin/home/ourToppers');
-});
+router
+	.route('/admin/ourtoppers')
+	.get((req, res) => {
+		db.query('SELECT * FROM ourtoppers', (error, response) => {
+			var arr = [];
+			if (error) {
+				console.log(error);
+			} else {
+				for (let i = 0; i <= response.length - 1; i++) {
+					var image = {
+						name: response[i].name,
+						collegename: response[i].collegename,
+						cloudinaryname: response[i].cloudinaryname,
+						studentimg: response[i].studentimg
+					};
+					arr.push(image);
+				}
+				res.render('admin/home/ourToppers', { students: arr });
+			}
+		});
+	})
+	.post(upload.single('sliderimg'), (req, res) => {
+		db.query(
+			'INSERT INTO ourtoppers SET ?',
+			{
+				name: req.body.name,
+				collegename: req.body.collegeName,
+				studentimg: req.file.path,
+				cloudinaryname: req.file.filename.split('/')[1]
+			},
+			(err, response) => {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log(response);
+				}
+			}
+		);
+		res.redirect('/admin/ourtoppers');
+	})
+	.put(upload.single('sliderimg'), (req, res) => {
+		db.query('UPDATE ourtoppers SET studentimg = ? WHERE cloudinaryname = ?', [
+			req.file.path,
+			req.body.cloudinaryname
+		]);
+		res.redirect('/admin/ourtoppers');
+	});
 
 router.route('/admin/neetachievements').get((req, res) => {
 	res.render('admin/home/neetAchievements');

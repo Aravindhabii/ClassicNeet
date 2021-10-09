@@ -168,7 +168,6 @@
 .grid3 {
 	position: absolute;
 	left: 40%;
-	top: 192%;
 	width: 40%;
 	height: 89vh;
 	display: grid;
@@ -206,6 +205,12 @@
 	box-shadow: 0px 0px 0px 2px;
 	color: #fff;
 }
+
+.subbutton3 {
+	display: flex;
+	position: relative;
+}
+
 .subbutton3 button {
 	width: 145px;
 	padding: 6px 0;
@@ -216,13 +221,12 @@
 	border: 2px solid white;
 	background-color: white;
 	color: #0061ff;
-	display: flex;
-	position: absolute;
-	align-items: center;
-	justify-content: center;
-	right: 12%;
-	top: 275%;
 }
+
+.submit {
+	display: none;
+}
+
 /* Neet Achievments */
 .NeetAchievements {
 	display: flex;
@@ -362,4 +366,20 @@
 	justify-content: center;
 	right: 12%;
 	top: 400%;
+}
+
+.addToppers {
+	width: 100%;
+	height: 100vh;
+	z-index: 5;
+	display: none;
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.3);
+	color: white;
+}
+
+.addToppers span {
+	font-size: 3rem;
 }

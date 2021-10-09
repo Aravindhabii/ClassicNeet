@@ -1,33 +1,9 @@
-// var valueArr = [];
-// document.querySelectorAll(".updatesCheckbox").forEach((checkBox) => {
-//   checkBox.addEventListener("change", (e) => {
-//     let value = checkBox.value;
-//     if (valueArr.includes(value)) {
-//       valueArr.filter((val) => val !== value);
-//       document.querySelector('.imgform').action=`/imgupdate?`
-//     } else {
-//       valueArr.push(value);
-//     }
-//   });
-// });
-
-// const popup = document.querySelector(".popupimg");
-// const popupimg = document.querySelector('.popupimg img');
-// const trigger = document.querySelector('.onclickimg');
-// const Homepage = document.querySelector(".Homepage");
-
-// trigger.addEventListener("click", () => {
-//   console.log("hello");
-//   popup.style.display = "block";
-// Homepage.style.backdropFilter = 'blur(20px)';
-// });
-
 const fileimg = document.querySelectorAll('.fileimg');
 const sliderimgurl = document.querySelectorAll('.sliderimgurl');
 
 for (let i = 0; i <= fileimg.length - 1; i++) {
 	fileimg[i].addEventListener('change', (e) => {
-		document.querySelector('.subbutton1 button').style.display = 'block';
+		document.querySelector('.submit').style.display = 'block';
 		for (let j = 0; j <= sliderimgurl.length - 1; j++) {
 			if (i === j) {
 				sliderimgurl[j].innerText = URL.createObjectURL(e.target.files[0]);
@@ -37,8 +13,8 @@ for (let i = 0; i <= fileimg.length - 1; i++) {
 }
 
 const previewDiv = document.querySelector('.preview');
-
 const previewSpan = document.querySelectorAll('.previewSpan');
+
 for (let i = 0; i <= previewSpan.length - 1; i++) {
 	previewSpan[i].addEventListener('click', (e) => {
 		for (let j = 0; j <= sliderimgurl.length - 1; j++) {
@@ -66,3 +42,15 @@ for (let i = 0; i <= currentPreviewSpan.length - 1; i++) {
 		}
 	});
 }
+
+const subbutton3Add = document.querySelector('.subbutton3 .addButton');
+const subbutton3AddSpan = document.querySelector('.addToppers span');
+const addToppers = document.querySelector('.addToppers');
+
+subbutton3Add.addEventListener('click', () => {
+	addToppers.style.display = 'block';
+});
+
+subbutton3AddSpan.addEventListener('click', () => {
+	addToppers.style.display = 'none';
+});

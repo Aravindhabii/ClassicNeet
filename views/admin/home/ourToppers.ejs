@@ -1,50 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
-    <link rel="stylesheet" href="../../stylesheets/adminheader.css" />
-    <link rel="stylesheet" href="../../stylesheets/admin.css" />
-    <link rel="stylesheet" href="../../stylesheets/adminSideBar.css" />
-</head>
-<body>	<%- include('../../layout/adminheader') %> 
-    <%-include('../../layout/adminSidebar') %>
-    <div class="OurToppers">
-        <h2>OurToppers</h2> 
-        <form action="/ourtoppers?_method=PUT" method="post" enctype="multipart/form-data">
-            <div class="grid3">
-                <div class="grid-item3 item1">
-                    <p>Name</p>
-                </div>
-                <div class="grid-item3 item2">
-                    <p>Score</p>
-                </div>
-                <div class="grid-item3 item3">
-                    <p>Collage Name</p>
-                </div>       
-                <div class="grid-item3 item4">
-                    <p>Current Image</p>
-                </div>
-                <div class="grid-item3 item5">
-                    <p>New Image</p>
-                    <input type="file" id="image" name="sliderimg" required />    
-                </div>
-                <!-- <div class="grid-item3 item6">
-                    <p>Update</p>
-                    <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;" />
-                    <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
-                    <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
-                    <input type="checkbox" id="checkbox" name="checkbox" required style="height: 20px; width: 20px;"/>
-                </div> -->
-            </div></form>
-            <div class="subbutton3">
-                <button type="button">Add</button>
-                <button type="button">Remove</button>
-                <button type="button">Submit</button>
-            </div>
-      </div>
-      <script src="../../javascripts/adminPanel.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Admin</title>
+		<link rel="stylesheet" href="../../stylesheets/adminheader.css" />
+		<link rel="stylesheet" href="../../stylesheets/admin.css" />
+		<link rel="stylesheet" href="../../stylesheets/adminSideBar.css" />
+	</head>
+	<body>
+		<%- include('../../layout/adminheader') %>
+		<%-include('../../layout/adminSidebar') %>
+		<div class="preview"></div>
+		<form
+			action="/admin/ourtoppers"
+			class="addToppers"
+			method="post"
+			enctype="multipart/form-data"
+		>
+			<span>x</span>
+			<div>
+				<label for="name">name</label>
+				<input type="text" name="name" id="name" />
+			</div>
+			<div>
+				<label for="collegeName">College Name</label>
+				<input type="text" name="collegeName" id="collegeName" />
+			</div>
+			<div>
+				<label for="Image">Image</label>
+				<input
+					type="file"
+					name="sliderimg"
+					id="Image"
+					accept="image/*"
+					required
+				/>
+			</div>
+			<button>Submit</button>
+		</form>
+		<div class="OurToppers">
+			<h2>OurToppers</h2>
+			<form
+				action="/admin/ourtoppers?_method=PUT"
+				method="post"
+				enctype="multipart/form-data"
+			>
+				<div class="grid3">
+					<div class="grid-item3 item1">
+						<p>Name</p>
+						<% students.forEach(student => { %>
+						<p><%= student.name %></p>
+						<% }) %>
+					</div>
+					<div class="grid-item3 item3">
+						<p>Collage Name</p>
+						<% students.forEach(student => { %>
+						<p><%= student.collegename %></p>
+						<% }) %>
+					</div>
+					<div class="grid-item3 item4">
+						<p>Current Image</p>
+						<% students.forEach(student => { %>
+						<p class="currentPreviewSpan">Preview</p>
+						<span class="currentSliderimgurl"><%= student.studentimg %></span>
+						<% }) %>
+					</div>
+					<div class="grid-item3 item5">
+						<p>New Image</p>
+						<% students.forEach(student => { %>
+						<input
+							type="file"
+							id="image"
+							name="sliderimg"
+							class="fileimg"
+							required
+						/>
+						<input
+							type="checkbox"
+							name="cloudinaryname"
+							id="cloudinaryname"
+							value="<%=student.cloudinaryname%>"
+							checked
+						/>
+						<span class="previewSpan">Preview</span>
+						<span class="sliderimgurl"></span>
+						<% }) %>
+					</div>
+				</div>
+				<div class="subbutton3">
+					<button type="button" class="addButton">Add</button>
+					<button type="submit" class="submit">Submit</button>
+				</div>
+			</form>
+		</div>
+		<script src="../../javascripts/adminPanel.js"></script>
+	</body>
 </html>
