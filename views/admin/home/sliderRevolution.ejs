@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin panel</title>
+    <link rel="stylesheet" href="../../stylesheets/adminheader.css"/>
+    <link rel="stylesheet" href="../../stylesheets/admin.css"/>
+    <link rel="stylesheet" href="../../stylesheets/adminSideBar.css"/>
+</head>
+<body>
+<div class="preview"></div>
+    <%- include('../../layout/adminheader') %>
+    <%- include('../../layout/adminSidebar') %>
+        <form action="/imgupdate" method="post" class="imgform" enctype="multipart/form-data">
+          <div class="sliderrevolution">
+            <h2>Slider Revolution</h2> 
+            	<div class="grid1">
+                    <div class="grid-item1 item1">
+                        <p>Current Image</p>
+                        <% img.forEach(i => { %>
+                            <p class="onclickimg"><%= i.imgname %></p>
+                            <span class="currentPreviewSpan">Preview</span>
+                            <span class="currentSliderimgurl"><%= i.sliderimg %> </span>
+
+                        <% }) %>
+                       
+                    </div>
+                    <div class="grid-item1 item2">
+                        <p>New Image</p>
+                        <% img.forEach(i => { %>
+                            <input type="file" id="image" accept="image/*" class="fileimg" name="sliderimg" />
+                            <span class="previewSpan">Preview</span>
+                            <span class="sliderimgurl"></span>
+                        <% }) %>
+                    </div>
+                    <div class="grid-item1 item3">
+                        <p>Updates</p> 
+                        <% img.forEach(i => { %>
+                            <input type="checkbox" id="checkbox" class='updatesCheckbox' name="checkbox" value='<%= i.cloudinaryName %>' style="height: 20px; width: 20px;" />
+                        <% }) %>
+                    </div>
+                </div>
+                <div class="subbutton1">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+          
+    <script src="../../javascripts/adminPanel.js"></script>
+</body>
+</html>
