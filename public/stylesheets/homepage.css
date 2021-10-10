@@ -15,11 +15,19 @@
 /* Swiper  */
 .swiper {
 	width: 86% !important;
+	height: 70% !important;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.swiperMain {
+	width: 40% !important;
 	height: 96% !important;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
+
 
 .carousel-inner {
 	width: 97% !important;
@@ -1088,6 +1096,45 @@ p {
 	flex-direction: column;
 	/* justify-content: space-around !important; */
 }
+.swiper1 {
+	height: 100vh !important;
+	width: 3vw !important;
+	
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	/* justify-content: space-around !important; */
+}
+.mySwiper1 {
+	width: 80% !important;
+	height: 40vh !important;
+	background-color: blue;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+.mySwiper1 .swiper-slide {
+	width: 100%;
+	height: 90%;
+	text-align: center;
+	font-size: 18px;
+	background: rgb(255, 255, 255);
+	
+	margin-right: 34px !important;
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
 
 .mySwiper2 {
 	width: 100% !important;
@@ -1243,9 +1290,10 @@ p {
   font-size: 1.75rem;
 }
 .bgTopper {
-	/* background:linear-gradient(80deg,#60EFFF,#0061FF); */
-	background: url('../images/dna.jpg') center;
+	background:linear-gradient(80deg,#60EFFF,#0061FF);
+	/* background: url('../images/dna.jpg') center; */
 	background-repeat: no-repeat;
+	/* backdrop-filter: blur(600px); */
 	/* background-attachment: fixed; */
 	background-size: cover;
 	width: 90%;

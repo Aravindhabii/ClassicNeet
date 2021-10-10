@@ -81,3 +81,27 @@
 					</marquee>
 				</section> -->
 			</section>
+
+
+
+
+
+
+						<section class="topperCard">
+					<% ourtoppers.forEach(topper => { %>
+					<div class="topper1">
+						<div class="topperImg">
+							<img src="<%= topper.studentimg %> " alt="" />
+						</div>
+						<div class="topperContent">
+							<h2 class="name"><%= topper.name %></h2>
+							<p class="college"><%= topper.collegename %></p>
+							<div class="markFlex">
+								<h4 class="score">Neet score</h4>
+								<p class="marks">644/720</p>
+							</div>
+						</div>
+					</div>
+					<% }) %>
+				
+				</section>

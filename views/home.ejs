@@ -21,6 +21,8 @@
 			integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
 			crossorigin="anonymous"
 		/>
+    
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 		<title>ClassicNeetAcademy</title>
 	</head>
 
@@ -355,23 +357,32 @@
 						<a href="/">Our Results - Neet 2020 Toppers</a>
 					</div>
 				</div>
-				<section class="topperCard">
-					<% ourtoppers.forEach(topper => { %>
-					<div class="topper1">
-						<div class="topperImg">
-							<img src="<%= topper.studentimg %> " alt="" />
-						</div>
-						<div class="topperContent">
-							<h2 class="name"><%= topper.name %></h2>
-							<p class="college"><%= topper.collegename %></p>
-							<div class="markFlex">
-								<h4 class="score">Neet score</h4>
-								<p class="marks">644/720</p>
-							</div>
-						</div>
-					</div>
-					<% }) %>
-					<!-- <div class="topper2">
+        <section class="swiper swiper1 mySwiper1">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+
+              kola
+
+
+            </div>
+            <div class="swiper-slide">
+
+              kola
+
+
+            </div>
+            <div class="swiper-slide">
+
+              kola
+
+
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </section>
+			</section>
+      	<!-- <div class="topper2">
 						<div class="topperImg2">
 							<img src="images\home\SHARULATA P.jpg" alt="" />
 						</div>
@@ -384,8 +395,6 @@
 							</div>
 						</div>
 					</div> -->
-				</section>
-			</section>
 
 			<section class="stats">
 				<div class="stats-details">
@@ -592,5 +601,8 @@
 		<script src="javascripts/index.js"></script>
 		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 		<script src="javascripts/common.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
 	</body>
 </html>
