@@ -527,7 +527,7 @@ p {
 	margin: 5rem 0rem;
 	justify-content: space-evenly;
 	align-items: center;
-	height: 70vh;
+	height: 60vh;
 	width: 100% ;
 	
 }
@@ -1038,14 +1038,19 @@ p {
 	width: 65%;
 	display: flex;
 	justify-content: center;
+	background-color: #2B72E4;
+	
 	align-items: center;
 }
-
+.latestEdition {
+	color: yellow;
+}
 .bottom-drive a {
 	text-decoration: none;
 	letter-spacing: 0.7px;
 	font-size: 20px;
 	font-weight: 700;
+	color: white;
 }
 .drive {
 	display: flex;
@@ -1207,8 +1212,8 @@ p {
   /* margin-bottom: 1.5rem; */
 }
 .college {
-	font-size: 20px;
-	font-weight: 400;
+	font-size: 18px;
+	font-weight: 500;
 	margin-bottom: .5rem !important;
 }
 .score {
@@ -1255,8 +1260,14 @@ p {
 
 }
 .social {
-	position: relative;
-	top: 50%;
+    position: relative;
+    top: -27%;
+   right: -42%;
+	
+
+}
+.social img {
+	margin: .5rem;
 }
 .read {
 	background:linear-gradient(60deg,#02c3d8,#0061FF);
