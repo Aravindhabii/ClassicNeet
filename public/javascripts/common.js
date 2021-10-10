@@ -48,20 +48,7 @@ var swiper = new Swiper(".mySwiper", {
   },
 });
 
-var swiper = new Swiper(".mySwiper", {
-  cssMode: true,
-  loop: true,
-  autoplay: {
-    delay: 8000,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    dynamicBullets: true,
-  },
-  // mousewheel: true,
-  // keyboard: true,
-});
+
 
 var swiper2 = new Swiper(".mySwiper2", {
   slidesPerView: 3,
@@ -79,7 +66,22 @@ var swiper2 = new Swiper(".mySwiper2", {
     prevEl: ".swiper-button-prev",
   },
 });
-
+var swiper1 = new Swiper(".mySwiper1", {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  slidesPerGroup: 3,
+  loop: true,
+  loopFillGroupWithBlank: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
 console.log('kolol');
 const counters = document.querySelectorAll('.counter')
 
@@ -101,4 +103,20 @@ counters.forEach(c =>{
     }
   }
   updateCount();
+})
+
+var owl = $('.topperCard');
+owl.owlCarousel({
+    items:1,
+    loop:true,
+    margin:10,
+    autoplay:false,
+    autoplayTimeout:5000,
+    autoplayHoverPause:false
+});
+$('.play').on('click',function(){
+    owl.trigger('play.owl.autoplay',[1000])
+})
+$('.stop').on('click',function(){
+    owl.trigger('stop.owl.autoplay')
 })
