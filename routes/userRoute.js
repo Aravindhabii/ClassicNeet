@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const mysql = require("mysql");
-const dotenv = require("dotenv");
-const db = require("../database");
-const multer = require("multer");
-const { storage, cloudinary } = require("../cloudinary");
+const mysql = require('mysql');
+const dotenv = require('dotenv');
+const db = require('../database');
+const multer = require('multer');
+const { storage, cloudinary } = require('../cloudinary');
 const upload = multer({ storage });
 
 dotenv.config({ path: './.env' });
@@ -51,36 +51,32 @@ router.route('/home').get((req, res) => {
 								};
 								calendar.push(c);
 							}
-							console.log(calendar);
-							res.render('home', { img: arr, ourtoppers, calendar });
+							db.query('SELECT * FROM latest_updates', (err, response) => {
+								latestupdates = [];
+								if (err) {
+									console.log(err);
+								} else {
+									for (let i = 0; i <= response.length - 1; i++) {
+										var link = response[i].latestupdates;
+										// console.log(image)
+										latestupdates.push(link);
+									}
+
+									// console.log(response[0].latestupdates);
+									res.render('home', {
+										img: arr,
+										ourtoppers,
+										calendar: calendar,
+										latestupdates
+									});
+								}
+							});
 						}
 					});
 				}
 			});
 		}
 	});
-
-	// db.query(
-	//   "SELECT * FROM homeslider",
-	//   (error, response) => {
-	//     var arr = []
-	//     if (error) {
-	//       // console.log(imganame);
-	//       console.log(error);
-	//     } else {
-	//       console.log(response.length);
-	//       for(let i = 0; i <= response.length-1 ; i++){
-
-	//         var image = {sliderimg:response[i].sliderimg, imgname: response[i].imgname}
-	//         // console.log(image);
-	//         arr.push(image)
-	//       }
-	// console.log(response[0].sliderimg);
-	// console.log(arr);,{img : arr}
-	// res.render("home");
-	// }
-	// }
-	// );
 });
 
 router
@@ -132,71 +128,72 @@ router
 	});
 
 router
-  .route("/admin/latestupdates")
-  .get((req, res) => {
-    db.query("SELECT * FROM latest_updates", (err,response)=>{
-      arr = []
-		  if (err) {
-			  console.log(err);
-		  }else{
-        for (let i = 0; i <= response.length - 1; i++) {
-          var link =  response[i].latestupdates
-          // console.log(image)
-          arr.push(link);
-        }
+	.route('/admin/latestupdates')
+	.get((req, res) => {
+		db.query('SELECT * FROM latest_updates', (err, response) => {
+			arr = [];
+			if (err) {
+				console.log(err);
+			} else {
+				for (let i = 0; i <= response.length - 1; i++) {
+					var link = response[i].latestupdates;
+					// console.log(image)
+					arr.push(link);
+				}
 
-
-			// console.log(response[0].latestupdates);
-			res.render("admin/home/latestUpdates", { link: arr });
+				// console.log(response[0].latestupdates);
+				res.render('admin/home/latestUpdates', { link: arr });
+			}
+		});
+	})
+	.post((req, res) => {
+		const link = req.body.uploadlink;
+		console.log(link);
+		db.query(
+			'INSERT INTO latest_updates SET ?',
+			{ latestupdates: link },
+			(err, results) => {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log(results);
+					res.redirect('/admin/latestupdates');
+				}
+			}
+		);
+	})
+	.delete((req, res) => {
+		if (typeof req.body.checkbox === 'string') {
+			db.query(
+				'DELETE FROM latest_updates WHERE latestupdates = ?',
+				[req.body.checkbox],
+				(err, response) => {
+					if (err) {
+						console.log(err);
+					} else {
+						console.log(response);
+						res.redirect('/admin/latestupdates');
+					}
+				}
+			);
+		} else {
+			req.body.checkbox.forEach((link) => {
+				console.log(link);
+				db.query(
+					'DELETE FROM latest_updates WHERE latestupdates = ?',
+					[link],
+					(err, response) => {
+						if (err) {
+							console.log(err);
+						} else {
+							console.log(response);
+							res.redirect('/admin/latestupdates');
+						}
+					}
+				);
+			});
 		}
-
-	  })
-    
-  })
-  .post((req, res) => {
-    const link = req.body.uploadlink;
-	console.log(link);
-    db.query(
-      "INSERT INTO latest_updates SET ?",
-      { latestupdates: link },
-      (err, results) => {
-        if (err) {
-          console.log(err);
-        } else {
-          console.log(results);
-          res.redirect("/admin/latestupdates");
-        }
-      }
-    );
-  }).delete((req,res)=>{
-    if(typeof req.body.checkbox === 'string'){
-      db.query(
-        "DELETE FROM latest_updates WHERE latestupdates = ?",
-        [req.body.checkbox],
-        (err, response) => {
-          if (err) {
-            console.log(err);
-          } else {
-            console.log(response);
-            res.redirect("/admin/latestupdates");
-          }
-        }
-      );
-    }else{
-      req.body.checkbox.forEach((link) => {
-        console.log(link);
-        db.query("DELETE FROM latest_updates WHERE latestupdates = ?",[link],(err,response)=>{
-          if(err){
-            console.log(err);
-          }else{
-            console.log(response);
-            res.redirect('/admin/latestupdates')
-          }
-          
-        })
-      });
-    }
-  });
+	});
 
 router
 	.route('/admin/ourtoppers')
@@ -275,7 +272,6 @@ router
 				res.render('admin/home/calendarEvents', { calendar: arr });
 			}
 		});
-		res.render('admin/home/calendarEvents');
 	})
 	.post((req, res) => {
 		const monthNames = [
@@ -292,7 +288,7 @@ router
 			'Nov',
 			'Dec'
 		];
-		const month = monthNames[parseInt(req.body.date.split('-')[1]) + 1];
+		const month = monthNames[parseInt(req.body.date.split('-')[1]) - 1];
 		const date = req.body.date.split('-')[2];
 		const event = req.body.event;
 
@@ -313,6 +309,13 @@ router
 			}
 		);
 	});
+
+router
+	.route('/admin/studenttestimonials')
+	.get((req, res) => {
+		res.render('admin/home/studentTestimonials');
+	})
+	.post((req, res) => {});
 
 router.route('/aboutus').get((req, res) => {
 	res.render('aboutus');

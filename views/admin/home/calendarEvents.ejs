@@ -5,12 +5,25 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Admin</title>
+		<link rel="stylesheet" href="../../stylesheets/adminheader.css" />
+		<link rel="stylesheet" href="../../stylesheets/admin.css" />
+		<link rel="stylesheet" href="../../stylesheets/adminSideBar.css" />
 	</head>
 	<body>
+		<%- include('../../layout/adminheader') %>
+		<%-include('../../layout/adminSidebar') %>
 		<form action="/admin/calendarevents" method="post">
 			<input type="date" name="date" id="date" />
 			<input type="text" name="event" placeholder="Event" />
 			<button>Submit</button>
 		</form>
+		<% calendar.forEach(cal => { %>
+		<div>
+			<span><%= cal.date %></span>
+			<span><%= cal.month %></span>
+			<span><%= cal.event %></span>
+		</div>
+		<% }) %>
+		<script src="../../javascripts/adminPanel.js"></script>
 	</body>
 </html>

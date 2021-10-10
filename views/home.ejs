@@ -176,23 +176,11 @@
 					<h1 class="div-2-title">Latest Updates</h1>
 
 					<marquee class="news-box" direction="up" scrollamount="5">
-						<p>
-							-Our honourable CM appreciated our CLASSIC NEET student. Click
-							here/ Contact- 7867014165.
-						</p>
-						<p>
-							-Watch LIVE- NEET 2020 ACHIEVERS AWARD FUNCTION ON 27TH DEC 2020
-							at 9.30AM. Click here/ Contact- 7867014165.
-						</p>
-						<p>
-							-108 MBBS admissions through NEET 2020 (Govt.quota) at the end of
-							first phase of Tamilnadu Medical Counselling.
-						</p>
-						<p>
-							-Write Free Online NEET Repeater 2021 scholarship Exam. Register
-							here/ Contact- 7867014165.
-						</p>
-						<p>-Admissions open for NEET Repeater-New Batch</p>
+						<% latestupdates.forEach(update => { %>
+							<p>
+								<%= update %> 
+							</p>
+						<% }) %>
 					</marquee>
 				</div>
 				<div class="div-1">
@@ -324,24 +312,21 @@
 				</div>
         <section class="swiper swiper1 mySwiper1">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-
-              kola
-
-
-            </div>
-            <div class="swiper-slide">
-
-              kola
-
-
-            </div>
-            <div class="swiper-slide">
-
-              kola
-
-
-            </div>
+			  <% ourtoppers.forEach(topper => { %>
+				<div class="swiper-slide">
+					<div class="topperImg2">
+						<img src="<%= topper.studentimg %>" alt="" />
+					</div>
+					<div class="topperContent">
+						<h2 class="name"><%= topper.name %> </h2>
+						<p class="college"><%= topper.collegename %> </p>
+						<div class="markFlex">
+							<h4 class="score">Neet score</h4>
+							<p class="marks">644/720</p>
+						</div>
+					</div>   
+				</div>
+			  <% }) %>
           </div>
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
