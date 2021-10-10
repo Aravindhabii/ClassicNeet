@@ -1,59 +1,72 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 const mysql = require("mysql");
 const dotenv = require("dotenv");
 const db = require("../database");
-
-dotenv.config({ path: "./.env" });
-
-router.route("/home").get((req, res) => {
-  db.query("SELECT * FROM homeslider", (error, response) => {
-    var arr = [];
-    if (error) {
-      // console.log(imganame);
-      console.log(error);
-    } else {
-      console.log(response.length);
-      for (let i = 0; i <= response.length - 1; i++) {
-        var image = {
-          sliderimg: response[i].sliderimg,
-          imgname: response[i].imgname,
-        };
-        // console.log(image);
-        arr.push(image);
-      }
-      // console.log(response[0].sliderimg);
-      console.log(arr);
-      res.render("home", { img: arr });
-    }
-  });
-
-  // db.query(
-  //   "SELECT * FROM homeslider",
-  //   (error, response) => {
-  //     var arr = []
-  //     if (error) {
-  //       // console.log(imganame);
-  //       console.log(error);
-  //     } else {
-  //       console.log(response.length);
-  //       for(let i = 0; i <= response.length-1 ; i++){
-
-  //         var image = {sliderimg:response[i].sliderimg, imgname: response[i].imgname}
-  //         // console.log(image);
-  //         arr.push(image)
-  //       }
-  // console.log(response[0].sliderimg);
-  // console.log(arr);,{img : arr}
-  // res.render("home");
-  // }
-  // }
-  // );
-});
-
 const multer = require("multer");
 const { storage, cloudinary } = require("../cloudinary");
 const upload = multer({ storage });
+
+dotenv.config({ path: './.env' });
+
+router.route('/home').get((req, res) => {
+	db.query('SELECT * FROM homeslider', (error, response) => {
+		var arr = [];
+		if (error) {
+			// console.log(imganame);
+			console.log(error);
+		} else {
+			console.log(response.length);
+			for (let i = 0; i <= response.length - 1; i++) {
+				var image = {
+					sliderimg: response[i].sliderimg,
+					imgname: response[i].imgname
+				};
+				arr.push(image);
+			}
+			db.query('SELECT * FROM ourtoppers', (error, response) => {
+				var ourtoppers = [];
+				if (error) {
+					console.log(error);
+				} else {
+					for (let i = 0; i <= response.length - 1; i++) {
+						var image = {
+							name: response[i].name,
+							collegename: response[i].collegename,
+							cloudinaryname: response[i].cloudinaryname,
+							studentimg: response[i].studentimg
+						};
+						ourtoppers.push(image);
+					}
+					res.render('home', { img: arr, ourtoppers });
+				}
+			});
+		}
+	});
+
+	// db.query(
+	//   "SELECT * FROM homeslider",
+	//   (error, response) => {
+	//     var arr = []
+	//     if (error) {
+	//       // console.log(imganame);
+	//       console.log(error);
+	//     } else {
+	//       console.log(response.length);
+	//       for(let i = 0; i <= response.length-1 ; i++){
+
+	//         var image = {sliderimg:response[i].sliderimg, imgname: response[i].imgname}
+	//         // console.log(image);
+	//         arr.push(image)
+	//       }
+	// console.log(response[0].sliderimg);
+	// console.log(arr);,{img : arr}
+	// res.render("home");
+	// }
+	// }
+	// );
+});
+
 router
 	.route('/admin/sliderrevolution')
 	.get((req, res) => {
@@ -105,62 +118,146 @@ router
 router
   .route("/admin/latestupdates")
   .get((req, res) => {
-	  db.query("SELECT * FROM latest_updates", (err,response)=>{
+    db.query("SELECT * FROM latest_updates", (err,response)=>{
+      arr = []
 		  if (err) {
 			  console.log(err);
 		  }else{
-			  console.log(response);
-		  }
+        for (let i = 0; i <= response.length - 1; i++) {
+          var link =  response[i].latestupdates
+          // console.log(image)
+          arr.push(link);
+        }
+
+
+			// console.log(response[0].latestupdates);
+			res.render("admin/home/latestUpdates", { link: arr });
+		}
+
 	  })
-    res.render("admin/home/latestUpdates");
+    
   })
   .post((req, res) => {
-    const link = req.body.link;
+    const link = req.body.uploadlink;
+	console.log(link);
     db.query(
-      "INSERT INTO latest_updates SET = ?" [latestupdates = link],
-      (err, result) => {
+      "INSERT INTO latest_updates SET ?",
+      { latestupdates: link },
+      (err, results) => {
         if (err) {
           console.log(err);
-        } else if (result) {
-          console.log(result);
-          res.redirect("/latestUpdates");
+        } else {
+          console.log(results);
+          res.redirect("/admin/latestupdates");
         }
       }
     );
+  }).delete((req,res)=>{
+    if(typeof req.body.checkbox === 'string'){
+      db.query(
+        "DELETE FROM latest_updates WHERE latestupdates = ?",
+        [req.body.checkbox],
+        (err, response) => {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log(response);
+            res.redirect("/admin/latestupdates");
+          }
+        }
+      );
+    }else{
+      req.body.checkbox.forEach((link) => {
+        console.log(link);
+        db.query("DELETE FROM latest_updates WHERE latestupdates = ?",[link],(err,response)=>{
+          if(err){
+            console.log(err);
+          }else{
+            console.log(response);
+            res.redirect('/admin/latestupdates')
+          }
+          
+        })
+      });
+    }
   });
 
-router.route("/admin/ourtoppers").get((req, res) => {
-  res.render("admin/home/ourToppers");
-});
+router
+	.route('/admin/ourtoppers')
+	.get((req, res) => {
+		db.query('SELECT * FROM ourtoppers', (error, response) => {
+			var arr = [];
+			if (error) {
+				console.log(error);
+			} else {
+				for (let i = 0; i <= response.length - 1; i++) {
+					var image = {
+						name: response[i].name,
+						collegename: response[i].collegename,
+						cloudinaryname: response[i].cloudinaryname,
+						studentimg: response[i].studentimg
+					};
+					arr.push(image);
+				}
+				res.render('admin/home/ourToppers', { students: arr });
+			}
+		});
+	})
+	.post(upload.single('sliderimg'), (req, res) => {
+		db.query(
+			'INSERT INTO ourtoppers SET ?',
+			{
+				name: req.body.name,
+				collegename: req.body.collegeName,
+				studentimg: req.file.path,
+				cloudinaryname: req.file.filename.split('/')[1]
+			},
+			(err, response) => {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log(response);
+				}
+			}
+		);
+		res.redirect('/admin/ourtoppers');
+	})
+	.put(upload.single('sliderimg'), (req, res) => {
+		db.query('UPDATE ourtoppers SET studentimg = ? WHERE cloudinaryname = ?', [
+			req.file.path,
+			req.body.cloudinaryname
+		]);
+		res.redirect('/admin/ourtoppers');
+	});
 
 router
-  .route("/admin/neetachievements")
-  .get((req, res) => {
-    res.render("admin/home/neetAchievements");
-  })
-  .post((req, res) => {});
+	.route('/admin/neetachievements')
+	.get((req, res) => {
+		res.render('admin/home/neetAchievements');
+	})
+	.post((req, res) => {});
 
-router.route("/admin/studenttestimonials").get((req, res) => {
-  res.render("admin/home/studentTestimonials");
+router.route('/admin/studenttestimonials').get((req, res) => {
+	res.render('admin/home/studentTestimonials');
 });
 
-router.route("/aboutus").get((req, res) => {
-  res.render("aboutus");
+router.route('/aboutus').get((req, res) => {
+	res.render('aboutus');
 });
-router.route("/coursesNEET").get((req, res) => {
-  res.render("coursesNEET");
+router.route('/coursesNEET').get((req, res) => {
+	res.render('coursesNEET');
 });
-router.route("/coursesIIT&Medical").get((req, res) => {
-  res.render("coursesIIT&Medical");
+router.route('/coursesIIT&Medical').get((req, res) => {
+	res.render('coursesIIT&Medical');
 });
-router.route("/Demovideos").get((req, res) => {
-  res.render("Demovideos");
+router.route('/Demovideos').get((req, res) => {
+	res.render('Demovideos');
 });
-router.route("/results").get((req, res) => {
-  res.render("results");
+router.route('/results').get((req, res) => {
+	res.render('results');
 });
-router.route("/contactus").get((req, res) => {
-  res.render("contactus");
+router.route('/contactus').get((req, res) => {
+	res.render('contactus');
 });
 router.route('/successstories').get((req, res) => {
 	res.render('successStories');

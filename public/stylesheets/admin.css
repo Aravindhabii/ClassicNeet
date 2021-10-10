@@ -99,6 +99,11 @@
 	bottom: 2%;
 	display: none;
 }
+
+.btndisplay{
+	display: block !important;
+}
+
 /* Latest updates */
 .Latestupdates {
 	display: flex;
@@ -110,11 +115,21 @@
 }
 
 .popupdiv{
-	position: fixed;
-	height: 100%;
+	position: absolute;
+	height: 100vh;
 	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #000;
+	display: none;
+	z-index: 5;
 }
 
+.form{
+	position: relative;
+
+}
 
 .Latestupdates h2 {
 	position: relative;
@@ -122,11 +137,12 @@
 }
 .grid2 {
 	position: relative;
-	left: 40%;
-	width: 40%;
-	height: 89vh;
+	left: 56%;
+	width: 60%;
+	height: 63vh;
 	display: grid;
-	grid-template-areas: 'cont1 cont2 cont3';
+	grid-template-areas: 'cont1 cont2'
+						'cont3 cont3';
 	align-content: center;
 	justify-content: center;
 }
@@ -159,12 +175,14 @@
 	background-color: white;
 	color: #0061ff;
 	display: flex;
-	position: absolute;
+	position: relative;
 	align-items: center;
 	justify-content: center;
-	right: 12%;
-	top: 182%;
+	left: 100%;
+    bottom: -51px;
 }
+
+
 /* Our Toppers */
 .OurToppers {
 	display: flex;
@@ -236,9 +254,7 @@
 	color: #0061ff;
 }
 
-.submit {
-	display: none;
-}
+
 
 /* Neet Achievments */
 .NeetAchievements {
