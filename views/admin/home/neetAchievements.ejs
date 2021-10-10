@@ -10,6 +10,70 @@
 		<link rel="stylesheet" href="../../stylesheets/adminSideBar.css" />
 	</head>
 	<body>
+		    <%- include('../../layout/adminheader') %>
+
+    <section class="mainsection">
+      <div class="popupdiv">
+          <form action="/admin/neetachievements" method="post">
+            <input type="text" name="uploadlink" id="uploadlink" />
+            <button type="submit">submit</button>
+          </form>
+        </div>
+      <%-include('../../layout/adminSidebar') %>
+      <div class="Latestupdates">
+        
+
+        <h2>Latest updates</h2>
+        <form class="form" action="/admin/neetachievements?_method=DELETE" method="post">
+        <div class="grid2">
+          <div class="grid-item2 item1">
+            <p>Current Link</p>
+            <% link.forEach(i => { %>
+            <input type="text" id="linkinput" value="<%= i %>"  readonly/>
+            <% }) %>
+          </div>
+
+          <div class="grid-item2 item2">
+            <p>Updates</p>
+            <% link.forEach(ilink => { %>
+            <input
+              type="checkbox"
+              id="checkbox"
+              name="checkbox"
+              style="height: 20px; width: 20px"
+              value="<%= ilink %> "
+            />
+            <% }) %>
+          </div>
+        </div>
+        <div class="subbutton2">
+        <button type="submit" >Delete</button>
+        
+        </div>
+        </form>
+        <div class="subbutton3">
+          <div class="addToppers"><span>x</span></div>
+        <button type="submit" class="addButton">Add</button>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		<%- include('../../layout/adminheader') %>
 		<%-include('../../layout/adminSidebar') %>
 		<div class="NeetAchievements">
