@@ -21,6 +21,8 @@
 			integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
 			crossorigin="anonymous"
 		/>
+    
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 		<title>ClassicNeetAcademy</title>
 	</head>
 
@@ -99,22 +101,24 @@
 							</button>
 						</div>
 					</div>
-					<div class="scroll">
-						<marquee
-							class="marqueetext"
-							vspace="30%"
-							onmousedown="stop();"
-							onmouseup="start();"
-						>
-							<p>
-								Admission Open ! <a href="./index.html">JOIN NOW </a> &nbsp;
-								&ensp; Admission Open !
-								<a href="./index.html">JOIN NOW </a>&nbsp; &ensp; Admission Open
-								! <a href="./index.html">JOIN NOW</a>
-							</p>
-						</marquee>
-					</div>
+         
+			
 				</div>
+        <div class="scroll">
+          <marquee
+            class="marqueetext"
+            vspace="30%"
+            onmousedown="stop();"
+            onmouseup="start();"
+          >
+            <p>
+              Admission Open ! <a href="./index.html">JOIN NOW </a> &nbsp;
+              &ensp; Admission Open !
+              <a href="./index.html">JOIN NOW </a>&nbsp; &ensp; Admission Open
+              ! <a href="./index.html">JOIN NOW</a>
+            </p>
+          </marquee>
+        </div>
 			</section>
 
 			<!-- <section class="section-2">
@@ -172,72 +176,25 @@
 					<h1 class="div-2-title">Latest Updates</h1>
 
 					<marquee class="news-box" direction="up" scrollamount="5">
-						<p>
-							-Our honourable CM appreciated our CLASSIC NEET student. Click
-							here/ Contact- 7867014165.
-						</p>
-						<p>
-							-Watch LIVE- NEET 2020 ACHIEVERS AWARD FUNCTION ON 27TH DEC 2020
-							at 9.30AM. Click here/ Contact- 7867014165.
-						</p>
-						<p>
-							-108 MBBS admissions through NEET 2020 (Govt.quota) at the end of
-							first phase of Tamilnadu Medical Counselling.
-						</p>
-
-						<p>
-							-Write Free Online NEET Repeater 2021 scholarship Exam. Register
-							here/ Contact- 7867014165.
-						</p>
-						<p>-Admissions open for NEET Repeater-New Batch</p>
+						<% latestupdates.forEach(update => { %>
+							<p>
+								<%= update %> 
+							</p>
+						<% }) %>
 					</marquee>
 				</div>
 				<div class="div-1">
 					<h1 class="CalanderEvents">Calendar Events</h1>
 					<div class="calenderMain">
-						<div class="calenderCard">
-							<div class="date">
-								<p class="month">OCT</p>
-								<p class="dateMain">01</p>
+						<% calendar.forEach(cal => { %>
+							<div class="calenderCard">
+								<div class="date">
+									<p class="month"><%= cal.month %> </p>
+									<p class="dateMain"><%= cal.date %> </p>
+								</div>
+								<div class="calenderContent"><p><%= cal.event %> </p></div>
 							</div>
-							<div class="calenderContent"><p>NEET 2021 Application</p></div>
-						</div>
-						<div class="calenderCard">
-							<div class="date">
-								<p class="month">OCT</p>
-								<p class="dateMain">02</p>
-							</div>
-							<div class="calenderContent">
-								<p>NEET 2021 Examination Date</p>
-							</div>
-						</div>
-						<div class="calenderCard">
-							<div class="date">
-								<p class="month">OCT</p>
-								<p class="dateMain">03</p>
-							</div>
-							<div class="calenderContent">
-								<p>NEET 2021 Conselling Date</p>
-							</div>
-						</div>
-						<div class="calenderCard">
-							<div class="date">
-								<p class="month">OCT</p>
-								<p class="dateMain">04</p>
-							</div>
-							<div class="calenderContent">
-								<p>NEET 2021 Correction Date</p>
-							</div>
-						</div>
-						<div class="calenderCard">
-							<div class="date">
-								<p class="month">OCT</p>
-								<p class="dateMain">05</p>
-							</div>
-							<div class="calenderContent">
-								<p>NEET 2021 Application Form Last Date</p>
-							</div>
-						</div>
+						<% }) %>
 					</div>
 				</div>
 			</section>
@@ -353,23 +310,29 @@
 						<a href="/">Our Results - Neet 2020 Toppers</a>
 					</div>
 				</div>
-				<section class="topperCard">
-					<% ourtoppers.forEach(topper => { %>
-					<div class="topper1">
-						<div class="topperImg">
-							<img src="<%= topper.studentimg %> " alt="" />
-						</div>
-						<div class="topperContent">
-							<h2 class="name"><%= topper.name %></h2>
-							<p class="college"><%= topper.collegename %></p>
-							<div class="markFlex">
-								<h4 class="score">Neet score</h4>
-								<p class="marks">644/720</p>
-							</div>
-						</div>
+        <section class="swiper swiper1 mySwiper1">
+          <div class="swiper-wrapper">
+			  <% ourtoppers.forEach(topper => { %>
+				<div class="swiper-slide">
+					<div class="topperImg2">
+						<img src="<%= topper.studentimg %>" alt="" />
 					</div>
-					<% }) %>
-					<!-- <div class="topper2">
+					<div class="topperContent">
+						<h2 class="name"><%= topper.name %> </h2>
+						<p class="college"><%= topper.collegename %> </p>
+						<div class="markFlex">
+							<h4 class="score">Neet score</h4>
+							<p class="marks">644/720</p>
+						</div>
+					</div>   
+				</div>
+			  <% }) %>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </section>
+			</section>
+      	<!-- <div class="topper2">
 						<div class="topperImg2">
 							<img src="images\home\SHARULATA P.jpg" alt="" />
 						</div>
@@ -382,8 +345,6 @@
 							</div>
 						</div>
 					</div> -->
-				</section>
-			</section>
 
 			<section class="stats">
 				<div class="stats-details">
@@ -590,5 +551,8 @@
 		<script src="javascripts/index.js"></script>
 		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 		<script src="javascripts/common.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
 	</body>
 </html>

@@ -1,72 +1,82 @@
 const express = require("express");
 const router = express.Router();
-const mysql = require("mysql");
-const dotenv = require("dotenv");
-const db = require("../database");
-const multer = require("multer");
-const { storage, cloudinary } = require("../cloudinary");
+const mysql = require('mysql');
+const dotenv = require('dotenv');
+const db = require('../database');
+const multer = require('multer');
+const { storage, cloudinary } = require('../cloudinary');
 const upload = multer({ storage });
 
 dotenv.config({ path: "./.env" });
 
+router.route('/home').get((req, res) => {
+	db.query('SELECT * FROM homeslider', (error, response) => {
+		var arr = [];
+		if (error) {
+			// console.log(imganame);
+			console.log(error);
+		} else {
+			console.log(response.length);
+			for (let i = 0; i <= response.length - 1; i++) {
+				var image = {
+					sliderimg: response[i].sliderimg,
+					imgname: response[i].imgname
+				};
+				arr.push(image);
+			}
+			db.query('SELECT * FROM ourtoppers', (error, response) => {
+				var ourtoppers = [];
+				if (error) {
+					console.log(error);
+				} else {
+					for (let i = 0; i <= response.length - 1; i++) {
+						var image = {
+							name: response[i].name,
+							collegename: response[i].collegename,
+							cloudinaryname: response[i].cloudinaryname,
+							studentimg: response[i].studentimg
+						};
+						ourtoppers.push(image);
+					}
+					db.query('SELECT * FROM calendarevents', (error, response) => {
+						var calendar = [];
+						if (error) {
+							console.log(error);
+						} else {
+							for (let i = 0; i <= response.length - 1; i++) {
+								var c = {
+									date: response[i].date,
+									month: response[i].month,
+									event: response[i].event
+								};
+								calendar.push(c);
+							}
+							db.query('SELECT * FROM latest_updates', (err, response) => {
+								latestupdates = [];
+								if (err) {
+									console.log(err);
+								} else {
+									for (let i = 0; i <= response.length - 1; i++) {
+										var link = response[i].latestupdates;
+										// console.log(image)
+										latestupdates.push(link);
+									}
 
-// Home Route
-router.route("/home").get((req, res) => {
-  db.query("SELECT * FROM homeslider", (error, response) => {
-    var arr = [];
-    if (error) {
-      // console.log(imganame);
-      console.log(error);
-    } else {
-      console.log(response.length);
-      for (let i = 0; i <= response.length - 1; i++) {
-        var image = {
-          sliderimg: response[i].sliderimg,
-          imgname: response[i].imgname,
-        };
-        arr.push(image);
-      }
-      db.query("SELECT * FROM ourtoppers", (error, response) => {
-        var ourtoppers = [];
-        if (error) {
-          console.log(error);
-        } else {
-          for (let i = 0; i <= response.length - 1; i++) {
-            var image = {
-              name: response[i].name,
-              collegename: response[i].collegename,
-              cloudinaryname: response[i].cloudinaryname,
-              studentimg: response[i].studentimg,
-            };
-            ourtoppers.push(image);
-          }
-          res.render("home", { img: arr, ourtoppers });
-        }
-      });
-    }
-  });
-
-  // db.query(
-  //   "SELECT * FROM homeslider",
-  //   (error, response) => {
-  //     var arr = []
-  //     if (error) {
-  //       // console.log(imganame);
-  //       console.log(error);
-  //     } else {
-  //       console.log(response.length);
-  //       for(let i = 0; i <= response.length-1 ; i++){
-
-  //         var image = {sliderimg:response[i].sliderimg, imgname: response[i].imgname}
-  //         // console.log(image);
-  //         arr.push(image)
-  //       }
-  // console.log(response[0].sliderimg);
-  // console.log(arr);,{img : arr}
-  // res.render("home");
-  // }
-  // }
-  // );
+									// console.log(response[0].latestupdates);
+									res.render('home', {
+										img: arr,
+										ourtoppers,
+										calendar: calendar,
+										latestupdates
+									});
+								}
+							});
+						}
+					});
+				}
+			});
+		}
+	});
 });
 
 
@@ -305,14 +315,72 @@ router
     }
   });
 
-//student Testimonial route
-router.route("/admin/studenttestimonials").get((req, res) => {
-  res.render("admin/home/studentTestimonials");
-}).post((req,res)=>{
+router.route('/admin/studenttestimonials').get((req, res) => {
+	res.render('admin/home/studentTestimonials');
+});
+router
+	.route('/admin/calendarevents')
+	.get((req, res) => {
+		db.query('SELECT * FROM calendarevents', (error, response) => {
+			var arr = [];
+			if (error) {
+				console.log(error);
+			} else {
+				for (let i = 0; i <= response.length - 1; i++) {
+					var calendar = {
+						date: response[i].date,
+						month: response[i].month,
+						event: response[i].event
+					};
+					arr.push(calendar);
+				}
+				res.render('admin/home/calendarEvents', { calendar: arr });
+			}
+		});
+	})
+	.post((req, res) => {
+		const monthNames = [
+			'Jan',
+			'Feb',
+			'Mar',
+			'Apr',
+			'May',
+			'Jun',
+			'Jul',
+			'Aug',
+			'Sep',
+			'Oct',
+			'Nov',
+			'Dec'
+		];
+		const month = monthNames[parseInt(req.body.date.split('-')[1]) - 1];
+		const date = req.body.date.split('-')[2];
+		const event = req.body.event;
 
-}).delete((req,res)=>{
+		db.query(
+			'INSERT INTO calendarevents SET ?',
+			{
+				date,
+				month,
+				event
+			},
+			(err, response) => {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log(response);
+					res.redirect('/admin/calendarevents');
+				}
+			}
+		);
+	});
 
-})
+router
+	.route('/admin/studenttestimonials')
+	.get((req, res) => {
+		res.render('admin/home/studentTestimonials');
+	})
+	.post((req, res) => {});
 
 router.route("/aboutus").get((req, res) => {
   res.render("aboutus");
