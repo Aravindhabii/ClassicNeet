@@ -35,7 +35,23 @@ router.route('/home').get((req, res) => {
 						};
 						ourtoppers.push(image);
 					}
-					res.render('home', { img: arr, ourtoppers });
+					db.query('SELECT * FROM calendarevents', (error, response) => {
+						var calendar = [];
+						if (error) {
+							console.log(error);
+						} else {
+							for (let i = 0; i <= response.length - 1; i++) {
+								var c = {
+									date: response[i].date,
+									month: response[i].month,
+									event: response[i].event
+								};
+								calendar.push(c);
+							}
+							console.log(calendar);
+							res.render('home', { img: arr, ourtoppers, calendar });
+						}
+					});
 				}
 			});
 		}
@@ -200,6 +216,63 @@ router
 router.route('/admin/studenttestimonials').get((req, res) => {
 	res.render('admin/home/studentTestimonials');
 });
+router
+	.route('/admin/calendarevents')
+	.get((req, res) => {
+		db.query('SELECT * FROM calendarevents', (error, response) => {
+			var arr = [];
+			if (error) {
+				console.log(error);
+			} else {
+				for (let i = 0; i <= response.length - 1; i++) {
+					var calendar = {
+						date: response[i].date,
+						month: response[i].month,
+						event: response[i].event
+					};
+					arr.push(calendar);
+				}
+				res.render('admin/home/calendarEvents', { calendar: arr });
+			}
+		});
+		res.render('admin/home/calendarEvents');
+	})
+	.post((req, res) => {
+		const monthNames = [
+			'Jan',
+			'Feb',
+			'Mar',
+			'Apr',
+			'May',
+			'Jun',
+			'Jul',
+			'Aug',
+			'Sep',
+			'Oct',
+			'Nov',
+			'Dec'
+		];
+		const month = monthNames[parseInt(req.body.date.split('-')[1]) + 1];
+		const date = req.body.date.split('-')[2];
+		const event = req.body.event;
+
+		db.query(
+			'INSERT INTO calendarevents SET ?',
+			{
+				date,
+				month,
+				event
+			},
+			(err, response) => {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log(response);
+					res.redirect('/admin/calendarevents');
+				}
+			}
+		);
+	});
 
 router.route('/aboutus').get((req, res) => {
 	res.render('aboutus');

@@ -184,7 +184,6 @@
 							-108 MBBS admissions through NEET 2020 (Govt.quota) at the end of
 							first phase of Tamilnadu Medical Counselling.
 						</p>
-
 						<p>
 							-Write Free Online NEET Repeater 2021 scholarship Exam. Register
 							here/ Contact- 7867014165.
@@ -195,49 +194,15 @@
 				<div class="div-1">
 					<h1 class="CalanderEvents">Calendar Events</h1>
 					<div class="calenderMain">
-						<div class="calenderCard">
-							<div class="date">
-								<p class="month">OCT</p>
-								<p class="dateMain">01</p>
+						<% calendar.forEach(cal => { %>
+							<div class="calenderCard">
+								<div class="date">
+									<p class="month"><%= cal.month %> </p>
+									<p class="dateMain"><%= cal.date %> </p>
+								</div>
+								<div class="calenderContent"><p><%= cal.event %> </p></div>
 							</div>
-							<div class="calenderContent"><p>NEET 2021 Application</p></div>
-						</div>
-						<div class="calenderCard">
-							<div class="date">
-								<p class="month">OCT</p>
-								<p class="dateMain">02</p>
-							</div>
-							<div class="calenderContent">
-								<p>NEET 2021 Examination Date</p>
-							</div>
-						</div>
-						<div class="calenderCard">
-							<div class="date">
-								<p class="month">OCT</p>
-								<p class="dateMain">03</p>
-							</div>
-							<div class="calenderContent">
-								<p>NEET 2021 Conselling Date</p>
-							</div>
-						</div>
-						<div class="calenderCard">
-							<div class="date">
-								<p class="month">OCT</p>
-								<p class="dateMain">04</p>
-							</div>
-							<div class="calenderContent">
-								<p>NEET 2021 Correction Date</p>
-							</div>
-						</div>
-						<div class="calenderCard">
-							<div class="date">
-								<p class="month">OCT</p>
-								<p class="dateMain">05</p>
-							</div>
-							<div class="calenderContent">
-								<p>NEET 2021 Application Form Last Date</p>
-							</div>
-						</div>
+						<% }) %>
 					</div>
 				</div>
 			</section>
