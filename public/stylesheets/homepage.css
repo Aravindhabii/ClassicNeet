@@ -521,8 +521,14 @@ p {
 	margin: 5rem 0rem;
 	justify-content: space-evenly;
 	align-items: center;
+<<<<<<< HEAD
 	height: 70vh;
 	width: 100%;
+=======
+	height: 60vh;
+	width: 100% ;
+	
+>>>>>>> a2ab995bf16a38746f5ed63ba4f5e442904d9536
 }
 /* .cardsDiv {
 	position: relative;
@@ -1031,14 +1037,19 @@ p {
 	width: 65%;
 	display: flex;
 	justify-content: center;
+	background-color: #2B72E4;
+	
 	align-items: center;
 }
-
+.latestEdition {
+	color: yellow;
+}
 .bottom-drive a {
 	text-decoration: none;
 	letter-spacing: 0.7px;
 	font-size: 20px;
 	font-weight: 700;
+	color: white;
 }
 .drive {
 	display: flex;
@@ -1195,9 +1206,15 @@ p {
 	/* margin-bottom: 1.5rem; */
 }
 .college {
+<<<<<<< HEAD
 	font-size: 20px;
 	font-weight: 400;
 	margin-bottom: 0.5rem !important;
+=======
+	font-size: 18px;
+	font-weight: 500;
+	margin-bottom: .5rem !important;
+>>>>>>> a2ab995bf16a38746f5ed63ba4f5e442904d9536
 }
 .score {
 	font-size: 20px;
@@ -1238,8 +1255,14 @@ p {
 .updates {
 }
 .social {
-	position: relative;
-	top: 50%;
+    position: relative;
+    top: -27%;
+   right: -42%;
+	
+
+}
+.social img {
+	margin: .5rem;
 }
 .read {
 	background: linear-gradient(60deg, #02c3d8, #0061ff);
