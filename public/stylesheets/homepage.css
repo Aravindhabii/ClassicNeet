@@ -117,11 +117,11 @@
 }
 .blob3 {
 	position: absolute;
-	right: 0%;
-	top: 0%;
-	right: 5%;
-	top: 55%;
-	transform: scale(1.05);
+    right: 0%;
+    top: 0%;
+    right: 12%;
+    top: 64%;
+    transform: scale(1.05);
 }
 .sliderRev {
 	margin-top: 1rem;
@@ -517,12 +517,12 @@ p {
 }
 .building3 {
 	height: 23%;
-	width: 50%;
-	top: 57%;
-	position: absolute;
-	z-index: 5;
-	left: 51%;
-	opacity: 0.5;
+    width: 50%;
+    top: 66%;
+    position: absolute;
+    z-index: 5;
+    left: 44%;
+    opacity: 0.5;
 }
 .cardsDiv {
 	position: relative;
@@ -1119,7 +1119,7 @@ p {
 
 
 .mySwiper1 .swiper-slide {
-	width: 22.8rem !important;
+	width: 22.82rem !important;
     height: 16rem !important;
 	padding: 20px;
 	text-align: center;
