@@ -252,7 +252,7 @@
 		
 		</div>  -->
 
-				<div class="cardsDiv">
+				<div class="cardsDiv" id="courses">
 					<div class="box1">
 						<img class="hexaimg" src="images/home/jee.jpg" alt="" />
 
@@ -303,7 +303,7 @@
 				</div>
 			</div>
 	</section> -->
-			<section class="bgTopper">
+			<section class="bgTopper" >
 				<div class="neet-2020-toppers">
 					<img src="images/home/Vector.svg" alt="SVG" />
 					<div class="neet-2020-toppers-a">
@@ -314,7 +314,7 @@
           <div class="swiper-wrapper">
 			  <% ourtoppers.forEach(topper => { %>
 				<div class="swiper-slide">
-					
+					<section class="topperCard">
 					<div class="topperImg2">
 						<img src="<%= topper.studentimg %>" alt="" />
 					</div>
@@ -325,13 +325,16 @@
 							<h4 class="score">Neet score</h4>
 							<p class="marks">644/720</p>
 						</div>
-					</div>   
+					</div>
+				</section>   
 				</div>
 			  <% }) %>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          
         </section>
+			<div class="swiper-button-next arrownext1"></div>
+          	<div class="swiper-button-prev arrowprev1"></div>
+		
 			</section>
       	<!-- <div class="topper2">
 						<div class="topperImg2">
@@ -420,7 +423,7 @@
 							<div class="testimonials">
 						
 								<iframe
-									
+									class="video"
 									src="<%= link %>"
 									title="YouTube video player"
 									frameborder="0"
@@ -430,9 +433,11 @@
 							</div>
 						</div>
 					<% }) %>
-				</div></div>
-				<div class="swiper-button-next"></div>
-				<div class="swiper-button-prev"></div>
+				</div>
+
+			</div>
+			<div class="swiper-button-next arrownext2"></div>
+			<div class="swiper-button-prev arrowprev2"></div>
 			</section>
 
 			<%- include('./layout/footer') %>

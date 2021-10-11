@@ -14,7 +14,7 @@
 }
 /* Swiper  */
 .swiper {
-	width: 86% !important;
+	width: 79% !important;
 	height: 70% !important;
 	display: flex;
 	justify-content: center;
@@ -895,7 +895,7 @@ p {
 
 .testimonials_container{
 	width: 100%;
-	height: 60vh;
+	height: 55vh;
 }
 
 .ytp-chrome-top {
@@ -903,10 +903,13 @@ p {
 }
 
 .studentsh1 {
-	margin-top: 2rem;
+	margin: 2rem 0rem;
 	font-size: 1.5rem;
 }
-
+.video {
+	height: 28vh;
+	width: 20vw;
+}
 .imghead {
 	width: 100%;
 	display: flex;
@@ -1113,14 +1116,50 @@ p {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+
+.swiper1 .swiper-slide {
+	width:400px !important;
+	border-radius: 10px 0px 10px 0px!important;
+}
+
+.arrownext1 {
+	color: rgb(255, 255, 255);
+	position: absolute;
+	top: 57.5%;
+	/* transform: translateY(-50%); */
+	right: 6% !important;
+}
+.arrowprev1 {
+	color: rgb(255, 255, 255);
+	position: absolute;
+	top: 57.5%;
+	/* transform: translateY(-50%); */
+	left: 6% !important;
+}
+.arrownext2 {
+	color: #02c3d8;
+	position: absolute;
+	top: 82%;
+	/* transform: translateY(-50%); */
+	right: 3% !important;
+}
+.arrowprev2 {
+	color: #02c3d8;
+	position: absolute;
+	top: 82%;
+	/* transform: translateY(-50%); */
+	left: 3% !important;
+}
+
 .mySwiper1 .swiper-slide {
-	width: 100%;
+	width: 300px;
 	height: 90%;
 	text-align: center;
 	font-size: 18px;
 	background: rgb(255, 255, 255);
-
-	margin-right: 34px !important;
+	
+	/* margin-right: 124px !important; */
 	/* Center slide text vertically */
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -1147,8 +1186,8 @@ p {
 }
 
 .mySwiper2 .swiper-slide {
-	width: 22.5rem !important;
-	height: 13rem !important;
+	width: 25.5rem !important;
+    height: 16rem !important;
 	padding: 20px;
 	text-align: center;
 	font-size: 18px;
@@ -1183,16 +1222,17 @@ p {
   object-fit: cover;
 } */
 .topperCard {
-	/* background-color: slategray; */
-	height: 40vh;
-	display: flex;
-	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
-	position: relative;
-	justify-content: space-evenly;
-	align-items: center;
-	margin-top: 5rem;
+  /* background-color: slategray; */
+  height: 40vh;
+  display: flex;
+  width: 30vw;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  justify-content: space-evenly;
+  align-items: center;
+  /* margin-top: 5rem; */
+  
 }
 .topper1 {
 	width: 40%;
@@ -1228,13 +1268,13 @@ p {
 .topperImg2 {
 	/* background-color: rgba(255, 255, 255, 0.445); */
 	/* background-color:#A2D2FF; */
-	width: 50%;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 20px 0px 0px 20px;
-	background-size: cover;
+  width: 50%;
+  /* height: 100%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px 0px 0px 20px;
+  background-size: cover;
 }
 .topperImg img {
 	width: 80%;
@@ -1249,35 +1289,39 @@ p {
 	border: 5px solid black;
 }
 .topperContent {
-	/* background-color: rgb(177, 27, 177); */
-	width: 60%;
-	height: 100%;
-	text-align: center;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+  /* background-color: rgb(177, 27, 177); */
+  width: 65%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  
 }
 .name {
-	font-size: 20px;
-	font-weight: 600;
-	/* margin-bottom: 1.5rem; */
+  font-size: 16px;
+  font-weight: 600;
+  /* margin-bottom: 1.5rem; */
 }
 .college {
-	font-size: 18px;
+	font-size: 15px;
 	font-weight: 500;
 	margin-bottom: 0.5rem !important;
 }
 .score {
-	font-size: 20px;
-	font-weight: 500;
+  font-size: 18px;
+  font-weight: 500;
 }
-.marks {
-	font-size: 20px;
-	font-weight: 600;
-	padding: 0.5rem 1rem;
-	border-radius: 20px;
-	background: linear-gradient(60deg, #02c3d8, #0061ff);
-	color: white;
+.marks
+{
+  font-size: 18px;
+  font-weight: 600;
+  padding: .5rem 1rem;
+  border-radius: 20px;
+  background:linear-gradient(60deg,#02c3d8,#0061FF);
+  color: white;
+  
 }
 .section-2 h1 {
 	font-size: 1.75rem;
