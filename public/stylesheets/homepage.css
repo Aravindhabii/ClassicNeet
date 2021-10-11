@@ -895,7 +895,7 @@ p {
 
 .testimonials_container{
 	width: 100%;
-	height: 60vh;
+	height: 55vh;
 }
 
 .ytp-chrome-top {
@@ -903,10 +903,13 @@ p {
 }
 
 .studentsh1 {
-	margin-top: 2rem;
+	margin: 2rem 0rem;
 	font-size: 1.5rem;
 }
-
+.video {
+	height: 28vh;
+	width: 20vw;
+}
 .imghead {
 	width: 100%;
 	display: flex;
@@ -1137,14 +1140,14 @@ p {
 .arrownext2 {
 	color: #02c3d8;
 	position: absolute;
-	top: 80.5%;
+	top: 82%;
 	/* transform: translateY(-50%); */
 	right: 3% !important;
 }
 .arrowprev2 {
 	color: #02c3d8;
 	position: absolute;
-	top: 80.5%;
+	top: 82%;
 	/* transform: translateY(-50%); */
 	left: 3% !important;
 }
@@ -1183,8 +1186,8 @@ p {
 }
 
 .mySwiper2 .swiper-slide {
-	width: 22.5rem !important;
-	height: 13rem !important;
+	width: 25.5rem !important;
+    height: 16rem !important;
 	padding: 20px;
 	text-align: center;
 	font-size: 18px;
