@@ -68,4 +68,8 @@ app.get('/stories', (req, res) => {
 	res.render('successStories');
 });
 
+app.get('*', (req, res) => {
+	res.render('404error');
+});
+
 app.listen(8080, () => console.log(`SERVER IS RUNNING ON PORT 8080`));

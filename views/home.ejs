@@ -198,7 +198,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="HexagonDiv">
+			<section class="HexagonDiv" id="courses">
 				<!-- <div class="left">
 			<div class="spilldiv">
 				<img class="spill " src="images/home/spill.png" alt="">
@@ -346,18 +346,18 @@
 							<div class="markFlex">
 								<h4 class="score">Neet score</h4>
 								<p class="marks">644/720</p>
-							</div>
+							</div>	
 						</div>
 					</div> -->
 
 			<section class="stats">
 				<div class="stats-details">
 					<div class="stat1 stat">
-						<h1 class="counter" data-target="345">345</h1>
+						<h1 class="counter MBBS_Seats" data-target="345">345</h1>
 						<h3>MBBS Seats through Neet</h3>
 					</div>
 					<div class="stat2 stat">
-						<h1 class="counter" data-target="4">4</h1>
+						<h1 class="counter Consecutive" data-target="4">4</h1>
 						<h3>Consecutive years of District first in Salem</h3>
 					</div>
 					<div class="stat3 stat">
@@ -414,133 +414,36 @@
 		</div>
 	</section> -->
 			<!-- Swiper -->
-			<section class="swiper swiper2 mySwiper2">
+			<section class="testimonials_container">
+				<div class="swiper swiper2 mySwiper2">
 				<h1 class="studentsh1">STUDENTS TESTIMONIALS</h1>
 				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<div class="testimonials">
-							<iframe
-								width="360"
-								height="200"
-								src="https://www.youtube.com/embed/xfek1WNPTRU"
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen
-							></iframe>
-							<!-- <span>
-						<div class="imghead">
-							<img src="images/home/img4.jpeg" alt="" />
-							<p><b>G. Sreya Priyadarshini</b></p>
+					<% stutest.forEach(link => { %>
+						<div class="swiper-slide">
+							<div class="testimonials">
+								<!-- <span>
+							<div class="imghead">
+								<img src="images/home/img4.jpeg" alt="" />
+								<p><b>M Leena Priyadarshini</b></p>
+							</div>
+							<p class="pbody">Hello, I'm Leena from salem
+							<h2>AIR 187</h2>
+							<button class="video-testimonial">
+								<a href="https://youtu.be/3g0n8f-bZ7U" target="blank">Watch on Youtube</a></button>
+							</p>
+						</span> -->
+								<iframe
+									
+									src="<%= link %>"
+									title="YouTube video player"
+									frameborder="0"
+									allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+									allowfullscreen
+								></iframe>
+							</div>
 						</div>
-						<p class="pbody">
-							Hello, I'm Sreya from Salem</p>
-						<h2>AIR 187</h2>
-						<button class="video-testimonial">
-							<a href=" https://youtu.be/xfek1WNPTRU" target="blank">Watch on Youtube</a></button>
-						</p>
-					</span> -->
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="testimonials">
-							<!-- <span>
-						<div class="imghead">
-							<img src="images/home/img4.jpeg" alt="" />
-							<p><b>M Leena Priyadarshini</b></p>
-						</div>
-						<p class="pbody">Hello, I'm Leena from salem
-						<h2>AIR 187</h2>
-						<button class="video-testimonial">
-							<a href="https://youtu.be/3g0n8f-bZ7U" target="blank">Watch on Youtube</a></button>
-						</p>
-					</span> -->
-							<iframe
-								width="360"
-								height="200"
-								src="https://www.youtube.com/embed/3g0n8f-bZ7U"
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen
-							></iframe>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="testimonials">
-							<iframe
-								width="360"
-								height="200"
-								src="https://www.youtube.com/embed/OUQ1FXrOJKA"
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen
-							></iframe>
-							<!-- <span>
-						<div class="imghead">
-							<img src="images/home/img4.jpeg" alt="" />
-							<p><b>David, IIT student</b></p>
-						</div>
-						<p class="pbody">Hello, I'm J Sundhar from salem
-						<h2>AIR 187</h2>
-						<button class="video-testimonial">
-							<a href="https://youtu.be/OUQ1FXrOJKA" target="blank">Watch on Youtube</a>
-						</button>
-						</p>
-					</span> -->
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="testimonials">
-							<!-- <span>
-						<div class="imghead">
-							<img src="images/home/img4.jpeg" alt="" />
-							<p><b>Maya, Neet student</b></p>
-						</div>
-						<p class="pbody">
-							Lorem ipsum dolor sit amet, consectetur amet adipiscing elit. Praesent
-							in maximus nunc, nec ullamcorper justo.
-						</p>
-					</span> -->
-							<iframe
-								width="360"
-								height="200"
-								src="https://www.youtube.com/embed/3ZPTqfJImjI"
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen
-							></iframe>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="testimonials">
-							<iframe
-								width="360"
-								height="200"
-								src="https://www.youtube.com/embed/xfek1WNPTRU"
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen
-							></iframe>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="testimonials">
-							<iframe
-								width="360"
-								height="200"
-								src="https://www.youtube.com/embed/xfek1WNPTRU"
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen
-							></iframe>
-						</div>
-					</div>
-				</div>
+					<% }) %>
+				</div></div>
 				<div class="swiper-button-next"></div>
 				<div class="swiper-button-prev"></div>
 			</section>
