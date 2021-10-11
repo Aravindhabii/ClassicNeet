@@ -71,7 +71,7 @@ router.route('/').get((req, res) => {
 												console.log(err);
 											} else {
 												for (let i = 0; i <= response.length - 1; i++) {
-													var link = response[i].latestupdates;
+													var link = response[i].testimonialslink;
 													// console.log(image)
 													stutest.push(link);
 												}

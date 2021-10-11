@@ -411,7 +411,8 @@
 		</div>
 	</section> -->
 			<!-- Swiper -->
-			<section class="swiper swiper2 mySwiper2">
+			<section class="testimonials_container">
+				<div class="swiper swiper2 mySwiper2">
 				<h1 class="studentsh1">STUDENTS TESTIMONIALS</h1>
 				<div class="swiper-wrapper">
 					<% stutest.forEach(link => { %>
@@ -429,18 +430,17 @@
 							</p>
 						</span> -->
 								<iframe
-									width="360"
-									height="200"
+									
 									src="<%= link %>"
 									title="YouTube video player"
 									frameborder="0"
-									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+									allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 									allowfullscreen
 								></iframe>
 							</div>
 						</div>
 					<% }) %>
-				</div>
+				</div></div>
 				<div class="swiper-button-next"></div>
 				<div class="swiper-button-prev"></div>
 			</section>
