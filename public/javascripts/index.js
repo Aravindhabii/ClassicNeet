@@ -49,3 +49,27 @@ var swiper = new Swiper('.mySwiper', {
 
 //   return direction;
 // }
+
+function format_number(x) {
+	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+var counter = document.querySelector('.stats-details'),
+	value = {
+		val: parseInt(counter.innerText)
+	};
+const timeline = gsap
+	.timeline({
+		scrollTigger: {
+			start: 'stats',
+			trigger: 'top center'
+		}
+	})
+	.from(value, {
+		duration: 5,
+		val: 0,
+		roundProps: 'val',
+		onUpdate: function () {
+			counter.innerText = format_number(value.val);
+		}
+	});
