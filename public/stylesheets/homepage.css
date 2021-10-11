@@ -425,7 +425,7 @@ p {
 /* Admission */
 .admission {
 	position: relative;
-	top: 63%;
+	/* top: 63%; */
 	width: 121vw;
 	height: 30vh;
 	padding: 1%;

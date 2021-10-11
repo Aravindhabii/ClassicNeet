@@ -10,7 +10,7 @@ const upload = multer({ storage });
 
 dotenv.config({ path: './.env' });
 
-router.route('/').get((req, res) => {
+router.route('/home').get((req, res) => {
 	db.query('SELECT * FROM homeslider', (error, response) => {
 		var arr = [];
 		if (error) {
