@@ -421,17 +421,7 @@
 					<% stutest.forEach(link => { %>
 						<div class="swiper-slide">
 							<div class="testimonials">
-								<!-- <span>
-							<div class="imghead">
-								<img src="images/home/img4.jpeg" alt="" />
-								<p><b>M Leena Priyadarshini</b></p>
-							</div>
-							<p class="pbody">Hello, I'm Leena from salem
-							<h2>AIR 187</h2>
-							<button class="video-testimonial">
-								<a href="https://youtu.be/3g0n8f-bZ7U" target="blank">Watch on Youtube</a></button>
-							</p>
-						</span> -->
+						
 								<iframe
 									class="video"
 									src="<%= link %>"
@@ -452,16 +442,18 @@
 
 			<%- include('./layout/footer') %>
 		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.5/ScrollTrigger.min.js" integrity="sha512-m/n857VfrPYUcRvzCfqfrC9aMT06TQA2V0DcX/Ovovrhswa3038FfYmHlB0l/ZMukVyKWmiwZI4Pnnd7v3FwFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
 			crossorigin="anonymous"
 		></script>
-		<script src="javascripts/index.js"></script>
 		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 		<script src="javascripts/common.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="slick/slick.min.js"></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script type="text/javascript" src="slick/slick.min.js"></script>
+		<script src="javascripts/index.js"></script>
 	</body>
 </html>

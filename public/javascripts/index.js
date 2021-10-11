@@ -74,3 +74,5 @@ var swiper = new Swiper(".mySwiper", {
 
 //   return direction;
 // }
+const counters = document.querySelectorAll('.counter');
+console.log(counters);
