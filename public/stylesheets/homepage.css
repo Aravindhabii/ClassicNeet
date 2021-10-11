@@ -1090,7 +1090,7 @@ p {
 
 .swiper2 {
 	height: 100vh !important;
-	width: 70vw !important;
+	width: 90vw !important;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
@@ -1098,7 +1098,8 @@ p {
 }
 .swiper1 {
 	height: 100vh !important;
-	width: 3vw !important;
+	width: 30vw !important;
+
 	
 	overflow: hidden;
 	display: flex;
@@ -1106,9 +1107,9 @@ p {
 	/* justify-content: space-around !important; */
 }
 .mySwiper1 {
-	width: 80% !important;
+	width: 90% !important;
 	height: 40vh !important;
-	background-color: blue;
+	
 	margin-left: auto;
 	margin-right: auto;
 	
@@ -1147,7 +1148,7 @@ p {
 }
 
 .mySwiper2 .swiper-slide {
-	width: 50vw;
+	width: 70vw;
 	height: 90%;
 	text-align: center;
 	font-size: 18px;
