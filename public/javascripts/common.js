@@ -82,28 +82,7 @@ var swiper1 = new Swiper(".mySwiper1", {
     prevEl: ".swiper-button-prev",
   },
 });
-console.log('kolol');
-const counters = document.querySelectorAll('.counter')
 
-const speed = 200;
-  
-
-counters.forEach(c =>{
-  const updateCount = () => {
-    const target = +c.getAttribute('data-target')
-    const count = +c.innerText
-    const inc = target / speed
-    console.log(target);
-    console.log('hola');
-    if(count < target) {
-      c.innerText = (count + inc)
-      setTimeout(updateCount,1)
-    } else {
-      count.innerText = (target)
-    }
-  }
-  updateCount();
-})
 
 var owl = $('.topperCard');
 owl.owlCarousel({
