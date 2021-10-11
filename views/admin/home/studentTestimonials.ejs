@@ -10,36 +10,58 @@
 		<link rel="stylesheet" href="../../stylesheets/adminSideBar.css" />
 	</head>
 	<body>
-		<%- include('../../layout/adminheader') %>
-		<%-include('../../layout/adminSidebar') %>
-		<div class="StudentsTestimonials">
-			<h2>Students testimonials</h2>
-			<div class="grid5">
-				<div class="grid-item5 item1">
-					<p>Current Image</p>
-				</div>
-				<div class="grid-item5 item2">
-					<p>New Image</p>
-				</div>
-				<div class="grid-item5 item3">
-					<p>Name</p>
-				</div>
-				<div class="grid-item5 item5">
-					<p>Content</p>
-				</div>
-				<div class="grid-item5 item3">
-					<p>College Name</p>
-				</div>
-				<div class="grid-item5 item3">
-					<li class="">
-						<a href=""><b>Watch On Youtube!</b></a>
-					</li>
-				</div>
-			</div>
-			<div class="subbutton5">
-				<button type="button">Submit</button>
-			</div>
-		</div>
+				    <%- include('../../layout/adminheader') %>
+
+    <section class="mainsection">
+      <div class="popupdiv">
+          <form action="/admin/studenttestimonials" method="post">
+            <input type="text" name="uploadlink" id="uploadlink" />
+            <button type="submit">submit</button>
+          </form>
+        </div>
+      <%-include('../../layout/adminSidebar') %>
+      <div class="Latestupdates">
+        
+
+        <h2>Latest updates</h2>
+        <form class="form" action="/admin/studenttestimonials?_method=DELETE" method="post">
+        <div class="grid2">
+          <div class="grid-item2 item1">
+            <p>Current Link</p>
+            <% link.forEach(i => { %>
+            <input type="text" id="linkinput" value="<%= i %>"  readonly/>
+            <% }) %>
+          </div>
+
+          <div class="grid-item2 item2">
+            <p>Updates</p>
+            <% link.forEach(ilink => { %>
+            <input
+              type="checkbox"
+              id="checkbox"
+              name="checkbox"
+              style="height: 20px; width: 20px"
+              value="<%= ilink %> "
+            />
+            <% }) %>
+          </div>
+        </div>
+        <div class="subbutton2">
+        <button type="submit" >Delete</button>
+        
+        </div>
+        </form>
+        <div class="subbutton3">
+          <div class="addToppers"><span>x</span></div>
+        <button type="submit" class="addButton">Add</button>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
 		<script src="../../javascripts/adminPanel.js"></script>
 	</body>
 </html>

@@ -257,7 +257,7 @@ router
         console.log(err);
       } else {
         for (let i = 0; i <= response.length - 1; i++) {
-          var link = response[i].latestupdates;
+          var link = response[i].testimonialslink;
           // console.log(image)
           arr.push(link);
         }
@@ -271,7 +271,7 @@ router
     console.log(link);
     db.query(
       "INSERT INTO studenttestimonials SET ?",
-      { latestupdates: link },
+      { testimonialslink: link },
       (err, results) => {
         if (err) {
           console.log(err);
