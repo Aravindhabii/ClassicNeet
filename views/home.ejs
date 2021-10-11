@@ -198,7 +198,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="HexagonDiv">
+			<section class="HexagonDiv" id="courses">
 				<!-- <div class="left">
 			<div class="spilldiv">
 				<img class="spill " src="images/home/spill.png" alt="">
@@ -252,7 +252,7 @@
 		
 		</div>  -->
 
-				<div class="cardsDiv">
+				<div class="cardsDiv" id="courses">
 					<div class="box1">
 						<img class="hexaimg" src="images/home/jee.jpg" alt="" />
 
@@ -303,7 +303,7 @@
 				</div>
 			</div>
 	</section> -->
-			<section class="bgTopper">
+			<section class="bgTopper" >
 				<div class="neet-2020-toppers">
 					<img src="images/home/Vector.svg" alt="SVG" />
 					<div class="neet-2020-toppers-a">
@@ -314,6 +314,7 @@
           <div class="swiper-wrapper">
 			  <% ourtoppers.forEach(topper => { %>
 				<div class="swiper-slide">
+					<section class="topperCard">
 					<div class="topperImg2">
 						<img src="<%= topper.studentimg %>" alt="" />
 					</div>
@@ -324,13 +325,16 @@
 							<h4 class="score">Neet score</h4>
 							<p class="marks">644/720</p>
 						</div>
-					</div>   
+					</div>
+				</section>   
 				</div>
 			  <% }) %>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          
         </section>
+			<div class="swiper-button-next arrownext1"></div>
+          	<div class="swiper-button-prev arrowprev1"></div>
+		
 			</section>
       	<!-- <div class="topper2">
 						<div class="topperImg2">
@@ -342,22 +346,22 @@
 							<div class="markFlex">
 								<h4 class="score">Neet score</h4>
 								<p class="marks">644/720</p>
-							</div>
+							</div>	
 						</div>
 					</div> -->
 
 			<section class="stats">
 				<div class="stats-details">
 					<div class="stat1 stat">
-						<h1 class="counter" data-target="345">345</h1>
+						<h1 class="counter MBBS_Seats" data-target="345">345</h1>
 						<h3>MBBS Seats through Neet</h3>
 					</div>
 					<div class="stat2 stat">
-						<h1 class="counter" data-target="4">4</h1>
+						<h1 class="counter Consecutive" data-target="4">4</h1>
 						<h3>Consecutive years of District first in Salem</h3>
 					</div>
 					<div class="stat3 stat">
-						<h1 class="counter" data-target="90">90%</h1>
+						<h1 class="" data-target="90">90%</h1>
 						<h3>Success rate in NEET</h3>
 					</div>
 					<div class="stat4 stat">
@@ -410,149 +414,46 @@
 		</div>
 	</section> -->
 			<!-- Swiper -->
-			<section class="swiper swiper2 mySwiper2">
+			<section class="testimonials_container">
+				<div class="swiper swiper2 mySwiper2">
 				<h1 class="studentsh1">STUDENTS TESTIMONIALS</h1>
 				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<div class="testimonials">
-							<iframe
-								width="360"
-								height="200"
-								src="https://www.youtube.com/embed/xfek1WNPTRU"
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen
-							></iframe>
-							<!-- <span>
-						<div class="imghead">
-							<img src="images/home/img4.jpeg" alt="" />
-							<p><b>G. Sreya Priyadarshini</b></p>
+					<% stutest.forEach(link => { %>
+						<div class="swiper-slide">
+							<div class="testimonials">
+						
+								<iframe
+									class="video"
+									src="<%= link %>"
+									title="YouTube video player"
+									frameborder="0"
+									allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+									allowfullscreen
+								></iframe>
+							</div>
 						</div>
-						<p class="pbody">
-							Hello, I'm Sreya from Salem</p>
-						<h2>AIR 187</h2>
-						<button class="video-testimonial">
-							<a href=" https://youtu.be/xfek1WNPTRU" target="blank">Watch on Youtube</a></button>
-						</p>
-					</span> -->
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="testimonials">
-							<!-- <span>
-						<div class="imghead">
-							<img src="images/home/img4.jpeg" alt="" />
-							<p><b>M Leena Priyadarshini</b></p>
-						</div>
-						<p class="pbody">Hello, I'm Leena from salem
-						<h2>AIR 187</h2>
-						<button class="video-testimonial">
-							<a href="https://youtu.be/3g0n8f-bZ7U" target="blank">Watch on Youtube</a></button>
-						</p>
-					</span> -->
-							<iframe
-								width="360"
-								height="200"
-								src="https://www.youtube.com/embed/3g0n8f-bZ7U"
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen
-							></iframe>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="testimonials">
-							<iframe
-								width="360"
-								height="200"
-								src="https://www.youtube.com/embed/OUQ1FXrOJKA"
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen
-							></iframe>
-							<!-- <span>
-						<div class="imghead">
-							<img src="images/home/img4.jpeg" alt="" />
-							<p><b>David, IIT student</b></p>
-						</div>
-						<p class="pbody">Hello, I'm J Sundhar from salem
-						<h2>AIR 187</h2>
-						<button class="video-testimonial">
-							<a href="https://youtu.be/OUQ1FXrOJKA" target="blank">Watch on Youtube</a>
-						</button>
-						</p>
-					</span> -->
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="testimonials">
-							<!-- <span>
-						<div class="imghead">
-							<img src="images/home/img4.jpeg" alt="" />
-							<p><b>Maya, Neet student</b></p>
-						</div>
-						<p class="pbody">
-							Lorem ipsum dolor sit amet, consectetur amet adipiscing elit. Praesent
-							in maximus nunc, nec ullamcorper justo.
-						</p>
-					</span> -->
-							<iframe
-								width="360"
-								height="200"
-								src="https://www.youtube.com/embed/3ZPTqfJImjI"
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen
-							></iframe>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="testimonials">
-							<iframe
-								width="360"
-								height="200"
-								src="https://www.youtube.com/embed/xfek1WNPTRU"
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen
-							></iframe>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="testimonials">
-							<iframe
-								width="360"
-								height="200"
-								src="https://www.youtube.com/embed/xfek1WNPTRU"
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen
-							></iframe>
-						</div>
-					</div>
+					<% }) %>
 				</div>
-				<div class="swiper-button-next"></div>
-				<div class="swiper-button-prev"></div>
+
+			</div>
+			<div class="swiper-button-next arrownext2"></div>
+			<div class="swiper-button-prev arrowprev2"></div>
 			</section>
 
 			<%- include('./layout/footer') %>
 		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.5/ScrollTrigger.min.js" integrity="sha512-m/n857VfrPYUcRvzCfqfrC9aMT06TQA2V0DcX/Ovovrhswa3038FfYmHlB0l/ZMukVyKWmiwZI4Pnnd7v3FwFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
 			crossorigin="anonymous"
 		></script>
-		<script src="javascripts/index.js"></script>
 		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 		<script src="javascripts/common.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="slick/slick.min.js"></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script type="text/javascript" src="slick/slick.min.js"></script>
+		<script src="javascripts/index.js"></script>
 	</body>
 </html>
