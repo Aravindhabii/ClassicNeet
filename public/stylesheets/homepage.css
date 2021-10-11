@@ -94,7 +94,9 @@
 	position: relative;
 	width: 30%;
 	height: 100%;
+	/* margin-left: auto; */
 	/* background-color: rosybrown; */
+	left: 0%;
 }
 
 .homeRight {
@@ -117,8 +119,7 @@
 }
 .blob3 {
 	position: absolute;
-    right: 0%;
-    top: 0%;
+
     right: 12%;
     top: 64%;
     transform: scale(1.05);
@@ -271,6 +272,7 @@
 }
 .CalanderEvents {
 	text-align: center;
+	font-size: 25px;
 	/* top: 6%;
 	right: 16%; */
 }
@@ -403,7 +405,7 @@ p {
 }
 .sec-2 .div-1 h1 {
 	margin-bottom: 3rem;
-	font-size: 25px;
+
 	/* margin-right: 10rem; */
 }
 .section-2 .div-1 .calandersvg {
@@ -1307,7 +1309,7 @@ p {
   /* margin-bottom: 1.5rem; */
 }
 .college {
-	font-size: 15px;
+	font-size: 13px;
 	font-weight: 500;
 	margin-bottom: 0.5rem !important;
 }
@@ -1350,7 +1352,8 @@ p {
 }
 .sec-2 {
 	/* background-color: blanchedalmond; */
-	height: 86vh;
+	position: relative;
+	min-height: 86vh;
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
@@ -1379,4 +1382,124 @@ p {
 
 iframe {
 	border-radius: 30px 0 30px 0;
+}
+@media (max-width:1450px) {
+	.blob1 {
+		width: 50%;
+		height: 80vh;
+	
+	}
+	.blob2 {
+		transform: scale(.8);
+		right: 7%;
+		top: 1%;
+	}
+	.blob3 {
+		transform: scale(.9);
+		right: 16%;
+		top: 64%;
+	}
+}
+
+
+
+
+@media (max-width:1250px) {
+	.blob1 {
+		width: 50%;
+		height: 74vh;
+		top: 8%;
+	
+	}
+	.blob2 {
+		transform: scale(.7);
+		right: 3%;
+		top: 1%;
+	}
+	.blob3 {
+		transform: scale(.8);
+		right: 14%;
+		top: 64%;
+	}
+	.news-box {
+		height: 25rem;
+	width: 25rem;
+	}
+	.calenderCard {
+		width: 25rem;
+	}
+	.date {
+		padding: .3rem;
+	}
+	.div-2-title {
+	
+		font-size: 20px;
+		/* border: 1px solid #1E2886; */
+	}
+	.CalanderEvents {
+		font-size: 20px;
+	}
+}
+
+@media (max-width:1100px) {
+	.blob1 {
+		width: 50%;
+		height: 74vh;
+		top: 8%;
+	
+	}
+	.blob2 {
+		transform: scale(.7);
+		right: -5%;
+		top: 1%;
+	}
+	.blob3 {
+		transform: scale(.8);
+		right: 14%;
+		top: 64%;
+	}
+}
+@media (max-width:1100px) {
+	.homeLeft {
+		/* position: absolute; */
+		display: none;
+	}
+	.homeRight {
+		/* display: none;		 */
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		
+	
+	}
+	.sliderRev {
+		height: 80vh;
+	}
+	.blob3 {
+		transform: scale(.8);
+		right: -226%;
+		top: 64%;
+	}
+	.blob2 {
+		transform: scale(.7);
+		right: -234%;
+		top: 1%;
+	}
+	
+	
+
+}
+@media (max-width: 1000px) {
+	.sec-2 {
+		/* background-color: blanchedalmond; */
+		position: relative;
+		/* min-height: 70vh; */
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-evenly;
+	}
+	.sliderRev {
+		height: 70vh;
+	}
 }

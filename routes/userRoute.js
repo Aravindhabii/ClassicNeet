@@ -369,7 +369,7 @@ router
 			'Oct',
 			'Nov',
 			'Dec'
-		];
+		];7
 		const month = monthNames[parseInt(req.body.date.split('-')[1]) - 1];
 		const date = req.body.date.split('-')[2];
 		const event = req.body.event;
