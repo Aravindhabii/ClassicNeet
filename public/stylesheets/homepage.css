@@ -109,7 +109,7 @@
 	top: 2%;
 	/* left: 7px; */
 	width: 63%;
-	height: 86vh;
+	height: 600px;
 }
 .blob2 {
 	position: absolute;
@@ -123,6 +123,8 @@
     right: 12%;
     top: 64%;
     transform: scale(1.05);
+
+	
 }
 .sliderRev {
 	margin-top: 1rem;
@@ -1309,7 +1311,7 @@ p {
   /* margin-bottom: 1.5rem; */
 }
 .college {
-	font-size: 13px;
+	font-size: 14px;
 	font-weight: 500;
 	margin-bottom: 0.5rem !important;
 }
