@@ -87,6 +87,7 @@
 .home {
 	position: relative;
 	height: 90vh;
+	min-height: 560px;
 	width: 100%;
 	display: flex;
 }
@@ -124,7 +125,7 @@
     top: 64%;
     transform: scale(1.05);
 
-	
+
 }
 .sliderRev {
 	margin-top: 1rem;
@@ -1149,28 +1150,28 @@ p {
 .arrownext1 {
 	color: rgb(255, 255, 255);
 	position: absolute;
-	top: 57.5%;
+	top: 60%;
 	/* transform: translateY(-50%); */
 	right: 6% !important;
 }
 .arrowprev1 {
 	color: rgb(255, 255, 255);
 	position: absolute;
-	top: 57.5%;
+	top: 60%;
 	/* transform: translateY(-50%); */
 	left: 6% !important;
 }
 .arrownext2 {
 	color: #02c3d8;
 	position: absolute;
-	top: 82.5%;
+	top: 85.5%;
 	/* transform: translateY(-50%); */
 	right: 3% !important;
 }
 .arrowprev2 {
 	color: #02c3d8;
 	position: absolute;
-	top: 82.5%;
+	top: 85.5%;
 	/* transform: translateY(-50%); */
 	left: 3% !important;
 }
