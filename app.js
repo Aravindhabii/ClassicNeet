@@ -51,19 +51,6 @@ app.get('/viewcount', (req, res) => {});
 app.use('/', userRoutes);
 app.use('/', authentication);
 
-//cloudinary
-// const multer = require('multer');
-// const { storage } = require('./cloudianry');
-// const upload = multer({ storage });
-// app
-//   .get("/homeslider", (req, res) => {
-//     res.render("cloudinary");
-//   })
-//   .post("/homeslider", upload.single("sliderimg"), (req, res) => {
-//     console.log(req.file.path);
-// 	console.log(req.file.fieldname)
-//   });
-
 app.get('/stories', (req, res) => {
 	res.render('successStories');
 });
