@@ -10,7 +10,7 @@ const upload = multer({ storage });
 
 dotenv.config({ path: './.env' });
 
-router.route('/').get((req, res) => {
+router.route('/home').get((req, res) => {
 	db.query('SELECT * FROM homeslider', (error, response) => {
 		var arr = [];
 		if (error) {
@@ -369,7 +369,7 @@ router
 			'Oct',
 			'Nov',
 			'Dec'
-		];
+		];7
 		const month = monthNames[parseInt(req.body.date.split('-')[1]) - 1];
 		const date = req.body.date.split('-')[2];
 		const event = req.body.event;
