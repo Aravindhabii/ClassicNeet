@@ -903,16 +903,12 @@ p {
 	height: 55vh;
 }
 
-.ytp-chrome-top {
-	display: none !important;
-}
-
 .studentsh1 {
 	margin: 2rem 0rem;
 	font-size: 1.5rem;
 }
 .video {
-	height: 28vh;
+	height: 27vh;
 	width: 23vw;
 }
 .imghead {

@@ -1,20 +1,13 @@
 const express = require('express');
-const fs = require('fs');
 const path = require('path');
 const ejsMate = require('ejs-mate');
 const session = require('express-session');
 const flash = require('connect-flash');
-const { authenticate } = require('passport');
 const userRoutes = require('./routes/userRoute');
 const authentication = require('./routes/authentication');
-const admin = require('firebase-admin');
-const mysql = require('mysql');
-const dotenv = require('dotenv');
-const mariadb = require('mariadb');
 const db = require('./database');
 const methodOverride = require('method-override');
-
-dotenv.config();
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
 db.connect((err) => {
 	if (err) {
@@ -59,4 +52,6 @@ app.get('*', (req, res) => {
 	res.render('404error');
 });
 
-app.listen(8080, () => console.log(`SERVER IS RUNNING ON PORT 8080`));
+app.listen(process.env.PORT, () =>
+	console.log(`SERVER IS RUNNING ON PORT ${process.env.PORT}`)
+);

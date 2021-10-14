@@ -19,6 +19,7 @@
         </div>
         <div class="right">
         <form action="/admin/sliderrevolution" method="post" class="imgform" enctype="multipart/form-data">
+          <h1 class="m-5">Slider Revolution</h1>
         <table class="table" style="width: 70%;">
             <thead>
               <tr>
@@ -32,7 +33,7 @@
               <tr>
                 <td>
                     <p class="onclickimg"><%= i.imgname %></p>
-                    <span class="currentPreviewSpan btn btn-info" >Preview</span>
+                    <span class="currentPreviewSpan btn btn-info" >Show Image</span>
                     <span class="currentSliderimgurl"><%= i.sliderimg %> </span>
                 </td>
                 <td>
@@ -43,7 +44,7 @@
                     <span class="sliderimgurl"></span>
                 </td>
                 <td>
-                    <input type="checkbox" id="checkbox" class='updatesCheckbox' name="checkbox" value='<%= i.cloudinaryName %>' style="height: 20px; width: 20px;" />
+                    <input type="checkbox" id="checkbox" class='updatesCheckbox' disabled name="checkbox" value='<%= i.cloudinaryName %>' style="height: 20px; width: 20px;" />
                 </td>
               </tr>
               <% }) %>

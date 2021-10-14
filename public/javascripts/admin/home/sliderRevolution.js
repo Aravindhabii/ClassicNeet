@@ -1,15 +1,15 @@
-
 const previewDiv = document.querySelector('.preview');
 const previewSpan = document.querySelectorAll('.previewSpan');
 const sectionop = document.querySelector('.mainsection');
 const closesvg = document.querySelector('.closesvg');
 
-
 const fileimg = document.querySelectorAll('.fileimg');
 const sliderimgurl = document.querySelectorAll('.sliderimgurl');
 for (let i = 0; i <= fileimg.length - 1; i++) {
 	fileimg[i].addEventListener('change', (e) => {
-		document.querySelector('.submit').removeAttribute('disabled');
+		document
+			.querySelectorAll('.updatesCheckbox')
+			[i].removeAttribute('disabled');
 		for (let j = 0; j <= sliderimgurl.length - 1; j++) {
 			if (i === j) {
 				sliderimgurl[j].innerText = URL.createObjectURL(e.target.files[0]);
@@ -18,7 +18,14 @@ for (let i = 0; i <= fileimg.length - 1; i++) {
 	});
 }
 
-console.log(sectionop);
+document.querySelectorAll('.updatesCheckbox').forEach((check, i) => {
+	check.addEventListener('change', () => {
+		if (sliderimgurl[i].innerText.length <= 0 && check.checked) {
+			document.querySelector('.submit').removeAttribute('disabled');
+		}
+	});
+});
+
 for (let i = 0; i <= previewSpan.length - 1; i++) {
 	previewSpan[i].addEventListener('click', (e) => {
 		for (let j = 0; j <= sliderimgurl.length - 1; j++) {
@@ -29,11 +36,11 @@ for (let i = 0; i <= previewSpan.length - 1; i++) {
 				previewDiv.appendChild(img);
 				previewDiv.style.display = 'block';
 				sectionop.style.filter = 'blur(20px)';
-				closesvg.addEventListener('click',()=>{
+				closesvg.addEventListener('click', () => {
 					previewDiv.removeChild(img);
 					previewDiv.style.display = 'none';
 					sectionop.style.filter = 'blur(0px)';
-				})
+				});
 			}
 		}
 	});
@@ -49,12 +56,12 @@ for (let i = 0; i <= currentPreviewSpan.length - 1; i++) {
 				previewDiv.appendChild(img);
 				previewDiv.style.display = 'block';
 				sectionop.style.filter = 'blur(20px)';
-				closesvg.addEventListener('click',()=>{
+				closesvg.addEventListener('click', () => {
 					console.log('hi');
 					previewDiv.removeChild(img);
 					previewDiv.style.display = 'none';
 					sectionop.style.filter = 'blur(0px)';
-				})
+				});
 			}
 		}
 	});
