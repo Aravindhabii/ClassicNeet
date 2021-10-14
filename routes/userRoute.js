@@ -229,7 +229,7 @@ router
     await db.query("SELECT * FROM ourtoppers", async (error, response) => {
       var arr = [];
       if (error) {
-        console.log(error);
+        console.log(error)
       } else {
         for (let i = 0; i <= response.length - 1; i++) {
           var image = {
