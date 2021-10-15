@@ -20,7 +20,7 @@ for (let i = 0; i <= fileimg.length - 1; i++) {
 
 document.querySelectorAll('.updatesCheckbox').forEach((check, i) => {
 	check.addEventListener('change', () => {
-		if (sliderimgurl[i].innerText.length <= 0 && check.checked) {
+		if (sliderimgurl[i].innerText.length >= 0 && check.checked) {
 			document.querySelector('.submit').removeAttribute('disabled');
 		}
 	});
