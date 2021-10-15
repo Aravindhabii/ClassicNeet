@@ -224,10 +224,11 @@ router
 						console.log(err);
 					} else {
 						console.log(response);
-						res.redirect('/admin/latestupdates');
+						
 					}
 				}
 			);
+			res.redirect("/admin/latestupdates");
 		} else {
 			req.body.checkbox.forEach(async (link) => {
 				console.log(link);
@@ -239,11 +240,12 @@ router
 							console.log(err);
 						} else {
 							console.log(response);
-							res.redirect('/admin/latestupdates');
+	
 						}
 					}
 				);
 			});
+			res.redirect("/admin/latestupdates");
 		}
 	});
 

@@ -4,6 +4,24 @@
 	box-sizing: border-box;
 }
 
+body{
+	overflow-x: hidden;
+	transition: all 1s ease !important;
+
+}
+
+.sidebar a{
+	text-decoration: none;
+	
+}
+
+.ahover:hover{
+	background: #D2F4EA;
+	margin: 2px;
+	padding: 2px;
+	border: 0.7px solid #9beaec;
+}
+
 /* Slider Revolution */
 .mainsection{
 	height: 90vh;
@@ -19,12 +37,23 @@
 	position: relative;
 	height: 90%;
 	width: 90%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	transition: all 1s ease !important; 
+
 }
 
 .table{
 	border: 2px solid rgb(53, 49, 49);
 	border-radius: 2px;
 	width: 80%;
+}
+
+tbody{
+	height: 40vh;
+	overflow-y: auto;
 }
 
 .currentSliderimgurl{
@@ -41,6 +70,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	transition: all 1s ease !important;
 }
 
 .sliderimgurl{
@@ -53,13 +83,13 @@
 
 .preview{
 	position: absolute;
-	height: 80vh;
+	height: 80%;
 	width: 80%;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%,-41%);
-	display: none;
-	z-index: 5;
+	transform: translate(300vw,0);
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	transition: all 1s ease !important;
 }
 
 .preview img{
