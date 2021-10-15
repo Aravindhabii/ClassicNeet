@@ -4,6 +4,24 @@
 	box-sizing: border-box;
 }
 
+body{
+	overflow-x: hidden;
+	transition: all 1s ease !important;
+
+}
+
+.sidebar a{
+	text-decoration: none;
+	
+}
+
+.ahover:hover{
+	background: #D2F4EA;
+	margin: 2px;
+	padding: 2px;
+	border: 0.7px solid #9beaec;
+}
+
 /* Slider Revolution */
 .mainsection{
 	height: 90vh;
