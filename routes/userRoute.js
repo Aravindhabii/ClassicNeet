@@ -141,8 +141,7 @@ router
 			for (let i = 0; i <= req.files.length - 1; i++) {
 				for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
 					if (i === j) {
-
-						// await cloudinary.uploader.destroy(check);
+						await cloudinary.uploader.destroy('ClassicNeetAcademy/' + check);
 						await db.query(
 							'UPDATE homeslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
 							[
@@ -222,11 +221,10 @@ router
 						console.log(err);
 					} else {
 						console.log(response);
-						
 					}
 				}
 			);
-			res.redirect("/admin/latestupdates");
+			res.redirect('/admin/latestupdates');
 		} else {
 			req.body.checkbox.forEach(async (link) => {
 				console.log(link);
@@ -238,12 +236,11 @@ router
 							console.log(err);
 						} else {
 							console.log(response);
-	
 						}
 					}
 				);
 			});
-			res.redirect("/admin/latestupdates");
+			res.redirect('/admin/latestupdates');
 		}
 	});
 
@@ -294,7 +291,7 @@ router
 			[req.file.path, req.body.cloudinaryname]
 		);
 		res.redirect('/admin/ourtoppers');
-	}).delete
+	});
 
 //Neet Achivements Route
 router
@@ -364,7 +361,6 @@ router
 		}
 	});
 
-
 router
 	.route('/admin/calendarevents')
 	.get(async (req, res) => {
@@ -424,7 +420,7 @@ router
 	});
 
 router
-	.route('/admin/studenttestimonials')
+	.route('/admin/neetachievements')
 	.get(async (req, res) => {
 		res.render('admin/home/studentTestimonials');
 	})
@@ -442,8 +438,6 @@ router.route('/coursesIIT&Medical').get(async (req, res) => {
 router.route('/Demovideos').get(async (req, res) => {
 	res.render('Demovideos');
 });
-
-
 
 router.route('/results').get(async (req, res) => {
 	res.render('results');
