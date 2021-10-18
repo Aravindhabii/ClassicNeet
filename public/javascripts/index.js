@@ -1,3 +1,11 @@
+const section1 = document.querySelector('.home')
+const section2 = document.querySelector('.sec-2')
+const section3 = document.querySelector('.HexagonDiv')
+const section4 = document.querySelector('.cardsDiv')
+
+
+
+
 let count1 = 1;
 let count2 = 1;
 let count3 = 1;
