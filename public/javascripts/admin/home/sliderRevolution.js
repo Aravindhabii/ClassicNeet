@@ -20,8 +20,12 @@ for (let i = 0; i <= fileimg.length - 1; i++) {
 
 document.querySelectorAll('.updatesCheckbox').forEach((check, i) => {
 	check.addEventListener('change', () => {
-		if (sliderimgurl[i].innerText.length >= 0 && check.checked) {
-			document.querySelector('.submit').removeAttribute('disabled');
+		if (sliderimgurl[i].innerText.length >= 0) {
+			document.querySelectorAll('.updatesCheckbox').forEach((c, i) => {
+				if (c.checked) {
+					document.querySelector('.submit').removeAttribute('disabled');
+				}
+			});
 		}
 	});
 });
