@@ -10,8 +10,8 @@ const upload = multer({ storage });
 
 dotenv.config({ path: './.env' });
 
-router.route('/home').get((req, res) => {
-	db.query('SELECT * FROM homeslider', (error, response) => {
+router.route('/home').get(async (req, res) => {
+	await db.query('SELECT * FROM homeslider', async (error, response) => {
 		var arr = [];
 		if (error) {
 			// console.log(imganame);
@@ -25,7 +25,7 @@ router.route('/home').get((req, res) => {
 				};
 				arr.push(image);
 			}
-			db.query('SELECT * FROM ourtoppers', (error, response) => {
+			await db.query('SELECT * FROM ourtoppers', async (error, response) => {
 				var ourtoppers = [];
 				if (error) {
 					console.log(error);
@@ -39,58 +39,64 @@ router.route('/home').get((req, res) => {
 						};
 						ourtoppers.push(image);
 					}
-					db.query('SELECT * FROM calendarevents', (error, response) => {
-						var calendar = [];
-						if (error) {
-							console.log(error);
-						} else {
-							for (let i = 0; i <= response.length - 1; i++) {
-								var c = {
-									date: response[i].date,
-									month: response[i].month,
-									event: response[i].event
-								};
-								calendar.push(c);
-							}
-							db.query('SELECT * FROM latest_updates', (err, response) => {
-								latestupdates = [];
-								if (err) {
-									console.log(err);
-								} else {
-									for (let i = 0; i <= response.length - 1; i++) {
-										var link = response[i].latestupdates;
-										// console.log(image)
-										latestupdates.push(link);
-									}
-
-									db.query(
-										'SELECT * FROM studenttestimonials',
-										(err, response) => {
-											stutest = [];
-											if (err) {
-												console.log(err);
-											} else {
-												for (let i = 0; i <= response.length - 1; i++) {
-													var link = response[i].testimonialslink;
-													// console.log(image)
-													stutest.push(link);
-												}
-												// console.log(response[0].latestupdates);
-											}
-											console.log(stutest);
-											res.render('home', {
-												img: arr,
-												ourtoppers,
-												calendar: calendar,
-												latestupdates,
-												stutest
-											});
-										}
-									);
+					await db.query(
+						'SELECT * FROM calendarevents',
+						async (error, response) => {
+							var calendar = [];
+							if (error) {
+								console.log(error);
+							} else {
+								for (let i = 0; i <= response.length - 1; i++) {
+									var c = {
+										date: response[i].date,
+										month: response[i].month,
+										event: response[i].event
+									};
+									calendar.push(c);
 								}
-							});
+								await db.query(
+									'SELECT * FROM latest_updates',
+									async (err, response) => {
+										latestupdates = [];
+										if (err) {
+											console.log(err);
+										} else {
+											for (let i = 0; i <= response.length - 1; i++) {
+												var link = response[i].latestupdates;
+												// console.log(image)
+												latestupdates.push(link);
+											}
+
+											await db.query(
+												'SELECT * FROM studenttestimonials',
+												(err, response) => {
+													stutest = [];
+													if (err) {
+														console.log(err);
+													} else {
+														for (let i = 0; i <= response.length - 1; i++) {
+															var link = response[i].testimonialslink;
+															// console.log(image)
+															stutest.push(link);
+														}
+														// console.log(response[0].latestupdates);
+													}
+													console.log(stutest);
+													res.render('home', {
+														img: arr,
+														ourtoppers,
+														calendar: calendar,
+														latestupdates,
+														stutest
+													});
+												}
+											);
+										}
+									}
+								);
+							}
 						}
-					});
+					);
 				}
 			});
 		}
@@ -100,13 +106,12 @@ router.route('/home').get((req, res) => {
 // slider Revolution Route
 router
 	.route('/admin/sliderrevolution')
-	.get((req, res) => {
-		db.query('SELECT * FROM homeslider', (error, response) => {
+	.get(async (req, res) => {
+		await db.query('SELECT * FROM homeslider', async (error, response) => {
 			var arr = [];
 			if (error) {
 				console.log(error);
 			} else {
-				console.log(response.length);
 				for (let i = 0; i <= response.length - 1; i++) {
 					var image = {
 						sliderimg: response[i].sliderimg,
@@ -115,42 +120,67 @@ router
 					};
 					arr.push(image);
 				}
-				console.log(arr);
-				res.render('admin/home/sliderRevolution', { img: arr });
 			}
+			res.render('admin/home/sliderRevolution', { img: arr });
 		});
 	})
-	.post(upload.single('sliderimg'), (req, res) => {
-		if (typeof (req.body.sliderimg === 'string')) {
-			cloudinary.uploader.destroy(req.body.checkbox);
-			db.query(
-				'UPDATE homeslider SET sliderimg = ? AND imgname = ? WHERE cloudinaryname = ?',
-				[req.file.path, req.file.originalname, req.body.checkbox]
+	.post(upload.array('sliderimg'), async (req, res) => {
+		if (typeof req.body.checkbox === 'string') {
+			// await cloudinary.uploader.destroy(req.body.checkbox);
+			await db.query(
+				'UPDATE homeslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
+				[
+					req.files[0].path,
+					req.files[0].originalname,
+					req.files[0].filename.split('/')[1],
+					req.body.checkbox
+				]
 			);
-			res.render('admin/home/sliderRevolution');
+			res.redirect('/admin/sliderrevolution');
 		} else {
-			req.body.sliderimg.forEach((img, index1) => {
-				0.3;
-				req.body.checkbox.forEach(async (check, index2) => {
-					if (index1 === index2) {
-						console.log(check);
-						await cloudinary.uploader.destroy(check);
-						db.query(
-							'UPDATE homeslider SET sliderimg ? WHERE cloudinaryname = ?',
-							[req.file.path, check]
+			for (let i = 0; i <= req.files.length - 1; i++) {
+				for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
+					if (i === j) {
+
+						// await cloudinary.uploader.destroy(check);
+						await db.query(
+							'UPDATE homeslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
+							[
+								req.files[j].path,
+								req.files[j].originalname,
+								req.files[j].filename.split('/')[1],
+								req.body.checkbox[j]
+							]
 						);
 					}
-				});
-			});
-			res.render('admin/home/sliderRevolution');
+				}
+			}
+			// req.body.sliderimg.forEach((img, index1) => {
+			// 	req.body.checkbox.forEach(async (check, index2) => {
+			// 		if (index1 === index2) {
+			// 			console.log(check);
+			// 			// await cloudinary.uploader.destroy(check);
+			// 			await db.query(
+			// 				'UPDATE homeslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
+			// 				[
+			// 					req.file.path,
+			// 					req.file.originalname,
+			// 					req.file.filename.split('/')[1],
+			// 					req.body.checkbox
+			// 				]
+			// 			);
+			// 		}
+			// 	});
+			// });
+			res.redirect('/admin/sliderrevolution');
 		}
 	});
 
 // latest updates route
 router
 	.route('/admin/latestupdates')
-	.get((req, res) => {
-		db.query('SELECT * FROM latest_updates', (err, response) => {
+	.get(async (req, res) => {
+		await db.query('SELECT * FROM latest_updates', (err, response) => {
 			arr = [];
 			if (err) {
 				console.log(err);
@@ -166,10 +196,10 @@ router
 			}
 		});
 	})
-	.post((req, res) => {
+	.post(async (req, res) => {
 		const link = req.body.uploadlink;
 		console.log(link);
-		db.query(
+		await db.query(
 			'INSERT INTO latest_updates SET ?',
 			{ latestupdates: link },
 			(err, results) => {
@@ -182,9 +212,9 @@ router
 			}
 		);
 	})
-	.delete((req, res) => {
+	.delete(async (req, res) => {
 		if (typeof req.body.checkbox === 'string') {
-			db.query(
+			await db.query(
 				'DELETE FROM latest_updates WHERE latestupdates = ?',
 				[req.body.checkbox],
 				(err, response) => {
@@ -192,14 +222,15 @@ router
 						console.log(err);
 					} else {
 						console.log(response);
-						res.redirect('/admin/latestupdates');
+						
 					}
 				}
 			);
+			res.redirect("/admin/latestupdates");
 		} else {
-			req.body.checkbox.forEach((link) => {
+			req.body.checkbox.forEach(async (link) => {
 				console.log(link);
-				db.query(
+				await db.query(
 					'DELETE FROM latest_updates WHERE latestupdates = ?',
 					[link],
 					(err, response) => {
@@ -207,19 +238,20 @@ router
 							console.log(err);
 						} else {
 							console.log(response);
-							res.redirect('/admin/latestupdates');
+	
 						}
 					}
 				);
 			});
+			res.redirect("/admin/latestupdates");
 		}
 	});
 
 // Our Toppers Route
 router
 	.route('/admin/ourtoppers')
-	.get((req, res) => {
-		db.query('SELECT * FROM ourtoppers', (error, response) => {
+	.get(async (req, res) => {
+		await db.query('SELECT * FROM ourtoppers', async (error, response) => {
 			var arr = [];
 			if (error) {
 				console.log(error);
@@ -237,8 +269,8 @@ router
 			}
 		});
 	})
-	.post(upload.single('sliderimg'), (req, res) => {
-		db.query(
+	.post(upload.single('sliderimg'), async (req, res) => {
+		await db.query(
 			'INSERT INTO ourtoppers SET ?',
 			{
 				name: req.body.name,
@@ -256,19 +288,19 @@ router
 		);
 		res.redirect('/admin/ourtoppers');
 	})
-	.put(upload.single('sliderimg'), (req, res) => {
-		db.query('UPDATE ourtoppers SET studentimg = ? WHERE cloudinaryname = ?', [
-			req.file.path,
-			req.body.cloudinaryname
-		]);
+	.put(upload.single('sliderimg'), async (req, res) => {
+		await db.query(
+			'UPDATE ourtoppers SET studentimg = ? WHERE cloudinaryname = ?',
+			[req.file.path, req.body.cloudinaryname]
+		);
 		res.redirect('/admin/ourtoppers');
-	});
+	}).delete
 
 //Neet Achivements Route
 router
 	.route('/admin/studenttestimonials')
-	.get((req, res) => {
-		db.query('SELECT * FROM studenttestimonials', (err, response) => {
+	.get(async (req, res) => {
+		await db.query('SELECT * FROM studenttestimonials', (err, response) => {
 			arr = [];
 			if (err) {
 				console.log(err);
@@ -283,10 +315,10 @@ router
 			}
 		});
 	})
-	.post((req, res) => {
+	.post(async (req, res) => {
 		const link = req.body.uploadlink;
 		console.log(link);
-		db.query(
+		await db.query(
 			'INSERT INTO studenttestimonials SET ?',
 			{ testimonialslink: link },
 			(err, results) => {
@@ -299,9 +331,9 @@ router
 			}
 		);
 	})
-	.delete((req, res) => {
+	.delete(async (req, res) => {
 		if (typeof req.body.checkbox === 'string') {
-			db.query(
+			await db.query(
 				'DELETE FROM studenttestimonials WHERE testimonialslink = ?',
 				[req.body.checkbox],
 				(err, response) => {
@@ -314,9 +346,9 @@ router
 				}
 			);
 		} else {
-			req.body.checkbox.forEach((link) => {
+			req.body.checkbox.forEach(async (link) => {
 				console.log(link);
-				db.query(
+				await db.query(
 					'DELETE FROM studenttestimonials WHERE testimonialslink = ?',
 					[link],
 					(err, response) => {
@@ -332,13 +364,11 @@ router
 		}
 	});
 
-router.route('/admin/studenttestimonials').get((req, res) => {
-	res.render('admin/home/studentTestimonials');
-});
+
 router
 	.route('/admin/calendarevents')
-	.get((req, res) => {
-		db.query('SELECT * FROM calendarevents', (error, response) => {
+	.get(async (req, res) => {
+		await db.query('SELECT * FROM calendarevents', async (error, response) => {
 			var arr = [];
 			if (error) {
 				console.log(error);
@@ -355,7 +385,7 @@ router
 			}
 		});
 	})
-	.post((req, res) => {
+	.post(async (req, res) => {
 		const monthNames = [
 			'Jan',
 			'Feb',
@@ -369,12 +399,13 @@ router
 			'Oct',
 			'Nov',
 			'Dec'
-		];7
+		];
+		7;
 		const month = monthNames[parseInt(req.body.date.split('-')[1]) - 1];
 		const date = req.body.date.split('-')[2];
 		const event = req.body.event;
 
-		db.query(
+		await db.query(
 			'INSERT INTO calendarevents SET ?',
 			{
 				date,
@@ -394,33 +425,36 @@ router
 
 router
 	.route('/admin/studenttestimonials')
-	.get((req, res) => {
+	.get(async (req, res) => {
 		res.render('admin/home/studentTestimonials');
 	})
-	.post((req, res) => {});
+	.post(async (req, res) => {});
 
-router.route('/aboutus').get((req, res) => {
+router.route('/aboutus').get(async (req, res) => {
 	res.render('aboutus');
 });
-router.route('/coursesNEET').get((req, res) => {
+router.route('/coursesNEET').get(async (req, res) => {
 	res.render('coursesNEET');
 });
-router.route('/coursesIIT&Medical').get((req, res) => {
+router.route('/coursesIIT&Medical').get(async (req, res) => {
 	res.render('coursesIIT&Medical');
 });
-router.route('/Demovideos').get((req, res) => {
+router.route('/Demovideos').get(async (req, res) => {
 	res.render('Demovideos');
 });
-router.route('/results').get((req, res) => {
+
+
+
+router.route('/results').get(async (req, res) => {
 	res.render('results');
 });
-router.route('/contactus').get((req, res) => {
+router.route('/contactus').get(async (req, res) => {
 	res.render('contactus');
 });
-router.route('/successstories').get((req, res) => {
+router.route('/successstories').get(async (req, res) => {
 	res.render('successStories');
 });
-router.route('/404error').get((req, res) => {
+router.route('/404error').get(async (req, res) => {
 	res.render('404error');
 });
 

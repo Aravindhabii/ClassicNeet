@@ -1,78 +1,77 @@
-const count = (e, delay) => {
-  let max = parseInt(e.innerText);
+let count1 = 1;
+let count2 = 1;
+let count3 = 1;
+let count4 = 1;
 
-  if (max < 10) {
-    var min = parseInt(max);
-  } else {
-    var min = Math.floor(parseInt(max) / 2);
-  }
+function MBBS_Seats() {
+	count1++;
+	document.querySelector('.MBBS_Seats').innerHTML = count1;
+	if (
+		count1 == document.querySelector('.MBBS_Seats').getAttribute('data-target')
+	) {
+		clearInterval(MBBS_Seats);
+	}
+}
 
-  setInterval(() => {
-    console.log(min);
-    if (min <= max) {
-      min += 5;
-      e.innerText = Math.floor(min);
-    } else {
-      e.innerText = max;
-    }
-  }, delay);
-};
+function Consecutive() {
+	count2++;
+	document.querySelector('.Consecutive').innerHTML = count2;
+	if (
+		count2 == document.querySelector('.Consecutive').getAttribute('data-target')
+	) {
+		clearInterval(Consecutive);
+	}
+}
 
-count(document.querySelector(".MBBS_Seats"), 20);
-count(document.querySelector(".Consecutive"), 150);
-count(document.querySelector(".successRate"), 20);
-count(document.querySelector(".admission"), 40);
+function successRate() {
+	count3++;
+	document.querySelector('.successRate').innerHTML = `${count3}%`;
+	if (
+		count3 == document.querySelector('.successRate').getAttribute('data-target')
+	) {
+		clearInterval(successRate);
+	}
+}
+
+function admission() {
+	count4++;
+	document.querySelector('.admission').innerHTML = `${count4}%`;
+	if (
+		count4 == document.querySelector('.admission').getAttribute('data-target')
+	) {
+		clearInterval(admission);
+	}
+}
+window.add
+
 
 var slideIndex = 1;
 showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
-  showSlides((slideIndex += n));
+	showSlides((slideIndex += n));
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
-  showSlides((slideIndex = n));
+	showSlides((slideIndex = n));
 }
 function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {
-    slideIndex = 1;
-  }
-  slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 4000);
+	var i;
+	var slides = document.getElementsByClassName('mySlides');
+	for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = 'none';
+	}
+	slideIndex++;
+	if (slideIndex > slides.length) {
+		slideIndex = 1;
+	}
+	slides[slideIndex - 1].style.display = 'block';
+	setTimeout(showSlides, 4000);
 }
 
-var swiper = new Swiper(".mySwiper", {
-  effect: "cards",
-  grabCursor: true,
+var swiper = new Swiper('.mySwiper', {
+	effect: 'cards',
+	grabCursor: true
 });
-
-// var swiper = new Swiper('.swiper', {
-//   slidesPerView: 3,
-//   direction: getDirection(),
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   },
-//   on: {
-//     resize: function () {
-//       swiper.changeDirection(getDirection());
-//     },
-//   },
-// });
-
-// function getDirection() {
-//   var windowWidth = window.innerWidth;
-//   var direction = window.innerWidth <= 760 ? 'horizontal' : 'horizontal';
-
-//   return direction;
-// }
-
-// const counters = document.querySelectorAll('.counter');

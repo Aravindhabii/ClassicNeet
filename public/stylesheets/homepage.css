@@ -832,11 +832,10 @@ p {
 }
 .Stat {
   display: flex;
-  
+
   /* font-size: .5rem; */
   justify-self: center;
   margin-top: 2rem;
-  
 }
 .Stat h1 {
   /* margin-top: 2rem; */
@@ -1441,6 +1440,20 @@ iframe {
   iframe {
     height: 10rem;
   }
+  .arrownext2 {
+    color: #02c3d8;
+    position: absolute;
+    top: 84%;
+    /* transform: translateY(-50%); */
+    right: 3% !important;
+  }
+  .arrowprev2 {
+    color: #02c3d8;
+    position: absolute;
+    top: 84%;
+    /* transform: translateY(-50%); */
+    left: 3% !important;
+  }
 }
 
 @media (max-width: 1250px) {
@@ -1552,6 +1565,10 @@ iframe {
     width: 14.82rem !important;
     height: 10rem !important;
   }
+  .video {
+    height: 16vh;
+    width: 22vw;
+  }
   .bgTopper {
     /* height: 53vh; */
     height: fit-content;
@@ -1560,12 +1577,12 @@ iframe {
   .mySwiper1 {
     height: 30vh !important;
     margin-bottom: 3rem;
-	margin-top: 3rem;
+    margin-top: 3rem;
   }
-  .mySwiper2 {
-    /* height: 34vh !important; */
-    /* margin-bottom: 3rem; */
-  }
+  /* .mySwiper2 {
+    height: 34vh !important;
+    margin-bottom: 3rem;
+  } */
   .neet-2020-toppers-a {
     margin-top: 1rem;
   }
@@ -1676,8 +1693,32 @@ iframe {
   .bottom-drive {
     padding: 10px 40px;
   }
+  .arrownext2 {
+    color: #02c3d8;
+    position: absolute;
+    top: 83%;
+    /* transform: translateY(-50%); */
+    right: 3% !important;
+  }
+  .arrowprev2 {
+    color: #02c3d8;
+    position: absolute;
+    top: 83%;
+    /* transform: translateY(-50%); */
+    left: 3% !important;
+  }
 }
 @media (max-width: 800px) {
+  .swiper-button-prev {
+    display: none;
+  }
+  .swiper-button-next {
+    display: none;
+  }
+  .video {
+    height: 18vh;
+    width: 28vw;
+  }
   .statBox {
     width: 80%;
     /* background-color: #2b72e4; */
@@ -1727,6 +1768,10 @@ iframe {
   }
 }
 @media (max-width: 700px) {
+  .video {
+    height: 18vh;
+    width: 32vw;
+  }
   .neet-2020-toppers {
     margin: 2rem 0px;
   }
@@ -1762,10 +1807,10 @@ iframe {
   }
 }
 @media (max-width: 600px) {
-	.video {
-		height: 18vh;
-		width: 40vw;
-	  }
+  .video {
+    height: 18vh;
+    width: 38vw;
+  }
   .Stat h1 {
     font-size: 2.2rem;
   }
