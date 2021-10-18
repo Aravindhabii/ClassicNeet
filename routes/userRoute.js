@@ -112,7 +112,6 @@ router
 			if (error) {
 				console.log(error);
 			} else {
-				console.log(response.length);
 				for (let i = 0; i <= response.length - 1; i++) {
 					var image = {
 						sliderimg: response[i].sliderimg,
@@ -121,7 +120,6 @@ router
 					};
 					arr.push(image);
 				}
-				console.log(arr);
 			}
 			res.render('admin/home/sliderRevolution', { img: arr });
 		});
@@ -143,7 +141,7 @@ router
 			for (let i = 0; i <= req.files.length - 1; i++) {
 				for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
 					if (i === j) {
-						console.log('ksfhjkl');
+
 						// await cloudinary.uploader.destroy(check);
 						await db.query(
 							'UPDATE homeslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
@@ -296,7 +294,7 @@ router
 			[req.file.path, req.body.cloudinaryname]
 		);
 		res.redirect('/admin/ourtoppers');
-	});
+	}).delete
 
 //Neet Achivements Route
 router
@@ -366,9 +364,7 @@ router
 		}
 	});
 
-router.route('/admin/studenttestimonials').get(async (req, res) => {
-	res.render('admin/home/studentTestimonials');
-});
+
 router
 	.route('/admin/calendarevents')
 	.get(async (req, res) => {
@@ -446,6 +442,9 @@ router.route('/coursesIIT&Medical').get(async (req, res) => {
 router.route('/Demovideos').get(async (req, res) => {
 	res.render('Demovideos');
 });
+
+
+
 router.route('/results').get(async (req, res) => {
 	res.render('results');
 });
