@@ -467,6 +467,9 @@ router.route("/aboutus").get(async (req, res) => {
 router.route("/coursesNEET").get(async (req, res) => {
   res.render("coursesNEET");
 });
+router.route("/coursesJEE").get(async (req, res) => {
+  res.render("coursesJEE");
+});
 router.route("/coursesIIT&Medical").get(async (req, res) => {
   res.render("coursesIIT&Medical");
 });
