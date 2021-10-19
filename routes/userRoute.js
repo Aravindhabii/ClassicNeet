@@ -450,6 +450,37 @@ router
         }
       }
     );
+  }).delete(async (req, res) => {
+    if (typeof req.body.checkbox === "string") {
+      await db.query(
+        "DELETE FROM calendarevents WHERE event = ?",
+        [req.body.checkbox],
+        (err, response) => {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log(response);
+          }
+        }
+      );
+      res.redirect("/admin/calendarevents");
+    } else {
+      req.body.checkbox.forEach(async (link) => {
+        console.log(link);
+        await db.query(
+          "DELETE FROM calendarevents WHERE event = ?",
+          [link],
+          (err, response) => {
+            if (err) {
+              console.log(err);
+            } else {
+              console.log(response);
+            }
+          }
+        );
+      });
+      res.redirect("/admin/calendarevents");
+    }
   });
 
 router
