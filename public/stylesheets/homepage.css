@@ -1835,11 +1835,12 @@ iframe {
     margin-top: 0rem;
   }
   .sec-2 {
-    min-height: 750px;
+    min-height: 850px;
   }
   .news-box {
     height: 20rem;
     width: 25rem;
+    margin-bottom: 3rem;
   }
   .calenderCard {
     width: 25rem;
