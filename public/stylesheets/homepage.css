@@ -1450,6 +1450,10 @@ iframe {
 }
 
 @media (max-width: 1250px) {
+  .box1 h3, .box2 h3, .box3 h3 {
+    font-size: 16px;
+    
+  }
   .Stat h1 {
     /* margin-top: 2rem; */
     font-size: 3rem;
@@ -1632,6 +1636,10 @@ iframe {
   }
 }
 @media (max-width: 1000px) {
+  .box1 h3, .box2 h3, .box3 h3 {
+    font-size: 14px;
+    
+  }
   .Stat h1 {
     /* margin-top: 2rem; */
     font-size: 2.5rem;
@@ -1702,6 +1710,10 @@ iframe {
   }
 }
 @media (max-width: 800px) {
+  .box1 h3, .box2 h3, .box3 h3 {
+    font-size: 12px;
+    
+  }
   .swiper-button-prev {
     display: none;
   }
@@ -1761,6 +1773,10 @@ iframe {
   }
 }
 @media (max-width: 700px) {
+  .box1 h3, .box2 h3, .box3 h3 {
+    font-size: 20px;
+    
+  }
   .video {
     height: 18vh;
     width: 32vw;
