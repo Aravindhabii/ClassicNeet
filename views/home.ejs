@@ -175,7 +175,8 @@
 				<div class="div-2">
 					<h1 class="div-2-title">Latest Updates</h1>
 
-					<marquee class="news-box" direction="up" scrollamount="5">
+					<marquee class="news-box" direction="up" scrollamount="5" onmousedown="stop();"
+					onmouseup="start();">
 						<% latestupdates.forEach(update => { %>
 							<p>
 								<%= update %> 
@@ -358,19 +359,19 @@
 				</div> -->
 				<div class="statBox">
 					<div class="Stat">
-						<h1 class="counter MBBS_Seats" data-target=345>345</h1>
+						<h1 class="counter MBBS_Seats" data-target=345>0.</h1>
 						<h3>MBBS <br> Seats <br> through <br> Neet</h3>
 					</div>
 					<div  class="Stat">
-						<h1 class="counter Consecutive" data-target=4>4</h1>
+						<h1 class="counter Consecutive" data-target=4>0.</h1>
 						<h3>Consecutive years <br> of District first in <br>Salem</h3>
 					</div>
 					<div  class="Stat">
-						<h1 class="counter successRate" data-target=90>90%</h1>
+						<h1 class="counter successRate" data-target=90>0.</h1>
 						<h3>Success <br> rate in <br> NEET</h3>
 					</div>
 					<div  class="Stat">
-						<h1 class="counter" data-target=15>15</h1>
+						<h1 class="counter" data-target=15>0.</h1>
 						<h3>NIT & IIST <br> Admission1</h3>
 					</div>
 

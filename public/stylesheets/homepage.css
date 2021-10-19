@@ -1181,14 +1181,14 @@ p {
 .arrownext2 {
   color: #02c3d8;
   position: absolute;
-  top: 85.5%;
+  top: 84.5%;
   /* transform: translateY(-50%); */
   right: 3% !important;
 }
 .arrowprev2 {
   color: #02c3d8;
   position: absolute;
-  top: 85.5%;
+  top: 84.5%;
   /* transform: translateY(-50%); */
   left: 3% !important;
 }
@@ -1374,14 +1374,7 @@ p {
   justify-content: space-evenly;
 }
 
-.social {
-  position: relative;
-  top: -27%;
-  right: -42%;
-}
-.social img {
-  margin: 0.5rem;
-}
+
 .read {
   background: linear-gradient(60deg, #02c3d8, #0061ff);
   color: white;
@@ -1457,6 +1450,10 @@ iframe {
 }
 
 @media (max-width: 1250px) {
+  .box1 h3, .box2 h3, .box3 h3 {
+    font-size: 16px;
+    
+  }
   .Stat h1 {
     /* margin-top: 2rem; */
     font-size: 3rem;
@@ -1639,6 +1636,10 @@ iframe {
   }
 }
 @media (max-width: 1000px) {
+  .box1 h3, .box2 h3, .box3 h3 {
+    font-size: 14px;
+    
+  }
   .Stat h1 {
     /* margin-top: 2rem; */
     font-size: 2.5rem;
@@ -1709,6 +1710,10 @@ iframe {
   }
 }
 @media (max-width: 800px) {
+  .box1 h3, .box2 h3, .box3 h3 {
+    font-size: 12px;
+    
+  }
   .swiper-button-prev {
     display: none;
   }
@@ -1768,6 +1773,10 @@ iframe {
   }
 }
 @media (max-width: 700px) {
+  .box1 h3, .box2 h3, .box3 h3 {
+    font-size: 20px;
+    
+  }
   .video {
     height: 18vh;
     width: 32vw;
@@ -1831,6 +1840,7 @@ iframe {
   .news-box {
     height: 20rem;
     width: 25rem;
+    margin-bottom: 3rem;
   }
   .calenderCard {
     width: 25rem;
@@ -1844,6 +1854,10 @@ iframe {
     width: 1px !important;
   }
   .arrowprev1 {
+
+
+
+
     right: 3% !important;
     height: 1px !important;
     width: 1px !important;

@@ -1,7 +1,22 @@
-// let count1 = 1;
-// let count2 = 1;
-// let count3 = 1;
-// let count4 = 1;
+const section1 = document.querySelector(".home").offsetHeight;
+const section2 = document.querySelector(".sec-2").offsetHeight;
+const section3 = document.querySelector(".HexagonDiv").offsetHeight;
+const section4 = document.querySelector(".cardsDiv").offsetHeight;
+const section5 = document.querySelector(".drive").offsetHeight;
+const section6 = document.querySelector(".bgTopper").offsetHeight;
+const perc = document.querySelector('.successRate').innerText
+const height =
+section1 +
+  section2 +
+  section3 +
+  section4 +
+  section5 ;
+console.log(height,'hey');
+console.log(section1,'hey1');
+let count1 = 1;
+let count2 = 1;
+let count3 = 1;
+let count4 = 1;
 
 // function MBBS_Seats() {
 // 	count1++;
@@ -44,37 +59,54 @@
 // }
 
 // number count for stats, using jQuery animate
-window.addEventListener('scroll',(e)=>{
-	console.log();
-})
-$('.counter').each(function () {
-	var $this = $(this),
-		countTo = $this.attr('data-count');
-	console.log(countTo);
 
-	$({ countNum: $this.text() }).animate(
-		{
-			countNum: countTo
-		},
-		{
-			duration: 1000,
-			easing: 'linear',
-			step: function () {
-				if ($this.attr('class').includes('successRate')) {
-					$this.text(`${Math.floor(this.countNum)}%`);
-				} else {
-					$this.text(Math.floor(this.countNum));
-				}
-			},
-			complete: function () {
-				if ($this.attr('class').includes('successRate')) {
-					$this.text(`${this.countNum}%`);
-				} else {
-					$this.text(`${this.countNum}`);
-				}
-			}
-		}
-	);
+  
+
+$(window).on('scroll',() =>{
+   // Stuff
+   console.log('l');
+
+	
+  var scrolly = Math.floor(window.scrollY);
+  // console.log(scrolly/2);
+  // const scroll = Math.round(scrolly/4)
+  // const h = Math.round(height/4)
+  // console.log(scroll,h);
+  
+  console.log(scrolly >= height,'comp');
+  if (scrolly >= height) {
+    $(".counter").each(function () {
+      var $this = $(this),
+        countTo = $this.attr("data-target");
+      // console.log(countTo,'count');
+
+      $({ countNum: $this.text() }).animate(
+        {
+          countNum: countTo,
+        },
+        {
+          duration: 1000,
+          easing: "linear",
+          step: function () {
+            if ($this.attr("class").includes("successRate")) {
+              $this.text(`${Math.floor(this.countNum)}%`);
+            } else {
+              $this.text(`${Math.floor(this.countNum)}`);
+            }
+          },
+          complete: function () {
+            if ($this.attr("class").includes("successRate")) {
+              $this.text(`${this.countNum}%`);
+            } else {
+              $this.text(`${this.countNum}`);
+            }
+          },
+        }
+      );
+    });
+    $(window).off('scroll')
+  }
+  
 });
 
 var slideIndex = 1;
@@ -82,28 +114,28 @@ showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
-	showSlides((slideIndex += n));
+  showSlides((slideIndex += n));
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
-	showSlides((slideIndex = n));
+  showSlides((slideIndex = n));
 }
 function showSlides() {
-	var i;
-	var slides = document.getElementsByClassName('mySlides');
-	for (i = 0; i < slides.length; i++) {
-		slides[i].style.display = 'none';
-	}
-	slideIndex++;
-	if (slideIndex > slides.length) {
-		slideIndex = 1;
-	}
-	slides[slideIndex - 1].style.display = 'block';
-	setTimeout(showSlides, 4000);
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(showSlides, 4000);
 }
 
-var swiper = new Swiper('.mySwiper', {
-	effect: 'cards',
-	grabCursor: true
+var swiper = new Swiper(".mySwiper", {
+  effect: "cards",
+  grabCursor: true,
 });
