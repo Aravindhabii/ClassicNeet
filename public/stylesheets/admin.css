@@ -6,7 +6,7 @@
 
 body{
 	overflow-x: hidden;
-	transition: all 1s ease !important;
+	transition: all 0.5s ease ;
 
 }
 
@@ -41,7 +41,7 @@ body{
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	transition: all 1s ease !important; 
+	transition: all 0.5s ease ; 
 
 }
 
@@ -70,7 +70,7 @@ tbody{
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	transition: all 1s ease !important;
+	transition: all 0.5s ease ;
 }
 
 .sliderimgurl{
@@ -89,7 +89,7 @@ tbody{
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	transition: all 1s ease !important;
+	transition: all 0.5s ease ;
 }
 
 .preview img{
@@ -107,10 +107,6 @@ tbody{
 }
 
 /* Latest Updates */
-
-.addbtn{
-
-}
 
 .buttondiv{
 	display: flex;
