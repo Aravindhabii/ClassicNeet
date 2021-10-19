@@ -266,7 +266,7 @@ router
 			}
 		});
 	})
-	.post(upload.single('sliderimg'), async (req, res) => {
+	.post(upload.single('studentimg'), async (req, res) => {
 		await db.query(
 			'INSERT INTO ourtoppers SET ?',
 			{
@@ -291,6 +291,38 @@ router
 			[req.file.path, req.body.cloudinaryname]
 		);
 		res.redirect('/admin/ourtoppers');
+	})
+	.delete(async (req, res) => {
+		if (typeof req.body.checkbox === 'string') {
+			await cloudinary.uploader.destroy(
+				'ClassicNeetAcademy/' + req.body.checkbox
+			);
+			await db.query(
+				'DELETE FROM ourtoppers WHERE cloudinaryname = ?',
+				[req.body.checkbox],
+				(err, response) => {
+					if (err) {
+						console.log(err);
+					} else {
+						res.redirect('/admin/ourtoppers');
+					}
+				}
+			);
+		} else {
+			req.body.checkbox.forEach(async (link) => {
+				await cloudinary.uploader.destroy('ClassicNeetAcademy/' + link);
+				await db.query(
+					'DELETE FROM ourtoppers WHERE cloudinaryname = ?',
+					[link],
+					(err, response) => {
+						if (err) {
+							console.log(err);
+						}
+					}
+				);
+			});
+			res.redirect('/admin/ourtoppers');
+		}
 	});
 
 //Neet Achivements Route
@@ -434,6 +466,9 @@ router.route('/coursesNEET').get(async (req, res) => {
 });
 router.route('/coursesIIT&Medical').get(async (req, res) => {
 	res.render('coursesIIT&Medical');
+});
+router.route('/coursesJEE').get(async (req, res) => {
+	res.render('coursesJEE');
 });
 router.route('/Demovideos').get(async (req, res) => {
 	res.render('Demovideos');

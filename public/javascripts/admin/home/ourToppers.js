@@ -24,14 +24,13 @@ const previewTopper = document.querySelector('.previewTopper');
 const previewSpan = document.querySelectorAll('.currentPreviewSpan');
 const closesvg = document.querySelector('.closesvg');
 const sliderimgurl = document.querySelectorAll('.currentSliderimgurl');
-console.log(previewSpan);
 for (let i = 0; i <= previewSpan.length - 1; i++) {
 	previewSpan[i].addEventListener('click', (e) => {
 		for (let j = 0; j <= sliderimgurl.length - 1; j++) {
 			if (i === j) {
 				const img = document.createElement('img');
+				console.log(sliderimgurl[j].innerText.length < 1);
 				if (sliderimgurl[j].innerText.length < 1) return;
-				console.log(sliderimgurl[j].innerText);
 				img.src = sliderimgurl[j].innerText;
 				previewTopper.appendChild(img);
 				previewTopper.style.display = 'block';
