@@ -292,7 +292,7 @@ router
       [req.file.path, req.body.cloudinaryname]
     );
     res.redirect("/admin/ourtoppers");
-  }).delete;
+  })
 
 //Neet Achivements Route
 router
@@ -448,7 +448,7 @@ router
           console.log(err);
         } else {
           console.log(results);
-          res.redirect("/admin/neetachivements");
+          res.redirect("/admin/neetachievements");
         }
       }
     );

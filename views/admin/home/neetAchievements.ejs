@@ -97,52 +97,77 @@
         >
           <h1 class="m-5">Neet Achievements</h1>
 
-          <table class="table" style="width: 70%">
+          <table class="table" style="width: 70%; height: 30vh;">
             <thead>
               <tr>
                 <th scope="col">Seats</th>
                 <th scope="col">Consecutiveyears</th>
                 <th scope="col">Successrate</th>
                 <th scope="col">Admissions</th>
-                <th scope="col">Updates</th>
+                <!-- <th scope="col">Updates</th> -->
               </tr>
             </thead>
             <tbody>
-              <%# nums.forEach(i => { %>
-              <tr>
-                <td>
+              <tr >
+                <td> 
                   <input
                     type="text"
                     id="linkinput"
-                    value="<%# i %>"
+                    value="<%= seats %>"
                     readonly
                     style="width: 80%; border: none"
                   />
                 </td>
                 <td>
                   <input
+                    type="text"
+                    id="linkinput"
+                    value="<%= consecutiveyears %> "
+                    readonly
+                    style="width: 80%; border: none"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="linkinput"
+                    value="<%= successrate %>"
+                    readonly
+                    style="width: 80%; border: none"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="linkinput"
+                    value="<%= admissions %>"
+                    readonly
+                    style="width: 80%; border: none"
+                  />
+                </td>
+                <!-- <td>
+                  <input
                     type="checkbox"
                     id="checkbox"
                     class="updatesCheckbox"
                     name="checkbox"
-                    value="<%# i %>"
+                    value=""
                     style="height: 20px; width: 20px"
                   />
-                </td>
+                </td> -->
               </tr>
-              <%# }) %>
             </tbody>
           </table>
           <div class="buttondiv">
             <button type="button" class="btn btn-outline-primary addbtn px-4">
-              Add
+              Edit
             </button>
-            <button
+            <!-- <button
               type="button"
               class="btn btn-outline-danger submit ms-5 px-3 submitbtn"
             >
               Delete
-            </button>
+            </button> -->
           </div>
         </form>
       </div>
