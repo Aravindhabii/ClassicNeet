@@ -37,7 +37,6 @@
   .visionspan {
     width: 100%;
   }
-  
   .vision h2 {
     color: #000000;
     padding: 4% 5%;
@@ -128,6 +127,7 @@
     padding-left: 48%;
     padding-top: 5%;
   }
+  /* leader */
   .leaders h2 {
     color: #568036;
     padding: 5% 5%;
@@ -141,4 +141,31 @@
     height: 90vh;
     width: 100%;
     justify-content: center;
+  }
+  /* app */
+  .app{
+    width: 100%;
+    height: 75vh;
+    background:url('../images/aboutus/frame1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .apppage{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .apppage h2{
+    position: absolute;
+    right: 47%;
+    top: 418%;
+    font-size: 40px;
+    font-weight: 600; 
+  }
+  .apppage img{
+    position: absolute;
+    right: 52%;
+    top: 435%;
+    width: 15vw;
+    height: 9vh;   
   }

@@ -233,6 +233,14 @@ footer {
   
   padding: 0rem 0 0 0;
 }
+.social {
+	position: relative;
+	top: -27%;
+	right: -42%;
+}
+.social img {
+	margin: 0.5rem;
+}
 
 /* swiper  */
 

@@ -1358,14 +1358,7 @@ p {
 	justify-content: space-evenly;
 }
 
-.social {
-	position: relative;
-	top: -27%;
-	right: -42%;
-}
-.social img {
-	margin: 0.5rem;
-}
+
 .read {
 	background: linear-gradient(60deg, #02c3d8, #0061ff);
 	color: white;

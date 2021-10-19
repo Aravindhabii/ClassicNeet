@@ -102,7 +102,6 @@ router.route('/home').get(async (req, res) => {
 		}
 	});
 });
-
 // slider Revolution Route
 router
 	.route('/admin/sliderrevolution')
@@ -298,7 +297,7 @@ router
 		res.redirect('/admin/ourtoppers');
 	});
 
-//Neet Achivements Route
+//Students Testimonail Route
 router
 	.route('/admin/studenttestimonials')
 	.get(async (req, res) => {
@@ -445,6 +444,77 @@ router.route('/coursesIIT&Medical').get(async (req, res) => {
 });
 router.route('/Demovideos').get(async (req, res) => {
 	res.render('Demovideos');
+});
+//Demo Videos Route
+router
+	.route('/admin/Demovideos')
+	.get(async (req, res) => {
+		await db.query('SELECT * FROM Demovideos', (err, response) => {
+			arr = [];
+			if (err) {
+				console.log(err);
+			} else {
+				for (let i = 0; i <= response.length - 1; i++) {
+					var link = response[i].Demovideoslink;
+					// console.log(image)
+					arr.push(link);
+				}
+				// console.log(response[0].latestupdates);
+				res.render('admin/Demovideos/Demovideos', { link: arr });
+			}
+		});
+	})
+	.post(async (req, res) => {
+		const link = req.body.uploadlink;
+		console.log(link);
+		await db.query(
+			'INSERT INTO Demovideos SET ?',
+			{ Demovideoslink: link },
+			(err, results) => {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log(results);
+					res.redirect('/admin/Demovideos');
+				}
+			}
+		);
+	})
+	.delete(async (req, res) => {
+		if (typeof req.body.checkbox === 'string') {
+			await db.query(
+				'DELETE FROM Demovideos WHERE Demovideoslink = ?',
+				[req.body.checkbox],
+				(err, response) => {
+					if (err) {
+						console.log(err);
+					} else {
+						console.log(response);
+						res.redirect('/admin/Demovideos');
+					}
+				}
+			);
+		} else {
+			req.body.checkbox.forEach(async (link) => {
+				console.log(link);
+				await db.query(
+					'DELETE FROM Demovideos WHERE Demovideoslink = ?',
+					[link],
+					(err, response) => {
+						if (err) {
+							console.log(err);
+						} else {
+							console.log(response);
+							res.redirect('/admin/Demovideos');
+						}
+					}
+				);
+			});
+		}
+	});
+
+router.route('/admin/studenttestimonials').get(async (req, res) => {
+	res.render('admin/home/studentTestimonials');
 });
 router.route('/results').get(async (req, res) => {
 	res.render('results');
