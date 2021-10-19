@@ -175,7 +175,8 @@
 				<div class="div-2">
 					<h1 class="div-2-title">Latest Updates</h1>
 
-					<marquee class="news-box" direction="up" scrollamount="5">
+					<marquee class="news-box" direction="up" scrollamount="5" onmousedown="stop();"
+					onmouseup="start();">
 						<% latestupdates.forEach(update => { %>
 							<p>
 								<%= update %> 
