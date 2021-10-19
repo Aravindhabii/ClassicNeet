@@ -1181,14 +1181,14 @@ p {
 .arrownext2 {
   color: #02c3d8;
   position: absolute;
-  top: 85.5%;
+  top: 84%;
   /* transform: translateY(-50%); */
   right: 3% !important;
 }
 .arrowprev2 {
   color: #02c3d8;
   position: absolute;
-  top: 85.5%;
+  top: 84%;
   /* transform: translateY(-50%); */
   left: 3% !important;
 }
@@ -1854,6 +1854,10 @@ iframe {
     width: 1px !important;
   }
   .arrowprev1 {
+
+
+
+
     right: 3% !important;
     height: 1px !important;
     width: 1px !important;
