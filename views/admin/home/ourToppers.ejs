@@ -98,12 +98,29 @@
 						method="post"
 						class="d-flex justify-content-center align-items-center flex-column"
 						style="width: 100%"
+						enctype="multipart/form-data"
 					>
 						<div class="input-group flex-nowrap" style="width: 80%">
 							<span class="input-group-text" id="addon-wrapping">Add Name</span>
 							<input
 								type="text"
-								name="uploadlink"
+								name="name"
+								class="form-control"
+								aria-label="Username"
+								aria-describedby="addon-wrapping"
+								id="uploadlink"
+							/>
+							<input
+								type="file"
+								name="studentimg"
+								class="form-control"
+								aria-label="Username"
+								aria-describedby="addon-wrapping"
+								id="uploadlink"
+							/>
+							<input
+								type="text"
+								name="collegeName"
 								class="form-control"
 								aria-label="Username"
 								aria-describedby="addon-wrapping"
@@ -124,7 +141,7 @@
 					</form>
 				</div>
 				<form
-					action="/admin/latestupdates?_method=DELETE"
+					action="/admin/ourtoppers?_method=DELETE"
 					method="post"
 					class="imgform"
 				>
@@ -149,7 +166,7 @@
 									<span class="currentPreviewSpan btn btn-info"
 										>Show Image</span
 									>
-									<span class="currentSliderimgurl"><%= i.sliderimg %> </span>
+									<span class="currentSliderimgurl"><%= i.studentimg %></span>
 								</td>
 								<td>
 									<input
@@ -157,7 +174,7 @@
 										id="checkbox"
 										class="updatesCheckbox"
 										name="checkbox"
-										value="<%= i %>"
+										value="<%= i.cloudinaryname %>"
 										style="height: 20px; width: 20px"
 									/>
 								</td>
@@ -169,10 +186,7 @@
 						<button type="button" class="btn btn-outline-primary addbtn px-4">
 							Add
 						</button>
-						<button
-							type="button"
-							class="btn btn-outline-danger submit ms-5 px-3 submitbtn"
-						>
+						<button class="btn btn-outline-danger submit ms-5 px-3 submitbtn">
 							Delete
 						</button>
 					</div>
@@ -180,9 +194,9 @@
 			</div>
 		</section>
 		<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+			crossorigin="anonymous"
 		></script>
 		<script src="../../javascripts/admin/home/ourToppers.js"></script>
 	</body>
