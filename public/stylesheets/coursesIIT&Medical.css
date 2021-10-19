@@ -2,9 +2,9 @@
 .coursesneet{
     width: 100%;
     height: 90vh;
-    background: url('../images/courses/iit&medical.jpg');
+    background: url('../images/courses/iit &medical.jpg' ) center/cover;
     background-repeat: no-repeat;
-    background-size: cover;
+
     display: flex;
     justify-content: center;
     flex-direction: column;

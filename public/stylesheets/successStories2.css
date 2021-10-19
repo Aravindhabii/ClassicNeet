@@ -1,0 +1,58 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.secMain {
+    /* background-color: blue; */
+    
+}
+.vector {
+    width: 100%;
+}
+.cardMain {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+    
+    
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card {
+    height: 360px;
+    width: 340px;
+    background: linear-gradient(#1346FC,#3450B0,#B4C2F3);
+    position: relative;
+    box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+.profile {
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%,-40%);
+    width: 180px;
+    
+}
+.card h3 {
+    font-weight: 600;
+    text-align: center;
+    top: 35%;
+    font-size: 1.3rem;
+    position: relative;
+    color: white;
+}
+.video {
+    width: 90%;
+    height: 50%;
+    position: relative;
+    top: 38%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}

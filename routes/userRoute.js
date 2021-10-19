@@ -519,7 +519,7 @@ router.route("/contactus").get(async (req, res) => {
   res.render("contactus");
 });
 router.route("/successstories").get(async (req, res) => {
-  res.render("successStories");
+  res.render("successStories2");
 });
 router.route("/404error").get(async (req, res) => {
   res.render("404error");

@@ -45,6 +45,7 @@
 .overview{
     height: 82vh;
     width: 100%;
+    position: relative;
 }
 .overview h2{
     padding: 4rem 4rem 0 4rem;
@@ -56,7 +57,9 @@
     height: 50vh;
     word-spacing: 5px;
     line-break: normal;
-    line-height: 175%;
+    line-height: 2rem;
+    font-size: 18px;
+    font-weight: 500;
     padding: 2rem 4rem 1rem 2rem;
 
 }
@@ -70,8 +73,12 @@
     
 }
 .overview img{
-    width: 30%;
-    height: 60%;
+    width: 25%;
+    height: 45%;
+    /* border-radius: 50%; */
+    /* position: absolute; */
+    /* right: 5%;
+    top: 8%; */
     
     
 }
@@ -83,6 +90,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top:     7rem;
 }
 
 .module h2{
@@ -92,12 +100,15 @@
     
 }
 .module p {
-    /* width: 100%; */
+    width: 70%;
     word-spacing: 5px;
     /* padding-left: 10%; */
-    display: flex;
+    margin-top: 2rem ;
     position: relative;
-    line-height: 200%;
+    line-height: 2rem;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: left;
     
 }
 .module span{
@@ -107,6 +118,7 @@
 
 
 .bottom-drive {
+    margin: 4rem;
     border: 1px solid black;
     padding: 10px 90px;
     border-radius: 20px;
