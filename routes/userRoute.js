@@ -502,16 +502,11 @@ router.route("/coursesNEET").get(async (req, res) => {
 router.route("/coursesIIT&Medical").get(async (req, res) => {
   res.render("coursesIIT&Medical");
 });
-<<<<<<< HEAD
 router.route('/coursesJEE').get(async (req, res) => {
 	res.render('coursesJEE');
 });
 router.route('/Demovideos').get(async (req, res) => {
 	res.render('Demovideos');
-=======
-router.route("/Demovideos").get(async (req, res) => {
-  res.render("Demovideos");
->>>>>>> 808f5733196d6c6aab9b29f52687025bd157e880
 });
 
 router.route("/results").get(async (req, res) => {
