@@ -1181,14 +1181,14 @@ p {
 .arrownext2 {
   color: #02c3d8;
   position: absolute;
-  top: 84%;
+  top: 84.5%;
   /* transform: translateY(-50%); */
   right: 3% !important;
 }
 .arrowprev2 {
   color: #02c3d8;
   position: absolute;
-  top: 84%;
+  top: 84.5%;
   /* transform: translateY(-50%); */
   left: 3% !important;
 }
