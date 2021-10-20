@@ -527,8 +527,15 @@ router
 router.route("/aboutus").get(async (req, res) => {
   res.render("aboutus");
 });
+router.route("/courses").get(async (req, res) => {
+  res.render("courses");
+});
+
 router.route("/coursesNEET").get(async (req, res) => {
   res.render("coursesNEET");
+});
+router.route("/coursesJEE").get(async (req, res) => {
+  res.render("coursesJEE");
 });
 router.route("/coursesIIT&Medical").get(async (req, res) => {
   res.render("coursesIIT&Medical");
@@ -547,7 +554,7 @@ router.route("/contactus").get(async (req, res) => {
   res.render("contactus");
 });
 router.route("/successstories").get(async (req, res) => {
-  res.render("successStories");
+  res.render("successStories2");
 });
 router.route("/404error").get(async (req, res) => {
   res.render("404error");

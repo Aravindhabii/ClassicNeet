@@ -1,171 +1,223 @@
 .video {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 9rem 0rem 0rem 0rem;
-    flex-direction: column;
-  }
-  .video h1 {
-    border: 1px solid black;
-    background-color: white;
-    border-radius: 35px;
-    width: 35%;
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-  }
-  /* visionmission */
-  .visionmission {
-    width: 100%;
-    height: 70vh;
-    background: url("images/aboutus/leader.jpg");
-    background-size: cover;
-    background-position: 0px 54%;
-    position: relative;
-  }
-  .vision {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .visionspan {
-    width: 100%;
-  }
-  .vision h2 {
-    color: #000000;
-    padding: 4% 5%;
-  }
-  .vision p {
-    width: 70%;
-    height: 10vh;
-    word-spacing: 5px;
-    line-break: normal;
-    line-height: 110%;
-  }
-  /* mission */
-  .mission h2 {
-    color: black;
-    padding: 4% 5%;
-  }
-  .mission p {
-    width: 70%;
-    height: 10vh;
-    word-spacing: 5px;
-    line-break: normal;
-    line-height: 110%;
-  }
-  .mission {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .missionspan {
-    width: 100%;
-  }
-  /* Our Journey */
-  .timeline {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
-  }
-  .timeline h2 {
-    color: #568036;
-    padding: 4% 3% 1% 5%;
-  }
-  .timeline span {
-    width: 90px;
-    height: 80px;
-  }
-  .timeline span img {
-    padding-left: 26rem;
-    height: 100%;
-    padding-bottom: 0rem;
-  }
-  .cards1 p {
-    width: 90%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 48%;
-    padding-top: 5%;
-  }
-  .cards2 p {
-    width: 90%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 48%;
-    padding-top: 5%;
-  }
-  .cards3 p {
-    width: 90%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 48%;
-    padding-top: 5%;
-  }
-  .cards4 p {
-    width: 90%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 48%;
-    padding-top: 5%;
-  }
-  /* leader */
-  .leaders h2 {
-    color: #568036;
-    padding: 5% 5%;
-  }
-  .leaders span img {
-    width: 60%;
-    height: 80vh;
-  }
-  .leaders span {
-    display: flex;
-    height: 90vh;
-    width: 100%;
-    justify-content: center;
-  }
-  /* app */
-  .app{
-    width: 100%;
-    height: 75vh;
-    background:url('../images/aboutus/frame1.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .apppage{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-  .apppage h2{
-    position: absolute;
-    right: 47%;
-    top: 418%;
-    font-size: 40px;
-    font-weight: 600; 
-  }
-  .apppage img{
-    position: absolute;
-    right: 52%;
-    top: 435%;
-    width: 15vw;
-    height: 9vh;   
-  }
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9rem 0rem 0rem 0rem;
+  flex-direction: column;
+}
+.video h1 {
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 35px;
+  width: 35%;
+
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+/* visionmission */
+.visionmission {
+  width: 100%;
+  height: 70vh;
+  background: url("../images/aboutus/bgvision.jpg");
+  background-size: cover;
+  background-position: 0px 54%;
+  position: relative;
+  background-attachment: fixed;
+}
+.vision {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.visionspan {
+  width: 100%;
+}
+.vision h2 {
+  color: #000000;
+  padding: 2% 5%;
+}
+.vision p {
+  width: 70%;
+  height: 10vh;
+  word-spacing: 5px;
+  line-break: normal;
+  line-height: 2rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+/* mission */
+.mission h2 {
+  color: black;
+  padding: 2% 5%;
+  margin-top: 4rem;
+}
+.mission p {
+  width: 70%;
+  height: 10vh;
+  word-spacing: 5px;
+  line-break: normal;
+  line-height: 2rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.mission {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.missionspan {
+  width: 100%;
+}
+/* Our Journey */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+.timeline h2 {
+  color: #568036;
+  padding: 4% 3% 1% 5%;
+}
+.timeline span {
+  width: 90px;
+  height: 80px;
+  position: relative;
+  transform: translateX(-50%);
+  margin-left: auto;
+  margin-right: auto;
+}
+.timeline span img {
+  height: 100%;
+}
+.cards1 p {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 48%;
+  padding-top: 5%;
+  line-height: 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.cards2 p {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 48%;
+  padding-top: 5%;
+  line-height: 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.cards3 p {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 48%;
+  padding-top: 5%;
+  line-height: 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.cards4 p {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 48%;
+  padding-top: 5%;
+  line-height: 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+video {
+  width: 100%;
+}
+.video {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.video::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  mix-blend-mode: saturation;
+
+  z-index: 6;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.video h1 {
+  position: absolute;
+  top: 80%;
+  z-index: 5;
+}
+.book {
+  position: absolute;
+  width: 33rem;
+  height: 33rem;
+  top: 50%;
+  transform: translateY(-30%);
+}
+/* leader */
+.leaders h2 {
+  color: #568036;
+  padding: 5% 5%;
+}
+.leaders span img {
+  width: 60%;
+  height: 80vh;
+}
+.leaders span {
+  display: flex;
+  height: 90vh;
+  width: 100%;
+  justify-content: center;
+}
+/* app */
+.app {
+  width: 100%;
+  height: 75vh;
+  background: url("../images/aboutus/frame1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.apppage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.apppage h2 {
+  position: absolute;
+  right: 47%;
+  top: 418%;
+  font-size: 40px;
+  font-weight: 600;
+}
+.apppage img {
+  position: absolute;
+  right: 52%;
+  top: 435%;
+  width: 15vw;
+  height: 9vh;
+}
