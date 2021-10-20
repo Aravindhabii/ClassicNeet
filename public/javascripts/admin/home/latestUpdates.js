@@ -5,7 +5,8 @@ const sectionop = document.querySelector(".mainsection");
 const imgform = document.querySelector(".imgform");
 const submit = document.querySelector(".submit");
 const submitbtn = document.querySelector(".submitbtn");
-
+const confirmdelete = document.querySelector(".confirmdelete");
+const latestupdateform = document.querySelector(".latestupdateform");
 
 console.log(previewDiv);
 
@@ -20,22 +21,19 @@ backbtn.addEventListener("click", () => {
   imgform.style.transform = "translate(0,0)";
 });
 
-
-submitbtn.addEventListener('click',() => {
-  console.log('Dawwwwgg')
-  swal({
-    title: "Are you sure?",
-    text: "Once deleted, you will not be able to recover this imaginary file!",
-    icon: "warning",
-    buttons: true,
-    dangerMode: true,
-  }).then((willDelete) => {
-    if (willDelete) {
-      swal("Poof! Your imaginary file has been deleted!", {
-        icon: "success",
-      });
-    } else {
-      swal("Your imaginary file is safe!");
+submitbtn.addEventListener("click", () => {
+  console.log("Dawwwwgg");
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "Are you sure you want to delete!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      latestupdateform.submit()
     }
-  });
-})
+  })
+});
