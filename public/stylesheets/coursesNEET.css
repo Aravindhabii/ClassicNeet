@@ -4,6 +4,7 @@
     height: 90vh;
     background: url('../images/courses/neet.jpg') center/cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 
     display: flex;
     justify-content: center;
@@ -124,4 +125,73 @@
     align-items: center;
     height: 35vh;
 
+}
+
+.sec1 {
+    /* background: url(../images/courses/bg1.png) center/cover; */
+    background-size: 120%;
+    background-repeat: no-repeat;
+    
+}
+.neetSection {
+    position: relative;
+    
+    background-color: #60efff4b;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4rem ;
+    margin-bottom: 4rem;
+    /* box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2); */
+    border-radius: 20px;
+    padding: 2rem 0rem 0rem 0rem;
+    
+}
+
+
+.neetSection h1 {
+    /* position: absolute; */
+    text-align: center;
+    /* margin: 2rem; */
+    padding: .5rem 0rem;
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.774);
+}
+.heading2 {
+    text-align: center;
+    margin: 1rem;
+}
+.heading3 {
+    text-align: center;
+    /* margin-top: 1rem; */
+}
+.neetSection p {
+    font-size: 18px;
+    text-align: justify;
+    font-weight: 500;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8rem;
+    font-family: sans-serif;
+    padding: 2rem;
+}
+
+.neetSection ul {
+    text-align: justify;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-top: 4rem ; */
+    /* margin-bottom: 3rem; */
+    padding: 2rem;
+    font-size: 16px;
+    font-weight: 500;
+    /* letter-spacing: 2px; */
+    font-family: sans-serif;
+    line-height: 1.5rem;
 }

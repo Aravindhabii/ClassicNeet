@@ -527,6 +527,10 @@ router
 router.route("/aboutus").get(async (req, res) => {
   res.render("aboutus");
 });
+router.route("/courses").get(async (req, res) => {
+  res.render("courses");
+});
+
 router.route("/coursesNEET").get(async (req, res) => {
   res.render("coursesNEET");
 });
