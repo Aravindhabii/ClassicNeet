@@ -169,7 +169,7 @@ video {
 }
 .video h1 {
   position: absolute;
-  top: 93%;
+  top: 80%;
   z-index: 5;
 }
 .book {
