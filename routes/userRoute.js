@@ -386,11 +386,12 @@ router
               console.log(err);
             } else {
               console.log(response);
-              res.redirect("/admin/studenttestimonials");
+              
             }
           }
         );
       });
+      res.redirect("/admin/studenttestimonials");
     }
   });
 
