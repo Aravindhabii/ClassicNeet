@@ -24,7 +24,7 @@ submitbtn.addEventListener("click", () => {
 	Swal.fire({
 	  title: 'Are you sure?',
 	  text: "Are you sure you want to delete!",
-	  icon: 'question',
+	  icon: 'warning',
 	  showCancelButton: true,
 	  confirmButtonColor: '#3085d6',
 	  cancelButtonColor: '#d33',
