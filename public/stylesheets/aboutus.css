@@ -237,39 +237,44 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 46%;
-  height: 72%;
+  width: 40%;
+  height: 74%;
   /* border-radius: 30px 0 0 0; */
 }
 .Vector2{
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%;
-  height: 78%;
+  width: 43%;
+  height: 80%;
   /* border-radius: 30px 0 0 0; */
 }
 .vector3{
   position: absolute;
   top: 0;
   right: 0;
-  width: 54%;
-  height: 82%;
+  width: 46%;
+  height: 85%;
   /* border-radius: 30px 0 0 0; */
 }
 
 .apppage h2 {
   position: absolute;
-  right: 49%;
-  top: 88px;
-  font-size: 40px;
+  right: 40%;
+  top: 104px;
+  font-size: 44px;
   font-weight: 600;
 }
 .apppage a img{
   width: 17%;
   height: 15%;
   position:absolute;
-  top: 14rem;
-  right: 60%;
+  top: 15rem;
+  right: 54%;
   
+}
+.Messaging{
+  position: absolute;
+  left: 4%;
+
 }
