@@ -1,18 +1,25 @@
 .video {
   width: 100%;
   height: 100vh;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 9rem 0rem 0rem 0rem;
   flex-direction: column;
 }
+
+.vidAbout{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  object-fit: fill;
+}
+
 .video h1 {
   border: 1px solid black;
   background-color: white;
   border-radius: 35px;
   width: 35%;
-
   display: flex;
   justify-content: center;
   padding: 1rem;
@@ -20,7 +27,7 @@
 /* visionmission */
 .visionmission {
   width: 100%;
-  height: 70vh;
+  height: 65vh;
   background: url("../images/aboutus/bgvision.jpg");
   background-size: cover;
   background-position: 0px 54%;
@@ -82,11 +89,13 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: 107vh;
 }
-.timeline h2 {
+
+.timeline h1 {
   color: #568036;
-  padding: 4% 3% 1% 5%;
+  padding: 2% 3% 1% 5%;
+  font-size: 35px;
 }
 .timeline span {
   width: 90px;
@@ -147,9 +156,7 @@
   font-size: 1.2rem;
   font-weight: 500;
 }
-video {
-  width: 100%;
-}
+
 .video {
   width: 100%;
   height: 100vh;
@@ -163,7 +170,6 @@ video {
   height: 100%;
   width: 100%;
   mix-blend-mode: saturation;
-
   z-index: 6;
   background-color: rgba(255, 255, 255, 0.2);
 }
@@ -180,9 +186,15 @@ video {
   transform: translateY(-30%);
 }
 /* leader */
-.leaders h2 {
+.leaders{
+  width: 100%;
+  height: 77vh;
+  position: relative;
+}
+.leaders h1 {
   color: #568036;
-  padding: 5% 5%;
+  padding: 2% 5%;
+  font-size: 35px;
 }
 .leaders span img {
   width: 60%;
@@ -194,30 +206,70 @@ video {
   width: 100%;
   justify-content: center;
 }
-/* app */
-.app {
-  width: 100%;
-  height: 75vh;
-  background: url("../images/aboutus/frame1.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.apppage {
+.leadervideo{
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2%;
 }
+/* app */
+.app {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.apppage {
+  position: relative;
+  height: 73%;
+  width: 70%;
+  background:#c4c4c4a6 ;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.vector1{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 46%;
+  height: 72%;
+  /* border-radius: 30px 0 0 0; */
+}
+.Vector2{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 78%;
+  /* border-radius: 30px 0 0 0; */
+}
+.vector3{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 54%;
+  height: 82%;
+  /* border-radius: 30px 0 0 0; */
+}
+
 .apppage h2 {
   position: absolute;
-  right: 47%;
-  top: 418%;
+  right: 49%;
+  top: 88px;
   font-size: 40px;
   font-weight: 600;
 }
-.apppage img {
-  position: absolute;
-  right: 52%;
-  top: 435%;
-  width: 15vw;
-  height: 9vh;
+.apppage a img{
+  width: 17%;
+  height: 15%;
+  position:absolute;
+  top: 14rem;
+  right: 60%;
+  
 }
