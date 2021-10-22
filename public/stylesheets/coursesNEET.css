@@ -62,7 +62,7 @@
     padding: 5%;  
 }
 .headh1h2{
-   padding: 2%;
+   padding: .5%;
 }
 
 .coursesneet h1{
@@ -338,13 +338,13 @@
 }
 .bg1 {
 
-    background: url(../images/courses/vec1.png) center/contain;
+    background: url(../images/courses/hexbox1.png) center/contain;
 }
 .bg2 {
-    background: url(../images/courses/vector3.png) center/contain;
+    background: url(../images/courses/hexnew.png) center/contain;
 }
 .bg3 {
-    background: url(../images/courses/Vector5.png) center/contain;
+    background: url(../images/courses/hexbox1.png) center/contain;
 }
 .hex1 {
     background-repeat: no-repeat;
@@ -364,8 +364,11 @@
 .hexMain {
     /* background-color: blue; */
     width: 100%;
+    /*  */
 }
-
+.bg1:nth-child(1) {
+    margin-top: 4rem;
+}
 .hexBox {
     width: 55%;
     background-color: rgba(255, 255, 255, 0.63);
@@ -376,6 +379,7 @@
     align-items: center;
     justify-content: space-evenly;
     margin-right: 4rem;
+    
 }
 .hexBox2 {
     margin-right: 0rem !important;
@@ -407,19 +411,21 @@
    width: 50%;
    padding: 3rem;
    border-radius: 20px;
+   position: relative;
 
 
 }
 .methodology1 h1 , .methodology2 h1 , .methodology3 h1 {
     text-align: center;
+    padding-bottom: 2rem;
     
 }
 .methodology1 ul , .methodology2 ul ,.methodology3 ul {
-    line-height: 1.5rem;
+    line-height: 1.8rem;
     margin-left: auto;
     margin-right: auto;
 }
-.bgmeth {
+.bgmeth , .bgmeth2 , .bgmeth3 {
     display: none;
     position: fixed;
     height: 100vh;
@@ -429,6 +435,47 @@
     z-index: 100;
     justify-content: center;
     align-items: center;
-}   
+}
+.enroll1:hover {
+    background-color: #2c2e2a;
+    color: rgb(255, 255, 255);
+}
+.enroll:hover {
+    background-color: #2c2e2a;
+    color: rgb(255, 255, 255);
+}    
+.enroll1 {
+    padding: .8rem 1.5rem;
+    position: relative;
+    font-size: 18px;
+    font-weight: 600;
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    border-radius: 10px;
+    background-color: #F49A08;
+    color: rgb(0, 0, 0);
+    box-shadow: 2px 2px 60px rgba(0, 0, 0, 0.2);
+    border: none;
+    margin: 1rem 0rem;
+}
+.enroll {
+    padding: 1rem 1.5rem;
+    position: relative;
+    font-size: 18px;
+    font-weight: 600;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    background-color: #F47D03;
+    box-shadow: 2px 2px 60px rgba(0, 0, 0, 0.2);
+    border: none;
+    margin: 2rem 0rem;
+}
 
->>>>>>> 43db06e18661786c9d3465351aeb406b3f4bc0f4
+
+
+.exit {
+    position: absolute;
+    right: 2%;
+    top: 3%;
+}

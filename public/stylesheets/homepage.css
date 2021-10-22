@@ -786,7 +786,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 5rem 0px;
+  margin: 3rem 0px;
   position: relative;
 }
 
@@ -1123,7 +1123,7 @@ p {
   height: 100vh !important;
   width: 90vw !important;
   overflow: hidden;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   /* justify-content: space-around !important; */
 }
@@ -1131,7 +1131,7 @@ p {
   height: 100vh !important;
   width: 90vw !important;
   overflow: hidden;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   /* justify-content: space-around !important; */
 }
@@ -1154,6 +1154,7 @@ p {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  flex-direction: column;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   -webkit-justify-content: center;
@@ -1247,12 +1248,13 @@ p {
   /* background-color: slategray; */
   height: 100%;
   display: flex;
-  width: 30vw;
+  /* width: 30vw; */
   margin-left: auto;
   margin-right: auto;
   position: relative;
   justify-content: space-evenly;
   align-items: center;
+  flex-direction: column;
   /* margin-top: 5rem; */
 }
 .topper1 {
@@ -1279,7 +1281,7 @@ p {
 .topperImg {
   /* background-color:#A2D2FF; */
   width: 50%;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1289,7 +1291,7 @@ p {
 .topperImg2 {
   /* background-color: rgba(255, 255, 255, 0.445); */
   /* background-color:#A2D2FF; */
-  width: 50%;
+  /* width: 50%; */
   /* height: 100%; */
   display: flex;
   align-items: center;
@@ -1298,21 +1300,21 @@ p {
   background-size: cover;
 }
 .topperImg img {
-  width: 80%;
+  width: 20%;
   height: 70%;
   border-radius: 50%;
   border: 5px solid black;
 }
 .topperImg2 img {
-  width: 80%;
-  height: 70%;
+  width: 45%;
+  /* height: 70%; */
   border-radius: 50%;
   border: 5px solid black;
 }
 .topperContent {
   /* background-color: rgb(177, 27, 177); */
-  width: 65%;
-  height: 100%;
+  /* width: 65%; */
+  /* height: 100%; */
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -1353,7 +1355,7 @@ p {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-  height: 80vh;
+  height: 70vh;
   border-radius: 20px;
   box-shadow: 5px 5px 100px rgba(0, 0, 0, 0.3);
   position: relative;
