@@ -11,6 +11,52 @@
     flex-direction: column;
     position: relative;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Heading*/
 .h1andh2{
     padding: 5%;  
@@ -37,6 +83,8 @@
     left: 0rem;
     position: fixed;
 }
+<<<<<<< HEAD
+=======
 /*OVERVIEW*/
 
 .overview{
@@ -423,6 +471,7 @@
     border: none;
     margin: 2rem 0rem;
 }
+
 
 
 .exit {
