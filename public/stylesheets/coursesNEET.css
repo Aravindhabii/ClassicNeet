@@ -326,7 +326,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-right: 4rem;
 }
 .hexBox2 {
@@ -335,17 +335,18 @@
 }
 .hexTitle {
     text-align: center;
-    padding: 1rem;
+    /* padding: 1rem; */
 }
 .hexContent {
-    width: 70%;
-    padding: 1rem;
+    width: 75%;
+    /* padding: 1rem; */
     margin-left: auto;
     margin-right: auto;
     line-height: 2rem;
-    font-size: 18px;
+    font-size: 17px;
+
 }
-.neet1btn {
+.neet1btn, .neet2btn, .neet3btn, .neet4btn {
     padding:  .5rem 1rem;
     border-radius: 20px;
     background-color: #526DF0;
@@ -353,7 +354,7 @@
     border: none;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
-.methodology1 {
+.methodology1 , .methodology2, .methodology3{
    background-color: white;
    width: 50%;
    padding: 3rem;
@@ -361,11 +362,11 @@
 
 
 }
-.methodology1 h1 {
+.methodology1 h1 , .methodology2 h1 , .methodology3 h1 {
     text-align: center;
     
 }
-.methodology1 ul {
+.methodology1 ul , .methodology2 ul ,.methodology3 ul {
     line-height: 1.5rem;
     margin-left: auto;
     margin-right: auto;
