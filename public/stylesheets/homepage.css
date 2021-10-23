@@ -1872,7 +1872,7 @@ iframe {
   .home {
     height: 50vh;
     margin-top: 0rem;
-    min-height: 450px;
+    /* min-height: 420px; */
   }
   .sliderRev {
     height: 35vh;
@@ -1913,6 +1913,6 @@ iframe {
     height: 16vh;
     width: 65vw;
   }
-  
+
 
 }
