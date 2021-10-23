@@ -1743,13 +1743,15 @@ iframe {
     align-items: center;
   }
   .home {
-    min-height: 460px;
+    
+    min-height: 415px;
+
     height: 100vh;
   }
 
-  .sliderRev {
+  /* .sliderRev {
     height: 85vh;
-  }
+  } */
   .sec-2 {
     display: flex;
     flex-direction: column;
@@ -1830,11 +1832,12 @@ iframe {
     margin-left: 0.5rem;
   }
   .sliderRev {
-    height: 45vh;
+    height: 35vh;
   }
   .home {
-    height: 58vh;
+    height: 50vh;
     margin-top: 0rem;
+    min-height: 350px;
   }
   .sec-2 {
     min-height: 850px;
@@ -1866,11 +1869,29 @@ iframe {
   }
 }
 @media (max-width: 500px) {
+  .home {
+    height: 50vh;
+    margin-top: 0rem;
+    min-height: 380px;
+  }
+  .cardsDiv {
+    margin-top: 3rem;
+  }
   .news-box {
-    height: 17rem;
+    height: 22rem;
     width: 22rem;
   }
   .calenderCard {
-    width: 22rem;
+    width: 18rem;
+  }
+  .neet-2020-toppers-a {
+    padding: 0.5rem 1rem;
+  }
+  .stats {
+    margin-top: 3rem;
+  }
+  .mySwiper2 .swiper-slide {
+    width: 18.82rem !important;
+    height: 10rem !important;
   }
 }

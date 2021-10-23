@@ -14,7 +14,7 @@ phonenum.addEventListener('input', (e) => {
 });
 
 document.querySelector('form').addEventListener('submit', (e) => {
-	if (parseInt(phonenum.value).length !== 10) {
+	if (parseInt(phonenum.value).length < 10) {
 		e.preventDefault();
 		alert('Phone number must be 10 digits!');
 	}
