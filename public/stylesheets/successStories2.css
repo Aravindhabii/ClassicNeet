@@ -25,7 +25,7 @@
 .card {
     height: 360px;
     width: 340px;
-    background: linear-gradient(#1345fcce,#3450B0,#B4C2F3);
+    background: linear-gradient(#369afe,#60efffda);
     position: relative;
     box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
