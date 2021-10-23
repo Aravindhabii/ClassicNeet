@@ -27,6 +27,7 @@ nav {
   height: 10vh;
   font-size: 20px;
   background: white;
+  z-index: 100;
 }
 
 .logo > img {
