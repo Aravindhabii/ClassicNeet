@@ -144,7 +144,7 @@ select, .stream3 button , .stream4 button  {
 
 .gridcontainer {
     position: relative;
-    width: 90%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     grid-row-gap: 3rem;
@@ -165,11 +165,14 @@ select, .stream3 button , .stream4 button  {
 }
 iframe {
 
-    border-radius: 20px !important;
+    
+    z-index: 4;
 }
 .griditem1,.griditem2{
-    padding: 2rem 3rem 0rem 2rem;
+    padding:1rem;
+    background-color: #02c3d8;
+    border-radius: 20px 0px 20px 0px;
 }
 .griditem3,.griditem4{
-    padding: 2rem 3rem 0rem 2rem;
+    padding: 1rem;
 }
