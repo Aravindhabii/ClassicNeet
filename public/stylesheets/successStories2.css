@@ -3,11 +3,11 @@
 	margin: 0;
 	box-sizing: border-box;
 }
-
+/* 
 .secMain {
-    /* background-color: blue; */
+   background-color: blue; 
     
-}
+} */
 .vector {
     width: 100%;
 }
@@ -16,15 +16,16 @@
     grid-template-columns: repeat(3,1fr);
     justify-items: center;
     
-    grid-row-gap: 9rem;
+    /* grid-row-gap: 9rem; */
     width: 80%;
+    height: 120vh;
     margin-left: auto;
     margin-right: auto;
 }
 .card {
     height: 360px;
     width: 340px;
-    background: linear-gradient(#1346FC,#3450B0,#B4C2F3);
+    background: linear-gradient(#1345fcce,#3450B0,#B4C2F3);
     position: relative;
     box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
@@ -34,8 +35,7 @@
     left: 50%;
     top: 0%;
     transform: translate(-50%,-40%);
-    width: 180px;
-    
+    width: 180px; 
 }
 .card h3 {
     font-weight: 600;
