@@ -11,52 +11,6 @@
     flex-direction: column;
     position: relative;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*Heading*/
 .h1andh2{
     padding: 5%;  
@@ -83,8 +37,7 @@
     left: 0rem;
     position: fixed;
 }
-<<<<<<< HEAD
-=======
+
 /*OVERVIEW*/
 
 .overview{
@@ -339,12 +292,15 @@
 .bg1 {
 
     background: url(../images/courses/hexbox1.png) center/contain;
+    transform: rotate(0.48deg);
 }
 .bg2 {
-    background: url(../images/courses/hexnew.png) center/contain;
+    background: url(../images/courses/hexbox2.png) center/contain;
+    transform: rotate(0.48deg);
 }
 .bg3 {
     background: url(../images/courses/hexbox1.png) center/contain;
+    transform: rotate(0.48deg);
 }
 .hex1 {
     background-repeat: no-repeat;
