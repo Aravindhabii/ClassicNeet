@@ -53,8 +53,13 @@
     right: 30%;
     z-index: 2;
 }
+p {
+    /* margin-top: 0; */
+    margin-bottom: 0rem !important;
+}
+
 select, .stream3 button , .stream4 button  {
-    padding: 1rem 4rem;
+    padding: 1rem 4rem ;
     border-radius: 25px !important;
     border: 2px solid black;
     font-size: 20px !important;
