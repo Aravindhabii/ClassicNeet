@@ -11,6 +11,52 @@
     flex-direction: column;
     position: relative;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Heading*/
 .h1andh2{
     padding: 5%;  
@@ -291,14 +337,14 @@
 }
 .bg1 {
 
-    background: url(../images/courses/vec1.png) center/contain;
+    background: url(../images/courses/hexbox1.png) center/contain;
     
 }
 .bg2 {
-    background: url(../images/courses/Vector3.png) center/contain;
+    background: url(../images/courses/hexbox2.png) center/contain;
 }
 .bg3 {
-    background: url(../images/courses/Vector5.png) center/contain;
+    background: url(../images/courses/hexbox1.png) center/contain;
 }
 .hex1 {
     background-repeat: no-repeat;

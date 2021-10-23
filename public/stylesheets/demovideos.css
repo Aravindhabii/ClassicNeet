@@ -57,7 +57,7 @@ select, .stream3 button , .stream4 button  {
     padding: 1rem 4rem;
     border-radius: 25px !important;
     border: 2px solid black;
-    font-size: 18px !important;
+    font-size: 20px !important;
 }
 .stream  {
 
@@ -168,11 +168,8 @@ iframe {
     
     z-index: 4;
 }
-.griditem1,.griditem2{
-    padding:1rem;
-    background-color: #02c3d8;
+.griditem{
+    padding:.5rem;
+    border: 15px solid #02c3d8;
     border-radius: 20px 0px 20px 0px;
-}
-.griditem3,.griditem4{
-    padding: 1rem;
 }
