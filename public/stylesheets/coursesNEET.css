@@ -337,14 +337,14 @@
 }
 .bg1 {
 
-    background: url(../images/courses/hexbox1.png) center/contain;
+    background: url(../images/courses/img1.png) center/contain;
     
 }
 .bg2 {
-    background: url(../images/courses/hexbox2.png) center/contain;
+    background: url(../images/courses/img2.png) center/contain;
 }
 .bg3 {
-    background: url(../images/courses/hexbox1.png) center/contain;
+    background: url(../images/courses/img1.png) center/contain;
 }
 .hex1 {
     background-repeat: no-repeat;
@@ -375,9 +375,9 @@
 }
 .hexBox {
     width: 55%;
-    background-color: rgba(255, 255, 255, 0.63);
+    /* background-color: rgba(255, 255, 255, 0.63); */
     height: 70%;
-    border-radius: 40px;
+    /* border-radius: 40px; */
     display: flex;
     flex-direction: column;
     align-items: center;

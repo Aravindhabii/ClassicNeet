@@ -1832,12 +1832,12 @@ iframe {
     margin-left: 0.5rem;
   }
   .sliderRev {
-    height: 35vh;
+    height: 55vh;
   }
   .home {
     height: 50vh;
     margin-top: 0rem;
-    min-height: 350px;
+    min-height: 450px;
   }
   .sec-2 {
     min-height: 850px;
@@ -1872,7 +1872,10 @@ iframe {
   .home {
     height: 50vh;
     margin-top: 0rem;
-    min-height: 380px;
+    min-height: 450px;
+  }
+  .sliderRev {
+    height: 35vh;
   }
   .cardsDiv {
     margin-top: 3rem;
@@ -1894,4 +1897,22 @@ iframe {
     width: 18.82rem !important;
     height: 10rem !important;
   }
+  .mySwiper1.swiper-slide {
+    width: 18.82rem !important;
+    height: 10rem !important;
+  }
+  .mySwiper1 {
+    width: 74% !important;
+    /* height: 60vh !important; */
+  }
+  .mySwiper2 {
+    width: 74% !important;
+    
+  }
+  .video {
+    height: 16vh;
+    width: 65vw;
+  }
+  
+
 }
