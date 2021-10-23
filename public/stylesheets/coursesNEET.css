@@ -16,7 +16,7 @@
     padding: 5%;  
 }
 .headh1h2{
-   padding: .5%;
+   padding: 0.5% 0;
 }
 
 .coursesneet h1{
@@ -357,12 +357,13 @@
 
 }
 .neet1btn, .neet2btn, .neet3btn, .neet4btn {
-    padding:  .5rem 1rem;
+    padding:  0.5rem 2rem;
     border-radius: 20px;
     background-color: #526DF0;
     color: white;
     border: none;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
 }
 .methodology1 , .methodology2, .methodology3{
    background-color: white;
@@ -434,6 +435,118 @@
     box-shadow: 2px 2px 60px rgba(0, 0, 0, 0.2);
     border: none;
     margin: 2rem 0rem;
+}
+
+/* Button a */
+.button {
+	position: absolute;
+	display: inline-block;
+	padding: 12px 30px;
+	color: rgba(255, 255, 255, 1);
+	letter-spacing: 2px;
+	background: rgb(233, 129, 44);
+	transition: 0.5s;
+	border: none;
+	font-size: 16px;
+	cursor: pointer;
+	text-decoration: none;
+	z-index: 10;
+}
+
+.button:hover {
+	color: rgb(255, 255, 255);
+	font-weight: bolder;
+}
+
+.button:focus {
+	border: none;
+	outline: none;
+}
+
+.button span {
+	display: block;
+	position: absolute;
+	background: rgb(255,255,255);
+}
+
+.button span:nth-child(1) {
+	left: 0;
+	z-index: 31;
+	bottom: 0%;
+	width: 3px;
+	height: 100%;
+	transform: scaley(0);
+	transform-origin: top;
+	transition: transform 0.5s;
+}
+
+.button:hover span:nth-child(1) {
+	transform: scaley(1);
+	transform-origin: bottom;
+	transition: transform 0.5s;
+}
+
+.button span:nth-child(2) {
+	left: 0;
+	z-index: 31;
+	bottom: 0%;
+	width: 100%;
+	height: 3px;
+	transform: scalex(0);
+	transform-origin: right;
+	transition: transform 0.5s;
+}
+
+.button:hover span:nth-child(2) {
+	transform: scalex(1);
+	transform-origin: left;
+	transition: transform 0.5s;
+}
+
+.button span:nth-child(3) {
+	right: 0;
+	bottom: 0%;
+	width: 3px;
+	height: 100%;
+	transform: scaley(0);
+	transform-origin: top;
+	transition: transform 0.5s;
+	transition-delay: 0.5s;
+}
+
+.button:hover span:nth-child(3) {
+	transform: scaley(1);
+	transform-origin: bottom;
+	transition: transform 0.5s;
+	transition-delay: 0.5s;
+}
+
+.button span:nth-child(4) {
+	left: 0;
+	z-index: 31;
+	top: 0%;
+	width: 100%;
+	height: 3px;
+	transform: scalex(0);
+	transform-origin: right;
+	transition: transform 0.5s;
+	transition-delay: 0.5s;
+}
+
+.button:hover span:nth-child(4) {
+	transform: scalex(1);
+	transform-origin: left;
+	transition: transform 0.5s;
+	transition-delay: 0.5s;
+}
+
+.feed-container div:hover img {
+	transform: scale(1.05);
+}
+
+.feed-container div:hover::after {
+	background-color: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(1px);
 }
 
 
