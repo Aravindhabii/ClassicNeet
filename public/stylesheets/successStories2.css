@@ -12,16 +12,18 @@
     width: 100%;
     /* height: 100%; */
 }
+
 .cardMain {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     justify-items: center;
     
-    /* grid-row-gap: 9rem; */
+    grid-row-gap: 8rem;
     width: 80%;
-    height: 120vh;
+    /* height: 120vh; */
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 8rem;
 }
 .card {
     height: 360px;
