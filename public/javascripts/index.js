@@ -62,81 +62,38 @@ let count4 = 1;
 
   
 
-$(window).on('scroll',() =>{
-   // Stuff
-   console.log('l');
 
-	
-  var scrolly = Math.floor(window.scrollY);
-  // console.log(scrolly/2);
-  // const scroll = Math.round(scrolly/4)
-  // const h = Math.round(height/4)
-  // console.log(scroll,h);
-  
-  console.log(scrolly >= height,'comp');
-  if (scrolly >= height) {
-    $(".counter").each(function () {
+
+
+var a = 0;
+$(window).scroll(function() {
+
+  var oTop = $('#counter').offset().top - window.innerHeight;
+  if (a == 0 && $(window).scrollTop() > oTop) {
+    $('.counter-value').each(function() {
       var $this = $(this),
-        countTo = $this.attr("data-target");
-      // console.log(countTo,'count');
-
-      $({ countNum: $this.text() }).animate(
-        {
-          countNum: countTo,
+        countTo = $this.attr('data-count');
+      $({
+        countNum: $this.text()
+      }).animate({
+          countNum: countTo
         },
+
         {
-          duration: 1000,
-          easing: "linear",
-          step: function () {
-            if ($this.attr("class").includes("successRate")) {
-              $this.text(`${Math.floor(this.countNum)}%`);
-            } else {
-              $this.text(`${Math.floor(this.countNum)}`);
-            }
+
+          duration: 2000,
+          easing: 'swing',
+          step: function() {
+            $this.text(Math.floor(this.countNum));
           },
-          complete: function () {
-            if ($this.attr("class").includes("successRate")) {
-              $this.text(`${this.countNum}%`);
-            } else {
-              $this.text(`${this.countNum}`);
-            }
-          },
-        }
-      );
+          complete: function() {
+            $this.text(this.countNum);
+            //alert('finished');
+          }
+
+        });
     });
-    $(window).off('scroll')
+    a = 1;
   }
-  
+
 });
-
-var slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides((slideIndex += n));
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides((slideIndex = n));
-}
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {
-    slideIndex = 1;
-  }
-  slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 4000);
-}
-
-var swiper = new Swiper(".mySwiper", {
-  effect: "cards",
-  grabCursor: true,
-});
-

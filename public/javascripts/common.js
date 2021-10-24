@@ -67,7 +67,7 @@ var swiper2 = new Swiper(".mySwiper2", {
   },
 });
 var swiper1 = new Swiper(".mySwiper1", {
-  slidesPerView: 1,
+  slidesPerView: 3,
   spaceBetween: 30,
   slidesPerGroup: 1,
   loop: true,
