@@ -1862,7 +1862,7 @@ iframe {
   .news-box {
     height: 20rem;
     width: 25rem;
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
   }
   .calenderCard {
     width: 25rem;
@@ -1890,6 +1890,7 @@ iframe {
     /* height: 50vh; */
     margin-top: 0rem;
     height: fit-content;
+    margin-bottom: 2rem;
     
   }
   .bgTopper {
@@ -1931,8 +1932,8 @@ iframe {
     
   }
   .mySwiper2 {
-    width: 74% !important;
-    
+    /* width: 74% !important; */
+    height: 38vh !important;
   }
   .video {
     height: 16vh;

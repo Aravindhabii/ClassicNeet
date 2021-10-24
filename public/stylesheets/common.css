@@ -307,6 +307,9 @@ footer {
   .footer_head {
     margin-top: 5%;
   }
+  .navlinks {
+    display: none;
+  }
 }
 @media (max-width: 400px) {
   .social {
