@@ -247,84 +247,84 @@ router
 
 // Our Toppers Route
 router
-	.route('/admin/ourtoppers')
-	.get(async (req, res) => {
-		await db.query('SELECT * FROM ourtoppers', async (error, response) => {
-			var arr = [];
-			if (error) {
-				console.log(error);
-			} else {
-				for (let i = 0; i <= response.length - 1; i++) {
-					var image = {
-						name: response[i].name,
-						collegename: response[i].collegename,
-						cloudinaryname: response[i].cloudinaryname,
-						studentimg: response[i].studentimg
-					};
-					arr.push(image);
-				}
-				res.render('admin/home/ourToppers', { students: arr });
-			}
-		});
-	})
-	.post(upload.single('studentimg'), async (req, res) => {
-		await db.query(
-			'INSERT INTO ourtoppers SET ?',
-			{
-				name: req.body.name,
-				collegename: req.body.collegeName,
-				studentimg: req.file.path,
-				cloudinaryname: req.file.filename.split('/')[1]
-			},
-			(err, response) => {
-				if (err) {
-					console.log(err);
-				} else {
-					console.log(response);
-				}
-			}
-		);
-		res.redirect('/admin/ourtoppers');
-	})
-	.put(upload.single('sliderimg'), async (req, res) => {
-		await db.query(
-			'UPDATE ourtoppers SET studentimg = ? WHERE cloudinaryname = ?',
-			[req.file.path, req.body.cloudinaryname]
-		);
-		res.redirect('/admin/ourtoppers');
-	})
-	.delete(async (req, res) => {
-		if (typeof req.body.checkbox === 'string') {
-			await cloudinary.uploader.destroy(
-				'ClassicNeetAcademy/' + req.body.checkbox
-			);
-			await db.query(
-				'DELETE FROM ourtoppers WHERE cloudinaryname = ?',
-				[req.body.checkbox],
-				(err, response) => {
-					if (err) {
-						console.log(err);
-					} else {
-						res.redirect('/admin/ourtoppers');
-					}
-				}
-			);
-		} else {
-			req.body.checkbox.forEach(async (link) => {
-				await cloudinary.uploader.destroy('ClassicNeetAcademy/' + link);
-				await db.query(
-					'DELETE FROM ourtoppers WHERE cloudinaryname = ?',
-					[link],
-					(err, response) => {
-						if (err) {
-							console.log(err);
-						}
-					}
-				);
-			});
-			res.redirect('/admin/ourtoppers');
-		}
-	});
+  .route("/admin/ourtoppers")
+  .get(async (req, res) => {
+    await db.query("SELECT * FROM ourtoppers", async (error, response) => {
+      var arr = [];
+      if (error) {
+        console.log(error);
+      } else {
+        for (let i = 0; i <= response.length - 1; i++) {
+          var image = {
+            name: response[i].name,
+            collegename: response[i].collegename,
+            cloudinaryname: response[i].cloudinaryname,
+            studentimg: response[i].studentimg,
+          };
+          arr.push(image);
+        }
+        res.render("admin/home/ourToppers", { students: arr });
+      }
+    });
+  })
+  .post(upload.single("studentimg"), async (req, res) => {
+    await db.query(
+      "INSERT INTO ourtoppers SET ?",
+      {
+        name: req.body.name,
+        collegename: req.body.collegeName,
+        studentimg: req.file.path,
+        cloudinaryname: req.file.filename.split("/")[1],
+      },
+      (err, response) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(response);
+        }
+      }
+    );
+    res.redirect("/admin/ourtoppers");
+  })
+  .put(upload.single("sliderimg"), async (req, res) => {
+    await db.query(
+      "UPDATE ourtoppers SET studentimg = ? WHERE cloudinaryname = ?",
+      [req.file.path, req.body.cloudinaryname]
+    );
+    res.redirect("/admin/ourtoppers");
+  })
+  .delete(async (req, res) => {
+    if (typeof req.body.checkbox === "string") {
+      await cloudinary.uploader.destroy(
+        "ClassicNeetAcademy/" + req.body.checkbox
+      );
+      await db.query(
+        "DELETE FROM ourtoppers WHERE cloudinaryname = ?",
+        [req.body.checkbox],
+        (err, response) => {
+          if (err) {
+            console.log(err);
+          } else {
+            res.redirect("/admin/ourtoppers");
+          }
+        }
+      );
+    } else {
+      req.body.checkbox.forEach(async (link) => {
+        await cloudinary.uploader.destroy("ClassicNeetAcademy/" + link);
+        await db.query(
+          "DELETE FROM ourtoppers WHERE cloudinaryname = ?",
+          [link],
+          (err, response) => {
+            if (err) {
+              console.log(err);
+            }
+          }
+        );
+      });
+      res.redirect("/admin/ourtoppers");
+    }
+  });
 
 //Neet Achivements Route
 router
@@ -386,7 +386,6 @@ router
               console.log(err);
             } else {
               console.log(response);
-              
             }
           }
         );
@@ -451,7 +450,8 @@ router
         }
       }
     );
-  }).delete(async (req, res) => {
+  })
+  .delete(async (req, res) => {
     if (typeof req.body.checkbox === "string") {
       await db.query(
         "DELETE FROM calendarevents WHERE event = ?",
@@ -492,21 +492,31 @@ router
       if (err) {
         console.log(err);
       } else {
-        var seats= response[0].seats
-        var consecutiveyears= response[0].consecutiveyears
-        var successrate= response[0].successrate
-        var admissions= response[0].admissions
-             // console.log(image)
-          res.render("admin/home/neetAchievements", { seats, consecutiveyears,successrate,admissions });
-        }
-        // console.log(response[0].latestupdates);
+        var seats = response[0].seats;
+        var consecutiveyears = response[0].consecutiveyears;
+        var successrate = response[0].successrate;
+        var admissions = response[0].admissions;
+        // console.log(image)
+        res.render("admin/home/neetAchievements", {
+          seats,
+          consecutiveyears,
+          successrate,
+          admissions,
+        });
+      }
+      // console.log(response[0].latestupdates);
     });
   })
   .post(async (req, res) => {
-    const {seat,years,rate,admiss} = req.body;
+    const { seat, years, rate, admiss } = req.body;
     await db.query(
       "UPDATE neetacheivements SET ? WHERE id = 1",
-      { seats: seat,consecutiveyears:years, successrate:rate, admissions:admiss},
+      {
+        seats: seat,
+        consecutiveyears: years,
+        successrate: rate,
+        admissions: admiss,
+      },
       (err, results) => {
         if (err) {
           console.log(err);
@@ -519,17 +529,56 @@ router
   });
 
 router
-	.route('/admin/neetachievements')
-	.get(async (req, res) => {
-		res.render('admin/home/studentTestimonials');
-	})
-	.post(async (req, res) => {});
+  .route("/admin/neetachievements")
+  .get(async (req, res) => {
+    res.render("admin/home/studentTestimonials");
+  })
+  .post(async (req, res) => {
+    const link = req.body.uploadlink;
+    console.log(link);
+    await db.query(
+      "INSERT INTO studenttestimonials SET ?",
+      { testimonialslink: link },
+      (err, results) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(results);
+          res.redirect("/admin/studenttestimonials");
+        }
+      }
+    );
+  });
+
+router.route("/courses").get(async (req, res) => {
+  res.render("courses");
+});
+
+router.route("/admin/courses/neet").get(async(req,res)=>{
+  await db.query(
+    "INSERT INTO courseneet "
+  )
+  res.render("admin/courses/courseNEET")
+}).post(async (req, res) => {
+  const content = req.body.content;
+  await db.query(
+    "INSERT INTO courseneet SET ?",
+    { testimonialslink: link },
+    (err, results) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(results);
+        res.redirect("/admin/studenttestimonials");
+      }
+    }
+  );
+}).delete(async(req,res)=>{
+  
+})
 
 router.route("/aboutus").get(async (req, res) => {
   res.render("aboutus");
-});
-router.route("/courses").get(async (req, res) => {
-  res.render("courses");
 });
 
 router.route("/coursesNEET").get(async (req, res) => {
@@ -541,11 +590,11 @@ router.route("/coursesJEE").get(async (req, res) => {
 router.route("/coursesIIT&Medical").get(async (req, res) => {
   res.render("coursesIIT&Medical");
 });
-router.route('/coursesJEE').get(async (req, res) => {
-	res.render('coursesJEE');
+router.route("/coursesJEE").get(async (req, res) => {
+  res.render("coursesJEE");
 });
-router.route('/Demovideos').get(async (req, res) => {
-	res.render('Demovideos');
+router.route("/Demovideos").get(async (req, res) => {
+  res.render("Demovideos");
 });
 
 router.route("/results").get(async (req, res) => {
@@ -561,6 +610,6 @@ router.route("/404error").get(async (req, res) => {
   res.render("404error");
 });
 
-router.route('/admin')
+router.route("/admin");
 
 module.exports = router;
