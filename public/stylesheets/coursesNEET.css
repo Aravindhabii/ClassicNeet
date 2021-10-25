@@ -628,17 +628,17 @@
 
     .bg1 {
 
-        background: url(../images/courses/vec1.png) center/contain;
+        background: url(../images/courses/img1.png) center/contain;
         background-size: 100% 90%;
         background-repeat: no-repeat;
     }
     .bg2 {
-        background: url(../images/courses/Vector3.png) center/contain;
+        background: url(../images/courses/img2.png) center/contain;
         background-repeat: no-repeat;
         background-size: 100% 90%;
     }
     .bg3 {
-        background: url(../images/courses/Vector5.png) center/contain;
+        background: url(../images/courses/img1.png) center/contain;
         background-repeat: no-repeat;
         background-size: 100% 90%;
     }
@@ -676,4 +676,21 @@
     .hex1 {
         height: 350px;
     }
+    .neet1btn, .neet2btn, .neet3btn, .neet4btn {
+       
+        font-size: 13px;
+        padding: 0.5rem 1.6rem;
+    }
+    .hexBox {
+        margin-right: 0rem;
+    }
+    .hexContent {
+        font-size: 15px;
+        line-height: 1.5rem;
+        
+    }
+    .hex1 img {
+        width: 40%;
+    }
+
 }
