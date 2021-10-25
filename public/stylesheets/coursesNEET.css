@@ -684,8 +684,12 @@
     .hexBox {
         margin-right: 0rem;
     }
+    .hexBox2 {
+        
+        margin-left: 0rem !important;
+    }
     .hexContent {
-        font-size: 15px;
+        font-size: 14px;
         line-height: 1.5rem;
         
     }
@@ -693,4 +697,36 @@
         width: 40%;
     }
 
+}
+
+@media (max-width:600px) {
+    .hex1 {
+        height: 300px;
+    }
+    .hex1 img { 
+        height: 70%;
+    }
+}
+
+@media (max-width:450px) {
+    .hex1 {
+        height: 225px;
+    }
+    .hexBox {
+        width: 58%;
+    }
+    .hex1 img {
+        height: 60%;
+    }
+    .hexTitle {
+        font-size: .8rem;
+    }
+    .neet1btn, .neet2btn, .neet3btn, .neet4btn {
+        font-size: 12px;
+        padding: 0.3rem 1rem;
+    }
+    .hexContent {
+        font-size: 13px;
+        line-height: 1.4rem;
+    }
 }
