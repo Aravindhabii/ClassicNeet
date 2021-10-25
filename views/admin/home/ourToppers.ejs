@@ -93,6 +93,7 @@
 							<tr>
 								<th scope="col">Name</th>
 								<th scope="col">Image</th>
+								<th scope="col">College Name</th>
 								<th scope="col">Update</th>
 							</tr>
 						</thead>
@@ -105,9 +106,11 @@
 								<td>
 									<p class="onclickimg"><%= i.imgname %></p>
 									<span class="currentPreviewSpan btn btn-info"
-										>Show Image</span
-									>
+										>Show Image</span>
 									<span class="currentSliderimgurl"><%= i.studentimg %></span>
+								</td>
+								<td>
+									<p><%= i.collegename %></p>
 								</td>
 								<td>
 									<input

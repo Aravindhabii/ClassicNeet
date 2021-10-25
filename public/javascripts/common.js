@@ -16,7 +16,7 @@ const navslide = () => {
     navlinks.forEach((link, index) => {
       if (link.style.animation) {
         link.style.animation = "";
-      } else {
+      } else {r
         link.style.animation = `navlinkFade 0.5s ease forwards ${
           index / 7 + 0.5
         }s`;
@@ -53,7 +53,7 @@ var swiper = new Swiper(".mySwiper", {
 var swiper2 = new Swiper(".mySwiper2", {
   slidesPerView: 3,
   spaceBetween: 30,
-  slidesPerGroup: 3,
+  slidesPerGroup: 1,
   loop: true,
   loopFillGroupWithBlank: true,
   pagination: {
@@ -69,7 +69,7 @@ var swiper2 = new Swiper(".mySwiper2", {
 var swiper1 = new Swiper(".mySwiper1", {
   slidesPerView: 3,
   spaceBetween: 30,
-  slidesPerGroup: 3,
+  slidesPerGroup: 1,
   loop: true,
   loopFillGroupWithBlank: true,
   pagination: {

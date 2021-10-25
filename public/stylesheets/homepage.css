@@ -87,7 +87,7 @@
 .home {
   position: relative;
   height: 90vh;
-  min-height: 560px;
+  /* min-height: 560px; */
   width: 100%;
   display: flex;
 }
@@ -314,6 +314,7 @@ p {
   font-size: 14px;
   font-weight: 600;
 }
+
 .dateMain {
   font-size: 24px;
   font-weight: 600;
@@ -923,6 +924,7 @@ p {
 .testimonials_container {
   width: 100%;
   height: 55vh;
+  margin-bottom: 5rem;
 }
 
 .ytp-chrome-top {
@@ -1182,14 +1184,14 @@ p {
 .arrownext2 {
   color: #02c3d8;
   position: absolute;
-  top: 84.5%;
+  top: 82.5%;
   /* transform: translateY(-50%); */
   right: 3% !important;
 }
 .arrowprev2 {
   color: #02c3d8;
   position: absolute;
-  top: 84.5%;
+  top: 82.5%;
   /* transform: translateY(-50%); */
   left: 3% !important;
 }
@@ -1330,6 +1332,7 @@ p {
   font-weight: 500;
   margin-bottom: 0.5rem !important;
 }
+
 .score {
   font-size: 18px;
   font-weight: 500;
@@ -1370,7 +1373,7 @@ p {
   /* background-color: blanchedalmond; */
   position: relative;
   height: 86vh;
-  min-height: 500px;
+  /* min-height: 500px; */
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -1394,10 +1397,12 @@ iframe {
   border-radius: 30px 0 30px 0;
 }
 @media (max-width: 1450px) {
+  
   .blob1 {
     width: 50%;
     height: 80vh;
   }
+
   .blob2 {
     transform: scale(0.8);
     right: 7%;
@@ -1408,6 +1413,7 @@ iframe {
     right: 16%;
     top: 64%;
   }
+
   .box1,
   .box2,
   .box3 {
@@ -1421,17 +1427,15 @@ iframe {
     font-size: 16px;
     font-weight: 700;
   }
-  .mySwiper1 .swiper-slide {
+  /* .mySwiper1 .swiper-slide {
     width: 18.82rem !important;
     height: 14rem !important;
-  }
-  .bgTopper {
-    height: 70vh;
-  }
-  .mySwiper2 .swiper-slide {
+  } */
+
+  /* .mySwiper2 .swiper-slide {
     width: 18.82rem !important;
     height: 14rem !important;
-  }
+  } */
   iframe {
     height: 10rem;
   }
@@ -1452,6 +1456,11 @@ iframe {
 }
 
 @media (max-width: 1250px) {
+  .video {
+    height: 30vh;
+    width: 28vw;
+  }
+
   .box1 h3, .box2 h3, .box3 h3 {
     font-size: 16px;
     
@@ -1511,7 +1520,7 @@ iframe {
   .sec-2 {
     /* background-color: blanchedalmond; */
 
-    height: 75vh;
+    height: fit-content;
   }
   .cardsDiv {
     height: 65vh;
@@ -1520,17 +1529,19 @@ iframe {
   .bottom-drive {
     width: 80%;
   }
-  .mySwiper1 .swiper-slide {
+  /* .mySwiper1 .swiper-slide {
     width: 16.82rem !important;
     height: 12rem !important;
   }
   .mySwiper2 .swiper-slide {
     width: 16.82rem !important;
     height: 12rem !important;
-  }
+  } */
 }
 
 @media (max-width: 1100px) {
+
+
   .blob1 {
     width: 50%;
     height: 74vh;
@@ -1553,34 +1564,27 @@ iframe {
     width: 15rem;
   }
   .cardsDiv {
-    height: 55vh;
-    margin: 0rem 0rem;
+    height: fit-content;
+    margin: 5rem 0rem;
   }
-  .mySwiper1 .swiper-slide {
-    width: 14.82rem !important;
+  /* .mySwiper1 .swiper-slide {
+    
     height: 10rem !important;
   }
   .mySwiper2 .swiper-slide {
-    width: 14.82rem !important;
-    height: 10rem !important;
-  }
-  .video {
-    height: 16vh;
-    width: 22vw;
-  }
-  .bgTopper {
-    /* height: 53vh; */
-    height: fit-content;
-    margin-top: 4rem;
-  }
-  .mySwiper1 {
-    height: 30vh !important;
+    width: 23.82rem !important;
+    height: 14rem !important;
+  } */
+  
+  
+  /* .mySwiper1 {
+    height: 16vh !important;
     margin-bottom: 3rem;
     margin-top: 3rem;
-  }
+  } */
   /* .mySwiper2 {
     height: 34vh !important;
-    margin-bottom: 3rem;
+    
   } */
   .neet-2020-toppers-a {
     margin-top: 1rem;
@@ -1590,6 +1594,12 @@ iframe {
   }
   .college {
     font-size: 12px;
+  }
+  .arrowprev2 {
+    top: 84.5%;
+  }
+  .arrownext2 {
+    top: 84.5%;
   }
 }
 @media (max-width: 1100px) {
@@ -1632,12 +1642,15 @@ iframe {
     align-items: center;
     justify-content: space-between;
   }
-  .testimonials_container {
-    width: 100%;
-    height: 45vh;
-  }
+ 
 }
+
 @media (max-width: 1000px) {
+  .video {
+    height: 34vh;
+    width: 38vw;
+  }
+
   .box1 h3, .box2 h3, .box3 h3 {
     font-size: 14px;
     
@@ -1712,20 +1725,27 @@ iframe {
   }
 }
 @media (max-width: 800px) {
+  .video {
+    height: 30vh;
+    width: 50vw;
+  }
+
   .box1 h3, .box2 h3, .box3 h3 {
     font-size: 12px;
     
   }
+  .sec-2 .div-1 h1 {
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    /* margin-right: 10rem; */
+}
   .swiper-button-prev {
     display: none;
   }
   .swiper-button-next {
     display: none;
   }
-  .video {
-    height: 18vh;
-    width: 28vw;
-  }
+  
   .statBox {
     width: 80%;
     /* background-color: #2b72e4; */
@@ -1743,17 +1763,20 @@ iframe {
     align-items: center;
   }
   .home {
-    min-height: 460px;
+    
+    /* min-height: 415px; */
+
+
     height: 100vh;
   }
 
-  .sliderRev {
+  /* .sliderRev {
     height: 85vh;
-  }
+  } */
   .sec-2 {
     display: flex;
     flex-direction: column;
-    min-height: 1000px;
+    /* min-height: 1000px; */
     /* margin-top: 5rem; */
   }
   .news-box {
@@ -1779,10 +1802,8 @@ iframe {
     font-size: 20px;
     
   }
-  .video {
-    height: 18vh;
-    width: 32vw;
-  }
+  
+
   .neet-2020-toppers {
     margin: 2rem 0px;
   }
@@ -1819,9 +1840,16 @@ iframe {
 }
 @media (max-width: 600px) {
   .video {
-    height: 18vh;
-    width: 38vw;
+    height: 26vh;
+    width: 75vw;
   }
+  .mySwiper1 .swiper-slide {
+    width: 28.82rem !important;}
+
+  .neet-2020-toppers-a {
+    font-size: 1.3rem;
+  }
+  
   .Stat h1 {
     font-size: 2.2rem;
   }
@@ -1830,19 +1858,20 @@ iframe {
     margin-left: 0.5rem;
   }
   .sliderRev {
-    height: 45vh;
+    height: 55vh;
   }
   .home {
-    height: 58vh;
+    height: fit-content;
     margin-top: 0rem;
+    /* min-height: 450px; */
   }
   .sec-2 {
-    min-height: 850px;
+    height: fit-content;
   }
   .news-box {
     height: 20rem;
     width: 25rem;
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
   }
   .calenderCard {
     width: 25rem;
@@ -1850,6 +1879,11 @@ iframe {
   .neet-2020-toppers-a {
     font-size: 1rem;
   }
+  .div-2-title {
+    
+    margin-top: 2rem;
+    /* border: 1px solid #1E2886; */
+}
   .arrownext1 {
     right: 3% !important;
     height: 1px !important;
@@ -1866,11 +1900,110 @@ iframe {
   }
 }
 @media (max-width: 500px) {
+  .home {
+    /* height: 50vh; */
+    margin-top: 0rem;
+    height: fit-content;
+    margin-bottom: 2rem;
+    
+  }
+  
+  .sec-2 {
+    height: fit-content;
+  }
+  .sliderRev {
+    height: 35vh;
+  }
+  .cardsDiv {
+    margin-top: 3rem;
+  }
   .news-box {
-    height: 17rem;
+    height: 22rem;
     width: 22rem;
   }
   .calenderCard {
-    width: 22rem;
+    width: 18rem;
   }
+  .neet-2020-toppers-a {
+    padding: 0.5rem 1rem;
+  }
+  .stats {
+    margin-top: 3rem;
+  }
+  /* .mySwiper2 .swiper-slide {
+    width: 21.5rem !important;
+    height: 12rem !important;
+  }
+  .mySwiper1.swiper-slide {
+    
+    height: 10rem !important;
+  } */
+  /* .mySwiper1 {
+    width: 74% !important;
+    height: 24vh !important;
+    
+  }
+  .mySwiper2 {
+    
+    height: 38vh !important;
+  } */
+  
+  
+  .div-2-title {
+    
+    margin-top: 0rem;
+    /* border: 1px solid #1E2886; */
+}
+
+
+
+}
+
+
+@media (max-width:400px) {
+  /* .mySwiper2 {
+    height: 40vh !important;
+  }
+  .mySwiper2 .swiper-slide {
+    width: 18.5rem !important;
+    height: 10rem !important;
+  } */
+
+  /* .bgTopper {
+    height: 46vh;
+  }  */
+  .home {
+    
+    height: fit-content;
+    margin-bottom: 2rem;
+  }
+  .news-box {
+    height: 22rem;
+    width: 18rem;
+  }
+  .sec-2 {
+    height: fit-content;
+  }
+  .box1,
+  .box2,
+  .box3 {
+    width: 20rem;
+    height: 23rem;
+  }
+  .bottom-drive {
+    width: 100%;
+  }
+  .studentsh1 {
+    
+    font-size: 1.2rem;
+  }
+  /* .mySwiper2 {
+  width: 84% !important;
+  } */
+  /* .mySwiper1 {
+    width: 83% !important;
+    
+} */
+
+
 }
