@@ -59,3 +59,31 @@
     margin-right: auto;
     border-radius: 10px;
 }
+
+@media (max-width:1400px) {
+    .cardMain {
+        width: 90%;
+    }
+}
+
+@media (max-width:1250px) {
+    .cardMain {
+        grid-template-columns: repeat(2,1fr);
+    }   
+}
+@media (max-width:800px) {
+    .cardMain {
+        grid-template-columns: repeat(1,1fr);
+    }   
+}
+@media (max-width:500px) {
+    .cardMain {
+        margin-top: 3rem;
+    }   
+}
+@media (max-width:400px) {
+    .card {
+        height: 320px;
+        width: 300px;
+    }
+}
