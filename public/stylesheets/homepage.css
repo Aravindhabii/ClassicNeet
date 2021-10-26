@@ -1537,6 +1537,9 @@ iframe {
     width: 16.82rem !important;
     height: 12rem !important;
   } */
+  .bgTopper {
+    height: 62vh;
+  }
 }
 
 @media (max-width: 1100px) {
