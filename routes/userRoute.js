@@ -555,21 +555,32 @@ router.route("/courses").get(async (req, res) => {
 });
 
 router.route("/admin/courses/neet").get(async(req,res)=>{
-  await db.query(
-    "INSERT INTO courseneet "
-  )
-  res.render("admin/courses/courseNEET")
+  await db.query("SELECT * FROM courseneet", async (error, response) => {
+    var arr = [];
+    if (error) {
+      console.log(error);
+    } else {
+      for (let i = 0; i <= response.length - 1; i++) {
+        var cont = {
+          overview: response[i].overview,
+          methodology: response[i].methodology,
+        };
+        arr.push(cont);
+      }
+      res.render("admin/courses/courseNEET", { content: arr });
+    }
+  });
 }).post(async (req, res) => {
-  const content = req.body.content;
+  const {overview, methodology} = req.body.content;
   await db.query(
     "INSERT INTO courseneet SET ?",
-    { testimonialslink: link },
+    { overview: overview, methodology: methodology },
     (err, results) => {
       if (err) {
         console.log(err);
       } else {
         console.log(results);
-        res.redirect("/admin/studenttestimonials");
+        res.redirect("/admin/courses/neet");
       }
     }
   );
