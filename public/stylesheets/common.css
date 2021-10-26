@@ -42,6 +42,7 @@ nav {
   justify-content: space-around;
   list-style: none;
   left: 3%;
+  
   /* padding-top: .5rem; */
 }
 
@@ -103,10 +104,24 @@ ul {
     transform: translateX(0px);
   }
 }
-
-@media screen and (max-width: 1210px) {
+@media (max-width:1300px) {
+  .navlinks a  {
+    font-size: 16px;
+  }
+  .navlinks {
+    width: 70%;
+  }
+}
+/* @media screen and (max-width: 1210px) {
   .navlinks {
     width: 80%;
+  }
+} */
+
+@media (max-width:1150px) {
+  .navlinks {
+    width: 80%;
+    left: 0%;
   }
 }
 @media (max-width:1000px) {
@@ -270,7 +285,6 @@ footer {
 .social img {
 	margin: 0.5rem;
 }
-
 
 /* swiper  */
 @media (max-width:800px) {
