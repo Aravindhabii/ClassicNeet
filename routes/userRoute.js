@@ -326,7 +326,7 @@ router
     }
   });
 
-//Neet Achivements Route
+//Students testimonial Route
 router
   .route("/admin/studenttestimonials")
   .get(async (req, res) => {
@@ -607,6 +607,7 @@ router.route("/coursesJEE").get(async (req, res) => {
 router.route("/Demovideos").get(async (req, res) => {
   res.render("Demovideos");
 });
+
 
 router.route("/results").get(async (req, res) => {
   res.render("results");
