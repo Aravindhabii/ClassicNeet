@@ -115,11 +115,7 @@ $(window)
           
         "<p class='hexContent'>This course is meant for those who are appearing for their 12th class board exams and wish to focus on NEET after the Board exams.</p>"
       );
-    } else if (window.innerWidth > 750) {
-        $(".para1neet").replaceWith(
-            "<p class='hexContent'>This course is meant for those who have completed their 12th classboard exams and might have already attempted the NEET. They willappear for NEET in the coming year after one year of trainingfocused on NEET.</p>"
-          );
-    }
+    } 
    
     
   })

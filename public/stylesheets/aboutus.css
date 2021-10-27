@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=IBM+Plex+Sans&family=Inconsolata:wght@600&display=swap');
 
 .video {
   width: 100%;
@@ -91,8 +91,8 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 107vh;
-  font-family: 'Inconsolata', monospace;
+  /* height: 107vh; */
+  
 }
 
 .timeline h1 {
@@ -100,19 +100,46 @@
   padding: 2% 3% 1% 5%;
   font-size: 35px;
 }
-.timeline span {
-  width: 90px;
-  height: 80px;
+.timeline .span {
+  width: 45px;
+  height: 55px;
   position: relative;
   transform: translateX(-50%);
   margin-left: auto;
   margin-right: auto;
 }
-.timeline span img {
+.do {
+  margin-left: .7rem;
+}
+.timeline .span img {
   height: 100%;
 }
+.dot {
+  /* padding-left:50% !important; */
+  height: 100px;
+  padding-top: 90%;
+  padding-left:50% !important;
+  position: relative;
+  /* background-color: #568036; */
+  z-index: 100;
+  /* left: 50%; */
+  top: 30%;
+}
+.icon {
+  height: 70px !important;
+}
+
+.cards1 p , .cards2 p , .cards3 p , .cards4 p {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  font-size: 1.1rem !important;
+  color: #7a8b94;
+  padding-left:50% !important;
+  width: 95% !important;
+}
 .cards1 p {
-  width: 90%;
+  width: 100%;
   height: 50%;
   display: flex;
   justify-content: center;
@@ -120,8 +147,10 @@
   padding-left: 48%;
   padding-top: 5%;
   line-height: 2rem;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 500;
+  
+  
 }
 .cards2 p {
   width: 90%;

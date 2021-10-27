@@ -5,18 +5,20 @@ const navlinks = document.querySelectorAll(".navlinks li");
 const line1 = document.querySelector(".line1");
 const line2 = document.querySelector(".line2");
 const line3 = document.querySelector(".line3");
-
+const body = document.querySelector('body')
 console.log("Hello");
 
 const navslide = () => {
   hamburger.addEventListener("click", () => {
+    console.log('lol');
     //toggle
     nav.classList.toggle("nav-active");
     //animation
+    body.classList.toggle('body')
     navlinks.forEach((link, index) => {
       if (link.style.animation) {
         link.style.animation = "";
-      } else {r
+      } else {
         link.style.animation = `navlinkFade 0.5s ease forwards ${
           index / 7 + 0.5
         }s`;
@@ -84,18 +86,4 @@ var swiper1 = new Swiper(".mySwiper1", {
 });
 
 
-var owl = $('.topperCard');
-owl.owlCarousel({
-    items:1,
-    loop:true,
-    margin:10,
-    autoplay:false,
-    autoplayTimeout:5000,
-    autoplayHoverPause:false
-});
-$('.play').on('click',function(){
-    owl.trigger('play.owl.autoplay',[1000])
-})
-$('.stop').on('click',function(){
-    owl.trigger('stop.owl.autoplay')
-})
+
