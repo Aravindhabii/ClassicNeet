@@ -2,7 +2,7 @@
 	"name": "app",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": "app.js",
 	"scripts": {
 		"start": "nodemon app.js"
 	},
@@ -15,7 +15,7 @@
 	"bugs": {
 		"url": "https://github.com/Aravindhabii/ClassicNeet/issues"
 	},
-	"homepage": "http://classicneetacademy.digitranit.com",
+	"homepage": "https://github.com/Aravindhabii/ClassicNeet#readme",
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
 		"bootbox": "^5.5.2",
