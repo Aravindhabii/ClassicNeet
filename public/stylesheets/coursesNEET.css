@@ -1,4 +1,5 @@
-/* image*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
 .coursesneet {
     width: 100%;
     height: 90vh;
@@ -358,8 +359,14 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    
 }
-
+p {
+    /* font-family: 'Montserrat', sans-serif !important; */
+    /* font-weight: 500; */
+    /* color: #242424; */
+    /* line-height: 2.5rem !important; */
+}
 .hex1 img {
     width: 29%;
 }

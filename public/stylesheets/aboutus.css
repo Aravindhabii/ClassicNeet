@@ -100,7 +100,7 @@
   padding: 2% 3% 1% 5%;
   font-size: 35px;
 }
-.timeline span {
+.timeline .span {
   width: 45px;
   height: 55px;
   position: relative;
@@ -111,7 +111,7 @@
 .do {
   margin-left: .7rem;
 }
-.timeline span img {
+.timeline .span img {
   height: 100%;
 }
 .dot {
@@ -128,15 +128,12 @@
 .icon {
   height: 70px !important;
 }
-.cards1 , .cards2 , .cards3 , .cards4{
-  position: relative;
-  display: flex;
-}
+
 .cards1 p , .cards2 p , .cards3 p , .cards4 p {
   font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   letter-spacing: 1px !important;
-  font-size: 1.2rem !important;
+  font-size: 1.1rem !important;
   color: #7a8b94;
   padding-left:50% !important;
   width: 95% !important;
