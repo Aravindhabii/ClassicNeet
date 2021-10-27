@@ -554,39 +554,41 @@ router.route("/courses").get(async (req, res) => {
   res.render("courses");
 });
 
-router.route("/admin/courses/neet").get(async(req,res)=>{
-  await db.query("SELECT * FROM courseneet", async (error, response) => {
-    var arr = [];
-    if (error) {
-      console.log(error);
-    } else {
-      for (let i = 0; i <= response.length - 1; i++) {
-        var cont = {
-          overview: response[i].overview,
-          methodology: response[i].methodology,
-        };
-        arr.push(cont);
-      }
-      res.render("admin/courses/courseNEET", { content: arr });
-    }
-  });
-}).post(async (req, res) => {
-  const {overview, methodology} = req.body.content;
-  await db.query(
-    "INSERT INTO courseneet SET ?",
-    { overview: overview, methodology: methodology },
-    (err, results) => {
-      if (err) {
-        console.log(err);
+router
+  .route("/admin/courses/neet")
+  .get(async (req, res) => {
+    await db.query("SELECT * FROM courseneet", async (error, response) => {
+      var arr = [];
+      if (error) {
+        console.log(error);
       } else {
-        console.log(results);
-        res.redirect("/admin/courses/neet");
+        for (let i = 0; i <= response.length - 1; i++) {
+          var cont = {
+            overview: response[i].overview,
+            methodology: response[i].methodology,
+          };
+          arr.push(cont);
+        }
+        res.render("admin/courses/courseNEET", { content: arr });
       }
-    }
-  );
-}).delete(async(req,res)=>{
-  
-})
+    });
+  })
+  .post(async (req, res) => {
+    const { overview, methodology } = req.body.content;
+    await db.query(
+      "INSERT INTO courseneet SET ?",
+      { overview: overview, methodology: methodology },
+      (err, results) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(results);
+          res.redirect("/admin/courses/neet");
+        }
+      }
+    );
+  })
+  .delete(async (req, res) => {});
 
 router.route("/aboutus").get(async (req, res) => {
   res.render("aboutus");
@@ -611,6 +613,89 @@ router.route("/Demovideos").get(async (req, res) => {
 router.route("/results").get(async (req, res) => {
   res.render("results");
 });
+
+router
+  .route("/admin/results/studentdetails")
+  .get(async (req, res) => {
+    await db.query("SELECT * FROM studentdetails", async (error, response) => {
+      var arr = [];
+      if (error) {
+        console.log(error);
+      } else {
+        for (let i = 0; i <= response.length - 1; i++) {
+          var image = {
+            name: response[i].name,
+            collegename: response[i].collegename,
+            studentimg: response[i].image,
+            cloudinaryname: response[i].cloudinaryname,
+          };
+          arr.push(image);
+        }
+        res.render("admin/results/studentdetails", { students: arr });
+      }
+    });
+  })
+  .post(upload.single("studentimg"), async (req, res) => {
+    await db.query(
+      "INSERT INTO studentdetails SET ?",
+      {
+        name: req.body.name,
+        collegename: req.body.collegeName,
+        image: req.file.path,
+        cloudinaryname: req.file.filename.split("/")[1],
+      },
+      (err, response) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(response);
+        }
+      }
+    );
+    res.redirect("/admin/results/studentdetails");
+  })
+  .put(upload.single("sliderimg"), async (req, res) => {
+    await db.query(
+      "UPDATE studentdetails SET image = ? WHERE cloudinaryname = ?",
+      [req.file.path, req.body.cloudinaryname]
+    );
+    res.redirect("/admin/results/studentdetails");
+  })
+  .delete(async (req, res) => {
+    if (typeof req.body.checkbox === "string") {
+      await cloudinary.uploader.destroy(
+        "ClassicNeetAcademy/" + req.body.checkbox
+      );
+      await db.query(
+        "DELETE FROM studentdetails WHERE cloudinaryname = ?",
+        [req.body.checkbox],
+        (err, response) => {
+          if (err) {
+            console.log(err);
+          } else {
+            res.redirect("/admin/results/studentdetails");
+          }
+        }
+      );
+    } else {
+      req.body.checkbox.forEach(async (link) => {
+        await cloudinary.uploader.destroy("ClassicNeetAcademy/" + link);
+        await db.query(
+          "DELETE FROM studentdetails WHERE cloudinaryname = ?",
+          [link],
+          (err, response) => {
+            if (err) {
+              console.log(err);
+            }else{
+              console.log(response);
+            }
+          }
+        );
+      });
+      res.redirect("/admin/results/studentdetails");
+    }
+  });
+
 router.route("/contactus").get(async (req, res) => {
   res.render("contactus");
 });

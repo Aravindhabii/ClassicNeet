@@ -112,3 +112,9 @@ tbody{
 	display: flex;
 
 }
+
+.onclickimg{
+	opacity: 0;
+	height: 0;
+	width: 0;
+}
