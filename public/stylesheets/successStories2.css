@@ -60,6 +60,7 @@
     margin-right: auto;
     border-radius: 10px;
 }
+<<<<<<< HEAD
 @media(max-width: 400px){
     .cardMain {
         display: grid;
@@ -75,5 +76,33 @@
     }
     .vector{
         margin-bottom: 15%;
+=======
+
+@media (max-width:1400px) {
+    .cardMain {
+        width: 90%;
+    }
+}
+
+@media (max-width:1250px) {
+    .cardMain {
+        grid-template-columns: repeat(2,1fr);
+    }   
+}
+@media (max-width:800px) {
+    .cardMain {
+        grid-template-columns: repeat(1,1fr);
+    }   
+}
+@media (max-width:500px) {
+    .cardMain {
+        margin-top: 3rem;
+    }   
+}
+@media (max-width:400px) {
+    .card {
+        height: 320px;
+        width: 300px;
+>>>>>>> 743dc29be9bb12505df20fd4a668d51a3c317559
     }
 }
