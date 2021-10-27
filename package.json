@@ -15,7 +15,7 @@
 	"bugs": {
 		"url": "https://github.com/Aravindhabii/ClassicNeet/issues"
 	},
-	"homepage": "https://github.com/Aravindhabii/ClassicNeet#readme",
+	"homepage": "http://classicneetacademy.digitranit.com",
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
 		"bootbox": "^5.5.2",
