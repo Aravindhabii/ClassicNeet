@@ -338,14 +338,14 @@
 }
 .bg1 {
 
-    background: url(../images/courses/img1.png) center/contain;
+    background: url(../images/courses/hexagon1.png) center/contain;
     
 }
 .bg2 {
-    background: url(../images/courses/img2.png) center/contain;
+    background: url(../images/courses/hexagon2.png) center/contain;
 }
 .bg3 {
-    background: url(../images/courses/img1.png) center/contain;
+    background: url(../images/courses/hexagon1.png) center/contain;
 }
 .hex1 {
     background-repeat: no-repeat;
@@ -403,7 +403,7 @@
     font-size: 17px;
 
 }
-.neet1btn, .neet2btn, .neet3btn, .neet4btn {
+.neet1btn, .neet2btn, .neet3btn, .neet4btn , .neet5btn{
     padding:  0.5rem 2rem;
     border-radius: 20px;
     background-color: #526DF0;
@@ -412,7 +412,7 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
     font-size: 20px;
 }
-.methodology1 , .methodology2, .methodology3{
+.methodology1 , .methodology2, .methodology3  , .methodology4{
    background-color: white;
    width: 50%;
    padding: 3rem;
@@ -422,12 +422,12 @@
 
 
 }
-.methodology1 h1 , .methodology2 h1 , .methodology3 h1 {
+.methodology1 h1 , .methodology2 h1 , .methodology3 h1 , .methodology4 h1 {
     text-align: center;
     padding-bottom: 2rem;
     
 }
-.methodology1 ul , .methodology2 ul ,.methodology3 ul {
+.methodology1 ul , .methodology2 ul ,.methodology3 ul , .methodology4 ul{
     line-height: 1.8rem;
     margin-left: auto;
     margin-right: auto;
@@ -438,7 +438,7 @@
     height: 14px;
     margin-right: .5rem;
 }
-.bgmeth , .bgmeth2 , .bgmeth3 {
+.bgmeth , .bgmeth2 , .bgmeth3  , .bgmeth4 {
     display: none;
     position: fixed;
     height: 100vh;
@@ -629,17 +629,17 @@
 
     .bg1 {
 
-        background: url(../images/courses/img1.png) center/contain;
+        background: url(../images/courses/hexagon1.png) center/contain;
         background-size: 100% 90%;
         background-repeat: no-repeat;
     }
     .bg2 {
-        background: url(../images/courses/img2.png) center/contain;
+        background: url(../images/courses/hexagon2.png) center/contain;
         background-repeat: no-repeat;
         background-size: 100% 90%;
     }
     .bg3 {
-        background: url(../images/courses/img1.png) center/contain;
+        background: url(../images/courses/hexagon1.png) center/contain;
         background-repeat: no-repeat;
         background-size: 100% 90%;
     }
@@ -687,8 +687,7 @@
     .hex1 {
         height: 350px;
     }
-    .neet1btn, .neet2btn, .neet3btn, .neet4btn {
-       
+    .neet1btn, .neet2btn, .neet3btn, .neet4btn  , .neet5btn {
         font-size: 13px;
         padding: 0.5rem 1.6rem;
     }
@@ -732,7 +731,7 @@
     .hexTitle {
         font-size: .8rem;
     }
-    .neet1btn, .neet2btn, .neet3btn, .neet4btn {
+    .neet1btn, .neet2btn, .neet3btn, .neet4btn , .neet5btn  {
         font-size: 12px;
         padding: 0.3rem 1rem;
     }
