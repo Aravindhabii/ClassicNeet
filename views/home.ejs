@@ -304,39 +304,38 @@
 				</div>
 			</div>
 	</section> -->
-			<section class="bgTopper" >
-				<div class="neet-2020-toppers">
-					<img src="images/home/Vector.svg" alt="SVG" />
-					<div class="neet-2020-toppers-a">
-						<a href="/">Our Results - Neet 2020 Toppers</a>
-					</div>
-				</div>
+	<div class="neet-2020-toppers">
+		<img src="images/home/Vector.svg" alt="SVG" />
+		<div class="neet-2020-toppers-a">
+			<a href="/">Our Results - Neet 2020 Toppers</a>
+		</div>
+	</div>		
         <section class="swiper swiper1 mySwiper1">
           <div class="swiper-wrapper">
 			  <% ourtoppers.forEach(topper => { %>
 				<div class="swiper-slide">
-					<section class="topperCard">
-					<div class="topperImg2">
-						<img src="<%= topper.studentimg %>" alt="" />
-					</div>
-					<div class="topperContent">
-						<h2 class="name"><%= topper.name %> </h2>
-						<p class="college"><%= topper.collegename %> </p>
-						<!-- <div class="markFlex">
-							<h4 class="score">Neet score</h4>
-							<p class="marks">644/720</p>
-						</div> -->
-					</div>
-				</section>   
+					
+					
+						<img class="profile" src="<%= topper.studentimg %>" alt="" />
+					
+					
+						<h3 class=""><%= topper.name %> </h2>
+						<h3 class=""><%= topper.collegename %> </p>
+						
+					
+				
 				</div>
 			  <% }) %>
           </div>
+		  
 
         </section>
-			<div class="swiper-button-next arrownext1"></div>
+		<div class="swiper-button-next arrownext1"></div>
           	<div class="swiper-button-prev arrowprev1"></div>
+			
 		
-			</section>
+			
+		
 			<section class="stats">
 				<!-- <div class="stats-details">
 					

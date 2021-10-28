@@ -125,7 +125,13 @@ ul {
     left: 0%;
   }
 }
+body {
+  overflow-x: hidden;
+}
 @media (max-width:1000px) {
+  .navlinks {
+    display: none;
+  }
   .hamburger {
     display: block;
     cursor: pointer;
@@ -149,9 +155,7 @@ ul {
   .body {
     overflow-y: hidden;
   }
-  body {
-    overflow-x: hidden;
-  }
+  
 
   
   .navlinks li {
@@ -325,9 +329,7 @@ footer {
   .footer_head {
     margin-top: 5%;
   }
-  .navlinks {
-    /* display: none; */
-  }
+  
 }
 @media (max-width: 400px) {
   .social {
