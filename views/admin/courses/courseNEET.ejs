@@ -30,11 +30,18 @@
             aria-valuetext="helloooooo"
           > -->
           <div class="form-floating">
-            <textarea class="form-control" name="<%#  %>"  placeholder="Leave a comment here" id="floatingTextarea2 displaytextcont" style="height: 100px"></textarea>
-            <label for="floatingTextarea2">Comments</label>
+            <textarea class="form-control formtextarea" name="<%#  %>"  placeholder="Leave a comment here" id="floatingTextarea2 displaytextcont" cols="60" style="height: 155px; resize: none;" >
+              This course is meant for those have completed their 12th class board exams and might have already attempted the Neet in the coming year after 1 year of training focused on Neet.
+            </textarea>
+            <label for="floatingTextarea2">Enter a content</label>
+            <p class="spanp"><span class="changablespan"></span><span>/250</span></p>
           </div>
           <%=  %> 
           </textarea>
+          <div>
+            <button type="button" class="btn btn-outline-secondary px-3 mt-5 me-5 backbtn">Back</button>
+            <button type="submit" class="btn btn-outline-primary mt-5">submit</button>
+          </div>
         </form>
       </div>
     </div>
@@ -43,7 +50,7 @@
       <div class="left"><%- include('../../layout/adminSidebar') %></div>
       <div class="right">
         <form
-          action="/admin/sliderrevolution"
+          action="/admin/courses/neet"
           method="post"
           class="imgform"
           enctype="multipart/form-data"
@@ -107,6 +114,39 @@
     ></script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
