@@ -1138,14 +1138,14 @@ p {
   /* justify-content: space-around !important; */
 }
 .mySwiper1 {
-  width: 76.7% !important;
-  height: 45vh !important;
-  
+  width: 67.7% !important;
+  height: 50vh !important;
+
 }
 
 .mySwiper1 .swiper-slide {
-  width: 31.85% !important;
-  height: 16rem !important;
+  width: 20rem !important;
+  height: 18rem !important;
   background: linear-gradient(#369afe,#60efffda);
   position: relative;
   border-radius: 10px;
@@ -1153,7 +1153,7 @@ p {
   text-align: center;
   font-size: 18px;
   top: 22%;
-  
+  margin: 0rem 1rem !important;
   /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1195,16 +1195,16 @@ p {
 .arrownext1 {
   
   position: absolute;
-  top: 60%;
+  top: 61%;
   /* transform: translateY(-50%); */
-  right: 4% !important;
+  right: 8% !important;
 }
 .arrowprev1 {
   
   position: absolute;
-  top: 60%;
+  top: 61%;
   /* transform: translateY(-50%); */
-  left: 4% !important;
+  left: 8% !important;
 }
 .arrownext2 {
   color: #02c3d8;
@@ -1309,9 +1309,15 @@ p {
   font-weight: 600;
   text-align: center;
   top: 20%;
-  font-size: 1rem;
+  font-size: 1.1rem;
   position: relative;
   
+}
+.nameNew {
+  margin: 0rem 0rem
+}
+.colNew {
+  margin: 1rem 0rem !important
 }
 .card {
   /* height: 360px;
@@ -1328,7 +1334,7 @@ p {
   transform: translate(-50%,-40%);
   width: 180px; 
   border-radius: 50%;
-  border: 5px solid black;
+  border: 2px solid black;
 }
 .topperImg {
   /* background-color:#A2D2FF; */
@@ -1386,6 +1392,17 @@ p {
 .score {
   font-size: 18px;
   font-weight: 500;
+}
+.markNew {
+  width: 30%;
+  background: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: .5rem;
+  margin-bottom: 1rem;
+  padding: .5rem 1rem;
+  border-radius: 20px 0px 20px 0px;
+  box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2)
 }
 .marks {
   font-size: 18px;

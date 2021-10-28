@@ -8,8 +8,8 @@ const meth2 = document.querySelector(".bgmeth2");
 const meth3 = document.querySelector(".bgmeth3");
 const meth4 = document.querySelector(".bgmeth4");
 const meth5 = document.querySelector(".bgmeth5");
-const body = document.querySelector("body");
-
+// const body = document.querySelector("body");
+console.log('cours');
 const exit = document.querySelectorAll(".exit");
 if (btn1) {
   btn1.addEventListener("click", (e) => {
