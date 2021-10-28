@@ -632,6 +632,7 @@ router
             collegename: response[i].collegename,
             studentimg: response[i].image,
             cloudinaryname: response[i].cloudinaryname,
+            score: response[i].score
           };
           arr.push(image);
         }
@@ -646,6 +647,7 @@ router
         name: req.body.name,
         collegename: req.body.collegeName,
         image: req.file.path,
+        score:req.body.score,
         cloudinaryname: req.file.filename.split("/")[1],
       },
       (err, response) => {
