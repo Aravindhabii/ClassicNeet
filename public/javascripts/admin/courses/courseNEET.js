@@ -43,12 +43,12 @@ const changablespan = document.querySelector(".changablespan");
 console.log(formtextarea);
 var counternum = 0
 
-counternum = formtextarea.value.length;
-changablespan.innerHTML = counternum;
-console.log(counternum);
+// counternum = formtextarea.value.length;
+// changablespan.innertext = counternum;
+// console.log(counternum);
 
 formtextarea.addEventListener('change',(e)=>{
     var counternum = e.target.value.length
     console.log('hello');
-    changablespan.innerHTML = counternum
+    changablespan = counternum
 })
