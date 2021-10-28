@@ -61,6 +61,7 @@ tbody{
 	position: absolute;
 	height: 0%;
 	width: 0%;
+	z-index: -3;
 }
 
 .imgform{
@@ -117,4 +118,42 @@ tbody{
 	opacity: 0;
 	height: 0;
 	width: 0;
+	position: absolute;
+	z-index: -2;
+}
+
+.previewdiv{
+	position: fixed;
+	height: 100vh;
+	width: 100%;
+	z-index: 5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(104, 100, 100, 0.671);
+
+}
+
+.interior{
+	height: 40%;
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: #fff;
+	border-radius: 20px;
+}
+
+.spanp{
+	font-size: 14px;
+	display: flex;
+	justify-content: end;
+}
+
+.formtextarea::-webkit-scrollbar{
+	display: none;
+}
+.formtextarea::-webkit-scrollbar-thumb{
+	display: none;
 }
