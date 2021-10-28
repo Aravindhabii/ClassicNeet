@@ -41,7 +41,7 @@
 						style="width: 100%"
 						enctype="multipart/form-data"
 					>
-						<div class="input-group flex-nowrap" style="width: 80%">
+						<div class="input-group d-flex flex-nowrap" style="width: 80%">
 							<span class="input-group-text" id="addon-wrapping">Add Name</span>
 							<input
 								type="text"
@@ -66,6 +66,15 @@
 								aria-label="Username"
 								aria-describedby="addon-wrapping"
 								id="uploadlink"
+							/>
+							<input
+								type="number"
+								name="score"
+								class="form-control"
+								aria-label="Username"
+								aria-describedby="addon-wrapping"
+								id="uploadlink"
+								placeholder="score"
 							/>
 						</div>
 						<div>
@@ -94,6 +103,7 @@
 								<th scope="col">Name</th>
 								<th scope="col">Image</th>
 								<th scope="col">College Name</th>
+								<th scope="col">Score</th>
 								<th scope="col">Update</th>
 							</tr>
 						</thead>
@@ -111,6 +121,9 @@
 								</td>
 								<td>
 									<p><%= i.collegename %></p>
+								</td>
+								<td>
+									<p><%= i.score %></p>
 								</td>
 								<td>
 									<input
