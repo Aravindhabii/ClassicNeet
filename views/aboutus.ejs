@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="stylesheets/aboutus.css" />
+    <script src="https://kit.fontawesome.com/f93354d676.js" crossorigin="anonymous"></script>
     <title>Aboutus</title>
   </head>
   <body>
@@ -86,6 +87,52 @@
           </p>
         </div>
       </section>
+      <section class="gallery">
+        <h1 style="padding:30px 0px;text-align: center;color: #568036;font-size: 40px;"><b>GALLERY</b></h1>
+        <div class="container" data-autoplay="true">
+          <div class="slide"> <img
+                  src="images/aboutus/Gallery1.jpg"
+                  alt="nature" /></div>
+          <div class="slide">
+              <img src="images/aboutus/Gallery2.jpg"
+                  alt="nature" />
+          </div>
+          <div class="slide">
+              <img src="images/aboutus/Gallery3.jpg"
+                  alt="nature" />
+          </div>
+          <div class="slide">
+              <img src="images/aboutus/Gallery4.jpg"
+                  alt="nature" />
+          </div>
+          <div class="slide">
+            <img src="images/aboutus/Gallery5.jpg"
+                alt="nature" />
+          </div>
+          <div class="slide">
+            <img src="images/aboutus/Gallery6.jpg"
+              alt="nature" />
+          </div>
+          <div class="slide">
+            <img src="images/aboutus/Gallery7.jpg"
+            alt="nature" />
+          </div>
+          <div class="slide">
+            <img src="images/aboutus/Gallery8.jpg"
+            alt="nature" />
+            </div>
+          <div class="slide">
+            <img src="images/aboutus/Gallery9.jpg"
+            alt="nature" />
+          </div>
+  
+          <button class="prev" onclick="prev()"><i class="fas fa-chevron-left" style="font-size: 45px;" ></i></button>
+          <button class="next" onclick="next()"><i class="fas fa-chevron-right" style="font-size: 45px;"></i></button>
+  
+  
+      </div>
+      <div class="dots_container" id="indicator"></div>
+      </section>
     <section class="app">
       <div class="apppage">
         <img src="images/aboutus/phonebg.png" class="Messaging">
@@ -98,9 +145,9 @@
       
       </div>
     </section>
-    
-    
-    <%- include('./layout/footer') %>
     <script src="javascripts/common.js"></script>
+    <script src="javascripts/aboutus.js"></script>
+    <%- include('./layout/footer') %>
+    
   </body>
 </html>

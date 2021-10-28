@@ -1,119 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin panel</title>
-    <link rel="stylesheet" href="../../stylesheets/sliderRevolution.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <div class="previewdiv">
-      <div class="interior">
-        <form
-          action="/admin/courses/neet"
-          method="post"
-          class="d-flex justify-content-center align-items-center flex-column"
-          style="width: 100%"
-        >
-          <!-- <textarea
-            name="<%#  %>"
-            id="displaytextcont"
-            cols="40"
-            rows="20"
-            aria-valuetext="helloooooo"
-          > -->
-          <div class="form-floating">
-            <textarea class="form-control formtextarea" name="<%#  %>"  placeholder="Leave a comment here" id="floatingTextarea2 displaytextcont" cols="60" style="height: 155px; resize: none;" >
-              This course is meant for those have completed their 12th class board exams and might have already attempted the Neet in the coming year after 1 year of training focused on Neet.
-            </textarea>
-            <label for="floatingTextarea2">Enter a content</label>
-            <p class="spanp"><span class="changablespan"></span><span>/250</span></p>
-          </div>
-          <%=  %> 
-          </textarea>
-          <div>
-            <button type="button" class="btn btn-outline-secondary px-3 mt-5 me-5 backbtn">Back</button>
-            <button type="submit" class="btn btn-outline-primary mt-5">submit</button>
-          </div>
-        </form>
-      </div>
-    </div>
-    <%- include('../../layout/adminheader') %>
-    <section class="mainsection">
-      <div class="left"><%- include('../../layout/adminSidebar') %></div>
-      <div class="right">
-        <form
-          action="/admin/courses/neet"
-          method="post"
-          class="imgform"
-          enctype="multipart/form-data"
-        >
-          <h1 class="m-5">Slider Revolution</h1>
-          <table class="table" style="width: 70%">
-            <thead>
-              <tr>
-                <th scope="col">overview</th>
-                <th scope="col">methodology</th>
-                <th scope="col">Updates</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% content.forEach(i => { %>
-              <tr>
-                <td>
-                  <input
-                    type="text"
-                    id="overview"
-                    value="<%= i.overview %>"
-                    readonly
-                    style="width: 80%; border: none"
-                  />
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    id="methodology"
-                    value="<%= i.methodology %>"
-                    readonly
-                    style="width: 80%; border: none"
-                  />
-                </td>
-                <td>
-                  <input
-                    type="checkbox"
-                    id="checkbox"
-                    class="updatesCheckbox"
-                    name="checkbox"
-                    value="<%= i %>"
-                    style="height: 20px; width: 20px"
-                  />
-                </td>
-              </tr>
-              <% }) %>
-            </tbody>
-          </table>
-          <button type="submit" class="btn btn-outline-primary submit" disabled>
-            Update
-          </button>
-        </form>
-      </div>
-    </section>
 
-    <script src="../../javascripts/admin/courses/courseNEET.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-</html>
 
 
 
@@ -166,6 +51,36 @@
     />
   </head>
   <body>
+    <div class="previewdiv">
+      <div class="interior">
+        <form
+          action="/admin/courses/neet"
+          method="post"
+          class="d-flex justify-content-center align-items-center flex-column"
+          style="width: 100%"
+        >
+          <!-- <textarea
+            name="<%#  %>"
+            id="displaytextcont"
+            cols="40"
+            rows="20"
+            aria-valuetext="helloooooo"
+          > -->
+          <div class="form-floating">
+            <textarea class="form-control formtextarea" name="<%#  %>"  cols="60" style="height: 155px; resize: none;" maxlength="250" >
+              
+            </textarea>
+            <p class="spanp">Characters left &nbsp;<span class="changablespan"></span><span>/250</span></p>
+          </div>
+          <%=  %> 
+          </textarea>
+          <div>
+            <button type="button" class="btn btn-outline-secondary px-3 mt-5 me-5 backbtn">Back</button>
+            <button type="submit" class="btn btn-outline-primary mt-5">submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
     <%- include('../../layout/adminheader') %>
     <section class="mainsection">
       <div class="left"><%- include('../../layout/adminSidebar') %></div>
@@ -270,7 +185,7 @@
     <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.js" integrity="sha512-K3MtzSFJk6kgiFxCXXQKH6BbyBrTkTDf7E6kFh3xBZ2QNMtb6cU/RstENgQkdSLkAZeH/zAtzkxJOTTd8BqpHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-    <script src="../../javascripts/admin/courses/coursesNEET.js"></script>
+    <script src="../../javascripts/admin/courses/courseNEET.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
