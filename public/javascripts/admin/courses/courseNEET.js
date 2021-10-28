@@ -7,6 +7,7 @@
 // const submitbtn = document.querySelector(".submitbtn");
 // const confirmdelete = document.querySelector(".confirmdelete");
 // const latestupdateform = document.querySelector(".latestupdateform");
+console.log('helloo');
 var formtextarea = document.querySelector(".formtextarea");
 const changablespan = document.querySelector(".changablespan");
 
@@ -43,12 +44,12 @@ const changablespan = document.querySelector(".changablespan");
 console.log(formtextarea);
 var counternum = 0
 
-// counternum = formtextarea.value.length;
-// changablespan.innertext = counternum;
-// console.log(counternum);
+counternum = formtextarea.value.length;
+changablespan.innerHTML = counternum;
+console.log(counternum);
 
-formtextarea.addEventListener('change',(e)=>{
+formtextarea.addEventListener('input',(e)=>{
     var counternum = e.target.value.length
     console.log('hello');
-    changablespan = counternum
+    changablespan.innerHTML = counternum;
 })
