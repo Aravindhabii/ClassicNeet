@@ -105,3 +105,33 @@
 					<% }) %>
 				
 				</section>
+
+
+
+
+				//topper 
+				<section class="bgTopper" >
+				
+        <section class="swiper swiper1 mySwiper1">
+          <div class="swiper-wrapper">
+			  <% ourtoppers.forEach(topper => { %>
+				<div class="swiper-slide">
+					<section class="topperCard">
+					<div class="topperImg2">
+						<img src="<%= topper.studentimg %>" alt="" />
+					</div>
+					<div class="topperContent">
+						<h2 class="name"><%= topper.name %> </h2>
+						<p class="college"><%= topper.collegename %> </p>
+						
+					</div>
+				</section>   
+				</div>
+			  <% }) %>
+          </div>
+
+        </section>
+			<div class="swiper-button-next arrownext1"></div>
+          	<div class="swiper-button-prev arrowprev1"></div>
+		
+			</section>
