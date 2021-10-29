@@ -90,22 +90,20 @@
       <section class="gallery">
         <h1>Gallery</h1>
         <div class="button">
-          <button class="btn" onclick="filterSelection('cars')">Previous Images</button>
-          <button class="btn" onclick="filterSelection('animals')"> Current Year Images</button>
+          <button class="btn" onclick="filterSelection('currentyearimage')">Previous Images</button>
+          <button class="btn" onclick="filterSelection('previousyearimage')"> Current Year Images</button>
         </div>
         <div class="currentyear">
           <ul>
            <% for( let i = 0; i < 64; i++ ) { %>
-           
+            <img src="../images/gallery/2020img<%= i %>"   alt="">
            <% } %>
-           
           </ul>
         </div>
         <div class="previousyear">
           <ul>
-            
             <% for( let i = 0; i < 64; i++ ) { %>
-              <img src="../images/gallery/2020img<%= i %>"   alt="">
+              <img src="../images/gallery/2019img<%= i %>"   alt="">
             <% } %>
           </ul>
         </div>

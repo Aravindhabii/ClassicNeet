@@ -790,7 +790,6 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 1rem 0rem 3rem 0rem;
   position: relative;
 }
 .ribbon {
@@ -1154,13 +1153,13 @@ p {
   /* justify-content: space-around !important; */
 }
 .mySwiper1 {
-  width: 67.7% !important;
+  width: 70.7% !important;
   height: 80vh !important;
 
 }
 .toppersDiv {
   position: relative;
-  top: 15%;
+  top: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1168,18 +1167,30 @@ p {
   
 }
 .toppersDiv p  {
-  
+  margin-top: 8px;
   font-weight: 800;
 }
+
 .markNew {
   background-color: white;
-  padding: 1rem 1rem;
+  color: #369afe;
+  padding: .5rem .8rem;
   border-radius: 20px 0px 20px 0px;
-  border: 3px solid #000;
-  font-size: 30px;
+  /* border: 3px solid #000; */
+  font-size: 25px;
+}
+.nameNew{
+  font-size: 25px;
+  font-weight: 900 !important;
+  color: #FFF;
+}
+.colNew{
+  font-size: 18px;
+  font-weight: 200 !important;
+  color: #FFF;
 }
 .mySwiper1 .swiper-slide {
-  width: 20rem!important;
+  width: 18rem!important;
   height: 25rem !important;
   background: linear-gradient(#60efffda,#369afe);
   position: relative;
@@ -1366,9 +1377,9 @@ p {
   left: 50%;
   top: 22%;
   transform: translate(-50%,-40%);
-  width: 180px; 
+  width: 150px; 
   border-radius: 50%;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 .topperImg {
   /* background-color:#A2D2FF; */
