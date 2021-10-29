@@ -39,12 +39,25 @@
   /* border: 1px solid black; */
   
   display: flex;
+  
   align-items: center;
   box-shadow: 2px 2px 50px rgb(0,0,0,0.2);
   border-radius: 10px;
+
   /* -webkit-box-reflect: below 0 linear-gradient(transparent, white); */
 }
-
+.gridanime1 {
+  animation-name: card;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+  animation-timing-function: ease-in-out;
+}
+.gridanime2 {
+  animation-name: card2;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+  animation-timing-function: ease-in-out;
+}
 .griditem2 {
   
   /* background: white; */
@@ -105,7 +118,22 @@
 .gridbox > span > h3 {
   font-size: 19px;
 }
-
+@keyframes  card   {
+  0% {
+    flex-direction: row;
+  }
+  100% {
+    flex-direction: row-reverse;
+  }
+}
+@keyframes  card2   {
+  0% {
+    flex-direction: row-reverse;
+  }
+  100% {
+    flex-direction: row;
+  }
+}
 @media (max-width:1250px) {
   .gridcontainer {
       grid-template-columns: repeat(2,1fr);

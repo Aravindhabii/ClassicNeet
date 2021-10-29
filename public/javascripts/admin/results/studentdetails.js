@@ -20,10 +20,11 @@ submit.addEventListener('click', () => {
 	confirm('Click CONFIRM TO DELETE');
 });
 
-const previewTopper = document.querySelector('.previewTopper');
+const previewTopper = document.querySelector('.preview');
 const previewSpan = document.querySelectorAll('.currentPreviewSpan');
 const closesvg = document.querySelector('.closesvg');
 const sliderimgurl = document.querySelectorAll('.currentSliderimgurl');
+console.log(sliderimgurl);
 for (let i = 0; i <= previewSpan.length - 1; i++) {
 	previewSpan[i].addEventListener('click', (e) => {
 		for (let j = 0; j <= sliderimgurl.length - 1; j++) {
