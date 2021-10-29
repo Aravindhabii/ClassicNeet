@@ -146,7 +146,7 @@ router
       for (let i = 0; i <= req.files.length - 1; i++) {
         for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
           if (i === j) {
-            // await cloudinary.uploader.destroy(check);
+            await cloudinary.uploader.destroy(`ClassicNeetAcademy/${check}`);
             await db.query(
               "UPDATE homeslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?",
               [
@@ -710,6 +710,12 @@ router.route("/contactus").get(async (req, res) => {
 router.route("/successstories").get(async (req, res) => {
   res.render("successStories2");
 });
+
+router
+  .route("/successstories")
+  .get(async (req, res) => {})
+  .post(async (req, res) => {});
+
 router.route("/404error").get(async (req, res) => {
   res.render("404error");
 });
