@@ -712,9 +712,84 @@ router.route("/successstories").get(async (req, res) => {
 });
 
 router
-  .route("/successstories")
-  .get(async (req, res) => {})
-  .post(async (req, res) => {});
+  .route("/admin/successstories/testimonials")
+  .get(async (req, res) => {
+    await db.query("SELECT * FROM successstories", async (error, response) => {
+      var arr = [];
+      if (error) {
+        console.log(error);
+      } else {
+        for (let i = 0; i <= response.length - 1; i++) {
+          var image = {
+            studentimg: response[i].image,
+            cloudinaryname: response[i].cloudinaryname,
+            youtubelink: response[i].youtubelink,
+          };
+          arr.push(image);
+        }
+        res.render("admin/successstories/testimonials", { students: arr });
+      }
+    });
+  })
+  .post(upload.single("studentimg"), async (req, res) => {
+    await db.query(
+      "INSERT INTO successstories SET ?",
+      {
+        youtubelink: req.body.youtubelink,
+        image: req.file.path,
+        cloudinaryname: req.file.filename.split("/")[1],
+      },
+      (err, response) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(response);
+        }
+      }
+    );
+    res.redirect("/admin/successstories/testimonials");
+  })
+  .put(upload.single("sliderimg"), async (req, res) => {
+    await db.query(
+      "UPDATE successstories SET image = ? WHERE cloudinaryname = ?",
+      [req.file.path, req.body.cloudinaryname]
+    );
+    res.redirect("/admin/successstories/studentdetails");
+  })
+  .delete(async (req, res) => {
+    if (typeof req.body.checkbox === "string") {
+      await cloudinary.uploader.destroy(
+        "ClassicNeetAcademy/" + req.body.checkbox
+      );
+      await db.query(
+        "DELETE FROM successstories WHERE cloudinaryname = ?",
+        [req.body.checkbox],
+        (err, response) => {
+          if (err) {
+            console.log(err);
+          } else {
+            res.redirect("/admin/successstories/testimonials");
+          }
+        }
+      );
+    } else {
+      req.body.checkbox.forEach(async (link) => {
+        await cloudinary.uploader.destroy("ClassicNeetAcademy/" + link);
+        await db.query(
+          "DELETE FROM successstories WHERE cloudinaryname = ?",
+          [link],
+          (err, response) => {
+            if (err) {
+              console.log(err);
+            } else {
+              console.log(response);
+            }
+          }
+        );
+      });
+      res.redirect("/admin/successstories/testimonials");
+    }
+  });
 
 router.route("/404error").get(async (req, res) => {
   res.render("404error");
