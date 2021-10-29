@@ -157,3 +157,11 @@ tbody{
 .formtextarea::-webkit-scrollbar-thumb{
 	display: none;
 }
+
+.previewTopper{
+	position: absolute;
+	height: 100vh;
+	width: 100%;
+	left: 0;
+	background: rgba(58, 56, 56, 0.603);
+}

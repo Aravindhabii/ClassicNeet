@@ -543,6 +543,7 @@ p {
 } */
 .HexagonDiv {
   width: 90%;
+  height: 72vh;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -584,7 +585,7 @@ p {
   margin: 5rem 0rem;
   justify-content: space-evenly;
   align-items: center;
-  height: 60vh;
+  height: 48vh;
   width: 100%;
 }
 /* .cardsDiv {
@@ -838,7 +839,6 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 1rem 0rem 3rem 0rem;
   position: relative;
 }
 .ribbon {
@@ -1198,16 +1198,16 @@ p {
   width: 90vw !important;
   overflow: hidden;
   /* display: flex; */
-  flex-direction: column;
   /* justify-content: space-around !important; */
 }
 .mySwiper1 {
-  width: 67.7% !important;
-  height: 50vh !important;
+  width: 70.7% !important;
+  height: 60vh !important;
+
 }
 .toppersDiv {
   position: relative;
-  top: 15%;
+  top: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1215,21 +1215,33 @@ p {
   
 }
 .toppersDiv p  {
-  margin-top: 1rem;
-  font-weight: bolder;
-  color: WHITE;
+  margin-top: 8px;
+  font-weight: 800;
 }
+
+
 .markNew {
-  background-color: white;
-  padding: .5rem 1rem;
+  background-color: #EAE321;
+  color: #1182FE;
+  padding: .5rem .8rem;
   border-radius: 20px 0px 20px 0px;
-  color: black !important;
-  border: 3px solid black;
+  /* border: 3px solid #000; */
+  font-size: 25px;
+}
+.nameNew{
+  font-size: 25px;
+  font-weight: 900 !important;
+  color: #FFF;
+}
+.colNew{
+  font-size: 18px;
+  font-weight: 200 !important;
+  color: #FFF;
 }
 .mySwiper1 .swiper-slide {
-  width: 20rem!important;
-  height: 18rem !important;
-  background: linear-gradient( 180deg,#60efffda , #369afe );
+  width: 18rem!important;
+  height: 25rem !important;
+  background: linear-gradient(#60efffda,#369afe);
   position: relative;
   border-radius: 10px;
   
@@ -1278,7 +1290,7 @@ p {
 .arrownext1 {
   
   position: absolute;
-  top: 61%;
+  top: 58%;
   /* transform: translateY(-50%); */
   right: 8% !important;
   transform: scale(1.5);
@@ -1289,7 +1301,7 @@ p {
 .arrowprev1 {
   
   position: absolute;
-  top: 61%;
+  top: 58%;
   left: 8% !important;
   transform: scale(1.5);
   font-weight: 1000 !important;
@@ -1412,11 +1424,11 @@ p {
 .profile {
   position: absolute;
   left: 50%;
-  top: 0%;
+  top: 22%;
   transform: translate(-50%,-40%);
-  width: 180px; 
+  width: 150px; 
   border-radius: 50%;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 .topperImg {
   /* background-color:#A2D2FF; */
@@ -1553,7 +1565,6 @@ iframe {
     right: 16%;
     top: 64%;
   }
-
   .box1,
   .box2,
   .box3 {

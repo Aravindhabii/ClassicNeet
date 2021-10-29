@@ -220,14 +220,26 @@
         <div class="slide">
           <img src="images/aboutus/Gallery6.jpg" alt="nature" />
         </div>
-        <div class="slide">
-          <img src="images/aboutus/Gallery7.jpg" alt="nature" />
+      </section>
+      <section class="gallery">
+        <h1>Gallery</h1>
+        <div class="button">
+          <button class="btn" onclick="filterSelection('currentyearimage')">Previous Images</button>
+          <button class="btn" onclick="filterSelection('previousyearimage')"> Current Year Images</button>
         </div>
-        <div class="slide">
-          <img src="images/aboutus/Gallery8.jpg" alt="nature" />
+        <div class="currentyear">
+          <ul>
+           <% for( let i = 0; i < 64; i++ ) { %>
+            <img src="../images/gallery/2020img<%= i %>"   alt="">
+           <% } %>
+          </ul>
         </div>
-        <div class="slide">
-          <img src="images/aboutus/Gallery9.jpg" alt="nature" />
+        <div class="previousyear">
+          <ul>
+            <% for( let i = 0; i < 64; i++ ) { %>
+              <img src="../images/gallery/2019img<%= i %>"   alt="">
+            <% } %>
+          </ul>
         </div>
 
         <button class="prev" onclick="prev()">
