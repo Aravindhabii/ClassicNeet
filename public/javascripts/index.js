@@ -1,22 +1,4 @@
-const section1 = document.querySelector(".home").offsetHeight;
-const section2 = document.querySelector(".sec-2").offsetHeight;
-const section3 = document.querySelector(".HexagonDiv").offsetHeight;
-const section4 = document.querySelector(".cardsDiv").offsetHeight;
-const section5 = document.querySelector(".drive").offsetHeight;
-const section6 = document.querySelector(".bgTopper").offsetHeight;
-const perc = document.querySelector('.successRate').innerText
-const height =
-section1 +
-  section2 +
-  section3 +
-  section4 +
-  section5 ;
-console.log(height,'hey');
-console.log(section1,'hey1');
-let count1 = 1;
-let count2 = 1;
-let count3 = 1;
-let count4 = 1;
+
 
 // function MBBS_Seats() {
 // 	count1++;
@@ -65,35 +47,3 @@ let count4 = 1;
 
 
 
-var a = 0;
-$(window).scroll(function() {
-
-  var oTop = $('#counter').offset().top - window.innerHeight;
-  if (a == 0 && $(window).scrollTop() > oTop) {
-    $('.counter-value').each(function() {
-      var $this = $(this),
-        countTo = $this.attr('data-count');
-      $({
-        countNum: $this.text()
-      }).animate({
-          countNum: countTo
-        },
-
-        {
-
-          duration: 2000,
-          easing: 'swing',
-          step: function() {
-            $this.text(Math.floor(this.countNum));
-          },
-          complete: function() {
-            $this.text(this.countNum);
-            //alert('finished');
-          }
-
-        });
-    });
-    a = 1;
-  }
-
-});

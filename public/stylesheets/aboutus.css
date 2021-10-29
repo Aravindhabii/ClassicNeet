@@ -245,10 +245,14 @@
   padding: 2%;
 }
 /* gallery */
+.gallery{
+  width: 100%;
+  height: 102vh;
+}
 .container {
   position: relative;
   width: 70%;
-  height: 400px;
+  height: 600px;
   margin: 20px auto;
 }
 
@@ -257,7 +261,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 400px;
+  height: 600px;
   margin: 0;
   opacity: 0;
   transition: 1s ease-in-out;
@@ -266,15 +270,16 @@
 
 .slide img {
   width: 100%;
+  height: 100%;
 }
 
 button {
   position: absolute;
   top: 50%;
   border: none;
-  background: rgb(243, 243, 243);
-  color: rgb(243, 243, 243);
-  padding: 10px 16px;
+  background: #fff;
+  color:#000000;
+  /* padding: 10px 15px; */
   margin-top: -25px;
   font-size: 30px;
   z-index: 1000;
@@ -283,17 +288,17 @@ button {
 }
 
 .prev {
-  left: 0;
+  left: -100px;
 }
 
 .next {
-  right: 0;
+  right: -100px;
 }
 
 
-button:hover {
+/* button:hover {
   background: rgba(32, 26, 26, 0.527);
-}
+} */
 
 .dots_container {
   display: flex;
