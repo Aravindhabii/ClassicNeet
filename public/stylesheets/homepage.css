@@ -1169,17 +1169,20 @@ p {
 }
 .toppersDiv p  {
   margin-top: 1rem;
-  font-weight: 600;
+  font-weight: bolder;
+  color: WHITE;
 }
 .markNew {
   background-color: white;
   padding: .5rem 1rem;
   border-radius: 20px 0px 20px 0px;
+  color: black !important;
+  border: 3px solid black;
 }
 .mySwiper1 .swiper-slide {
   width: 20rem!important;
   height: 18rem !important;
-  background: linear-gradient(#369afe,#60efffda);
+  background: linear-gradient( 180deg,#60efffda , #369afe );
   position: relative;
   border-radius: 10px;
   
