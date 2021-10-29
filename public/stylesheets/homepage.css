@@ -90,6 +90,7 @@
   /* min-height: 560px; */
   width: 100%;
   display: flex;
+  min-height: fit-content !important;
 }
 .homeLeft {
   position: relative;
@@ -274,14 +275,48 @@
 .CalanderEvents {
   text-align: center;
   font-size: 25px;
+  /* margin-bottom: 3rem; */
   /* top: 6%;
 	right: 16%; */
 }
 .calenderMain {
+  overflow-y: auto;
+  height:480px;
+  width: 32rem;
+  background-color: transparent;
   position: relative;
-  /* margin-top: 1rem;
-	top: 15%;
-	left: 10%; */
+  padding-right: 1rem;
+  
+  box-shadow: 2px 2px 60px rgba(4, 113, 255, 0.1);
+}
+
+.calenderCard p {
+    word-wrap: break-word;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    font-weight: 500;
+  
+}
+/* scrollbar */
+.calenderMain::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.calenderMain::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.calenderMain::-webkit-scrollbar-thumb {
+  background: #EBE11C;
+}
+
+/* Handle on hover */
+.calenderMain::-webkit-scrollbar-thumb:hover {
+  background: #EBE11C;
 }
 .calenderContent {
   text-align: center;
@@ -299,15 +334,19 @@
   width: 90%; */
 }
 .date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-width: 20%;
   background: #2b72e4;
   color: white;
-  height: 100%;
-  width: 20%;
-  padding: 0.85rem;
   border-radius: 20px 0px 20px 0px;
   font-size: 22px;
   text-align: center;
   transition: 0.3s all ease-in-out;
+  border: 5px solid #EFE81E;
 }
 p {
   margin-bottom: 0rem !important;
@@ -320,6 +359,7 @@ p {
 .dateMain {
   font-size: 24px;
   font-weight: 600;
+  
 }
 .backgroundMain {
   background-color: #f9fbfa;
@@ -328,15 +368,20 @@ p {
   width: 100%;
 }
 .calenderCard {
-  display: flex;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 2px 2px 60px rgba(4, 113, 255, 0.2);
-  /* padding: 2rem; */
-  border-radius: 20px;
-  width: 30rem;
   margin-top: 1rem;
+  min-height: 100px;
+  width: 90%;
+  
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 60px rgba(4, 113, 255, 0.1);
   transition: 0.3s all ease-in-out;
-  /* border: 1px solid #1E2886; */
+  /* padding: 2rem; */
+  border-radius: 25px 0px 20px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  display: flex;
+  border: 5px solid #EFE81E;
 }
 .calenderCard:hover {
   transform: scale(1.1);
@@ -360,6 +405,7 @@ p {
   height: 30rem;
   width: 30rem;
   box-shadow: 5px 5px 60px rgba(4, 113, 255, 0.6);
+  border: 5px solid #EFE81E;
   background-color: #2b72e4;
   /* background: linear-gradient( #e7f44a, #040404,#FFFFFF); */
   color: rgb(255, 255, 255);
@@ -371,7 +417,7 @@ p {
 }
 .news-box p {
   color: black;
-  border: 1px solid rgb(255, 255, 255);
+  border: 5px solid #EFE81E;
   padding: 2rem 1rem;
   margin: 2rem 0rem;
   line-height: 2rem;
@@ -397,6 +443,7 @@ p {
 }
 .sec-2 .div-1 {
   position: relative;
+
 
   /* align-items: flex-start;
 	justify-content: flex-start;
@@ -501,6 +548,7 @@ p {
   position: relative;
   display: flex;
   justify-content: center;
+  min-height: fit-content;
 }
 .building {
   height: 100%;
@@ -1156,7 +1204,6 @@ p {
 .mySwiper1 {
   width: 67.7% !important;
   height: 50vh !important;
-
 }
 .toppersDiv {
   position: relative;
@@ -1465,6 +1512,7 @@ p {
   /* background-color: blanchedalmond; */
   position: relative;
   height: 86vh;
+  min-height: fit-content;
   /* min-height: 500px; */
   display: flex;
   align-items: center;
@@ -1596,8 +1644,9 @@ iframe {
     height: 25rem;
     width: 25rem;
   }
-  .calenderCard {
+  .calenderMain {
     width: 25rem;
+    height:400px;
   }
   .date {
     padding: 0.3rem;
@@ -1635,7 +1684,9 @@ iframe {
 }
 
 @media (max-width: 1100px) {
-
+  .home {
+    margin-bottom: 3rem;
+  }
 
   .blob1 {
     width: 50%;
@@ -1696,8 +1747,6 @@ iframe {
   .arrownext2 {
     top: 84.5%;
   }
-}
-@media (max-width: 1100px) {
   .homeLeft {
     /* position: absolute; */
     display: none;
@@ -1737,6 +1786,7 @@ iframe {
     align-items: center;
     justify-content: space-between;
   }
+  
  
 }
 
@@ -1766,6 +1816,7 @@ iframe {
   .date {
     padding: 0.6rem;
   }
+
   .sec-2 {
     /* background-color: blanchedalmond; */
     position: relative;
@@ -1878,8 +1929,11 @@ iframe {
     height: 25rem;
     width: 30rem;
   }
-  .calenderCard {
+  .calenderMain {
     width: 30rem;
+  }
+  .calenderCard {
+    width: 80%;
   }
   .date {
     padding: 0.25rem;
@@ -2018,8 +2072,11 @@ iframe {
     height: 22rem;
     width: 22rem;
   }
+  .calenderMain {
+    width: 25rem;
+  }
   .calenderCard {
-    width: 18rem;
+    width: 80%;
   }
   .neet-2020-toppers-a {
     padding: 0.5rem 1rem;
@@ -2093,6 +2150,10 @@ iframe {
   .studentsh1 {
     
     font-size: 1.2rem;
+  }
+  .calenderMain {
+    padding-right: 0rem;
+    width: 22rem;
   }
   /* .mySwiper2 {
   width: 84% !important;

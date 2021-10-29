@@ -419,9 +419,15 @@ p {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
     font-size: 20px;
 }
+
+.neet1btn:hover, .neet2btn:hover, .neet3btn:hover, .neet4btn:hover , .neet5btn:hover {
+    color: #526DF0;
+    background-color: white;
+    cursor: pointer;
+}
 .methodology1 , .methodology2, .methodology3  , .methodology4{
    background-color: white;
-   width: 50%;
+   width: 50%; 
    padding: 3rem;
    
    border-radius: 20px;
