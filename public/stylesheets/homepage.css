@@ -1155,7 +1155,7 @@ p {
 }
 .mySwiper1 {
   width: 67.7% !important;
-  height: 50vh !important;
+  height: 80vh !important;
 
 }
 .toppersDiv {
@@ -1168,18 +1168,20 @@ p {
   
 }
 .toppersDiv p  {
-  margin-top: 1rem;
-  font-weight: 600;
+  
+  font-weight: 800;
 }
 .markNew {
   background-color: white;
-  padding: .5rem 1rem;
+  padding: 1rem 1rem;
   border-radius: 20px 0px 20px 0px;
+  border: 3px solid #000;
+  font-size: 30px;
 }
 .mySwiper1 .swiper-slide {
   width: 20rem!important;
-  height: 18rem !important;
-  background: linear-gradient(#369afe,#60efffda);
+  height: 25rem !important;
+  background: linear-gradient(#60efffda,#369afe);
   position: relative;
   border-radius: 10px;
   
@@ -1362,7 +1364,7 @@ p {
 .profile {
   position: absolute;
   left: 50%;
-  top: 0%;
+  top: 22%;
   transform: translate(-50%,-40%);
   width: 180px; 
   border-radius: 50%;
