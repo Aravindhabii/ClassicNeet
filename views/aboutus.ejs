@@ -88,6 +88,30 @@
         </div>
       </section>
       <section class="gallery">
+        <h1>Gallery</h1>
+        <div class="button">
+          <button class="btn" onclick="filterSelection('cars')">Previous Images</button>
+          <button class="btn" onclick="filterSelection('animals')"> Current Year Images</button>
+        </div>
+        <div class="currentyear">
+          <ul>
+           <% for( let i = 0; i < 64; i++ ) { %>
+           
+           <% } %>
+           
+          </ul>
+        </div>
+        <div class="previousyear">
+          <ul>
+            
+            <% for( let i = 0; i < 64; i++ ) { %>
+              <img src="../images/gallery/2020img<%= i %>"   alt="">
+            <% } %>
+          </ul>
+        </div>
+      </section>
+
+      <!-- <section class="gallery">
         <h1 style="padding:30px 0px;text-align: center;color: #568036;font-size: 40px;"><b>GALLERY</b></h1>
         <div class="container" data-autoplay="true">
           <div class="slide"> <img
@@ -130,7 +154,7 @@
           <button class="next" onclick="next()"><i class="fas fa-chevron-right" style="font-size: 45px;"></i></button>
   
   
-      </div>
+      </div> -->
       <div class="dots_container" id="indicator"></div>
       </section>
     <section class="app">
