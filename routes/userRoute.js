@@ -104,6 +104,10 @@ router.route("/home").get(async (req, res) => {
   });
 });
 
+router.route("/admin").get(async (req, res) => {
+  res.redirect("/admin/sliderrevolution");
+});
+
 // slider Revolution Route
 router
   .route("/admin/sliderrevolution")
@@ -554,7 +558,6 @@ router.route("/courses").get(async (req, res) => {
   res.render("courses");
 });
 
-
 // router.route("/empty").get(async(req,res)=>{res.render('admin/courses/empty')})
 
 // router
@@ -613,7 +616,6 @@ router.route("/Demovideos").get(async (req, res) => {
   res.render("Demovideos");
 });
 
-
 router.route("/results").get(async (req, res) => {
   res.render("results");
 });
@@ -632,7 +634,7 @@ router
             collegename: response[i].collegename,
             studentimg: response[i].image,
             cloudinaryname: response[i].cloudinaryname,
-            score: response[i].score
+            score: response[i].score,
           };
           arr.push(image);
         }
@@ -647,7 +649,7 @@ router
         name: req.body.name,
         collegename: req.body.collegeName,
         image: req.file.path,
-        score:req.body.score,
+        score: req.body.score,
         cloudinaryname: req.file.filename.split("/")[1],
       },
       (err, response) => {
@@ -692,7 +694,7 @@ router
           (err, response) => {
             if (err) {
               console.log(err);
-            }else{
+            } else {
               console.log(response);
             }
           }
