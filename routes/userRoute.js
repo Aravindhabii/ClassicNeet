@@ -600,6 +600,73 @@ router.route("/aboutus").get(async (req, res) => {
   res.render("aboutus");
 });
 
+router
+  .route("/admin/aboutus/history")
+  .get(async (req, res) => {
+    await db.query("SELECT * FROM history", async (error, response) => {
+      var arr = [];
+      if (error) {
+        console.log(error);
+      } else {
+        for (let i = 0; i <= response.length - 1; i++) {
+          var cont = {
+            content: response[i].content,
+            year: year[i].year,
+          };
+          arr.push(cont);
+        }
+        res.render("admin/aboutus/history", { content: arr });
+      }
+    });
+  })
+  .post(async (req, res) => {
+    const { content, year } = req.body.content;
+    await db.query(
+      "INSERT INTO history SET ?",
+      { content: content, year: year },
+      (err, results) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(results);
+          res.redirect("/admin/aboutus/history");
+        }
+      }
+    );
+  })
+  .delete(async (req, res) => {
+    if (typeof req.body.checkbox === "string") {
+      await db.query(
+        "DELETE FROM history WHERE year = ?",
+        [req.body.checkbox],
+        (err, response) => {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log(response);
+          }
+        }
+      );
+      res.redirect("/admin/aboutus/history");
+    } else {
+      req.body.checkbox.forEach(async (link) => {
+        console.log(link);
+        await db.query(
+          "DELETE FROM history WHERE year = ?",
+          [link],
+          (err, response) => {
+            if (err) {
+              console.log(err);
+            } else {
+              console.log(response);
+            }
+          }
+        );
+      });
+      res.redirect("/admin/aboutus/history");
+    }
+  });
+
 router.route("/coursesNEET").get(async (req, res) => {
   res.render("coursesNEET");
 });
