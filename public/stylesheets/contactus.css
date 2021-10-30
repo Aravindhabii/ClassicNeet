@@ -145,3 +145,8 @@
 	width: 45%;
 	border-radius: 20px;
 }
+@media (max-width:1000px){
+	.left {
+	   display: none;
+	}
+}
