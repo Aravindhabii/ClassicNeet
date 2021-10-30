@@ -187,13 +187,15 @@
 				<div class="div-1">
 					<h1 class="CalanderEvents">Calendar Events</h1>
 					<div class="calenderMain">
+						<div class="calenderCard"><div class="date"><span class="month">Aug</span><span class="dateMain">7</span></div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, tenetur.</p></div>
+
 						<% calendar.forEach(cal => { %>
 							<div class="calenderCard">
 								<div class="date">
-									<p class="month"><%= cal.month %> </p>
-									<p class="dateMain"><%= cal.date %> </p>
+									<span class="month"><%= cal.month %> </span>
+									<span class="dateMain"><%= cal.date %> </span>
 								</div>
-								<div class="calenderContent"><p><%= cal.event %> </p></div>
+								<p ><%= cal.event %> </p>
 							</div>
 						<% }) %>
 					</div>

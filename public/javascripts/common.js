@@ -57,6 +57,7 @@ var swiper2 = new Swiper(".mySwiper2", {
   spaceBetween: 30,
   slidesPerGroup: 1,
   loop: true,
+  autoplay:true,
   loopFillGroupWithBlank: true,
   pagination: {
     el: ".swiper-pagination",
