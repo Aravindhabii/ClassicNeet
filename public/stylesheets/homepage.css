@@ -90,7 +90,8 @@
   /* min-height: 560px; */
   width: 100%;
   display: flex;
-  min-height: 650px;
+  min-height: 500px;
+  margin-bottom: 2rem;
 }
 .homeLeft {
   position: relative;
@@ -127,9 +128,9 @@
   transform: scale(1.05);
 }
 .sliderRev {
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   background-color: #2b72e4;
-  height: 80%;
+  height: 83%;
   width: 100%;
   margin-left: auto;
   /* margin-right: auto; */
@@ -1724,7 +1725,7 @@ iframe {
 @media (max-width: 1100px) {
   .home {
     min-height: fit-content;
-    margin-bottom: 3rem;
+    
   }
 
   .blob1 {
@@ -1961,8 +1962,8 @@ iframe {
     /* min-height: 415px; */
 
 
-    height: 100vh;
-    margin-bottom: 0rem;
+    height: 90vh;
+    margin-bottom: 2rem;
   }
 
   /* .sliderRev {
@@ -1998,6 +1999,7 @@ iframe {
 @media (max-width: 700px) {
   .mySwiper1 {
     width: 85% !important;
+    height: 50vh !important;
   }
   .mySwiper1 .swiper-slide {
     width: 45% !important;
@@ -2082,6 +2084,7 @@ iframe {
   .home {
     height: fit-content;
     margin-top: 0rem;
+    margin-bottom: 0rem;
     /* min-height: 450px; */
   }
   .sec-2 {
@@ -2145,7 +2148,7 @@ iframe {
     height: fit-content;
   }
   .sliderRev {
-    height: 35vh;
+    height: 45vh;
   }
   .cardsDiv {
     margin-top: 3rem;
@@ -2249,6 +2252,9 @@ iframe {
   height:22vh;
   width: 60vw;
 }
+  .sliderRev {
+    /* height: 45vh; */
+  } 
 
 
 }
