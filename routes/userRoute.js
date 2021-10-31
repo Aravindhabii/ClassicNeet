@@ -611,7 +611,7 @@ router
         for (let i = 0; i <= response.length - 1; i++) {
           var cont = {
             content: response[i].content,
-            year: year[i].year,
+            year: response[i].year,
           };
           arr.push(cont);
         }
@@ -620,7 +620,8 @@ router
     });
   })
   .post(async (req, res) => {
-    const { content, year } = req.body.content;
+    const content = req.body.content;
+    const year = req.body.year
     await db.query(
       "INSERT INTO history SET ?",
       { content: content, year: year },
@@ -649,11 +650,10 @@ router
       );
       res.redirect("/admin/aboutus/history");
     } else {
-      req.body.checkbox.forEach(async (link) => {
-        console.log(link);
+      req.body.checkbox.forEach(async (year) => {
         await db.query(
           "DELETE FROM history WHERE year = ?",
-          [link],
+          [year],
           (err, response) => {
             if (err) {
               console.log(err);
