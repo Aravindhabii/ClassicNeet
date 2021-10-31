@@ -135,3 +135,71 @@
           	<div class="swiper-button-prev arrowprev1"></div>
 		
 			</section>
+
+
+
+
+
+
+			//gallery 
+			<section class="gallery">
+      <h1
+        style="
+          padding: 30px 0px;
+          text-align: center;
+          color: #568036;
+          font-size: 40px;
+        "
+      >
+        <b>GALLERY</b>
+      </h1>
+      <div class="container" data-autoplay="true">
+        <div class="slide">
+          <img src="images/aboutus/Gallery1.jpg" alt="nature" />
+        </div>
+        <div class="slide">
+          <img src="images/aboutus/Gallery2.jpg" alt="nature" />
+        </div>
+        <div class="slide">
+          <img src="images/aboutus/Gallery3.jpg" alt="nature" />
+        </div>
+        <div class="slide">
+          <img src="images/aboutus/Gallery4.jpg" alt="nature" />
+        </div>
+        <div class="slide">
+          <img src="images/aboutus/Gallery5.jpg" alt="nature" />
+        </div>
+        <div class="slide">
+          <img src="images/aboutus/Gallery6.jpg" alt="nature" />
+        </div>
+      </section>
+      <section class="gallery">
+        <h1>Gallery</h1>
+        <div class="button">
+          <button class="btn" onclick="filterSelection('currentyearimage')">Previous Images</button>
+          <button class="btn" onclick="filterSelection('previousyearimage')"> Current Year Images</button>
+        </div>
+        <div class="currentyear">
+          <ul>
+           <% for( let i = 0; i < 64; i++ ) { %>
+            <img src="../images/gallery/2020img<%= i %>"   alt="">
+           <% } %>
+          </ul>
+        </div>
+        <div class="previousyear">
+          <ul>
+            <% for( let i = 0; i < 64; i++ ) { %>
+              <img src="../images/gallery/2019img<%= i %>"   alt="">
+            <% } %>
+          </ul>
+        </div>
+
+        <button class="prev" onclick="prev()">
+          <i class="fas fa-chevron-left" style="font-size: 45px"></i>
+        </button>
+        <button class="next" onclick="next()">
+          <i class="fas fa-chevron-right" style="font-size: 45px"></i>
+        </button>
+      </div>
+      <div class="dots_container" id="indicator"></div>
+    </section>
