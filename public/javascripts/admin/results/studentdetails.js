@@ -5,6 +5,7 @@ const sectionop = document.querySelector(".mainsection");
 const imgform = document.querySelector(".imgform");
 const submit = document.querySelector(".submit");
 
+
 addbtn.addEventListener("click", () => {
   previewDiv.style.display = "flex";
   imgform.style.transform = "translate(300vw,0)";
