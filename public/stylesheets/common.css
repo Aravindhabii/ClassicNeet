@@ -125,45 +125,54 @@ ul {
   }
 }
 body {
-  overflow-x: hidden;
+  overflow-x: hidden ;
 }
+/* .body {
+  overflow-y: hidden;
+} */
 @media (max-width:1000px) {
-  .navlinks {
-    display: none;
-  }
+  /* nav {
+    overflow-x: hidden;
+  } */
   .hamburger {
     display: block;
     cursor: pointer;
   }
   .navlinks {
     position: absolute;
-    left: 100%;
+    display: flex;
+    overflow-x: hidden;
+    left: auto;
     height: 95vh;
     top: 10vh;
     background: white;
-    display: flex;
+    right: 0;
+    transform: translateX(100%);
     flex-direction: column;
     align-items: center;
     z-index: 30;
     width: 50%;
-    transition: left .5s ease-in;
+    transition: transform .5s ease-in;
     
   }
-  .body {
-    overflow-y: hidden;
+  .display-flex {
+    display: flex;
   }
+  
   
 
   
   .navlinks li {
     opacity: 0;
+
   }
   
 }
 
 .nav-active {
- left: 50% !important;
- transition: left .5s ease-in;
+ transform: translateX(0%);
+ transition: transform .5s ease-in;
+ 
 }
 
 footer {
@@ -279,6 +288,19 @@ footer {
   padding: 0rem 0 0 0;
   margin: 1rem;
 }
+.playstore1{
+  display: block;
+}
+.playstore2{
+    display: none;
+}
+.playstore2 img{
+  width: 8vh;
+  height: 6vh;
+}
+.social .playstore2 img  {
+  margin: 0rem;
+}
 .social {
 	position: relative;
 	top: -27%;
@@ -326,6 +348,19 @@ footer {
   .footer_head {
     margin-top: 5%;
   }
+  .playstore1{
+    display: none;
+}
+  .playstore2{
+    display: block;
+}
+.playstore2 img{
+  width: 8vh;
+  height: 6vh;
+}
+.social .playstore2 img  {
+  margin: 0rem;
+}
   
 }
 @media (max-width: 400px) {
@@ -366,10 +401,6 @@ footer {
     margin-top: 5%;
   }
 }
-
- 
-
-
 @media (max-width:1250px) {
   .address-container h1 {
     
@@ -403,4 +434,29 @@ footer {
     font-weight: 500;
     margin: .3rem;
   }
+  .playstore1{
+    display: none;
+}
+  .playstore2{
+    display: block;
   }
+  .playstore2 img{
+    width: 8vh;
+    height: 6vh;
+  }
+  }
+  @media (max-width:600px) {
+    .playstore1{
+      display: none;
+  }
+    .playstore2{
+      display: block;
+    }
+    .playstore2 img{
+      width: 8vh;
+      height: 6vh;
+    }
+    .social .playstore2 img  {
+      margin: 0rem;
+    }
+    }

@@ -101,6 +101,18 @@ $(window)
           
         "<p class='hexContent'>This course is meant for those who are appearing for their 12th...</p>"
       );
+      $(".paraIIT").replaceWith(
+          
+        "<p class='hexContent'>CLASSIC NEET ACADEMY offers a unique IIT/Medical Foundation program aimed at...</p>"
+      );
+      $(".para1JEE").replaceWith(
+          
+        "<p class='hexContent'>This course is meant for students who have completed their 10th std board exams...</p>"
+      );
+      $(".para3JEE").replaceWith(
+          
+        "<p class='hexContent'>This course is meant for those who are appearing for their 12th class board exams...</p>"
+      );
     }
     if (window.innerWidth < 750) {
         console.log('jk');
@@ -114,6 +126,18 @@ $(window)
       $(".para4neet").replaceWith(
           
         "<p class='hexContent'>This course is meant for those who are appearing for their 12th class board exams and wish to focus on NEET after the Board exams.</p>"
+      );
+      $(".paraIIT").replaceWith(
+          
+        "<p class='hexContent'>CLASSIC NEET ACADEMY offers a unique IIT/Medical Foundation program aimed at students of the 6th, 7th, 8th, 9th and 10th classes.</p>"
+      );
+      $(".para1JEE").replaceWith(
+          
+        "<p class='hexContent'>This course is meant for students who have completed their 10th std board exams. The course will start at their 11th std...</p>"
+      );
+      $(".para3JEE").replaceWith(
+          
+        "<p class='hexContent'>This course is meant for those who are appearing for their 12th class board exams and wish to focus on JEE...</p>"
       );
     } 
    

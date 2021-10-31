@@ -683,9 +683,26 @@ router.route("/Demovideos").get(async (req, res) => {
   res.render("Demovideos");
 });
 
-router.route("/results").get(async (req, res) => {
-  res.render("results");
-});
+router.route("/results")  .get(async (req, res) => {
+  await db.query("SELECT * FROM studentdetails", async (error, response) => {
+    var arr = [];
+    if (error) {
+      console.log(error);
+    } else {
+      for (let i = 0; i <= response.length - 1; i++) {
+        var image = {
+          name: response[i].name,
+          collegename: response[i].collegename,
+          studentimg: response[i].image,
+          cloudinaryname: response[i].cloudinaryname,
+          score: response[i].score,
+        };
+        arr.push(image);
+      }
+      res.render("results", { students: arr });
+    }
+  });
+})
 
 router
   .route("/admin/results/studentdetails")
