@@ -376,6 +376,11 @@ p {
 
 
 }
+.methContent {
+    padding: 1rem;
+    text-align: justify;
+    display: none;
+}
 .methodology1 h1 , .methodology2 h1 , .methodology3 h1 , .methodology4 h1 {
     text-align: center;
     padding-bottom: 2rem;
@@ -662,39 +667,10 @@ p {
     }
 
 }
-
-@media (max-width:600px) {
-    .hex1 {
-        height: 300px;
+@media (max-width:750px){
+    .methContent {
+        display: block;
     }
-    .hex1 img { 
-        height: 70%;
-    }
-}
-
-@media (max-width:450px) {
-    .hex1 {
-        height: 225px;
-    }
-    .hexBox {
-        width: 58%;
-    }
-    .hex1 img {
-        height: 60%;
-    }
-    .hexTitle {
-        font-size: .8rem;
-    }
-    .neet1btn, .neet2btn, .neet3btn, .neet4btn , .neet5btn  {
-        font-size: 12px;
-        padding: 0.3rem 1rem;
-    }
-    .hexContent {
-        font-size: 13px;
-        line-height: 1.4rem;
-    }
-}
-@media (max-width:600px){
     .methodology1 , .methodology2, .methodology3  , .methodology4{
         background-color: white;
         width: 80%; 
@@ -734,3 +710,35 @@ p {
 }
 
 
+
+@media (max-width:600px) {
+    .hex1 {
+        height: 300px;
+    }
+    .hex1 img { 
+        height: 70%;
+    }
+}
+
+@media (max-width:450px) {
+    .hex1 {
+        height: 225px;
+    }
+    .hexBox {
+        width: 58%;
+    }
+    .hex1 img {
+        height: 60%;
+    }
+    .hexTitle {
+        font-size: .8rem;
+    }
+    .neet1btn, .neet2btn, .neet3btn, .neet4btn , .neet5btn  {
+        font-size: 12px;
+        padding: 0.3rem 1rem;
+    }
+    .hexContent {
+        font-size: 13px;
+        line-height: 1.4rem;
+    }
+}

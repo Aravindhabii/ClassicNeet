@@ -12,9 +12,16 @@ const navslide = () => {
   hamburger.addEventListener("click", () => {
     console.log('lol');
     //toggle
+    body.classList.toggle('bodyy')
+    if(body.getAttribute('class').includes('bodyy')) {
+      body.style.overflowY = 'hidden'
+    }
+    else {
+      body.style.overflowY = 'scroll'
+    }
+    
     nav.classList.toggle("nav-active");
     //animation
-    // body.classList.toggle('body')
     navlinks.forEach((link, index) => {
       if (link.style.animation) {
         link.style.animation = "";
@@ -34,6 +41,9 @@ const navslide = () => {
       line3.style.transform = "rotate(45deg) translate(0px,0px)";
     }
   });
+
+
+   
 };
 
 //
