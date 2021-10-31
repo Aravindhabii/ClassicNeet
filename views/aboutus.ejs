@@ -190,66 +190,34 @@
         </div>
       </div>
     </section>
-    <section class="gallery">
-      <h1
-        style="
-          padding: 30px 0px;
-          text-align: center;
-          color: #568036;
-          font-size: 40px;
-        "
-      >
-        <b>GALLERY</b>
-      </h1>
-      <div class="container" data-autoplay="true">
-        <div class="slide">
-          <img src="images/aboutus/Gallery1.jpg" alt="nature" />
-        </div>
-        <div class="slide">
-          <img src="images/aboutus/Gallery2.jpg" alt="nature" />
-        </div>
-        <div class="slide">
-          <img src="images/aboutus/Gallery3.jpg" alt="nature" />
-        </div>
-        <div class="slide">
-          <img src="images/aboutus/Gallery4.jpg" alt="nature" />
-        </div>
-        <div class="slide">
-          <img src="images/aboutus/Gallery5.jpg" alt="nature" />
-        </div>
-        <div class="slide">
-          <img src="images/aboutus/Gallery6.jpg" alt="nature" />
-        </div>
+    <section class="galleryNew">
+      <h1 class="galleryHead">Gallery</h1>
+      <div class="btngrp"><div class="prev-btn btn" data-year="2019">Previous Year</div><div data-year="2020" class="current-btn btn">Next Year</div></div>
+      <section class="galleryMain">   
+        
+        <% for( let i = 1; i < 64; i++ ) { %>
+          <div class="galleryItem "><img  id="imageid" src="../images/gallery/2019/2019img<%= i %>.jpg"   alt=""></div>
+        
+        <% } %>
+      
+      
+        <!-- <% for( let i = 1; i < 64; i++ ) { %>
+          <div class="galleryItem"><img  src="../images/gallery/2020/img5.jpg"   alt=""></div>
+        
+        <% } %> -->
+      
       </section>
-      <section class="gallery">
-        <h1>Gallery</h1>
-        <div class="button">
-          <button class="btn" onclick="filterSelection('currentyearimage')">Previous Images</button>
-          <button class="btn" onclick="filterSelection('previousyearimage')"> Current Year Images</button>
+        <div class="pagination">
+            <!-- <li class="page-item previous-page disable"><a class="page-link" href="#">prev</a></li>
+            <li class="page-item current-page active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item dots"><a class="page-link" href="#">...</a></li>
+            <li class="page-item current-page"><a class="page-link" href="#">5</a></li>
+            <li class="page-item current-page"><a class="page-link" href="#">6</a></li>
+            <li class="page-item dots"><a class="page-link" href="#">...</a></li>
+            <li class="page-item current-page"><a class="page-link" href="#">10</a></li>
+            <li class="page-item next-page"><a class="page-link" href="#">Next</a></li> -->
+          
         </div>
-        <div class="currentyear">
-          <ul>
-           <% for( let i = 0; i < 64; i++ ) { %>
-            <img src="../images/gallery/2020img<%= i %>"   alt="">
-           <% } %>
-          </ul>
-        </div>
-        <div class="previousyear">
-          <ul>
-            <% for( let i = 0; i < 64; i++ ) { %>
-              <img src="../images/gallery/2019img<%= i %>"   alt="">
-            <% } %>
-          </ul>
-        </div>
-
-        <button class="prev" onclick="prev()">
-          <i class="fas fa-chevron-left" style="font-size: 45px"></i>
-        </button>
-        <button class="next" onclick="next()">
-          <i class="fas fa-chevron-right" style="font-size: 45px"></i>
-        </button>
-      </div>
-      <div class="dots_container" id="indicator"></div>
     </section>
     <section class="app">
       <div class="apppage">
@@ -266,6 +234,8 @@
     </section>
     <script src="javascripts/common.js"></script>
     <script src="javascripts/aboutus.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="javascripts/pagination.js"></script>
     <%- include('./layout/footer') %>
   </body>
 </html>

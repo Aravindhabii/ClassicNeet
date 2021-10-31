@@ -410,10 +410,111 @@ button {
   right: -100px;
 }
 
+/* gallery */
+.galleryHead {
+  text-align: center;
+  color: #568036;
+  font-size: 2rem;
+  margin: 3rem 0rem 0rem 0rem;
+}
+.galleryNew {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 
+}
+.galleryMain {
+  display: grid;
+  width: 80%;
+  position: relative;
+  grid-template-columns: repeat(4,1fr);
+  /* grid-column-gap: 20px; */
+  /* grid-row-gap: 20px; */
+  margin-left: auto;
+  margin-right: auto;
+  justify-items: center;
+  max-height: max-content;
+  /* overflow-y: auto; */
+  margin-top: 3rem;
+  
+  
+}
+.galleryItem {
+  
+  height: 100%;
+  width: 100%;
+  background-color: #2B72E4;
+  
+  /* overflow: hidden; */
+}
+.galleryItem img:hover {
+  cursor: pointer;
+  background-size: 120%;
+  background-position: 150%;
+ /* transform: scale(1.2); */
+  
+}
+.galleryItem img {
+  height: 100%;
+  width: 100%;
+}
+.pagination {
+  position: relative;
+  user-select: none;
+  
+  
+ 
+}
+.pagination li {
+  display: inline-block;
+  margin: 1rem;
+  padding: .5rem 1rem;
+  border-radius: 20px;
+  
+  
+}
+.current-page , .dott {
+  background-color: #969696;
+
+}
+
+.pagination li a {
+  color: white;
+  text-decoration: none;
+
+}
+.previous-page , .next-page {
+  background: linear-gradient(#4885e7,#19cae6);
+}
+.active {
+  background: linear-gradient(#4885e7,#19cae6);
+}
+.disable {
+  background: #D9D9D9;
+}
 /* button:hover {
   background: rgba(32, 26, 26, 0.527);
 } */
+/* btngrp */
+.btngrp {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 3rem;
+  width:50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.prev-btn , .current-btn {
+  padding: 0.5rem 0rem;
+  width:30%;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #568036;
+  color: white;
+}
+
 
 .dots_container {
   display: flex;
@@ -512,6 +613,9 @@ button {
 
 }
 @media (max-width:1150px) {
+  .galleryMain {
+    grid-template-columns: repeat(3,1fr);
+  }
   .timelineImg {
     display: none;
   }
@@ -536,6 +640,12 @@ button {
 
 
 @media (max-width:900px) {
+  .prev-btn , .current-btn {
+    width: 40%;
+  }
+  .galleryMain {
+    grid-template-columns: repeat(2,1fr);
+  }
   .ourvision {
     
     padding: 1rem;
@@ -566,6 +676,18 @@ button {
  
 }
 @media (max-width:600px) {
+  .btngrp {
+    width: 70%;
+  }
+  .prev-btn , .current-btn {
+    width: 45%;
+    font-size: 14px;
+  }
+  .pagination li {
+    margin: 1rem .5rem;
+    padding: .2rem .5rem;
+    font-size: 13px;
+  }
   .video h1 {
     width: 80%;
   }
