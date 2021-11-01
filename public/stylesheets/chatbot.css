@@ -1,6 +1,6 @@
 .bot-img {
 	position: fixed;
-	top: 100vh;
+	top: 120vh;
 	right: 0;
 	transform: translateY(-120%);
 	z-index: 15;
@@ -10,6 +10,7 @@
 	background: url(../images/chatbot/chatbot.png) center/cover no-repeat;
 	animation: bot-img-animate 0.5s ease-in-out infinite alternate;
 	cursor: pointer;
+	transition: all 0.3s ease-in-out;
 }
 
 @keyframes bot-img-animate {
