@@ -38,15 +38,23 @@
     <section class="section2">
       <div class="gridcontainer">
         <% students.forEach((student)=> { %>
-          <div class="griditem1 gridbox">
-            <img src="<%= student.studentimg %>" alt="studentimg1" />
+          <!-- <div class="griditem1 gridbox">
+            <img src="<%= student.studentimg %>" data-img="<%= student.studentimg %>" alt="studentimg1" />
             <span class="griditem1span"
-              ><h3><%= student.name %></h3>
-              <p><%= student.score %></p></span
+              ><h3 data-name="<%= student.name %>" class="nameStudent"><%= student.name %></h3>
+              <p data-score="<%= student.score %>" class="scoreStudent"><%= student.score %></p></span
+            >
+          </div> -->
+          <div class="refbox" data-name="<%= student.name %>" data-score="<%= student.score %>"></div>
+          <%  }) %>
+          <div class="griditem1 gridbox">
+            
+            <span class="griditem1span"
+              ><h3 class="nameStudent"></h3>
+              <p class="scoreStudent"></p></span
             >
           </div>
-          <%  }) %>
-        
+
       </div>
     </section>
 
