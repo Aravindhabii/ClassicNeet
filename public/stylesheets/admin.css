@@ -126,7 +126,7 @@ tbody{
 	position: fixed;
 	height: 100vh;
 	width: 100%;
-	opacity: 0;
+	opacity: 0; 
 	z-index: -5;
 	display: flex;
 	justify-content: center;
@@ -164,4 +164,15 @@ tbody{
 	width: 100%;
 	left: 0;
 	background: rgba(58, 56, 56, 0.603);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

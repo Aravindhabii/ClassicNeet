@@ -1282,7 +1282,7 @@ p {
 .arrownext1 {
   
   position: absolute;
-  top: 60%;
+  top: 59%;
   /* transform: translateY(-50%); */
   right: 8% !important;
   transform: scale(1.5);
@@ -1293,7 +1293,7 @@ p {
 .arrowprev1 {
   
   position: absolute;
-  top: 60%;
+  top: 59%;
   left: 8% !important;
   transform: scale(1.5);
   font-weight: 1000 !important;
@@ -1713,11 +1713,11 @@ iframe {
     height: 62vh;
   }
   .arrownext1 {
-    top: 56%;
+    top: 57%;
     right: 3% !important;
   }
   .arrowprev1 {
-    top: 56%;
+    top: 57%;
     left: 3% !important;
   }
 }
@@ -1825,11 +1825,27 @@ iframe {
     height: 26vh;
     width: 50vw ;
   }
+  .arrownext1 {
+    top: 56%;
+    right: 3% !important;
+  }
+  .arrowprev1 {
+    top: 56%;
+    left: 3% !important;
+  }
  
 }
 @media (max-width:850px) {
   .mySwiper1 {
     width: 85% !important;
+  }
+  .arrownext1 {
+    top: 55%;
+    right: 3% !important;
+  }
+  .arrowprev1 {
+    top: 55%;
+    left: 3% !important;
   }
   
 }
