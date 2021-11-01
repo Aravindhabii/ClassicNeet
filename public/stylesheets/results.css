@@ -41,8 +41,9 @@
   display: flex;
   
   align-items: center;
-  box-shadow: 2px 2px 50px rgb(0,0,0,0.2);
+  box-shadow: 2px 2px 50px rgb(0,0,0,0.1);
   border-radius: 10px;
+  background-color: #cdebff;
 
   /* -webkit-box-reflect: below 0 linear-gradient(transparent, white); */
 }
