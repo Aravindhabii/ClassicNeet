@@ -73,17 +73,18 @@ function loopCards(arr) {
   for ( k; k < arr.length; k++) {
     console.log(arr.length);
       // for each iteration console.log a name
-      
+   
+
+     
       k++;
       k++;
       k++;
       k++;
       k++;
       k++;
-      console.log('otside loop',k);
+     
       (function  (k) {
           setTimeout(function () {
-              
               name1[0].innerText = arr[k].name;
               score[0].innerText = arr[k].score;
               img[0].src = arr[k].img;
@@ -121,13 +122,11 @@ function loopCards(arr) {
               k++;
               console.log('inside loop',k);
               console.log(arr[k]);
-      
+
 
           }, 1000 * k);
-          
-
-          
       })(k);
+      
       
   };
 }
