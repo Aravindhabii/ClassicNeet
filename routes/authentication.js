@@ -7,7 +7,6 @@ const { isloggedin } = require('../middleware.js');
 const { response } = require('express');
 const db = require('../database');
 
-console.log(isloggedin);
 const yepp = 'yes';
 
 router
@@ -127,7 +126,6 @@ router
 		res.render('cloudinary');
 	})
 	.post(upload.single('sliderimg'), (req, res) => {
-		console.log(req.file);
 		const path = req.file.path;
 		const fieldname = req.file.originalname;
 		const cloudinaryName = req.file.filename.split('/')[1];
