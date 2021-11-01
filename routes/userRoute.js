@@ -683,6 +683,76 @@ router.route("/Demovideos").get(async (req, res) => {
   res.render("Demovideos");
 });
 
+router
+  .route("/admin/demovideos")
+  .get(async (req, res) => {
+    await db.query("SELECT * FROM demovideos", (err, response) => {
+      arr = [];
+      if (err) {
+        console.log(err);
+      } else {
+        for (let i = 0; i <= response.length - 1; i++) {
+          var link = response[i].videolink;
+          // console.log(image)
+          arr.push(link);
+        }
+
+        // console.log(response[0].latestupdates);
+        res.render("admin/demovideos/demovideos", { link: arr });
+      }
+    });
+  })
+  .post(async (req, res) => {
+    const link = req.body.uploadlink;
+    console.log(link);
+    await db.query(
+      "INSERT INTO demovideos SET ?",
+      { videolink: link },
+      (err, results) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(results);
+          res.redirect("/admin/demovideos");
+        }
+      }
+    );
+  })
+  .delete(async (req, res) => {
+    if (typeof req.body.checkbox === "string") {
+      await db.query(
+        "DELETE FROM demovideos WHERE videolink = ?",
+        [req.body.checkbox],
+        (err, response) => {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log(response);
+          }
+        }
+      );
+      res.redirect("/admin/demovideos");
+    } else {
+      req.body.checkbox.forEach(async (link) => {
+        console.log(link);
+        await db.query(
+          "DELETE FROM demovedios WHERE videolink = ?",
+          [link],
+          (err, response) => {
+            if (err) {
+              console.log(err);
+            } else {
+              console.log(response);
+            }
+          }
+        );
+      });
+      res.redirect("/admin/demovideos");
+    }
+  });
+
+
+
 router.route("/results")  .get(async (req, res) => {
   await db.query("SELECT * FROM studentdetails", async (error, response) => {
     var arr = [];
