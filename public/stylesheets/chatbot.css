@@ -1,0 +1,43 @@
+.bot-img {
+	position: fixed;
+	top: 100vh;
+	right: 0;
+	transform: translateY(-120%);
+	z-index: 15;
+	width: 8rem;
+	height: 8rem;
+	margin-right: 2rem;
+	background: url(../images/chatbot/chatbot.png) center/cover no-repeat;
+	animation: bot-img-animate 0.5s ease-in-out infinite alternate;
+	cursor: pointer;
+}
+
+@keyframes bot-img-animate {
+	0% {
+		transform: translateY(-120%);
+	}
+	100% {
+		transform: translateY(-130%);
+	}
+}
+
+.bot-img img {
+	object-fit: cover;
+}
+
+.chat {
+	width: 20rem;
+	height: 0;
+	background-color: rgba(255, 255, 255, 1);
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 15;
+	margin-right: 3rem;
+	margin-bottom: 3rem;
+	transition: all 0.3s ease-in-out;
+}
+
+.chat.open {
+	height: 60vh;
+}
