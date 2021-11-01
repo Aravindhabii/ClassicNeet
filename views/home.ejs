@@ -23,13 +23,14 @@
 		/>
     
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+	<link rel="stylesheet" href="stylesheets/chatbot.css">
 		<title>ClassicNeetAcademy</title>
 	</head>
 
 	<body>
 		<div class="backgroundMain">
 			<%- include('./layout/header') %>
-
+<%- include('./chatbot') %> 
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				class="uparrow"
@@ -256,6 +257,12 @@
 		</div>  -->
 
 				<div class="cardsDiv" id="courses">
+					<div class="box3">
+						<img class="hexaimg" src="images/home/neet.jpg" alt="" />
+
+						<h3 class="imgHeader">NEET</h3>
+						<a class="read" href="/coursesNEET">Read More</a>
+					</div>
 					<div class="box1">
 						<img class="hexaimg" src="images/home/jee.jpg" alt="" />
 
@@ -267,12 +274,6 @@
 
 						<h3 class="imgHeader">IIT & Medical Foundation</h3>
 						<a class="read" href="/coursesIIT&Medical">Read More</a>
-					</div>
-					<div class="box3">
-						<img class="hexaimg" src="images/home/neet.jpg" alt="" />
-
-						<h3 class="imgHeader">NEET</h3>
-						<a class="read" href="/coursesNEET">Read More</a>
 					</div>
 				</div>
 			</section>
@@ -430,5 +431,6 @@
 		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 		<!-- <script src="javascripts/index.js"></script> -->
 		<script src="javascripts/common.js"></script>
+		<script src="javascripts/chatbot.js"></script>
 	</body>
 </html>

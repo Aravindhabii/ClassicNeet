@@ -857,6 +857,60 @@ router
       res.redirect("/admin/results/studentdetails");
     }
   });
+  // admin result images
+
+  router
+    .route("/admin/results/images")
+    .get(async (req, res) => {
+      await db.query("SELECT * FROM resultslider", async (error, response) => {
+        var arr = [];
+        if (error) {
+          console.log(error);
+        } else {
+          for (let i = 0; i <= response.length - 1; i++) {
+            var image = {
+              sliderimg: response[i].sliderimg,
+              imgname: response[i].imgname,
+              cloudinaryName: response[i].cloudinaryname,
+            };
+            arr.push(image);
+          }
+        }
+        res.render("admin/results/images",{ img: arr });
+      });
+    })
+    .post(upload.array("sliderimg"), async (req, res) => {
+      if (typeof req.body.checkbox === "string") {
+        // await cloudinary.uploader.destroy(req.body.checkbox);
+        await db.query(
+          "UPDATE resultslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?",
+          [
+            req.files[0].path,
+            req.files[0].originalname,
+            req.files[0].filename.split("/")[1],
+            req.body.checkbox,
+          ]
+        );
+        res.redirect("/admin/results");
+      } else {
+        for (let i = 0; i <= req.files.length - 1; i++) {
+          for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
+            if (i === j) {
+              await cloudinary.uploader.destroy(`ClassicNeetAcademy/${check}`);
+              await db.query(
+                "UPDATE resultslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?",
+                [
+                  req.files[j].path,
+                  req.files[j].originalname,
+                  req.files[j].filename.split("/")[1],
+                  req.body.checkbox[j],
+                ]
+              );
+            }
+          }
+        }
+      }
+    });
 
 router.route("/contactus").get(async (req, res) => {
   res.render("contactus");

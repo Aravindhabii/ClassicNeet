@@ -297,7 +297,7 @@
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    font-weight: 500;
+    font-weight: bolder;
   
 }
 /* scrollbar */
@@ -425,6 +425,8 @@ p {
   border-radius: 20px;
   background-color: white;
   text-decoration: none;
+  font-weight: bolder
+  ;
 }
 .news-box .section2 .div-1 img {
   position: relative;
@@ -1303,6 +1305,7 @@ p {
   position: absolute;
   top: 84%;
   right: 3% !important;
+  font-weight: 1000 !important;
 }
 .arrowprev2 {
   color: #02c3d8;
@@ -1310,6 +1313,7 @@ p {
   top: 84%;
   /* transform: translateY(-50%); */
   left: 3% !important;
+  font-weight: 1000 !important;
 }
 
 .mySwiper2 {

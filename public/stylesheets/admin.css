@@ -22,7 +22,6 @@ body{
 
 .sidebar a{
 	text-decoration: none;
-	
 }
 
 .ahover:hover{
@@ -46,6 +45,7 @@ body{
 .right{
 	position: relative;
 	height: fit-content;
+	padding-bottom: 10px;
 	width: 90%;
 	display: flex;
 	align-items: center;
@@ -116,8 +116,7 @@ tbody{
 
 .closesvg{
 	position: absolute;
-	right: 0%;
-	top: 0%;
+
 	cursor: pointer;
 }
 
@@ -145,7 +144,7 @@ tbody{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: rgba(104, 100, 100, 0.671);
+	background: rgba(104, 100, 100, 0.771);
 }
 
 .interior{
@@ -173,11 +172,31 @@ tbody{
 }
 
 .previewTopper{
-	position: absolute;
+	position: fixed;
 	height: 100vh;
 	width: 100%;
-	left: 0;
-	background: rgba(58, 56, 56, 0.603);
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-41%);
+	display: none;
+	z-index: 5;
+	justify-content: center;
+	align-items: center;
+	background: rgba(58, 56, 56, 0.703);
+}
+
+.previewTopper img{
+	justify-content: center;
+	align-items: center;
+	height: 50%;
+	width: 30%;
+}
+
+.previewTopper .closesvg{
+	position: absolute;
+	cursor: pointer;
+	right: 14%;
+	top: 14%;
 }
 
 input::-webkit-outer-spin-button,
