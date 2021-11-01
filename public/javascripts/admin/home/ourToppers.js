@@ -33,12 +33,10 @@ for (let i = 0; i <= previewSpan.length - 1; i++) {
 				if (sliderimgurl[j].innerText.length < 1) return;
 				img.src = sliderimgurl[j].innerText;
 				previewTopper.appendChild(img);
-				previewTopper.style.display = 'block';
-				sectionop.style.filter = 'blur(20px)';
+				previewTopper.style.display = 'flex';
 				closesvg.addEventListener('click', () => {
 					previewTopper.removeChild(img);
 					previewTopper.style.display = 'none';
-					sectionop.style.filter = 'blur(0px)';
 				});
 			}
 		}
