@@ -12,52 +12,6 @@
     flex-direction: column;
     position: relative;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*Heading*/
 .h1andh2{
     padding: 5%;  
@@ -74,19 +28,7 @@
     color: black;
     font-size: 32px; 
 }
-.leftarrow{
-    padding: 2rem 4rem 0 4rem;
-    font-size: 10px;
-    height: 90px;
-    display: flex;
-    flex-direction: column;
-    bottom: 3rem;
-    left: 0rem;
-    position: fixed;
-}
-
 /*OVERVIEW*/
-
 .overview{
     height: 82vh;
     width: 100%;
@@ -103,7 +45,6 @@
     line-break: normal;
     line-height: 175%;
     padding: 2rem 4rem 1rem 2rem;
-
 }
 
 .overviewspan {
@@ -435,6 +376,11 @@ p {
 
 
 }
+.methContent {
+    padding: 1rem;
+    text-align: justify;
+    display: none;
+}
 .methodology1 h1 , .methodology2 h1 , .methodology3 h1 , .methodology4 h1 {
     text-align: center;
     padding-bottom: 2rem;
@@ -721,6 +667,49 @@ p {
     }
 
 }
+@media (max-width:750px){
+    .methContent {
+        display: block;
+    }
+    .methodology1 , .methodology2, .methodology3  , .methodology4{
+        background-color: white;
+        width: 80%; 
+        height: 450px;
+        padding: 1rem;
+        border-radius: 20px;
+        position: relative;
+        overflow: auto;
+
+     }
+     .methodology1 h1 , .methodology2 h1 , .methodology3 h1 , .methodology4 h1 {
+         text-align: center;
+         padding-bottom: 2rem;
+         
+     }
+     .methodology1 ul , .methodology2 ul ,.methodology3 ul , .methodology4 ul{
+         line-height: 1.8rem;
+         margin-left: auto;
+         margin-right: auto;
+         list-style: none;
+         font-size: 15px;
+         min-height: 100px;
+     }
+     .exit img {
+        width: 25px;
+        height: 25px;
+    }
+    .enroll {
+        padding: .5rem 1rem;
+        position: relative;
+        margin: .5rem .5rem;
+    }
+    .bg1:nth-child(1) {
+        margin-top: 2rem;
+    }
+
+}
+
+
 
 @media (max-width:600px) {
     .hex1 {

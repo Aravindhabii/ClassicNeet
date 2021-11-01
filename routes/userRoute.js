@@ -611,7 +611,7 @@ router
         for (let i = 0; i <= response.length - 1; i++) {
           var cont = {
             content: response[i].content,
-            year: year[i].year,
+            year: response[i].year,
           };
           arr.push(cont);
         }
@@ -620,7 +620,8 @@ router
     });
   })
   .post(async (req, res) => {
-    const { content, year } = req.body.content;
+    const content = req.body.content;
+    const year = req.body.year
     await db.query(
       "INSERT INTO history SET ?",
       { content: content, year: year },
@@ -649,11 +650,10 @@ router
       );
       res.redirect("/admin/aboutus/history");
     } else {
-      req.body.checkbox.forEach(async (link) => {
-        console.log(link);
+      req.body.checkbox.forEach(async (year) => {
         await db.query(
           "DELETE FROM history WHERE year = ?",
-          [link],
+          [year],
           (err, response) => {
             if (err) {
               console.log(err);
@@ -683,9 +683,96 @@ router.route("/Demovideos").get(async (req, res) => {
   res.render("Demovideos");
 });
 
-router.route("/results").get(async (req, res) => {
-  res.render("results");
-});
+router
+  .route("/admin/demovideos")
+  .get(async (req, res) => {
+    await db.query("SELECT * FROM demovideos", (err, response) => {
+      arr = [];
+      if (err) {
+        console.log(err);
+      } else {
+        for (let i = 0; i <= response.length - 1; i++) {
+          var link = response[i].videolink;
+          // console.log(image)
+          arr.push(link);
+        }
+
+        // console.log(response[0].latestupdates);
+        res.render("admin/demovideos/demovideos", { link: arr });
+      }
+    });
+  })
+  .post(async (req, res) => {
+    const link = req.body.uploadlink;
+    console.log(link);
+    await db.query(
+      "INSERT INTO demovideos SET ?",
+      { videolink: link },
+      (err, results) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(results);
+          res.redirect("/admin/demovideos");
+        }
+      }
+    );
+  })
+  .delete(async (req, res) => {
+    if (typeof req.body.checkbox === "string") {
+      await db.query(
+        "DELETE FROM demovideos WHERE videolink = ?",
+        [req.body.checkbox],
+        (err, response) => {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log(response);
+          }
+        }
+      );
+      res.redirect("/admin/demovideos");
+    } else {
+      req.body.checkbox.forEach(async (link) => {
+        console.log(link);
+        await db.query(
+          "DELETE FROM demovedios WHERE videolink = ?",
+          [link],
+          (err, response) => {
+            if (err) {
+              console.log(err);
+            } else {
+              console.log(response);
+            }
+          }
+        );
+      });
+      res.redirect("/admin/demovideos");
+    }
+  });
+
+
+
+router.route("/results")  .get(async (req, res) => {
+  await db.query("SELECT * FROM studentdetails", async (error, response) => {
+    var arr = [];
+    if (error) {
+      console.log(error);
+    } else {
+      for (let i = 0; i <= response.length - 1; i++) {
+        var image = {
+          name: response[i].name,
+          collegename: response[i].collegename,
+          studentimg: response[i].image,
+          cloudinaryname: response[i].cloudinaryname,
+          score: response[i].score,
+        };
+        arr.push(image);
+      }
+      res.render("results", { students: arr });
+    }
+  });
+})
 
 router
   .route("/admin/results/studentdetails")
@@ -770,6 +857,60 @@ router
       res.redirect("/admin/results/studentdetails");
     }
   });
+  // admin result images
+
+  router
+    .route("/admin/results/images")
+    .get(async (req, res) => {
+      await db.query("SELECT * FROM resultslider", async (error, response) => {
+        var arr = [];
+        if (error) {
+          console.log(error);
+        } else {
+          for (let i = 0; i <= response.length - 1; i++) {
+            var image = {
+              sliderimg: response[i].sliderimg,
+              imgname: response[i].imgname,
+              cloudinaryName: response[i].cloudinaryname,
+            };
+            arr.push(image);
+          }
+        }
+        res.render("admin/results/images",{ img: arr });
+      });
+    })
+    .post(upload.array("sliderimg"), async (req, res) => {
+      if (typeof req.body.checkbox === "string") {
+        // await cloudinary.uploader.destroy(req.body.checkbox);
+        await db.query(
+          "UPDATE resultslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?",
+          [
+            req.files[0].path,
+            req.files[0].originalname,
+            req.files[0].filename.split("/")[1],
+            req.body.checkbox,
+          ]
+        );
+        res.redirect("/admin/results");
+      } else {
+        for (let i = 0; i <= req.files.length - 1; i++) {
+          for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
+            if (i === j) {
+              await cloudinary.uploader.destroy(`ClassicNeetAcademy/${check}`);
+              await db.query(
+                "UPDATE resultslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?",
+                [
+                  req.files[j].path,
+                  req.files[j].originalname,
+                  req.files[j].filename.split("/")[1],
+                  req.body.checkbox[j],
+                ]
+              );
+            }
+          }
+        }
+      }
+    });
 
 router.route("/contactus").get(async (req, res) => {
   res.render("contactus");

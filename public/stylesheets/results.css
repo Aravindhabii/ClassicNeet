@@ -99,7 +99,9 @@
   width: 50%;
   border-radius: 10px;
 }
-
+.refbox {
+  display: none;
+}
 .gridbox span {
   height: 100%;
   width: 50%;

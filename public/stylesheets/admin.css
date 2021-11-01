@@ -10,9 +10,18 @@ body{
 
 }
 
+.downarrow{
+	height: 3rem;
+	width: 3rem;
+	position: absolute;
+	right: 10%;
+	bottom: 10%;
+	cursor: pointer;
+	z-index: 15;
+}
+
 .sidebar a{
 	text-decoration: none;
-	
 }
 
 .ahover:hover{
@@ -35,25 +44,30 @@ body{
 
 .right{
 	position: relative;
-	height: 90%;
+	height: fit-content;
+	padding-bottom: 10px;
 	width: 90%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	transition: all 0.5s ease ; 
-
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 .table{
 	border: 2px solid rgb(53, 49, 49);
 	border-radius: 2px;
 	width: 80%;
+	max-height: 30vh;
+	overflow-y: auto;
 }
 
 tbody{
-	height: 40vh;
-	overflow-y: auto;
+	min-height: 10vh;
+	max-height: 30vh !important;
+	overflow-y: scroll !important;
 }
 
 .currentSliderimgurl{
@@ -102,8 +116,7 @@ tbody{
 
 .closesvg{
 	position: absolute;
-	right: 0%;
-	top: 0%;
+
 	cursor: pointer;
 }
 
@@ -126,12 +139,12 @@ tbody{
 	position: fixed;
 	height: 100vh;
 	width: 100%;
-	opacity: 0;
+	opacity: 0; 
 	z-index: -5;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: rgba(104, 100, 100, 0.671);
+	background: rgba(104, 100, 100, 0.771);
 }
 
 .interior{
@@ -159,9 +172,40 @@ tbody{
 }
 
 .previewTopper{
-	position: absolute;
+	position: fixed;
 	height: 100vh;
 	width: 100%;
-	left: 0;
-	background: rgba(58, 56, 56, 0.603);
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-41%);
+	display: none;
+	z-index: 5;
+	justify-content: center;
+	align-items: center;
+	background: rgba(58, 56, 56, 0.703);
+}
+
+.previewTopper img{
+	justify-content: center;
+	align-items: center;
+	height: 50%;
+	width: 30%;
+}
+
+.previewTopper .closesvg{
+	position: absolute;
+	cursor: pointer;
+	right: 14%;
+	top: 14%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

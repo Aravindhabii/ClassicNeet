@@ -38,12 +38,12 @@ for (let i = 0; i <= previewSpan.length - 1; i++) {
 				if (sliderimgurl[j].innerText.length < 1) return;
 				img.src = sliderimgurl[j].innerText;
 				previewDiv.appendChild(img);
-				previewDiv.style.display = 'block';
-				sectionop.style.filter = 'blur(20px)';
+				previewDiv.style.display = 'flex';
+				previewDiv.style.background = 'rgba(104, 100, 100, 0.671)';
 				closesvg.addEventListener('click', () => {
 					previewDiv.removeChild(img);
 					previewDiv.style.display = 'none';
-					sectionop.style.filter = 'blur(0px)';
+					previewDiv.style.background = 'none';
 				});
 			}
 		}
@@ -58,13 +58,12 @@ for (let i = 0; i <= currentPreviewSpan.length - 1; i++) {
 				const img = document.createElement('img');
 				img.src = currentSliderimgurl[j].innerText;
 				previewDiv.appendChild(img);
-				previewDiv.style.display = 'block';
-				sectionop.style.filter = 'blur(20px)';
+				previewDiv.style.display = 'flex';
+				previewDiv.style.background = 'rgba(104, 100, 100, 0.671)';
 				closesvg.addEventListener('click', () => {
-					console.log('hi');
 					previewDiv.removeChild(img);
 					previewDiv.style.display = 'none';
-					sectionop.style.filter = 'blur(0px)';
+					previewDiv.style.background = 'none';
 				});
 			}
 		}
