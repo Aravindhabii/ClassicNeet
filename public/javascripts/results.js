@@ -67,26 +67,33 @@ var i = 0;
   
   
 // }
-
 function loopCards(arr) {
   var k = -5;
   for ( k; k < arr.length; k++) {
     console.log(arr.length);
+      
+        k++;
+        k++;
+        k++;
+        k++;
+        k++;
+        k++;
+      
+      
+
+    
+    
       // for each iteration console.log a name
    
 
      
-      k++;
-      k++;
-      k++;
-      k++;
-      k++;
-      k++;
-     
+    
+    
       (function  (k) {
           setTimeout(function () {
               name1[0].innerText = arr[k].name;
               score[0].innerText = arr[k].score;
+              console.log('loop',k);
               img[0].src = arr[k].img;
               k++;
               name1[1].innerText = arr[k].name;
@@ -124,12 +131,15 @@ function loopCards(arr) {
               console.log(arr[k]);
 
 
-          }, 1000 * k);
+          }, 600 * k);
+
+
       })(k);
+    }
       
       
   };
-}
+
 
 
 loopCards(arr);

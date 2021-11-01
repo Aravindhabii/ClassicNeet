@@ -862,8 +862,23 @@ router.route("/contactus").get(async (req, res) => {
   res.render("contactus");
 });
 router.route("/successstories").get(async (req, res) => {
-  res.render("successStories2");
-});
+  await db.query("SELECT * FROM successstories", async (error, response) => {
+    var arr = [];
+    if (error) {
+      console.log(error);
+    } else {
+      for (let i = 0; i <= response.length - 1; i++) {
+        var image = {
+          studentimg: response[i].image,
+          cloudinaryname: response[i].cloudinaryname,
+          youtubelink: response[i].youtubelink,
+        };
+        arr.push(image);
+      }
+      res.render("successStories2", { students: arr });
+    }
+  });
+})
 
 router
   .route("/admin/successstories/testimonials")

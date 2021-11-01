@@ -39,7 +39,11 @@
     left: 50%;
     top: 0%;
     transform: translate(-50%,-40%);
-    width: 180px; 
+    border-radius: 100%;
+    border: 2px solid black;
+    width: 52%;
+    height: 50%;
+    object-fit: cover; 
 }
 .card h3 {
     font-weight: 600;
