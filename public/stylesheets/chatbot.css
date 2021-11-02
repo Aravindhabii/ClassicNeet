@@ -27,9 +27,16 @@
 }
 
 .chat {
-	width: 20rem;
+	width: 21rem;
 	height: 0;
-	background-color: rgba(255, 255, 255, 1);
+	background: linear-gradient(
+		165.54deg,
+		#1d5dda 3.45%,
+		#2f6fd9 29.82%,
+		#40b6d6 52.39%,
+		#53d6b7 73.95%,
+		#63d386 99.73%
+	);
 	position: fixed;
 	bottom: 0;
 	right: 0;
@@ -37,8 +44,32 @@
 	margin-right: 3rem;
 	margin-bottom: 3rem;
 	transition: all 0.3s ease-in-out;
+	overflow: hidden;
+	border-radius: 10px;
 }
 
 .chat.open {
 	height: 60vh;
+}
+
+.chat-nav {
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+
+.chat-nav h1 {
+	color: white;
+	font-size: 1rem;
+	margin-right: 1rem;
+}
+
+.chat-nav h1 span {
+	color: #DDDDDD;
+	font-size: 0.8rem;
+}
+
+.chat-nav img:nth-of-type(1) {
+	width: 5rem;
+	height: 5rem;
 }
