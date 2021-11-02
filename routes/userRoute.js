@@ -17,8 +17,10 @@ router
   })
   .post(async (req, res) => {
     console.log("hiiiii");
-    console.log(sizeOf(req.body));
-    res.redirect("/example")
+    sizeOf(req.body, function (err, dimensions) {
+      console.log(dimensions.width, dimensions.height)
+    })
+    
   });
 
 dotenv.config({ path: "./.env" });
