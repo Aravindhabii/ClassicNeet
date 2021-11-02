@@ -1305,6 +1305,8 @@ p {
   position: absolute;
   top: 84%;
   right: 3% !important;
+  transform: scale(1.5);
+  
   font-weight: 1000 !important;
 }
 .arrowprev2 {
@@ -1313,6 +1315,8 @@ p {
   top: 84%;
   /* transform: translateY(-50%); */
   left: 3% !important;
+  transform: scale(1.5);
+  
   font-weight: 1000 !important;
 }
 
