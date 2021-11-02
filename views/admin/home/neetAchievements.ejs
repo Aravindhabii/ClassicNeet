@@ -29,52 +29,54 @@
             <div class="input-group flex-nowrap mt-3" style="width: 80%">
               <span class="input-group-text" id="addon-wrapping">Add Seats</span>
               <input
-                type="text"
+                type="number"
                 name="seat"
                 class="form-control"
                 aria-label="Username"
                 aria-describedby="addon-wrapping"
                 id="uploadlink"
-                value="<%= seats %> "
+                value="<%= parseInt(seats) %>"
+                minlength="1"
+                maxlength="30"
                 required
               />
             </div>
             <div class="input-group flex-nowrap mt-3" style="width: 80%">
               <span class="input-group-text" id="addon-wrapping">Add Consecutive years</span>
               <input
-                type="text"
+                type="number"
                 name="years"
                 class="form-control"
                 aria-label="Username"
                 aria-describedby="addon-wrapping"
                 id="uploadlink"
-                value="<%= consecutiveyears %> "
+                value="<%= parseInt(consecutiveyears)  %> "
                 required
               />
             </div>
             <div class="input-group flex-nowrap mt-3" style="width: 80%">
               <span class="input-group-text" id="addon-wrapping">Add Successrate</span>
               <input
-                type="text"
+                type="number"
                 name="rate"
                 class="form-control"
                 aria-label="Username"
                 aria-describedby="addon-wrapping"
                 id="uploadlink"
-                value="<%= successrate %> "
+                value=" <%= parseInt(successrate)  %> "
                 required
               />
             </div>
             <div class="input-group flex-nowrap mt-3" style="width: 80%">
               <span class="input-group-text" id="addon-wrapping">Add Admissions</span>
               <input
-                type="text"
+                type="number"
                 name="admiss"
                 class="form-control"
                 aria-label="Username"
                 aria-describedby="addon-wrapping"
                 id="uploadlink"
-                value="<%= admissions %> "
+                value="<%= parseInt(admissions)  %> "
                 required
               />
             </div>

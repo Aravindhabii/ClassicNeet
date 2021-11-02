@@ -4,8 +4,8 @@
 	right: 0;
 	transform: translateY(-120%);
 	z-index: 15;
-	width: 8rem;
-	height: 8rem;
+	width: 6rem;
+	height: 4rem;
 	margin-right: 2rem;
 	background: url(../images/chatbot/chatbot.png) center/cover no-repeat;
 	animation: bot-img-animate 0.5s ease-in-out infinite alternate;

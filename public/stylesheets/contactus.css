@@ -74,6 +74,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	min-height: 550px;
 }
 
 .right {
@@ -87,6 +88,7 @@
 	padding: 5rem;
 	/* border: 1px solid #c2c2c2; */
 	border-left: none;
+	min-height: 550px;
 }
 
 .right h1 {

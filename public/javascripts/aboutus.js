@@ -22,8 +22,6 @@
 //                 set = setInterval(function () { next(); }, interval);
 //         }
 
-
-
 //         function change(index) {
 //             clearInterval(set);
 //             count = index;
@@ -33,7 +31,6 @@
 //             }
 //             slide[count].style.opacity = "1";
 //             dots[count].style.background = "#696969";
-
 
 //         }
 
@@ -46,7 +43,6 @@
 //                 dots[j].style.background = "#bdbdbd";
 //             }
 
-
 //             if (count == l) {
 //                 count = 0;
 //                 slide[count].style.opacity = "1";
@@ -58,7 +54,6 @@
 //             }
 //             initialize()
 //         }
-
 
 //         function prev() {
 //             clearInterval(set);
@@ -80,38 +75,55 @@
 //             initialize()
 //         }
 
+//dropdown
 
+const dropdown = document.querySelector(".dropdown");
+// dropdown.addEventListener("change", (e) => {
+//   console.log(dropdown.value);
+// });
 
-        //GALLERY
+//GALLERY
 
-const prevYear = document.querySelector('.prev-btn');//2019
-const currentYear = document.querySelector('.current-btn');//2020
-const btn = document.querySelectorAll('.btn');
+const prevYear = document.querySelector(".prev-btn"); //2019
+const currentYear = document.querySelector(".current-btn"); //2020
+const btn = document.querySelectorAll(".btn");
 
-btn.forEach((btn)=> {
-        btn.addEventListener('click', (e)=> {
-                
-              switch(e.target.getAttribute('data-year')) {
-                case '2019': 
-                        
-                        document.querySelectorAll("#imageid").forEach((img)=> {
-                                
-                                img.src = img.src.replaceAll('2020', '2019');
-                                console.log(img.src);
-                        })
-                        break;
-                case '2020': 
-                        
-                        document.querySelectorAll("#imageid").forEach((img)=> {
-                                img.src = img.src.replaceAll('2019', '2020');
-                                console.log(img.src);
+dropdown.addEventListener("change", (e) => {
+        console.log(e.target.value);
+        
+  switch (e.target.value) {
+    case "2019":
+      document.querySelectorAll("#imageid").forEach((img) => {
+        img.src = img.src.replaceAll("2020", "2019");
+        console.log(img.src);
+      });
+      break;
+    case "2020":
+      document.querySelectorAll("#imageid").forEach((img) => {
+        img.src = img.src.replaceAll("2019", "2020");
+        console.log(img.src);
+      });
+      break;
+  }
+});
 
-                })
-                break;
+//popup
 
-              } 
-
-        });
-})
-
-
+const galleryclick = document.querySelectorAll(".galleryItem");
+const previmg = document.querySelector(".previewimg");
+const prevContainer = document.querySelector(".previewImg");
+const bodyy = document.querySelector("body");
+const exit = document.querySelector(".close");
+galleryclick.forEach((galleryclick) => {
+  galleryclick.addEventListener("click", (e) => {
+    // document.querySelector('.popup').style.display = 'flex';
+    console.log(e.target.src);
+    prevContainer.style.display = "flex";
+    previmg.src = e.target.src;
+    bodyy.style.overflow = "hidden";
+  });
+});
+exit.addEventListener("click", (e) => {
+  prevContainer.style.display = "none";
+  bodyy.style.overflow = "scroll";
+});
