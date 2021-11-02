@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "app.js",
+	"homepage": "web.classicneetacademy.com",
 	"scripts": {
 		"start": "nodemon app.js"
 	},
@@ -15,7 +16,6 @@
 	"bugs": {
 		"url": "https://github.com/Aravindhabii/ClassicNeet/issues"
 	},
-	"homepage": "https://github.com/Aravindhabii/ClassicNeet#readme",
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
 		"bootbox": "^5.5.2",

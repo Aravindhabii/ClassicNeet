@@ -7,8 +7,8 @@
     <title>Input content</title>
 </head>
 <body>
-    <form action="/example">
-        <input type="file">
+    <form action="/example" method="post">
+        <input type="file" name="myImage" accept="image/x-png,image/gif,image/jpeg" />
         <button type="submit">Submit</button>
     </form>
 </body>
