@@ -16,9 +16,7 @@ router
     res.render("admin/courses/empty");
   })
   .post(async (req, res) => {
-    console.log("hiiiii");
-    console.log(sizeOf(req.body));
-    res.redirect("/example")
+    console.log(req.body);
   });
 
 dotenv.config({ path: "./.env" });
