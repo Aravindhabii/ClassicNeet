@@ -6,11 +6,10 @@ botImg.addEventListener('click', () => {
 });
 
 window.addEventListener('scroll', (e) => {
-    var scroll = window.scrollY;
-    if(scroll>=100){
-        botImg.style.top = '100vh';
-    }else{
-        botImg.style.top = '120vh';
-        
-    }
-})
+	var scroll = window.scrollY;
+	if (scroll >= 100) {
+		botImg.style.top = '100vh';
+	} else {
+		botImg.style.top = '120vh';
+	}
+});

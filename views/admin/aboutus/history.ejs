@@ -32,14 +32,33 @@
             aria-valuetext="helloooooo"
           > -->
           <div class="form-floating">
-            <textarea class="form-control formtextarea" name="<%#  %>"  cols="60" style="height: 155px; resize: none;" maxlength="250" ></textarea>
-            <p class="spanp">Characters left &nbsp;<span class="changablespan"></span><span>/250</span></p>
+            <textarea
+              class="form-control formtextarea"
+              name="<%#  %>"
+              cols="60"
+              style="height: 155px; resize: none"
+              minlength="10"
+              maxlength="250"
+            ></textarea>
           </div>
-          <%=  %> 
+          <div class="d-flex justify-content-end" style="width: 80%">
+            <p class="spanp">
+              Characters left &nbsp;<span class="changablespan"></span
+              ><span>/250</span>
+            </p>
+          </div>
+          <%= %>
           <!-- </textarea> -->
           <div>
-            <button type="button" class="btn btn-outline-secondary px-3 mt-5 me-5 closebtn">Close</button>
-            <button type="submit" class="btn btn-outline-primary mt-5">Submit</button>
+            <button
+              type="button"
+              class="btn btn-outline-secondary px-3 mt-5 me-5 closebtn"
+            >
+              Close
+            </button>
+            <button type="submit" class="btn btn-outline-primary mt-5">
+              Submit
+            </button>
           </div>
         </form>
       </div>
@@ -63,13 +82,16 @@
                 name="content"
                 cols="60"
                 style="height: 90px; resize: none"
+                minlength="10"
                 maxlength="250"
               ></textarea>
             </div>
-            <p class="spanp d-flex">
-              Characters left &nbsp;<span class="changablespan"></span
-              ><span>/250</span>
-            </p>
+            <div class="d-flex justify-content-end" style="width: 80%">
+              <p class="spanp d-flex">
+                Characters left &nbsp;<span class="changablespan"></span
+                ><span>/250</span>
+              </p>
+            </div>
             <div class="input-group flex-nowrap" style="width: 80%">
               <span class="input-group-text" id="addon-wrapping">Year</span>
               <input

@@ -7,6 +7,8 @@ const submit = document.querySelector(".submit");
 const submitbtn = document.querySelector(".submitbtn");
 const confirmdelete = document.querySelector(".confirmdelete");
 const latestupdateform = document.querySelector(".latestupdateform");
+var inputtext = document.querySelector(".inputtext");
+const changablespan = document.querySelector(".changablespan");
 
 console.log(previewDiv);
 
@@ -36,4 +38,17 @@ submitbtn.addEventListener("click", () => {
       latestupdateform.submit()
     }
   })
+});
+
+
+var counternum = 0
+
+counternum = inputtext.value.length;
+changablespan.innerHTML = counternum;
+console.log(counternum);
+
+inputtext.addEventListener('input',(e)=>{
+    var counternum = e.target.value.length
+    console.log('hello');
+    changablespan.innerHTML = counternum;
 });
