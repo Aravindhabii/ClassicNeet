@@ -606,6 +606,26 @@ button {
   right: 54%;
   
 }
+/* mobile view */
+.apppage {
+  position: relative;
+  height: 73%;
+  width: 70%;
+  background:#c4c4c4a6 ;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.apppage a img{
+  width: 17%;
+  height: 15%;
+  position:absolute;
+  top: 15rem;
+  right: 54%;
+  
+}
 .Messaging{
   position: absolute;
   left: 4%;
@@ -628,6 +648,13 @@ button {
   }
   .timelinePara p {
     padding-right: 3rem;
+  }
+  .apppage h2 {
+    position: absolute;
+    right: 0%;
+    top: 104px;
+    font-size: 44px;
+    font-weight: 600;
   }
 }
 @media (max-width:1000px) {
