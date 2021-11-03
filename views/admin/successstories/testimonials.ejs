@@ -41,9 +41,20 @@
             style="width: 100%"
             enctype="multipart/form-data"
           >
-            <div class="input-group d-flex flex-nowrap" style="width: 80%">
-              <span class="input-group-text" id="addon-wrapping">Add Name</span>
-
+          <div class="input-group d-flex flex-nowrap mb-3" style="width: 80%">
+            <span class="input-group-text" id="addon-wrapping">Add Name</span>
+            <input
+              type="text"
+              name="studentname"
+              class="form-control"
+              aria-label="studentname"
+              aria-describedby="addon-wrapping"
+              id="uploadlink"
+              placeholder="studentname"
+            />
+          </div>
+            <div class="input-group d-flex flex-nowrap mb-3" style="width: 80%">
+              <span class="input-group-text" id="addon-wrapping">Add Youtubelink</span>
               <input
                 type="text"
                 name="youtubelink"
@@ -53,6 +64,9 @@
                 id="uploadlink"
                 placeholder="youtubelink"
               />
+            </div>
+            <div class="input-group d-flex flex-nowrap mb-3" style="width: 80%">
+              <span class="input-group-text" id="addon-wrapping">Add Image</span>
               <input
                 type="file"
                 name="studentimg"

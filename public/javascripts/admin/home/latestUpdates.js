@@ -52,3 +52,4 @@ inputtext.addEventListener('input',(e)=>{
     console.log('hello');
     changablespan.innerHTML = counternum;
 });
+

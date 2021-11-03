@@ -1,8 +1,13 @@
 const botImg = document.querySelector('.bot-img');
 const chat = document.querySelector('.chat');
+const chatClose = document.querySelector('.chat-close');
 
 botImg.addEventListener('click', () => {
-	chat.classList.toggle('open');
+	chat.classList.add('open');
+});
+
+chatClose.addEventListener('click', () => {
+	chat.classList.remove('open');
 });
 
 window.addEventListener('scroll', (e) => {
