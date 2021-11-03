@@ -72,25 +72,24 @@ function loopCards(arr) {
   for ( k; k < arr.length; k++) {
     console.log(arr.length);
       
-        k++;
-        k++;
-        k++;
-        k++;
-        k++;
-        k++;
+        k = k + 5;
+        if( k >= arr.length) {
+          k = -5;
+        }
       
       
 
     
     
       // for each iteration console.log a name
-   
+        
 
      
     
     
       (function  (k) {
           setTimeout(function () {
+             
               name1[0].innerText = arr[k].name;
               score[0].innerText = arr[k].score;
               console.log('loop',k);

@@ -72,31 +72,34 @@
 							<label for="name">Name</label>
 							<input
 								type="text"
-								name="name"
-								class="form-input"
+																class="form-input name-input"
 								id="name"
-								required
+								
 							/>
+							<div class="nameError"></div>
 						</div>
 						<div class="input-container">
-							<label for="phone">Phone number</label>
+							<label for="phone">Phone number <span style="color: red;">*</span></label>
 							<input
 								type="text"
 								name="phone"
 								class="form-input phonenum"
 								id="phone"
-								required
+								
+								
 							/>
+							<div class="phoneError"></div>
 						</div>
 						<div class="input-container">
 							<label for="phone">Email</label>
 							<input
-								type="text"
+								type="email"
 								name="email"
-								class="form-input"
+								class="form-input email-input"
 								id="email"
-								required
+								
 							/>
+							<div class="emailError"></div>
 						</div>
 						<div class="textarea-container">
 							<label for="message">Comment</label>
@@ -104,11 +107,11 @@
 								name="message"
 								class="form-input"
 								id="message"
-								required
+								
 							></textarea>
 						</div>
 						<div class="button-container">
-							<button>Submit</button>
+							<button class="submit">Submit</button>
 							<button class="reset">Reset</button>
 						</div>
 					</form>
