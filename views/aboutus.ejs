@@ -12,7 +12,14 @@
     <title>Aboutus</title>
   </head>
   <body>
+    <div class="previewImg">
+      <svg class="close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <img src="" class="previewimg"/>
+    </div>
     <%- include('./layout/header') %>
+    
     <section class="video">
       <video class="vidAbout" autoplay muted loop>
         <source src="../images/aboutus/vidAbout.mp4" type="video/mp4" />
@@ -201,7 +208,13 @@
     </section>
     <section class="galleryNew">
       <h1 class="galleryHead">Gallery</h1>
-      <div class="btngrp"><div class="prev-btn btn" data-year="2019">Previous Year</div><div data-year="2020" class="current-btn btn">Next Year</div></div>
+      <select class="form-select form-select-lg mb-3 dropdown" aria-label=".form-select-lg example" data-select="">
+        <option  selected value="2021" data-year="2021">2021</option>
+        <option  value="2020" data-year="2020">2020</option>
+        <option  value="2019" data-year="2019">2019</option>
+        <option  value="2018" data-year="2018">2018</option>
+      </select>
+      <!-- <div class="btngrp"><div class="prev-btn btn" data-year="2019">Previous Year</div><div data-year="2020" class="current-btn btn">Next Year</div></div> -->
       <section class="galleryMain">   
         
         <% for( let i = 1; i < 64; i++ ) { %>
@@ -236,10 +249,17 @@
         <img src="images/aboutus/Vector1.png" class="Vector2" />
         <img src="images/aboutus/Vector.png" class="vector1" />
         <a
-          href="https://play.google.com/store/apps/details?id=eduapplet.classicneet"
+          href="https://play.google.com/store/apps/details?id=com.sixerclass.classicneet&hl=en_IN&gl=US"
           ><img src="images/aboutus/download.jpg"
         /></a>
       </div>
+      <!-- <div class="apppage1">
+        <img src="images/aboutus/phonebg.png" class="Messaging" />
+        <a
+          href="https://play.google.com/store/apps/details?id=com.sixerclass.classicneet&hl=en_IN&gl=US"
+          ><img src="images/aboutus/download.jpg"
+        /></a>
+      </div> -->
     </section>
     <script src="javascripts/common.js"></script>
     <script src="javascripts/aboutus.js"></script>

@@ -48,7 +48,8 @@ for (let i = 0; i <= previewSpan.length - 1; i++) {
 			}
 		}
 	});
-}
+};
+
 const currentPreviewSpan = document.querySelectorAll('.currentPreviewSpan');
 const currentSliderimgurl = document.querySelectorAll('.currentSliderimgurl');
 for (let i = 0; i <= currentPreviewSpan.length - 1; i++) {
@@ -68,4 +69,4 @@ for (let i = 0; i <= currentPreviewSpan.length - 1; i++) {
 			}
 		}
 	});
-}
+};

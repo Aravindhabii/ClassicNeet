@@ -33,13 +33,22 @@
               <input
                 type="text"
                 name="uploadlink"
-                class="form-control"
+                class="form-control inputtext"
                 aria-label="Username"
                 aria-describedby="addon-wrapping"
                 id="uploadlink"
+                minlength="10"
+                maxlength="150"
                 required
               />
+              
             </div>
+            <div class="d-flex justify-content-end" style="width: 80%">
+            <p class="spanp d-flex">
+              Characters left &nbsp;<span class="changablespan"></span
+              ><span>/150</span>
+            </p>
+          </div>
             <div>
               <button
                 type="button"
