@@ -1,82 +1,82 @@
 // swiper js
 
-var swiper = new Swiper(".mySwiper", {
-  pagination: {
-    el: ".swiper-pagination",
+// var swiper = new Swiper(".mySwiper", {
+//   pagination: {
+//     el: ".swiper-pagination",
     
-  },
-});
+//   },
+// });
 
 
 
-var swiper2 = new Swiper(".mySwiper2", {
-  slidesPerView: 3,
-  spaceBetween: 30,
-  slidesPerGroup: 1,
-  loop: true,
-  autoplay:true,
-  loopFillGroupWithBlank: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
+// var swiper2 = new Swiper(".mySwiper2", {
+//   slidesPerView: 3,
+//   spaceBetween: 30,
+//   slidesPerGroup: 1,
+//   loop: true,
+//   autoplay:true,
+//   loopFillGroupWithBlank: true,
+//   pagination: {
+//     el: ".swiper-pagination",
+//     clickable: true,
+//   },
   
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-var swiper1 = new Swiper(".mySwiper1", {
-  slidesPerView: 3,
-  spaceBetween: 30,
-  slidesPerGroup: 1,
-  loop: true,
-  loopFillGroupWithBlank: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+// });
+// var swiper1 = new Swiper(".mySwiper1", {
+//   slidesPerView: 3,
+//   spaceBetween: 30,
+//   slidesPerGroup: 1,
+//   loop: true,
+//   loopFillGroupWithBlank: true,
+//   pagination: {
+//     el: ".swiper-pagination",
+//     clickable: true,
+//   },
   
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+// });
 
 
 
-var a = 0;
-$(window).scroll(function() {
+// var a = 0;
+// $(window).scroll(function() {
 
-  var oTop = $('#counter').offset().top - window.innerHeight;
-  if (a == 0 && $(window).scrollTop() > oTop) {
-    $('.counter-value').each(function() {
-      var $this = $(this),
-        countTo = $this.attr('data-count');
-      $({
-        countNum: $this.text()
-      }).animate({
-          countNum: countTo
-        },
+//   var oTop = $('#counter').offset().top - window.innerHeight;
+//   if (a == 0 && $(window).scrollTop() > oTop) {
+//     $('.counter-value').each(function() {
+//       var $this = $(this),
+//         countTo = $this.attr('data-count');
+//       $({
+//         countNum: $this.text()
+//       }).animate({
+//           countNum: countTo
+//         },
 
-        {
+//         {
 
-          duration: 2000,
-          easing: 'swing',
-          step: function() {
-            $this.text(Math.floor(this.countNum));
-          },
-          complete: function() {
-            $this.text(this.countNum);
-            //alert('finished');
-          }
+//           duration: 2000,
+//           easing: 'swing',
+//           step: function() {
+//             $this.text(Math.floor(this.countNum));
+//           },
+//           complete: function() {
+//             $this.text(this.countNum);
+//             //alert('finished');
+//           }
 
-        });
-    });
-    a = 1;
-  }
+//         });
+//     });
+//     a = 1;
+//   }
 
-});
+// });
 console.log('hello');
 
 //toppers
@@ -87,6 +87,7 @@ const name1 = document.querySelectorAll('.nameStudent');
 const score= document.querySelectorAll('.scoreStudent');
 const img = document.querySelectorAll('.imgTopper')
 const main = document.querySelector('.gridcontainer');
+const card = document.querySelectorAll('.gridbox');
 console.log('kok');
 const arr = [];
 
@@ -108,9 +109,326 @@ const arr = [];
     
   });
 console.log(arr);
+
+var count = 0;
+
+window.addEventListener('load', () => {
+  if(arr[count]) 
+  {
+    name1[0].innerText = arr[count].name;
+    score[0].innerText = arr[count].score;
+    card[0].classList.add('gridanime1');
+    img[0].src = arr[count].img;
+    console.log(arr[count].name);
+    count++;
+  } else {
+    count = 0;
+    name1[0].innerText = arr[count].name;
+    score[0].innerText = arr[count].score;
+    img[0].src = arr[count].img;
+    card[0].classList.add('gridanime1');
+    console.log(arr[count].name);
+    count++;
+  }
+  
+  if(arr[count]) 
+  {
+    name1[1].innerText = arr[count].name;
+    score[1].innerText = arr[count].score;
+    img[1].src = arr[count].img;
+    card[1].classList.add('gridanime2');
+    console.log(arr[count].name);
+    count++;
+  } else {
+    count = 0;
+    name1[1].innerText = arr[count].name;
+    score[1].innerText = arr[count].score;
+    img[1].src = arr[count].img;
+    card[1].classList.add('gridanime2');
+    console.log(arr[count].name);
+    count++;
+  }
+  if(arr[count]) 
+  {
+    name1[2].innerText = arr[count].name;
+    score[2].innerText = arr[count].score;
+
+    img[2].src = arr[count].img;
+    card[2].classList.add('gridanime1');
+    console.log(arr[count].name);
+    count++;
+  } else {
+    count = 0;
+    name1[2].innerText = arr[count].name;
+    score[2].innerText = arr[count].score;
+    img[2].src = arr[count].img;
+    card[2].classList.add('gridanime1');
+    console.log(arr[count].name);
+    count++;
+  }
+  if(arr[count]) 
+  {
+    name1[3].innerText = arr[count].name;
+    score[3].innerText = arr[count].score;
+    img[3].src = arr[count].img;
+    card[3].classList.add('gridanime2');
+    console.log(arr[count].name);
+    count++;
+  } else {
+    count = 0;
+    name1[3].innerText = arr[count].name;
+    score[3].innerText = arr[count].score;
+    img[3].src = arr[count].img;
+    card[3].classList.add('gridanime2');
+    console.log(arr[count].name);
+    count++;
+  }
+  if(arr[count]) 
+  {
+    name1[4].innerText = arr[count].name;
+    score[4].innerText = arr[count].score;
+    img[4].src = arr[count].img;
+    card[4].classList.add('gridanime1');
+    console.log(arr[count].name);
+    count++;
+  } else {
+    count = 0;
+    name1[4].innerText = arr[count].name;
+    score[4].innerText = arr[count].score;
+    img[4].src = arr[count].img;
+    card[4].classList.add('gridanime1');
+    console.log(arr[count].name);
+    count++;
+  }
+  if(arr[count]) 
+  {
+    name1[5].innerText = arr[count].name;
+    score[5].innerText = arr[count].score;
+    img[5].src = arr[count].img;
+    card[5].classList.add('gridanime2');
+    console.log(arr[count].name);
+    count++;
+  } else {
+    count = 0;
+    name1[5].innerText = arr[count].name;
+    score[5].innerText = arr[count].score;
+    img[5].src = arr[count].img;
+    card[5].classList.add('gridanime2');
+    console.log(arr[count].name);
+    count++;
+  }
+  if(arr[count]) 
+  {
+    name1[6].innerText = arr[count].name;
+    score[6].innerText = arr[count].score;
+    img[6].src = arr[count].img;
+    card[6].classList.add('gridanime1');
+    console.log(arr[count].name);
+    count++;
+  } else {
+    count = 0;
+    name1[6].innerText = arr[count].name;
+    score[6].innerText = arr[count].score;
+    img[6].src = arr[count].img;
+    card[6].classList.add('gridanime1');
+    console.log(arr[count].name);
+    count++;
+  }
+  if(arr[count]) 
+  {
+    name1[7].innerText = arr[count].name;
+    score[7].innerText = arr[count].score;
+    img[7].src = arr[count].img;
+    card[7].classList.add('gridanime2');
+    console.log(arr[count].name);
+    count++;
+  } else {
+    count = 0;
+    name1[7].innerText = arr[count].name;
+    score[7].innerText = arr[count].score;
+    img[7].src = arr[count].img;
+    card[7].classList.add('gridanime2');
+    console.log(arr[count].name);
+    count++;
+  }
+  if(arr[count]) 
+  {
+    name1[8].innerText = arr[count].name;
+    score[8].innerText = arr[count].score;
+    img[8].src = arr[count].img;
+    card[8].classList.add('gridanime1');
+    console.log(arr[count].name);
+    count++;
+  } else {
+    count = 0;
+    name1[8].innerText = arr[count].name;
+    score[8].innerText = arr[count].score;
+    img[8].src = arr[count].img;
+    card[8].classList.add('gridanime1');
+    console.log(arr[count].name);
+    count++;
+  }
+});
+setInterval(() => {
+  if(arr[count]) 
+  {
+    name1[0].innerText = arr[count].name;
+    score[0].innerText = arr[count].score;
+    card[0].classList.add('gridanime1');
+    img[0].src = arr[count].img;
+    console.log(arr[count].name);
+    count++;
+  } else {
+    count = 0;
+    name1[0].innerText = arr[count].name;
+    score[0].innerText = arr[count].score;
+    img[0].src = arr[count].img;
+    card[0].classList.add('gridanime1');
+    console.log(arr[count].name);
+    count++;
+  }
+  
+  if(arr[count]) 
+  {
+    name1[1].innerText = arr[count].name;
+    score[1].innerText = arr[count].score;
+    img[1].src = arr[count].img;
+    card[1].classList.add('gridanime2');
+    console.log(arr[count].name);
+    count++;
+  } else {
+    count = 0;
+    name1[1].innerText = arr[count].name;
+    score[1].innerText = arr[count].score;
+    img[1].src = arr[count].img;
+    card[1].classList.add('gridanime2');
+    console.log(arr[count].name);
+    count++;
+  }
+  if(arr[count]) 
+  {
+    name1[2].innerText = arr[count].name;
+    score[2].innerText = arr[count].score;
+
+    img[2].src = arr[count].img;
+    card[2].classList.add('gridanime1');
+    console.log(arr[count].name);
+    count++;
+  } else {
+    count = 0;
+    name1[2].innerText = arr[count].name;
+    score[2].innerText = arr[count].score;
+    img[2].src = arr[count].img;
+    card[2].classList.add('gridanime1');
+    console.log(arr[count].name);
+    count++;
+  }
+  if(arr[count]) 
+  {
+    name1[3].innerText = arr[count].name;
+    score[3].innerText = arr[count].score;
+    img[3].src = arr[count].img;
+    card[3].classList.add('gridanime2');
+    console.log(arr[count].name);
+    count++;
+  } else {
+    count = 0;
+    name1[3].innerText = arr[count].name;
+    score[3].innerText = arr[count].score;
+    img[3].src = arr[count].img;
+    card[3].classList.add('gridanime2');
+    console.log(arr[count].name);
+    count++;
+  }
+  if(arr[count]) 
+  {
+    name1[4].innerText = arr[count].name;
+    score[4].innerText = arr[count].score;
+    img[4].src = arr[count].img;
+    card[4].classList.add('gridanime1');
+    console.log(arr[count].name);
+    count++;
+  } else {
+    count = 0;
+    name1[4].innerText = arr[count].name;
+    score[4].innerText = arr[count].score;
+    img[4].src = arr[count].img;
+    card[4].classList.add('gridanime1');
+    console.log(arr[count].name);
+    count++;
+  }
+  if(arr[count]) 
+  {
+    name1[5].innerText = arr[count].name;
+    score[5].innerText = arr[count].score;
+    img[5].src = arr[count].img;
+    card[5].classList.add('gridanime2');
+    console.log(arr[count].name);
+    count++;
+  } else {
+    count = 0;
+    name1[5].innerText = arr[count].name;
+    score[5].innerText = arr[count].score;
+    img[5].src = arr[count].img;
+    card[5].classList.add('gridanime2');
+    console.log(arr[count].name);
+    count++;
+  }
+  if(arr[count]) 
+  {
+    name1[6].innerText = arr[count].name;
+    score[6].innerText = arr[count].score;
+    img[6].src = arr[count].img;
+    card[6].classList.add('gridanime1');
+    console.log(arr[count].name);
+    count++;
+  } else {
+    count = 0;
+    name1[6].innerText = arr[count].name;
+    score[6].innerText = arr[count].score;
+    img[6].src = arr[count].img;
+    card[6].classList.add('gridanime1');
+    console.log(arr[count].name);
+    count++;
+  }
+  if(arr[count]) 
+  {
+    name1[7].innerText = arr[count].name;
+    score[7].innerText = arr[count].score;
+    img[7].src = arr[count].img;
+    card[7].classList.add('gridanime2');
+    console.log(arr[count].name);
+    count++;
+  } else {
+    count = 0;
+    name1[7].innerText = arr[count].name;
+    score[7].innerText = arr[count].score;
+    img[7].src = arr[count].img;
+    card[7].classList.add('gridanime2');
+    console.log(arr[count].name);
+    count++;
+  }
+  if(arr[count]) 
+  {
+    name1[8].innerText = arr[count].name;
+    score[8].innerText = arr[count].score;
+    img[8].src = arr[count].img;
+    card[8].classList.add('gridanime1');
+    console.log(arr[count].name);
+    count++;
+  } else {
+    count = 0;
+    name1[8].innerText = arr[count].name;
+    score[8].innerText = arr[count].score;
+    img[8].src = arr[count].img;
+    card[8].classList.add('gridanime1');
+    console.log(arr[count].name);
+    count++;
+  }
+
+}, 10000);
 // (arr).forEach(async function(person){
-//   const name1 = document.querySelector('.nameStudent');
-// const score = document.querySelector('.scoreStudent');
+
 //   console.log('outside settime');
 //   await setInterval(function(){
 //     console.log('inside');
@@ -133,7 +451,7 @@ console.log(arr);
   
   
 // }
-var i = 0;
+// var i = 0;
 
 // while (i<arr.length) {
   
@@ -146,15 +464,15 @@ var i = 0;
   
   
 // }
-function loopCards(arr) {
-  var k = -5;
-  for ( k; k < arr.length; k++) {
-    console.log(arr.length);
+// function loopCards(arr) {
+//   var k = -5;
+//   for ( k; k < arr.length; k++) {
+//     console.log(arr.length);
       
-        k = k + 5;
-        if( k >= arr.length) {
-          k = -5;
-        }
+//         k = k + 5;
+//         if( k >= arr.length) {
+//           k = -5;
+//         }
       
       
 
@@ -166,83 +484,62 @@ function loopCards(arr) {
      
     
     
-      (function  (k) {
-          setTimeout(function () {
+//       (function  (k) {
+//           setTimeout(function () {
              
-              name1[0].innerText = arr[k].name;
-              score[0].innerText = arr[k].score;
-              console.log('loop',k);
-              img[0].src = arr[k].img;
-              k++;
-              name1[1].innerText = arr[k].name;
-              score[1].innerText = arr[k].score;
-              img[1].src = arr[k].img;
-              k++;
-              name1[2].innerText = arr[k].name;
-              score[2].innerText = arr[k].score;
-              k++;
-              name1[3].innerText = arr[k].name;
-              score[3].innerText = arr[k].score;
-              img[3].src = arr[k].img;
-              k++;
-              name1[4].innerText = arr[k].name;
-              score[4].innerText = arr[k].score;
-              img[4].src = arr[k].img;
-              k++;
-              name1[5].innerText = arr[k].name;
-              score[5].innerText = arr[k].score;
-              img[5].src = arr[k].img;
-              k++;
-              name1[6].innerText = arr[k].name;
-              score[6].innerText = arr[k].score;
-              img[6].src = arr[k].img;
-              k++;
-              name1[7].innerText = arr[k].name;
-              score[7].innerText = arr[k].score;
-              img[7].src = arr[k].img;
-              k++;
-              name1[8].innerText = arr[k].name;
-              score[8].innerText = arr[k].score;
-              img[8].src = arr[k].img;
-              k++;
-              console.log('inside loop',k);
-              console.log(arr[k]);
+//               name1[0].innerText = arr[k].name;
+//               score[0].innerText = arr[k].score;
+//               console.log('loop',k);
+//               img[0].src = arr[k].img;
+//               k++;
+//               name1[1].innerText = arr[k].name;
+//               score[1].innerText = arr[k].score;
+//               img[1].src = arr[k].img;
+//               k++;
+//               name1[2].innerText = arr[k].name;
+//               score[2].innerText = arr[k].score;
+//               k++;
+//               name1[3].innerText = arr[k].name;
+//               score[3].innerText = arr[k].score;
+//               img[3].src = arr[k].img;
+//               k++;
+//               name1[4].innerText = arr[k].name;
+//               score[4].innerText = arr[k].score;
+//               img[4].src = arr[k].img;
+//               k++;
+//               name1[5].innerText = arr[k].name;
+//               score[5].innerText = arr[k].score;
+//               img[5].src = arr[k].img;
+//               k++;
+//               name1[6].innerText = arr[k].name;
+//               score[6].innerText = arr[k].score;
+//               img[6].src = arr[k].img;
+//               k++;
+//               name1[7].innerText = arr[k].name;
+//               score[7].innerText = arr[k].score;
+//               img[7].src = arr[k].img;
+//               k++;
+//               name1[8].innerText = arr[k].name;
+//               score[8].innerText = arr[k].score;
+//               img[8].src = arr[k].img;
+//               k++;
+//               console.log('inside loop',k);
+//               console.log(arr[k]);
 
 
-          }, 600 * k);
+//           }, 600 * k);
 
 
-      })(k);
-    }
+//       })(k);
+//     }
       
       
-  };
+//   };
 
 
 
-loopCards(arr);
+// loopCards(arr);
 
 
 
 
-
-// while ( i < arr.length) {
-//   console.log('inside loop',i);
- 
-//     (function async (i) {
-//        await setTimeout(function () {
-//           console.log('inside loopfunc',i);
-//             name1[0].innerText = arr[i].name;
-//             score[0].innerText = arr[i].score;
-//             i++;
-//             name1[1].innerText = arr[i].name;
-//             score[1].innerText = arr[i].score;
-//             var k = i;
-//             console.log(arr[i]);
-//             console.log(name1.innerText);
-
-
-//         }, 3000 * i);
-//     })(i);
-    
-// };

@@ -2,7 +2,9 @@
   width: 100%;
   height: 100vh;
 }
-
+body {
+  background-color: EEEEEE;
+}
 .swiper-slide img {
   height: 90vh;
   width: 100%;
@@ -36,27 +38,38 @@
   position: relative;
   height: 12rem;
   width: 24rem;
-  /* border: 1px solid black; */
   
+  border: 2px solid #2c2e43a1;
   display: flex;
   
   align-items: center;
-  box-shadow: 2px 2px 50px rgb(0,0,0,0.1);
+  /* box-shadow: 2px 2px 50px rgb(0,0,0,0.4); */
   border-radius: 10px;
-  background-color: #cdebff;
+  background-color:#77acf18f;
 
   /* -webkit-box-reflect: below 0 linear-gradient(transparent, white); */
+}
+.nameStudent {
+  padding: 1rem;
+}
+.scoreStudent {
+  padding: .2rem 1.2rem;
+  border-radius: 20px;
+  background-color: white;
+  color: black;
+  font-size: 22px;
+  font-weight: 600;
 }
 .gridanime1 {
   animation-name: card;
   animation-iteration-count: infinite;
-  animation-duration: 8s;
+  animation-duration: 20s;
   animation-timing-function: ease-in-out;
 }
 .gridanime2 {
   animation-name: card2;
   animation-iteration-count: infinite;
-  animation-duration: 8s;
+  animation-duration: 20s;
   animation-timing-function: ease-in-out;
 }
 .griditem2 {
@@ -112,11 +125,7 @@
   align-items: center;
 }
 
-.gridbox > span > p {
-  font-size: 17px;
-  font-weight: 600;
-  line-height: 3;
-}
+
 
 .gridbox > span > h3 {
   font-size: 19px;
