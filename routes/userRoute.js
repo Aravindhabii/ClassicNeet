@@ -611,7 +611,22 @@ router.route("/courses").get(async (req, res) => {
 //   .delete(async (req, res) => {});
 
 router.route("/aboutus").get(async (req, res) => {
-  res.render("aboutus");
+  await db.query("SELECT * FROM history", async (error, response) => {
+    var arr = [];
+    if (error) {
+      console.log(error);
+    } else {
+      for (let i = 0; i <= response.length - 1; i++) {
+        var cont = {
+          content: response[i].content,
+          year: response[i].year,
+        };
+        arr.push(cont);
+      }
+      res.render("aboutus",{ content: arr });
+    }
+  });
+  
 });
 
 router
@@ -694,7 +709,21 @@ router.route("/coursesJEE").get(async (req, res) => {
   res.render("coursesJEE");
 });
 router.route("/Demovideos").get(async (req, res) => {
-  res.render("Demovideos");
+  await db.query("SELECT * FROM demovideos", (err, response) => {
+    arr = [];
+    if (err) {
+      console.log(err);
+    } else {
+      for (let i = 0; i <= response.length - 1; i++) {
+        var link = response[i].videolink;
+        // console.log(image)
+        arr.push(link);
+      }
+
+      // console.log(response[0].latestupdates);
+      res.render("Demovideos",{ link: arr });
+    }
+  });
 });
 
 router
@@ -938,6 +967,7 @@ router.route("/successstories").get(async (req, res) => {
           studentimg: response[i].image,
           cloudinaryname: response[i].cloudinaryname,
           youtubelink: response[i].youtubelink,
+          studentname: response[i].studentname,
         };
         arr.push(image);
       }
@@ -959,6 +989,7 @@ router
             studentimg: response[i].image,
             cloudinaryname: response[i].cloudinaryname,
             youtubelink: response[i].youtubelink,
+            studentname: response[i].studentname,
           };
           arr.push(image);
         }
@@ -973,6 +1004,7 @@ router
         youtubelink: req.body.youtubelink,
         image: req.file.path,
         cloudinaryname: req.file.filename.split("/")[1],
+        studentname: req.body.studentname,
       },
       (err, response) => {
         if (err) {

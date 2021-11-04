@@ -28,11 +28,12 @@ nav {
   font-size: 20px;
   background: white;
   z-index: 100;
+  
 }
 
 .logo > img {
   height: 50%;
-  width: 50%;
+  width: 65%;
 }
 
 .navlinks {
@@ -132,8 +133,11 @@ body {
 } */
 @media (max-width:1000px) {
   /* nav {
-    overflow-x: hidden;
+    
   } */
+  body {
+    overflow-x: hidden;
+  }
   .hamburger {
     display: block;
     cursor: pointer;
@@ -141,7 +145,7 @@ body {
   .navlinks {
     position: absolute;
     display: flex;
-    overflow-x: hidden;
+    
     left: auto;
     height: 95vh;
     top: 10vh;
@@ -172,6 +176,7 @@ body {
 .nav-active {
  transform: translateX(0%);
  transition: transform .5s ease-in;
+ /* display: flex; */
  
 }
 
@@ -394,9 +399,7 @@ footer {
     right: 45px;
     /* width: 5%; */
   }
-  .navlinks {
-    display: none;
-  }
+  
   .footer_head {
     margin-top: 5%;
   }

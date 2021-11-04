@@ -65,7 +65,7 @@ var swiper = new Swiper(".mySwiper", {
 var swiper2 = new Swiper(".mySwiper2", {
   slidesPerView: 3,
   spaceBetween: 30,
-  slidesPerGroup: 1,
+  slidesPerGroup: 3,
   loop: true,
   autoplay:true,
   loopFillGroupWithBlank: true,
@@ -82,8 +82,9 @@ var swiper2 = new Swiper(".mySwiper2", {
 var swiper1 = new Swiper(".mySwiper1", {
   slidesPerView: 3,
   spaceBetween: 30,
-  slidesPerGroup: 1,
+  slidesPerGroup: 3,
   loop: true,
+  autoplay:true,
   loopFillGroupWithBlank: true,
   pagination: {
     el: ".swiper-pagination",

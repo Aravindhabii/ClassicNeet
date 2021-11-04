@@ -129,7 +129,7 @@ iframe {
   width: 100%;
   height: 100vh;
   position: absolute;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .video h1 {
@@ -790,8 +790,8 @@ button {
 .previewImg {
   position: fixed;
   display: none;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     z-index: 100;

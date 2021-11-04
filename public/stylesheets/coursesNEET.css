@@ -400,8 +400,8 @@ p {
 .bgmeth , .bgmeth2 , .bgmeth3  , .bgmeth4 {
     display: none;
     position: fixed;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.553);
     backdrop-filter: blur(10px);
     z-index: 100;

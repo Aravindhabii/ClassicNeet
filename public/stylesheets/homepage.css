@@ -2149,6 +2149,10 @@ iframe {
   }
 }
 @media (max-width: 500px) {
+  .cardsDiv {
+    height: fit-content;
+    margin: 0rem 0rem;
+  }
   .video {
     height:22vh;
     width: 50vw;
