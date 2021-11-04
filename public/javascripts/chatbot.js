@@ -7,8 +7,8 @@ botImg.addEventListener('click', () => {
 	chat.classList.add('open');
 	botImg.style.display = 'none';
 });
-chatClose.addEventListner('click', () => {
-	console.log('hii');
+
+chatClose.addEventListener('click', () => {
 	chat.classList.remove('open');
 	botImg.style.display = 'block';
 });
