@@ -1,100 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../stylesheets/successStories2.css" />
-    <link rel="stylesheet" href="stylesheets/common.css" />
-    <title>Success Stories</title>
-  </head>
-  <body>
-    <%- include('./layout/header') %>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../stylesheets/successStories2.css" />
+		<link rel="stylesheet" href="stylesheets/common.css" />
+		<link rel="stylesheet" href="stylesheets/chatbot.css" />
 
-    <section class="secMain">
-      <img class="vector" src="../images/successStories/Vector8.png" alt="" />
-      <div class="cardMain">
-      <% students.forEach((student) => { %>
-        <div class="card">
-          <img
-            class="profile"
-            src="<%= student.studentimg %>"
-            alt=""
-          />
-          <h3>PRIYA</h3>
-          <iframe
-            class="video"
-            width="560"
-            height="315"
-            src="<%= student.youtubelink %>"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-      <% }) %>
-        <div class="card">
-          <img
-            class="profile"
-            src="../images/successStories/success_img_2.png"
-            alt=""
-          />
-          <h3>PRIYA</h3>
-          <iframe
-          class="video"
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/OUQ1FXrOJKA"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div class="card">
-          <img
-            class="profile"
-            src="../images/successStories/success_img_3.png"
-            alt=""
-          />
-          <h3>PRIYA</h3>
-          <iframe 
-          class="video"
+		<title>Success Stories</title>
+	</head>
+	<body>
+		<%- include('./layout/header') %> <%- include('./chatbot') %>
 
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/OUQ1FXrOJKA"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div class="card">
-          <img
-            class="profile"
-            src="../images/successStories/success_img_3.png"
-            alt=""
-          />
-          <h3>PRIYA</h3>
-          <iframe 
-          class="video"
+		<section class="secMain">
+			<img class="vector" src="../images/successStories/Vector8.png" alt="" />
+			<div class="cardMain">
+				<% students.forEach((student) => { %>
+				<div class="card">
+					<img class="profile" src="<%= student.studentimg %>" alt="" />
+					<h3>PRIYA</h3>
+					<iframe
+						class="video"
+						width="560"
+						height="315"
+						src="<%= student.youtubelink %>"
+						title="YouTube video player"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen
+					></iframe>
+				</div>
+				<% }) %>
+				<div class="card">
+					<img
+						class="profile"
+						src="../images/successStories/success_img_2.png"
+						alt=""
+					/>
+					<h3>PRIYA</h3>
+					<iframe
+						class="video"
+						width="560"
+						height="315"
+						src="https://www.youtube.com/embed/OUQ1FXrOJKA"
+						title="YouTube video player"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen
+					></iframe>
+				</div>
+				<div class="card">
+					<img
+						class="profile"
+						src="../images/successStories/success_img_3.png"
+						alt=""
+					/>
+					<h3>PRIYA</h3>
+					<iframe
+						class="video"
+						width="560"
+						height="315"
+						src="https://www.youtube.com/embed/OUQ1FXrOJKA"
+						title="YouTube video player"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen
+					></iframe>
+				</div>
+				<div class="card">
+					<img
+						class="profile"
+						src="../images/successStories/success_img_3.png"
+						alt=""
+					/>
+					<h3>PRIYA</h3>
+					<iframe
+						class="video"
+						width="560"
+						height="315"
+						src="https://www.youtube.com/embed/OUQ1FXrOJKA"
+						title="YouTube video player"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen
+					></iframe>
+				</div>
+			</div>
 
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/OUQ1FXrOJKA"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-        
-      </div>
-      
-      <!-- <img class="vector" src="../images/successStories/Vector 9.png" alt="" /> -->
-    </section>
-    <%- include('./layout/footer') %>
-  </body>
+			<!-- <img class="vector" src="../images/successStories/Vector 9.png" alt="" /> -->
+		</section>
+		<%- include('./layout/footer') %>
+		<script src="javascripts/chatbot.js"></script>
+	</body>
 </html>

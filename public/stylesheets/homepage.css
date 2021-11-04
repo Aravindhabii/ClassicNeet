@@ -1308,13 +1308,9 @@ p {
   position: absolute;
   top: 84%;
   right: 3% !important;
-<<<<<<< HEAD
-  font-weight: bolder;
-=======
   transform: scale(1.5);
   
   font-weight: 1000 !important;
->>>>>>> d54557c7ff237d908e2578b722daf1295be98dd0
 }
 .arrowprev2 {
   color: #02c3d8;
@@ -1322,13 +1318,9 @@ p {
   top: 84%;
   /* transform: translateY(-50%); */
   left: 3% !important;
-<<<<<<< HEAD
-  font-weight: bolder;
-=======
   transform: scale(1.5);
   
   font-weight: 1000 !important;
->>>>>>> d54557c7ff237d908e2578b722daf1295be98dd0
 }
 
 .mySwiper2 {

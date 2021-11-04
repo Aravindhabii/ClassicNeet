@@ -5,10 +5,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="stylesheets/contactus.css" />
+		<link rel="stylesheet" href="stylesheets/chatbot.css" />
+
 		<title>Contact Us</title>
 	</head>
 	<body>
-		<%- include('./layout/header') %>
+		<%- include('./layout/header') %> <%- include('./chatbot') %>
 		<section class="enquire-form-container">
 			<div>
 				<div class="left">
@@ -67,7 +69,11 @@
 				</div>
 				<div class="right">
 					<h1>Enquiry Form</h1>
-					<form action="mailto:info@classicneetacademy.com" method="POST" enctype="text/plain">
+					<form
+						action="mailto:info@classicneetacademy.com"
+						method="POST"
+						enctype="text/plain"
+					>
 						<div class="input-container">
 							<label for="name">Name</label>
 							<input
@@ -118,5 +124,6 @@
 		<%- include('./layout/footer') %>
 		<script src="javascripts/contactus.js"></script>
 		<script src="javascripts/common.js"></script>
+		<script src="javascripts/chatbot.js"></script>
 	</body>
 </html>
