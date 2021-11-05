@@ -202,7 +202,7 @@
 
 
 
-.phoneError ,.emailError{
+.phoneError ,.emailError , .commentError{
 	color: red;
 	font-size: 14px;
 	
