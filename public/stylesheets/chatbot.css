@@ -29,20 +29,15 @@
 .chat {
 	width: 18rem;
 	height: 0;
-	background: white
-		linear-gradient(
-			180deg,
-			#e11013 0%,
-			rgba(225, 16, 19, 0.73) 27.6%,
-			rgba(225, 16, 19, 0.55) 52.08%,
-			rgba(225, 16, 19, 0.219411) 78.06%,
-			rgba(225, 16, 19, 0) 100%
-		);
+	/* background: white linear-gradient( 
+180deg, #e11013 0%, rgba(225, 16, 19, 0.73) 27.6%, rgba(225, 16, 19, 0.55) 52.08%, rgba(225, 16, 19, 0.219411) 78.06%, rgba(225, 16, 19, 0) 100% ); */
 	position: fixed;
 	bottom: 0;
+	background: rgb(23 152 202);
 	right: 0;
 	z-index: 15;
 	margin-right: 3rem;
+	box-shadow: 2px 2px 47px rgb(0 0 0 / 50%);
 	margin-bottom: 3rem;
 	transition: all 0.3s ease-in-out;
 	overflow: hidden;
@@ -132,7 +127,8 @@
 	font-size: 0.8rem;
 	margin: 0.5rem;
 	border-radius: 10px;
-	padding: 0.5rem;
+	padding: 0.2rem 0.5rem;
+	padding-left: 0;
 	display: inline;
 	max-width: 75%;
 	width: fit-content;
@@ -146,11 +142,12 @@
 
 .chat-body .each-chat.client {
 	align-self: flex-end;
+	padding: 0.5rem;
 }
 
 .chat-body .each-chat.bot img {
-	width: 2.5rem;
-	height: 2.5rem;
+	width: 2rem;
+	height: 2rem;
 	margin-right: 0.5rem;
 }
 

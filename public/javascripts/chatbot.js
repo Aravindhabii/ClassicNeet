@@ -14,20 +14,15 @@ chatClose.addEventListener('click', () => {
 });
 
 chatReset.addEventListener('click', () => {
-	document.querySelector('.chat_body').innerHTML = `<div class="each-chat bot">
+	document.querySelector('.chat-body').innerHTML = `<div class="each-chat bot">
 	<img src="../images/chatbot/chatbot1.png" alt="" />
 	<span class="chat-span">Hello, scholar</span>
 </div>
 <div class="each-chat bot">
-	<img src="../images/chatbot/chatbot1.png" alt="" /><input
-		type="text"
-		placeholder="Name"
-		maxlength="30"
-		minlength="3"
-		autofocus
-		required
-		id="client_name"
-	/>
+	<img src="../images/chatbot/chatbot1.png" alt="" />
+	<span class="chat-span">Enter your name</span>
+</div>
+<div class="each-chat client">
 	<span>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +37,15 @@ chatReset.addEventListener('click', () => {
 			/>
 		</svg>
 	</span>
-</div>`;
+	<input
+		type="text"
+		placeholder="Name"
+		maxlength="30"
+		minlength="3"
+		autofocus
+		required
+		id="client_name"
+	/>`;
 });
 
 window.addEventListener('scroll', (e) => {
