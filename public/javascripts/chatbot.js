@@ -58,9 +58,11 @@ const inputs_name = document.getElementById('client_name');
 document.querySelector('#name_svg').addEventListener('click', (e) => {
 	if (document.querySelector('#client_name').value.length > 2) {
 		const div = document.createElement('div');
+		const divEmailInput = document.createElement('div');
 		const img = document.createElement('img');
 		const input = document.createElement('input');
 		const span_email = document.createElement('span');
+		const spanAskEmail = document.createElement('span');
 		span_email.innerHTML = `<svg
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 0 20 20"
@@ -77,7 +79,8 @@ document.querySelector('#name_svg').addEventListener('click', (e) => {
 		document
 			.querySelectorAll('.chat-body .each-chat input')[0]
 			.setAttribute('disabled', true);
-
+		spanAskEmail.innerText = 'Enter you e-mail';
+		spanAskEmail.classList.add('chat-span');
 		div.classList.add('each-chat');
 		div.classList.add('bot');
 		img.src = '../images/chatbot/chatbot1.png';
@@ -87,9 +90,13 @@ document.querySelector('#name_svg').addEventListener('click', (e) => {
 		input.setAttribute('autofocus', 'true');
 		input.setAttribute('required', 'true');
 		div.appendChild(img);
-		div.appendChild(input);
-		div.appendChild(span_email);
+		div.appendChild(spanAskEmail);
+		divEmailInput.appendChild(span_email);
+		divEmailInput.appendChild(input);
+		divEmailInput.classList.add('each-chat');
+		divEmailInput.classList.add('client');
 		document.querySelector('.chat-body').appendChild(div);
+		document.querySelector('.chat-body').appendChild(divEmailInput);
 		document.querySelector('.chat-body').scrollTop =
 			document.querySelector('.chat-body').scrollHeight;
 
@@ -99,11 +106,13 @@ document.querySelector('#name_svg').addEventListener('click', (e) => {
 			if (validityStateName.valid) {
 				span_email.remove();
 				const div1 = document.createElement('div');
+				const divPhoneInput = document.createElement('div');
 				const img = document.createElement('img');
 				const input1 = document.createElement('input');
 				input.setAttribute('disabled', true);
 				input1.id = 'client_phone';
 				const span_phone = document.createElement('span');
+				const spanAskPhone = document.createElement('span');
 				span_phone.innerHTML = `<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 20 20"
@@ -117,6 +126,10 @@ document.querySelector('#name_svg').addEventListener('click', (e) => {
 				/></svg>`;
 				div1.classList.add('each-chat');
 				div1.classList.add('bot');
+				divPhoneInput.classList.add('each-chat');
+				divPhoneInput.classList.add('client');
+				spanAskPhone.innerText = 'Enter you Phone number';
+				spanAskPhone.classList.add('chat-span');
 				img.src = '../images/chatbot/chatbot1.png';
 				input1.type = 'text';
 				input1.placeholder = 'Phone number';
@@ -125,9 +138,11 @@ document.querySelector('#name_svg').addEventListener('click', (e) => {
 				input1.setAttribute('autofocus', 'true');
 				input1.setAttribute('required', 'true');
 				div1.appendChild(img);
-				div1.appendChild(input1);
-				div1.appendChild(span_phone);
+				div1.appendChild(spanAskPhone);
+				divPhoneInput.appendChild(span_phone);
+				divPhoneInput.appendChild(input1);
 				document.querySelector('.chat-body').appendChild(div1);
+				document.querySelector('.chat-body').appendChild(divPhoneInput);
 				document.querySelector('.chat-body').scrollTop =
 					document.querySelector('.chat-body').scrollHeight;
 

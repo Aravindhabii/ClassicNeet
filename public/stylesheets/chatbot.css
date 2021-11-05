@@ -160,6 +160,14 @@
 	border: none;
 }
 
+.chat-body .each-chat.client input {
+	width: fit-content;
+}
+
+.chat-body .each-chat.client {
+	width: fit-content;
+}
+
 .chat-body .each-chat span {
 	width: 2.5rem;
 	height: 2.5rem;
@@ -170,6 +178,19 @@
 	height: 2.5rem;
 	position: absolute;
 	right: -3rem;
+}
+
+.chat-body .each-chat.client svg {
+	width: 2.5rem;
+	height: 2.5rem;
+	transform: rotate(180deg);
+	left: 0rem;
+	position: absolute;
+}
+
+.chat-body .each-chat.client > span {
+	left: -3rem;
+	position: absolute;
 }
 
 .chat-span {
