@@ -154,6 +154,7 @@ body {
     transform: translateX(100%);
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     z-index: 30;
     width: 50%;
     transition: transform .5s ease-in;
