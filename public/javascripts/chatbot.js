@@ -15,11 +15,11 @@ chatClose.addEventListener('click', () => {
 
 chatReset.addEventListener('click', () => {
 	document.querySelector('.chat-body').innerHTML = `<div class="each-chat bot">
-	<img src="../images/chatbot/chatbot1.png" alt="" />
+	<img src="../images/chatbot/chatbot1_edited.png" alt="" />
 	<span class="chat-span">Hello, scholar</span>
 </div>
 <div class="each-chat bot">
-	<img src="../images/chatbot/chatbot1.png" alt="" />
+	<img src="../images/chatbot/chatbot1_edited.png" alt="" />
 	<span class="chat-span">Enter your name</span>
 </div>
 <div class="each-chat client">
@@ -29,6 +29,7 @@ chatReset.addEventListener('click', () => {
 			viewBox="0 0 20 20"
 			fill="currentColor"
 			id="name_svg"
+			style="color: #711396"
 		>
 			<path
 				fill-rule="evenodd"
@@ -71,6 +72,7 @@ document.querySelector('#name_svg').addEventListener('click', (e) => {
 		viewBox="0 0 20 20"
 		fill="currentColor"
 		id="email_svg"
+		style="color: #711396"
 	>
 		<path
 			fill-rule="evenodd"
@@ -86,7 +88,7 @@ document.querySelector('#name_svg').addEventListener('click', (e) => {
 		spanAskEmail.classList.add('chat-span');
 		div.classList.add('each-chat');
 		div.classList.add('bot');
-		img.src = '../images/chatbot/chatbot1.png';
+		img.src = '../images/chatbot/chatbot1_edited.png';
 		input.type = 'email';
 		input.id = 'client_email';
 		input.placeholder = 'Email';
@@ -121,6 +123,7 @@ document.querySelector('#name_svg').addEventListener('click', (e) => {
 				viewBox="0 0 20 20"
 				fill="currentColor"
 				id="phone_svg"
+				style="color: #711396"
 				>
 				<path
 				fill-rule="evenodd"
@@ -133,7 +136,7 @@ document.querySelector('#name_svg').addEventListener('click', (e) => {
 				divPhoneInput.classList.add('client');
 				spanAskPhone.innerText = 'Enter you Phone number';
 				spanAskPhone.classList.add('chat-span');
-				img.src = '../images/chatbot/chatbot1.png';
+				img.src = '../images/chatbot/chatbot1_edited.png';
 				input1.type = 'text';
 				input1.placeholder = 'Phone number';
 				input1.setAttribute('maxlength', '10');
@@ -160,7 +163,7 @@ document.querySelector('#name_svg').addEventListener('click', (e) => {
 					const span2 = document.createElement('span');
 					div2.classList.add('each-chat');
 					div2.classList.add('bot');
-					img2.src = '../images/chatbot/chatbot1.png';
+					img2.src = '../images/chatbot/chatbot1_edited.png';
 					span2.innerText = 'Choose stream';
 					span2.classList.add('chat-span');
 					div2.appendChild(img2);
@@ -189,7 +192,7 @@ document.querySelector('#name_svg').addEventListener('click', (e) => {
 									const span4 = document.createElement('span');
 									div6.classList.add('each-chat');
 									div6.classList.add('bot');
-									img3.src = '../images/chatbot/chatbot1.png';
+									img3.src = '../images/chatbot/chatbot1_edited.png';
 									span3.innerText =
 										'this course is meant for those who have completed their 12th class board exams and might have already attempted the NEET. They will appear for NEET in the coming year after one year of training focused on NEET.';
 									span3.classList.add('chat-span');
@@ -214,7 +217,7 @@ document.querySelector('#name_svg').addEventListener('click', (e) => {
 									const span6 = document.createElement('span');
 									div7.classList.add('each-chat');
 									div7.classList.add('bot');
-									img4.src = '../images/chatbot/chatbot1.png';
+									img4.src = '../images/chatbot/chatbot1_edited.png';
 									span5.innerText =
 										'this course is meant for those who have completed their 12th class board exams and might have already attempted the NEET. They will appear for NEET in the coming year after one year of training focused on NEET.';
 									span5.classList.add('chat-span');
@@ -239,7 +242,7 @@ document.querySelector('#name_svg').addEventListener('click', (e) => {
 									const span8 = document.createElement('span');
 									div8.classList.add('each-chat');
 									div8.classList.add('bot');
-									img5.src = '../images/chatbot/chatbot1.png';
+									img5.src = '../images/chatbot/chatbot1_edited.png';
 									span7.innerText =
 										'this course is meant for those who have completed their 12th class board exams and might have already attempted the NEET. They will appear for NEET in the coming year after one year of training focused on NEET.';
 									span7.classList.add('chat-span');
