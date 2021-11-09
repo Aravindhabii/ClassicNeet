@@ -8,7 +8,7 @@ const meth2 = document.querySelector(".bgmeth2");
 const meth3 = document.querySelector(".bgmeth3");
 const meth4 = document.querySelector(".bgmeth4");
 const meth5 = document.querySelector(".bgmeth5");
-// const body = document.querySelector("body");
+let bodyCourse = document.querySelector("body");
 console.log('cours');
 const exit = document.querySelectorAll(".exit");
 if (btn1) {
@@ -16,7 +16,8 @@ if (btn1) {
     console.log("clcik");
     meth.style.display = "flex";
     // meth.style.position = 'fixed';
-    body.style.overflow = "hidden";
+    bodyCourse.style.overflow = "hidden";
+    console.log(bodyCourse.style.overflow);
   });
 
 }
@@ -26,7 +27,7 @@ if (btn2) {
     console.log("clcik");
     meth.style.display = "flex";
     // meth.style.position = 'fixed';
-    body.style.overflow = "hidden";
+    bodyCourse.style.overflow = "hidden";
   });
 }
 if (btn3) {
@@ -35,7 +36,7 @@ if (btn3) {
     console.log("clcik");
     meth.style.display = "flex";
     // meth.style.position = 'fixed';
-    body.style.overflow = "hidden";
+    bodyCourse.style.overflow = "hidden";
   });
 }
 if (btn4) {
@@ -43,7 +44,7 @@ if (btn4) {
     console.log("clcik");
     meth.style.display = "flex";
     // meth.style.position = 'fixed';
-    body.style.overflow = "hidden";
+    bodyCourse.style.overflow = "hidden";
   });
 }
 if (btn5) {
@@ -51,7 +52,7 @@ if (btn5) {
     console.log("clcik");
     meth.style.display = "flex";
     // meth.style.position = 'fixed';
-    body.style.overflow = "hidden";
+    bodyCourse.style.overflow = "hidden";
   });
 }
 
@@ -72,7 +73,7 @@ exit.forEach((e) => {
       meth4.style.display = "none";
     }
     console.log("hrllo");
-    body.style.overflow = "unset";
+    bodyCourse.style.overflow = "unset";
   });
 });
 
@@ -107,11 +108,15 @@ $(window)
       );
       $(".para1JEE").replaceWith(
           
-        "<p class='hexContent'>This course is meant for students who have completed their 10th std board exams...</p>"
+        "<p class='hexContent'>This course is meant for students who have completed their 10th std...</p>"
+      );
+      $(".para2JEE").replaceWith(
+          
+        "<p class='hexContent'>The course is specifically designed for those who wish to focus on JEE...</p>"
       );
       $(".para3JEE").replaceWith(
           
-        "<p class='hexContent'>This course is meant for those who are appearing for their 12th class board exams...</p>"
+        "<p class='hexContent'>This course is meant for those who are appearing for their 12th class...</p>"
       );
     }
     if (window.innerWidth < 750) {

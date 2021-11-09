@@ -5,10 +5,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="stylesheets/contactus.css" />
+		<link rel="stylesheet" href="stylesheets/chatbot.css" />
+
 		<title>Contact Us</title>
 	</head>
 	<body>
-		<%- include('./layout/header') %>
+		<%- include('./layout/header') %> <%- include('./chatbot') %>
 		<section class="enquire-form-container">
 			<div>
 				<div class="left">
@@ -67,48 +69,57 @@
 				</div>
 				<div class="right">
 					<h1>Enquiry Form</h1>
-					<form action="mailto:info@classicneetacademy.com" method="POST" enctype="text/plain">
+					<form
+						action="mailto:info@classicneetacademy.com"
+						method="POST"
+						enctype="text/plain"
+					>
 						<div class="input-container">
 							<label for="name">Name</label>
 							<input
 								type="text"
-								name="name"
-								class="form-input"
+								name="name"								
+								class="form-input name-input"
 								id="name"
-								required
+								
 							/>
+							<div class="nameError"></div>
 						</div>
 						<div class="input-container">
-							<label for="phone">Phone number</label>
+							<label for="phone">Phone number <span style="color: red;">*</span></label>
 							<input
 								type="text"
 								name="phone"
 								class="form-input phonenum"
 								id="phone"
-								required
+								
+								
 							/>
+							<div class="phoneError"></div>
 						</div>
 						<div class="input-container">
 							<label for="phone">Email</label>
 							<input
-								type="text"
+								type="email"
 								name="email"
-								class="form-input"
+								class="form-input email-input"
 								id="email"
-								required
+								
 							/>
+							<div class="emailError"></div>
 						</div>
 						<div class="textarea-container">
 							<label for="message">Comment</label>
 							<textarea
 								name="message"
-								class="form-input"
+								class="form-input comment-input"
 								id="message"
-								required
+								
 							></textarea>
+							<div class="commentError"></div>
 						</div>
 						<div class="button-container">
-							<button>Submit</button>
+							<button class="submit">Submit</button>
 							<button class="reset">Reset</button>
 						</div>
 					</form>
@@ -118,5 +129,6 @@
 		<%- include('./layout/footer') %>
 		<script src="javascripts/contactus.js"></script>
 		<script src="javascripts/common.js"></script>
+		<script src="javascripts/chatbot.js"></script>
 	</body>
 </html>

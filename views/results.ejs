@@ -1,139 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="stylesheets/results.css" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
-    />
-    <title>Results</title>
-  </head>
-  <body>
-    <%- include('./layout/header') %>
-    <!-- Swiper -->
-    <!-- Slider main container -->
-<section class="swiper">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
-    <!-- Slides -->
-    <div class="swiper-slide"><img src="../../images/home/img1.jpeg" alt="" /></div>
-    <div class="swiper-slide"><img src="../../images/home/img2.jpeg" alt="" /></div>
-    <div class="swiper-slide"><img src="../../images/home/img3.jpeg" alt="" /></div>
-    <div class="swiper-slide"><img src="../../images/home/img4.jpeg" alt="" /></div>
-  </div>
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="stylesheets/results.css" />
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+		/>
+		<link rel="stylesheet" href="stylesheets/chatbot.css" />
 
-  <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
+		<title>Results</title>
+	</head>
+	<body>
+		<%- include('./layout/header') %> <%- include('./chatbot') %>
+		<!-- Swiper -->
+		<!-- Slider main container -->
+		<section class="swiper">
+			<!-- Additional required wrapper -->
+			<div class="swiper-wrapper">
+				<!-- Slides -->
+				<div class="swiper-slide">
+					<img src="../../images/home/img1.jpeg" alt="" />
+				</div>
+				<div class="swiper-slide">
+					<img src="../../images/home/img2.jpeg" alt="" />
+				</div>
+				<div class="swiper-slide">
+					<img src="../../images/home/img3.jpeg" alt="" />
+				</div>
+				<div class="swiper-slide">
+					<img src="../../images/home/img4.jpeg" alt="" />
+				</div>
+			</div>
+			<!-- If we need pagination -->
+			<div class="swiper-pagination"></div>
 
-  <!-- If we need scrollbar -->
-  <div class="swiper-scrollbar"></div>
-</section>
+			<!-- If we need navigation buttons -->
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
 
-    <section class="section2">
-      <div class="gridcontainer">
-        <% students.forEach((student)=> { %>
-          <!-- <div class="griditem1 gridbox">
+			<!-- If we need scrollbar -->
+			<div class="swiper-scrollbar"></div>
+		</section>
+
+		<section class="section2">
+			<div class="gridcontainer">
+				<% students.forEach((student)=> { %>
+				<!-- <div class="griditem1 gridbox">
             <img src="<%= student.studentimg %>" data-img="<%= student.studentimg %>" alt="studentimg1" />
             <span class="griditem1span"
               ><h3 data-name="<%= student.name %>" class="nameStudent"><%= student.name %></h3>
               <p data-score="<%= student.score %>" class="scoreStudent"><%= student.score %></p></span
             >
           </div> -->
-          <div class="refbox" data-name="<%= student.name %>" data-score="<%= student.score %>" data-img="<%= student.studentimg %>"></div>
-          <%  }) %>
-          <div class="griditem1 gridbox">
-            <img class="imgTopper" src="" />
-            <span class="griditem1span"
-              ><h3 class="nameStudent"></h3>
-              <p class="scoreStudent"></p></span
-            >
-          </div>
-          <div class="griditem1 gridbox">
-            <img class="imgTopper" src="" />
-            <span class="griditem1span"
-              ><h3 class="nameStudent"></h3>
-              <p class="scoreStudent"></p></span
-            >
-          </div>
-          <div class="griditem1 gridbox">
-            <img class="imgTopper" src="" />
-            <span class="griditem1span"
-              ><h3 class="nameStudent"></h3>
-              <p class="scoreStudent"></p></span
-            >
-          </div>
-          <div class="griditem1 gridbox">
-            
-            <img class="imgTopper" src="" />
-            
-            <span class="griditem1span"
-              ><h3 class="nameStudent"></h3>
-              <p class="scoreStudent"></p></span
-            >
-          </div>
-          <div class="griditem1 gridbox">
-            <img class="imgTopper" src="" />
-            <span class="griditem1span"
-              ><h3 class="nameStudent"></h3>
-              <p class="scoreStudent"></p></span
-            >
-          </div>
-          <div class="griditem1 gridbox">
-            <img class="imgTopper" src="" />
-            <span class="griditem1span"
-              ><h3 class="nameStudent"></h3>
-              <p class="scoreStudent"></p></span
-            >
-          </div>
-          <div class="griditem1 gridbox">
-            <img class="imgTopper" src="" />
-            <span class="griditem1span"
-              ><h3 class="nameStudent"></h3>
-              <p class="scoreStudent"></p></span
-            >
-          </div>
-          <div class="griditem1 gridbox">
-            <img class="imgTopper" src="" />
-            <span class="griditem1span"
-              ><h3 class="nameStudent"></h3>
-              <p class="scoreStudent"></p></span
-            >
-          </div>
-          <div class="griditem1 gridbox">
-            <img class="imgTopper" src="" />
-            <span class="griditem1span"
-              ><h3 class="nameStudent"></h3>
-              <p class="scoreStudent"></p></span
-            >
-          </div>
+				<div
+					class="refbox"
+					data-name="<%= student.name %>"
+					data-score="<%= student.score %>"
+					data-img="<%= student.studentimg %>"
+				></div>
+				<% }) %>
+				<div class="griditem1 gridbox">
+					<img class="imgTopper" src="" />
+					<span class="griditem1span"
+						><h3 class="nameStudent"></h3>
+						<p class="scoreStudent"></p
+					></span>
+				</div>
+				<div class="griditem1 gridbox">
+					<img class="imgTopper" src="" />
+					<span class="griditem1span"
+						><h3 class="nameStudent"></h3>
+						<p class="scoreStudent"></p
+					></span>
+				</div>
+				<div class="griditem1 gridbox">
+					<img class="imgTopper" src="" />
+					<span class="griditem1span"
+						><h3 class="nameStudent"></h3>
+						<p class="scoreStudent"></p
+					></span>
+				</div>
+				<div class="griditem1 gridbox">
+					<img class="imgTopper" src="" />
 
-      </div>
-    </section>
+					<span class="griditem1span"
+						><h3 class="nameStudent"></h3>
+						<p class="scoreStudent"></p
+					></span>
+				</div>
+				<div class="griditem1 gridbox">
+					<img class="imgTopper" src="" />
+					<span class="griditem1span"
+						><h3 class="nameStudent"></h3>
+						<p class="scoreStudent"></p
+					></span>
+				</div>
+				<div class="griditem1 gridbox">
+					<img class="imgTopper" src="" />
+					<span class="griditem1span"
+						><h3 class="nameStudent"></h3>
+						<p class="scoreStudent"></p
+					></span>
+				</div>
+				<div class="griditem1 gridbox">
+					<img class="imgTopper" src="" />
+					<span class="griditem1span"
+						><h3 class="nameStudent"></h3>
+						<p class="scoreStudent"></p
+					></span>
+				</div>
+				<div class="griditem1 gridbox">
+					<img class="imgTopper" src="" />
+					<span class="griditem1span"
+						><h3 class="nameStudent"></h3>
+						<p class="scoreStudent"></p
+					></span>
+				</div>
+				<div class="griditem1 gridbox">
+					<img class="imgTopper" src="" />
+					<span class="griditem1span"
+						><h3 class="nameStudent"></h3>
+						<p class="scoreStudent"></p
+					></span>
+				</div>
+			</div>
+		</section>
 
-    <%- include('./layout/footer') %>
-    <script src="javascripts/results.js"></script>
-    <script src="javascripts/common.js"></script>
-    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-  </body>
+		<%- include('./layout/footer') %>
+		<script src="javascripts/results.js"></script>
+		<script src="javascripts/common.js"></script>
+		<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+		<script src="javascripts/chatbot.js"></script>
+	</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

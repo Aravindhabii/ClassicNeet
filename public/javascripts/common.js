@@ -6,12 +6,13 @@ const line1 = document.querySelector(".line1");
 const line2 = document.querySelector(".line2");
 const line3 = document.querySelector(".line3");
 const body = document.querySelector('body')
+
 console.log("Hello");
 
 const navslide = () => {
   hamburger.addEventListener("click", () => {
     console.log('lol');
-    //toggle
+    
     body.classList.toggle('bodyy')
     if(body.getAttribute('class').includes('bodyy')) {
       body.style.overflowY = 'hidden'
@@ -65,7 +66,7 @@ var swiper = new Swiper(".mySwiper", {
 var swiper2 = new Swiper(".mySwiper2", {
   slidesPerView: 3,
   spaceBetween: 30,
-  slidesPerGroup: 1,
+  slidesPerGroup: 3,
   loop: true,
   autoplay:true,
   loopFillGroupWithBlank: true,
@@ -82,8 +83,9 @@ var swiper2 = new Swiper(".mySwiper2", {
 var swiper1 = new Swiper(".mySwiper1", {
   slidesPerView: 3,
   spaceBetween: 30,
-  slidesPerGroup: 1,
+  slidesPerGroup: 3,
   loop: true,
+  autoplay:true,
   loopFillGroupWithBlank: true,
   pagination: {
     el: ".swiper-pagination",
