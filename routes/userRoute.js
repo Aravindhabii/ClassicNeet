@@ -5,7 +5,6 @@ const dotenv = require("dotenv");
 const db = require("../database");
 const multer = require("multer");
 const { storage, cloudinary } = require("../cloudinary");
-const { app } = require("firebase-admin");
 const { response } = require("express");
 const upload = multer({ storage });
 var sizeOf = require("image-size");
