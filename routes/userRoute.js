@@ -8,6 +8,7 @@ const { storage, cloudinary } = require("../cloudinary");
 const { response } = require("express");
 const upload = multer({ storage });
 var sizeOf = require("image-size");
+const {isloggedin} = require("../middleware");
 
 router
   .route("/example")
@@ -117,14 +118,14 @@ router.route("/home").get(async (req, res) => {
   });
 });
 
-router.route("/admin").get(async (req, res) => {
+router.route("/admin").get(isloggedin,async (req, res) => {
   res.redirect("/admin/sliderrevolution");
 });
 
 // slider Revolution Route
 router
   .route("/admin/sliderrevolution")
-  .get(async (req, res) => {
+  .get(isloggedin,async (req, res) => {
     await db.query("SELECT * FROM homeslider", async (error, response) => {
       var arr = [];
       if (error) {
@@ -196,7 +197,7 @@ router
 // latest updates route
 router
   .route("/admin/latestupdates")
-  .get(async (req, res) => {
+  .get(isloggedin,async (req, res) => {
     await db.query("SELECT * FROM latest_updates", (err, response) => {
       arr = [];
       if (err) {
@@ -265,7 +266,7 @@ router
 // Our Toppers Route
 router
   .route("/admin/ourtoppers")
-  .get(async (req, res) => {
+  .get(isloggedin,async (req, res) => {
     await db.query("SELECT * FROM ourtoppers", async (error, response) => {
       var arr = [];
       if (error) {
@@ -345,7 +346,7 @@ router
 
 //Students testimonial Route
 router
-  .route("/admin/studenttestimonials")
+  .route(isloggedin,"/admin/studenttestimonials")
   .get(async (req, res) => {
     await db.query("SELECT * FROM studenttestimonials", (err, response) => {
       arr = [];
@@ -413,7 +414,7 @@ router
 
 router
   .route("/admin/calendarevents")
-  .get(async (req, res) => {
+  .get(isloggedin,async (req, res) => {
     await db.query("SELECT * FROM calendarevents", async (error, response) => {
       var arr = [];
       if (error) {
@@ -503,7 +504,7 @@ router
 
 router
   .route("/admin/neetachievements")
-  .get(async (req, res) => {
+  .get(isloggedin,async (req, res) => {
     await db.query("SELECT * FROM neetacheivements", (err, response) => {
       arr = [];
       if (err) {
@@ -547,7 +548,7 @@ router
 
 router
   .route("/admin/neetachievements")
-  .get(async (req, res) => {
+  .get(isloggedin,async (req, res) => {
     res.render("admin/home/studentTestimonials");
   })
   .post(async (req, res) => {
@@ -630,7 +631,7 @@ router.route("/aboutus").get(async (req, res) => {
 
 router
   .route("/admin/aboutus/history")
-  .get(async (req, res) => {
+  .get(isloggedin,async (req, res) => {
     await db.query("SELECT * FROM history", async (error, response) => {
       var arr = [];
       if (error) {
@@ -727,7 +728,7 @@ router.route("/Demovideos").get(async (req, res) => {
 
 router
   .route("/admin/demovideos")
-  .get(async (req, res) => {
+  .get(isloggedin,async (req, res) => {
     await db.query("SELECT * FROM demovideos", (err, response) => {
       arr = [];
       if (err) {
@@ -816,7 +817,7 @@ router.route("/results").get(async (req, res) => {
 
 router
   .route("/admin/results/studentdetails")
-  .get(async (req, res) => {
+  .get(isloggedin,async (req, res) => {
     await db.query("SELECT * FROM studentdetails", async (error, response) => {
       var arr = [];
       if (error) {
@@ -901,7 +902,7 @@ router
 
 router
   .route("/admin/results/images")
-  .get(async (req, res) => {
+  .get(isloggedin,async (req, res) => {
     await db.query("SELECT * FROM resultslider", async (error, response) => {
       var arr = [];
       if (error) {
@@ -977,7 +978,7 @@ router.route("/successstories").get(async (req, res) => {
 
 router
   .route("/admin/successstories/testimonials")
-  .get(async (req, res) => {
+  .get(isloggedin,async (req, res) => {
     await db.query("SELECT * FROM successstories", async (error, response) => {
       var arr = [];
       if (error) {
@@ -1060,7 +1061,5 @@ router
 router.route("/404error").get(async (req, res) => {
   res.render("404error");
 });
-
-router.route("/admin");
 
 module.exports = router;
