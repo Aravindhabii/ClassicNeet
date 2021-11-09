@@ -4,28 +4,41 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/login.css" />
+    <title>Login</title>
   </head>
   <body>
-    <form
+    <section class="loginpage">
+    <div class="login">
+    <form 
       action="/login"
       method="POST"
       id="login"
       style="display: flex; flex-direction: column; width: 70vw"
     >
-      <label for="username">Username</label>
-      <input type="text" placeholder="username" name="username" id="username" />
-      <label for="password">password</label>
-      <input
-        type="password"
-        placeholder="password"
-        name="password"
-        id="password"
-      />
+      <div class="name">
+        <h1>LOGIN</h1>
+      </div>
+      <div class="Username">
+        <label for="username">Username</label>
+        <input type="text" placeholder="username" name="username" id="username" />
+      </div>
+      <div class="Username">
+        <label for="password">password</label>
+        <input
+          type="password"
+          placeholder="password"
+          name="password"
+          id="password"
+        />
+      </div>
 
-      <button type="submit">Submit</button>
+      <div class="btn">
+        <button class="submit" type="submit">Submit</button>
+      </div>
     </form>
-
+  </div>
+  </section>
     <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-analytics.js"></script>
     <script src="javascripts/auth.js"></script>
