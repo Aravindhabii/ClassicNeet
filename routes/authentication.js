@@ -56,16 +56,18 @@ router
 	})
 	.post(async (req, res) => {
 		const { password, username } = req.body;
-		// const emailinuse = "This email is already in use";
 		const hasedpass = await bcrypt.hash(password, 8);
+		
 		db.query(
 			'SELECT * FROM users WHERE username = ?',
 			[username],
-			(err, result) => {
+			(err, response) => {
+				console.log(hasedpass, response[0].password);
 				const passcon = bcrypt.compare(
 					password,
-					hasedpass,
+					response[0].password,
 					function (err, result) {
+						console.log(result);
 						if (result) {
 							console.log(result);
 							const loginuser = 'Yes';
