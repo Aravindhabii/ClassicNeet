@@ -3,6 +3,7 @@ const path = require('path');
 const ejsMate = require('ejs-mate');
 const session = require('express-session');
 const flash = require('connect-flash');
+var cookieParser = require('cookie-parser')
 const userRoutes = require('./routes/userRoute');
 const authentication = require('./routes/authentication');
 const db = require('./database');
@@ -39,10 +40,43 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(flash());
 
-app.get('/viewcount', (req, res) => {});
+
+// app.get('/flash', function(req, res){
+// 	// Set a flash message by passing the key, followed by the value, to req.flash().
+// 	req.flash('info', 'Flash is back!')
+// 	res.redirect('/');
+//   });
+   
+//   app.get('/', function(req, res){
+// 	// Get an array of flash messages by passing the key to req.flash()
+// 	res.send('hello from / ', { });
+//   });
+
+app.use((req, res, next) => {
+    // res.locals.currentUser = req.user;
+	console.log("hello");
+    res.locals.success = req.flash('success');
+    res.locals.error = req.flash('error');
+    next();
+})
+
+// app.use(function() {
+// 	app.use(cookieParser('keyboard cat'));
+// 	app.use(session({ cookie: { maxAge: 60000 }}));
+// 	app.use(flash());
+// });
+
+
+
+
+// req.flash('error', 'You do not have permission to do that!');
+// req.flash('success', 'Successfully made a new campground!');
+
+
 
 app.use('/', userRoutes);
 app.use('/', authentication);
+
 
 app.get('/stories', (req, res) => {
 	res.render('successStories');

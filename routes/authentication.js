@@ -6,6 +6,8 @@ const dotenv = require('dotenv');
 const { isloggedin } = require('../middleware.js');
 const { response } = require('express');
 const db = require('../database');
+const flash = require('connect-flash');
+
 
 const yepp = 'yes';
 
@@ -73,6 +75,8 @@ router
 							const loginuser = 'Yes';
 							req.session.loginuser = loginuser;
 							console.log(req.session.loginuser);
+							req.flash('success', 'Successfully Logged In');
+							console.log(res.locals.success);
 							res.redirect('/admin');
 						} else {
 							res.redirect('/login');
