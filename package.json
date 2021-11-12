@@ -5,7 +5,8 @@
 	"main": "app.js",
 	"homepage": "web.classicneetacademy.com",
 	"scripts": {
-		"start": "nodemon app.js"
+		"dev": "nodemon app.js",
+		"start": "node app.js"
 	},
 	"repository": {
 		"type": "git",
