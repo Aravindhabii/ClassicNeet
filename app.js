@@ -65,18 +65,11 @@ app.use((req, res, next) => {
 // 	app.use(session({ cookie: { maxAge: 60000 }}));
 // 	app.use(flash());
 // });
-
-
-
-
 // req.flash('error', 'You do not have permission to do that!');
 // req.flash('success', 'Successfully made a new campground!');
 
-
-
 app.use('/', userRoutes);
 app.use('/', authentication);
-
 
 app.get('/stories', (req, res) => {
 	res.render('successStories');
