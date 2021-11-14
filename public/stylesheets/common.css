@@ -206,6 +206,10 @@ footer {
 	height: fit-content;
 }
 
+footer.dark {
+	color: white !important;
+}
+
 .footer_svg_1,
 .footer_svg_2 {
 	position: absolute;

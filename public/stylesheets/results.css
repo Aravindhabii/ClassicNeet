@@ -1,171 +1,168 @@
 .swiper {
-  width: 100%;
-  height: 100vh;
+	width: 100%;
+	height: 100vh;
 }
 body {
-  background-color: EEEEEE;
+	background-color: EEEEEE;
 }
+
+body.dark {
+	background-color: #181a1b;
+	color: white;
+}
+
 .swiper-slide img {
-  height: 90vh;
-  width: 100%;
+	height: 90vh;
+	width: 100%;
 }
 
 .section2 {
-  position: relative;
- 
-  width: 100%;
-  margin-bottom: 5rem;
+	position: relative;
 
-  /* background:blue; */
+	width: 100%;
+	margin-bottom: 5rem;
+
+	/* background:blue; */
 }
 
 .gridcontainer {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: grid;
-    grid-template-columns: repeat(3,1fr);
-    justify-items: center;
-    grid-row-gap: 5rem;
-    align-items: center;
-  /* -ms-grid-row-align: center;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	justify-items: center;
+	grid-row-gap: 5rem;
+	align-items: center;
+	/* -ms-grid-row-align: center;
       -ms-grid-column-align: center; */
-  /* align-items: center; */
-  /* justify-content: space-around; */
+	/* align-items: center; */
+	/* justify-content: space-around; */
 }
 
 .gridbox {
-  position: relative;
-  height: 12rem;
-  width: 24rem;
-  
-  border: 2px solid #2c2e43a1;
-  display: flex;
-  
-  align-items: center;
-  /* box-shadow: 2px 2px 50px rgb(0,0,0,0.4); */
-  border-radius: 10px;
-  background-color:#77acf18f;
+	position: relative;
+	height: 12rem;
+	width: 24rem;
 
-  /* -webkit-box-reflect: below 0 linear-gradient(transparent, white); */
+	border: 2px solid #2c2e43a1;
+	display: flex;
+
+	align-items: center;
+	/* box-shadow: 2px 2px 50px rgb(0,0,0,0.4); */
+	border-radius: 10px;
+	background-color: #77acf18f;
+
+	/* -webkit-box-reflect: below 0 linear-gradient(transparent, white); */
 }
 .nameStudent {
-  padding: 1rem;
+	padding: 1rem;
 }
 .scoreStudent {
-  padding: .2rem 1.2rem;
-  border-radius: 20px;
-  background-color: white;
-  color: black;
-  font-size: 22px;
-  font-weight: 600;
+	padding: 0.2rem 1.2rem;
+	border-radius: 20px;
+	background-color: white;
+	color: black;
+	font-size: 22px;
+	font-weight: 600;
 }
 .gridanime1 {
-  animation-name: card;
-  animation-iteration-count: infinite;
-  animation-duration: 20s;
-  animation-timing-function: ease-in-out;
+	animation-name: card;
+	animation-iteration-count: infinite;
+	animation-duration: 20s;
+	animation-timing-function: ease-in-out;
 }
 .gridanime2 {
-  animation-name: card2;
-  animation-iteration-count: infinite;
-  animation-duration: 20s;
-  animation-timing-function: ease-in-out;
+	animation-name: card2;
+	animation-iteration-count: infinite;
+	animation-duration: 20s;
+	animation-timing-function: ease-in-out;
 }
 .griditem2 {
-  
-  /* background: white; */
-  flex-direction: row-reverse;
+	/* background: white; */
+	flex-direction: row-reverse;
 }
 
 .griditem4 {
-  
-  /* background: white; */
-  flex-direction: row-reverse;
+	/* background: white; */
+	flex-direction: row-reverse;
 }
 
 .griditem6 {
-  
-  /* background: white; */
-  flex-direction: row-reverse;
+	/* background: white; */
+	flex-direction: row-reverse;
 }
 
 .griditem8 {
-  
-  /* background: white; */
-  flex-direction: row-reverse;
+	/* background: white; */
+	flex-direction: row-reverse;
 }
 
 .griditem10 {
-  
-  /* background: #000; */
-  flex-direction: row-reverse;
+	/* background: #000; */
+	flex-direction: row-reverse;
 }
 
 .griditem12 {
-  
-  /* background: #000; */
-  flex-direction: row-reverse;
+	/* background: #000; */
+	flex-direction: row-reverse;
 }
 
 .gridbox img {
-  height: 100%;
-  width: 50%;
-  border-radius: 10px;
+	height: 100%;
+	width: 50%;
+	border-radius: 10px;
 }
 .refbox {
-  display: none;
+	display: none;
 }
 .gridbox span {
-  height: 100%;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	height: 100%;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
-
-
 
 .gridbox > span > h3 {
-  font-size: 19px;
+	font-size: 19px;
 }
-@keyframes  card   {
-  0% {
-    flex-direction: row;
-  }
-  100% {
-    flex-direction: row-reverse;
-  }
+@keyframes card {
+	0% {
+		flex-direction: row;
+	}
+	100% {
+		flex-direction: row-reverse;
+	}
 }
-@keyframes  card2   {
-  0% {
-    flex-direction: row-reverse;
-  }
-  100% {
-    flex-direction: row;
-  }
+@keyframes card2 {
+	0% {
+		flex-direction: row-reverse;
+	}
+	100% {
+		flex-direction: row;
+	}
 }
-@media (max-width:1250px) {
-  .gridcontainer {
-      grid-template-columns: repeat(2,1fr);
-  }   
-}
-
-@media (max-width:800px) {
-  
-.swiper-slide img {
-  object-fit: cover;
-  background-position: center;
-}
-  .gridcontainer {
-      grid-template-columns: repeat(1,1fr);
-  }   
+@media (max-width: 1250px) {
+	.gridcontainer {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
-@media (max-width:450px) {
-  .gridbox {
-    height: 10rem;
-    width: 20rem;
-  }   
+@media (max-width: 800px) {
+	.swiper-slide img {
+		object-fit: cover;
+		background-position: center;
+	}
+	.gridcontainer {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+@media (max-width: 450px) {
+	.gridbox {
+		height: 10rem;
+		width: 20rem;
+	}
 }

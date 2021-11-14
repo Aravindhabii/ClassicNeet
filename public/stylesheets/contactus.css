@@ -2,8 +2,14 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
+
+body.dark {
+	background-color: #181a1b;
+	color: white;
+}
+
 .contact-container {
 	width: 100%;
 	display: flex;
@@ -41,6 +47,11 @@
 	align-items: center;
 	justify-content: center;
 	min-height: 550px;
+	text-align: center;
+}
+
+.left svg {
+	width: 5rem;
 }
 
 .right {
@@ -82,7 +93,6 @@
 	border: 1px solid #c2c2c2;
 	/* margin-top: 0.5rem; */
 	font-size: 1.3rem;
-	
 }
 
 .textarea-container {
@@ -106,8 +116,8 @@
 	align-items: center;
 }
 
-.reset, .submit {
-	
+.reset,
+.submit {
 	border: none;
 	height: 2.5rem;
 	color: white;
@@ -119,11 +129,11 @@
 	background-color: #3986be;
 }
 .submit {
-	background-color: #AAAAAA ;
+	background-color: #aaaaaa;
 }
-@media (max-width:1000px){
+@media (max-width: 1000px) {
 	.left {
-	   display: none;
+		display: none;
 	}
 	.right {
 		width: 100%;
@@ -138,7 +148,7 @@
 		border-left: none;
 	}
 }
-@media (max-width:600px){
+@media (max-width: 600px) {
 	.left {
 		display: none;
 	}
@@ -153,31 +163,28 @@
 		padding: 1rem;
 		/* border: 1px solid #c2c2c2; */
 		border-left: none;
-		
 	}
-.enquire-form-container {
-	width: 100%;
-	height: auto;
-	display: flex;
-	align-items: flex-start;
-	justify-content: center;
-	margin-top: 1.5rem;
+	.enquire-form-container {
+		width: 100%;
+		height: auto;
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		margin-top: 1.5rem;
+	}
 }
-}
 
-
-
-
-.phoneError ,.emailError , .commentError{
+.phoneError,
+.emailError,
+.commentError {
 	color: red;
 	font-size: 14px;
-	
 }
 .disabled {
 	background-color: rgb(205, 230, 255);
 	color: rgb(168, 168, 168);
 }
-.nameError  {
+.nameError {
 	display: none;
 	color: red;
 	font-size: 15px;

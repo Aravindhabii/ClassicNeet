@@ -5,7 +5,7 @@
 }
 
 .sec-2.dark > .div-1 {
-  color: white;
+	color: white;
 }
 
 .uparrow {
@@ -392,6 +392,10 @@ p {
 	display: flex;
 	border: 5px solid #efe81e;
 }
+.calenderCard.dark {
+	background-color: rgb(24, 26, 27);
+	color: white;
+}
 .calenderCard:hover {
 	transform: scale(1.1);
 	/* box-shadow: 2px 2px 60px rgba(4, 113, 255, 0.2); */
@@ -435,6 +439,10 @@ p {
 	text-decoration: none;
 	font-weight: bolder;
 }
+.news-box.dark p {
+	background-color: rgb(24, 26, 27);
+	color: white;
+}
 .news-box .section2 .div-1 img {
 	position: relative;
 	width: 100%;
@@ -467,6 +475,14 @@ p {
 	margin-bottom: 3rem;
 
 	/* margin-right: 10rem; */
+}
+
+.sec-2 .div-1.dark > h1 {
+	color: white;
+}
+
+.sec-2 .div-2.dark > h1 {
+	color: white;
 }
 .section-2 .div-1 .calandersvg {
 	margin-top: 3rem;
@@ -595,6 +611,16 @@ p {
 	align-items: center;
 	/* height: 60vh; */
 	width: 100%;
+}
+
+.cardsDiv.dark .imgHeader {
+	color: white;
+}
+
+.cardsDiv.dark .box1,
+.cardsDiv.dark .box2,
+.cardsDiv.dark .box3 {
+	box-shadow: 5px 5px 100px rgb(255, 255, 255, 20%);
 }
 /* .cardsDiv {
 	position: relative;
@@ -881,9 +907,20 @@ p {
 	z-index: 5;
 }
 
+.neet-2020-toppers-a.dark {
+	background-color: inherit;
+	color: white !important;
+	border: 1px solid white;
+}
+
 .neet-2020-toppers-a a {
 	text-decoration: none;
 	color: black;
+}
+
+.neet-2020-toppers-a.dark a {
+	text-decoration: none;
+	color: white;
 }
 
 .stats {
