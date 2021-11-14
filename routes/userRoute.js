@@ -719,7 +719,7 @@ router.route('/Demovideos').get(async (req, res) => {
 			}
 
 			// console.log(response[0].latestupdates);
-			res.render('Demovideos', { link: arr });
+			res.render('demovideos', { link: arr });
 		}
 	});
 });
