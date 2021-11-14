@@ -739,7 +739,7 @@ router
 				}
 
 				// console.log(response[0].latestupdates);
-				res.render('admin/demovideos/demovideos', { link: arr });
+				res.render('admin/demovideos/Demovideos', { link: arr });
 			}
 		});
 	})
