@@ -7,4 +7,3 @@ module.exports.isloggedin = (req,res,next)=>{
         next();
     }
 }
-

@@ -75,8 +75,7 @@ router
 							const loginuser = 'Yes';
 							req.session.loginuser = loginuser;
 							console.log(req.session.loginuser);
-							req.flash('success', 'Successfully Logged In');
-							console.log(res.locals.success);
+							req.flash('success', 'i am freeep');
 							res.redirect('/admin');
 						} else {
 							res.redirect('/login');
@@ -86,6 +85,8 @@ router
 			}
 		);
 	});
+
+
 const multer = require('multer');
 const { storage, cloudinary } = require('../cloudinary');
 const upload = multer({ storage });
