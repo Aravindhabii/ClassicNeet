@@ -74,7 +74,6 @@ router
 							console.log(result);
 							const loginuser = 'Yes';
 							req.session.loginuser = loginuser;
-							console.log(req.session.loginuser);
 							req.flash('success', 'i am freeep');
 							res.redirect('/admin');
 						} else {
