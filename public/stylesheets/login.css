@@ -10,25 +10,37 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background:linear-gradient(to right top,#60EFFF,#369AFE);
+	/* background:linear-gradient(to right top,#60EFFF,#369AFE); */
+	background-image:url('../images/login/1.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .login{
 	width: 30%;
 	display: flex;
 	flex-direction: column;
-	background:rgba(256,256,256,0.8);
-    
+	background:rgba(256,256,256,0.5);
+    box-shadow: 0px 0px 3px #fff;
 	align-items: center;
 	justify-content: space-around;
 	height: 65%;
     border-radius: 30px; 
 }
+::placeholder{
+	text-align: center;
+	font-size: 1.3rem;
+}
 .name{
-    font-size: 2rem;
-    margin-bottom: 2rem;
+	margin: 2%;
+}
+.name h1{
+    font-size: 3rem;
+    /* margin-bottom: 2rem; */
     display: flex;
     align-items: center;
     justify-content: center;
+	color: #007effc7;
+	text-shadow: 2px 2px #000;
 }
 .Username {
 	width: 100%;
@@ -45,6 +57,7 @@
 	border: 1px solid #c2c2c2;
 	font-size: 1rem;	
     border-radius: 10px;
+	text-align: center;
 }
 .Username label{
     font-size: 1.5rem;
@@ -62,7 +75,10 @@
 	font-size: 1.3rem;
 	width: 15%;
 	border-radius: 20px;
+	background-color: #045d63 ;
+	cursor: pointer;
 }
-.submit {
-	background-color: #369AFE ;
+.submit:hover{
+	background-color: #045d6393 ;
+	
 }
