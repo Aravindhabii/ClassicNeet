@@ -101,3 +101,12 @@ submitbtn.addEventListener("click", () => {
 //     }
 //   })
 // });
+document.querySelectorAll(".updatesCheckbox").forEach((check, i) => {
+  check.addEventListener("change", () => {
+    if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
+      document.querySelector(".submit").removeAttribute("disabled");
+    } else {
+      document.querySelector(".submit").setAttribute("disabled", true);
+    }
+  });
+});

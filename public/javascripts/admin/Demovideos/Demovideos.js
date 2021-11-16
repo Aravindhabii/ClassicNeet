@@ -5,8 +5,6 @@ const sectionop = document.querySelector(".mainsection");
 const imgform = document.querySelector(".imgform");
 const submit = document.querySelector(".submit");
 
-
-
 addbtn.addEventListener("click", () => {
   previewDiv.style.display = "flex";
   imgform.style.transform = "translate(300vw,0)";
@@ -20,4 +18,13 @@ backbtn.addEventListener("click", () => {
 
 submit.addEventListener("click", () => {
   confirm("Click CONFIRM TO DELETE");
+});
+document.querySelectorAll(".updatesCheckbox").forEach((check, i) => {
+  check.addEventListener("change", () => {
+    if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
+      document.querySelector(".submit").removeAttribute("disabled");
+    } else {
+      document.querySelector(".submit").setAttribute("disabled", true);
+    }
+  });
 });
