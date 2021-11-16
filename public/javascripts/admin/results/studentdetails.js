@@ -5,7 +5,6 @@ const sectionop = document.querySelector(".mainsection");
 const imgform = document.querySelector(".imgform");
 const submit = document.querySelector(".submit");
 
-
 addbtn.addEventListener("click", () => {
   previewDiv.style.display = "flex";
   imgform.style.transform = "translate(300vw,0)";
@@ -30,11 +29,10 @@ for (let i = 0; i <= previewSpan.length - 1; i++) {
     for (let j = 0; j <= sliderimgurl.length - 1; j++) {
       if (i === j) {
         const img = document.createElement("img");
-        console.log(sliderimgurl[j].innerText.length < 1);
         if (sliderimgurl[j].innerText.length < 1) return;
         img.src = sliderimgurl[j].innerText;
         previewTopper.appendChild(img);
-        previewTopper.style.display = "block";
+        previewTopper.style.display = "flex";
         sectionop.style.filter = "blur(20px)";
         closesvg.addEventListener("click", () => {
           previewTopper.removeChild(img);
@@ -45,3 +43,12 @@ for (let i = 0; i <= previewSpan.length - 1; i++) {
     }
   });
 }
+document.querySelectorAll(".updatesCheckbox").forEach((check, i) => {
+  check.addEventListener("change", () => {
+    if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
+      document.querySelector(".submit").removeAttribute("disabled");
+    } else {
+      document.querySelector(".submit").setAttribute("disabled", true);
+    }
+  });
+});

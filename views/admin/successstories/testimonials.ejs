@@ -33,7 +33,7 @@
       <div class="left"><%- include('../../layout/adminSideBar') %></div>
       <div class="right">
         <div class="preview">
-          <h1 class="mb-5">Success Stories</h1>
+          <h1 class="mb-5">Student Testimonials</h1>
           <form
             action="/admin/successstories/testimonials"
             method="post"
@@ -56,7 +56,7 @@
             <div class="input-group d-flex flex-nowrap mb-3" style="width: 80%">
               <span class="input-group-text" id="addon-wrapping">Add Youtubelink</span>
               <input
-                type="text"
+                type="url"
                 name="youtubelink"
                 class="form-control"
                 aria-label="Username"
@@ -94,7 +94,7 @@
           method="post"
           class="imgform"
         >
-          <h1 class="m-5">Sucess Stories</h1>
+          <h1 class="m-5">Student Testimonials</h1>
  
           <table class="table" style="width: 70%">
             <thead>
@@ -140,7 +140,7 @@
             <button type="button" class="btn btn-outline-primary addbtn px-4">
               Add
             </button>
-            <button class="btn btn-outline-danger submit ms-5 px-3 submitbtn">
+            <button class="btn btn-outline-danger submit ms-5 px-3 submitbtn" disabled>
               Delete
             </button>
           </div>

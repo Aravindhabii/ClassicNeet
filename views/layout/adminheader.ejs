@@ -15,7 +15,11 @@
               Super Admin
             </a>
             <ul class="dropdown-menu justify-content-end" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Signout</a></li>
+<<<<<<< HEAD
+              <li><form action="/signout" method="post"><button class="dropdown-item" href="#">Signout</button></form></li>
+=======
+              <li><a class="dropdown-item" href="/logout">Signout</a></li>
+>>>>>>> b3b096aea75593f647de287c416991f6e1444044
             </ul>
           </li>
         </ul>
@@ -23,4 +27,21 @@
     </div>
   </nav>
 
-
+	<% if(success && success.length) {%>
+    <div class="d-flex justify-content-center alert alert-success alert-dismissible fade show" role="alert">
+      
+      <b><%= success %></b>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+    <% } %>
+    
+    <% if(error && error.length) {%>
+    <div class="d-flex justify-content-center alert alert-danger alert-dismissible fade show" role="alert">
+      <b><%= error %></b>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+  <% } %>

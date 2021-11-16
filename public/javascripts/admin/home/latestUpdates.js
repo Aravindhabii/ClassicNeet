@@ -10,8 +10,6 @@ const latestupdateform = document.querySelector(".latestupdateform");
 var inputtext = document.querySelector(".inputtext");
 const changablespan = document.querySelector(".changablespan");
 
-console.log(previewDiv);
-
 addbtn.addEventListener("click", () => {
   previewDiv.style.display = "flex";
   imgform.style.transform = "translate(300vw,0)";
@@ -24,32 +22,37 @@ backbtn.addEventListener("click", () => {
 });
 
 submitbtn.addEventListener("click", () => {
-  console.log("Dawwwwgg");
   Swal.fire({
-    title: 'Are you sure?',
+    title: "Are you sure?",
     text: "Are you sure you want to delete!",
-    icon: 'warning',
+    icon: "warning",
     showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes, delete it!'
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
   }).then((result) => {
     if (result.isConfirmed) {
-      latestupdateform.submit()
+      latestupdateform.submit();
     }
-  })
+  });
 });
 
-
-var counternum = 0
+var counternum = 0;
 
 counternum = inputtext.value.length;
 changablespan.innerHTML = counternum;
-console.log(counternum);
 
-inputtext.addEventListener('input',(e)=>{
-    var counternum = e.target.value.length
-    console.log('hello');
-    changablespan.innerHTML = counternum;
+inputtext.addEventListener("input", (e) => {
+  var counternum = e.target.value.length;
+  changablespan.innerHTML = counternum;
 });
 
+document.querySelectorAll(".updatesCheckbox").forEach((check, i) => {
+  check.addEventListener("change", () => {
+    if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
+      document.querySelector(".submit").removeAttribute("disabled");
+    } else {
+      document.querySelector(".submit").setAttribute("disabled", true);
+    }
+  });
+});

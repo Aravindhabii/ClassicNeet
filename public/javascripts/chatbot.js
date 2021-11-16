@@ -105,7 +105,6 @@ document.querySelector('#name_svg').addEventListener('click', (e) => {
 
 		const validityStateName = input.validity;
 		document.querySelector('#email_svg').addEventListener('click', (e) => {
-			console.log(validityStateName);
 			if (validityStateName.valid) {
 				span_email.remove();
 				const div1 = document.createElement('div');
