@@ -45,7 +45,6 @@ body{
 
 .right{
 	position: relative;
-	height: fit-content;
 	padding-bottom: 10px;
 	width: 90%;
 	display: flex;
