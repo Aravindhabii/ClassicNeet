@@ -84,7 +84,6 @@ router
 			}
 		);
 	});
-gir
 const multer = require('multer');
 const { storage, cloudinary } = require('../cloudinary');
 const upload = multer({ storage });

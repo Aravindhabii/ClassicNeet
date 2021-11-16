@@ -357,7 +357,7 @@ router
 					// console.log(image)
 					arr.push(link);
 				}
-				// console.log(response[0].latestupdates);
+				console.log('hii');
 				res.render('admin/home/studentTestimonials', { link: arr });
 			}
 		});
