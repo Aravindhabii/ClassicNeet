@@ -33,7 +33,7 @@ for (let i = 0; i <= previewSpan.length - 1; i++) {
         if (sliderimgurl[j].innerText.length < 1) return;
         img.src = sliderimgurl[j].innerText;
         previewTopper.appendChild(img);
-        previewTopper.style.display = "block";
+        previewTopper.style.display = "flex";
         sectionop.style.filter = "blur(20px)";
         closesvg.addEventListener("click", () => {
           previewTopper.removeChild(img);

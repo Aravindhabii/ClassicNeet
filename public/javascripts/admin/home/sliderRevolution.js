@@ -2,9 +2,9 @@ const previewDiv = document.querySelector('.preview');
 const previewSpan = document.querySelectorAll('.previewSpan');
 const sectionop = document.querySelector('.mainsection');
 const closesvg = document.querySelector('.closesvg');
-
 const fileimg = document.querySelectorAll('.fileimg');
 const sliderimgurl = document.querySelectorAll('.sliderimgurl');
+
 for (let i = 0; i <= fileimg.length - 1; i++) {
 	fileimg[i].addEventListener('change', (e) => {
 		document
@@ -19,15 +19,24 @@ for (let i = 0; i <= fileimg.length - 1; i++) {
 }
 
 document.querySelectorAll('.updatesCheckbox').forEach((check, i) => {
-	check.addEventListener('change', () => {
-		if (sliderimgurl[i].innerText.length >= 0) {
-			document.querySelectorAll('.updatesCheckbox').forEach((c, i) => {
-				if (c.checked) {
-					document.querySelector('.submit').removeAttribute('disabled');
-				}
-			});
-		}
-	});
+	if (check.checked === false) {
+		swal({
+			title: 'Are you sure?',
+			text: 'Once deleted, you will not be able to recover this imaginary file!',
+			icon: 'warning',
+			buttons: true,
+			dangerMode: true
+		}).then((willDelete) => {
+			if (willDelete) {
+				swal('Poof! Your imaginary file has been deleted!', {
+					icon: 'success'
+				});
+			} else {
+				swal('Your imaginary file is safe!');
+			}
+		});
+		return false;
+	}
 });
 
 for (let i = 0; i <= previewSpan.length - 1; i++) {
@@ -48,7 +57,7 @@ for (let i = 0; i <= previewSpan.length - 1; i++) {
 			}
 		}
 	});
-};
+}
 
 const currentPreviewSpan = document.querySelectorAll('.currentPreviewSpan');
 const currentSliderimgurl = document.querySelectorAll('.currentSliderimgurl');
@@ -69,4 +78,4 @@ for (let i = 0; i <= currentPreviewSpan.length - 1; i++) {
 			}
 		}
 	});
-};
+}
