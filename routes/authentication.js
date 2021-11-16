@@ -124,6 +124,12 @@ const upload = multer({ storage });
 //     );
 //   });
 
+router.route('/logout').post((req,res)=>{
+	req.session.destroy(()=>{
+		res.redirect('/login');
+	});
+});
+
 router
 	.route('/homeslider')
 	.get((req, res) => {
