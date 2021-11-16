@@ -8,7 +8,7 @@ const { storage, cloudinary } = require('../cloudinary');
 const { response } = require('express');
 const upload = multer({ storage });
 var sizeOf = require('image-size');
-const { isloggedin } = require('../middleware');
+const { isloggedin, flash } = require('../middleware');
 
 router
 	.route('/example')
@@ -24,7 +24,7 @@ router
 
 dotenv.config({ path: './.env' });
 
-router.route('/').get(async (req, res) => {
+router.route('/').get(flash, async (req, res) => {
 	await db.query('SELECT * FROM homeslider', async (error, response) => {
 		var arr = [];
 		if (error) {
@@ -96,6 +96,7 @@ router.route('/').get(async (req, res) => {
 														// console.log(response[0].latestupdates);
 													}
 													console.log(stutest);
+
 													res.render('home', {
 														img: arr,
 														ourtoppers,
@@ -124,7 +125,7 @@ router.route('/admin').get(isloggedin, async (req, res) => {
 // slider Revolution Route
 router
 	.route('/admin/sliderrevolution')
-	.get(isloggedin, async (req, res) => {
+	.get(flash, isloggedin, async (req, res) => {
 		await db.query('SELECT * FROM homeslider', async (error, response) => {
 			var arr = [];
 			if (error) {
@@ -196,7 +197,7 @@ router
 // latest updates route
 router
 	.route('/admin/latestupdates')
-	.get(isloggedin, async (req, res) => {
+	.get(flash, isloggedin, async (req, res) => {
 		await db.query('SELECT * FROM latest_updates', (err, response) => {
 			arr = [];
 			if (err) {
@@ -265,7 +266,7 @@ router
 // Our Toppers Route
 router
 	.route('/admin/ourtoppers')
-	.get(isloggedin, async (req, res) => {
+	.get(flash, isloggedin, async (req, res) => {
 		await db.query('SELECT * FROM ourtoppers', async (error, response) => {
 			var arr = [];
 			if (error) {
@@ -345,8 +346,9 @@ router
 
 //Students testimonial Route
 router
-	.route(isloggedin, '/admin/studenttestimonials')
-	.get(async (req, res) => {
+	.route('/admin/studenttestimonials')
+	.get(flash, isloggedin, async (req, res) => {
+		console.log('hrokokokokokk');
 		await db.query('SELECT * FROM studenttestimonials', (err, response) => {
 			arr = [];
 			if (err) {
@@ -357,7 +359,7 @@ router
 					// console.log(image)
 					arr.push(link);
 				}
-				console.log('hii');
+				// console.log(response[0].latestupdates);
 				res.render('admin/home/studentTestimonials', { link: arr });
 			}
 		});
@@ -413,7 +415,7 @@ router
 
 router
 	.route('/admin/calendarevents')
-	.get(isloggedin, async (req, res) => {
+	.get(flash, isloggedin, async (req, res) => {
 		await db.query('SELECT * FROM calendarevents', async (error, response) => {
 			var arr = [];
 			if (error) {
@@ -503,7 +505,7 @@ router
 
 router
 	.route('/admin/neetachievements')
-	.get(isloggedin, async (req, res) => {
+	.get(flash, isloggedin, async (req, res) => {
 		await db.query('SELECT * FROM neetacheivements', (err, response) => {
 			arr = [];
 			if (err) {
@@ -545,27 +547,27 @@ router
 		);
 	});
 
-router
-	.route('/admin/neetachievements')
-	.get(isloggedin, async (req, res) => {
-		res.render('admin/home/studentTestimonials');
-	})
-	.post(async (req, res) => {
-		const link = req.body.uploadlink;
-		console.log(link);
-		await db.query(
-			'INSERT INTO studenttestimonials SET ?',
-			{ testimonialslink: link },
-			(err, results) => {
-				if (err) {
-					console.log(err);
-				} else {
-					console.log(results);
-					res.redirect('/admin/studenttestimonials');
-				}
-			}
-		);
-	});
+// router
+//   .route("/admin/neetachievements")
+//   .get(flash,isloggedin, async (req, res) => {
+//     res.render("admin/home/studentTestimonials");
+//   })
+//   .post(async (req, res) => {
+//     const link = req.body.uploadlink;
+//     console.log(link);
+//     await db.query(
+//       "INSERT INTO studenttestimonials SET ?",
+//       { testimonialslink: link },
+//       (err, results) => {
+//         if (err) {
+//           console.log(err);
+//         } else {
+//           console.log(results);
+//           res.redirect("/admin/studenttestimonials");
+//         }
+//       }
+//     );
+//   });
 
 router.route('/courses').get(async (req, res) => {
 	res.render('courses');
@@ -1056,8 +1058,91 @@ router
 		}
 	});
 
-router.route('/404error').get(async (req, res) => {
-	res.render('404error');
-});
+router
+	.route('/admin/successstories/parenttestimonials')
+	.get(isloggedin, async (req, res) => {
+		await db.query(
+			'SELECT * FROM parenttestimonials',
+			async (error, response) => {
+				var arr = [];
+				if (error) {
+					console.log(error);
+				} else {
+					for (let i = 0; i <= response.length - 1; i++) {
+						var image = {
+							studentimg: response[i].image,
+							cloudinaryname: response[i].cloudinaryname,
+							youtubelink: response[i].youtubelink,
+							studentname: response[i].studentname
+						};
+						arr.push(image);
+					}
+					res.render('admin/successstories/parenttestimonial', {
+						students: arr
+					});
+				}
+			}
+		);
+	})
+	.post(upload.single('studentimg'), async (req, res) => {
+		await db.query(
+			'INSERT INTO parenttestimonials SET ?',
+			{
+				youtubelink: req.body.youtubelink,
+				image: req.file.path,
+				cloudinaryname: req.file.filename.split('/')[1],
+				studentname: req.body.studentname
+			},
+			(err, response) => {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log(response);
+				}
+			}
+		);
+		res.redirect('/admin/successstories/parenttestimonials');
+	})
+	// .put(upload.single('sliderimg'), async (req, res) => {
+	// 	await db.query(
+	// 		'UPDATE successstories SET image = ? WHERE cloudinaryname = ?',
+	// 		[req.file.path, req.body.cloudinaryname]
+	// 	);
+	// 	res.redirect('/admin/successstories/studentdetails');
+	// })
+	.delete(async (req, res) => {
+		if (typeof req.body.checkbox === 'string') {
+			await cloudinary.uploader.destroy(
+				'ClassicNeetAcademy/' + req.body.checkbox
+			);
+			await db.query(
+				'DELETE FROM parenttestimonials WHERE cloudinaryname = ?',
+				[req.body.checkbox],
+				(err, response) => {
+					if (err) {
+						console.log(err);
+					} else {
+						res.redirect('/admin/successstories/parenttestimonials');
+					}
+				}
+			);
+		} else {
+			req.body.checkbox.forEach(async (link) => {
+				await cloudinary.uploader.destroy('ClassicNeetAcademy/' + link);
+				await db.query(
+					'DELETE FROM parenttestimonials WHERE cloudinaryname = ?',
+					[link],
+					(err, response) => {
+						if (err) {
+							console.log(err);
+						} else {
+							console.log(response);
+						}
+					}
+				);
+			});
+			res.redirect('/admin/successstories/parenttestimonials');
+		}
+	});
 
 module.exports = router;
