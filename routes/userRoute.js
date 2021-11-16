@@ -277,10 +277,12 @@ router
 						name: response[i].name,
 						collegename: response[i].collegename,
 						cloudinaryname: response[i].cloudinaryname,
-						studentimg: response[i].studentimg
+						studentimg: response[i].studentimg,
+						score: response[i].score
 					};
 					arr.push(image);
 				}
+				console.log(arr);
 				res.render('admin/home/ourToppers', { students: arr });
 			}
 		});
@@ -292,6 +294,7 @@ router
 				name: req.body.name,
 				collegename: req.body.collegeName,
 				studentimg: req.file.path,
+				score: req.body.score,
 				cloudinaryname: req.file.filename.split('/')[1]
 			},
 			(err, response) => {
@@ -515,7 +518,6 @@ router
 				var consecutiveyears = response[0].consecutiveyears;
 				var successrate = response[0].successrate;
 				var admissions = response[0].admissions;
-				// console.log(image)
 				res.render('admin/home/neetAchievements', {
 					seats,
 					consecutiveyears,
