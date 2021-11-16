@@ -53,10 +53,12 @@ app.use(flash());
 
 
 
-// app.use('*', (req, res,next) => {
+// app.use( (req, res,next) => {
 // 	console.log("hello");
-// 	// res.locals.success = req.flash('success');
-// 	// res.locals.error = req.flash('error');
+//   // req.session.success = req.flash('success');
+//   // req.session.success = req.flash('error');
+// 	res.locals.success = req.flash('success');
+// 	res.locals.error = req.flash('error');
 // 	console.log('everything works fine');
 // 	next();
 // });
