@@ -16,9 +16,8 @@ router
 		res.render('admin/courses/empty');
 	})
 	.post(async (req, res) => {
-		console.log('hiiiii');
+		'hiiiii');
 		sizeOf(req.body, function (err, dimensions) {
-			console.log(dimensions.width, dimensions.height);
 		});
 	});
 
@@ -31,7 +30,6 @@ router.route('/').get(flash, async (req, res) => {
 			// console.log(imganame);
 			console.log(error);
 		} else {
-			console.log(response.length);
 			for (let i = 0; i <= response.length - 1; i++) {
 				var image = {
 					sliderimg: response[i].sliderimg,
@@ -95,7 +93,6 @@ router.route('/').get(flash, async (req, res) => {
 														}
 														// console.log(response[0].latestupdates);
 													}
-													console.log(stutest);
 
 													res.render('home', {
 														img: arr,
@@ -216,7 +213,6 @@ router
 	})
 	.post(async (req, res) => {
 		const link = req.body.uploadlink;
-		console.log(link);
 		await db.query(
 			'INSERT INTO latest_updates SET ?',
 			{ latestupdates: link },
@@ -224,7 +220,6 @@ router
 				if (err) {
 					console.log(err);
 				} else {
-					console.log(results);
 					res.redirect('/admin/latestupdates');
 				}
 			}
@@ -239,14 +234,12 @@ router
 					if (err) {
 						console.log(err);
 					} else {
-						console.log(response);
 					}
 				}
 			);
 			res.redirect('/admin/latestupdates');
 		} else {
 			req.body.checkbox.forEach(async (link) => {
-				console.log(link);
 				await db.query(
 					'DELETE FROM latest_updates WHERE latestupdates = ?',
 					[link],
@@ -254,7 +247,6 @@ router
 						if (err) {
 							console.log(err);
 						} else {
-							console.log(response);
 						}
 					}
 				);
@@ -300,7 +292,6 @@ router
 				if (err) {
 					console.log(err);
 				} else {
-					console.log(response);
 				}
 			}
 		);
@@ -350,7 +341,6 @@ router
 router
 	.route('/admin/studenttestimonials')
 	.get(flash, isloggedin, async (req, res) => {
-		console.log('hrokokokokokk');
 		await db.query('SELECT * FROM studenttestimonials', (err, response) => {
 			arr = [];
 			if (err) {
@@ -368,7 +358,6 @@ router
 	})
 	.post(async (req, res) => {
 		const link = req.body.uploadlink;
-		console.log(link);
 		await db.query(
 			'INSERT INTO studenttestimonials SET ?',
 			{ testimonialslink: link },
@@ -376,7 +365,6 @@ router
 				if (err) {
 					console.log(err);
 				} else {
-					console.log(results);
 					res.redirect('/admin/studenttestimonials');
 				}
 			}
@@ -391,14 +379,12 @@ router
 					if (err) {
 						console.log(err);
 					} else {
-						console.log(response);
 						res.redirect('/admin/studenttestimonials');
 					}
 				}
 			);
 		} else {
 			req.body.checkbox.forEach(async (link) => {
-				console.log(link);
 				await db.query(
 					'DELETE FROM studenttestimonials WHERE testimonialslink = ?',
 					[link],
@@ -406,7 +392,6 @@ router
 						if (err) {
 							console.log(err);
 						} else {
-							console.log(response);
 						}
 					}
 				);
@@ -466,7 +451,6 @@ router
 				if (err) {
 					console.log(err);
 				} else {
-					console.log(response);
 					res.redirect('/admin/calendarevents');
 				}
 			}
@@ -481,7 +465,6 @@ router
 					if (err) {
 						console.log(err);
 					} else {
-						console.log(response);
 					}
 				}
 			);
@@ -496,7 +479,6 @@ router
 						if (err) {
 							console.log(err);
 						} else {
-							console.log(response);
 						}
 					}
 				);
@@ -541,7 +523,6 @@ router
 				if (err) {
 					console.log(err);
 				} else {
-					console.log(results);
 					res.redirect('/admin/neetachievements');
 				}
 			}
@@ -632,7 +613,7 @@ router.route('/aboutus').get(async (req, res) => {
 
 router
 	.route('/admin/aboutus/history')
-	.get(flash,isloggedin, async (req, res) => {
+	.get(flash, isloggedin, async (req, res) => {
 		await db.query('SELECT * FROM history', async (error, response) => {
 			var arr = [];
 			if (error) {
@@ -659,7 +640,6 @@ router
 				if (err) {
 					console.log(err);
 				} else {
-					console.log(results);
 					res.redirect('/admin/aboutus/history');
 				}
 			}
@@ -674,7 +654,6 @@ router
 					if (err) {
 						console.log(err);
 					} else {
-						console.log(response);
 					}
 				}
 			);
@@ -688,7 +667,6 @@ router
 						if (err) {
 							console.log(err);
 						} else {
-							console.log(response);
 						}
 					}
 				);
@@ -729,7 +707,7 @@ router.route('/Demovideos').get(async (req, res) => {
 
 router
 	.route('/admin/demovideos')
-	.get(flash,isloggedin, async (req, res) => {
+	.get(flash, isloggedin, async (req, res) => {
 		await db.query('SELECT * FROM demovideos', (err, response) => {
 			arr = [];
 			if (err) {
@@ -748,7 +726,6 @@ router
 	})
 	.post(async (req, res) => {
 		const link = req.body.uploadlink;
-		console.log(link);
 		await db.query(
 			'INSERT INTO demovideos SET ?',
 			{ videolink: link },
@@ -756,7 +733,6 @@ router
 				if (err) {
 					console.log(err);
 				} else {
-					console.log(results);
 					res.redirect('/admin/demovideos');
 				}
 			}
@@ -771,14 +747,12 @@ router
 					if (err) {
 						console.log(err);
 					} else {
-						console.log(response);
 					}
 				}
 			);
 			res.redirect('/admin/demovideos');
 		} else {
 			req.body.checkbox.forEach(async (link) => {
-				console.log(link);
 				await db.query(
 					'DELETE FROM demovideos WHERE videolink = ?',
 					[link],
@@ -786,7 +760,6 @@ router
 						if (err) {
 							console.log(err);
 						} else {
-							console.log(response);
 						}
 					}
 				);
@@ -818,7 +791,7 @@ router.route('/results').get(async (req, res) => {
 
 router
 	.route('/admin/results/studentdetails')
-	.get(flash,isloggedin, async (req, res) => {
+	.get(flash, isloggedin, async (req, res) => {
 		await db.query('SELECT * FROM studentdetails', async (error, response) => {
 			var arr = [];
 			if (error) {
@@ -852,7 +825,6 @@ router
 				if (err) {
 					console.log(err);
 				} else {
-					console.log(response);
 				}
 			}
 		);
@@ -891,7 +863,6 @@ router
 						if (err) {
 							console.log(err);
 						} else {
-							console.log(response);
 						}
 					}
 				);
@@ -903,7 +874,7 @@ router
 
 router
 	.route('/admin/results/images')
-	.get(flash,isloggedin, async (req, res) => {
+	.get(flash, isloggedin, async (req, res) => {
 		await db.query('SELECT * FROM resultslider', async (error, response) => {
 			var arr = [];
 			if (error) {
@@ -979,7 +950,7 @@ router.route('/successstories').get(async (req, res) => {
 
 router
 	.route('/admin/successstories/testimonials')
-	.get(flash,isloggedin, async (req, res) => {
+	.get(flash, isloggedin, async (req, res) => {
 		await db.query('SELECT * FROM successstories', async (error, response) => {
 			var arr = [];
 			if (error) {
@@ -1011,7 +982,6 @@ router
 				if (err) {
 					console.log(err);
 				} else {
-					console.log(response);
 				}
 			}
 		);
@@ -1050,7 +1020,6 @@ router
 						if (err) {
 							console.log(err);
 						} else {
-							console.log(response);
 						}
 					}
 				);
@@ -1061,7 +1030,7 @@ router
 
 router
 	.route('/admin/successstories/parenttestimonials')
-	.get(flash,isloggedin, async (req, res) => {
+	.get(flash, isloggedin, async (req, res) => {
 		await db.query(
 			'SELECT * FROM parenttestimonials',
 			async (error, response) => {
@@ -1098,7 +1067,6 @@ router
 				if (err) {
 					console.log(err);
 				} else {
-					console.log(response);
 				}
 			}
 		);
@@ -1137,7 +1105,6 @@ router
 						if (err) {
 							console.log(err);
 						} else {
-							console.log(response);
 						}
 					}
 				);
@@ -1145,5 +1112,12 @@ router
 			res.redirect('/admin/successstories/parenttestimonials');
 		}
 	});
+
+router.post('/signout', (req, res) => {
+	req.session.destroy(function () {
+		res.clearCookie('connect.sid');
+		res.redirect('/login');
+	});
+});
 
 module.exports = router;

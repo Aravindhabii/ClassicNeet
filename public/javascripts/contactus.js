@@ -68,14 +68,12 @@ document.querySelector("form").addEventListener("submit", (e) => {
   }
 
   inputs.forEach((input) => {
-	  console.log('inside sumit input');
 	var phoneInput = document.querySelector(".phonenum");
 	if(phoneInput.value.length !== 10){
 		e.preventDefault();
 	}
     if (input.value == "") {
       e.preventDefault();
-	  console.log('num');
       // submit.style.backgroundColor = '#ff0000';
     }
   });

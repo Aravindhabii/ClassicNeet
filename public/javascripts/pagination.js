@@ -1,4 +1,3 @@
-console.log('page');
 
 
 function getPageList(totalPages,page,maxLength) {

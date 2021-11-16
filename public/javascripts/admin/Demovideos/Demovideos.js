@@ -6,7 +6,6 @@ const imgform = document.querySelector(".imgform");
 const submit = document.querySelector(".submit");
 
 
-console.log(previewDiv);
 
 addbtn.addEventListener("click", () => {
   previewDiv.style.display = "flex";
@@ -20,6 +19,5 @@ backbtn.addEventListener("click", () => {
 });
 
 submit.addEventListener("click", () => {
-console.log('hiii')
   confirm("Click CONFIRM TO DELETE");
 });
