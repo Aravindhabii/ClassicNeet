@@ -1,5 +1,4 @@
 const formtextarea = document.querySelector(".formtextarea");
-console.log(formtextarea);
 const changablespan = document.querySelector(".changablespan");
 formtextarea.addEventListener("input", (e) => {
   changablespan.innerText = e.target.value.length;
@@ -18,7 +17,6 @@ const submit = document.querySelector(".submit");
 const submitbtn = document.querySelector(".submitbtn");
 const confirmdelete = document.querySelector(".confirmdelete");
 const latestupdateform = document.querySelector(".latestupdateform");
-console.log(changablespan1);
 const contents = document.querySelectorAll(".content");
 const closebtn = document.querySelector(".closebtn");
 const previewdiv = document.querySelector(".previewdiv");
@@ -49,7 +47,6 @@ contents.forEach((content) => {
 });
 
 submitbtn.addEventListener("click", () => {
-  console.log("Dawwwwgg");
   Swal.fire({
     title: "Are you sure?",
     text: "Are you sure you want to delete!",

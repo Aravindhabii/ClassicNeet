@@ -22,7 +22,6 @@ backbtn.addEventListener('click', () => {
 });
 
 submitbtn.addEventListener("click", () => {
-	console.log("Dawwwwgg");
 	Swal.fire({
 	  title: 'Are you sure?',
 	  text: "Are you sure you want to delete!",
@@ -42,10 +41,8 @@ submitbtn.addEventListener("click", () => {
 
 counternum = inputtext.value.length;
 changablespan.innerHTML = counternum;
-console.log(counternum);
 
 inputtext.addEventListener('input',(e)=>{
     var counternum = e.target.value.length
-    console.log('hello');
     changablespan.innerHTML = counternum;
 })

@@ -77,7 +77,6 @@
 //   }
 
 // });
-console.log('hello');
 
 //toppers
 
@@ -108,7 +107,6 @@ const arr = [];
     })
     
   });
-console.log(arr);
 
 var count = 0;
 
@@ -119,7 +117,6 @@ window.addEventListener('load', () => {
     score[0].innerText = arr[count].score;
     card[0].classList.add('gridanime1');
     img[0].src = arr[count].img;
-    console.log(arr[count].name);
     count++;
   } else {
     count = 0;
@@ -127,7 +124,6 @@ window.addEventListener('load', () => {
     score[0].innerText = arr[count].score;
     img[0].src = arr[count].img;
     card[0].classList.add('gridanime1');
-    console.log(arr[count].name);
     count++;
   }
   
@@ -137,7 +133,6 @@ window.addEventListener('load', () => {
     score[1].innerText = arr[count].score;
     img[1].src = arr[count].img;
     card[1].classList.add('gridanime2');
-    console.log(arr[count].name);
     count++;
   } else {
     count = 0;
@@ -145,7 +140,6 @@ window.addEventListener('load', () => {
     score[1].innerText = arr[count].score;
     img[1].src = arr[count].img;
     card[1].classList.add('gridanime2');
-    console.log(arr[count].name);
     count++;
   }
   if(arr[count]) 
@@ -155,7 +149,6 @@ window.addEventListener('load', () => {
 
     img[2].src = arr[count].img;
     card[2].classList.add('gridanime1');
-    console.log(arr[count].name);
     count++;
   } else {
     count = 0;
@@ -163,7 +156,6 @@ window.addEventListener('load', () => {
     score[2].innerText = arr[count].score;
     img[2].src = arr[count].img;
     card[2].classList.add('gridanime1');
-    console.log(arr[count].name);
     count++;
   }
   if(arr[count]) 
@@ -172,7 +164,6 @@ window.addEventListener('load', () => {
     score[3].innerText = arr[count].score;
     img[3].src = arr[count].img;
     card[3].classList.add('gridanime2');
-    console.log(arr[count].name);
     count++;
   } else {
     count = 0;
@@ -180,7 +171,6 @@ window.addEventListener('load', () => {
     score[3].innerText = arr[count].score;
     img[3].src = arr[count].img;
     card[3].classList.add('gridanime2');
-    console.log(arr[count].name);
     count++;
   }
   if(arr[count]) 
@@ -189,7 +179,6 @@ window.addEventListener('load', () => {
     score[4].innerText = arr[count].score;
     img[4].src = arr[count].img;
     card[4].classList.add('gridanime1');
-    console.log(arr[count].name);
     count++;
   } else {
     count = 0;
@@ -197,7 +186,6 @@ window.addEventListener('load', () => {
     score[4].innerText = arr[count].score;
     img[4].src = arr[count].img;
     card[4].classList.add('gridanime1');
-    console.log(arr[count].name);
     count++;
   }
   if(arr[count]) 
@@ -206,7 +194,6 @@ window.addEventListener('load', () => {
     score[5].innerText = arr[count].score;
     img[5].src = arr[count].img;
     card[5].classList.add('gridanime2');
-    console.log(arr[count].name);
     count++;
   } else {
     count = 0;
@@ -214,7 +201,6 @@ window.addEventListener('load', () => {
     score[5].innerText = arr[count].score;
     img[5].src = arr[count].img;
     card[5].classList.add('gridanime2');
-    console.log(arr[count].name);
     count++;
   }
   if(arr[count]) 
@@ -223,7 +209,6 @@ window.addEventListener('load', () => {
     score[6].innerText = arr[count].score;
     img[6].src = arr[count].img;
     card[6].classList.add('gridanime1');
-    console.log(arr[count].name);
     count++;
   } else {
     count = 0;
@@ -231,7 +216,6 @@ window.addEventListener('load', () => {
     score[6].innerText = arr[count].score;
     img[6].src = arr[count].img;
     card[6].classList.add('gridanime1');
-    console.log(arr[count].name);
     count++;
   }
   if(arr[count]) 
@@ -240,7 +224,6 @@ window.addEventListener('load', () => {
     score[7].innerText = arr[count].score;
     img[7].src = arr[count].img;
     card[7].classList.add('gridanime2');
-    console.log(arr[count].name);
     count++;
   } else {
     count = 0;
@@ -248,7 +231,6 @@ window.addEventListener('load', () => {
     score[7].innerText = arr[count].score;
     img[7].src = arr[count].img;
     card[7].classList.add('gridanime2');
-    console.log(arr[count].name);
     count++;
   }
   if(arr[count]) 
@@ -257,7 +239,6 @@ window.addEventListener('load', () => {
     score[8].innerText = arr[count].score;
     img[8].src = arr[count].img;
     card[8].classList.add('gridanime1');
-    console.log(arr[count].name);
     count++;
   } else {
     count = 0;
@@ -265,7 +246,6 @@ window.addEventListener('load', () => {
     score[8].innerText = arr[count].score;
     img[8].src = arr[count].img;
     card[8].classList.add('gridanime1');
-    console.log(arr[count].name);
     count++;
   }
 });
@@ -276,7 +256,6 @@ setInterval(() => {
     score[0].innerText = arr[count].score;
     card[0].classList.add('gridanime1');
     img[0].src = arr[count].img;
-    console.log(arr[count].name);
     count++;
   } else {
     count = 0;
@@ -284,7 +263,6 @@ setInterval(() => {
     score[0].innerText = arr[count].score;
     img[0].src = arr[count].img;
     card[0].classList.add('gridanime1');
-    console.log(arr[count].name);
     count++;
   }
   
@@ -294,7 +272,6 @@ setInterval(() => {
     score[1].innerText = arr[count].score;
     img[1].src = arr[count].img;
     card[1].classList.add('gridanime2');
-    console.log(arr[count].name);
     count++;
   } else {
     count = 0;
@@ -302,7 +279,6 @@ setInterval(() => {
     score[1].innerText = arr[count].score;
     img[1].src = arr[count].img;
     card[1].classList.add('gridanime2');
-    console.log(arr[count].name);
     count++;
   }
   if(arr[count]) 
@@ -312,7 +288,6 @@ setInterval(() => {
 
     img[2].src = arr[count].img;
     card[2].classList.add('gridanime1');
-    console.log(arr[count].name);
     count++;
   } else {
     count = 0;
@@ -320,7 +295,6 @@ setInterval(() => {
     score[2].innerText = arr[count].score;
     img[2].src = arr[count].img;
     card[2].classList.add('gridanime1');
-    console.log(arr[count].name);
     count++;
   }
   if(arr[count]) 
@@ -329,7 +303,6 @@ setInterval(() => {
     score[3].innerText = arr[count].score;
     img[3].src = arr[count].img;
     card[3].classList.add('gridanime2');
-    console.log(arr[count].name);
     count++;
   } else {
     count = 0;
@@ -337,7 +310,6 @@ setInterval(() => {
     score[3].innerText = arr[count].score;
     img[3].src = arr[count].img;
     card[3].classList.add('gridanime2');
-    console.log(arr[count].name);
     count++;
   }
   if(arr[count]) 
@@ -346,7 +318,6 @@ setInterval(() => {
     score[4].innerText = arr[count].score;
     img[4].src = arr[count].img;
     card[4].classList.add('gridanime1');
-    console.log(arr[count].name);
     count++;
   } else {
     count = 0;
@@ -354,7 +325,6 @@ setInterval(() => {
     score[4].innerText = arr[count].score;
     img[4].src = arr[count].img;
     card[4].classList.add('gridanime1');
-    console.log(arr[count].name);
     count++;
   }
   if(arr[count]) 
@@ -363,7 +333,6 @@ setInterval(() => {
     score[5].innerText = arr[count].score;
     img[5].src = arr[count].img;
     card[5].classList.add('gridanime2');
-    console.log(arr[count].name);
     count++;
   } else {
     count = 0;
@@ -371,7 +340,6 @@ setInterval(() => {
     score[5].innerText = arr[count].score;
     img[5].src = arr[count].img;
     card[5].classList.add('gridanime2');
-    console.log(arr[count].name);
     count++;
   }
   if(arr[count]) 
@@ -380,7 +348,6 @@ setInterval(() => {
     score[6].innerText = arr[count].score;
     img[6].src = arr[count].img;
     card[6].classList.add('gridanime1');
-    console.log(arr[count].name);
     count++;
   } else {
     count = 0;
@@ -388,7 +355,6 @@ setInterval(() => {
     score[6].innerText = arr[count].score;
     img[6].src = arr[count].img;
     card[6].classList.add('gridanime1');
-    console.log(arr[count].name);
     count++;
   }
   if(arr[count]) 
@@ -397,7 +363,6 @@ setInterval(() => {
     score[7].innerText = arr[count].score;
     img[7].src = arr[count].img;
     card[7].classList.add('gridanime2');
-    console.log(arr[count].name);
     count++;
   } else {
     count = 0;
@@ -405,7 +370,6 @@ setInterval(() => {
     score[7].innerText = arr[count].score;
     img[7].src = arr[count].img;
     card[7].classList.add('gridanime2');
-    console.log(arr[count].name);
     count++;
   }
   if(arr[count]) 
@@ -414,7 +378,6 @@ setInterval(() => {
     score[8].innerText = arr[count].score;
     img[8].src = arr[count].img;
     card[8].classList.add('gridanime1');
-    console.log(arr[count].name);
     count++;
   } else {
     count = 0;
@@ -422,7 +385,6 @@ setInterval(() => {
     score[8].innerText = arr[count].score;
     img[8].src = arr[count].img;
     card[8].classList.add('gridanime1');
-    console.log(arr[count].name);
     count++;
   }
 

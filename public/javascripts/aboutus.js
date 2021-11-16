@@ -89,19 +89,16 @@ const currentYear = document.querySelector(".current-btn"); //2020
 const btn = document.querySelectorAll(".btn");
 
 dropdown.addEventListener("change", (e) => {
-        console.log(e.target.value);
         
   switch (e.target.value) {
     case "2019":
       document.querySelectorAll("#imageid").forEach((img) => {
         img.src = img.src.replaceAll("2020", "2019");
-        console.log(img.src);
       });
       break;
     case "2020":
       document.querySelectorAll("#imageid").forEach((img) => {
         img.src = img.src.replaceAll("2019", "2020");
-        console.log(img.src);
       });
       break;
   }
@@ -117,7 +114,6 @@ const exit = document.querySelector(".close");
 galleryclick.forEach((galleryclick) => {
   galleryclick.addEventListener("click", (e) => {
     // document.querySelector('.popup').style.display = 'flex';
-    console.log(e.target.src);
     prevContainer.style.display = "flex";
     previmg.src = e.target.src;
     bodyy.style.overflow = "hidden";

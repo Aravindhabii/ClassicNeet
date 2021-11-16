@@ -9,22 +9,18 @@ const meth3 = document.querySelector(".bgmeth3");
 const meth4 = document.querySelector(".bgmeth4");
 const meth5 = document.querySelector(".bgmeth5");
 let bodyCourse = document.querySelector("body");
-console.log('cours');
 const exit = document.querySelectorAll(".exit");
 if (btn1) {
   btn1.addEventListener("click", (e) => {
-    console.log("clcik");
     meth.style.display = "flex";
     // meth.style.position = 'fixed';
     bodyCourse.style.overflow = "hidden";
-    console.log(bodyCourse.style.overflow);
   });
 
 }
 if (btn2) {
   
   btn2.addEventListener("click", (e) => {
-    console.log("clcik");
     meth.style.display = "flex";
     // meth.style.position = 'fixed';
     bodyCourse.style.overflow = "hidden";
@@ -33,7 +29,6 @@ if (btn2) {
 if (btn3) {
 
   btn3.addEventListener("click", (e) => {
-    console.log("clcik");
     meth.style.display = "flex";
     // meth.style.position = 'fixed';
     bodyCourse.style.overflow = "hidden";
@@ -41,7 +36,6 @@ if (btn3) {
 }
 if (btn4) {
   btn4.addEventListener("click", (e) => {
-    console.log("clcik");
     meth.style.display = "flex";
     // meth.style.position = 'fixed';
     bodyCourse.style.overflow = "hidden";
@@ -49,7 +43,6 @@ if (btn4) {
 }
 if (btn5) {
   btn5.addEventListener("click", (e) => {
-    console.log("clcik");
     meth.style.display = "flex";
     // meth.style.position = 'fixed';
     bodyCourse.style.overflow = "hidden";
@@ -58,7 +51,6 @@ if (btn5) {
 
 exit.forEach((e) => {
   e.addEventListener("click", () => {
-    console.log('burgir');
     if (meth) {
       meth.style.display = "none";
     }
@@ -72,7 +64,6 @@ exit.forEach((e) => {
     if (meth4) {
       meth4.style.display = "none";
     }
-    console.log("hrllo");
     bodyCourse.style.overflow = "unset";
   });
 });
@@ -83,7 +74,6 @@ const para1 = document.querySelector(".para1");
 $(window)
   .resize(function () {
     if (window.innerWidth < 600) {
-        console.log('lk');
       $(".para1neet").replaceWith(
           
         "<p class='hexContent'>This course is meant for those who have completed their 12th...</p>"
@@ -120,7 +110,6 @@ $(window)
       );
     }
     if (window.innerWidth < 750) {
-        console.log('jk');
       $(".para1neet").replaceWith(
         "<p class='hexContent'>This course is meant for those who have completed their 12th classboard exams and might have already attempted the NEET.</p>"
       );

@@ -9,7 +9,6 @@ const body = document.querySelector("body");
 
 const navslide = () => {
   hamburger.addEventListener("click", () => {
-    console.log("lol");
 
     body.classList.toggle("bodyy");
     if (body.getAttribute("class").includes("bodyy")) {

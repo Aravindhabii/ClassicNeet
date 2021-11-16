@@ -30,7 +30,6 @@ for (let i = 0; i <= previewSpan.length - 1; i++) {
     for (let j = 0; j <= sliderimgurl.length - 1; j++) {
       if (i === j) {
         const img = document.createElement("img");
-        console.log(sliderimgurl[j].innerText.length < 1);
         if (sliderimgurl[j].innerText.length < 1) return;
         img.src = sliderimgurl[j].innerText;
         previewTopper.appendChild(img);

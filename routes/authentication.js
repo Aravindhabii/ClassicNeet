@@ -29,11 +29,9 @@ router
 				}
 				if (results.length > 0) {
 					return res.render('login', { emailinuse });
-					console.log(results);
 				}
 
 				let hashedPassword = await bcrypt.hash(password, 8);
-				console.log(hashedPassword);
 
 				db.query(
 					'INSERT INTO users SET ?',
@@ -64,14 +62,11 @@ router
 			'SELECT * FROM users WHERE username = ?',
 			[username],
 			(err, response) => {
-				console.log(hasedpass, response[0].password);
 				const passcon = bcrypt.compare(
 					password,
 					response[0].password,
 					function (err, result) {
-						console.log(result);
 						if (result) {
-							console.log(result);
 							const loginuser = 'Yes';
 							req.session.loginuser = loginuser;
 							req.flash('success', 'Welcome Back admin');
@@ -142,7 +137,6 @@ router
 				if (err) {
 					console.log(err);
 				} else {
-					console.log(results);
 					res.redirect('/homeslider');
 				}
 			}
