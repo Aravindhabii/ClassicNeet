@@ -23,4 +23,21 @@
     </div>
   </nav>
 
-
+	<% if(success && success.length) {%>
+    <div class="d-flex justify-content-center alert alert-success alert-dismissible fade show" role="alert">
+      
+      <b><%= success %></b>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+    <% } %>
+    
+    <% if(error && error.length) {%>
+    <div class="d-flex justify-content-center alert alert-danger alert-dismissible fade show" role="alert">
+      <b><%= error %></b>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+  <% } %>

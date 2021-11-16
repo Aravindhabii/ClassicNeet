@@ -60,6 +60,14 @@
 								id="uploadlink"
 							/>
 							<input
+								type="number"
+								name="score"
+								class="form-control"
+								aria-label="Score"
+								aria-describedby="addon-wrapping"
+								id="uploadlink"
+							/>
+							<input
 								type="text"
 								name="collegeName"
 								class="form-control"
@@ -93,6 +101,7 @@
 							<tr>
 								<th scope="col">Name</th>
 								<th scope="col">Image</th>
+								<th scope="col">Score</th>
 								<th scope="col">College Name</th>
 								<th scope="col">Update</th>
 							</tr>
@@ -106,8 +115,12 @@
 								<td>
 									<p class="onclickimg"><%= i.imgname %></p>
 									<span class="currentPreviewSpan btn btn-info"
-										>Show Image</span>
+										>Show Image</span
+									>
 									<span class="currentSliderimgurl"><%= i.studentimg %></span>
+								</td>
+								<td>
+									<p><%= i.score %></p>
 								</td>
 								<td>
 									<p><%= i.collegename %></p>
