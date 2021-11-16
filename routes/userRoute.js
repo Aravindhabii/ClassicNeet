@@ -633,7 +633,7 @@ router.route('/aboutus').get(async (req, res) => {
 
 router
 	.route('/admin/aboutus/history')
-	.get(isloggedin, async (req, res) => {
+	.get(flash,isloggedin, async (req, res) => {
 		await db.query('SELECT * FROM history', async (error, response) => {
 			var arr = [];
 			if (error) {
@@ -730,7 +730,7 @@ router.route('/Demovideos').get(async (req, res) => {
 
 router
 	.route('/admin/demovideos')
-	.get(isloggedin, async (req, res) => {
+	.get(flash,isloggedin, async (req, res) => {
 		await db.query('SELECT * FROM demovideos', (err, response) => {
 			arr = [];
 			if (err) {
@@ -781,7 +781,7 @@ router
 			req.body.checkbox.forEach(async (link) => {
 				console.log(link);
 				await db.query(
-					'DELETE FROM demovedios WHERE videolink = ?',
+					'DELETE FROM demovideos WHERE videolink = ?',
 					[link],
 					(err, response) => {
 						if (err) {
@@ -819,7 +819,7 @@ router.route('/results').get(async (req, res) => {
 
 router
 	.route('/admin/results/studentdetails')
-	.get(isloggedin, async (req, res) => {
+	.get(flash,isloggedin, async (req, res) => {
 		await db.query('SELECT * FROM studentdetails', async (error, response) => {
 			var arr = [];
 			if (error) {
@@ -904,7 +904,7 @@ router
 
 router
 	.route('/admin/results/images')
-	.get(isloggedin, async (req, res) => {
+	.get(flash,isloggedin, async (req, res) => {
 		await db.query('SELECT * FROM resultslider', async (error, response) => {
 			var arr = [];
 			if (error) {
@@ -980,7 +980,7 @@ router.route('/successstories').get(async (req, res) => {
 
 router
 	.route('/admin/successstories/testimonials')
-	.get(isloggedin, async (req, res) => {
+	.get(flash,isloggedin, async (req, res) => {
 		await db.query('SELECT * FROM successstories', async (error, response) => {
 			var arr = [];
 			if (error) {
@@ -1062,7 +1062,7 @@ router
 
 router
 	.route('/admin/successstories/parenttestimonials')
-	.get(isloggedin, async (req, res) => {
+	.get(flash,isloggedin, async (req, res) => {
 		await db.query(
 			'SELECT * FROM parenttestimonials',
 			async (error, response) => {
