@@ -16,7 +16,7 @@ router
 		res.render('admin/courses/empty');
 	})
 	.post(async (req, res) => {
-		'hiiiii');
+		
 		sizeOf(req.body, function (err, dimensions) {
 		});
 	});
