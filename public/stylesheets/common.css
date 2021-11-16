@@ -18,7 +18,7 @@ h4 {
 
 /* NavBar */
 
-nav {
+/* nav {
 	position: relative;
 	display: flex;
 	justify-content: space-around;
@@ -43,7 +43,6 @@ nav {
 	list-style: none;
 	left: 3%;
 
-	/* padding-top: .5rem; */
 }
 
 .navlinks {
@@ -56,7 +55,6 @@ ul {
 .navlinks a {
 	color: #1e2886;
 	text-decoration: none;
-	/* letter-spacing: 1px; */
 	font-weight: 1200;
 	font-size: 20px;
 	font-family: 'Roboto', sans-serif;
@@ -66,14 +64,7 @@ ul {
 ul {
 	padding-left: 0rem;
 }
-/* .navlinks a:hover {
-	background-color: #369AFE;
-	color: white;
-}
-.navlinks a:nth-child(2):hover {
-	background-color: #000000;
-	color: white;
-} */
+
 .even:hover {
 	background-color: #369afe;
 	color: white;
@@ -92,7 +83,7 @@ ul {
 	background: black;
 	margin: 5px;
 	transition: all 0.3s ease;
-}
+} */
 
 /* DARK MODE */
 

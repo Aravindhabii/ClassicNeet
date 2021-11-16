@@ -5,7 +5,6 @@ const sectionop = document.querySelector(".mainsection");
 const imgform = document.querySelector(".imgform");
 const submitbtn = document.querySelector('.submitbtn');
 
-
 addbtn.addEventListener("click", () => {
   previewDiv.style.display = "flex";
   imgform.style.transform = "translate(300vw,0)";
@@ -40,6 +39,7 @@ for (let i = 0; i <= previewSpan.length - 1; i++) {
     }
   });
 }
+<<<<<<< HEAD
 
 submitbtn.addEventListener('click', () => {
 	Swal.fire({
@@ -56,3 +56,14 @@ submitbtn.addEventListener('click', () => {
 		}
 	});
 });
+=======
+document.querySelectorAll(".updatesCheckbox").forEach((check, i) => {
+  check.addEventListener("change", () => {
+    if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
+      document.querySelector(".submit").removeAttribute("disabled");
+    } else {
+      document.querySelector(".submit").setAttribute("disabled", true);
+    }
+  });
+});
+>>>>>>> 76a13649524d14e50eb497daf085439ec40ec89d
