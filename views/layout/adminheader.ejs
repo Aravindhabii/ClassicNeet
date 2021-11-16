@@ -24,9 +24,9 @@
   </nav>
 
 	<% if(success && success.length) {%>
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <div class="d-flex justify-content-center alert alert-success alert-dismissible fade show" role="alert">
       
-      <%= success %>
+      <b><%= success %></b>
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
         <span aria-hidden="true"></span>
       </button>
@@ -34,8 +34,8 @@
     <% } %>
     
     <% if(error && error.length) {%>
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <%= error %>
+    <div class="d-flex justify-content-center alert alert-danger alert-dismissible fade show" role="alert">
+      <b><%= error %></b>
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
         <span aria-hidden="true"></span>
       </button>
