@@ -1,9 +1,18 @@
+<<<<<<< HEAD
+const addbtn = document.querySelector('.addbtn');
+const previewDiv = document.querySelector('.preview');
+const backbtn = document.querySelector('.backbtn');
+const sectionop = document.querySelector('.mainsection');
+const imgform = document.querySelector('.imgform');
+const submitbtn = document.querySelector('.submitbtn');
+=======
 const addbtn = document.querySelector(".addbtn");
 const previewDiv = document.querySelector(".preview");
 const backbtn = document.querySelector(".backbtn");
 const sectionop = document.querySelector(".mainsection");
 const imgform = document.querySelector(".imgform");
 const submit = document.querySelector(".submit");
+>>>>>>> 76a13649524d14e50eb497daf085439ec40ec89d
 
 addbtn.addEventListener("click", () => {
   previewDiv.style.display = "flex";
@@ -16,9 +25,12 @@ backbtn.addEventListener("click", () => {
   imgform.style.transform = "translate(0,0)";
 });
 
+<<<<<<< HEAD
+=======
 submit.addEventListener("click", () => {
   confirm("Click CONFIRM TO DELETE");
 });
+>>>>>>> 76a13649524d14e50eb497daf085439ec40ec89d
 
 const previewTopper = document.querySelector(".previewTopper");
 const previewSpan = document.querySelectorAll(".currentPreviewSpan");
@@ -42,6 +54,23 @@ for (let i = 0; i <= previewSpan.length - 1; i++) {
   });
 }
 
+<<<<<<< HEAD
+submitbtn.addEventListener('click', () => {
+	Swal.fire({
+		title: 'Are you sure?',
+		text: 'Are you sure you want to delete!',
+		icon: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: 'Yes, delete it!'
+	}).then((result) => {
+		if (result.isConfirmed) {
+			latestupdateform.submit();
+		}
+	});
+});
+=======
 document.querySelectorAll(".updatesCheckbox").forEach((check, i) => {
   check.addEventListener("change", () => {
     if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
@@ -51,3 +80,4 @@ document.querySelectorAll(".updatesCheckbox").forEach((check, i) => {
     }
   });
 });
+>>>>>>> 76a13649524d14e50eb497daf085439ec40ec89d
