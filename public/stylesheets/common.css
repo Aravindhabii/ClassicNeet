@@ -98,6 +98,8 @@ ul {
 .dark-mode-toggle.dark {
 	background: url('https://img.icons8.com/external-bearicons-glyph-bearicons/64/ffffff/external-moon-halloween-bearicons-glyph-bearicons.png')
 		center/cover;
+		margin-left: .5rem;
+		margin-right: 1rem;
 }
 
 nav.dark {
