@@ -69,7 +69,7 @@ router
 						if (result) {
 							const loginuser = 'Yes';
 							req.session.loginuser = loginuser;
-							req.flash('success', 'Welcome Back admin');
+							// req.flash('success', 'Welcome Back admin');
 							res.redirect('/admin');
 						} else {
 							res.redirect('/login');
@@ -137,7 +137,7 @@ router
 		// console.log(req.files);
 
 		db.query(
-			'INSERT INTO homeslider SET ?',
+			'INSERT INTO resultslider SET ?',
 			{ imgname: fieldname, sliderimg: path, cloudinaryname: cloudinaryName },
 			(err, results) => {
 				if (err) {
