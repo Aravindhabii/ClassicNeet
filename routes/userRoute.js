@@ -892,7 +892,7 @@ router
 	})
 	.post(upload.array('sliderimg'), async (req, res) => {
 		if (typeof req.body.checkbox === 'string') {
-			// await cloudinary.uploader.destroy(req.body.checkbox);
+			await cloudinary.uploader.destroy(req.body.checkbox);
 			await db.query(
 				'UPDATE resultslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
 				[
@@ -902,7 +902,7 @@ router
 					req.body.checkbox
 				]
 			);
-			res.redirect('/admin/results');
+			res.redirect('/admin/results/images');
 		} else {
 			for (let i = 0; i <= req.files.length - 1; i++) {
 				for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
@@ -917,6 +917,7 @@ router
 								req.body.checkbox[j]
 							]
 						);
+						res.redirect('/admin/results/images');
 					}
 				}
 			}
