@@ -93,6 +93,8 @@ ul {
 	background: url('https://img.icons8.com/ios-filled/50/1e2886/sun--v1.png')
 		center/cover;
 	cursor: pointer;
+	margin-left: .5rem;
+	margin-right: 1rem;
 }
 
 .dark-mode-toggle.dark {
