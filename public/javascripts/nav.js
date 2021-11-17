@@ -40,3 +40,44 @@ function navLinkClick() {
         navToggler.click();
     }
 }
+
+// DARK MODE
+
+const toggleDarkTheme = () => {
+    document.querySelector("body").classList.toggle("dark");
+    document.querySelector(".dark-mode-toggle").classList.toggle("dark");
+    document.querySelector("nav").classList.toggle("dark");
+    document.querySelector(".backgroundMain")
+        ? document.querySelector(".backgroundMain").classList.toggle("dark")
+        : "";
+    document.querySelectorAll(".calenderCard").forEach((card) => {
+        card.classList.toggle("dark");
+    });
+    document.querySelector(".news-box")
+        ? document.querySelector(".news-box").classList.toggle("dark")
+        : "";
+    document.querySelector(".sec-2 .div-1")
+        ? document.querySelector(".sec-2 .div-1").classList.toggle("dark")
+        : "";
+    document.querySelector(".sec-2 .div-2")
+        ? document.querySelector(".sec-2 .div-2").classList.toggle("dark")
+        : "";
+    document.querySelector(".cardsDiv")
+        ? document.querySelector(".cardsDiv").classList.toggle("dark")
+        : "";
+    document.querySelector(".neet-2020-toppers-a")
+        ? document.querySelector(".neet-2020-toppers-a").classList.toggle("dark")
+        : "";
+    document.querySelector("footer")
+        ? document.querySelector("footer").classList.toggle("dark")
+        : "";
+};
+
+document.querySelector(".dark-mode-toggle").addEventListener("click", () => {
+    toggleDarkTheme();
+});
+
+const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+if (darkThemeMq.matches) {
+    toggleDarkTheme();
+}
