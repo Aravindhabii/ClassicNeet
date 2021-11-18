@@ -1119,4 +1119,24 @@ router.post('/signout', (req, res) => {
 	});
 });
 
+router.post('/chatbot', async (req, res) => {
+	console.log(req.body);
+	await db.query(
+		'INSERT INTO chatbot SET ?',
+		{
+			name: req.body.name,
+			number: req.body.number,
+			gmail: req.body.email
+		},
+		(err, response) => {
+			if (err) {
+				console.log(err);
+				return;
+			} else {
+				res.json({ message: 'Success' });
+			}
+		}
+	);
+});
+
 module.exports = router;
