@@ -293,24 +293,16 @@
 						<div class="swiper-wrapper">
 							<% ourtoppers.forEach(topper=> { %>
 								<div class="swiper-slide">
-
-
 									<img class="profile" src="<%= topper.studentimg %>" alt="" />
-
 									<div class="toppersDiv">
-										<p class="markNew">680 / 720</p>
+										<p class="markNew"><%= topper.score %> / 720</p>
 										<p class="nameNew">
 											<%= topper.name %>
 										</p>
 										<p class="colNew">
 											<%= topper.collegename %>
 										</p>
-
-
 									</div>
-
-
-
 								</div>
 								<% }) %>
 						</div>
