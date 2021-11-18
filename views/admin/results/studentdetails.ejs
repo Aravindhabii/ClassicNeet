@@ -90,6 +90,70 @@
 						</div>
 					</form>
 				</div>
+				<div class="preview2">
+					<h1 class="mb-5">Student Details</h1>
+					<form
+					action="/admin/results/studentdetails?_method=PUT"
+					method="post"
+					class="d-flex justify-content-center align-items-center flex-column"
+					style="width: 100%"
+					enctype="multipart/form-data"
+					>
+						<div class="input-group d-flex flex-nowrap" style="width: 80%">
+							<span class="input-group-text" id="addon-wrapping">Add Name</span>
+							<input
+								type="text"
+								name="name"
+								class="form-control"
+								aria-label="Username"
+								aria-describedby="addon-wrapping"
+								id="editname uploadlink"
+							/>
+							</div>
+							<div class="input-group d-flex flex-nowrap" style="width: 80%">
+							<input
+								type="file"
+								name="studentimg"
+								class="form-control"
+								aria-label="Username"
+								aria-describedby="addon-wrapping"
+								id="editstudentimg uploadlink"
+							/>
+							</div>
+							<div class="input-group d-flex flex-nowrap" style="width: 80%">
+							<input
+								type="text"
+								name="collegeName"
+								class="form-control"
+								aria-label="Username"
+								aria-describedby="addon-wrapping"
+								id="editcollegename uploadlink"
+							/>
+							</div>
+							<div class="input-group d-flex flex-nowrap" style="width: 80%">
+							<input
+								type="number"
+								name="score"
+								class="form-control"
+								aria-label="Username"
+								aria-describedby="addon-wrapping"
+								id="editscore"
+								placeholder="score uploadlink"
+							/>
+							</div>
+						<div>
+							<button
+								type="button"
+								class="btn btn-outline-secondary px-3 mt-5 me-5 backbtn2"
+							>
+								Back
+							</button>/
+							<button type="submit" class="btn btn-outline-primary mt-5">
+								submit
+							</button>
+						</div>
+					</form>
+				</div>
 				<form
 					action="/admin/results/studentdetails?_method=DELETE"
 					method="post"
@@ -105,6 +169,7 @@
 								<th scope="col">College Name</th>
 								<th scope="col">Score</th>
 								<th scope="col">Update</th>
+								<th scope="col">Edit</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -135,6 +200,11 @@
 										style="height: 20px; width: 20px"
 									/>
 								</td>
+								<td>
+									<button type="button" class="btn btn-danger  ms-5 px-3 editbtn" value="<%= i.name %>,<%= i.collegename %>,<%= i.score %>,<%= i.cloudinaryname %>">
+										Edit
+									</button>
+								</td>
 							</tr>
 							<% }) %>
 						</tbody>
@@ -143,7 +213,7 @@
 						<button type="button" class="btn btn-outline-primary addbtn px-4">
 							Add
 						</button>
-						<button class="btn btn-outline-danger submit ms-5 px-3 submitbtn" disabled>
+						<button type="button" class="btn btn-outline-danger submit ms-5 px-3 submitbtn" disabled>
 							Delete
 						</button>
 					</div>

@@ -93,19 +93,22 @@ ul {
 	background: url('https://img.icons8.com/ios-filled/50/1e2886/sun--v1.png')
 		center/cover;
 	cursor: pointer;
-	margin-left: .5rem;
+	margin-left: 0.5rem;
 	margin-right: 1rem;
 }
 
 .dark-mode-toggle.dark {
 	background: url('https://img.icons8.com/external-bearicons-glyph-bearicons/64/ffffff/external-moon-halloween-bearicons-glyph-bearicons.png')
 		center/cover;
-		margin-left: .5rem;
-		margin-right: 1rem;
+	margin-left: 0.5rem;
+	margin-right: 1rem;
 }
 
 nav.dark {
 	background-color: #181a1b !important;
+}
+.site-navbar.dark ul li a {
+	color: white !important;
 }
 
 nav.dark .navlinks a {

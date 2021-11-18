@@ -119,10 +119,10 @@
 }
 .blob1 {
 	position: absolute;
-	top: 2%;
-	/* left: 7px; */
-	width: 63%;
-	height: 600px;
+	transform: translateY(-50%);
+	top: 50%;
+	object-fit: cover;
+	width: 65%;
 }
 .blob2 {
 	position: absolute;
@@ -1451,14 +1451,6 @@ p {
 	position: relative;
 }
 
-.card {
-	/* height: 360px;
-  width: 340px;
-  background: linear-gradient(#369afe,#60efffda);
-  position: relative;
-  box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.2);
-  border-radius: 10px; */
-}
 .profile {
 	/* position: absolute; */
 
@@ -1587,10 +1579,10 @@ iframe {
 	border-radius: 30px 0 30px 0;
 }
 @media (max-width: 1450px) {
-	.blob1 {
+	/* .blob1 {
 		width: 50%;
 		height: 80vh;
-	}
+	} */
 
 	.blob2 {
 		transform: scale(0.8);
@@ -1699,11 +1691,11 @@ iframe {
 		background-color: rgba(255, 255, 255, 0.849);
 		box-shadow: 2px 2px 60px rgb(0 0 0 / 20%);
 	}
-	.blob1 {
+	/* .blob1 {
 		width: 50%;
 		height: 74vh;
 		top: 8%;
-	}
+	} */
 	.blob2 {
 		transform: scale(0.7);
 		right: 3%;
@@ -1770,11 +1762,11 @@ iframe {
 		min-height: fit-content;
 	}
 
-	.blob1 {
+	/* .blob1 {
 		width: 50%;
 		height: 74vh;
 		top: 8%;
-	}
+	} */
 	.blob2 {
 		transform: scale(0.7);
 		right: -5%;
@@ -2283,18 +2275,9 @@ iframe {
 		padding-right: 0rem;
 		width: 22rem;
 	}
-	/* .mySwiper2 {
-  width: 84% !important;
-  } */
-	/* .mySwiper1 {
-    width: 83% !important;
-    
-} */
+
 	.video {
 		height: 22vh;
 		width: 60vw;
-	}
-	.sliderRev {
-		/* height: 45vh; */
 	}
 }
