@@ -105,6 +105,17 @@ tbody {
 	transition: all 0.5s ease;
 }
 
+.preview2 {
+	position: absolute;
+	height: 80%;
+	width: 80%;
+	transform: translate(300vw, 0);
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.5s ease;
+}
+
 .preview img {
 	justify-content: center;
 	align-items: center;
