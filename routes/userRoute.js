@@ -6,7 +6,7 @@ const db = require('../database');
 const multer = require('multer');
 const { storage, cloudinary } = require('../cloudinary');
 const { response } = require('express');
-const upload = multer({ storage });
+const upload = multer({ storage, limits: { fileSize: 500000 } });
 var sizeOf = require('image-size');
 const { isloggedin, flash } = require('../middleware');
 
@@ -16,9 +16,7 @@ router
 		res.render('admin/courses/empty');
 	})
 	.post(async (req, res) => {
-		
-		sizeOf(req.body, function (err, dimensions) {
-		});
+		sizeOf(req.body, function (err, dimensions) {});
 	});
 
 dotenv.config({ path: './.env' });
@@ -27,7 +25,6 @@ router.route('/').get(flash, async (req, res) => {
 	await db.query('SELECT * FROM homeslider', async (error, response) => {
 		var arr = [];
 		if (error) {
-			// console.log(imganame);
 			console.log(error);
 		} else {
 			for (let i = 0; i <= response.length - 1; i++) {
@@ -47,7 +44,8 @@ router.route('/').get(flash, async (req, res) => {
 							name: response[i].name,
 							collegename: response[i].collegename,
 							cloudinaryname: response[i].cloudinaryname,
-							studentimg: response[i].studentimg
+							studentimg: response[i].studentimg,
+							score: response[i].score
 						};
 						ourtoppers.push(image);
 					}
@@ -1119,6 +1117,26 @@ router.post('/signout', (req, res) => {
 		res.clearCookie('connect.sid');
 		res.redirect('/login');
 	});
+});
+
+router.post('/chatbot', async (req, res) => {
+	console.log(req.body);
+	await db.query(
+		'INSERT INTO chatbot SET ?',
+		{
+			name: req.body.name,
+			number: req.body.number,
+			gmail: req.body.email
+		},
+		(err, response) => {
+			if (err) {
+				console.log(err);
+				return;
+			} else {
+				res.json({ message: 'Success' });
+			}
+		}
+	);
 });
 
 module.exports = router;

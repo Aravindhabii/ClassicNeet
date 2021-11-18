@@ -105,6 +105,7 @@
 								<th scope="col">College Name</th>
 								<th scope="col">Score</th>
 								<th scope="col">Update</th>
+								<th scope="col">Edit</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -135,6 +136,11 @@
 										style="height: 20px; width: 20px"
 									/>
 								</td>
+								<td>
+									<button type="button" class="btn btn-danger  ms-5 px-3 editbtn">
+										Edit
+									</button>
+								</td>
 							</tr>
 							<% }) %>
 						</tbody>
@@ -143,7 +149,7 @@
 						<button type="button" class="btn btn-outline-primary addbtn px-4">
 							Add
 						</button>
-						<button class="btn btn-outline-danger submit ms-5 px-3 submitbtn" disabled>
+						<button type="button" class="btn btn-outline-danger submit ms-5 px-3 submitbtn" disabled>
 							Delete
 						</button>
 					</div>

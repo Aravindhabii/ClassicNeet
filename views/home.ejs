@@ -33,11 +33,11 @@
 
 					<section class="home">
 						<div class="homeLeft">
-							<img class="building" src="images/home/arch doodle.png" alt="" />
+							<!-- <img class="building" src="images/home/arch doodle.png" alt="" /> -->
 							<!-- <img class="building2" src="images/build2.png" alt="" />
 					<img class="building3" src="images/home/blobWhite.png" alt="" /> -->
 							<div class="spilldiv">
-								<img class="blob1" src="images/home/spill.png" alt="" />
+								<img class="blob1" src="images/home/blob_big.png" alt="" />
 							</div>
 							<img class="blob2" src="images/home/blob3final.png" alt="" />
 
@@ -293,24 +293,16 @@
 						<div class="swiper-wrapper">
 							<% ourtoppers.forEach(topper=> { %>
 								<div class="swiper-slide">
-
-
 									<img class="profile" src="<%= topper.studentimg %>" alt="" />
-
 									<div class="toppersDiv">
-										<p class="markNew">680 / 720</p>
+										<p class="markNew"><%= topper.score %> / 720</p>
 										<p class="nameNew">
 											<%= topper.name %>
 										</p>
 										<p class="colNew">
 											<%= topper.collegename %>
 										</p>
-
-
 									</div>
-
-
-
 								</div>
 								<% }) %>
 						</div>
