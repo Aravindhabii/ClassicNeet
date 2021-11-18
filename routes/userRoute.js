@@ -6,7 +6,7 @@ const db = require('../database');
 const multer = require('multer');
 const { storage, cloudinary } = require('../cloudinary');
 const { response } = require('express');
-const upload = multer({ storage, limits: { fileSize: 500000 } });
+const upload = multer({ storage });
 var sizeOf = require('image-size');
 const { isloggedin, flash } = require('../middleware');
 
@@ -906,7 +906,9 @@ router
 			for (let i = 0; i <= req.files.length - 1; i++) {
 				for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
 					if (i === j) {
-						await cloudinary.uploader.destroy(`ClassicNeetAcademy/${check}`);
+						await cloudinary.uploader.destroy(
+							`ClassicNeetAcademy/${req.body.checkbox[i]}`
+						);
 						await db.query(
 							'UPDATE resultslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
 							[
