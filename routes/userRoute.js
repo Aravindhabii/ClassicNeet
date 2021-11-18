@@ -6,7 +6,7 @@ const db = require('../database');
 const multer = require('multer');
 const { storage, cloudinary } = require('../cloudinary');
 const { response } = require('express');
-const upload = multer({ storage });
+const upload = multer({ storage, limits: { fileSize: 500000 } });
 var sizeOf = require('image-size');
 const { isloggedin, flash } = require('../middleware');
 
@@ -16,9 +16,7 @@ router
 		res.render('admin/courses/empty');
 	})
 	.post(async (req, res) => {
-		
-		sizeOf(req.body, function (err, dimensions) {
-		});
+		sizeOf(req.body, function (err, dimensions) {});
 	});
 
 dotenv.config({ path: './.env' });
