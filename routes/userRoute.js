@@ -744,7 +744,6 @@ router
 				(err, response) => {
 					if (err) {
 						console.log(err);
-					} else {
 					}
 				}
 			);
