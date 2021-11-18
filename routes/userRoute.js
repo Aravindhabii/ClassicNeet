@@ -942,6 +942,7 @@ router.route('/successstories').get(async (req, res) => {
 				};
 				arr.push(image);
 			}
+			console.log(arr);
 			res.render('successStories2', { students: arr });
 		}
 	});
