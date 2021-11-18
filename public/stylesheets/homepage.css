@@ -119,10 +119,10 @@
 }
 .blob1 {
 	position: absolute;
-	top: 2%;
-	/* left: 7px; */
-	width: 63%;
-	height: 600px;
+	transform: translateY(-50%);
+	top: 50%;
+	object-fit: cover;
+	width: 65%;
 }
 .blob2 {
 	position: absolute;
@@ -1587,10 +1587,10 @@ iframe {
 	border-radius: 30px 0 30px 0;
 }
 @media (max-width: 1450px) {
-	.blob1 {
+	/* .blob1 {
 		width: 50%;
 		height: 80vh;
-	}
+	} */
 
 	.blob2 {
 		transform: scale(0.8);
@@ -1699,11 +1699,11 @@ iframe {
 		background-color: rgba(255, 255, 255, 0.849);
 		box-shadow: 2px 2px 60px rgb(0 0 0 / 20%);
 	}
-	.blob1 {
+	/* .blob1 {
 		width: 50%;
 		height: 74vh;
 		top: 8%;
-	}
+	} */
 	.blob2 {
 		transform: scale(0.7);
 		right: 3%;
@@ -1770,11 +1770,11 @@ iframe {
 		min-height: fit-content;
 	}
 
-	.blob1 {
+	/* .blob1 {
 		width: 50%;
 		height: 74vh;
 		top: 8%;
-	}
+	} */
 	.blob2 {
 		transform: scale(0.7);
 		right: -5%;
