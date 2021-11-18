@@ -149,7 +149,7 @@
 		<section class="timelineNew">
 			<img
 				class="timelineImg"
-				src="../images/aboutus/group19.png"
+				src="../images/aboutus/Group19.png"
 				class="book"
 				alt=""
 			/>
@@ -186,44 +186,12 @@
 					</div>
 				</div>
 				<div class="timelinePara">
-					<p>
-						Our honourable CM appreciated our CLASSIC NEET student Ms.Sreya
-						Priyadharshini for securing NEET first mark in Salem Region in NEET
-					</p>
-					<p>
-						Our honourable CM appreciated our CLASSIC NEET student Ms.Sreya
-						Priyadharshini for securing NEET first mark in Salem Region in NEET
-					</p>
-					<p>
-						Our honourable CM appreciated our CLASSIC NEET student Ms.Sreya
-						Priyadharshini for securing NEET first mark in Salem Region in NEET
-					</p>
-					<p>
-						Our honourable CM appreciated our CLASSIC NEET student Ms.Sreya
-						Priyadharshini for securing NEET first mark in Salem Region in NEET
-					</p>
-					<p>
-						Our honourable CM appreciated our CLASSIC NEET student Ms.Sreya
-						Priyadharshini for securing NEET first mark in Salem Region in NEET
-					</p>
-
-					<p>
-						Our honourable CM appreciated our CLASSIC NEET student Ms.Sreya
-						Priyadharshini for securing NEET first mark in Salem Region in NEET
-					</p>
-					<p>
-						Our honourable CM appreciated our CLASSIC NEET student Ms.Sreya
-						Priyadharshini for securing NEET first mark in Salem Region in NEET
-					</p>
-
-					<p>
-						Our honourable CM appreciated our CLASSIC NEET student Ms.Sreya
-						Priyadharshini for securing NEET first mark in Salem Region in NEET
-					</p>
-					<p>
-						Our honourable CM appreciated our CLASSIC NEET student Ms.Sreya
-						Priyadharshini for securing NEET first mark in Salem Region in NEET
-					</p>
+					
+					<% content.forEach(cont => { %>
+						<p><%= cont.content %> - <%= cont.year %></p>
+					<% }) %>
+				
+					
 				</div>
 			</div>
 		</section>
