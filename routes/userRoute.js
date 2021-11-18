@@ -744,7 +744,6 @@ router
 				(err, response) => {
 					if (err) {
 						console.log(err);
-					} else {
 					}
 				}
 			);
@@ -942,6 +941,7 @@ router.route('/successstories').get(async (req, res) => {
 				};
 				arr.push(image);
 			}
+			console.log(arr);
 			res.render('successStories2', { students: arr });
 		}
 	});

@@ -37,7 +37,7 @@ document.querySelector('.submitbtn').addEventListener('click', () => {
 		confirmButtonText: 'Yes, delete it!'
 	}).then((result) => {
 		if (result.isConfirmed) {
-			latestupdateform.submit();
+			document.querySelector('.demoVideosForm').submit();
 		}
 	});
 });
