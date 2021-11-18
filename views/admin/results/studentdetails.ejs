@@ -90,6 +90,68 @@
 						</div>
 					</form>
 				</div>
+				<div class="preview2">
+					<h1 class="mb-5">Student Details</h1>
+					<form
+					action="/admin/results/studentdetails?_method=PUT"
+					method="post"
+					class="d-flex justify-content-center align-items-center flex-column"
+					style="width: 100%"
+					enctype="multipart/form-data"
+					>
+						<div class="input-group d-flex flex-nowrap" style="width: 80%">
+							<span class="input-group-text" id="addon-wrapping">Add Name</span>
+							<input
+								type="text"
+								name="name"
+								class="form-control"
+								aria-label="Username"
+								aria-describedby="addon-wrapping"
+								id="uploadlink"
+								value="<%= i.name %> "
+							/>
+							<input
+								type="file"
+								name="studentimg"
+								class="form-control"
+								aria-label="Username"
+								aria-describedby="addon-wrapping"
+								id="uploadlink"
+								value="<%= i.studentimg %> "
+							/>
+							<input
+								type="text"
+								name="collegeName"
+								class="form-control"
+								aria-label="Username"
+								aria-describedby="addon-wrapping"
+								id="uploadlink"
+								value="<%= i.collegename %> "
+							/>
+							<input
+								type="number"
+								name="score"
+								class="form-control"
+								aria-label="Username"
+								aria-describedby="addon-wrapping"
+								id="uploadlink"
+								placeholder="score"
+								value="<%= i.score %> "
+							/>
+						</div>
+						<div>
+							<button
+								type="button"
+								class="btn btn-outline-secondary px-3 mt-5 me-5 backbtn"
+							>
+								Back
+							</button>/
+							<button type="submit" class="btn btn-outline-primary mt-5">
+								submit
+							</button>
+						</div>
+					</form>
+				</div>
 				<form
 					action="/admin/results/studentdetails?_method=DELETE"
 					method="post"
@@ -137,7 +199,7 @@
 									/>
 								</td>
 								<td>
-									<button type="button" class="btn btn-danger  ms-5 px-3 editbtn">
+									<button type="button" class="btn btn-danger  ms-5 px-3 editbtn" value="<%= i.name %>,<%= i.collegename %>,<%= i.score %>,<%= i.cloudinaryname %>">
 										Edit
 									</button>
 								</td>

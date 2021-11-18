@@ -4,7 +4,12 @@ const backbtn = document.querySelector('.backbtn');
 const sectionop = document.querySelector('.mainsection');
 const imgform = document.querySelector('.imgform');
 const submitbtn = document.querySelector('.submitbtn');
-const editbtn = document.querySelector('.editbtn');
+const editbtn = document.querySelectorAll('.editbtn');
+
+
+editbtn.forEach(function(btn){
+	console.log(btn.value);
+});
 
 addbtn.addEventListener('click', () => {
 	previewDiv.style.display = 'flex';
@@ -67,5 +72,5 @@ document.querySelectorAll('.updatesCheckbox').forEach((check, i) => {
 });
 
 editbtn.addEventListener('click', () => {
-	
+
 })
