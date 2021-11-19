@@ -113,7 +113,7 @@ const tbody = document.querySelector('.tbody');
 
 const loadDetails = async (page, type) => {
 	const details = await pagination(page);
-	console.log(details);
+	tbody.innerHTML = '';
 	details.forEach((detail) => {
 		const row = `<tr>
 		<td>
@@ -154,15 +154,13 @@ const loadDetails = async (page, type) => {
 		rows += row;
 		switch (type) {
 			case 'load':
-				tbody.innerHTML = rows;
+				tbody.innerHTML += row;
 				break;
 			case 'next':
-				tbody.innerHTML = '';
-				tbody.innerHTML = rows;
+				tbody.innerHTML += row;
 				break;
 			case 'prev':
-				tbody.innerHTML = '';
-				tbody.innerHTML = rows;
+				tbody.innerHTML += row;
 				break;
 		}
 	});
