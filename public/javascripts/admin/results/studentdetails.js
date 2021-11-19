@@ -1,29 +1,29 @@
-const addbtn = document.querySelector(".addbtn");
-const previewDiv = document.querySelector(".preview");
-const previewDiv2 = document.querySelector(".preview2");
-const backbtn = document.querySelector(".backbtn");
-const backbtn2 = document.querySelector(".backbtn2");
-const sectionop = document.querySelector(".mainsection");
-const imgform = document.querySelector(".imgform");
-const submitbtn = document.querySelector(".submitbtn");
-const editbtn = document.querySelectorAll(".editbtn");
-const editname = document.querySelector(".editname");
-const editstudentimg = document.querySelector(".editstudentimg");
-const editcollegename = document.querySelector(".editcollegename");
-const oldname = document.querySelector(".oldname");
+const addbtn = document.querySelector('.addbtn');
+const previewDiv = document.querySelector('.preview');
+const previewDiv2 = document.querySelector('.preview2');
+const backbtn = document.querySelector('.backbtn');
+const backbtn2 = document.querySelector('.backbtn2');
+const sectionop = document.querySelector('.mainsection');
+const imgform = document.querySelector('.imgform');
+const submitbtn = document.querySelector('.submitbtn');
+const editbtn = document.querySelectorAll('.editbtn');
+const editname = document.querySelector('.editname');
+const editstudentimg = document.querySelector('.editstudentimg');
+const editcollegename = document.querySelector('.editcollegename');
+const oldname = document.querySelector('.oldname');
 
 editbtn.forEach(function (btn) {
-  btn.addEventListener("click", function () {
-    previewDiv2.style.display = "flex";
-    imgform.style.transform = "translate(300vw,0)";
-    previewDiv2.style.transform = "none";
-    console.log(btn.value);
-    const namevalue = btn.value.split(",")[0];
-    editname.value = namevalue;
-    const collegenamevalue = btn.value.split(",")[1];
-    editcollegename.value = collegenamevalue;
-    oldname.value = namevalue;
-  });
+	btn.addEventListener('click', function () {
+		previewDiv2.style.display = 'flex';
+		imgform.style.transform = 'translate(300vw,0)';
+		previewDiv2.style.transform = 'none';
+		console.log(btn.value);
+		const namevalue = btn.value.split(',')[0];
+		editname.value = namevalue;
+		const collegenamevalue = btn.value.split(',')[1];
+		editcollegename.value = collegenamevalue;
+		oldname.value = namevalue;
+	});
 });
 
 addbtn.addEventListener('click', () => {
@@ -131,9 +131,6 @@ const loadDetails = async (page, type) => {
 			<p>${detail.collegename}</p>
 		</td>
 		<td>
-			<p>${detail.score}</p>
-		</td>
-		<td>
 			<input
 				type="checkbox"
 				id="checkbox"
@@ -147,7 +144,7 @@ const loadDetails = async (page, type) => {
 			<button
 				type="button"
 				class="btn btn-danger ms-5 px-3 editbtn"
-				value="${detail.name}, ${detail.collegename}, ${detail.score}, ${detail.cloudinaryname}"
+				value="${detail.name}, ${detail.collegename}, ${detail.cloudinaryname}"
 			>
 				Edit
 			</button>
@@ -159,11 +156,11 @@ const loadDetails = async (page, type) => {
 				break;
 			case 'next':
 				tbody.innerHTML = '';
-				tbody.innerHTML += 'row';
+				tbody.innerHTML += row;
 				break;
-				case 'prev':
+			case 'prev':
 				tbody.innerHTML = '';
-				tbody.innerHTML += 'row';
+				tbody.innerHTML += row;
 				break;
 		}
 	});
