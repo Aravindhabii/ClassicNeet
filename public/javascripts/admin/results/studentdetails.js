@@ -7,13 +7,19 @@ const sectionop = document.querySelector(".mainsection");
 const imgform = document.querySelector(".imgform");
 const submitbtn = document.querySelector(".submitbtn");
 const editbtn = document.querySelectorAll(".editbtn");
+const editname = document.querySelector(".editname");
+const editstudentimg = document.querySelector(".editstudentimg");
+const editcollegename = document.querySelector(".editcollegename");
+const editscore = document.querySelector(".editscore");
 
 editbtn.forEach(function (btn) {
-  console.log(btn.value);
   btn.addEventListener("click", function () {
     previewDiv2.style.display = "flex";
     imgform.style.transform = "translate(300vw,0)";
     previewDiv2.style.transform = "none";
+    console.log(btn.value);
+    const namevalue = btn.value.split(",")[0];
+    console.log(namevalue);
   });
 });
 
