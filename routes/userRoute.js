@@ -788,7 +788,7 @@ router.route('/results').get(async (req, res) => {
 
 router
 	.route('/admin/results/studentdetails')
-	.get(flash, isloggedin, async (req, res) => {
+	.get(flash, async (req, res) => {
 		await db.query('SELECT * FROM studentdetails', async (error, response) => {
 			var arr = [];
 			if (error) {
@@ -834,14 +834,18 @@ router
 	// 	);
 	// 	res.redirect('/admin/results/studentdetails');
 	// })
-	.put(async(req,res)=>{
+	.put(async (req, res) => {
 		await db.query(
 			'UPDATE studentdetails SET =?',
-			{score:req.body.score, name:req.body.name, collegename:req.body.collegeName},
-			(err,response)=>{
-				if(err){
+			{
+				score: req.body.score,
+				name: req.body.name,
+				collegename: req.body.collegeName
+			},
+			(err, response) => {
+				if (err) {
 					console.log(err);
-				}else{
+				} else {
 					res.redirect('/admin/results/studentdetails');
 				}
 			}
@@ -1170,6 +1174,17 @@ router.post('/pagination', async (req, res) => {
 			}
 		}
 	);
+});
+
+router.get('/pagination/totalCount', async (req, res) => {
+	await db.query('SELECT * FROM studentdetails', (err, response) => {
+		if (err) {
+			console.log(err);
+			return;
+		} else {
+			res.json(response.length);
+		}
+	});
 });
 
 module.exports = router;
