@@ -19,7 +19,8 @@ editbtn.forEach(function (btn) {
     previewDiv2.style.transform = "none";
     console.log(btn.value);
     const namevalue = btn.value.split(",")[0];
-    console.log(namevalue);
+    editname.value = namevalue;
+    const imgvalue = btn.value.split(",")[1];
   });
 });
 
