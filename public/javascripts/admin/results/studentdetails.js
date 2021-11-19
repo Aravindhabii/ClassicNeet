@@ -12,19 +12,19 @@ const editstudentimg = document.querySelector('.editstudentimg');
 const editcollegename = document.querySelector('.editcollegename');
 const oldname = document.querySelector('.oldname');
 
-editbtn.forEach(function (btn) {
-	btn.addEventListener('click', function () {
-		previewDiv2.style.display = 'flex';
-		imgform.style.transform = 'translate(300vw,0)';
-		previewDiv2.style.transform = 'none';
-		console.log(btn.value);
-		const namevalue = btn.value.split(',')[0];
-		editname.value = namevalue;
-		const collegenamevalue = btn.value.split(',')[1];
-		editcollegename.value = collegenamevalue;
-		oldname.value = namevalue;
-	});
-});
+
+function editbutton(){
+    previewDiv2.style.display = "flex";
+    imgform.style.transform = "translate(300vw,0)";
+    previewDiv2.style.transform = "none";
+    console.log(btn.value);
+    const namevalue = btn.value.split(",")[0];
+    editname.value = namevalue;
+    const collegenamevalue = btn.value.split(",")[1];
+    editcollegename.value = collegenamevalue;
+    oldname.value = namevalue;
+} 
+
 
 addbtn.addEventListener('click', () => {
 	previewDiv.style.display = 'flex';
@@ -144,7 +144,8 @@ const loadDetails = async (page, type) => {
 			<button
 				type="button"
 				class="btn btn-danger ms-5 px-3 editbtn"
-				value="${detail.name}, ${detail.collegename}, ${detail.cloudinaryname}"
+        onclick="editbutton()"
+				value="${detail.name}, ${detail.collegename}, ${detail.score}, ${detail.cloudinaryname}"
 			>
 				Edit
 			</button>
