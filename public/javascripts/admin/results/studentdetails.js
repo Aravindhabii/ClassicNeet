@@ -105,6 +105,7 @@ const pagination = async (currentPage) => {
 		}
 	});
 	const data = await res.json();
+	console.log(data);
 	return data;
 };
 
@@ -158,10 +159,12 @@ const loadDetails = async (page, type) => {
 				tbody.innerHTML += row;
 				break;
 			case 'next':
-				tbody.innerHTML = row;
+				tbody.innerHTML = '';
+				tbody.innerHTML += 'row';
 				break;
-			case 'prev':
-				tbody.innerHTML = row;
+				case 'prev':
+				tbody.innerHTML = '';
+				tbody.innerHTML += 'row';
 				break;
 		}
 	});
@@ -184,7 +187,6 @@ next.addEventListener('click', async (e) => {
 		Math.ceil(parseInt(tbody.getAttribute('data-total') / 10))
 	) {
 		next.setAttribute('disabled', true);
-		prev.setAttribute('disabled', true);
 	} else if (
 		parseInt(next.getAttribute('data-page')) <=
 		Math.ceil(parseInt(tbody.getAttribute('data-total') / 10))
