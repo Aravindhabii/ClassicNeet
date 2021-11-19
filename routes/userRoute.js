@@ -810,7 +810,7 @@ router
 	})
 	.post(upload.single('studentimg'), async (req, res) => {
 		await db.query(
-			'INSERT INTO studentdetails SET = ? WHERE',
+			'INSERT INTO studentdetails SET = ?',
 			{
 				name: req.body.name,
 				collegename: req.body.collegeName,
@@ -822,10 +822,11 @@ router
 				if (err) {
 					console.log(err);
 				} else {
+					res.redirect('/admin/results/studentdetails');
 				}
 			}
 		);
-		res.redirect('/admin/results/studentdetails');
+		
 	})
 	// .put(upload.single('sliderimg'), async (req, res) => {
 	// 	await db.query(
@@ -850,6 +851,7 @@ router
 				}
 			}
 		);
+		res.redirect('/admin/results/studentdetails');
 	})
 	.delete(async (req, res) => {
 		if (typeof req.body.checkbox === 'string') {
