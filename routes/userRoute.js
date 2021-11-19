@@ -1141,4 +1141,22 @@ router.post('/chatbot', async (req, res) => {
 	);
 });
 
+router.post('/pagination', async (req, res) => {
+	const currentPage = req.body.page || 1;
+	const perPage = 10;
+	await db.query(
+		`SELECT * FROM studentdetails LIMIT ${perPage} OFFSET ${
+			(currentPage - 1) * perPage
+		}`,
+		(err, response) => {
+			if (err) {
+				console.log(err);
+				return;
+			} else {
+				res.json(response);
+			}
+		}
+	);
+});
+
 module.exports = router;

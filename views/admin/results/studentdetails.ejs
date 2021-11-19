@@ -31,7 +31,7 @@
 		<%- include('../../layout/adminheader') %>
 		<section class="mainsection">
 			<div class="left"><%- include('../../layout/adminSideBar') %></div>
-			<div class="right" style="height: fit-content;">
+			<div class="right" style="height: fit-content">
 				<div class="preview">
 					<h1 class="mb-5">Student Details</h1>
 					<form
@@ -82,8 +82,8 @@
 								type="button"
 								class="btn btn-outline-secondary px-3 mt-5 me-5 backbtn"
 							>
-								Back
-							</button>/
+								Back</button
+							>/
 							<button type="submit" class="btn btn-outline-primary mt-5">
 								submit
 							</button>
@@ -93,11 +93,11 @@
 				<div class="preview2">
 					<h1 class="mb-5">Student Details</h1>
 					<form
-					action="/admin/results/studentdetails?_method=PUT"
-					method="post"
-					class="d-flex justify-content-center align-items-center flex-column"
-					style="width: 100%"
-					enctype="multipart/form-data"
+						action="/admin/results/studentdetails?_method=PUT"
+						method="post"
+						class="d-flex justify-content-center align-items-center flex-column"
+						style="width: 100%"
+						enctype="multipart/form-data"
 					>
 						<div class="input-group d-flex flex-nowrap" style="width: 80%">
 							<span class="input-group-text" id="addon-wrapping">Add Name</span>
@@ -109,8 +109,8 @@
 								aria-describedby="addon-wrapping"
 								id="editname uploadlink"
 							/>
-							</div>
-							<div class="input-group d-flex flex-nowrap" style="width: 80%">
+						</div>
+						<div class="input-group d-flex flex-nowrap" style="width: 80%">
 							<input
 								type="file"
 								name="studentimg"
@@ -119,8 +119,8 @@
 								aria-describedby="addon-wrapping"
 								id="editstudentimg uploadlink"
 							/>
-							</div>
-							<div class="input-group d-flex flex-nowrap" style="width: 80%">
+						</div>
+						<div class="input-group d-flex flex-nowrap" style="width: 80%">
 							<input
 								type="text"
 								name="collegeName"
@@ -129,8 +129,8 @@
 								aria-describedby="addon-wrapping"
 								id="editcollegename uploadlink"
 							/>
-							</div>
-							<div class="input-group d-flex flex-nowrap" style="width: 80%">
+						</div>
+						<div class="input-group d-flex flex-nowrap" style="width: 80%">
 							<input
 								type="number"
 								name="score"
@@ -140,14 +140,14 @@
 								id="editscore"
 								placeholder="score uploadlink"
 							/>
-							</div>
+						</div>
 						<div>
 							<button
 								type="button"
 								class="btn btn-outline-secondary px-3 mt-5 me-5 backbtn2"
 							>
-								Back
-							</button>/
+								Back</button
+							>/
 							<button type="submit" class="btn btn-outline-primary mt-5">
 								submit
 							</button>
@@ -181,7 +181,8 @@
 								<td>
 									<p class="onclickimg"><%= i.studentimg %></p>
 									<span class="currentPreviewSpan btn btn-info"
-										>Show Image</span>
+										>Show Image</span
+									>
 									<span class="currentSliderimgurl"><%= i.studentimg %></span>
 								</td>
 								<td>
@@ -201,7 +202,11 @@
 									/>
 								</td>
 								<td>
-									<button type="button" class="btn btn-danger  ms-5 px-3 editbtn" value="<%= i.name %>,<%= i.collegename %>,<%= i.score %>,<%= i.cloudinaryname %>">
+									<button
+										type="button"
+										class="btn btn-danger ms-5 px-3 editbtn"
+										value="<%= i.name %>,<%= i.collegename %>,<%= i.score %>,<%= i.cloudinaryname %>"
+									>
 										Edit
 									</button>
 								</td>
@@ -213,7 +218,11 @@
 						<button type="button" class="btn btn-outline-primary addbtn px-4">
 							Add
 						</button>
-						<button type="button" class="btn btn-outline-danger submit ms-5 px-3 submitbtn" disabled>
+						<button
+							type="button"
+							class="btn btn-outline-danger submit ms-5 px-3 submitbtn"
+							disabled
+						>
 							Delete
 						</button>
 					</div>
@@ -221,6 +230,8 @@
 			</div>
 		</section>
 		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
