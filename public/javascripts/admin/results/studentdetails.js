@@ -20,7 +20,12 @@ editbtn.forEach(function (btn) {
     console.log(btn.value);
     const namevalue = btn.value.split(",")[0];
     editname.value = namevalue;
-    const imgvalue = btn.value.split(",")[1];
+    const collegenamevalue = btn.value.split(",")[1];
+    editcollegename.value = collegenamevalue;
+    const scorevalue = btn.value.split(",")[2];
+    editscore.value = scorevalue;
+    // const imgvalue = btn.value.split(",")[3];
+    // editstudentimg.value = imgvalue;
   });
 });
 
