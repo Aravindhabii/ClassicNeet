@@ -810,7 +810,7 @@ router
 	})
 	.post(upload.single('studentimg'), async (req, res) => {
 		await db.query(
-			'INSERT INTO studentdetails SET ?',
+			'INSERT INTO studentdetails SET = ? WHERE',
 			{
 				name: req.body.name,
 				collegename: req.body.collegeName,
@@ -827,12 +827,25 @@ router
 		);
 		res.redirect('/admin/results/studentdetails');
 	})
-	.put(upload.single('sliderimg'), async (req, res) => {
+	// .put(upload.single('sliderimg'), async (req, res) => {
+	// 	await db.query(
+	// 		'UPDATE studentdetails SET image = ? WHERE cloudinaryname = ?',
+	// 		[req.file.path, req.body.cloudinaryname]
+	// 	);
+	// 	res.redirect('/admin/results/studentdetails');
+	// })
+	.put(async(req,res)=>{
 		await db.query(
-			'UPDATE studentdetails SET image = ? WHERE cloudinaryname = ?',
-			[req.file.path, req.body.cloudinaryname]
+			'UPDATE studentdetails SET =?',
+			{score:req.body.score, name:req.body.name, collegename:req.body.collegeName},
+			(err,response)=>{
+				if(err){
+					console.log(err);
+				}else{
+					res.redirect('/admin/results/studentdetails');
+				}
+			}
 		);
-		res.redirect('/admin/results/studentdetails');
 	})
 	.delete(async (req, res) => {
 		if (typeof req.body.checkbox === 'string') {
