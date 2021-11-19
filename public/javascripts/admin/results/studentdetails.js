@@ -12,8 +12,8 @@ const editstudentimg = document.querySelector(".editstudentimg");
 const editcollegename = document.querySelector(".editcollegename");
 const oldname = document.querySelector(".oldname");
 
-editbtn.forEach(function (btn) {
-  btn.addEventListener("click", function () {
+
+function editbutton(){
     previewDiv2.style.display = "flex";
     imgform.style.transform = "translate(300vw,0)";
     previewDiv2.style.transform = "none";
@@ -23,8 +23,8 @@ editbtn.forEach(function (btn) {
     const collegenamevalue = btn.value.split(",")[1];
     editcollegename.value = collegenamevalue;
     oldname.value = namevalue;
-  });
-});
+} 
+
 
 addbtn.addEventListener('click', () => {
 	previewDiv.style.display = 'flex';
@@ -146,6 +146,7 @@ const loadDetails = async (page, type) => {
 			<button
 				type="button"
 				class="btn btn-danger ms-5 px-3 editbtn"
+        onclick="editbutton()"
 				value="${detail.name}, ${detail.collegename}, ${detail.score}, ${detail.cloudinaryname}"
 			>
 				Edit

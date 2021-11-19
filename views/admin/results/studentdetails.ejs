@@ -172,45 +172,27 @@
                 <th scope="col">Edit</th>
               </tr>
             </thead>
-            <tbody>
-              <% students.forEach(i => { %>
-              <tr>
-                <td>
-                  <p><%= i.name %></p>
-                </td>
-                <td>
-                  <p class="onclickimg"><%= i.studentimg %></p>
-                  <span class="currentPreviewSpan btn btn-info"
-                    >Show Image</span
-                  >
-                  <span class="currentSliderimgurl"><%= i.studentimg %></span>
-                </td>
-                <td>
-                  <p><%= i.collegename %></p>
-                </td>
-                <td>
-                  <input
-                    type="checkbox"
-                    id="checkbox"
-                    class="updatesCheckbox"
-                    name="checkbox"
-                    value="<%= i.cloudinaryname %>"
-                    style="height: 20px; width: 20px"
-                  />
-                </td>
-                <td>
-                  <button
-                    type="button"
-                    class="btn btn-danger ms-5 px-3 editbtn"
-                    value="<%= i.name %>,<%= i.collegename %>,<%= i.score %>,<%= i.cloudinaryname %>"
-                  >
-                    Edit
-                  </button>
-                </td>
-              </tr>
-              <% }) %>
+            <tbody class="tbody" data-total="0">
+              
             </tbody>
           </table>
+		  <div class="buttondiv mb-2">
+			<button
+				type="button"
+				class="btn btn-primary px-4 mx-1 prev"
+				data-page="1"
+				disabled
+			>
+				Previous
+			</button>
+			<button
+				type="button"
+				class="btn btn-primary px-4 mx-1 next"
+				data-page="2"
+			>
+				&nbsp;&nbsp;Next&nbsp;&nbsp;
+			</button>
+		</div>
           <div class="buttondiv">
             <button type="button" class="btn btn-outline-primary addbtn px-4">
               Add
@@ -235,3 +217,6 @@
     <script src="../../javascripts/admin/results/studentdetails.js"></script>
   </body>
 </html>
+
+
+
