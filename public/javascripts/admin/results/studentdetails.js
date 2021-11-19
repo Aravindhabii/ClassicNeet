@@ -1,32 +1,29 @@
-const addbtn = document.querySelector('.addbtn');
-const previewDiv = document.querySelector('.preview');
-const previewDiv2 = document.querySelector('.preview2');
-const backbtn = document.querySelector('.backbtn');
-const backbtn2 = document.querySelector('.backbtn2');
-const sectionop = document.querySelector('.mainsection');
-const imgform = document.querySelector('.imgform');
-const submitbtn = document.querySelector('.submitbtn');
-const editbtn = document.querySelectorAll('.editbtn');
-const editname = document.querySelector('.editname');
-const editstudentimg = document.querySelector('.editstudentimg');
-const editcollegename = document.querySelector('.editcollegename');
-const editscore = document.querySelector('.editscore');
+const addbtn = document.querySelector(".addbtn");
+const previewDiv = document.querySelector(".preview");
+const previewDiv2 = document.querySelector(".preview2");
+const backbtn = document.querySelector(".backbtn");
+const backbtn2 = document.querySelector(".backbtn2");
+const sectionop = document.querySelector(".mainsection");
+const imgform = document.querySelector(".imgform");
+const submitbtn = document.querySelector(".submitbtn");
+const editbtn = document.querySelectorAll(".editbtn");
+const editname = document.querySelector(".editname");
+const editstudentimg = document.querySelector(".editstudentimg");
+const editcollegename = document.querySelector(".editcollegename");
+const oldname = document.querySelector(".oldname");
 
 editbtn.forEach(function (btn) {
-	btn.addEventListener('click', function () {
-		previewDiv2.style.display = 'flex';
-		imgform.style.transform = 'translate(300vw,0)';
-		previewDiv2.style.transform = 'none';
-		console.log(btn.value);
-		const namevalue = btn.value.split(',')[0];
-		editname.value = namevalue;
-		const collegenamevalue = btn.value.split(',')[1];
-		editcollegename.value = collegenamevalue;
-		const scorevalue = btn.value.split(',')[2];
-		editscore.value = scorevalue;
-		// const imgvalue = btn.value.split(",")[3];
-		// editstudentimg.value = imgvalue;
-	});
+  btn.addEventListener("click", function () {
+    previewDiv2.style.display = "flex";
+    imgform.style.transform = "translate(300vw,0)";
+    previewDiv2.style.transform = "none";
+    console.log(btn.value);
+    const namevalue = btn.value.split(",")[0];
+    editname.value = namevalue;
+    const collegenamevalue = btn.value.split(",")[1];
+    editcollegename.value = collegenamevalue;
+    oldname.value = namevalue;
+  });
 });
 
 addbtn.addEventListener('click', () => {
