@@ -12,20 +12,18 @@ const editstudentimg = document.querySelector('.editstudentimg');
 const editcollegename = document.querySelector('.editcollegename');
 const oldname = document.querySelector('.oldname');
 
+function editbutton(edit) {
+	console.log(edit.parentNode.parentNode.children[2].innerText);
 
-function editbutton(edit){
-    console.log(edit.parentNode.parentNode.children[2].innerText);
-    
-    previewDiv2.style.display = "flex";
-    imgform.style.transform = "translate(300vw,0)";
-    previewDiv2.style.transform = "none";
-    const namevalue = edit.parentNode.parentNode.children[0].innerText;
-    editname.value = namevalue;
-    const collegenamevalue = edit.parentNode.parentNode.children[2].innerText;
-    editcollegename.value = collegenamevalue;
-    oldname.value = namevalue;
-} 
-
+	previewDiv2.style.display = 'flex';
+	imgform.style.transform = 'translate(300vw,0)';
+	previewDiv2.style.transform = 'none';
+	const namevalue = edit.parentNode.parentNode.children[0].innerText;
+	editname.value = namevalue;
+	const collegenamevalue = edit.parentNode.parentNode.children[2].innerText;
+	editcollegename.value = collegenamevalue;
+	oldname.value = namevalue;
+}
 
 addbtn.addEventListener('click', () => {
 	previewDiv.style.display = 'flex';
@@ -106,7 +104,6 @@ const pagination = async (currentPage) => {
 		}
 	});
 	const data = await res.json();
-	console.log(data);
 	return data;
 };
 
@@ -116,6 +113,7 @@ const tbody = document.querySelector('.tbody');
 
 const loadDetails = async (page, type) => {
 	const details = await pagination(page);
+	console.log(details);
 	details.forEach((detail) => {
 		const row = `<tr>
 		<td>
@@ -152,17 +150,19 @@ const loadDetails = async (page, type) => {
 			</button>
 		</td>
 	</tr>`;
+		var rows = '';
+		rows += row;
 		switch (type) {
 			case 'load':
-				tbody.innerHTML += row;
+				tbody.innerHTML = rows;
 				break;
 			case 'next':
 				tbody.innerHTML = '';
-				tbody.innerHTML += row;
+				tbody.innerHTML = rows;
 				break;
 			case 'prev':
 				tbody.innerHTML = '';
-				tbody.innerHTML += row;
+				tbody.innerHTML = rows;
 				break;
 		}
 	});
