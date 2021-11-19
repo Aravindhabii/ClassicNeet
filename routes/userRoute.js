@@ -788,7 +788,7 @@ router.route('/results').get(async (req, res) => {
 
 router
 	.route('/admin/results/studentdetails')
-	.get(flash, isloggedin, async (req, res) => {
+	.get(flash, async (req, res) => {
 		await db.query('SELECT * FROM studentdetails', async (error, response) => {
 			var arr = [];
 			if (error) {
@@ -1187,6 +1187,17 @@ router.post('/pagination', async (req, res) => {
 			}
 		}
 	);
+});
+
+router.get('/pagination/totalCount', async (req, res) => {
+	await db.query('SELECT * FROM studentdetails', (err, response) => {
+		if (err) {
+			console.log(err);
+			return;
+		} else {
+			res.json(response.length);
+		}
+	});
 });
 
 module.exports = router;

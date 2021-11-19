@@ -92,4 +92,112 @@ document.querySelectorAll('.updatesCheckbox').forEach((check, i) => {
 	});
 });
 
-editbtn.addEventListener('click', () => {});
+// editbtn.addEventListener('click', () => {});
+
+const pagination = async (currentPage) => {
+	const res = await fetch('/pagination', {
+		method: 'POST',
+		body: JSON.stringify({
+			page: currentPage
+		}),
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	});
+	const data = await res.json();
+	return data;
+};
+
+const next = document.querySelector('.next');
+const prev = document.querySelector('.prev');
+const tbody = document.querySelector('.tbody');
+
+const loadDetails = async (page, type) => {
+	const details = await pagination(page);
+	details.forEach((detail) => {
+		const row = `<tr>
+		<td>
+			<p>${detail.name}</p>
+		</td>
+		<td>
+			<p class="onclickimg">${detail.studentimg}</p>
+			<span class="currentPreviewSpan btn btn-info"
+				>Show Image</span
+			>
+			<span class="currentSliderimgurl">${detail.studentimg}</span>
+		</td>
+		<td>
+			<p>${detail.collegename}</p>
+		</td>
+		<td>
+			<p>${detail.score}</p>
+		</td>
+		<td>
+			<input
+				type="checkbox"
+				id="checkbox"
+				class="updatesCheckbox"
+				name="checkbox"
+				value="${detail.cloudinaryname}"
+				style="height: 20px; width: 20px"
+			/>
+		</td>
+		<td>
+			<button
+				type="button"
+				class="btn btn-danger ms-5 px-3 editbtn"
+				value="${detail.name}, ${detail.collegename}, ${detail.score}, ${detail.cloudinaryname}"
+			>
+				Edit
+			</button>
+		</td>
+	</tr>`;
+		switch (type) {
+			case 'load':
+				tbody.innerHTML += row;
+				break;
+			case 'next':
+				tbody.innerHTML = row;
+				break;
+			case 'prev':
+				tbody.innerHTML = row;
+				break;
+		}
+	});
+	return details.length;
+};
+
+window.addEventListener('load', async () => {
+	loadDetails(1, 'load');
+	await fetch('/pagination/totalCount')
+		.then((response) => response.json())
+		.then((data) => {
+			tbody.setAttribute('data-total', data);
+		});
+});
+next.addEventListener('click', async (e) => {
+	await loadDetails(parseInt(next.getAttribute('data-page')), 'next');
+	prev.removeAttribute('disabled');
+	if (
+		parseInt(next.getAttribute('data-page')) >=
+		Math.ceil(parseInt(tbody.getAttribute('data-total') / 10))
+	) {
+		next.setAttribute('disabled', true);
+		prev.setAttribute('disabled', true);
+	} else if (
+		parseInt(next.getAttribute('data-page')) <=
+		Math.ceil(parseInt(tbody.getAttribute('data-total') / 10))
+	) {
+		next.setAttribute(
+			'data-page',
+			parseInt(next.getAttribute('data-page')) + 1
+		);
+		prev.setAttribute(
+			'data-page',
+			parseInt(next.getAttribute('data-page')) - 1
+		);
+	}
+});
+prev.addEventListener('click', async (e) => {
+	await loadDetails(parseInt(next.getAttribute('data-page')) - 1, 'prev');
+});
