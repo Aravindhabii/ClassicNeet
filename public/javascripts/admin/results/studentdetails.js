@@ -13,14 +13,15 @@ const editcollegename = document.querySelector('.editcollegename');
 const oldname = document.querySelector('.oldname');
 
 
-function editbutton(){
+function editbutton(edit){
+    console.log(edit.parentNode.parentNode.children[2].innerText);
+    
     previewDiv2.style.display = "flex";
     imgform.style.transform = "translate(300vw,0)";
     previewDiv2.style.transform = "none";
-    console.log(btn.value);
-    const namevalue = btn.value.split(",")[0];
+    const namevalue = edit.parentNode.parentNode.children[0].innerText;
     editname.value = namevalue;
-    const collegenamevalue = btn.value.split(",")[1];
+    const collegenamevalue = edit.parentNode.parentNode.children[2].innerText;
     editcollegename.value = collegenamevalue;
     oldname.value = namevalue;
 } 
@@ -144,8 +145,8 @@ const loadDetails = async (page, type) => {
 			<button
 				type="button"
 				class="btn btn-danger ms-5 px-3 editbtn"
-        onclick="editbutton()"
-				value="${detail.name}, ${detail.collegename}, ${detail.score}, ${detail.cloudinaryname}"
+        onclick="editbutton(this)"
+				value="${detail.name}, ${detail.collegename}, ${detail.cloudinaryname}"
 			>
 				Edit
 			</button>
