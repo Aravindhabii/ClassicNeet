@@ -93,63 +93,55 @@
         <div class="preview2">
           <h1 class="mb-5">Student Details</h1>
           <form
-            action="/admin/results/studentdetails?_method=PUT"
+            action="/admin/results/studentupdate"
             method="post"
             class="d-flex justify-content-center align-items-center flex-column"
             style="width: 100%"
-            enctype="multipart/form-data"
           >
+            <div class="input-group d-flex flex-nowrap mb-3" style="width: 80%">
+              <span class="input-group-text" id="addon-wrapping">Old Name</span>
+              <input
+                type="text"
+                name="oldname"
+                class="form-control oldname"
+                aria-label="Username"
+                aria-describedby="addon-wrapping"
+                id=" uploadlink"
+                placeholder="Student Name"
+				readonly
+				/>
+            </div>
+
             <div class="input-group d-flex flex-nowrap mb-3" style="width: 80%">
               <span class="input-group-text" id="addon-wrapping">Add Name</span>
               <input
                 type="text"
-                name="name"
+                name="stdname"
                 class="form-control editname"
                 aria-label="Username"
                 aria-describedby="addon-wrapping"
                 id=" uploadlink"
                 placeholder="Student Name"
-				required
+				style="text-transform:uppercase"
+                required
               />
             </div>
-            <!-- <div class="input-group d-flex flex-nowrap" style="width: 80%">
-              <span class="input-group-text" id="addon-wrapping">Add Image</span>
-              <input
-                type="file"
-                name="studentimg"
-                class="form-control editstudentimg mb-3"
-                aria-label="Username"
-                aria-describedby="addon-wrapping"
-                id=" uploadlink"
-                placeholder="Student Image"
-				required
-              />
-            </div> -->
+
             <div class="input-group d-flex flex-nowrap mb-3" style="width: 80%">
-				<span class="input-group-text" id="addon-wrapping">Add College</span>
+              <span class="input-group-text" id="addon-wrapping"
+                >Add College</span
+              >
               <input
                 type="text"
-                name="collegeName"
-                class="form-control editcollegename "
+                name="clgname"
+                class="form-control editcollegename"
                 aria-label="Username"
                 aria-describedby="addon-wrapping"
                 id=" uploadlink"
                 placeholder="CollegeName"
               />
             </div>
-            <div class="input-group d-flex flex-nowrap mb-3" style="width: 80%">
-				<span class="input-group-text" id="addon-wrapping">Add Score</span>
-              <input
-                type="number"
-                name="score"
-                class="form-control editscore"
-                aria-label="Username"
-                aria-describedby="addon-wrapping"
-                id=" uploadlink"
-                placeholder="Score"
-				required
-              />
-            </div>
+
             <div>
               <button
                 type="button"
@@ -176,7 +168,6 @@
                 <th scope="col">Name</th>
                 <th scope="col">Image</th>
                 <th scope="col">College Name</th>
-                <th scope="col">Score</th>
                 <th scope="col">Update</th>
                 <th scope="col">Edit</th>
               </tr>
@@ -196,9 +187,6 @@
                 </td>
                 <td>
                   <p><%= i.collegename %></p>
-                </td>
-                <td>
-                  <p><%= i.score %></p>
                 </td>
                 <td>
                   <input

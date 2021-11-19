@@ -10,7 +10,7 @@ const editbtn = document.querySelectorAll(".editbtn");
 const editname = document.querySelector(".editname");
 const editstudentimg = document.querySelector(".editstudentimg");
 const editcollegename = document.querySelector(".editcollegename");
-const editscore = document.querySelector(".editscore");
+const oldname = document.querySelector(".oldname");
 
 editbtn.forEach(function (btn) {
   btn.addEventListener("click", function () {
@@ -22,10 +22,7 @@ editbtn.forEach(function (btn) {
     editname.value = namevalue;
     const collegenamevalue = btn.value.split(",")[1];
     editcollegename.value = collegenamevalue;
-    const scorevalue = btn.value.split(",")[2];
-    editscore.value = scorevalue;
-    // const imgvalue = btn.value.split(",")[3];
-    // editstudentimg.value = imgvalue;
+    oldname.value = namevalue;
   });
 });
 
