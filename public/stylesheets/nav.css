@@ -72,7 +72,7 @@ a.site-logo {
   cursor: pointer;
   height: 39px;
   display: none;
-  z-index: 10000;
+  z-index: 1000;
   margin-right: 5%;
 }
 .nav-toggler span,
