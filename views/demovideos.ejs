@@ -25,36 +25,24 @@
 		    <%- include('./chatbot') %>
 
 		<section class="Getyourvideos">
-			<!-- <div class="video">
-            <p>Get your demo videos here</p>
-        </div>
-        <span class="stream1">
-          <label class="mr-sm-2" for="inlineFormCustomSelect">Preference</label>
-          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-            <option selected class="selectOption">Stream</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-      </span>
-      <span class="stream2">
-        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" >
-          <option selected class="selectOption">Subject</option>
-          <option value="1">Physics</option>
-          <option value="2">Chemistry</option>
-          <option value="3">Botany</option>
-          <option value="4">Zoology</option>
-        </select>
-      </span>
-      <span class="stream3">
-        <button>Submit</button>
-      </span>
-      <span class="stream4">
-        <button>Reset</button>
-      </span> -->
+			
 		</section>
 		<section class="gridcontainer">
-			<iframe
+			<div class="grid">
+					<% link.forEach((link,index)=> { %>
+						<div class="griditem">
+							<div class="gridbox">
+								<iframe class="video" src="<%= link %>" title="YouTube video player"
+									frameborder="0"
+									allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+									allowfullscreen></iframe>
+							</div>
+						</div>
+						<% }) %>
+				
+
+			</div>
+			<!-- <iframe
 				class="griditem"
 				src="https://www.youtube.com/embed/CTl666v3Mg0"
 				title="YouTube video player"
@@ -101,7 +89,7 @@
 				frameborder="0"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 				allowfullscreen
-			></iframe>
+			></iframe> -->
 		</section>
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
