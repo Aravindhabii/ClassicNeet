@@ -765,6 +765,45 @@ router
 		}
 	});
 
+//demovideos bannerpic
+
+router
+	.route('/admin/sliderrevolution')
+	.get(flash, isloggedin, async (req, res) => {
+		await db.query('SELECT * FROM homeslider', async (error, response) => {
+			var arr = [];
+			if (error) {
+				console.log(error);
+			} else {
+				for (let i = 0; i <= response.length - 1; i++) {
+					var image = {
+						sliderimg: response[i].sliderimg,
+						imgname: response[i].imgname,
+						cloudinaryName: response[i].cloudinaryname
+					};
+					arr.push(image);
+				}
+			}
+			res.render('admin/home/sliderRevolution', { img: arr });
+		});
+	})
+	.post(upload.array('sliderimg'), async (req, res) => {
+			await cloudinary.uploader.destroy(req.body.checkbox);
+			await db.query(
+				'UPDATE homeslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
+				[
+					req.files[0].path,
+					req.files[0].originalname,
+					req.files[0].filename.split('/')[1],
+					req.body.checkbox
+				]
+			);
+			res.redirect('/admin/sliderrevolution');		
+});
+
+
+
+
 router.route('/results').get(async (req, res) => {
 	await db.query('SELECT * FROM studentdetails', async (error, response) => {
 		var arr = [];

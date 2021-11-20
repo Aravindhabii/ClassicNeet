@@ -24,19 +24,9 @@ function handleDisconnect() {
     if (err) {
       console.log("error when connecting to db:", err);
       db.end();
-      setTimeout(handleDisconnect, 3000);
+      handleDisconnect()
     } else {
       console.log("Mysql connected");
-    }
-  });
-
-  db.on("error", function (err) {
-    console.log("db error", err);
-    if (err.code === "PROTOCOL_CONNECTION_LOST") {
-      db.end();
-      handleDisconnect();
-    } else {
-      throw err;
     }
   });
 }
