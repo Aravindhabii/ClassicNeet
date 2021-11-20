@@ -1,203 +1,77 @@
 body.dark {
-	background-color: #181a1b;
-	color: white;
+  background-color: #181a1b;
+  color: white;
 }
 
 .Getyourvideos {
-	width: 100%;
-	height: 100vh;
-	background: url(../images/demo/demovideosbg.png) center/cover;
+  width: 100%;
+  height: 100vh;
+  background: url(../images/demo/demovideosbg.png) center/cover;
 }
-.Getyourvideos::after {
-	content: '';
-	/* position: absolute; */
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.2);
-	z-index: 1;
-}
-.video {
-	border: 2px solid black;
-	background-color: white;
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 40px;
-	font-size: 25px;
-	width: 35%;
-	height: 10vh;
-	top: 15%;
-	left: 33%;
-	z-index: 2;
-}
-.stream1 {
-	position: absolute;
-	top: 57%;
-	left: 21%;
-	z-index: 2;
-}
-.stream2 {
-	position: absolute;
-	top: 57%;
-	right: 21%;
-	z-index: 2;
-}
-.stream3 {
-	position: absolute;
-	top: 85%;
-	left: 30%;
-	z-index: 2;
-}
-.stream4 {
-	position: absolute;
-	top: 85%;
-	right: 30%;
-	z-index: 2;
-}
-p {
-	/* margin-top: 0; */
-	margin-bottom: 0rem !important;
-}
-
-select,
-.stream3 button,
-.stream4 button {
-	padding: 0.8rem 4rem;
-	border-radius: 40px !important;
-	border: 2px solid black;
-	font-size: 25px !important;
-}
-
-.stream {
-	border: 2px solid black;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	width: 19%;
-	height: 9vh;
-}
-.stream button {
-	position: absolute;
-	left: 12%;
-}
-.stream span svg {
-	width: 60px;
-	height: 45px;
-	position: absolute;
-	right: 0%;
-}
-.subject span {
-	border: 2px solid black;
-	background-color: white;
-	position: absolute;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 25px;
-	width: 19%;
-	height: 9vh;
-	font-size: 23px;
-	top: 57%;
-	left: 60%;
-}
-.subject span p {
-	position: absolute;
-	left: 12%;
-}
-.subject span svg {
-	width: 60px;
-	height: 45px;
-	position: absolute;
-	right: 0%;
-}
-.submit {
-	border: 2px solid black;
-	background-color: white;
-	position: absolute;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 25px;
-	width: 15%;
-	height: 9vh;
-	font-size: 20px;
-	top: 85%;
-	left: 28%;
-}
-.submit p {
-	position: absolute;
-	left: 25%;
-}
-.reset {
-	border: 2px solid black;
-	background-color: white;
-	position: absolute;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 25px;
-	width: 15%;
-	height: 9vh;
-	font-size: 20px;
-	top: 85%;
-	left: 50%;
-}
-.reset {
-	position: absolute;
-	left: 56%;
-}
-
 .gridcontainer {
-	position: relative;
-	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
-	grid-row-gap: 3rem;
-	/* height: 120vh;     */
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	justify-items: center;
-	margin-top: 5rem;
-	margin-bottom: 5rem;
+  position: relative;
+  width: 100%;
+  /* margin-left: auto;
+	margin-right: auto; */
+  /* left: 50%;
+	transform: translateX(-35%); */
+  grid-row-gap: 3rem;
+  /* height: 120vh;     */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 .grid {
-	position: relative;
-	height: 10rem;
-	width: 30%;
-	border: 1px solid black;
-	display: flex;
-	align-items: center;
+  position: relative;
+  /* height: 10rem;
+	width: 30%; */
+  width: 100%;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  align-items: center;
 }
 iframe {
-	z-index: 4;
+  z-index: 4;
 }
 .griditem {
-	width: 90%;
-	height: 260px;
-	padding: 0.5rem;
-	border: 15px solid #02c3d8;
-	border-radius: 20px 0px 20px 0px;
+  width: 100%;
+  height: 15rem;
+  padding: 0.5rem;
+  border: 15px solid #02c3d8;
+  margin: 5%;
+  border-radius: 20px 0px 20px 0px;
 }
 @media (max-width: 1100px) {
-	.gridcontainer {
-		grid-template-columns: repeat(2, 1fr);
-	}
+  .gridcontainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 800px) {
-	.gridcontainer {
-		width: 70%;
-		grid-template-columns: repeat(1, 1fr);
-	}
+  .gridcontainer {
+    width: 70%;
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 @media (max-width: 600px) {
-	.gridcontainer {
-		width: 90%;
-		grid-template-columns: repeat(1, 1fr);
-	}
+  .gridcontainer {
+    width: 90%;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+/* demovideos  */
+.gridbox {
+  border-radius: 14px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  border-radius: 30px 0 30px 0;
 }
