@@ -91,8 +91,6 @@ document.querySelectorAll('.updatesCheckbox').forEach((check, i) => {
 	});
 });
 
-// editbtn.addEventListener('click', () => {});
-
 const pagination = async (currentPage) => {
 	const res = await fetch('/pagination', {
 		method: 'POST',
@@ -150,8 +148,6 @@ const loadDetails = async (page, type) => {
 			</button>
 		</td>
 	</tr>`;
-		var rows = '';
-		rows += row;
 		switch (type) {
 			case 'load':
 				tbody.innerHTML += row;
@@ -177,25 +173,6 @@ window.addEventListener('load', async () => {
 });
 next.addEventListener('click', async (e) => {
 	await loadDetails(parseInt(next.getAttribute('data-page')), 'next');
-	prev.removeAttribute('disabled');
-	if (
-		parseInt(next.getAttribute('data-page')) >=
-		Math.ceil(parseInt(tbody.getAttribute('data-total') / 10))
-	) {
-		next.setAttribute('disabled', true);
-	} else if (
-		parseInt(next.getAttribute('data-page')) <=
-		Math.ceil(parseInt(tbody.getAttribute('data-total') / 10))
-	) {
-		next.setAttribute(
-			'data-page',
-			parseInt(next.getAttribute('data-page')) + 1
-		);
-		prev.setAttribute(
-			'data-page',
-			parseInt(next.getAttribute('data-page')) - 1
-		);
-	}
 });
 prev.addEventListener('click', async (e) => {
 	await loadDetails(parseInt(next.getAttribute('data-page')) - 1, 'prev');
