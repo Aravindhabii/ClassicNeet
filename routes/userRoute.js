@@ -765,6 +765,45 @@ router
 		}
 	});
 
+//demovideos bannerpic
+
+router
+	.route('/admin/sliderrevolution')
+	.get(flash, isloggedin, async (req, res) => {
+		await db.query('SELECT * FROM homeslider', async (error, response) => {
+			var arr = [];
+			if (error) {
+				console.log(error);
+			} else {
+				for (let i = 0; i <= response.length - 1; i++) {
+					var image = {
+						sliderimg: response[i].sliderimg,
+						imgname: response[i].imgname,
+						cloudinaryName: response[i].cloudinaryname
+					};
+					arr.push(image);
+				}
+			}
+			res.render('admin/home/sliderRevolution', { img: arr });
+		});
+	})
+	.post(upload.array('sliderimg'), async (req, res) => {
+			await cloudinary.uploader.destroy(req.body.checkbox);
+			await db.query(
+				'UPDATE homeslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
+				[
+					req.files[0].path,
+					req.files[0].originalname,
+					req.files[0].filename.split('/')[1],
+					req.body.checkbox
+				]
+			);
+			res.redirect('/admin/sliderrevolution');		
+});
+
+
+
+
 router.route('/results').get(async (req, res) => {
 	await db.query('SELECT * FROM studentdetails', async (error, response) => {
 		var arr = [];
@@ -788,7 +827,7 @@ router.route('/results').get(async (req, res) => {
 
 router
 	.route('/admin/results/studentdetails')
-	.get(flash, isloggedin, async (req, res) => {
+	.get(flash, async (req, res) => {
 		await db.query('SELECT * FROM studentdetails', async (error, response) => {
 			var arr = [];
 			if (error) {
@@ -815,25 +854,39 @@ router
 				name: req.body.name,
 				collegename: req.body.collegeName,
 				image: req.file.path,
-				score: req.body.score,
 				cloudinaryname: req.file.filename.split('/')[1]
 			},
 			(err, response) => {
 				if (err) {
 					console.log(err);
 				} else {
+					res.redirect('/admin/results/studentdetails');
 				}
 			}
 		);
-		res.redirect('/admin/results/studentdetails');
+		
 	})
-	.put(upload.single('sliderimg'), async (req, res) => {
-		await db.query(
-			'UPDATE studentdetails SET image = ? WHERE cloudinaryname = ?',
-			[req.file.path, req.body.cloudinaryname]
-		);
-		res.redirect('/admin/results/studentdetails');
-	})
+	// .put(upload.single('sliderimg'), async (req, res) => {
+	// 	await db.query(
+	// 		'UPDATE studentdetails SET image = ? WHERE cloudinaryname = ?',
+	// 		[req.file.path, req.body.cloudinaryname]
+	// 	);
+	// 	res.redirect('/admin/results/studentdetails');
+	// })
+	// .put(async(req,res)=>{
+	// 	console.log(req.body);
+	// 	await db.query(
+	// 		'UPDATE studentdetails SET =? WHERE name = req.body.name',
+	// 		{score:req.body.score, name:req.body.name, collegename:req.body.collegeName },
+	// 		(err,response)=>{
+	// 			if(err){
+	// 				console.log(err);
+	// 			}else{
+	// 				res.redirect('/admin/results/studentdetails');
+	// 			}
+	// 		}
+	// 	);
+	// })
 	.delete(async (req, res) => {
 		if (typeof req.body.checkbox === 'string') {
 			await cloudinary.uploader.destroy(
@@ -868,6 +921,22 @@ router
 		}
 	});
 // admin result images
+
+router.route("/admin/results/studentupdate").post(async(req,res)=>{
+	console.log(req.body);
+		await db.query(
+			'UPDATE studentdetails SET name = ?, collegename = ? WHERE name = ?',
+		 [ req.body.stdname, req.body.clgname, req.body.oldname],
+			(err,response)=>{
+				if(err){
+					console.log(err);
+				}else{
+					console.log(response);
+					res.redirect('/admin/results/studentdetails');
+				}
+			}
+		);
+})
 
 router
 	.route('/admin/results/images')
@@ -1139,6 +1208,35 @@ router.post('/chatbot', async (req, res) => {
 			}
 		}
 	);
+});
+
+router.post('/pagination', async (req, res) => {
+	const currentPage = req.body.page || 1;
+	const perPage = 10;
+	await db.query(
+		`SELECT * FROM studentdetails LIMIT ${perPage} OFFSET ${
+			(currentPage - 1) * perPage
+		}`,
+		(err, response) => {
+			if (err) {
+				console.log(err);
+				return;
+			} else {
+				res.json(response);
+			}
+		}
+	);
+});
+
+router.get('/pagination/totalCount', async (req, res) => {
+	await db.query('SELECT * FROM studentdetails', (err, response) => {
+		if (err) {
+			console.log(err);
+			return;
+		} else {
+			res.json(response.length);
+		}
+	});
 });
 
 module.exports = router;

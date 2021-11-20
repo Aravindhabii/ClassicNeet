@@ -151,7 +151,7 @@ document.querySelector('#name_svg').addEventListener('click', (e) => {
 				document
 					.querySelector('#phone_svg')
 					.addEventListener('click', async (e) => {
-						const res = await fetch('http://localhost:8080/chatbot', {
+						const res = await fetch('/chatbot', {
 							method: 'POST',
 							body: JSON.stringify({
 								name: inputs_name.value,
