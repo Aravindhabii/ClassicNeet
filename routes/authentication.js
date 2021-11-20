@@ -137,7 +137,7 @@ router
 		// console.log(req.files);
 
 		db.query(
-			'INSERT INTO resultslider SET ?',
+			'INSERT INTO demoimages SET ?',
 			{ imgname: fieldname, sliderimg: path, cloudinaryname: cloudinaryName },
 			(err, results) => {
 				if (err) {

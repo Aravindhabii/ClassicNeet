@@ -768,29 +768,26 @@ router
 //demovideos bannerpic
 
 router
-	.route('/admin/sliderrevolution')
+	.route('/admin/bannerimg')
 	.get(flash, isloggedin, async (req, res) => {
-		await db.query('SELECT * FROM homeslider', async (error, response) => {
-			var arr = [];
+		await db.query('SELECT * FROM demoimages', async (error, response) => {
 			if (error) {
 				console.log(error);
 			} else {
-				for (let i = 0; i <= response.length - 1; i++) {
+				console.log(response);
 					var image = {
-						sliderimg: response[i].sliderimg,
-						imgname: response[i].imgname,
-						cloudinaryName: response[i].cloudinaryname
+						sliderimg: response[0].sliderimg,
+						imgname: response[0].imgname,
+						cloudinaryName: response[0].cloudinaryname
 					};
-					arr.push(image);
-				}
 			}
-			res.render('admin/home/sliderRevolution', { img: arr });
+			res.render('admin/demovideos/headimage', { img: image });
 		});
 	})
 	.post(upload.array('sliderimg'), async (req, res) => {
 			await cloudinary.uploader.destroy(req.body.checkbox);
 			await db.query(
-				'UPDATE homeslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
+				'UPDATE demoimages SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
 				[
 					req.files[0].path,
 					req.files[0].originalname,
@@ -798,7 +795,7 @@ router
 					req.body.checkbox
 				]
 			);
-			res.redirect('/admin/sliderrevolution');		
+			res.redirect('/admin/bannerimg');		
 });
 
 
@@ -905,6 +902,7 @@ router
 			);
 		} else {
 			req.body.checkbox.forEach(async (link) => {
+				console.log('holll');
 				await cloudinary.uploader.destroy('ClassicNeetAcademy/' + link);
 				await db.query(
 					'DELETE FROM studentdetails WHERE cloudinaryname = ?',
