@@ -251,8 +251,8 @@
 						<div class="bottom-drive">
 							<a
 								href="https://drive.google.com/file/d/1AekSeStzaqDFCfLAH372bR1bwTOs7ky2/view?usp=sharing">Download
-								Free Questions Bank for Neet 2021-
-								<span class="latestEdition">Latest edition 2021</span></a>
+								Free Questions Bank for Neet-
+								<span class="latestEdition">Latest edition</span></a>
 						</div>
 					</section>
 
@@ -295,7 +295,9 @@
 								<div class="swiper-slide">
 									<img class="profile" src="<%= topper.studentimg %>" alt="" />
 									<div class="toppersDiv">
-										<p class="markNew"><%= topper.score %> / 720</p>
+										<p class="markNew">
+											<%= topper.score %> / 720
+										</p>
 										<p class="nameNew">
 											<%= topper.name %>
 										</p>
@@ -336,23 +338,26 @@
 					</div>
 				</div> -->
 						<div class="statBox" id="counter">
+							<% neetachieve.forEach(neetfor => { %>
 							<div class="Stat">
-								<h1 class="counter MBBS_Seats counter-value" data-count=345>0.</h1>
+								<h1 class="counter MBBS_Seats counter-value" 
+								data-count="<%= neetfor.seats %>"
+								>0.</h1>
 								<h3>MBBS <br> Seats <br> through <br> Neet</h3>
 							</div>
 							<div class="Stat">
-								<h1 class="counter Consecutive counter-value" data-count=4>0.</h1>
+								<h1 class="counter Consecutive counter-value" data-count="<%= neetfor.consecutiveyears %>">0.</h1>
 								<h3>Consecutive years <br> of District first in <br>Salem</h3>
 							</div>
 							<div class="Stat">
-								<h1 class="counter successRate counter-value" data-count=90>0.</h1>
+								<h1 class="counter successRate counter-value" data-count="<%= neetfor.successrate %>">0.</h1>
 								<h3>Success <br> rate in <br> NEET</h3>
 							</div>
 							<div class="Stat">
-								<h1 class="counter counter-value" data-count=15>0.</h1>
+								<h1 class="counter counter-value" data-count="<%= neetfor.admissions %>">0.</h1>
 								<h3>NIT & IIST <br> Admission</h3>
 							</div>
-
+							<% }); %> 
 						</div>
 					</section>
 
@@ -370,7 +375,7 @@
 												allowfullscreen></iframe>
 										</div>
 									</div>
-								<% }) %>
+									<% }) %>
 							</div>
 
 						</div>
@@ -400,9 +405,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
