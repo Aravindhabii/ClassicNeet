@@ -111,7 +111,6 @@ const tbody = document.querySelector('.tbody');
 
 const loadDetails = async (page, type) => {
 	const details = await pagination(page);
-	tbody.innerHTML = '';
 	details.forEach((detail) => {
 		const row = `<tr>
 		<td>
@@ -168,12 +167,32 @@ window.addEventListener('load', async () => {
 	await fetch('/pagination/totalCount')
 		.then((response) => response.json())
 		.then((data) => {
-			tbody.setAttribute('data-total', data);
+			tbody.setAttribute('data-total', Math.ceil(data / 10));
 		});
 });
 next.addEventListener('click', async (e) => {
-	await loadDetails(parseInt(next.getAttribute('data-page')), 'next');
+	if (
+		parseInt(tbody.getAttribute('data-total')) >
+		parseInt(tbody.getAttribute('data-current'))
+	) {
+		tbody.innerHTML = '';
+
+		next.removeAttribute('disabled');
+		await loadDetails(parseInt(tbody.getAttribute('data-current')) + 1, 'next');
+		tbody.setAttribute(
+			'data-current',
+			parseInt(tbody.getAttribute('data-current')) + 1
+		);
+		if (
+			parseInt(tbody.getAttribute('data-total')) ===
+			parseInt(tbody.getAttribute('data-current'))
+		) {
+			next.setAttribute('disabled', true);
+		}
+	} else {
+		next.setAttribute('disabled', true);
+	}
 });
 prev.addEventListener('click', async (e) => {
-	await loadDetails(parseInt(next.getAttribute('data-page')) - 1, 'prev');
+	await loadDetails(parseInt(tbody.getAttribute('data-current')) - 1, 'prev');
 });
