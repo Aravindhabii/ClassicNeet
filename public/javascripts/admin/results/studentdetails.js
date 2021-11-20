@@ -120,8 +120,7 @@ const loadDetails = async (page, type) => {
 		<td>
 			<p class="onclickimg">${detail.studentimg}</p>
 			<span class="currentPreviewSpan btn btn-info"
-				>Show Image</span
-			>
+				>Show Image</span>
 			<span class="currentSliderimgurl">${detail.studentimg}</span>
 		</td>
 		<td>

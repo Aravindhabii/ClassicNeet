@@ -16,7 +16,7 @@ router
 		res.render('admin/courses/empty');
 	})
 	.post(async (req, res) => {
-		sizeOf(req.body, function (err, dimensions) {});
+		sizeOf(req.body, function (err, dimensions) { });
 	});
 
 dotenv.config({ path: './.env' });
@@ -78,8 +78,7 @@ router.route('/').get(flash, async (req, res) => {
 											}
 
 											await db.query(
-												'SELECT * FROM studenttestimonials',
-												(err, response) => {
+												'SELECT * FROM studenttestimonials', async(err, response) => {
 													stutest = [];
 													if (err) {
 														console.log(err);
@@ -91,14 +90,36 @@ router.route('/').get(flash, async (req, res) => {
 														}
 														// console.log(response[0].latestupdates);
 													}
+													await db.query(
+														'SELECT * FROM neetacheivements',
+														async (err, response) => {
+															neetachieve = [];
+															if (err) {
+																console.log(err);
+															} else {
+																for (let i = 0; i <= response.length - 1; i++) {
+																	var neetvar = {
+																		seats: response[i].seats,
+																		consecutiveyears: response[i].consecutiveyears,
+																		successrate: response[i].successrate,
+																		admissions: response[i].admissions
+																	};
+																	// console.log(image)
+																	neetachieve.push(neetvar);
+																}
+																// console.log(response[0].latestupdates);
+															}
 
-													res.render('home', {
-														img: arr,
-														ourtoppers,
-														calendar: calendar,
-														latestupdates,
-														stutest
-													});
+															res.render('home', {
+																img: arr,
+																ourtoppers,
+																calendar: calendar,
+																latestupdates,
+																stutest,
+																neetachieve
+															});
+														}
+													);
 												}
 											);
 										}
@@ -788,18 +809,18 @@ router
 		});
 	})
 	.post(upload.array('sliderimg'), async (req, res) => {
-			await cloudinary.uploader.destroy(req.body.checkbox);
-			await db.query(
-				'UPDATE homeslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
-				[
-					req.files[0].path,
-					req.files[0].originalname,
-					req.files[0].filename.split('/')[1],
-					req.body.checkbox
-				]
-			);
-			res.redirect('/admin/sliderrevolution');		
-});
+		await cloudinary.uploader.destroy(req.body.checkbox);
+		await db.query(
+			'UPDATE homeslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
+			[
+				req.files[0].path,
+				req.files[0].originalname,
+				req.files[0].filename.split('/')[1],
+				req.body.checkbox
+			]
+		);
+		res.redirect('/admin/sliderrevolution');
+	});
 
 
 
@@ -864,7 +885,7 @@ router
 				}
 			}
 		);
-		
+
 	})
 	// .put(upload.single('sliderimg'), async (req, res) => {
 	// 	await db.query(
@@ -922,20 +943,20 @@ router
 	});
 // admin result images
 
-router.route("/admin/results/studentupdate").post(async(req,res)=>{
+router.route("/admin/results/studentupdate").post(async (req, res) => {
 	console.log(req.body);
-		await db.query(
-			'UPDATE studentdetails SET name = ?, collegename = ? WHERE name = ?',
-		 [ req.body.stdname, req.body.clgname, req.body.oldname],
-			(err,response)=>{
-				if(err){
-					console.log(err);
-				}else{
-					console.log(response);
-					res.redirect('/admin/results/studentdetails');
-				}
+	await db.query(
+		'UPDATE studentdetails SET name = ?, collegename = ? WHERE name = ?',
+		[req.body.stdname, req.body.clgname, req.body.oldname],
+		(err, response) => {
+			if (err) {
+				console.log(err);
+			} else {
+				console.log(response);
+				res.redirect('/admin/results/studentdetails');
 			}
-		);
+		}
+	);
 })
 
 router
@@ -1012,8 +1033,25 @@ router.route('/successstories').get(async (req, res) => {
 				};
 				arr.push(image);
 			}
-			console.log(arr);
-			res.render('successStories2', { students: arr });
+			await db.query('SELECT * FROM parenttestimonials', async (error, response) => {
+				var parent = [];
+				if (error) {
+					console.log(error);
+				} else {
+					for (let i = 0; i <= response.length - 1; i++) {
+						var imageparent = {
+							studentimg: response[i].image,
+							cloudinaryname: response[i].cloudinaryname,
+							youtubelink: response[i].youtubelink,
+							studentname: response[i].studentname
+						};
+						parent.push(imageparent);
+					}
+					res.render('successStories2', { students: arr, parenttestimonials: parent });
+				}
+			});
+			// console.log(arr);
+			console.log(parent);
 		}
 	});
 });
@@ -1214,8 +1252,7 @@ router.post('/pagination', async (req, res) => {
 	const currentPage = req.body.page || 1;
 	const perPage = 10;
 	await db.query(
-		`SELECT * FROM studentdetails LIMIT ${perPage} OFFSET ${
-			(currentPage - 1) * perPage
+		`SELECT * FROM studentdetails LIMIT ${perPage} OFFSET ${(currentPage - 1) * perPage
 		}`,
 		(err, response) => {
 			if (err) {
