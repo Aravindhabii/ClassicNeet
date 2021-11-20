@@ -1,6 +1,36 @@
 
 <!-- Header session -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+<div class="container-fluid mx-0 px-0" style="width: 100%;">
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 px-4 border-bottom">
+    <a href="/" class="d-flex align-items-center col-md-1 mb-2 mb-md-0 text-dark text-decoration-none">
+      <img style="width: 75px; height: 55px;" src="../../images/home/classic-nee-tacademy-logo.png" alt="logo">
+    </a>
+
+    <ul class="nav col-5 col-md-auto justify-content-center mb-md-0">
+      <li><a class="nav-link px-2 link-secondary fs-4 fw-bold"><b>Classic Neet Academy Admin Dashboard</b></a></li>
+    </ul>
+
+    <div class="dropdown text-end">
+      <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+        width="35" height="35"
+        viewBox="0 0 226 226"
+        style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,226v-226h226v226z" fill="none"></path><path d="M113,226c-62.40818,0 -113,-50.59182 -113,-113v0c0,-62.40818 50.59182,-113 113,-113v0c62.40818,0 113,50.59182 113,113v0c0,62.40818 -50.59182,113 -113,113z" fill="#1a1a1a"></path><g fill="#ffffff"><path d="M113,37.66667c-20.73581,0 -37.66667,16.93087 -37.66667,37.66667c0,20.7358 16.93085,37.66667 37.66667,37.66667c20.73581,0 37.66667,-16.93087 37.66667,-37.66667c0,-20.7358 -16.93085,-37.66667 -37.66667,-37.66667zM69.68333,128.06667c-9.29425,0 -16.95,7.65575 -16.95,16.95v4.51706c0,11.07725 7.02375,21.01331 17.73717,27.84538c10.71342,6.83207 25.37173,10.95423 42.52949,10.95423c17.15777,0 31.81607,-4.12216 42.52949,-10.95423c10.71342,-6.83207 17.73717,-16.76813 17.73717,-27.84538v-4.51706c0,-9.29425 -7.65575,-16.95 -16.95,-16.95z"></path></g></g></svg>
+      </a>
+      <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><form action="/signout" method="post"><button class="dropdown-item" href="#">Signout</button></form></li>
+      </ul>
+    </div>
+  </header>
+</div>
+
+
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid justify-content-space-between">
     <a class="navbar-brand" href="#"><img style="width: 60px; height: 50px;" src="../../images/home/classic-nee-tacademy-logo.png" alt="logo"></a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -21,7 +51,7 @@
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> -->
 
 	<% if(success && success.length) {%>
     <div class="d-flex justify-content-center alert alert-success alert-dismissible fade show" role="alert">

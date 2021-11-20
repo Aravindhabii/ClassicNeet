@@ -795,7 +795,6 @@ router
 			if (error) {
 				console.log(error);
 			} else {
-				console.log(response);
 					var image = {
 						sliderimg: response[0].sliderimg,
 						imgname: response[0].imgname,
@@ -814,9 +813,14 @@ router
 					req.files[0].originalname,
 					req.files[0].filename.split('/')[1],
 					req.body.checkbox
-				]
-			);
-			res.redirect('/admin/bannerimg');		
+				],(err, response) => {
+					if (err) {
+						console.log(err);
+					} else {
+						console.log('lkokokok');
+						res.redirect('/admin/bannerimg');		
+					}
+				});
 });
 
 
