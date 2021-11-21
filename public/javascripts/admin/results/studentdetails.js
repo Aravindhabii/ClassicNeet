@@ -177,6 +177,7 @@ next.addEventListener('click', async (e) => {
 		tbody.innerHTML = '';
 
 		next.removeAttribute('disabled');
+		prev.removeAttribute('disabled');
 		await loadDetails(parseInt(tbody.getAttribute('data-current')) + 1, 'next');
 		tbody.setAttribute(
 			'data-current',
@@ -193,5 +194,21 @@ next.addEventListener('click', async (e) => {
 	}
 });
 prev.addEventListener('click', async (e) => {
-	await loadDetails(parseInt(tbody.getAttribute('data-current')) - 1, 'prev');
+	next.removeAttribute('disabled');
+	tbody.innerHTML = '';
+	if (
+		parseInt(tbody.getAttribute('data-current')) != 1 &&
+		parseInt(tbody.getAttribute('data-current')) <=
+			parseInt(tbody.getAttribute('data-total'))
+	) {
+		prev.removeAttribute('disabled');
+		await loadDetails(parseInt(tbody.getAttribute('data-current')) - 1, 'prev');
+		tbody.setAttribute(
+			'data-current',
+			parseInt(tbody.getAttribute('data-current')) - 1
+		);
+		if (parseInt(tbody.getAttribute('data-current')) === 1) {
+			prev.setAttribute('disabled', true);
+		}
+	}
 });
