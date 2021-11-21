@@ -131,7 +131,7 @@ body.dark {
 .reset,
 .submit {
 	border: none;
-	height: 2.5rem;
+	height: 3.3rem;
 	color: white;
 	font-size: 1.3rem;
 	width: 45%;
@@ -139,15 +139,15 @@ body.dark {
 }
 .reset,
 .submit {
-	background-color: #3986be;
+	background-color: #0095ff;
 	cursor: pointer;
 	transition: all 0.1s ease-in-out;
 }
 
 .reset:hover,
 .submit:hover {
-	background-color: white;
-	color: #3986be;
+	background-color: #3e87bb;
+	color: white;
 }
 
 @media (max-width: 1000px) {
