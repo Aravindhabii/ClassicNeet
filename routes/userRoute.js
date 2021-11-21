@@ -16,7 +16,7 @@ router
 		res.render('admin/courses/empty');
 	})
 	.post(async (req, res) => {
-		sizeOf(req.body, function (err, dimensions) { });
+		sizeOf(req.body, function (err, dimensions) {});
 	});
 
 dotenv.config({ path: './.env' });
@@ -78,7 +78,8 @@ router.route('/').get(flash, async (req, res) => {
 											}
 
 											await db.query(
-												'SELECT * FROM studenttestimonials', async(err, response) => {
+												'SELECT * FROM studenttestimonials',
+												async (err, response) => {
 													stutest = [];
 													if (err) {
 														console.log(err);
@@ -100,7 +101,8 @@ router.route('/').get(flash, async (req, res) => {
 																for (let i = 0; i <= response.length - 1; i++) {
 																	var neetvar = {
 																		seats: response[i].seats,
-																		consecutiveyears: response[i].consecutiveyears,
+																		consecutiveyears:
+																			response[i].consecutiveyears,
 																		successrate: response[i].successrate,
 																		admissions: response[i].admissions
 																	};
@@ -717,9 +719,20 @@ router.route('/Demovideos').get(async (req, res) => {
 				// console.log(image)
 				arr.push(link);
 			}
-
+			db.query('SELECT * FROM demoimages', async (error, response) => {
+				if (error) {
+					console.log(error);
+				} else {
+						var image = {
+							sliderimg: response[0].sliderimg,
+							imgname: response[0].imgname,
+							cloudinaryName: response[0].cloudinaryname
+						};
+				}
+				res.render('demovideos', { link: arr, img: image });
+			});
 			// console.log(response[0].latestupdates);
-			res.render('demovideos', { link: arr });
+			
 		}
 	});
 });
@@ -737,7 +750,6 @@ router
 					// console.log(image)
 					arr.push(link);
 				}
-
 				// console.log(response[0].latestupdates);
 				res.render('admin/demovideos/Demovideos', { link: arr });
 			}
@@ -789,41 +801,41 @@ router
 //demovideos bannerpic
 
 router
-	.route('/admin/sliderrevolution')
+	.route('/admin/bannerimg')
 	.get(flash, isloggedin, async (req, res) => {
-		await db.query('SELECT * FROM homeslider', async (error, response) => {
-			var arr = [];
+		await db.query('SELECT * FROM demoimages', async (error, response) => {
 			if (error) {
 				console.log(error);
 			} else {
-				for (let i = 0; i <= response.length - 1; i++) {
-					var image = {
-						sliderimg: response[i].sliderimg,
-						imgname: response[i].imgname,
-						cloudinaryName: response[i].cloudinaryname
-					};
-					arr.push(image);
-				}
+				var image = {
+					sliderimg: response[0].sliderimg,
+					imgname: response[0].imgname,
+					cloudinaryName: response[0].cloudinaryname
+				};
 			}
-			res.render('admin/home/sliderRevolution', { img: arr });
+			res.render('admin/demovideos/headimage', { img: image });
 		});
 	})
 	.post(upload.array('sliderimg'), async (req, res) => {
 		await cloudinary.uploader.destroy(req.body.checkbox);
 		await db.query(
-			'UPDATE homeslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
+			'UPDATE demoimages SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
 			[
 				req.files[0].path,
 				req.files[0].originalname,
 				req.files[0].filename.split('/')[1],
 				req.body.checkbox
-			]
+			],
+			(err, response) => {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log('lkokokok');
+					res.redirect('/admin/bannerimg');
+				}
+			}
 		);
-		res.redirect('/admin/sliderrevolution');
 	});
-
-
-
 
 router.route('/results').get(async (req, res) => {
 	await db.query('SELECT * FROM studentdetails', async (error, response) => {
@@ -848,7 +860,7 @@ router.route('/results').get(async (req, res) => {
 
 router
 	.route('/admin/results/studentdetails')
-	.get(flash, async (req, res) => {
+	.get(flash, isloggedin, async (req, res) => {
 		await db.query('SELECT * FROM studentdetails', async (error, response) => {
 			var arr = [];
 			if (error) {
@@ -885,7 +897,6 @@ router
 				}
 			}
 		);
-
 	})
 	// .put(upload.single('sliderimg'), async (req, res) => {
 	// 	await db.query(
@@ -926,6 +937,7 @@ router
 			);
 		} else {
 			req.body.checkbox.forEach(async (link) => {
+				console.log('holll');
 				await cloudinary.uploader.destroy('ClassicNeetAcademy/' + link);
 				await db.query(
 					'DELETE FROM studentdetails WHERE cloudinaryname = ?',
@@ -943,21 +955,23 @@ router
 	});
 // admin result images
 
-router.route("/admin/results/studentupdate").post(async (req, res) => {
-	console.log(req.body);
-	await db.query(
-		'UPDATE studentdetails SET name = ?, collegename = ? WHERE name = ?',
-		[req.body.stdname, req.body.clgname, req.body.oldname],
-		(err, response) => {
-			if (err) {
-				console.log(err);
-			} else {
-				console.log(response);
-				res.redirect('/admin/results/studentdetails');
+router
+	.route('/admin/results/studentupdate')
+	.post(isloggedin, async (req, res) => {
+		console.log(req.body);
+		await db.query(
+			'UPDATE studentdetails SET name = ?, collegename = ? WHERE name = ?',
+			[req.body.stdname, req.body.clgname, req.body.oldname],
+			(err, response) => {
+				if (err) {
+					console.log(err);
+				} else {
+					console.log(response);
+					res.redirect('/admin/results/studentdetails');
+				}
 			}
-		}
-	);
-})
+		);
+	});
 
 router
 	.route('/admin/results/images')
@@ -1033,23 +1047,29 @@ router.route('/successstories').get(async (req, res) => {
 				};
 				arr.push(image);
 			}
-			await db.query('SELECT * FROM parenttestimonials', async (error, response) => {
-				var parent = [];
-				if (error) {
-					console.log(error);
-				} else {
-					for (let i = 0; i <= response.length - 1; i++) {
-						var imageparent = {
-							studentimg: response[i].image,
-							cloudinaryname: response[i].cloudinaryname,
-							youtubelink: response[i].youtubelink,
-							studentname: response[i].studentname
-						};
-						parent.push(imageparent);
+			await db.query(
+				'SELECT * FROM parenttestimonials',
+				async (error, response) => {
+					var parent = [];
+					if (error) {
+						console.log(error);
+					} else {
+						for (let i = 0; i <= response.length - 1; i++) {
+							var imageparent = {
+								studentimg: response[i].image,
+								cloudinaryname: response[i].cloudinaryname,
+								youtubelink: response[i].youtubelink,
+								studentname: response[i].studentname
+							};
+							parent.push(imageparent);
+						}
+						res.render('successStories2', {
+							students: arr,
+							parenttestimonials: parent
+						});
 					}
-					res.render('successStories2', { students: arr, parenttestimonials: parent });
 				}
-			});
+			);
 			// console.log(arr);
 			console.log(parent);
 		}
@@ -1221,7 +1241,7 @@ router
 		}
 	});
 
-router.post('/signout', (req, res) => {
+router.post('/signout', isloggedin, (req, res) => {
 	req.session.destroy(function () {
 		res.clearCookie('connect.sid');
 		res.redirect('/login');
@@ -1248,11 +1268,13 @@ router.post('/chatbot', async (req, res) => {
 	);
 });
 
-router.post('/pagination', async (req, res) => {
+router.post('/pagination', isloggedin, async (req, res) => {
 	const currentPage = req.body.page || 1;
-	const perPage = 10;
+	const perPage = 5;
+
 	await db.query(
-		`SELECT * FROM studentdetails LIMIT ${perPage} OFFSET ${(currentPage - 1) * perPage
+		`SELECT * FROM studentdetails LIMIT ${perPage} OFFSET ${
+			(currentPage - 1) * perPage
 		}`,
 		(err, response) => {
 			if (err) {
@@ -1265,7 +1287,7 @@ router.post('/pagination', async (req, res) => {
 	);
 });
 
-router.get('/pagination/totalCount', async (req, res) => {
+router.get('/pagination/totalCount', isloggedin, async (req, res) => {
 	await db.query('SELECT * FROM studentdetails', (err, response) => {
 		if (err) {
 			console.log(err);
