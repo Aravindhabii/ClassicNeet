@@ -59,11 +59,9 @@ body.dark {
 	padding: 1rem;
 }
 .scoreStudent {
-	padding: 0.2rem 1.2rem;
-	border-radius: 20px;
-	background-color: white;
-	color: black;
-	font-size: 22px;
+	font-size: 1.1rem;
+	text-align: center;
+	color: white;
 	font-weight: 600;
 }
 .gridanime1 {
@@ -126,7 +124,9 @@ body.dark {
 }
 
 .gridbox > span > h3 {
-	font-size: 19px;
+	font-size: 1.3rem;
+	text-align: center;
+	font-weight: 600;
 }
 @keyframes card {
 	0% {
