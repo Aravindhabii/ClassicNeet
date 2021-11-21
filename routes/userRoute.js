@@ -717,9 +717,20 @@ router.route('/Demovideos').get(async (req, res) => {
 				// console.log(image)
 				arr.push(link);
 			}
-
+			db.query('SELECT * FROM demoimages', async (error, response) => {
+				if (error) {
+					console.log(error);
+				} else {
+						var image = {
+							sliderimg: response[0].sliderimg,
+							imgname: response[0].imgname,
+							cloudinaryName: response[0].cloudinaryname
+						};
+				}
+				res.render('demovideos', { link: arr, img: image });
+			});
 			// console.log(response[0].latestupdates);
-			res.render('demovideos', { link: arr });
+			
 		}
 	});
 });
@@ -737,7 +748,6 @@ router
 					// console.log(image)
 					arr.push(link);
 				}
-
 				// console.log(response[0].latestupdates);
 				res.render('admin/demovideos/Demovideos', { link: arr });
 			}
@@ -822,9 +832,6 @@ router
 					}
 				});
 });
-
-
-
 
 router.route('/results').get(async (req, res) => {
 	await db.query('SELECT * FROM studentdetails', async (error, response) => {
