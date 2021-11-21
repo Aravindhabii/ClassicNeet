@@ -45,26 +45,19 @@ const previewTopper = document.querySelector('.previewTopper');
 const previewSpan = document.querySelectorAll('.currentPreviewSpan');
 const closesvg = document.querySelector('.closesvg');
 const sliderimgurl = document.querySelectorAll('.currentSliderimgurl');
-for (let i = 0; i <= previewSpan.length - 1; i++) {
-	previewSpan[i].addEventListener('click', (e) => {
-		for (let j = 0; j <= sliderimgurl.length - 1; j++) {
-			if (i === j) {
-				const img = document.createElement('img');
-				if (sliderimgurl[j].innerText.length < 1) return;
-				img.src = sliderimgurl[j].innerText;
-				previewTopper.appendChild(img);
-				previewTopper.style.display = 'flex';
-				sectionop.style.filter = 'blur(20px)';
-				closesvg.addEventListener('click', () => {
-					previewTopper.removeChild(img);
-					previewTopper.style.display = 'none';
-					sectionop.style.filter = 'blur(0px)';
-				});
-			}
-		}
+function showImg(show) {
+	const img = document.createElement('img');
+	if (show.parentNode.children[2] < 1) return;
+	img.src = show.parentNode.children[2].innerText;
+	previewTopper.appendChild(img);
+	previewTopper.style.display = 'flex';
+	sectionop.style.filter = 'blur(20px)';
+	closesvg.addEventListener('click', () => {
+		previewTopper.removeChild(img);
+		previewTopper.style.display = 'none';
+		sectionop.style.filter = 'blur(0px)';
 	});
 }
-
 submitbtn.addEventListener('click', () => {
 	Swal.fire({
 		title: 'Are you sure?',
@@ -76,20 +69,18 @@ submitbtn.addEventListener('click', () => {
 		confirmButtonText: 'Yes, delete it!'
 	}).then((result) => {
 		if (result.isConfirmed) {
-			latestupdateform.submit();
+			document.querySelector('.latestupdateform').submit();
 		}
 	});
 });
 
-document.querySelectorAll('.updatesCheckbox').forEach((check, i) => {
-	check.addEventListener('change', () => {
-		if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
-			document.querySelector('.submit').removeAttribute('disabled');
-		} else {
-			document.querySelector('.submit').setAttribute('disabled', true);
-		}
-	});
-});
+function checkboxCheck(check) {
+	if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
+		document.querySelector('.submit').removeAttribute('disabled');
+	} else {
+		document.querySelector('.submit').setAttribute('disabled', true);
+	}
+}
 
 const pagination = async (currentPage) => {
 	const res = await fetch('/pagination', {
@@ -112,15 +103,16 @@ const tbody = document.querySelector('.tbody');
 const loadDetails = async (page, type) => {
 	const details = await pagination(page);
 	details.forEach((detail) => {
+		console.log(detail);
 		const row = `<tr>
 		<td>
 			<p>${detail.name}</p>
 		</td>
 		<td>
-			<p class="onclickimg">${detail.studentimg}</p>
-			<span class="currentPreviewSpan btn btn-info"
+			<p class="onclickimg">${detail.image}</p>
+			<span class="currentPreviewSpan btn btn-info" onclick="showImg(this)"
 				>Show Image</span>
-			<span class="currentSliderimgurl">${detail.studentimg}</span>
+			<span class="currentSliderimgurl">${detail.image}</span>
 		</td>
 		<td>
 			<p>${detail.collegename}</p>
@@ -130,6 +122,7 @@ const loadDetails = async (page, type) => {
 				type="checkbox"
 				id="checkbox"
 				class="updatesCheckbox"
+				onchange="checkboxCheck(this)"
 				name="checkbox"
 				value="${detail.cloudinaryname}"
 				style="height: 20px; width: 20px"
@@ -166,7 +159,7 @@ window.addEventListener('load', async () => {
 	await fetch('/pagination/totalCount')
 		.then((response) => response.json())
 		.then((data) => {
-			tbody.setAttribute('data-total', Math.ceil(data / 10));
+			tbody.setAttribute('data-total', Math.ceil(data / 5));
 		});
 });
 next.addEventListener('click', async (e) => {
