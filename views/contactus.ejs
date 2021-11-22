@@ -5,10 +5,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="stylesheets/contactus.css" />
+		<link rel="stylesheet" href="stylesheets/chatbot.css" />
+
 		<title>Contact Us</title>
 	</head>
 	<body>
-		<%- include('./layout/header') %>
+		<%- include('./layout/header') %> <%- include('./chatbot') %>
 		<section class="enquire-form-container">
 			<div>
 				<div class="left">
@@ -27,8 +29,8 @@
 								/>
 							</svg>
 							<p>
-								1/1, First Floor, PS Square, KHS Hospital Road, Opp. to
-								Ponnuswamy Gounder Kalyana Mandapam, Salem - 4
+								1/1, First Floor, PS Square, KHS Hospital Road, <br />
+								Opp. to Ponnuswamy Gounder Kalyana Mandapam, Salem - 4
 							</p>
 						</div>
 						<div class="phone">
@@ -67,48 +69,54 @@
 				</div>
 				<div class="right">
 					<h1>Enquiry Form</h1>
-					<form action="mailto:info@classicneetacademy.com" method="POST" enctype="text/plain">
+					<form
+						action="mailto:info@classicneetacademy.com"
+						method="POST"
+						enctype="text/plain"
+					>
 						<div class="input-container">
-							<label for="name">Name</label>
+							<label for="name">Name <span style="color: red">*</span></label>
 							<input
 								type="text"
 								name="name"
-								class="form-input"
+								class="form-input name-input"
 								id="name"
-								required
 							/>
+							<div class="nameError"></div>
 						</div>
 						<div class="input-container">
-							<label for="phone">Phone number</label>
+							<label for="phone"
+								>Phone number <span style="color: red">*</span></label
+							>
 							<input
 								type="text"
 								name="phone"
 								class="form-input phonenum"
 								id="phone"
-								required
 							/>
+							<div class="phoneError"></div>
 						</div>
 						<div class="input-container">
-							<label for="phone">Email</label>
+							<label for="phone">Email <span style="color: red">*</span></label>
 							<input
-								type="text"
+								type="email"
 								name="email"
-								class="form-input"
+								class="form-input email-input"
 								id="email"
-								required
 							/>
+							<div class="emailError"></div>
 						</div>
 						<div class="textarea-container">
-							<label for="message">Comment</label>
+							<label for="message">Comment <span style="color: red">*</span></label>
 							<textarea
 								name="message"
-								class="form-input"
+								class="form-input comment-input"
 								id="message"
-								required
 							></textarea>
+							<div class="commentError"></div>
 						</div>
 						<div class="button-container">
-							<button>Submit</button>
+							<button class="submit">Submit</button>
 							<button class="reset">Reset</button>
 						</div>
 					</form>
@@ -116,7 +124,9 @@
 			</div>
 		</section>
 		<%- include('./layout/footer') %>
+		<script src="javascripts/nav.js"></script>
 		<script src="javascripts/contactus.js"></script>
 		<script src="javascripts/common.js"></script>
+		<script src="javascripts/chatbot.js"></script>
 	</body>
 </html>

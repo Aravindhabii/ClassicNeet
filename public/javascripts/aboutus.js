@@ -77,53 +77,41 @@
 
 //dropdown
 
-const dropdown = document.querySelector(".dropdown");
+const dropdown = document.querySelector('.dropdown');
 // dropdown.addEventListener("change", (e) => {
 //   console.log(dropdown.value);
 // });
 
 //GALLERY
 
-const prevYear = document.querySelector(".prev-btn"); //2019
-const currentYear = document.querySelector(".current-btn"); //2020
-const btn = document.querySelectorAll(".btn");
+const prevYear = document.querySelector('.prev-btn'); //2019
+const currentYear = document.querySelector('.current-btn'); //2020
+const btn = document.querySelectorAll('.btn');
 
-dropdown.addEventListener("change", (e) => {
-        console.log(e.target.value);
-        
-  switch (e.target.value) {
-    case "2019":
-      document.querySelectorAll("#imageid").forEach((img) => {
-        img.src = img.src.replaceAll("2020", "2019");
-        console.log(img.src);
-      });
-      break;
-    case "2020":
-      document.querySelectorAll("#imageid").forEach((img) => {
-        img.src = img.src.replaceAll("2019", "2020");
-        console.log(img.src);
-      });
-      break;
-  }
+dropdown.addEventListener('change', (e) => {
+	document.querySelectorAll('#imageid').forEach((img, i) => {
+		img.src = `../images/GALLERY/${e.target.value}/${e.target.value}img${
+			i + 1
+		}.jpg`;
+	});
 });
 
 //popup
 
-const galleryclick = document.querySelectorAll(".galleryItem");
-const previmg = document.querySelector(".previewimg");
-const prevContainer = document.querySelector(".previewImg");
-const bodyy = document.querySelector("body");
-const exit = document.querySelector(".close");
+const galleryclick = document.querySelectorAll('.galleryItem');
+const previmg = document.querySelector('.previewimg');
+const prevContainer = document.querySelector('.previewImg');
+const bodyy = document.querySelector('body');
+const exit = document.querySelector('.close');
 galleryclick.forEach((galleryclick) => {
-  galleryclick.addEventListener("click", (e) => {
-    // document.querySelector('.popup').style.display = 'flex';
-    console.log(e.target.src);
-    prevContainer.style.display = "flex";
-    previmg.src = e.target.src;
-    bodyy.style.overflow = "hidden";
-  });
+	galleryclick.addEventListener('click', (e) => {
+		// document.querySelector('.popup').style.display = 'flex';
+		prevContainer.style.display = 'flex';
+		previmg.src = e.target.src;
+		bodyy.style.overflow = 'hidden';
+	});
 });
-exit.addEventListener("click", (e) => {
-  prevContainer.style.display = "none";
-  bodyy.style.overflow = "scroll";
+exit.addEventListener('click', (e) => {
+	prevContainer.style.display = 'none';
+	bodyy.style.overflow = 'scroll';
 });

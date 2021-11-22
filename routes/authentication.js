@@ -3,9 +3,10 @@ const router = express.Router();
 const mysql = require('mysql');
 const bcrypt = require('bcryptjs');
 const dotenv = require('dotenv');
-const { isloggedin } = require('../middleware.js');
+const { isloggedin, flash } = require('../middleware');
 const { response } = require('express');
 const db = require('../database');
+
 
 const yepp = 'yes';
 
@@ -27,11 +28,9 @@ router
 				}
 				if (results.length > 0) {
 					return res.render('login', { emailinuse });
-					console.log(results);
 				}
 
 				let hashedPassword = await bcrypt.hash(password, 8);
-				console.log(hashedPassword);
 
 				db.query(
 					'INSERT INTO users SET ?',
@@ -51,32 +50,37 @@ router
 
 router
 	.route('/login')
-	.get((req, res) => {
+	.get(flash,(req, res) => {
 		res.render('login');
 	})
-	.post(async (req, res) => {
+	.post(flash,async (req, res) => {
 		const { password, username } = req.body;
-		// const emailinuse = "This email is already in use";
 		const hasedpass = await bcrypt.hash(password, 8);
+		
 		db.query(
 			'SELECT * FROM users WHERE username = ?',
 			[username],
-			(err, result) => {
-				const passcon = bcrypt.compare(
-					password,
-					hasedpass,
-					function (err, result) {
-						if (result) {
-							console.log(result);
-							const loginuser = 'Yes';
-							req.session.loginuser = loginuser;
-							console.log(req.session.loginuser);
-							res.redirect('/admin');
-						} else {
-							res.redirect('/login');
+			(error, response) => {
+				if (response.length > 0) {
+					const passcon = bcrypt.compare(
+						password,
+						response[0].password,
+						function (err, result) {
+							if (result) {
+								const loginuser = 'Yes';
+								req.session.loginuser = loginuser;
+								res.redirect('/admin');
+							} 
+							else{
+								req.flash('error', 'Invalid Username or Password');
+								res.redirect('/login');
+							} 
 						}
-					}
-				);
+					)
+				}else{
+					req.flash('error', 'Invalid Username or Password');
+					res.redirect('/login');
+				} 
 			}
 		);
 	});
@@ -120,6 +124,12 @@ const upload = multer({ storage });
 //     );
 //   });
 
+router.route('/logout').post((req,res)=>{
+	req.session.destroy(()=>{
+		res.redirect('/login');
+	});
+});
+
 router
 	.route('/homeslider')
 	.get((req, res) => {
@@ -138,7 +148,6 @@ router
 				if (err) {
 					console.log(err);
 				} else {
-					console.log(results);
 					res.redirect('/homeslider');
 				}
 			}

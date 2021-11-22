@@ -1,209 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link
-			rel="shortcut icon"
-			href="images/home/classic-nee-tacademy-logo.png"
-			type="image/x-icon"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://unpkg.com/swiper/swiper-bundle.min.css"
-		/>
-		<link rel="stylesheet" href="stylesheets/homepage.css" />
-		<link rel="stylesheet" href="stylesheets/common.css" />
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
-			crossorigin="anonymous"
-		/>
-    
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" href="images/home/classic-nee-tacademy-logo.png" type="image/x-icon" />
+	<link rel="stylesheet" href="stylesheets/nav.css" />
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="stylesheets/homepage.css" />
+	<link rel="stylesheet" href="stylesheets/common.css" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous" />
+
+	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
 	<link rel="stylesheet" href="stylesheets/chatbot.css">
-		<title>ClassicNeetAcademy</title>
-	</head>
+	<title>ClassicNeetAcademy</title>
+</head>
 
-	<body>
-		<div class="backgroundMain">
-			<%- include('./layout/header') %>
-<%- include('./chatbot') %> 
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				class="uparrow"
-				viewBox="0 0 20 20"
-				fill="#1E2886"
-			>
-				<path
-					fill-rule="evenodd"
-					d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z"
-					clip-rule="evenodd"
-				/>
-			</svg>
-			<!-- slideshow -->
-			<!-- Swiper -->
+<body>
+	<div class="backgroundMain">
+		<%- include('./layout/header') %>
+			<%- include('./chatbot') %>
+				<svg xmlns="http://www.w3.org/2000/svg" class="uparrow" viewBox="0 0 20 20" fill="#1E2886">
+					<path fill-rule="evenodd"
+						d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z"
+						clip-rule="evenodd" />
+				</svg>
+				<!-- slideshow -->
+				<!-- Swiper -->
+				<%# console.log(success); %>
 
-			<section class="home">
-				<div class="homeLeft">
-					<img class="building" src="images/home/arch doodle.png" alt="" />
-					<!-- <img class="building2" src="images/build2.png" alt="" />
+					<section class="home">
+						<div class="homeLeft">
+							<!-- <img class="building" src="images/home/arch doodle.png" alt="" /> -->
+							<!-- <img class="building2" src="images/build2.png" alt="" />
 					<img class="building3" src="images/home/blobWhite.png" alt="" /> -->
-					<div class="spilldiv">
-						<img class="blob1" src="images/home/spill.png" alt="" />
-					</div>
-					<img class="blob2" src="images/home/blob3final.png" alt="" />
-
-					<img class="blob3" src="images/home/blob2final.png" alt="" />
-				</div>
-				<div class="homeRight">
-					<div class="sliderRev">
-						<div
-							id="carouselExampleControls"
-							class="carousel"
-							data-bs-ride="carousel"
-						>
-							<div class="carousel-inner">
-								<% img.forEach((i,index) => { %>
-								<div class="carousel-item <%= index===0?'active':'' %>  ">
-									<img
-										src="<%= i.sliderimg %> "
-										class="d-block w-100 h-100"
-										alt="..."
-									/>
-								</div>
-								<% }) %>
-								
-							<button
-								class="carousel-control-prev"
-								type="button"
-								data-bs-target="#carouselExampleControls"
-								data-bs-slide="prev"
-							>
-								<span
-									class="carousel-control-prev-icon"
-									aria-hidden="true"
-								></span>
-								<span class="visually-hidden">Previous</span>
-							</button>
-							<button
-								class="carousel-control-next"
-								type="button"
-								data-bs-target="#carouselExampleControls"
-								data-bs-slide="next"
-							>
-								<span
-									class="carousel-control-next-icon"
-									aria-hidden="true"
-								></span>
-								<span class="visually-hidden">Next</span>
-							</button>
-						</div>
-					</div>
-         
-			
-				</div>
-        <div class="scroll">
-          <marquee
-            class="marqueetext"
-            vspace="30%"
-            onmousedown="stop();"
-            onmouseup="start();"
-          >
-            <p>
-				Admissions open for NEET Repeater 2022 New batch <a href="/contactus">JOIN NOW </a> &nbsp;
-              &ensp; Enroll yourself for NEET Repeater 2022 Scholarship Test
-              <a href="/contactus">JOIN NOW </a>&nbsp; &ensp; Admissions open for NEET/JEE Long-term course (1year & 2 year)
-              ! <a href="/contactus">JOIN NOW</a>
-            </p>
-          </marquee>
-        </div>
-			</section>
-
-			<!-- <section class="section-2">
-				<div class="div-2">
-					<span class="span">
-						<h1 class="div-2-title">Latest Updates</h1>
-					</span>
-					<marquee class="news-box" direction="up" scrollamount="5">
-						<p>
-							-Our honourable CM appreciated our CLASSIC NEET student. Click here/ Contact- 7867014165.
-
-						</p>
-						<p>
-							-Watch LIVE- NEET 2020 ACHIEVERS AWARD FUNCTION ON 27TH DEC 2020 at 9.30AM. Click here/
-							Contact- 7867014165.
-						</p>
-						<p>
-							-108 MBBS admissions through NEET 2020 (Govt.quota) at the end of first phase of Tamilnadu
-							Medical Counselling.
-						</p>
-
-						<p>
-							-Write Free Online NEET Repeater 2021 scholarship Exam. Register here/ Contact- 7867014165.
-						</p>
-						<p>
-							-Admissions open for NEET Repeater-New Batch
-						</p>
-
-					</marquee>
-				</div>
-				<div class="div-1">
-					<h1 class="CalanderEvents">Calendar Events</h1>
-					<div class="calenderMain">
-						<div class="calenderCard">
-							<div class="date">01</div><div class="calenderContent"><p> NEET 2021 Application</p></div>
-						</div>
-						<div class="calenderCard">
-							<div class="date">02</div><div class="calenderContent"><p>NEET 2021 Examination Date</p></div>
-						</div>
-						<div class="calenderCard">
-							<div class="date">03</div><div class="calenderContent"><p>NEET 2021 Conselling Date</p></div>
-						</div>
-						<div class="calenderCard">
-							<div class="date">04</div><div class="calenderContent"><p>NEET 2021 Correction Date</p></div>
-						</div>
-						<div class="calenderCard">
-							<div class="date">05</div><div class="calenderContent"><p>NEET 2021 Application Form Last Date</p></div>
-						</div>
-					</div>
-				</div>
-	</div> no need-->
-			<!-- </section> -->
-			<section class="sec-2">
-				<div class="div-2">
-					<h1 class="div-2-title">Latest Updates</h1>
-
-					<marquee class="news-box" direction="up" scrollamount="5" onmousedown="stop();"
-					onmouseup="start();">
-						<% latestupdates.forEach(update => { %>
-							<p>
-								<%= update %> 
-							</p>
-						<% }) %>
-					</marquee>
-				</div>
-				<div class="div-1">
-					<h1 class="CalanderEvents">Calendar Events</h1>
-					<div class="calenderMain">
-						<div class="calenderCard"><div class="date"><span class="month">Aug</span><span class="dateMain">7</span></div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, tenetur.</p></div>
-
-						<% calendar.forEach(cal => { %>
-							<div class="calenderCard">
-								<div class="date">
-									<span class="month"><%= cal.month %> </span>
-									<span class="dateMain"><%= cal.date %> </span>
-								</div>
-								<p ><%= cal.event %> </p>
+							<div class="spilldiv">
+								<img class="blob1" src="images/home/blob_big.png" alt="" />
 							</div>
-						<% }) %>
-					</div>
-				</div>
-			</section>
-			<section class="HexagonDiv" id="courses">
-				<!-- <div class="left">
+							<img class="blob2" src="images/home/blob3final.png" alt="" />
+
+							<img class="blob3" src="images/home/blob2final.png" alt="" />
+						</div>
+						<div class="homeRight">
+							<div class="sliderRev">
+								<div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+									<div class="carousel-inner">
+										<% img.forEach((i,index)=> { %>
+											<div class="carousel-item <%= index===0?'active':'' %>  ">
+												<img src="<%= i.sliderimg %> " class="d-block w-100 h-100" alt="..." />
+											</div>
+											<% }) %>
+
+												<button class="carousel-control-prev" type="button"
+													data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+													<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+													<span class="visually-hidden">Previous</span>
+												</button>
+												<button class="carousel-control-next" type="button"
+													data-bs-target="#carouselExampleControls" data-bs-slide="next">
+													<span class="carousel-control-next-icon" aria-hidden="true"></span>
+													<span class="visually-hidden">Next</span>
+												</button>
+									</div>
+								</div>
+
+
+							</div>
+							<div class="scroll">
+								<marquee class="marqueetext" vspace="30%" onmousedown="stop();" onmouseup="start();">
+									<p>
+										Admissions open for NEET Repeater 2022 New batch <a href="/contactus">JOIN NOW
+										</a> &nbsp;
+										&ensp; Enroll yourself for NEET Repeater 2022 Scholarship Test
+										<a href="/contactus">JOIN NOW </a>&nbsp; &ensp; Admissions open for NEET/JEE
+										Long-term course (1year & 2 year)
+										! <a href="/contactus">JOIN NOW</a>
+									</p>
+								</marquee>
+							</div>
+					</section>
+
+					<!-- </section> -->
+					<section class="sec-2">
+						<div class="div-2">
+							<h1 class="div-2-title">Latest Updates</h1>
+
+							<marquee class="news-box" direction="up" scrollamount="5" onmousedown="stop();"
+								onmouseup="start();">
+								<% latestupdates.forEach(update=> { %>
+									<a class="p" href="<%= update.link1 %>" target="_blank">
+										<%= update.link %>
+									</a>
+									<% }) %>
+							</marquee>
+						</div>
+						<div class="div-1">
+							<h1 class="CalanderEvents">Calendar Events</h1>
+							<div class="calenderMain">
+
+								<% calendar.forEach(cal=> { %>
+									<div class="calenderCard">
+										<div class="date">
+											<span class="month">
+												<%= cal.month %>
+											</span>
+											<span class="dateMain">
+												<%= cal.date %>
+											</span>
+										</div>
+										<p>
+											<%= cal.event %>
+										</p>
+									</div>
+									<% }) %>
+							</div>
+						</div>
+					</section>
+					<section class="HexagonDiv" id="courses">
+						<!-- <div class="left">
 			<div class="spilldiv">
 				<img class="spill " src="images/home/spill.png" alt="">
 			</div>
@@ -215,7 +131,7 @@
 			</div>
 		</div> -->
 
-				<!-- <div class="right">
+						<!-- <div class="right">
 			<div class="card1">
 				<img class="hexa1 hexa" src="images/home/hexa1.png" alt="">
 				<h3>NEET</h3>
@@ -230,7 +146,7 @@
 			</div>
 		</div>  -->
 
-				<!-- <div class="cardsDiv">
+						<!-- <div class="cardsDiv">
 			<div class="box1">
 					<img class="hexaimg" src="images/home/hexa1.png" alt="">
 					
@@ -256,38 +172,37 @@
 		
 		</div>  -->
 
-				<div class="cardsDiv" id="courses">
-					<div class="box3">
-						<img class="hexaimg" src="images/home/neet.jpg" alt="" />
+						<div class="cardsDiv" id="courses">
+							<div class="box3">
+								<img class="hexaimg" src="images/home/neet.jpg" alt="" />
 
-						<h3 class="imgHeader">NEET</h3>
-						<a class="read" href="/coursesNEET">Read More</a>
-					</div>
-					<div class="box1">
-						<img class="hexaimg" src="images/home/jee.jpg" alt="" />
+								<h3 class="imgHeader">NEET</h3>
+								<a class="read" href="/coursesNEET">Read More</a>
+							</div>
+							<div class="box1">
+								<img class="hexaimg" src="images/home/jee.jpg" alt="" />
 
-						<h3 class="imgHeader">IIT-JEE</h3>
-						<a class="read" href="/coursesJEE">Read More</a>
-					</div>
-					<div class="box2">
-						<img class="hexaimg" src="images/home/iit &medical.jpg" alt="" />
+								<h3 class="imgHeader">IIT-JEE</h3>
+								<a class="read" href="/coursesJEE">Read More</a>
+							</div>
+							<div class="box2">
+								<img class="hexaimg" src="images/home/iit &medical.jpg" alt="" />
 
-						<h3 class="imgHeader">IIT & Medical Foundation</h3>
-						<a class="read" href="/coursesIIT&Medical">Read More</a>
-					</div>
-				</div>
-			</section>
-			<section class="drive">
-				<div class="bottom-drive">
-					<a
-						href="https://drive.google.com/file/d/1AekSeStzaqDFCfLAH372bR1bwTOs7ky2/view?usp=sharing"
-						>Download Free Questions Bank for Neet 2021-
-						<span class="latestEdition">Latest edition 2021</span></a
-					>
-				</div>
-			</section>
+								<h3 class="imgHeader">IIT & Medical Foundation</h3>
+								<a class="read" href="/coursesIIT&Medical">Read More</a>
+							</div>
+						</div>
+					</section>
+					<section class="drive">
+						<div class="bottom-drive">
+							<a
+								href="https://drive.google.com/file/d/1AekSeStzaqDFCfLAH372bR1bwTOs7ky2/view?usp=sharing">Download
+								Free Questions Bank for Neet-
+								<span class="latestEdition">Latest edition</span></a>
+						</div>
+					</section>
 
-			<!-- <section class="neet-toppers">
+					<!-- <section class="neet-toppers">
 		<h1>Our Toppers</h1>
 		<div class="topper-card-container">
 			<div class="topper-card">
@@ -307,50 +222,49 @@
 				</div>
 			</div>
 	</section> -->
-	<div class="neet-2020-toppers">
-		
-		<!-- <img src="images/home/Vector.svg" alt="SVG" /> -->
-		<div class="neet-2020-toppers-a">
-			<p>Our Results - Neet 2020 Toppers</p>
-			<img src="https://img.icons8.com/plumpy/50/000000/sparkling--v2.png" style="height: 30px; width: 30px;"/>
-		</div>
-		
-		
-		<!-- <iframe class='ribbon' src="https://giphy.com/embed/3ohhwzIw3bISRhQWME" width="480" height="320" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/stickers/explosion-confetti-3ohhwzIw3bISRhQWME"></a></p> -->
-	</div>
-	<marquee behavior="" direction="left"></marquee>		
-        <section class="swiper swiper1 mySwiper1">
-          <div class="swiper-wrapper">
-			  <% ourtoppers.forEach(topper => { %>
-				<div class="swiper-slide">
-					
-					
-						<img class="profile" src="<%= topper.studentimg %>" alt="" />
-					
-						<div class="toppersDiv">
-                            <p class="markNew">680 / 720</p>
-							<p class="nameNew"><%= topper.name %> </p>
-							<p class="colNew"><%= topper.collegename %> </p>
-							
+					<div class="neet-2020-toppers">
 
+						<!-- <img src="images/home/Vector.svg" alt="SVG" /> -->
+						<div class="neet-2020-toppers-a">
+							<p>Our Results - Neet Toppers</p>
+							<img src="https://img.icons8.com/plumpy/50/000000/sparkling--v2.png"
+								style="height: 30px; width: 30px;" />
 						</div>
-						
-					
-				
-				</div>
-			  <% }) %>
-          </div>
-		  
 
-        </section>
-		<div class="swiper-button-next arrownext1"></div>
-          	<div class="swiper-button-prev arrowprev1"></div>
-			
-		
-			
-		
-		<section class="stats">
-				<!-- <div class="stats-details">
+
+						<!-- <iframe class='ribbon' src="https://giphy.com/embed/3ohhwzIw3bISRhQWME" width="480" height="320" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/stickers/explosion-confetti-3ohhwzIw3bISRhQWME"></a></p> -->
+					</div>
+					<marquee behavior="" direction="left"></marquee>
+					<section class="swiper swiper1 mySwiper1">
+						<div class="swiper-wrapper">
+							<% ourtoppers.forEach(topper=> { %>
+								<div class="swiper-slide">
+									<img class="profile" src="<%= topper.studentimg %>" alt="" />
+									<div class="toppersDiv">
+										<p class="markNew">
+											<%= topper.score %> / 720
+										</p>
+										<p class="nameNew">
+											<%= topper.name %>
+										</p>
+										<p class="colNew">
+											<%= topper.collegename %>
+										</p>
+									</div>
+								</div>
+								<% }) %>
+						</div>
+
+
+					</section>
+					<div class="swiper-button-next arrownext1"></div>
+					<div class="swiper-button-prev arrowprev1"></div>
+
+
+
+
+					<section class="stats">
+						<!-- <div class="stats-details">
 					
 					<div class="stat1 stat">
 						<h1 class="counter MBBS_Seats" data-count=345>345%</h1>
@@ -369,68 +283,71 @@
 						<h3>NIT & IIST Admissions</h3>
 					</div>
 				</div> -->
-				<div class="statBox" id="counter">
-					<div class="Stat">
-						<h1 class="counter MBBS_Seats counter-value" data-count=345>0.</h1>
-						<h3>MBBS <br> Seats <br> through <br> Neet</h3>
-					</div>
-					<div  class="Stat">
-						<h1 class="counter Consecutive counter-value" data-count=4>0.</h1>
-						<h3>Consecutive years <br> of District first in <br>Salem</h3>
-					</div>
-					<div  class="Stat">
-						<h1 class="counter successRate counter-value" data-count=90>0.</h1>
-						<h3>Success <br> rate in <br> NEET</h3>
-					</div>
-					<div  class="Stat">
-						<h1 class="counter counter-value" data-count=15>0.</h1>
-						<h3>NIT & IIST <br> Admission</h3>
-					</div>
-
-				</div>
-			</section>
-
-			<!-- Swiper -->
-			<section class="testimonials_container">
-				<div class="swiper swiper2 mySwiper2">
-				<h1 class="studentsh1">STUDENTS TESTIMONIALS</h1>
-				<div class="swiper-wrapper">
-					<% stutest.forEach(link => { %>
-						<div class="swiper-slide">
-							<div class="testimonials">
-								<iframe
-									class="video"
-									src="<%= link %>"
-									title="YouTube video player"
-									frameborder="0"
-									allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-									allowfullscreen
-								></iframe>
+						<div class="statBox" id="counter">
+							<% neetachieve.forEach(neetfor => { %>
+							<div class="Stat">
+								<h1 class="counter MBBS_Seats counter-value" 
+								data-count="<%= neetfor.seats %>"
+								>0.</h1>
+								<h3>MBBS <br> Seats <br> through <br> Neet</h3>
 							</div>
+							<div class="Stat">
+								<h1 class="counter Consecutive counter-value" data-count="<%= neetfor.consecutiveyears %>">0.</h1>
+								<h3>Consecutive years <br> of District first in <br>Salem</h3>
+							</div>
+							<div class="Stat">
+								<h1 class="counter successRate counter-value" data-count="<%= neetfor.successrate %>">0.</h1>
+								<h3>Success <br> rate in <br> NEET</h3>
+							</div>
+							<div class="Stat">
+								<h1 class="counter counter-value" data-count="<%= neetfor.admissions %>">0.</h1>
+								<h3>NIT & IIST <br> Admission</h3>
+							</div>
+							<% }); %> 
 						</div>
-					<% }) %>
-				</div>
+					</section>
 
-			</div>
-			<div class="swiper-button-next arrownext2"></div>
-			<div class="swiper-button-prev arrowprev2"></div>
-			</section>
+					<!-- Swiper -->
+					<section class="testimonials_container">
+						<div class="swiper swiper2 mySwiper2">
+							<h1 class="studentsh1">STUDENTS TESTIMONIALS</h1>
+							<div class="swiper-wrapper">
+								<% stutest.forEach(link=> { %>
+									<div class="swiper-slide">
+										<div class="testimonials">
+											<iframe class="video" src="<%= link %>" title="YouTube video player"
+												frameborder="0"
+												allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+												allowfullscreen></iframe>
+										</div>
+									</div>
+									<% }) %>
+							</div>
 
-			<%- include('./layout/footer') %>
-		</div>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js" integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.5/ScrollTrigger.min.js" integrity="sha512-m/n857VfrPYUcRvzCfqfrC9aMT06TQA2V0DcX/Ovovrhswa3038FfYmHlB0l/ZMukVyKWmiwZI4Pnnd7v3FwFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
-			crossorigin="anonymous"
-		></script>
-		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-		<!-- <script src="javascripts/index.js"></script> -->
-		<script src="javascripts/common.js"></script>
-		<script src="javascripts/chatbot.js"></script>
-	</body>
+						</div>
+						<div class="swiper-button-next arrownext2"></div>
+						<div class="swiper-button-prev arrowprev2"></div>
+					</section>
+
+					<%- include('./layout/footer') %>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"
+		integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.5/ScrollTrigger.min.js"
+		integrity="sha512-m/n857VfrPYUcRvzCfqfrC9aMT06TQA2V0DcX/Ovovrhswa3038FfYmHlB0l/ZMukVyKWmiwZI4Pnnd7v3FwFQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<!-- <script src="javascripts/index.js"></script> -->
+	<script src="javascripts/nav.js"></script>
+	<script src="javascripts/common.js"></script>
+	<script src="javascripts/chatbot.js"></script>
+</body>
+
 </html>

@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="/latestupdates" method="post">
-        
-        <!-- <input type="t" name="latestupdates"> -->
-        <textarea name="latestupdates" id="latestupdates" cols="50" rows="20">
-            
-        </textarea>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="stylesheets/chatbot.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<%- include('./chatbot') %>
+		<form action="/latestupdates" method="post">
+			<!-- <input type="t" name="latestupdates"> -->
+			<textarea name="latestupdates" id="latestupdates" cols="50" rows="20">
+			</textarea>
 
-        <button>post</button>
-    </form>
-</body>
+			<button>post</button>
+		</form>
+		<script src="javascripts/chatbot.js"></script>
+	</body>
 </html>

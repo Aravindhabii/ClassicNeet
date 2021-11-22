@@ -7,7 +7,6 @@ const submit = document.querySelector(".submit");
 const submitbtn = document.querySelector(".submitbtn");
 
 
-console.log(previewDiv);
 
 addbtn.addEventListener("click", () => {
   previewDiv.style.display = "flex";
@@ -22,7 +21,6 @@ backbtn.addEventListener("click", () => {
 
 
 submitbtn.addEventListener('click',() => {
-  console.log('Dawwwwgg')
   swal({
     title: "Are you sure?",
     text: "Once deleted, you will not be able to recover this imaginary file!",

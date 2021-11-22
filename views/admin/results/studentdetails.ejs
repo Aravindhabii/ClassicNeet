@@ -30,8 +30,8 @@
 		</div>
 		<%- include('../../layout/adminheader') %>
 		<section class="mainsection">
-			<div class="left"><%- include('../../layout/adminSidebar') %></div>
-			<div class="right">
+			<div class="left"><%- include('../../layout/adminSideBar') %></div>
+			<div class="right" style="height: fit-content">
 				<div class="preview">
 					<h1 class="mb-5">Student Details</h1>
 					<form
@@ -83,7 +83,72 @@
 								class="btn btn-outline-secondary px-3 mt-5 me-5 backbtn"
 							>
 								Back
-							</button>/
+							</button>
+							<button type="submit" class="btn btn-outline-primary mt-5">
+								submit
+							</button>
+						</div>
+					</form>
+				</div>
+				<div class="preview2">
+					<h1 class="mb-5">Student Details</h1>
+					<form
+						action="/admin/results/studentupdate"
+						method="post"
+						class="d-flex justify-content-center align-items-center flex-column"
+						style="width: 100%"
+					>
+						<div class="input-group d-flex flex-nowrap mb-3" style="width: 80%">
+							<span class="input-group-text" id="addon-wrapping">Old Name</span>
+							<input
+								type="text"
+								name="oldname"
+								class="form-control oldname"
+								aria-label="Username"
+								aria-describedby="addon-wrapping"
+								id=" uploadlink"
+								placeholder="Student Name"
+								readonly
+							/>
+						</div>
+
+						<div class="input-group d-flex flex-nowrap mb-3" style="width: 80%">
+							<span class="input-group-text" id="addon-wrapping">Add Name</span>
+							<input
+								type="text"
+								name="stdname"
+								class="form-control editname"
+								aria-label="Username"
+								aria-describedby="addon-wrapping"
+								id=" uploadlink"
+								placeholder="Student Name"
+								style="text-transform: uppercase"
+								required
+							/>
+						</div>
+
+						<div class="input-group d-flex flex-nowrap mb-3" style="width: 80%">
+							<span class="input-group-text" id="addon-wrapping"
+								>Add College</span
+							>
+							<input
+								type="text"
+								name="clgname"
+								class="form-control editcollegename"
+								aria-label="Username"
+								aria-describedby="addon-wrapping"
+								id=" uploadlink"
+								placeholder="CollegeName"
+							/>
+						</div>
+
+						<div>
+							<button
+								type="button"
+								class="btn btn-outline-secondary px-3 mt-5 me-5 backbtn2"
+							>
+								Back
+							</button>
 							<button type="submit" class="btn btn-outline-primary mt-5">
 								submit
 							</button>
@@ -93,7 +158,7 @@
 				<form
 					action="/admin/results/studentdetails?_method=DELETE"
 					method="post"
-					class="imgform"
+					class="imgform latestupdateform"
 				>
 					<h1 class="m-5">Student Details</h1>
 
@@ -103,53 +168,40 @@
 								<th scope="col">Name</th>
 								<th scope="col">Image</th>
 								<th scope="col">College Name</th>
-								<th scope="col">Score</th>
 								<th scope="col">Update</th>
+								<th scope="col">Edit</th>
 							</tr>
 						</thead>
-						<tbody>
-							<% students.forEach(i => { %>
-							<tr>
-								<td>
-									<p><%= i.name %></p>
-								</td>
-								<td>
-									<p class="onclickimg"><%= i.studentimg %></p>
-									<span class="currentPreviewSpan btn btn-info"
-										>Show Image</span>
-									<span class="currentSliderimgurl"><%= i.studentimg %></span>
-								</td>
-								<td>
-									<p><%= i.collegename %></p>
-								</td>
-								<td>
-									<p><%= i.score %></p>
-								</td>
-								<td>
-									<input
-										type="checkbox"
-										id="checkbox"
-										class="updatesCheckbox"
-										name="checkbox"
-										value="<%= i.cloudinaryname %>"
-										style="height: 20px; width: 20px"
-									/>
-								</td>
-							</tr>
-							<% }) %>
-						</tbody>
+						<tbody class="tbody" data-total="0" data-current="1"></tbody>
 					</table>
+					<div class="buttondiv mb-2">
+						<button
+							type="button"
+							class="btn btn-primary px-4 mx-1 prev"
+							disabled
+						>
+							Previous
+						</button>
+						<button type="button" class="btn btn-primary px-4 mx-1 next">
+							&nbsp;&nbsp;Next&nbsp;&nbsp;
+						</button>
+					</div>
 					<div class="buttondiv">
 						<button type="button" class="btn btn-outline-primary addbtn px-4">
 							Add
 						</button>
-						<button class="btn btn-outline-danger submit ms-5 px-3 submitbtn">
+						<button
+							type="button"
+							class="btn btn-outline-danger submit ms-5 px-3 submitbtn"
+							disabled
+						>
 							Delete
 						</button>
 					</div>
 				</form>
 			</div>
 		</section>
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
