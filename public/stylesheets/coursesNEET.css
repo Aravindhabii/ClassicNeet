@@ -9,6 +9,13 @@ body.dark .chat {
 	color: black !important;
 }
 
+body.dark .methodology1,
+body.dark .methodology2,
+body.dark .methodology3,
+body.dark .methodology4 {
+	color: black !important;
+}
+
 .coursesneet {
 	width: 100%;
 	height: 90vh;
@@ -304,12 +311,7 @@ body.dark .chat {
 	align-items: center;
 	justify-content: space-around;
 }
-p {
-	/* font-family: 'Montserrat', sans-serif !important; */
-	/* font-weight: 500; */
-	/* color: #242424; */
-	/* line-height: 2.5rem !important; */
-}
+
 .hex1 img {
 	width: 29%;
 }

@@ -2,39 +2,45 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 
-
-.coursesneet{
-    width: 100%;
-    height: 90vh;
-    background: url('../images/courses/jee.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background-attachment: fixed;
+body.dark .methodology1,
+body.dark .methodology2,
+body.dark .methodology3,
+body.dark .methodology4 {
+	color: black !important;
 }
 
-.h1andh2{
-    padding: 5%;  
+.coursesneet {
+	width: 100%;
+	height: 90vh;
+	background: url('../images/courses/jee.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	background-attachment: fixed;
 }
-.headh1h2{
-    padding: 2%;
- }
 
- .coursesneet{
-    position: relative;
-    height: 100vh;
-    width: 100%;
+.h1andh2 {
+	padding: 5%;
 }
-.coursesneet h1{
-    color:#568036 ; 
-    font-size: 45px; 
+.headh1h2 {
+	padding: 2%;
 }
-.coursesneet h2{
-    color: black;
-    font-size: 32px; 
+
+.coursesneet {
+	position: relative;
+	height: 100vh;
+	width: 100%;
+}
+.coursesneet h1 {
+	color: #568036;
+	font-size: 45px;
+}
+.coursesneet h2 {
+	color: black;
+	font-size: 32px;
 }
