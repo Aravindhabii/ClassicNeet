@@ -19,19 +19,19 @@ if (process.env.NODE_ENV !== "production") require("dotenv").config();
 // 	}
 // });
 
-function handleDisconnect() {
-  db.connect(function (err) {
-    if (err) {
-      console.log("error when connecting to db:", err);
-      db.end();
-      handleDisconnect()
-    } else {
-      console.log("Mysql connected");
-    }
-  });
-}
+// function handleDisconnect() {
+//   db.connect(function (err) {
+//     if (err) {
+//       console.log("error when connecting to db:", err);
+//       db.end();
+//       handleDisconnect()
+//     } else {
+//       console.log("Mysql connected");
+//     }
+//   });
+// }
 
-handleDisconnect();
+// handleDisconnect();
 
 const app = express();
 app.use(express.json());
