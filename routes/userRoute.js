@@ -1,5 +1,5 @@
 const express = require('express');
-const fs = require('fs')
+const fs = require('fs');
 const router = express.Router();
 const mysql = require('mysql');
 const dotenv = require('dotenv');
@@ -173,17 +173,16 @@ router
 					req.files[0].originalname,
 					req.files[0].filename.split('/')[1],
 					req.body.checkbox
-				],(err,response)=>{
+				],
+				(err, response) => {
 					if (err) {
 						req.flash('error', 'Error occurred while Updating');
 						console.log(err);
-					}else{
+					} else {
 						res.redirect('/admin/sliderrevolution');
 					}
 				}
 			);
-			
-	
 		} else {
 			for (let i = 0; i <= req.files.length - 1; i++) {
 				for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
@@ -196,11 +195,12 @@ router
 								req.files[j].originalname,
 								req.files[j].filename.split('/')[1],
 								req.body.checkbox[j]
-							],(err,response)=>{
+							],
+							(err, response) => {
 								if (err) {
 									req.flash('error', 'Error occurred while Updating');
 									console.log(err);
-									return
+									return;
 								}
 							}
 						);
@@ -290,8 +290,8 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
-							return
-						} else{
+							return;
+						} else {
 							console.log(response);
 						}
 					}
@@ -379,7 +379,7 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
-							return
+							return;
 						}
 					}
 				);
@@ -446,7 +446,7 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
-							return
+							return;
 						} else {
 						}
 					}
@@ -594,20 +594,16 @@ router.route('/courses').get(async (req, res) => {
 });
 
 router.route('/aboutus').get(async (req, res) => {
-	var folderObject = {
-		
-	};
-	const folders = fs.readdirSync('public/images/gallery')
-	
-	console.log(folders);
-	
-	folders.forEach(folder => {
-		const files = fs.readdirSync(`public/images/gallery/${folder}`)
-		
-		console.log(files);
-		
-	})
-		
+	var folderArray = [];
+	var imgsArray = [];
+	const folders = fs.readdirSync('public/images/gallery');
+
+	folders.forEach((folder) => {
+		folderArray.push(folder);
+		const files = fs.readdirSync(`public/images/gallery/${folder}`);
+		imgsArray.push(files);
+	});
+
 	await db.query('SELECT * FROM history', async (error, response) => {
 		var arr = [];
 		if (error) {
@@ -620,7 +616,7 @@ router.route('/aboutus').get(async (req, res) => {
 				};
 				arr.push(cont);
 			}
-			res.render('aboutus', { content: arr });
+			res.render('aboutus', { content: arr, folderArray,imgsArray });
 		}
 	});
 });
@@ -683,7 +679,7 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
-							return
+							return;
 						} else {
 						}
 					}
@@ -788,7 +784,7 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
-							return
+							return;
 						} else {
 						}
 					}
@@ -947,7 +943,7 @@ router
 					if (err) {
 						req.flash('error', 'Error occurred while adding');
 						console.log(err);
-						return
+						return;
 					} else {
 						res.redirect('/admin/results/studentdetails');
 					}
@@ -964,7 +960,7 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while adding');
 							console.log(err);
-							return
+							return;
 						} else {
 						}
 					}
@@ -1024,7 +1020,7 @@ router
 					req.files[0].filename.split('/')[1],
 					req.body.checkbox
 				]
-			)
+			);
 			res.redirect('/admin/results/images');
 		} else {
 			for (let i = 0; i <= req.files.length - 1; i++) {
@@ -1169,7 +1165,7 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while adding');
 							console.log(err);
-							return
+							return;
 						} else {
 						}
 					}
@@ -1258,7 +1254,7 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while adding');
 							console.log(err);
-							return
+							return;
 						} else {
 						}
 					}
