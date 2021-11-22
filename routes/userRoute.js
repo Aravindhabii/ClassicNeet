@@ -1,4 +1,5 @@
 const express = require('express');
+const fs = require('fs')
 const router = express.Router();
 const mysql = require('mysql');
 const dotenv = require('dotenv');
@@ -593,6 +594,20 @@ router.route('/courses').get(async (req, res) => {
 });
 
 router.route('/aboutus').get(async (req, res) => {
+	var folderObject = {
+		
+	};
+	const folders = fs.readdirSync('public/images/gallery')
+	
+	console.log(folders);
+	
+	folders.forEach(folder => {
+		const files = fs.readdirSync(`public/images/gallery/${folder}`)
+		
+		console.log(files);
+		
+	})
+		
 	await db.query('SELECT * FROM history', async (error, response) => {
 		var arr = [];
 		if (error) {

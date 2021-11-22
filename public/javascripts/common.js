@@ -71,3 +71,71 @@ $(window).scroll(function () {
 		a = 1;
 	}
 });
+
+
+
+
+var swiper = new Swiper(".swipTop", {
+	slidesPerGroup: 3,
+	loop: true,
+	slidesPerView: 1,
+	spaceBetween: 10,
+	autoplay: {
+	delay: 2500,
+	disableOnInteraction: false,
+  },
+  
+  navigation: {
+	nextEl: ".swiper-button-next",
+	prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+	  640: {
+		slidesPerView: 1,
+		spaceBetween: 20,
+	  },
+	  850: {
+		slidesPerView: 2,
+		spaceBetween: 40,
+	  },
+	  1305: {
+		slidesPerView: 3,
+		spaceBetween: 50,
+	  },
+	},
+  });
+
+
+  var swiper = new Swiper(".swipYt", {
+	slidesPerGroup: 3,
+	loop: true,
+	slidesPerView: 1,
+	spaceBetween: 10,
+	autoplay: {
+	delay: 2500,
+	disableOnInteraction: false,
+  },
+  
+  navigation: {
+	nextEl: ".swiper-button-next",
+	prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+	  640: {
+		slidesPerView: 1,
+		spaceBetween: 20,
+	  },
+	  850: {
+		slidesPerView: 2,
+		spaceBetween: 40,
+	  },
+	  1305: {
+		slidesPerView: 3,
+		spaceBetween: 50,
+	  },
+	},
+  });
+
+
+
+  

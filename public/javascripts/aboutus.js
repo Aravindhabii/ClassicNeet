@@ -96,7 +96,6 @@ dropdown.addEventListener('change', (e) => {
 	});
 });
 
-//popup
 
 const galleryclick = document.querySelectorAll('.galleryItem');
 const previmg = document.querySelector('.previewimg');

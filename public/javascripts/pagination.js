@@ -60,6 +60,12 @@ $(function(){
     );
 
     $(".galleryMain").show();
+    const dropdown = document.querySelector('.dropdown');
+
+        showPage(1);
+    dropdown.addEventListener('change', (e) => {
+	
+    });
     showPage(1)
 
     $(document).on("click", ".pagination li.current-page:not(.active)",function(){
