@@ -48,6 +48,18 @@
 								><span>/150</span>
 							</p>
 						</div>
+						<div class="input-group flex-nowrap" style="width: 80%">
+							<span class="input-group-text" id="addon-wrapping">Add Link</span>
+							<input
+								type="url"
+								name="link"
+								class="form-control inputtext"
+								aria-label="Username"
+								aria-describedby="addon-wrapping"
+								id="uploadlink"
+								required
+							/>
+						</div>
 						<div>
 							<button
 								type="button"
@@ -72,17 +84,27 @@
 						<thead>
 							<tr>
 								<th scope="col">Current Link</th>
+								<th scope="col">Current Link</th>
 								<th scope="col">Updates</th>
 							</tr>
 						</thead>
 						<tbody>
-							<% link.forEach(i => { %>
+							<% arr.forEach(i => { %>
 							<tr>
 								<td>
 									<input
 										type="text"
 										id="linkinput"
-										value="<%= i %>"
+										value="<%= i.link %>"
+										readonly
+										style="width: 80%; border: none"
+									/>
+								</td>
+								<td>
+									<input
+										type="text"
+										id="linkinput"
+										value="<%= i.link1 %>"
 										readonly
 										style="width: 80%; border: none"
 									/>
