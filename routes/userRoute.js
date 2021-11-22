@@ -275,6 +275,7 @@ router
 						req.flash('error', 'Error occurred while adding');
 						console.log(err);
 					} else {
+						console.log(response);
 						res.redirect('/admin/latestupdates');
 					}
 				}
@@ -289,7 +290,9 @@ router
 							req.flash('error', 'Error occurred while adding');
 							console.log(err);
 							return
-						} 
+						} else{
+							console.log(response);
+						}
 					}
 				);
 			});
