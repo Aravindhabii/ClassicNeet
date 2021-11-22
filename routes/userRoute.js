@@ -174,7 +174,7 @@ router
 					req.body.checkbox
 				],(err,response)=>{
 					if (err) {
-						req.flash('error', 'Error occurred while adding');
+						req.flash('error', 'Error occurred while Updating');
 						console.log(err);
 					}else{
 						res.redirect('/admin/sliderrevolution');
@@ -197,7 +197,7 @@ router
 								req.body.checkbox[j]
 							],(err,response)=>{
 								if (err) {
-									req.flash('error', 'Error occurred while adding');
+									req.flash('error', 'Error occurred while Updating');
 									console.log(err);
 									return
 								}
@@ -272,9 +272,10 @@ router
 				[req.body.checkbox],
 				(err, response) => {
 					if (err) {
-						req.flash('error', 'Error occurred while adding');
+						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
 					} else {
+						console.log(response);
 						res.redirect('/admin/latestupdates');
 					}
 				}
@@ -286,10 +287,12 @@ router
 					[link],
 					(err, response) => {
 						if (err) {
-							req.flash('error', 'Error occurred while adding');
+							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
 							return
-						} 
+						} else{
+							console.log(response);
+						}
 					}
 				);
 			});
@@ -358,7 +361,7 @@ router
 				[req.body.checkbox],
 				(err, response) => {
 					if (err) {
-						req.flash('error', 'Error occurred while adding');
+						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
 					} else {
 						res.redirect('/admin/ourtoppers');
@@ -373,7 +376,7 @@ router
 					[link],
 					(err, response) => {
 						if (err) {
-							req.flash('error', 'Error occurred while adding');
+							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
 							return
 						}
@@ -426,7 +429,7 @@ router
 				[req.body.checkbox],
 				(err, response) => {
 					if (err) {
-						req.flash('error', 'Error occurred while adding');
+						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
 					} else {
 						res.redirect('/admin/studenttestimonials');
@@ -440,7 +443,7 @@ router
 					[link],
 					(err, response) => {
 						if (err) {
-							req.flash('error', 'Error occurred while adding');
+							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
 							return
 						} else {
@@ -516,7 +519,7 @@ router
 				[req.body.checkbox],
 				(err, response) => {
 					if (err) {
-						req.flash('error', 'Error occurred while adding');
+						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
 					} else {
 					}
@@ -531,6 +534,7 @@ router
 					[link],
 					(err, response) => {
 						if (err) {
+							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
 						} else {
 						}
@@ -809,7 +813,7 @@ router
 			],
 			(err, response) => {
 				if (err) {
-					req.flash('error', 'Error occurred while adding');
+					req.flash('error', 'Error occurred while Updating');
 					console.log(err);
 				} else {
 					res.redirect('/admin/bannerimg');
