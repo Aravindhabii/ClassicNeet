@@ -223,20 +223,22 @@ router
 			} else {
 				for (let i = 0; i <= response.length - 1; i++) {
 					var link = response[i].latestupdates;
+					var link1 = response[i].link;
 					// console.log(image)
-					arr.push(link);
+					arr.push({ link, link1 });
 				}
 
 				// console.log(response[0].latestupdates);
-				res.render('admin/home/latestUpdates', { link: arr });
+				res.render('admin/home/latestUpdates', { arr });
 			}
 		});
 	})
 	.post(async (req, res) => {
 		const link = req.body.uploadlink;
+		const link1 = req.body.link;
 		await db.query(
 			'INSERT INTO latest_updates SET ?',
-			{ latestupdates: link },
+			{ latestupdates: link, link: link1 },
 			(err, results) => {
 				if (err) {
 					console.log(err);
@@ -1084,8 +1086,6 @@ router.route('/successstories').get(async (req, res) => {
 					}
 				}
 			);
-			// console.log(arr);
-			console.log(parent);
 		}
 	});
 });
