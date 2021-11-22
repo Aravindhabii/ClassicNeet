@@ -13,30 +13,11 @@ if (process.env.NODE_ENV !== "production") require("dotenv").config();
 db.connect((err) => {
 	if (err) {
 		console.log(err);
-<<<<<<< HEAD
-=======
-		setTimeout(handleDisconnect, 2000);
->>>>>>> c3a1e6220f0b644b822ee0ab7d598cecd8315c1a
 	} else {
 		console.log('Mysql connected');
 	}
 });
 
-<<<<<<< HEAD
-=======
-// function handleDisconnect() {
-//   db.connect(function (err) {
-//     if (err) {
-//       console.log("error when connecting to db:", err);
-//       db.end();
-//       handleDisconnect()
-//     } else {
-//       console.log("Mysql connected");
-//     }
-//   });
-// }
-
->>>>>>> c3a1e6220f0b644b822ee0ab7d598cecd8315c1a
 // handleDisconnect();
 
 const app = express();
