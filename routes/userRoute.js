@@ -171,9 +171,17 @@ router
 					req.files[0].originalname,
 					req.files[0].filename.split('/')[1],
 					req.body.checkbox
-				]
+				],(err,response)=>{
+					if (err) {
+						req.flash('error', 'Error occurred while adding');
+						console.log(err);
+					}else{
+						res.redirect('/admin/sliderrevolution');
+					}
+				}
 			);
-			res.redirect('/admin/sliderrevolution');
+			
+	
 		} else {
 			for (let i = 0; i <= req.files.length - 1; i++) {
 				for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
@@ -186,11 +194,18 @@ router
 								req.files[j].originalname,
 								req.files[j].filename.split('/')[1],
 								req.body.checkbox[j]
-							]
+							],(err,response)=>{
+								if (err) {
+									req.flash('error', 'Error occurred while adding');
+									console.log(err);
+									return
+								}
+							}
 						);
 					}
 				}
 			}
+			res.redirect('/admin/sliderrevolution');
 			// req.body.sliderimg.forEach((img, index1) => {
 			// 	req.body.checkbox.forEach(async (check, index2) => {
 			// 		if (index1 === index2) {
@@ -208,7 +223,6 @@ router
 			// 		}
 			// 	});
 			// });
-			res.redirect('/admin/sliderrevolution');
 		}
 	});
 
@@ -219,6 +233,7 @@ router
 		await db.query('SELECT * FROM latest_updates', (err, response) => {
 			arr = [];
 			if (err) {
+				req.flash('error', 'Error occurred while adding');
 				console.log(err);
 			} else {
 				for (let i = 0; i <= response.length - 1; i++) {
@@ -241,6 +256,7 @@ router
 			{ latestupdates: link, link: link1 },
 			(err, results) => {
 				if (err) {
+					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
 					res.redirect('/admin/latestupdates');
@@ -255,12 +271,13 @@ router
 				[req.body.checkbox],
 				(err, response) => {
 					if (err) {
+						req.flash('error', 'Error occurred while adding');
 						console.log(err);
 					} else {
+						res.redirect('/admin/latestupdates');
 					}
 				}
 			);
-			res.redirect('/admin/latestupdates');
 		} else {
 			req.body.checkbox.forEach(async (link) => {
 				await db.query(
@@ -268,9 +285,10 @@ router
 					[link],
 					(err, response) => {
 						if (err) {
+							req.flash('error', 'Error occurred while adding');
 							console.log(err);
-						} else {
-						}
+							return
+						} 
 					}
 				);
 			});
@@ -285,6 +303,7 @@ router
 		await db.query('SELECT * FROM ourtoppers', async (error, response) => {
 			var arr = [];
 			if (error) {
+				req.flash('error', 'Error occurred while adding');
 				console.log(error);
 			} else {
 				for (let i = 0; i <= response.length - 1; i++) {
@@ -313,6 +332,7 @@ router
 			},
 			(err, response) => {
 				if (err) {
+					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
 				}
@@ -337,6 +357,7 @@ router
 				[req.body.checkbox],
 				(err, response) => {
 					if (err) {
+						req.flash('error', 'Error occurred while adding');
 						console.log(err);
 					} else {
 						res.redirect('/admin/ourtoppers');
@@ -351,7 +372,9 @@ router
 					[link],
 					(err, response) => {
 						if (err) {
+							req.flash('error', 'Error occurred while adding');
 							console.log(err);
+							return
 						}
 					}
 				);
@@ -367,6 +390,7 @@ router
 		await db.query('SELECT * FROM studenttestimonials', (err, response) => {
 			arr = [];
 			if (err) {
+				req.flash('error', 'Error occurred while adding');
 				console.log(err);
 			} else {
 				for (let i = 0; i <= response.length - 1; i++) {
@@ -386,6 +410,7 @@ router
 			{ testimonialslink: link },
 			(err, results) => {
 				if (err) {
+					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
 					res.redirect('/admin/studenttestimonials');
@@ -400,6 +425,7 @@ router
 				[req.body.checkbox],
 				(err, response) => {
 					if (err) {
+						req.flash('error', 'Error occurred while adding');
 						console.log(err);
 					} else {
 						res.redirect('/admin/studenttestimonials');
@@ -413,7 +439,9 @@ router
 					[link],
 					(err, response) => {
 						if (err) {
+							req.flash('error', 'Error occurred while adding');
 							console.log(err);
+							return
 						} else {
 						}
 					}
@@ -472,6 +500,7 @@ router
 			},
 			(err, response) => {
 				if (err) {
+					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
 					res.redirect('/admin/calendarevents');
@@ -486,6 +515,7 @@ router
 				[req.body.checkbox],
 				(err, response) => {
 					if (err) {
+						req.flash('error', 'Error occurred while adding');
 						console.log(err);
 					} else {
 					}
@@ -544,6 +574,7 @@ router
 			},
 			(err, results) => {
 				if (err) {
+					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
 					res.redirect('/admin/neetachievements');
@@ -552,69 +583,9 @@ router
 		);
 	});
 
-// router
-//   .route("/admin/neetachievements")
-//   .get(flash,isloggedin, async (req, res) => {
-//     res.render("admin/home/studentTestimonials");
-//   })
-//   .post(async (req, res) => {
-//     const link = req.body.uploadlink;
-//     console.log(link);
-//     await db.query(
-//       "INSERT INTO studenttestimonials SET ?",
-//       { testimonialslink: link },
-//       (err, results) => {
-//         if (err) {
-//           console.log(err);
-//         } else {
-//           console.log(results);
-//           res.redirect("/admin/studenttestimonials");
-//         }
-//       }
-//     );
-//   });
-
 router.route('/courses').get(async (req, res) => {
 	res.render('courses');
 });
-
-// router.route("/empty").get(async(req,res)=>{res.render('admin/courses/empty')})
-
-// router
-//   .route("/admin/courses/neet")
-//   .get(async (req, res) => {
-//     await db.query("SELECT * FROM courseneet", async (error, response) => {
-//       var arr = [];
-//       if (error) {
-//         console.log(error);
-//       } else {
-//         for (let i = 0; i <= response.length - 1; i++) {
-//           var cont = {
-//             overview: response[i].overview,
-//             methodology: response[i].methodology,
-//           };
-//           arr.push(cont);
-//         }
-//         res.render("admin/courses/courseNEET", { content: arr });
-//       }
-//     });
-//   })
-//   .post(async (req, res) => {
-//     const { overview, methodology } = req.body.content;
-//     await db.query(
-//       "INSERT INTO courseneet SET ?",
-//       { overview: overview, methodology: methodology },
-//       (err, results) => {
-//         if (err) {
-//           console.log(err);
-//         } else {
-//           console.log(results);
-//           res.redirect("/admin/courses/neet");
-//         }
-//       }
-//     );
-//   })
-//   .delete(async (req, res) => {});
 
 router.route('/aboutus').get(async (req, res) => {
 	await db.query('SELECT * FROM history', async (error, response) => {
@@ -661,6 +632,7 @@ router
 			{ content: content, year: year },
 			(err, results) => {
 				if (err) {
+					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
 					res.redirect('/admin/aboutus/history');
@@ -675,6 +647,7 @@ router
 				[req.body.checkbox],
 				(err, response) => {
 					if (err) {
+						req.flash('error', 'Error occurred while adding');
 						console.log(err);
 					} else {
 					}
@@ -688,7 +661,9 @@ router
 					[year],
 					(err, response) => {
 						if (err) {
+							req.flash('error', 'Error occurred while adding');
 							console.log(err);
+							return
 						} else {
 						}
 					}
@@ -763,6 +738,7 @@ router
 			{ videolink: link },
 			(err, results) => {
 				if (err) {
+					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
 					res.redirect('/admin/demovideos');
@@ -777,6 +753,7 @@ router
 				[req.body.checkbox],
 				(err, response) => {
 					if (err) {
+						req.flash('error', 'Error occurred while adding');
 						console.log(err);
 					}
 				}
@@ -789,7 +766,9 @@ router
 					[link],
 					(err, response) => {
 						if (err) {
+							req.flash('error', 'Error occurred while adding');
 							console.log(err);
+							return
 						} else {
 						}
 					}
@@ -829,9 +808,9 @@ router
 			],
 			(err, response) => {
 				if (err) {
+					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
-					console.log('lkokokok');
 					res.redirect('/admin/bannerimg');
 				}
 			}
@@ -907,6 +886,7 @@ router
 			},
 			(err, response) => {
 				if (err) {
+					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
 					res.redirect('/admin/results/studentdetails');
@@ -945,7 +925,9 @@ router
 				[req.body.checkbox],
 				(err, response) => {
 					if (err) {
+						req.flash('error', 'Error occurred while adding');
 						console.log(err);
+						return
 					} else {
 						res.redirect('/admin/results/studentdetails');
 					}
@@ -960,7 +942,9 @@ router
 					[link],
 					(err, response) => {
 						if (err) {
+							req.flash('error', 'Error occurred while adding');
 							console.log(err);
+							return
 						} else {
 						}
 					}
@@ -1020,7 +1004,7 @@ router
 					req.files[0].filename.split('/')[1],
 					req.body.checkbox
 				]
-			);
+			)
 			res.redirect('/admin/results/images');
 		} else {
 			for (let i = 0; i <= req.files.length - 1; i++) {
@@ -1048,6 +1032,7 @@ router
 router.route('/contactus').get(async (req, res) => {
 	res.render('contactus');
 });
+
 router.route('/successstories').get(async (req, res) => {
 	await db.query('SELECT * FROM successstories', async (error, response) => {
 		var arr = [];
@@ -1122,12 +1107,13 @@ router
 			},
 			(err, response) => {
 				if (err) {
+					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					res.redirect('/admin/successstories/testimonials');
 				}
 			}
 		);
-		res.redirect('/admin/successstories/testimonials');
 	})
 	.put(upload.single('sliderimg'), async (req, res) => {
 		await db.query(
@@ -1146,6 +1132,7 @@ router
 				[req.body.checkbox],
 				(err, response) => {
 					if (err) {
+						req.flash('error', 'Error occurred while adding');
 						console.log(err);
 					} else {
 						res.redirect('/admin/successstories/testimonials');
@@ -1160,7 +1147,9 @@ router
 					[link],
 					(err, response) => {
 						if (err) {
+							req.flash('error', 'Error occurred while adding');
 							console.log(err);
+							return
 						} else {
 						}
 					}
@@ -1207,12 +1196,13 @@ router
 			},
 			(err, response) => {
 				if (err) {
+					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					res.redirect('/admin/successstories/parenttestimonials');
 				}
 			}
 		);
-		res.redirect('/admin/successstories/parenttestimonials');
 	})
 	// .put(upload.single('sliderimg'), async (req, res) => {
 	// 	await db.query(
@@ -1231,6 +1221,7 @@ router
 				[req.body.checkbox],
 				(err, response) => {
 					if (err) {
+						req.flash('error', 'Error occurred while adding');
 						console.log(err);
 					} else {
 						res.redirect('/admin/successstories/parenttestimonials');
@@ -1245,7 +1236,9 @@ router
 					[link],
 					(err, response) => {
 						if (err) {
+							req.flash('error', 'Error occurred while adding');
 							console.log(err);
+							return
 						} else {
 						}
 					}

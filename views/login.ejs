@@ -16,7 +16,7 @@
   <body>
     <section class="removesection">
       <% if(success && success.length) {%>
-        <div class="d-flex justify-content-center alert alert-success alert-dismissible fade show" role="alert" style="margin: 0px;">
+        <div class="d-flex justify-content-center alert alert-success alert-dismissible fade show position-absolute " role="alert" style="width: 100%;">
           <b><%= success %></b>
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
             <span aria-hidden="true"></span>
@@ -25,7 +25,7 @@
       <% } %>
         
       <% if(error && error.length) {%>
-        <div class="d-flex justify-content-center alert alert-danger alert-dismissible fade show mb-0" role="alert">
+        <div class="d-flex justify-content-center alert alert-danger alert-dismissible fade show mb-0 position-absolute top-0 start-0" role="alert">
           <b><%= error %></b>
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
             <span aria-hidden="true"></span>
