@@ -425,10 +425,10 @@ p {
 	font-family: 'Roboto', sans-serif;
 	/* text-decoration: 2px underline rgb(0, 0, 0); */
 }
-.news-box p:hover {
-	text-decoration: 2px underline rgb(0, 0, 0);
+.news-box .p:hover {
+	text-decoration:underline;
 }
-.news-box p {
+.news-box .p {
 	color: black;
 	border: 5px solid #efe81e;
 	padding: 2rem 1rem;
@@ -436,10 +436,11 @@ p {
 	line-height: 2rem;
 	border-radius: 20px;
 	background-color: white;
+	display: block;
 	text-decoration: none;
 	font-weight: bolder;
 }
-.news-box.dark p {
+.news-box.dark .p {
 	background-color: rgb(24, 26, 27);
 	color: white;
 }
@@ -450,12 +451,10 @@ p {
 }
 .sec-2 .div-2 {
 	position: relative;
-
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-
 	/* margin-bottom: 15rem; */
 	z-index: 5;
 }

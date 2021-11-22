@@ -73,8 +73,9 @@ router.route('/').get(async (req, res) => {
 										} else {
 											for (let i = 0; i <= response.length - 1; i++) {
 												var link = response[i].latestupdates;
+												var link1 = response[i].link;
 												// console.log(image)
-												latestupdates.push(link);
+												latestupdates.push({ link, link1 });
 											}
 
 											await db.query(
