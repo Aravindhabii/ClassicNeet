@@ -10,6 +10,10 @@ body.dark {
 	color: white;
 }
 
+body.dark .chat {
+	color: black !important;
+}
+
 .contact-container {
 	width: 100%;
 	display: flex;

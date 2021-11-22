@@ -2,6 +2,11 @@ const botImg = document.querySelector('.bot-img');
 const chat = document.querySelector('.chat');
 const chatClose = document.querySelector('.chat_close');
 const chatReset = document.querySelector('.chat_reset');
+document.addEventListener('keydown', (e) => {
+	if (e.keyCode === 13) {
+		e.preventDefault();
+	}
+});
 
 botImg.addEventListener('click', () => {
 	chat.classList.add('open');

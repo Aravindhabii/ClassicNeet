@@ -14,6 +14,10 @@ body.dark .video h1 {
 	border: 1px solid white !important;
 }
 
+body.dark .chat {
+	color: black !important;
+}
+
 .video {
 	width: 100%;
 	height: 100vh;

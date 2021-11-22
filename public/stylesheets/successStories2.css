@@ -14,11 +14,15 @@ body.dark {
 	color: white;
 }
 
+body.dark .chat {
+	color: black !important;
+}
+
 .vector {
 	position: relative;
 	top: -35px;
 	width: 100%;
-	background: url("../images/successStories/Vector8.png");
+	background: url('../images/successStories/Vector8.png');
 	height: 25.5rem;
 	z-index: -1;
 	display: flex;
@@ -37,14 +41,12 @@ body.dark {
 	justify-content: center;
 	align-items: center;
 }
-.vector h1
-{
+.vector h1 {
 	font-size: 3rem;
 	position: relative;
 	top: 15%;
 }
-.parentVector h1
-{
+.parentVector h1 {
 	font-size: 3rem;
 	position: relative;
 }

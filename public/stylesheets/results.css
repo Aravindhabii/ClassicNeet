@@ -11,6 +11,10 @@ body.dark {
 	color: white;
 }
 
+body.dark .chat {
+	color: black !important;
+}
+
 .swiper-slide img {
 	height: 90vh;
 	width: 100%;
