@@ -10,14 +10,14 @@ const db = require("./database");
 const methodOverride = require("method-override");
 if (process.env.NODE_ENV !== "production") require("dotenv").config();
 
-// db.connect((err) => {
-// 	if (err) {
-// 		console.log(err);
-// 		setTimeout(handleDisconnect, 2000);
-// 	} else {
-// 		console.log('Mysql connected');
-// 	}
-// });
+db.connect((err) => {
+	if (err) {
+		console.log(err);
+		setTimeout(handleDisconnect, 2000);
+	} else {
+		console.log('Mysql connected');
+	}
+});
 
 // function handleDisconnect() {
 //   db.connect(function (err) {
