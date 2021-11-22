@@ -14,25 +14,6 @@
     <title>Login</title>
   </head>
   <body>
-    <section class="removesection">
-      <% if(success && success.length) {%>
-        <div class="d-flex justify-content-center alert alert-success alert-dismissible fade show position-absolute " role="alert" style="width: 100%;">
-          <b><%= success %></b>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true"></span>
-          </button>
-        </div>
-      <% } %>
-        
-      <% if(error && error.length) {%>
-        <div class="d-flex justify-content-center alert alert-danger alert-dismissible fade show mb-0 position-absolute top-0 start-0" role="alert">
-          <b><%= error %></b>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true"></span>
-          </button>
-        </div>
-      <% } %>
-    </section>
     <section class="loginpage">
     <div class="login">
     <form 
@@ -58,7 +39,13 @@
           required
         />
       </div>
-
+      <div class="removesection">
+        <% if(error && error.length) {%>
+          <div class="d-flex justify-content-center fade show mb-0" role="alert" style="color: red;">
+            <b><%= error %></b>
+          </div>
+        <% } %>
+      </div>
       <div class="btn">
         <button class="submit" type="submit">Submit</button>
       </div>
@@ -73,6 +60,3 @@
     <script src="javascripts/auth.js"></script>
   </body>
 </html>
-
-
-
