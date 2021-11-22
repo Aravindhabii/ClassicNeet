@@ -139,20 +139,15 @@
 							<marquee class="news-box" direction="up" scrollamount="5" onmousedown="stop();"
 								onmouseup="start();">
 								<% latestupdates.forEach(update=> { %>
-									<p>
-										<%= update %>
-									</p>
+									<a class="p" href="<%= update.link1 %>" target="_blank">
+										<%= update.link %>
+									</a>
 									<% }) %>
 							</marquee>
 						</div>
 						<div class="div-1">
 							<h1 class="CalanderEvents">Calendar Events</h1>
 							<div class="calenderMain">
-								<div class="calenderCard">
-									<div class="date"><span class="month">Aug</span><span class="dateMain">7</span>
-									</div>
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, tenetur.</p>
-								</div>
 
 								<% calendar.forEach(cal=> { %>
 									<div class="calenderCard">

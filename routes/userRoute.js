@@ -73,8 +73,9 @@ router.route('/').get(flash, async (req, res) => {
 										} else {
 											for (let i = 0; i <= response.length - 1; i++) {
 												var link = response[i].latestupdates;
+												var link1 = response[i].link;
 												// console.log(image)
-												latestupdates.push(link);
+												latestupdates.push({ link, link1 });
 											}
 
 											await db.query(
@@ -257,10 +258,10 @@ router
 					if (err) {
 						console.log(err);
 					} else {
+						res.redirect('/admin/latestupdates');
 					}
 				}
 			);
-			res.redirect('/admin/latestupdates');
 		} else {
 			req.body.checkbox.forEach(async (link) => {
 				await db.query(
@@ -270,11 +271,11 @@ router
 						if (err) {
 							console.log(err);
 						} else {
+							res.redirect('/admin/latestupdates');
 						}
 					}
 				);
 			});
-			res.redirect('/admin/latestupdates');
 		}
 	});
 
