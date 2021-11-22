@@ -652,13 +652,13 @@ router
 				[req.body.checkbox],
 				(err, response) => {
 					if (err) {
-						req.flash('error', 'Error occurred while adding');
+						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
 					} else {
+						res.redirect('/admin/aboutus/history');
 					}
 				}
 			);
-			res.redirect('/admin/aboutus/history');
 		} else {
 			req.body.checkbox.forEach(async (year) => {
 				await db.query(
@@ -666,7 +666,7 @@ router
 					[year],
 					(err, response) => {
 						if (err) {
-							req.flash('error', 'Error occurred while adding');
+							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
 							return
 						} else {
@@ -758,7 +758,7 @@ router
 				[req.body.checkbox],
 				(err, response) => {
 					if (err) {
-						req.flash('error', 'Error occurred while adding');
+						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
 					}
 				}
@@ -771,7 +771,7 @@ router
 					[link],
 					(err, response) => {
 						if (err) {
-							req.flash('error', 'Error occurred while adding');
+							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
 							return
 						} else {
