@@ -10,16 +10,13 @@ const db = require('./database');
 const methodOverride = require('method-override');
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
-function reconnect() {
-	db.connect((err) => {
-		if (err) {
-			reconnect();
-		} else {
-			console.log('Mysql connected');
-		}
-	});
-}
-reconnect();
+db.connect((err) => {
+	if (err) {
+		console.log(err);
+	} else {
+		console.log('Mysql connected');
+	}
+});
 
 const app = express();
 app.use(express.json());
