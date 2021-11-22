@@ -21,7 +21,7 @@ router
 
 dotenv.config({ path: './.env' });
 
-router.route('/').get(flash, async (req, res) => {
+router.route('/').get(async (req, res) => {
 	await db.query('SELECT * FROM homeslider', async (error, response) => {
 		var arr = [];
 		if (error) {
