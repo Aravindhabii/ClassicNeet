@@ -723,16 +723,15 @@ router.route('/Demovideos').get(async (req, res) => {
 				if (error) {
 					console.log(error);
 				} else {
-						var image = {
-							sliderimg: response[0].sliderimg,
-							imgname: response[0].imgname,
-							cloudinaryName: response[0].cloudinaryname
-						};
+					var image = {
+						sliderimg: response[0].sliderimg,
+						imgname: response[0].imgname,
+						cloudinaryName: response[0].cloudinaryname
+					};
 				}
 				res.render('demovideos', { link: arr, img: image });
 			});
 			// console.log(response[0].latestupdates);
-			
 		}
 	});
 });
@@ -853,7 +852,22 @@ router.route('/results').get(async (req, res) => {
 				};
 				arr.push(image);
 			}
-			res.render('results', { students: arr });
+			await db.query('SELECT * FROM resultslider', async (error, response) => {
+				var slider = [];
+				if (error) {
+					console.log(error);
+				} else {
+					for (let i = 0; i <= response.length - 1; i++) {
+						var image1 = {
+							sliderimg: response[i].sliderimg,
+							imgname: response[i].imgname,
+							cloudinaryName: response[i].cloudinaryname
+						};
+						slider.push(image1);
+					}
+					res.render('results', { students: arr, slider });
+				}
+			});
 		}
 	});
 });
