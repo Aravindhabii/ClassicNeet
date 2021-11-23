@@ -112,7 +112,7 @@ nav.dark {
 }
 
 nav.dark .navlinks a {
-	color: rgb(133 171 228) !important;
+	color: rgb(133, 171, 228) !important;
 }
 
 @keyframes navlinkFade {
