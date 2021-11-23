@@ -179,6 +179,7 @@ router
 						req.flash('error', 'Error occurred while Updating');
 						console.log(err);
 					} else {
+						req.flash('success', 'Image successfully updated');
 						res.redirect('/admin/sliderrevolution');
 					}
 				}
@@ -207,6 +208,7 @@ router
 					}
 				}
 			}
+			req.flash('success', 'Images successfully updated');
 			res.redirect('/admin/sliderrevolution');
 			// req.body.sliderimg.forEach((img, index1) => {
 			// 	req.body.checkbox.forEach(async (check, index2) => {
@@ -261,6 +263,7 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Added successfully');
 					res.redirect('/admin/latestupdates');
 				}
 			}
@@ -277,6 +280,7 @@ router
 						console.log(err);
 					} else {
 						console.log(response);
+						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/latestupdates');
 					}
 				}
@@ -292,6 +296,7 @@ router
 							console.log(err);
 							return;
 						} else {
+							req.flash('success', 'Successfully Deleted');
 							console.log(response);
 						}
 					}
@@ -365,6 +370,7 @@ router
 						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
 					} else {
+						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/ourtoppers');
 					}
 				}
@@ -384,6 +390,7 @@ router
 					}
 				);
 			});
+			req.flash('success', 'Successfully Deleted');
 			res.redirect('/admin/ourtoppers');
 		}
 	});
@@ -433,6 +440,7 @@ router
 						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
 					} else {
+						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/studenttestimonials');
 					}
 				}
@@ -452,6 +460,7 @@ router
 					}
 				);
 			});
+			req.flash('success', 'Successfully Deleted');
 			res.redirect('/admin/studenttestimonials');
 		}
 	});
@@ -523,10 +532,11 @@ router
 						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
 					} else {
+						req.flash('success', 'Successfully Deleted');
+						res.redirect('/admin/calendarevents');
 					}
 				}
 			);
-			res.redirect('/admin/calendarevents');
 		} else {
 			req.body.checkbox.forEach(async (link) => {
 				console.log(link);
@@ -537,11 +547,11 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
-						} else {
 						}
 					}
 				);
 			});
+			req.flash('success', 'Successfully Deleted');
 			res.redirect('/admin/calendarevents');
 		}
 	});
@@ -583,6 +593,7 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Successfully Updated');
 					res.redirect('/admin/neetachievements');
 				}
 			}
@@ -666,6 +677,7 @@ router
 						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
 					} else {
+						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/aboutus/history');
 					}
 				}
@@ -685,6 +697,7 @@ router
 					}
 				);
 			});
+			req.flash('success', 'Successfully Deleted');
 			res.redirect('/admin/aboutus/history');
 		}
 	});
@@ -757,6 +770,7 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Successfully Added');
 					res.redirect('/admin/demovideos');
 				}
 			}
@@ -771,10 +785,12 @@ router
 					if (err) {
 						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
+					}else{
+						req.flash('success', 'Successfully Deleted');
+						res.redirect('/admin/demovideos');
 					}
 				}
 			);
-			res.redirect('/admin/demovideos');
 		} else {
 			req.body.checkbox.forEach(async (link) => {
 				await db.query(
@@ -790,6 +806,7 @@ router
 					}
 				);
 			});
+			req.flash('success', 'Successfully Deleted');
 			res.redirect('/admin/demovideos');
 		}
 	});
@@ -827,6 +844,7 @@ router
 					req.flash('error', 'Error occurred while Updating');
 					console.log(err);
 				} else {
+					req.flash('success', 'Image successfully updated');
 					res.redirect('/admin/bannerimg');
 				}
 			}
@@ -905,6 +923,7 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Successfully Added');
 					res.redirect('/admin/results/studentdetails');
 				}
 			}
@@ -945,6 +964,7 @@ router
 						console.log(err);
 						return;
 					} else {
+						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/results/studentdetails');
 					}
 				}
@@ -966,6 +986,7 @@ router
 					}
 				);
 			});
+			req.flash('success', 'Successfully Deleted');
 			res.redirect('/admin/results/studentdetails');
 		}
 	});
@@ -1020,8 +1041,14 @@ router
 					req.files[0].filename.split('/')[1],
 					req.body.checkbox
 				]
-			);
-			res.redirect('/admin/results/images');
+			),(err,response)=>{
+				if (err) {
+					console.log(err);
+				}else{
+					req.flash('success', 'Successfully Added');
+					res.redirect('/admin/results/images');
+				}
+			}
 		} else {
 			for (let i = 0; i <= req.files.length - 1; i++) {
 				for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
@@ -1037,8 +1064,15 @@ router
 								req.files[j].filename.split('/')[1],
 								req.body.checkbox[j]
 							]
-						);
-						res.redirect('/admin/results/images');
+						),(err,response)=>{
+							if (err) {
+								req.flash('error', 'Error occurred while adding');
+								console.log(err);
+							}else{
+								req.flash('success', 'Image Successfully Updated');
+								res.redirect('/admin/results/images');
+							}
+						}
 					}
 				}
 			}
@@ -1126,6 +1160,7 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Successfully Added');
 					res.redirect('/admin/successstories/testimonials');
 				}
 			}
@@ -1151,6 +1186,7 @@ router
 						req.flash('error', 'Error occurred while adding');
 						console.log(err);
 					} else {
+						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/successstories/testimonials');
 					}
 				}
@@ -1171,6 +1207,7 @@ router
 					}
 				);
 			});
+			req.flash('success', 'Successfully Deleted');
 			res.redirect('/admin/successstories/testimonials');
 		}
 	});
@@ -1215,6 +1252,7 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Successfully Added');
 					res.redirect('/admin/successstories/parenttestimonials');
 				}
 			}
@@ -1239,7 +1277,9 @@ router
 					if (err) {
 						req.flash('error', 'Error occurred while adding');
 						console.log(err);
+					req.flash('success', 'Successfully Added');
 					} else {
+						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/successstories/parenttestimonials');
 					}
 				}
@@ -1260,6 +1300,7 @@ router
 					}
 				);
 			});
+			req.flash('success', 'Successfully Deleted');
 			res.redirect('/admin/successstories/parenttestimonials');
 		}
 	});
@@ -1267,7 +1308,7 @@ router
 router.post('/signout', isloggedin, (req, res) => {
 	req.session.destroy(function () {
 		res.clearCookie('connect.sid');
-		res.redirect('/login');
+		res.redirect('/login');rs
 	});
 });
 
