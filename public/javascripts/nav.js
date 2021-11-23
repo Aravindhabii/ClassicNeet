@@ -34,7 +34,6 @@ function togglerClick() {
 	navToggler.classList.toggle('toggler-open');
 	navMenu.classList.toggle('open');
 	body.classList.toggle('overflow-hidden');
-	
 }
 
 function navLinkClick() {
@@ -79,7 +78,7 @@ document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
 	toggleDarkTheme();
 });
 
-// const darkThemeMq = window.matchMedia('(prefers-color-scheme: dark)');
-// if (darkThemeMq.matches) {
-// 	toggleDarkTheme();
-// }
+const darkThemeMq = window.matchMedia('(prefers-color-scheme: dark)');
+if (darkThemeMq.matches) {
+	toggleDarkTheme();
+}
