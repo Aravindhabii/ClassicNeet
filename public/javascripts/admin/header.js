@@ -8,13 +8,13 @@ setTimeout(function(){
     })
 },4000);
 
-const collapse = document.querySelectorAll('.collapse');
-const collapsed = document.querySelectorAll('.collapsed');
+// const collapse = document.querySelectorAll('.collapse');
+// const collapsed = document.querySelectorAll('.collapsed');
 
-console.log(collapse);
+// console.log(collapse);
 
-collapsed.forEach(function (element) {
-	element.addEventListener('mouseover', (e) => {
-		element2.classList.add('show');
-	});
-});
+// collapsed.forEach(function (element) {
+// 	element.addEventListener('mouseover', (e) => {
+// 		element2.classList.add('show');
+// 	});
+// });
