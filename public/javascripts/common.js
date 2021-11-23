@@ -76,14 +76,13 @@ $(window).scroll(function () {
 
 
 var swiper = new Swiper(".swipTop", {
+	slidesPerView: 3,
+	spaceBetween: 30,
 	slidesPerGroup: 3,
 	loop: true,
-	slidesPerView: 1,
+	autoplay: true,
+	loopFillGroupWithBlank: false,
 	spaceBetween: 10,
-	autoplay: {
-	delay: 2500,
-	disableOnInteraction: false,
-  },
   
   navigation: {
 	nextEl: ".swiper-button-next",
@@ -92,10 +91,12 @@ var swiper = new Swiper(".swipTop", {
   breakpoints: {
 	  640: {
 		slidesPerView: 1,
+		slidesPerGroup: 1,
 		spaceBetween: 20,
 	  },
 	  850: {
 		slidesPerView: 2,
+		slidesPerGroup: 2,
 		spaceBetween: 40,
 	  },
 	  1305: {
@@ -123,10 +124,12 @@ var swiper = new Swiper(".swipTop", {
   breakpoints: {
 	  640: {
 		slidesPerView: 1,
+		slidesPerGroup: 1,
 		spaceBetween: 20,
 	  },
 	  850: {
 		slidesPerView: 2,
+		slidesPerGroup: 2,
 		spaceBetween: 40,
 	  },
 	  1305: {

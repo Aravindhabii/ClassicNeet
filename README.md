@@ -203,3 +203,46 @@
       </div>
       <div class="dots_container" id="indicator"></div>
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<select
+				class="form-select form-select-lg mb-3 dropdown"
+				aria-label=".form-select-lg example"
+				data-select=""
+			>
+				<option value="2021" data-year="2021">2021</option>
+				<option value="2020" data-year="2020">2020</option>
+				<option selected value="2019" data-year="2019">2019</option>
+				<option value="2018" data-year="2018">2018</option>
+			</select>
+			<!-- <div class="btngrp"><div class="prev-btn btn" data-year="2019">Previous Year</div><div data-year="2020" class="current-btn btn">Next Year</div></div> -->
+			<section class="galleryMain">
+				<% for( let i = 1; i < 64; i++ ) { %>
+				<div class="galleryItem">
+					<img
+						id="imageid"
+						src="images/GALLERY/2019/2019img<%= i %>.jpg"
+						alt=""
+					/>
+				</div>
+				<% } %>
+
+				<!-- <% for( let i = 1; i < 64; i++ ) { %>
+          <div class="galleryItem"><img  src="../images/gallery/2020/img5.jpg"   alt=""></div>
+        
+        <% } %> -->
+			</section>

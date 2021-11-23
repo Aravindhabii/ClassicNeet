@@ -6,7 +6,7 @@ function getPageList(totalPages,page,maxLength) {
     }
 
 
-    var sideWidth = maxLength < 9 ? 1 : 2
+    var sideWidth = maxLength < 6 ? 0 : 1
     var leftWidth = (maxLength - sideWidth * 2 - 3) >> 1
     var rightWidth = (maxLength - sideWidth * 2 - 3) >> 1
 
@@ -62,8 +62,8 @@ $(function(){
     $(".galleryMain").show();
     const dropdown = document.querySelector('.dropdown');
 
-        showPage(1);
     dropdown.addEventListener('change', (e) => {
+        showPage(1);
 	
     });
     showPage(1)
