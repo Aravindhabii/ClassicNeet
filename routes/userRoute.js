@@ -10,6 +10,7 @@ const { response } = require('express');
 const upload = multer({ storage });
 var sizeOf = require('image-size');
 const { isloggedin, flash } = require('../middleware');
+const nodemailer = require('nodemailer');
 
 router
 	.route('/example')
@@ -165,7 +166,7 @@ router
 	})
 	.post(upload.array('sliderimg'), async (req, res) => {
 		if (typeof req.body.checkbox === 'string') {
-			// await cloudinary.uploader.destroy(req.body.checkbox);
+			await cloudinary.uploader.destroy(req.body.checkbox);
 			await db.query(
 				'UPDATE homeslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
 				[
@@ -188,7 +189,7 @@ router
 			for (let i = 0; i <= req.files.length - 1; i++) {
 				for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
 					if (i === j) {
-						await cloudinary.uploader.destroy(`ClassicNeetAcademy/${check}`);
+						await cloudinary.uploader.destroy(`ClassicNeetAcademy/${req.body.checkbox}`);
 						await db.query(
 							'UPDATE homeslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
 							[
@@ -627,7 +628,7 @@ router.route('/aboutus').get(async (req, res) => {
 				};
 				arr.push(cont);
 			}
-			res.render('aboutus', { content: arr, folderArray,imgsArray });
+			res.render('aboutus', { content: arr, folderArray, imgsArray });
 		}
 	});
 });
@@ -1358,6 +1359,39 @@ router.get('/pagination/totalCount', isloggedin, async (req, res) => {
 			return;
 		} else {
 			res.json(response.length);
+		}
+	});
+});
+
+let transporter = nodemailer.createTransport({
+	service: 'gmail',
+	auth: {
+		user: 'srklohith05@gmail.com',
+		pass: 'Loki05@("*")'
+	}
+});
+
+router.post('/contactus', (req, res) => {
+	const email = req.body.email;
+	const comment = req.body.message;
+	const name = req.body.name;
+	const phone = req.body.phone;
+
+	let mailOptions = {
+		from: 'srklohith05@gmail.com',
+		to: email,
+		subject: 'Comments from user',
+		html:
+			`<h1>${name}</h1>` +
+			`<h2> ${email} </h2>` +
+			`<h3>${phone}</h3>` +
+			`<p>${comment}</p>`
+	};
+	transporter.sendMail(mailOptions, function (error, info) {
+		if (error) {
+			res.redirect('/contactus');
+		} else {
+			res.redirect('/contactus');
 		}
 	});
 });

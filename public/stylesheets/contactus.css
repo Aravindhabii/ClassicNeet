@@ -100,7 +100,14 @@ body.dark .chat {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 1.5rem;
+	margin-bottom: 2.5rem;
+	position: relative;
+
+}
+.err {
+	position: absolute;
+	transform: translateY(100%);
+	bottom: 0%;
 }
 
 .input-container input {
@@ -110,10 +117,13 @@ body.dark .chat {
 	/* margin-top: 0.5rem; */
 	font-size: 1.3rem;
 }
-
+.textarea-container textarea {
+	font-size: 1.3rem;
+}
 .textarea-container {
 	display: flex;
 	flex-direction: column;
+	position: relative;
 }
 
 .textarea-container textarea {
@@ -130,6 +140,7 @@ body.dark .chat {
 	margin-top: 2rem;
 	justify-content: space-between;
 	align-items: center;
+	position: relative;
 }
 
 .reset,
@@ -212,3 +223,4 @@ body.dark .chat {
 	color: red;
 	font-size: 15px;
 }
+/* error */

@@ -101,7 +101,7 @@ ul {
 	background: url('https://img.icons8.com/external-bearicons-glyph-bearicons/64/ffffff/external-moon-halloween-bearicons-glyph-bearicons.png')
 		center/cover;
 	margin-left: 0.5rem;
-	margin-right: 1rem;
+	margin-right: 2rem;
 }
 
 nav.dark {
@@ -112,7 +112,7 @@ nav.dark {
 }
 
 nav.dark .navlinks a {
-	color: rgb(133 171 228) !important;
+	color: rgb(133, 171, 228) !important;
 }
 
 @keyframes navlinkFade {

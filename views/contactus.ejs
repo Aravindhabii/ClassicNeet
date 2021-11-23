@@ -8,6 +8,13 @@
 		<link rel="stylesheet" href="stylesheets/chatbot.css" />
 
 		<title>Contact Us</title>
+		<style>
+			.contactusnav{
+			background-color: #369afe;
+			border-radius: 0% 50% 0% 50%;
+			color: white;
+		}
+		</style>
 	</head>
 	<body>
 		<%- include('./layout/header') %> <%- include('./chatbot') %>
@@ -69,11 +76,7 @@
 				</div>
 				<div class="right">
 					<h1>Enquiry Form</h1>
-					<form
-						action="mailto:info@classicneetacademy.com"
-						method="POST"
-						enctype="text/plain"
-					>
+					<form action="/contactus" method="POST">
 						<div class="input-container">
 							<label for="name">Name <span style="color: red">*</span></label>
 							<input
@@ -82,7 +85,7 @@
 								class="form-input name-input"
 								id="name"
 							/>
-							<div class="nameError"></div>
+							<div class="nameError err"></div>
 						</div>
 						<div class="input-container">
 							<label for="phone"
@@ -94,7 +97,7 @@
 								class="form-input phonenum"
 								id="phone"
 							/>
-							<div class="phoneError"></div>
+							<div class="phoneError err"></div>
 						</div>
 						<div class="input-container">
 							<label for="phone">Email <span style="color: red">*</span></label>
@@ -104,16 +107,18 @@
 								class="form-input email-input"
 								id="email"
 							/>
-							<div class="emailError"></div>
+							<div class="emailError err"></div>
 						</div>
 						<div class="textarea-container">
-							<label for="message">Comment <span style="color: red">*</span></label>
+							<label for="message"
+								>Comment <span style="color: red">*</span></label
+							>
 							<textarea
 								name="message"
 								class="form-input comment-input"
 								id="message"
 							></textarea>
-							<div class="commentError"></div>
+							<div class="commentError err"></div>
 						</div>
 						<div class="button-container">
 							<button class="submit">Submit</button>

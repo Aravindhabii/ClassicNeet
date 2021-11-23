@@ -76,9 +76,9 @@ $(window).scroll(function () {
 
 
 var swiper = new Swiper(".swipTop", {
-	slidesPerView: 3,
+	slidesPerView: 1,
 	spaceBetween: 30,
-	slidesPerGroup: 3,
+	slidesPerGroup: 1,
 	loop: true,
 	autoplay: true,
 	loopFillGroupWithBlank: false,
@@ -108,14 +108,13 @@ var swiper = new Swiper(".swipTop", {
 
 
   var swiper = new Swiper(".swipYt", {
-	slidesPerGroup: 3,
-	loop: true,
 	slidesPerView: 1,
+	spaceBetween: 30,
+	slidesPerGroup: 1,
+	loop: true,
+	autoplay: true,
+	loopFillGroupWithBlank: false,
 	spaceBetween: 10,
-	autoplay: {
-	delay: 2500,
-	disableOnInteraction: false,
-  },
   
   navigation: {
 	nextEl: ".swiper-button-next",

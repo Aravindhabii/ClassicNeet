@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="stylesheets/aboutus.css" />
-    <script
-      src="https://kit.fontawesome.com/f93354d676.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="stylesheets/chatbot.css" />
-    <title>Aboutus</title>
-  </head>
-  <body>
-    <div class="previewImg">
-      <svg
-        class="close"
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-        />
-      </svg>
-      <img src="" class="previewimg" />
-    </div>
-    <%- include('./layout/header') %> <%- include('./chatbot') %>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="stylesheets/aboutus.css" />
+		<script
+			src="https://kit.fontawesome.com/f93354d676.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="stylesheets/chatbot.css" />
+		<title>Aboutus</title>
+		<style>
+			.aboutusnav{
+			background-color: #369afe;
+			border-radius: 0% 50% 0% 50%;
+			color: white;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="previewImg">
+			<svg
+				class="close"
+				xmlns="http://www.w3.org/2000/svg"
+				class="h-6 w-6"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke="currentColor"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+				/>
+			</svg>
+			<img src="" class="previewimg" />
+		</div>
+		<%- include('./layout/header') %> <%- include('./chatbot') %>
 
     <section class="video">
       <video class="vidAbout" autoplay muted loop>

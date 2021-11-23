@@ -5,7 +5,10 @@ nav {
   height: 4rem;
   width: 100%;
 }
-
+.nav2 {
+  display: flex; 
+  align-items: center;
+}
 /* navbar regular css start */
 .navbar-area {
   background: var(--dark);
@@ -120,101 +123,41 @@ a.site-logo {
   font-size: 18px;
 }
 /* intro-area css end */
-
-@media screen and (max-width: 800px) {
+@media (max-width: 1100px) {
+  .site-navbar ul li a {
+   
+    padding: 12px;
+   
+}
+  
+}
+@media  (max-width: 1000px) {
+  
   .nav-toggler span,
   .nav-toggler span:before,
   .nav-toggler span:after {
-    width: 60px;
-    height: 7px;
+    width: 30px;
+    height: 3px;
   }
   .nav-toggler span:before {
-    transform: translateY(-15px);
+    transform: translateY(-8px);
   }
   .nav-toggler span:after {
-    transform: translateY(9px);
+    transform: translateY(5px);
   }
-  a.site-logo {
-    width: 16rem;
-  }
-  nav {
-    height: 10rem;
-  }
-  .container {
-    max-width: 720px;
-  }
-  /* navbar css for mobile start */
-  .nav-toggler {
-    display: block;
-  }
-  .site-navbar {
-    min-height: 60px;
-  }
-  .site-navbar ul {
-    position: absolute;
-    width: 100%;
-    /* height: calc(100vh - 60px); */
-    height: 100vh;
-    left: 0;
-    /* top: 60px; */
-    top: 0;
-    flex-direction: column;
-    align-items: center;
-    border-top: 1px solid #444;
-    background-color: rgba(0, 0, 0, 0.75);
-    max-height: 0;
-    overflow: hidden;
-    z-index: 20;
-    transition: 0.3s;
-  }
-  .site-navbar ul li {
-    width: 100%;
-    text-align: center;
-  }
-  .site-navbar ul li a {
-    padding: 25px;
-    font-size: 3.5rem;
-    color: white;
-  }
-  .site-navbar ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  .site-navbar ul.open {
-    max-height: 100vh;
-    overflow: visible;
-    z-index: 20;
-    padding-top: 10%;
-  }
-  .intro-area h2 {
-    font-size: 36px;
-    margin-bottom: 15px;
-  }
-  /* navbar css for mobile end */
-}
+  .nav2 {
+    width: 10%;
 
-/* mobile breakpoint start */
-@media screen and (max-width: 400px) {
-  nav {
-    height: 6rem;
+
   }
-  a.site-logo {
-    width: 10rem;
-  }
-  .nav-toggler span,
-  .nav-toggler span:before,
-  .nav-toggler span:after {
-    width: 40px;
-    height: 4px;
-  }
-  .nav-toggler.toggler-open span:after {
-    transform: translateY(-3px) rotate(-45deg);
-  }
+
   .container {
     max-width: 720px;
   }
   /* navbar css for mobile start */
   .nav-toggler {
     display: block;
+    
   }
   .site-navbar {
     min-height: 60px;
@@ -258,6 +201,38 @@ a.site-logo {
     font-size: 36px;
     margin-bottom: 15px;
   }
+  /* navbar css for mobile end */
+}
+
+/* mobile breakpoint start */
+@media screen and (max-width: 400px) {
+  nav {
+    height: 6rem;
+  }
+  a.site-logo {
+    width: 10rem;
+  }
+  .nav-toggler span,
+  .nav-toggler span:before,
+  .nav-toggler span:after {
+    width: 40px;
+    height: 4px;
+  }
+  .nav-toggler.toggler-open span:after {
+    transform: translateY(-3px) rotate(-45deg);
+  }
+  .container {
+    max-width: 720px;
+  }
+  /* navbar css for mobile start */
+  .nav-toggler {
+    display: block;
+    
+  }
+  .site-navbar {
+    min-height: 60px;
+  }
+  
   .nav-toggler span:before {
     transform: translateY(-10px);
   }
@@ -269,3 +244,9 @@ a.site-logo {
 /* mobile breakpoint end */
 
 /* NAVBAR ENDS */
+
+/* body */
+
+.overflow-hidden {
+  overflow: hidden;
+}
