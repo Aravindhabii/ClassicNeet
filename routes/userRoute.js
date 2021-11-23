@@ -1348,9 +1348,8 @@ router.post('/contactus', (req, res) => {
 	};
 	transporter.sendMail(mailOptions, function (error, info) {
 		if (error) {
-			console.log(error);
+			res.redirect('/contactus');
 		} else {
-			console.log('Email sent: ' + info.response);
 			res.redirect('/contactus');
 		}
 	});

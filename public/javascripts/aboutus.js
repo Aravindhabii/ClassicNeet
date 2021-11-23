@@ -124,13 +124,13 @@ window.addEventListener('load', () => {
 });
 
 document.querySelector('.dropdown').addEventListener('change', () => {
-	document.querySelectorAll('#imageid').forEach((i) => {
-		i.src = i.src.replace(
-			document.querySelector('.dropdown').getAttribute('value'),
-			document.querySelector('.dropdown').value
-		);
-		document
-			.querySelector('.dropdown')
-			.setAttribute('value', document.querySelector('.dropdown').value);
-	});
+	document
+		.querySelector('.dropdown')
+		.setAttribute('value', document.querySelector('.dropdown').value);
+});
+document.querySelectorAll('#imageid').forEach((i) => {
+	i.src = i.src.replace(
+		document.querySelector('.dropdown').getAttribute('value'),
+		document.querySelector('.dropdown').value
+	);
 });
