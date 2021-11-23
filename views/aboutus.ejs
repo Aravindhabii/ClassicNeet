@@ -200,11 +200,12 @@
 				data-select=""
 			>
 				<% folderArray.forEach(folder => { %>
-				<option value="<%= folder %>" data-year="<%= folder %>">
+				<option class="opt" value="<%= folder %>" data-year="<%= folder %>">
 					<%= folder %>
 				</option>
 				<% }) %>
 			</select>
+		
 			<!-- <div class="btngrp"><div class="prev-btn btn" data-year="2019">Previous Year</div><div data-year="2020" class="current-btn btn">Next Year</div></div> -->
 			<section class="galleryMain">
 				<% folderArray.forEach((folder,i) => { %> <%
@@ -213,12 +214,13 @@
 						<div class="galleryItem">
 				<img
 					id="imageid"
-					src="images/GALLERY/SAMPLE/<%= img %>"
+					src="images/gallery/<%= folderArray[0]%>/<%= img %>"
 					alt=""
 				/>
 			</div>
 				<% }) %> <% } %> <% }) %> <% }) %>
 			</section>
+			
 			<div class="pagination">
 				<!-- <li class="page-item previous-page disable"><a class="page-link" href="#">prev</a></li>
             <li class="page-item current-page active"><a class="page-link" href="#">1</a></li>

@@ -2005,8 +2005,13 @@ iframe {
 		font-size: 14px;
 		padding: 5px 10px;
 	}
+	
 }
 @media (max-width: 700px) {
+	.swiper-container2
+	{
+		width: 80%;
+	}
 	.mySwiper1 {
 		width: 85% !important;
 		height: 50vh !important;
