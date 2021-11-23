@@ -435,6 +435,10 @@ body.dark .methodology4 {
 	background-color: #2c2e2a;
 	color: rgb(255, 255, 255);
 }
+body.dark .enroll:hover {
+	color: #2c2e2a;
+	background-color: rgb(255, 255, 255);
+}
 .enroll1 {
 	padding: 0.8rem 1.5rem;
 	position: relative;
