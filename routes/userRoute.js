@@ -616,7 +616,7 @@ router.route('/aboutus').get(async (req, res) => {
 				};
 				arr.push(cont);
 			}
-			res.render('aboutus', { content: arr, folderArray,imgsArray });
+			res.render('aboutus', { content: arr, folderArray, imgsArray });
 		}
 	});
 });
@@ -1319,6 +1319,32 @@ router.get('/pagination/totalCount', isloggedin, async (req, res) => {
 			res.json(response.length);
 		}
 	});
+});
+
+router.post('/contact', (req, res) => {
+	var transport = nodemailer.createTransport({
+		host: 'smtp.mailtrap.io',
+		port: 2525,
+		auth: {
+			user: '1a2b3c4d5e6f7g',
+			pass: '1a2b3c4d5e6f7g'
+		}
+	});
+
+	var mailOptions = {
+		from: '"Example Team" <from@example.com>',
+		to: 'user1@example.com, user2@example.com',
+		subject: 'Nice Nodemailer test',
+		text: 'Hey there, it’s our first message sent with Nodemailer ',
+		html: '<b>Hey there! </b><br> This is our first message sent with Nodemailer<br /><img src="cid:uniq-mailtrap.png" alt="mailtrap" />',
+		attachments: [
+			{
+				filename: 'mailtrap.png',
+				path: __dirname + '/mailtrap.png',
+				cid: 'uniq-mailtrap.png'
+			}
+		]
+	};
 });
 
 module.exports = router;
