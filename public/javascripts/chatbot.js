@@ -287,7 +287,7 @@ document.querySelector('#name_svg').addEventListener('click', (e) => {
 						div9.classList.add('bot');
 						img6.src = '../images/chatbot/chatbot1.png';
 						span9.innerText =
-							'Thank you, our admin will contact you as soon as possible. 🙂';
+							'Thank you, our admin will contact you as soon as possible. 🤩';
 						span9.classList.add('chat-span');
 						div9.appendChild(img6);
 						div9.appendChild(span9);
