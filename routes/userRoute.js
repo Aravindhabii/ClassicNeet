@@ -165,7 +165,7 @@ router
 	})
 	.post(upload.array('sliderimg'), async (req, res) => {
 		if (typeof req.body.checkbox === 'string') {
-			// await cloudinary.uploader.destroy(req.body.checkbox);
+			await cloudinary.uploader.destroy(req.body.checkbox);
 			await db.query(
 				'UPDATE homeslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
 				[
@@ -187,7 +187,7 @@ router
 			for (let i = 0; i <= req.files.length - 1; i++) {
 				for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
 					if (i === j) {
-						await cloudinary.uploader.destroy(`ClassicNeetAcademy/${check}`);
+						await cloudinary.uploader.destroy(`ClassicNeetAcademy/${req.body.checkbox}`);
 						await db.query(
 							'UPDATE homeslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
 							[
