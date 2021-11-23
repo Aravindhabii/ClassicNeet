@@ -1,4 +1,5 @@
 const express = require('express');
+const fs = require('fs');
 const router = express.Router();
 const mysql = require('mysql');
 const dotenv = require('dotenv');
@@ -172,17 +173,16 @@ router
 					req.files[0].originalname,
 					req.files[0].filename.split('/')[1],
 					req.body.checkbox
-				],(err,response)=>{
+				],
+				(err, response) => {
 					if (err) {
 						req.flash('error', 'Error occurred while Updating');
 						console.log(err);
-					}else{
+					} else {
 						res.redirect('/admin/sliderrevolution');
 					}
 				}
 			);
-			
-	
 		} else {
 			for (let i = 0; i <= req.files.length - 1; i++) {
 				for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
@@ -195,11 +195,12 @@ router
 								req.files[j].originalname,
 								req.files[j].filename.split('/')[1],
 								req.body.checkbox[j]
-							],(err,response)=>{
+							],
+							(err, response) => {
 								if (err) {
 									req.flash('error', 'Error occurred while Updating');
 									console.log(err);
-									return
+									return;
 								}
 							}
 						);
@@ -289,8 +290,8 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
-							return
-						} else{
+							return;
+						} else {
 							console.log(response);
 						}
 					}
@@ -378,7 +379,7 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
-							return
+							return;
 						}
 					}
 				);
@@ -445,7 +446,7 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
-							return
+							return;
 						} else {
 						}
 					}
@@ -593,6 +594,16 @@ router.route('/courses').get(async (req, res) => {
 });
 
 router.route('/aboutus').get(async (req, res) => {
+	var folderArray = [];
+	var imgsArray = [];
+	const folders = fs.readdirSync('public/images/gallery');
+
+	folders.forEach((folder) => {
+		folderArray.push(folder);
+		const files = fs.readdirSync(`public/images/gallery/${folder}`);
+		imgsArray.push(files);
+	});
+
 	await db.query('SELECT * FROM history', async (error, response) => {
 		var arr = [];
 		if (error) {
@@ -605,7 +616,7 @@ router.route('/aboutus').get(async (req, res) => {
 				};
 				arr.push(cont);
 			}
-			res.render('aboutus', { content: arr });
+			res.render('aboutus', { content: arr, folderArray, imgsArray });
 		}
 	});
 });
@@ -668,7 +679,7 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
-							return
+							return;
 						} else {
 						}
 					}
@@ -773,7 +784,7 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
-							return
+							return;
 						} else {
 						}
 					}
@@ -932,7 +943,7 @@ router
 					if (err) {
 						req.flash('error', 'Error occurred while adding');
 						console.log(err);
-						return
+						return;
 					} else {
 						res.redirect('/admin/results/studentdetails');
 					}
@@ -949,7 +960,7 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while adding');
 							console.log(err);
-							return
+							return;
 						} else {
 						}
 					}
@@ -1009,7 +1020,7 @@ router
 					req.files[0].filename.split('/')[1],
 					req.body.checkbox
 				]
-			)
+			);
 			res.redirect('/admin/results/images');
 		} else {
 			for (let i = 0; i <= req.files.length - 1; i++) {
@@ -1154,7 +1165,7 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while adding');
 							console.log(err);
-							return
+							return;
 						} else {
 						}
 					}
@@ -1243,7 +1254,7 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while adding');
 							console.log(err);
-							return
+							return;
 						} else {
 						}
 					}
@@ -1308,6 +1319,32 @@ router.get('/pagination/totalCount', isloggedin, async (req, res) => {
 			res.json(response.length);
 		}
 	});
+});
+
+router.post('/contact', (req, res) => {
+	var transport = nodemailer.createTransport({
+		host: 'smtp.mailtrap.io',
+		port: 2525,
+		auth: {
+			user: '1a2b3c4d5e6f7g',
+			pass: '1a2b3c4d5e6f7g'
+		}
+	});
+
+	var mailOptions = {
+		from: '"Example Team" <from@example.com>',
+		to: 'user1@example.com, user2@example.com',
+		subject: 'Nice Nodemailer test',
+		text: 'Hey there, it’s our first message sent with Nodemailer ',
+		html: '<b>Hey there! </b><br> This is our first message sent with Nodemailer<br /><img src="cid:uniq-mailtrap.png" alt="mailtrap" />',
+		attachments: [
+			{
+				filename: 'mailtrap.png',
+				path: __dirname + '/mailtrap.png',
+				cid: 'uniq-mailtrap.png'
+			}
+		]
+	};
 });
 
 module.exports = router;

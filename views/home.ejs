@@ -246,7 +246,7 @@
 						<!-- <iframe class='ribbon' src="https://giphy.com/embed/3ohhwzIw3bISRhQWME" width="480" height="320" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/stickers/explosion-confetti-3ohhwzIw3bISRhQWME"></a></p> -->
 					</div>
 					<marquee behavior="" direction="left"></marquee>
-					<section class="swiper swiper1 mySwiper1">
+					<!-- <section class="swiper swiper1 mySwiper1">
 						<div class="swiper-wrapper">
 							<% ourtoppers.forEach(topper=> { %>
 								<div class="swiper-slide">
@@ -267,9 +267,35 @@
 						</div>
 
 
-					</section>
-					<div class="swiper-button-next arrownext1"></div>
-					<div class="swiper-button-prev arrowprev1"></div>
+					</section> -->
+					<div class="swiper-container">
+						<div class="swiper mySwiper swipTop">
+							<div class="swiper-wrapper">
+						<% ourtoppers.forEach(topper=> { %>
+							  <div class="swiper-slide swiperTopper">
+								<img class="profile" src="<%= topper.studentimg %>" alt="" />
+								<div class="toppersDiv">
+									<p class="markNew">
+										<%= topper.score %> / 720
+									</p>
+									<p class="nameNew">
+										<%= topper.name %>
+									</p>
+									<p class="colNew">
+										<%= topper.collegename %>
+									</p>
+								</div>
+								</div>
+						<% }) %>	 
+							</div>
+							
+						  </div>
+						  <div class="swiper-button-next btnNext"></div>
+							<div class="swiper-button-prev btnPrev"></div>
+						 
+					</div>
+					<!-- <div class="swiper-button-next arrownext1"></div>
+					<div class="swiper-button-prev arrowprev1"></div> -->
 
 
 
@@ -319,8 +345,32 @@
 					</section>
 
 					<!-- Swiper -->
-					<section class="testimonials_container">
-						<div class="swiper swiper2 mySwiper2">
+					
+						<h1 class="studentsh1">STUDENTS TESTIMONIALS</h1>
+						<div class="swiper-container2">
+							<div class="swiper mySwiper swipYt">
+								<div class="swiper-wrapper">
+								<% stutest.forEach(link=> { %>
+								
+									<div class="swiper-slide">
+										<div class="testimonials">
+											<iframe class="video" src="<%= link %>" title="YouTube video player"
+												frameborder="0"
+												allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+												allowfullscreen></iframe>
+										</div>
+									</div>
+								<% }) %>
+
+							</div>
+					
+						  </div>
+						  <div class="swiper-button-next btnNext2"></div>
+						  <div class="swiper-button-prev btnPrev2"></div>
+						</div>
+						
+					<!-- <section class="testimonials_container"> -->
+						<!-- <div class="swiper swiper2 mySwiper2">
 							<h1 class="studentsh1">STUDENTS TESTIMONIALS</h1>
 							<div class="swiper-wrapper">
 								<% stutest.forEach(link=> { %>
@@ -335,10 +385,10 @@
 									<% }) %>
 							</div>
 
-						</div>
-						<div class="swiper-button-next arrownext2"></div>
-						<div class="swiper-button-prev arrowprev2"></div>
-					</section>
+						</div> -->
+						<!-- <div class="swiper-button-next arrownext2"></div>
+						<div class="swiper-button-prev arrowprev2"></div> -->
+					<!-- </section> -->
 
 					<%- include('./layout/footer') %>
 	</div>
