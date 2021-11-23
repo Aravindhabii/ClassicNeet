@@ -277,6 +277,20 @@ document.querySelector('#name_svg').addEventListener('click', (e) => {
 								}
 							});
 						});
+						const div9 = document.createElement('div');
+						const img6 = document.createElement('img');
+						const span9 = document.createElement('span');
+						div9.appendChild(img6);
+						document.querySelector('.chat-body').appendChild(div9);
+
+						div9.classList.add('each-chat');
+						div9.classList.add('bot');
+						img6.src = '../images/chatbot/chatbot1.png';
+						span9.innerText =
+							'Thank you, our admin will contact you as soon as possible. 🤩';
+						span9.classList.add('chat-span');
+						div9.appendChild(img6);
+						div9.appendChild(span9);
 					});
 			} else {
 				document

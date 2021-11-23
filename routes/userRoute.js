@@ -10,6 +10,7 @@ const { response } = require('express');
 const upload = multer({ storage });
 var sizeOf = require('image-size');
 const { isloggedin, flash } = require('../middleware');
+const nodemailer = require('nodemailer');
 
 router
 	.route('/example')
@@ -165,7 +166,7 @@ router
 	})
 	.post(upload.array('sliderimg'), async (req, res) => {
 		if (typeof req.body.checkbox === 'string') {
-			// await cloudinary.uploader.destroy(req.body.checkbox);
+			await cloudinary.uploader.destroy(req.body.checkbox);
 			await db.query(
 				'UPDATE homeslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
 				[
@@ -179,6 +180,7 @@ router
 						req.flash('error', 'Error occurred while Updating');
 						console.log(err);
 					} else {
+						req.flash('success', 'Image successfully updated');
 						res.redirect('/admin/sliderrevolution');
 					}
 				}
@@ -187,7 +189,7 @@ router
 			for (let i = 0; i <= req.files.length - 1; i++) {
 				for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
 					if (i === j) {
-						await cloudinary.uploader.destroy(`ClassicNeetAcademy/${check}`);
+						await cloudinary.uploader.destroy(`ClassicNeetAcademy/${req.body.checkbox}`);
 						await db.query(
 							'UPDATE homeslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
 							[
@@ -207,6 +209,7 @@ router
 					}
 				}
 			}
+			req.flash('success', 'Images successfully updated');
 			res.redirect('/admin/sliderrevolution');
 			// req.body.sliderimg.forEach((img, index1) => {
 			// 	req.body.checkbox.forEach(async (check, index2) => {
@@ -261,6 +264,7 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Added successfully');
 					res.redirect('/admin/latestupdates');
 				}
 			}
@@ -277,6 +281,7 @@ router
 						console.log(err);
 					} else {
 						console.log(response);
+						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/latestupdates');
 					}
 				}
@@ -292,6 +297,7 @@ router
 							console.log(err);
 							return;
 						} else {
+							req.flash('success', 'Successfully Deleted');
 							console.log(response);
 						}
 					}
@@ -365,6 +371,7 @@ router
 						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
 					} else {
+						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/ourtoppers');
 					}
 				}
@@ -384,6 +391,7 @@ router
 					}
 				);
 			});
+			req.flash('success', 'Successfully Deleted');
 			res.redirect('/admin/ourtoppers');
 		}
 	});
@@ -433,6 +441,7 @@ router
 						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
 					} else {
+						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/studenttestimonials');
 					}
 				}
@@ -452,6 +461,7 @@ router
 					}
 				);
 			});
+			req.flash('success', 'Successfully Deleted');
 			res.redirect('/admin/studenttestimonials');
 		}
 	});
@@ -523,10 +533,11 @@ router
 						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
 					} else {
+						req.flash('success', 'Successfully Deleted');
+						res.redirect('/admin/calendarevents');
 					}
 				}
 			);
-			res.redirect('/admin/calendarevents');
 		} else {
 			req.body.checkbox.forEach(async (link) => {
 				console.log(link);
@@ -537,11 +548,11 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
-						} else {
 						}
 					}
 				);
 			});
+			req.flash('success', 'Successfully Deleted');
 			res.redirect('/admin/calendarevents');
 		}
 	});
@@ -583,6 +594,7 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Successfully Updated');
 					res.redirect('/admin/neetachievements');
 				}
 			}
@@ -616,7 +628,7 @@ router.route('/aboutus').get(async (req, res) => {
 				};
 				arr.push(cont);
 			}
-			res.render('aboutus', { content: arr, folderArray,imgsArray });
+			res.render('aboutus', { content: arr, folderArray, imgsArray });
 		}
 	});
 });
@@ -666,6 +678,7 @@ router
 						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
 					} else {
+						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/aboutus/history');
 					}
 				}
@@ -685,6 +698,7 @@ router
 					}
 				);
 			});
+			req.flash('success', 'Successfully Deleted');
 			res.redirect('/admin/aboutus/history');
 		}
 	});
@@ -757,6 +771,7 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Successfully Added');
 					res.redirect('/admin/demovideos');
 				}
 			}
@@ -771,10 +786,12 @@ router
 					if (err) {
 						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
+					}else{
+						req.flash('success', 'Successfully Deleted');
+						res.redirect('/admin/demovideos');
 					}
 				}
 			);
-			res.redirect('/admin/demovideos');
 		} else {
 			req.body.checkbox.forEach(async (link) => {
 				await db.query(
@@ -790,6 +807,7 @@ router
 					}
 				);
 			});
+			req.flash('success', 'Successfully Deleted');
 			res.redirect('/admin/demovideos');
 		}
 	});
@@ -827,6 +845,7 @@ router
 					req.flash('error', 'Error occurred while Updating');
 					console.log(err);
 				} else {
+					req.flash('success', 'Image successfully updated');
 					res.redirect('/admin/bannerimg');
 				}
 			}
@@ -905,6 +924,7 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Successfully Added');
 					res.redirect('/admin/results/studentdetails');
 				}
 			}
@@ -945,6 +965,7 @@ router
 						console.log(err);
 						return;
 					} else {
+						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/results/studentdetails');
 					}
 				}
@@ -966,6 +987,7 @@ router
 					}
 				);
 			});
+			req.flash('success', 'Successfully Deleted');
 			res.redirect('/admin/results/studentdetails');
 		}
 	});
@@ -1020,8 +1042,14 @@ router
 					req.files[0].filename.split('/')[1],
 					req.body.checkbox
 				]
-			);
-			res.redirect('/admin/results/images');
+			),(err,response)=>{
+				if (err) {
+					console.log(err);
+				}else{
+					req.flash('success', 'Successfully Added');
+					res.redirect('/admin/results/images');
+				}
+			}
 		} else {
 			for (let i = 0; i <= req.files.length - 1; i++) {
 				for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
@@ -1037,8 +1065,15 @@ router
 								req.files[j].filename.split('/')[1],
 								req.body.checkbox[j]
 							]
-						);
-						res.redirect('/admin/results/images');
+						),(err,response)=>{
+							if (err) {
+								req.flash('error', 'Error occurred while adding');
+								console.log(err);
+							}else{
+								req.flash('success', 'Image Successfully Updated');
+								res.redirect('/admin/results/images');
+							}
+						}
 					}
 				}
 			}
@@ -1126,6 +1161,7 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Successfully Added');
 					res.redirect('/admin/successstories/testimonials');
 				}
 			}
@@ -1151,6 +1187,7 @@ router
 						req.flash('error', 'Error occurred while adding');
 						console.log(err);
 					} else {
+						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/successstories/testimonials');
 					}
 				}
@@ -1171,6 +1208,7 @@ router
 					}
 				);
 			});
+			req.flash('success', 'Successfully Deleted');
 			res.redirect('/admin/successstories/testimonials');
 		}
 	});
@@ -1215,6 +1253,7 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Successfully Added');
 					res.redirect('/admin/successstories/parenttestimonials');
 				}
 			}
@@ -1239,7 +1278,9 @@ router
 					if (err) {
 						req.flash('error', 'Error occurred while adding');
 						console.log(err);
+					req.flash('success', 'Successfully Added');
 					} else {
+						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/successstories/parenttestimonials');
 					}
 				}
@@ -1260,6 +1301,7 @@ router
 					}
 				);
 			});
+			req.flash('success', 'Successfully Deleted');
 			res.redirect('/admin/successstories/parenttestimonials');
 		}
 	});
@@ -1267,7 +1309,7 @@ router
 router.post('/signout', isloggedin, (req, res) => {
 	req.session.destroy(function () {
 		res.clearCookie('connect.sid');
-		res.redirect('/login');
+		res.redirect('/login');rs
 	});
 });
 
@@ -1317,6 +1359,39 @@ router.get('/pagination/totalCount', isloggedin, async (req, res) => {
 			return;
 		} else {
 			res.json(response.length);
+		}
+	});
+});
+
+let transporter = nodemailer.createTransport({
+	service: 'gmail',
+	auth: {
+		user: 'srklohith05@gmail.com',
+		pass: 'Loki05@("*")'
+	}
+});
+
+router.post('/contactus', (req, res) => {
+	const email = req.body.email;
+	const comment = req.body.message;
+	const name = req.body.name;
+	const phone = req.body.phone;
+
+	let mailOptions = {
+		from: 'srklohith05@gmail.com',
+		to: email,
+		subject: 'Comments from user',
+		html:
+			`<h1>${name}</h1>` +
+			`<h2> ${email} </h2>` +
+			`<h3>${phone}</h3>` +
+			`<p>${comment}</p>`
+	};
+	transporter.sendMail(mailOptions, function (error, info) {
+		if (error) {
+			res.redirect('/contactus');
+		} else {
+			res.redirect('/contactus');
 		}
 	});
 });
