@@ -614,8 +614,9 @@ router.route('/aboutus').get(async (req, res) => {
 		folderArray.push(folder);
 		const files = fs.readdirSync(`public/images/gallery/${folder}`);
 		imgsArray.push(files);
+		
 	});
-
+	console.log(imgsArray);
 	await db.query('SELECT * FROM history', async (error, response) => {
 		var arr = [];
 		if (error) {
