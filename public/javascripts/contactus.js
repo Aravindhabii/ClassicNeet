@@ -1,10 +1,4 @@
-document.querySelector('.reset').addEventListener('click', (r) => {
-	r.preventDefault();
-
-	document.querySelectorAll('.form-input').forEach((input) => {
-		input.value = '';
-	});
-});
+const sweetp = document.querySelector('.sweetp')
 
 const phonenum = document.querySelector('.phonenum');
 const phoneError = document.querySelector('.phoneError');
@@ -104,9 +98,31 @@ inputs.forEach((input) => {
 	});
 });
 
+document.querySelector('.reset').addEventListener('click', (r) => {
+	r.preventDefault();
+	document.querySelectorAll('.form-input').forEach((input) => {
+		input.value = '';
+	});
+});
+
 phonenum.addEventListener('keypress', (evt) => {
 	var ASCIICode = evt.which ? evt.which : evt.keyCode;
 	if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)) {
 		evt.preventDefault();
 	}
 });
+
+console.log(sweetp.innerText);
+if (sweetp) {
+	function successdialog() {
+		console.log('hello');
+		Swal.fire({
+			position: 'center',
+			icon: 'success',
+			title: sweetp.innerText,
+			showConfirmButton: false,
+			timer: 2500
+		})
+	}
+	successdialog()
+}
