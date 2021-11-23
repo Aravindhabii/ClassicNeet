@@ -5,7 +5,10 @@ nav {
   height: 4rem;
   width: 100%;
 }
-
+.nav2 {
+  display: flex; 
+  align-items: center;
+}
 /* navbar regular css start */
 .navbar-area {
   background: var(--dark);
@@ -129,6 +132,7 @@ a.site-logo {
   
 }
 @media  (max-width: 1000px) {
+  
   .nav-toggler span,
   .nav-toggler span:before,
   .nav-toggler span:after {
@@ -141,7 +145,11 @@ a.site-logo {
   .nav-toggler span:after {
     transform: translateY(5px);
   }
- 
+  .nav2 {
+    width: 10%;
+
+
+  }
 
   .container {
     max-width: 720px;
