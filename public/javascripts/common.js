@@ -102,6 +102,7 @@ var swiper = new Swiper(".swipTop", {
 	  1305: {
 		slidesPerView: 3,
 		spaceBetween: 50,
+		slidesPerGroup: 3,
 	  },
 	},
   });
