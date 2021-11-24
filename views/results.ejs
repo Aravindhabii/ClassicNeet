@@ -45,23 +45,33 @@
 		</section>
 
 		<section class="section2">
+			<span class="arrowRight">
+
+			</span>
+			<span class="arrowLeft">
+
+			</span>
+
 			<div class="gridcontainer">
 				<% students.forEach((student)=> { %>
-				<!-- <div class="griditem1 gridbox">
-            <img src="<%= student.studentimg %>" data-img="<%= student.studentimg %>" alt="studentimg1" />
-            <span class="griditem1span"
-              ><h3 data-name="<%= student.name %>" class="nameStudent"><%= student.name %></h3>
-              <p data-score="<%= student.score %>" class="scoreStudent"><%= student.score %></p></span
-            >
-          </div> -->
-				<div
+					<div class="griditem1 gridbox">
+						<div class="imgDesign">
+							
+							<img class="imgTopper" src="<%= student.studentimg %>" />
+						</div>
+						<span class="griditem1span"
+							><h3 class="nameStudent"><%= student.name %></h3>
+							<p class="scoreStudent"><%= student.score %></p
+						></span>
+					</div>
+				<!-- <div
 					class="refbox"
 					data-name="<%= student.name %>"
 					data-score="<%= student.collegename %>"
 					data-img="<%= student.studentimg %>"
-				></div>
+				></div> -->
 				<% }) %>
-				<div class="griditem1 gridbox">
+				<!-- <div class="griditem1 gridbox">
 					<img class="imgTopper" src="" />
 					<span class="griditem1span"
 						><h3 class="nameStudent"></h3>
@@ -124,9 +134,14 @@
 						><h3 class="nameStudent"></h3>
 						<p class="scoreStudent"></p
 					></span>
-				</div>
+				</div>-->
+				
+			</div> 
+			<div class="pagination">
+
+					
 			</div>
-		</section>
+		</section> 
 
 		<%- include('./layout/footer') %>
 
@@ -134,7 +149,7 @@
 			rel="stylesheet"
 			href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
 		/>
-
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 		<script src="javascripts/results.js"></script>
 		<script src="javascripts/nav.js"></script>

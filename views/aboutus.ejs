@@ -205,13 +205,14 @@
         class="form-select form-select-lg mb-3 dropdown"
         aria-label=".form-select-lg example"
         data-select=""
-		>
+        >
         <% folderArray.forEach((folder,i) => { %>
-			<option
-			class="opt"
-			value="<%= folder %>"
-			selected="<%=i==0?true:false%>"
-			data-year="<%= folder %>"
+          <option
+          class="opt"
+          value="<%= folder %>"
+          data-obj="<%= obj[folder] %>"
+			    selected="<%=i==0?true:false%>"
+			    data-year="<%= folder %>"
         >
           <%= folder %>
         </option>
@@ -220,13 +221,23 @@
 
       <!-- <div class="btngrp"><div class="prev-btn btn" data-year="2019">Previous Year</div><div data-year="2020" class="current-btn btn">Next Year</div></div> -->
       <section class="galleryMain">
-        
-          <% imgsArray[0].forEach(img => { %>
+        <% imgsArray[0].forEach((i)=> {%>
         <div class="galleryItem">
-          <img id="imageid" src="images/gallery/SAMPLE/<%= img %>" alt="" />
+          <img
+            id="imageid"
+            src="../images/gallery/SAMPLE/<%= i %>"
+            alt=""
+          />
         </div>
-        <% }) %> 
-
+        <% }) %>
+        <!-- <%# imgsArray[0].forEach(img => { %>
+         
+          <%# }) %> 
+          
+          <%# obj[2019].forEach(o => { %>
+            
+         
+        <%# }) %> -->
         
       </section>
 
@@ -263,10 +274,10 @@
     </section>
     <%- include('./layout/footer') %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="javascripts/nav.js"></script>
-    <script src="javascripts/common.js"></script>
     <script src="javascripts/aboutus.js"></script>
     <script src="javascripts/pagination.js"></script>
+    <script src="javascripts/nav.js"></script>
+    <script src="javascripts/common.js"></script>
     <script src="javascripts/chatbot.js"></script>
   </body>
 </html>

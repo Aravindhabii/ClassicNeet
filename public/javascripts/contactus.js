@@ -103,6 +103,9 @@ document.querySelector('.reset').addEventListener('click', (r) => {
 	document.querySelectorAll('.form-input').forEach((input) => {
 		input.value = '';
 	});
+	document.querySelectorAll('.err').forEach((input) => {
+		input.style.display = 'none';
+	});
 });
 
 phonenum.addEventListener('keypress', (evt) => {

@@ -609,14 +609,13 @@ router.route('/aboutus').get(async (req, res) => {
 	var folderArray = [];
 	var imgsArray = [];
 	const folders = fs.readdirSync('public/images/gallery');
-
+var obj={}
 	folders.forEach((folder) => {
 		folderArray.push(folder);
 		const files = fs.readdirSync(`public/images/gallery/${folder}`);
 		imgsArray.push(files);
-		
+		obj[folder]=fs.readdirSync(`public/images/gallery/${folder}`)
 	});
-	console.log(imgsArray);
 	await db.query('SELECT * FROM history', async (error, response) => {
 		var arr = [];
 		if (error) {
@@ -629,7 +628,7 @@ router.route('/aboutus').get(async (req, res) => {
 				};
 				arr.push(cont);
 			}
-			res.render('aboutus', { content: arr, folderArray, imgsArray });
+			res.render('aboutus', { content: arr,folderArray,imgsArray ,obj});
 		}
 	});
 });
