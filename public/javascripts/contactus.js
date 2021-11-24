@@ -126,3 +126,5 @@ if (sweetp) {
 	}
 	successdialog()
 }
+
+sweetp.parentNode.removeChild(sweetp)
