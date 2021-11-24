@@ -110,7 +110,7 @@ body.dark .chat {
 	flex-direction: row-reverse;
 }
 
-.gridbox img {
+.gridbox {
 	height: 100%;
 	width: 50%;
 	border-radius: 10px;
