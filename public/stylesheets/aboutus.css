@@ -34,7 +34,7 @@ body.dark .chat {
 	align-items: flex-start;
 }
 .ourjourney {
-	text-align: left;
+	text-align: center;
 	margin: 2rem 0rem 4rem 4rem;
 	color: #568036;
 }
@@ -353,7 +353,8 @@ iframe {
 }
 .leaders h1 {
 	color: #568036;
-	padding: 2% 5%;
+	padding: 2% 0%;
+	text-align: center;
 	font-size: 35px;
 }
 .leaders span img {
@@ -536,17 +537,7 @@ iframe {
 	background: #696969 !important;
 }
 
-@media screen and (max-width: 600px) {
-	.slide {
-		height: fit-content;
-	}
-	.container {
-		height: 200px;
-	}
-	button {
-		top: 50%;
-	}
-}
+
 
 /* app */
 .app {
@@ -595,17 +586,18 @@ iframe {
 
 .apppage h2 {
 	position: absolute;
-	right: 40%;
+	right: 44%;
 	top: 104px;
-	font-size: 44px;
+	font-size: 38px;
 	font-weight: 600;
 }
 .apppage a img {
-	width: 17%;
+	width: 20%;
 	height: 15%;
 	position: absolute;
-	top: 15rem;
-	right: 54%;
+	top: 14rem;
+	right: 50%;
+	border-radius: 10px;
 }
 /* mobile view */
 .apppage {
@@ -630,140 +622,19 @@ iframe {
 	position: absolute;
 	left: 4%;
 	width: 24%;
-}
-@media (max-width: 1150px) {
-	.galleryMain {
-		grid-template-columns: repeat(3, 1fr);
-	}
-	.timelineImg {
-		display: none;
-	}
-	.timelineContent {
-		width: 90%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	.timelinePara p {
-		padding-right: 3rem;
-	}
-	.apppage h2 {
-		position: absolute;
-		right: 0%;
-		top: 104px;
-		font-size: 44px;
-		font-weight: 600;
-	}
-}
-@media (max-width: 1000px) {
-	iframe {
-		position: relative;
-		width: 50vw;
-		height: 55vh;
-	}
+	border-radius: 10px;
 }
 
-@media (max-width: 900px) {
-	.prev-btn,
-	.current-btn {
-		width: 40%;
-	}
-	.galleryMain {
-		grid-template-columns: repeat(2, 1fr);
-	}
-	.ourvision {
-		padding: 1rem;
-	}
-	.ourvision p,
-	.ourmission p {
-		font-size: 18px;
-		font-weight: 500;
-		line-height: 2.3rem;
-		padding: 0rem 4rem;
-	}
-	.ourvision h1,
-	.ourmission h1 {
-		margin: 1rem 0rem;
-	}
-	.ourmission {
-		padding: 0rem 1rem 1rem 1rem;
-	}
-	iframe {
-		position: relative;
-		width: 70vw;
-		height: 55vh;
-	}
-}
-@media (max-width: 600px) {
-	.btngrp {
-		width: 70%;
-	}
-	.prev-btn,
-	.current-btn {
-		width: 45%;
-		font-size: 14px;
-	}
-	.pagination li {
-		margin: 1rem 0.5rem;
-		padding: 0.2rem 0.5rem;
-		font-size: 13px;
-	}
-	.video h1 {
-		width: 80%;
-	}
-	.gallery {
-		margin-bottom: 5rem;
-	}
-	.ourjourney {
-		text-align: left;
-		margin: 2rem 0rem 4rem 2rem;
-		color: #568036;
-	}
-	.timelineContent {
-		height: 800px;
-	}
-	.timelinePara {
-		height: 800px;
-	}
-	.timelinePara p {
-		/* line-height: 2rem; */
-		min-height: 200px;
-		font-size: 15px;
-	}
-	.timelineDiv {
-		height: 200px;
-	}
-	iframe {
-		position: relative;
-		width: 70vw;
-		height: 40vh;
-	}
-	.ourvision {
-		padding: 1rem;
-	}
-	.ourvision p,
-	.ourmission p {
-		font-size: 18px;
-		font-weight: 500;
-		line-height: 2.3rem;
-		padding: 0rem 3rem;
-	}
-}
-@media (max-width: 500px) {
-	.gallery {
-		margin-bottom: 0rem;
-	}
-}
-@media (max-width: 430px) {
-	.timelineDiv {
-		display: none;
-	}
-}
-@media (max-width: 400px) {
-	iframe {
-		position: relative;
-		width: 70vw;
-		height: 25vh;
-	}
+@media(max-width: 1250px){
+	.apppage h2 {
+		right: 40%;
+		font-size: 34px;
+	} 
+	.apppage a img{
+		top: 13rem;
+		width: 20%;
+		right: 50%;
+	} 
 }
 
 /* popup0 */
@@ -798,7 +669,7 @@ iframe {
 
 .dropdown {
 	width: 10%;
-	height: 50px;
+	height: 40px;
 	cursor: pointer;
 	border-radius: 10px 0px 10px 0px;
 	position: relative;
@@ -806,28 +677,263 @@ iframe {
 	/* border: 5px solid #568037; */
 	color: #000000;
 	text-align: center;
-	font-size: 22px;
+	font-size: 16px;
 	font-weight: 600;
 	margin: 2rem 0rem 0rem 0rem;
-}
-.dropdown * {
-	border-radius: 10px 0px 10px 0px;
-}
-.styled-select select {
-	background: transparent;
-	-webkit-appearance: none;
-	width: 100px;
-	font-size: 11px;
-	border: 0;
-	height: 17px;
-	position: absolute;
-	left: 0;
-	top: 0;
 }
 
 
 
 /** Custom Select **/
-select:hover {
-	background-color: #fff !important;
+
+@media (max-width: 1150px) {
+	.galleryMain {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.timelineImg {
+		display: none;
+	}
+	.timelineContent {
+		width: 70%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.timelinePara p {
+		padding-right: 3rem;
+	}
+	.apppage h2 {
+		position: absolute;
+		right: 37%;
+		top: 104px;
+		font-size: 34px;
+		font-weight: 600;
+	}
+}
+@media(max-width:1110px){
+	iframe {
+		position: relative;
+		width: 50vw;
+		height: 55vh;
+	}
+	.apppage h2 {
+		right: 41%;
+		font-size: 30px;
+	}
+	.apppage a img{
+		top: 13rem;
+		right: 50%;
+		width: 20%;
+	    height: 15%;
+	}
+}
+@media (max-width: 1000px) {
+	iframe {
+		position: relative;
+		width: 50vw;
+		height: 55vh;
+	}
+	.apppage h2 {
+		right: 40%;
+		font-size: 28px;
+	} 
+	.apppage a img{
+		top: 13rem;
+	} 
+
+}
+
+@media (max-width: 900px) {
+	.dropdown {
+		width: 20%;
+	}
+	.prev-btn,
+	.current-btn {
+		width: 40%;
+	}
+	.galleryMain {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.ourvision {
+		padding: 1rem;
+	}
+	.ourvision p,
+	.ourmission p {
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 2.3rem;
+		padding: 0rem 4rem;
+	}
+	.ourvision h1,
+	.ourmission h1 {
+		margin: 1rem 0rem;
+	}
+	.ourmission {
+		padding: 0rem 1rem 1rem 1rem;
+	}
+	iframe {
+		position: relative;
+		width: 70vw;
+		height: 55vh;
+	}
+	.apppage h2 {
+		right: 4%;
+		font-size: 40px;
+	} 
+	.apppage a img{
+		top: 14rem;
+		width: 25%;
+	    height: 15%;
+		right: 29%;
+	} 
+	.vector1 {
+		display: none;
+	}
+	.Vector2 {
+		display: none;
+	}
+	.vector3 {
+		display: none;
+	}
+	.Messaging{
+		left: 5%;
+        width: 40%;
+	}
+}
+@media(max-width: 800px){
+	.apppage h2 {
+		right: 17%;
+		font-size: 26px;
+	} 
+	.apppage a img{
+		top: 14rem;
+		width: 25%;
+	    height: 15%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.slide {
+		height: fit-content;
+	}
+	.container {
+		height: 200px;
+	}
+	button {
+		top: 50%;
+	}
+	.btngrp {
+		width: 70%;
+	}
+	.prev-btn,
+	.current-btn {
+		width: 45%;
+		font-size: 14px;
+	}
+	.pagination li {
+		margin: 1rem 0.5rem;
+		padding: 0.2rem 0.5rem;
+		font-size: 13px;
+	}
+	.video h1 {
+		width: 80%;
+	}
+	.gallery {
+		margin-bottom: 5rem;
+	}
+	.ourjourney {
+		text-align: center;
+		margin: 2rem 0rem 4rem 0rem;
+		color: #568036;
+	}
+	.timelineContent {
+		height: 480px;
+	}
+	.timelinePara {
+		height: 480px;
+	}
+	.timelinePara p {
+		/* line-height: 2rem; */
+		min-height: 120px;
+		font-size: 15px;
+	}
+	.timelineDiv {
+		height: 120px;
+	}
+	iframe {
+		position: relative;
+		width: 70vw;
+		height: 40vh;
+	}
+	.ourvision {
+		padding: 1rem;
+	}
+	.ourvision p,
+	.ourmission p {
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 2.3rem;
+		padding: 0rem 3rem;
+	}
+	.apppage h2 {
+		right: 7%;
+		font-size: 25px;
+	} 
+	.apppage a img{
+		top: 13rem;
+		width: 25%;
+	    height: 15%;
+	}
+}
+
+@media (max-width: 500px) {
+	.gallery {
+		margin-bottom: 0rem;
+	}
+}
+@media (max-width: 430px) {
+	.timelineDiv {
+		display: none;
+	}
+}
+@media (max-width: 400px) {
+	iframe {
+		position: relative;
+		width: 70vw;
+		height: 25vh;
+	}
+	.apppage h2 {
+		right: 18%;
+		font-size: 25px;
+		
+		top: 57%;
+	} 
+	.apppage a img{
+		top: 19rem;
+		width: 65%;
+	    height: 15%;
+		left: 18%;
+	} 
+	.apppage{
+		width: 90%;
+	}
+	.vector1 {
+		display: none;
+	}
+	.Vector2 {
+		display: none;
+	}
+	.vector3 {
+		display: none;
+	}
+	.Messaging{
+		left: 23%;
+        width: 56%;
+		top: 4%;
+	}
+	.dropdown{
+		width: 35%;
+	}
+	.apppage{
+		width: 85%;
+	}
 }

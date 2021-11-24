@@ -82,10 +82,11 @@ a.site-logo {
 .nav-toggler span:after {
   width: 28px;
   height: 3px;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   display: block;
   transition: 0.3s;
 }
+
 .nav-toggler span:before {
   content: "";
   transform: translateY(-9px);
@@ -146,7 +147,7 @@ a.site-logo {
     transform: translateY(5px);
   }
   .nav2 {
-    width: 10%;
+    width:25%;
 
 
   }

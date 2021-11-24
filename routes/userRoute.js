@@ -607,32 +607,32 @@ router.route("/courses").get(async (req, res) => {
   res.render("courses");
 });
 
-router.route("/aboutus").get(async (req, res) => {
-  var folderArray = [];
-  var imgsArray = [];
-  const folders = fs.readdirSync("public/images/gallery");
-
-  folders.forEach((folder) => {
-    folderArray.push(folder);
-    const files = fs.readdirSync(`public/images/gallery/${folder}`);
-    imgsArray.push(files);
-  });
-  console.log(imgsArray);
-  await db.query("SELECT * FROM history", async (error, response) => {
-    var arr = [];
-    if (error) {
-      console.log(error);
-    } else {
-      for (let i = 0; i <= response.length - 1; i++) {
-        var cont = {
-          content: response[i].content,
-          year: response[i].year,
-        };
-        arr.push(cont);
-      }
-      res.render("aboutus", { content: arr, folderArray, imgsArray });
-    }
-  });
+router.route('/aboutus').get(async (req, res) => {
+	var folderArray = [];
+	var imgsArray = [];
+	const folders = fs.readdirSync('public/images/gallery');
+var obj={}
+	folders.forEach((folder) => {
+		folderArray.push(folder);
+		const files = fs.readdirSync(`public/images/gallery/${folder}`);
+		imgsArray.push(files);
+		obj[folder]=fs.readdirSync(`public/images/gallery/${folder}`)
+	});
+	await db.query('SELECT * FROM history', async (error, response) => {
+		var arr = [];
+		if (error) {
+			console.log(error);
+		} else {
+			for (let i = 0; i <= response.length - 1; i++) {
+				var cont = {
+					content: response[i].content,
+					year: response[i].year
+				};
+				arr.push(cont);
+			}
+			res.render('aboutus', { content: arr,folderArray,imgsArray ,obj});
+		}
+	});
 });
 
 router
@@ -1352,7 +1352,7 @@ router
 	  	console.log('hello');
     	res.render("admin/chatbot/chatbot");
   }).delete(async (req, res) => {
-	
+
   })
 
 router.post("/signout", isloggedin, (req, res) => {

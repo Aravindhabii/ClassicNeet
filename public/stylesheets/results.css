@@ -1,3 +1,31 @@
+.arrowRight {
+	height: 70px;
+	position: absolute;
+	right: 2%;
+	top: 50%;
+	transform: translateY(-100%);
+}
+.arrowLeft {
+	height: 70px;
+	position: absolute;
+	left: 2%;
+	top: 50%;
+	transform: translateY(-100%);
+}
+.btnItem {
+	height: 50px;
+	
+}
+.btnItem2 {
+	height: 50px;
+	transform: rotate(180deg);
+	
+
+}
+.next-page1 {
+	
+}
+
 .swiper {
 	width: 100%;
 	height: 100vh;
@@ -24,38 +52,54 @@ body.dark .chat {
 	position: relative;
 
 	width: 100%;
-	margin-bottom: 5rem;
+	margin-bottom: 2rem;
 
 	/* background:blue; */
 }
 
 .gridcontainer {
 	position: relative;
-	width: 100%;
+	width: 85%;
+	margin-right: auto;
+	margin-left: auto;
 	height: 100%;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	justify-items: center;
 	grid-row-gap: 5rem;
 	align-items: center;
-	/* -ms-grid-row-align: center;
-      -ms-grid-column-align: center; */
-	/* align-items: center; */
-	/* justify-content: space-around; */
-}
 
+}
+.imgDesign {
+	background: url(../images/Result/resultsimg) center/cover;
+	width: 100%;
+	height: 70%;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+.imgDesign img {
+	width: 50%;
+	border-radius: 50%;
+	margin-bottom: .5rem;
+
+}
 .gridbox {
 	position: relative;
-	height: 12rem;
-	width: 24rem;
+	height: 22rem;
+	width:18rem;
 
 	border: 2px solid #2c2e43a1;
 	display: flex;
-
+	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 	/* box-shadow: 2px 2px 50px rgb(0,0,0,0.4); */
 	border-radius: 10px;
-	background-color: #77acf18f;
+	background-color: #4E6B93;
 
 	/* -webkit-box-reflect: below 0 linear-gradient(transparent, white); */
 }
@@ -80,6 +124,7 @@ body.dark .chat {
 	animation-duration: 20s;
 	animation-timing-function: ease-in-out;
 }
+
 .griditem2 {
 	/* background: white; */
 	flex-direction: row-reverse;
@@ -91,36 +136,35 @@ body.dark .chat {
 }
 
 .griditem6 {
-	/* background: white; */
+
 	flex-direction: row-reverse;
 }
 
 .griditem8 {
-	/* background: white; */
+
 	flex-direction: row-reverse;
 }
 
 .griditem10 {
-	/* background: #000; */
+
 	flex-direction: row-reverse;
 }
 
 .griditem12 {
-	/* background: #000; */
+
 	flex-direction: row-reverse;
 }
 
-.gridbox {
-	height: 100%;
-	width: 50%;
-	border-radius: 10px;
-}
+.swiper-horizontal>.swiper-scrollbar {
+	display: none;
+ }
+
 .refbox {
 	display: none;
 }
 .gridbox span {
-	height: 100%;
-	width: 50%;
+	/* height: 30%; */
+	width: 90%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -131,6 +175,82 @@ body.dark .chat {
 	font-size: 1.3rem;
 	text-align: center;
 	font-weight: 600;
+	color: rgb(255, 255, 255);
+}
+body.dark .gridbox > span > h3 {
+	color: rgb(255, 255, 255);
+}
+/* pagination */
+.section2 {
+	width: 100%;
+	position: relative;
+}
+
+.pagination {
+	position: relative;
+	user-select: none;
+
+	margin-top: 2rem;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	
+
+}
+.pagination li {
+	display: inline-block;
+	margin: 1rem;
+	padding: 0.5rem 1rem;
+	border-radius: 20px;
+}
+.current-page,
+.dott {
+	background-color: #969696;
+}
+
+.pagination li a {
+	color: white;
+	text-decoration: none;
+}
+.previous-page,
+.next-page {
+	background: linear-gradient(#4885e7, #19cae6);
+}
+.active {
+	background: linear-gradient(#4885e7, #19cae6);
+}
+.disable {
+	background: #d9d9d9;
+}
+.disable1 {
+	opacity: 0.3;
+}
+.prev-btn,
+.current-btn {
+	padding: 0.5rem 0rem;
+	width: 30%;
+	text-align: center;
+	border-radius: 20px;
+	background-color: #568036;
+	color: white;
+}
+
+.dots_container {
+	display: flex;
+	margin: 5px auto;
+	width: fit-content;
+}
+
+.dots {
+	height: 12px;
+	width: 12px;
+	border-radius: 50%;
+	background: #bdbdbd;
+	margin: 4px;
+}
+
+.dots:hover {
+	background: #696969 !important;
 }
 @keyframes card {
 	0% {
@@ -153,6 +273,12 @@ body.dark .chat {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
+@media (max-width: 1000px) {
+	.arrowLeft , .arrowRight {
+		display: none;
+	}
+}
+	
 
 @media (max-width: 800px) {
 	.swiper-slide img {
@@ -160,13 +286,37 @@ body.dark .chat {
 		background-position: center;
 	}
 	.gridcontainer {
-		grid-template-columns: repeat(1, 1fr);
+		
+		grid-row-gap: 2rem;
+	}
+}
+@media (max-width:700px) {
+	.gridbox {
+		height: 18rem;
+		width:14rem;	
+	}
+	.gridbox > span > h3 {
+		font-size: 1rem;
+	}
+}
+@media (max-width: 600px) {
+	.pagination li {
+		margin: 1rem 0.5rem;
+		padding: 0.2rem 0.5rem;
+		font-size: 13px;
+	}
+	.gridbox {
+		height: 16rem;
+		width:12rem;	
+	}
+	
+	
+}
+@media (max-width: 450px) {
+	.gridbox {
+		height: 14rem;
+		width:10rem;	
 	}
 }
 
-@media (max-width: 450px) {
-	.gridbox {
-		height: 10rem;
-		width: 20rem;
-	}
-}
+

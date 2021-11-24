@@ -1,5 +1,8 @@
-
-
+var main = document.querySelector(".galleryMain");
+var item = document.querySelectorAll(".galleryItem");
+// item.parentNode.children;
+console.log(item.parentNode);
+console.log(item,main);
 function getPageList(totalPages,page,maxLength) {
     function range(start,end) {
         return Array.from(Array(end - start + 1), (_,i) => i + start)
@@ -25,7 +28,12 @@ function getPageList(totalPages,page,maxLength) {
 
 
 $(function(){
+    var main = document.querySelector(".galleryMain");
+    var item = document.querySelectorAll(".galleryItem");
     var numberofitems = $(".galleryMain .galleryItem").length;
+    console.log($(item));
+    console.log(item);
+    console.log($(".galleryItem").get(0));
     var limitperpage = 8;
     if(window.innerWidth < 1150){
 
@@ -35,11 +43,13 @@ $(function(){
     var totalPages = Math.ceil(numberofitems/ limitperpage)
     var paginationSize = ( totalPages <= 5 ?  Math.ceil(numberofitems/ limitperpage) : 5);
     var currentPage;
+   
+    console.log(main);
     function showPage (whichpage) {
         if (whichpage < 1 || whichpage > totalPages) return false;
 
         currentPage = whichpage;
-
+        
         $(".galleryMain .galleryItem").hide().slice((currentPage - 1) * limitperpage, currentPage * limitperpage).show();
         $(".pagination li").slice(1,-1).remove();
 
