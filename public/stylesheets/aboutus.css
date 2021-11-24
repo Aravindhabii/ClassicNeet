@@ -801,12 +801,13 @@ iframe {
 }
 @media(max-width: 800px){
 	.apppage h2 {
-		right: 17%;
+		right: 7%;
 		font-size: 26px;
 	} 
 	.apppage a img{
 		top: 14rem;
 		width: 25%;
+		right: 25%;
 	    height: 15%;
 	}
 }
@@ -876,10 +877,11 @@ iframe {
 	}
 	.apppage h2 {
 		right: 7%;
-		font-size: 25px;
+		font-size: 20px;
 	} 
 	.apppage a img{
-		top: 13rem;
+		top: 50%;
+		right: 20%;
 		width: 25%;
 	    height: 15%;
 	}
