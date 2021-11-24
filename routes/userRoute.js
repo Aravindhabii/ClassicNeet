@@ -1352,7 +1352,19 @@ router
 	  	console.log('hello');
     	res.render("admin/chatbot/chatbot");
   }).delete(async (req, res) => {
-
+	await db.query(
+	  "DELETE FROM chatbot",
+	  (err, response) => {
+		if (err) {
+		  req.flash("error", "Error occurred while adding");
+		  console.log(err);
+		} else {
+			console.log('delted');
+		  req.flash("success", "Successfully Deleted");
+		  res.redirect("/admin/chatbot");
+		}
+	  }
+	);
   })
 
 router.post("/signout", isloggedin, (req, res) => {
