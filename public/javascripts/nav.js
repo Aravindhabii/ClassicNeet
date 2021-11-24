@@ -34,7 +34,6 @@ function togglerClick() {
 	navToggler.classList.toggle('toggler-open');
 	navMenu.classList.toggle('open');
 	body.classList.toggle('overflow-hidden');
-	
 }
 
 function navLinkClick() {
