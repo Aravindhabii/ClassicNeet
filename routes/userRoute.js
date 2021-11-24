@@ -725,7 +725,6 @@ router.route("/Demovideos").get(async (req, res) => {
     } else {
       for (let i = 0; i <= response.length - 1; i++) {
         var link = response[i].videolink;
-        // console.log(image)
         arr.push(link);
       }
       db.query("SELECT * FROM demoimages", async (error, response) => {
@@ -755,10 +754,8 @@ router
       } else {
         for (let i = 0; i <= response.length - 1; i++) {
           var link = response[i].videolink;
-          // console.log(image)
           arr.push(link);
         }
-        // console.log(response[0].latestupdates);
         res.render("admin/demovideos/Demovideos", { link: arr });
       }
     });
