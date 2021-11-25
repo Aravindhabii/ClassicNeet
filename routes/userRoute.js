@@ -891,23 +891,13 @@ router
   .route("/admin/results/studentdetails")
   .get(flash, isloggedin, async (req, res) => {
     await db.query("SELECT * FROM studentdetails", async (error, response) => {
-      var arr = [];
       if (error) {
         console.log(error);
-      } else {
-        for (let i = 0; i <= response.length - 1; i++) {
-          var image = {
-            name: response[i].name,
-            collegename: response[i].collegename,
-            studentimg: response[i].image,
-            cloudinaryname: response[i].cloudinaryname,
-            score: response[i].score,
-          };
-          arr.push(image);
-        }
-        res.render("admin/results/studentdetails", { students: arr });
+      }else{
+        console.log(response);
       }
-    });
+    })
+    res.render("admin/results/studentdetails");
   })
   .post(upload.single("studentimg"), async (req, res) => {
     await db.query(
@@ -1397,7 +1387,7 @@ router.post("/pagination", isloggedin, async (req, res) => {
   const perPage = 5;
 
   await db.query(
-    `SELECT * FROM studentdetails LIMIT ${perPage} OFFSET ${
+    `SELECT * FROM studentdetails  LIMIT ${perPage} OFFSET ${
       (currentPage - 1) * perPage
     }`,
     (err, response) => {
