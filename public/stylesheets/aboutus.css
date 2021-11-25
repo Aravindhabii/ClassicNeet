@@ -877,13 +877,13 @@ iframe {
 		padding: 0rem 3rem;
 	}
 	.apppage h2 {
-		right: 7%;
+		right: 16%;
 		font-size: 20px;
 	} 
 	.apppage a img{
 		top: 50%;
 		right: 20%;
-		width: 25%;
+		width: 35%;
 	    height: 15%;
 	}
 }
@@ -891,6 +891,16 @@ iframe {
 @media (max-width: 500px) {
 	.gallery {
 		margin-bottom: 0rem;
+	}
+	.apppage h2 {
+		right: 4%;
+		font-size: 20px;
+	} 
+	.apppage a img{
+		top: 50%;
+		right: 16%;
+		width: 39%;
+	    height: 15%;
 	}
 }
 
@@ -907,7 +917,7 @@ iframe {
 		top: 57%;
 	} 
 	.apppage a img{
-		top: 19rem;
+		top: 17rem;
 		width: 65%;
 	    height: 15%;
 		left: 18%;
