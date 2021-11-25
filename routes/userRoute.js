@@ -53,7 +53,7 @@ router.route("/").get(async (req, res) => {
           }
           await db.query(
             "SELECT * FROM calendarevents",
-            async (error, response) => {
+            async(error, response) => {
               var calendar = [];
               if (error) {
                 console.log(error);
