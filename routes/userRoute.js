@@ -725,7 +725,6 @@ router.route("/Demovideos").get(async (req, res) => {
     } else {
       for (let i = 0; i <= response.length - 1; i++) {
         var link = response[i].videolink;
-        // console.log(image)
         arr.push(link);
       }
       db.query("SELECT * FROM demoimages", async (error, response) => {
@@ -755,10 +754,8 @@ router
       } else {
         for (let i = 0; i <= response.length - 1; i++) {
           var link = response[i].videolink;
-          // console.log(image)
           arr.push(link);
         }
-        // console.log(response[0].latestupdates);
         res.render("admin/demovideos/Demovideos", { link: arr });
       }
     });
@@ -1352,7 +1349,19 @@ router
 	  	console.log('hello');
     	res.render("admin/chatbot/chatbot");
   }).delete(async (req, res) => {
-
+	await db.query(
+	  "DELETE FROM chatbot",
+	  (err, response) => {
+		if (err) {
+		  req.flash("error", "Error occurred while adding");
+		  console.log(err);
+		} else {
+			console.log('delted');
+		  req.flash("success", "Successfully Deleted");
+		  res.redirect("/admin/chatbot");
+		}
+	  }
+	);
   })
 
 router.post("/signout", isloggedin, (req, res) => {

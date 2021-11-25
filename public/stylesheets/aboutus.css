@@ -801,12 +801,13 @@ iframe {
 }
 @media(max-width: 800px){
 	.apppage h2 {
-		right: 17%;
+		right: 7%;
 		font-size: 26px;
 	} 
 	.apppage a img{
 		top: 14rem;
 		width: 25%;
+		right: 25%;
 	    height: 15%;
 	}
 }
@@ -846,10 +847,10 @@ iframe {
 		color: #568036;
 	}
 	.timelineContent {
-		height: 480px;
+		height: 600px;
 	}
 	.timelinePara {
-		height: 480px;
+		height: 600px;
 	}
 	.timelinePara p {
 		/* line-height: 2rem; */
@@ -858,6 +859,7 @@ iframe {
 	}
 	.timelineDiv {
 		height: 120px;
+		display: none;
 	}
 	iframe {
 		position: relative;
@@ -876,10 +878,11 @@ iframe {
 	}
 	.apppage h2 {
 		right: 7%;
-		font-size: 25px;
+		font-size: 20px;
 	} 
 	.apppage a img{
-		top: 13rem;
+		top: 50%;
+		right: 20%;
 		width: 25%;
 	    height: 15%;
 	}
@@ -890,11 +893,7 @@ iframe {
 		margin-bottom: 0rem;
 	}
 }
-@media (max-width: 430px) {
-	.timelineDiv {
-		display: none;
-	}
-}
+
 @media (max-width: 400px) {
 	iframe {
 		position: relative;

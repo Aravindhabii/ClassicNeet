@@ -56,7 +56,7 @@ submitbtn.addEventListener('click', () => {
 		confirmButtonText: 'Yes, delete it!'
 	}).then((result) => {
 		if (result.isConfirmed) {
-			document.querySelector('.latestupdateform').submit();
+			document.querySelector('.imgform').submit();
 		}
 	});
 });
