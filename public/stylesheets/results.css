@@ -4,6 +4,7 @@
 	right: 2%;
 	top: 50%;
 	transform: translateY(-100%);
+	cursor: pointer;
 }
 .arrowLeft {
 	height: 70px;
@@ -11,6 +12,7 @@
 	left: 2%;
 	top: 50%;
 	transform: translateY(-100%);
+	cursor: pointer;
 }
 .btnItem {
 	height: 50px;

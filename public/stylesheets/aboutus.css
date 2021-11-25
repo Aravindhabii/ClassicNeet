@@ -847,10 +847,10 @@ iframe {
 		color: #568036;
 	}
 	.timelineContent {
-		height: 480px;
+		height: 600px;
 	}
 	.timelinePara {
-		height: 480px;
+		height: 600px;
 	}
 	.timelinePara p {
 		/* line-height: 2rem; */
@@ -859,6 +859,7 @@ iframe {
 	}
 	.timelineDiv {
 		height: 120px;
+		display: none;
 	}
 	iframe {
 		position: relative;
@@ -892,11 +893,7 @@ iframe {
 		margin-bottom: 0rem;
 	}
 }
-@media (max-width: 430px) {
-	.timelineDiv {
-		display: none;
-	}
-}
+
 @media (max-width: 400px) {
 	iframe {
 		position: relative;
