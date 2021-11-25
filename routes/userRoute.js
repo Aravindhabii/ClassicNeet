@@ -18,7 +18,7 @@ router
 		res.render('admin/courses/empty');
 	})
 	.post(async (req, res) => {
-		sizeOf(req.body, function (err, dimensions) { });
+		sizeOf(req.body, function (err, dimensions) {});
 	});
 
 dotenv.config({ path: './.env' });
@@ -189,7 +189,9 @@ router
 			for (let i = 0; i <= req.files.length - 1; i++) {
 				for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
 					if (i === j) {
-						await cloudinary.uploader.destroy(`ClassicNeetAcademy/${req.body.checkbox}`);
+						await cloudinary.uploader.destroy(
+							`ClassicNeetAcademy/${req.body.checkbox}`
+						);
 						await db.query(
 							'UPDATE homeslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
 							[
@@ -614,7 +616,6 @@ router.route('/aboutus').get(async (req, res) => {
 		folderArray.push(folder);
 		const files = fs.readdirSync(`public/images/gallery/${folder}`);
 		imgsArray.push(files);
-		
 	});
 	console.log(imgsArray);
 	await db.query('SELECT * FROM history', async (error, response) => {
@@ -1043,14 +1044,15 @@ router
 					req.files[0].filename.split('/')[1],
 					req.body.checkbox
 				]
-			), (err, response) => {
-				if (err) {
-					console.log(err);
-				} else {
-					req.flash('success', 'Successfully Added');
-					res.redirect('/admin/results/images');
-				}
-			}
+			),
+				(err, response) => {
+					if (err) {
+						console.log(err);
+					} else {
+						req.flash('success', 'Successfully Added');
+						res.redirect('/admin/results/images');
+					}
+				};
 		} else {
 			for (let i = 0; i <= req.files.length - 1; i++) {
 				for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
@@ -1066,59 +1068,62 @@ router
 								req.files[j].filename.split('/')[1],
 								req.body.checkbox[j]
 							]
-						), (err, response) => {
-							if (err) {
-								req.flash('error', 'Error occurred while adding');
-								console.log(err);
-							} else {
-								req.flash('success', 'Image Successfully Updated');
-								res.redirect('/admin/results/images');
-							}
-						}
+						),
+							(err, response) => {
+								if (err) {
+									req.flash('error', 'Error occurred while adding');
+									console.log(err);
+								} else {
+									req.flash('success', 'Image Successfully Updated');
+									res.redirect('/admin/results/images');
+								}
+							};
 					}
 				}
 			}
 		}
 	});
 
-
 let transporter = nodemailer.createTransport({
 	service: 'gmail',
 	auth: {
 		user: 'srklohith05@gmail.com',
-		pass: 'Loki05@("*")'
+		pass: ''
 	}
 });
 
-router.route('/contactus').get(flash, async (req, res) => {
-	res.render('contactus');
-}).post(async (req, res) => {
-	const email = req.body.email;
-	const comment = req.body.message;
-	const name = req.body.name;
-	const phone = req.body.phone;
+router
+	.route('/contactus')
+	.get(flash, async (req, res) => {
+		res.render('contactus');
+	})
+	.post(async (req, res) => {
+		const email = req.body.email;
+		const comment = req.body.message;
+		const name = req.body.name;
+		const phone = req.body.phone;
 
-	let mailOptions = {
-		from: 'srklohith05@gmail.com',
-		to: 'aravindhabii27@gmail.com',
-		subject: 'Comments from user',
-		html:
-			`<h1>${name}</h1>` +
-			`<h2> ${email} </h2>` +
-			`<h3>${phone}</h3>` +
-			`<p>${comment}</p>`
-	};
-	transporter.sendMail(mailOptions, function (error, info) {
-		if (error) {
-			req.flash('error', 'Something went wrong')
-			res.redirect('/contactus');
-		} else {
-			console.log(info);
-			req.flash('success', 'Mail was successfully sent');
-			res.redirect('/contactus');
-		}
+		let mailOptions = {
+			from: 'srklohith05@gmail.com',
+			to: 'aravindhabii27@gmail.com',
+			subject: 'Comments from user',
+			html:
+				`<h1>${name}</h1>` +
+				`<h2> ${email} </h2>` +
+				`<h3>${phone}</h3>` +
+				`<p>${comment}</p>`
+		};
+		transporter.sendMail(mailOptions, function (error, info) {
+			if (error) {
+				req.flash('error', 'Something went wrong');
+				res.redirect('/contactus');
+			} else {
+				console.log(info);
+				req.flash('success', 'Mail was successfully sent');
+				res.redirect('/contactus');
+			}
+		});
 	});
-});
 
 router.route('/successstories').get(async (req, res) => {
 	await db.query('SELECT * FROM successstories', async (error, response) => {
@@ -1345,7 +1350,8 @@ router
 router.post('/signout', isloggedin, (req, res) => {
 	req.session.destroy(function () {
 		res.clearCookie('connect.sid');
-		res.redirect('/login'); rs
+		res.redirect('/login');
+		rs;
 	});
 });
 
@@ -1374,7 +1380,8 @@ router.post('/pagination', isloggedin, async (req, res) => {
 	const perPage = 5;
 
 	await db.query(
-		`SELECT * FROM studentdetails LIMIT ${perPage} OFFSET ${(currentPage - 1) * perPage
+		`SELECT * FROM studentdetails LIMIT ${perPage} OFFSET ${
+			(currentPage - 1) * perPage
 		}`,
 		(err, response) => {
 			if (err) {
