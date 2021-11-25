@@ -219,18 +219,18 @@
 				<% }) %>
 			</select>
 
-      <!-- <div class="btngrp"><div class="prev-btn btn" data-year="2019">Previous Year</div><div data-year="2020" class="current-btn btn">Next Year</div></div> -->
-      <section class="galleryMain">
-        <% imgsArray[0].forEach((i)=> {%>
-        <div class="galleryItem">
-          <img
-            id="imageid"
-            src="../images/gallery/SAMPLE/<%= i %>"
-            alt=""
-          />
-        </div>
-        <% }) %>
-        <!-- <%# imgsArray[0].forEach(img => { %>
+			<!-- <div class="btngrp"><div class="prev-btn btn" data-year="2019">Previous Year</div><div data-year="2020" class="current-btn btn">Next Year</div></div> -->
+			<section class="galleryMain" data-total="500">
+				<% for( let i = 0; i < 500; i++ ) { %>
+				<div class="galleryItem">
+					<img
+						id="imageid"
+						src="../images/gallery/SAMPLE/img<%=i+1%>.jpg"
+						alt=""
+					/>
+				</div>
+				<% } %> <%# imgsArray[0].forEach((i)=> {%> <%# }) %>
+				<!-- <%# imgsArray[0].forEach(img => { %>
          
           <%# }) %> 
           
@@ -238,8 +238,7 @@
             
          
         <%# }) %> -->
-        
-      </section>
+			</section>
 
 			<div class="pagination">
 				<!-- <li class="page-item previous-page disable"><a class="page-link" href="#">prev</a></li>
@@ -276,6 +275,7 @@
 		<%- include('./layout/footer') %>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script src="javascripts/aboutus.js"></script>
+		<script src="javascripts/pagination.js"></script>
 		<script src="javascripts/nav.js"></script>
 		<script src="javascripts/common.js"></script>
 		<script src="javascripts/chatbot.js"></script>
