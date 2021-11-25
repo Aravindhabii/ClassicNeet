@@ -7,3 +7,4 @@ setTimeout(function(){
         removesection.parentNode.removeChild(removesection);
     })
 },4000);
+

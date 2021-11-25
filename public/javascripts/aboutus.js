@@ -111,27 +111,66 @@ galleryclick.forEach((galleryclick) => {
 });
 exit.addEventListener("click", (e) => {
   prevContainer.style.display = "none";
-  bodyy.style.overflow = "scroll";
+  bodyy.style.overflow = "unset";
 });
 
+const opt = document.querySelectorAll(".opt");
+
 window.addEventListener("load", () => {
-  document.querySelectorAll("#imageid").forEach((i) => {
-    i.src = i.src.replace("SAMPLE", document.querySelector(".dropdown").value);
-    document
-      .querySelector(".dropdown")
-      .setAttribute("value", document.querySelector(".dropdown").value);
+  // document.querySelectorAll("#imageid").forEach((i) => {
+  //   i.src = i.src.replace("SAMPLE", document.querySelector(".dropdown").value);
+  //   document
+  //     .querySelector(".dropdown")
+  //     .setAttribute("value", document.querySelector(".dropdown").value);
+  // })
+  opt.forEach((o, i) => {
+    if (o.selected) {
+      var arr = o.getAttribute("data-obj").split(",");
+      arr.forEach((a) => {
+        const img = document.createElement("img");
+        const div = document.createElement("div");
+        div.classList.add("galleryItem");
+        img.id = "imageid";
+        img.src = `images/gallery/${o.value}/${a}`;
+        div.appendChild(img);
+        document.querySelector(".galleryMain").appendChild(div);
+      });
+    }
   });
 });
 
 document.querySelector(".dropdown").addEventListener("change", () => {
-  document.querySelectorAll("#imageid").forEach((i) => {
-    i.src = i.src.replace(
-      document.querySelector(".dropdown").getAttribute("value"),
-      document.querySelector(".dropdown").value
-    );
-    console.log(i);
+  // document.querySelectorAll("#imageid").forEach((i) => {
+  //   i.src = i.src.replace(
+  //     document.querySelector(".dropdown").getAttribute("value"),
+  //     document.querySelector(".dropdown").value
+  //   )
+  // });
+  // document
+  //   .querySelector(".dropdown")
+  //   .setAttribute("value", document.querySelector(".dropdown").value);
+  opt.forEach((o, i) => {
+    if (o.selected) {
+      document.querySelector(".galleryMain").innerHTML = "";
+      var arr = o.getAttribute("data-obj").split(",");
+      arr.forEach((a) => {
+        const img = document.createElement("img");
+        const div = document.createElement("div");
+        div.classList.add("galleryItem");
+        img.id = "imageid";
+        img.src = `images/gallery/${o.value}/${a}`;
+        div.appendChild(img);
+        document.querySelector(".galleryMain").appendChild(div);
+      });
+    }
   });
-  document
-    .querySelector(".dropdown")
-    .setAttribute("value", document.querySelector(".dropdown").value);
 });
+// var main = document.querySelector(".galleryMain");
+// var item = document.querySelectorAll(".galleryItem");
+// console.log(item);
+// console.log(main.childNodes[4]);
+// main.childNodes.forEach((i) => {
+  
+//     console.log(i,'');
+  
+// });
