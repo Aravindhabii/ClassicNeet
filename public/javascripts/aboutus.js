@@ -114,7 +114,7 @@ exit.addEventListener("click", (e) => {
   bodyy.style.overflow = "unset";
 });
 
-// const opt = document.querySelectorAll(".opt");
+const opt = document.querySelectorAll(".opt");
 
 window.addEventListener("load", () => {
   document.querySelectorAll("#imageid").forEach((i) => {
