@@ -50,14 +50,15 @@ $(function () {
 				);
 		});
 	});
+	var items = document.querySelector('.galleryMain').setAttribute('data-final',document.querySelector('.galleryMain').getAttribute('data-total'))
+	console.log(items);
 	var limitperpage = 8;
 	if (window.innerWidth < 1150) {
 		limitperpage = 6;
 	}
 
-	var numberofitems = document
-		.querySelector('.galleryMain')
-		.parentElement.children[0].getAttribute('data-total');
+	var numberofitems = document.querySelector('.galleryMain').getAttribute('data-total');
+	console.log(numberofitems);
 	var totalPages = Math.ceil(parseInt(numberofitems) / limitperpage);
 	var paginationSize =
 		totalPages <= 5 ? Math.ceil(numberofitems / limitperpage) : 5;
