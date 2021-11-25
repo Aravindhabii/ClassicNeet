@@ -32,11 +32,17 @@
 		<section class="mainsection">
 			<div class="left"><%- include('../../layout/adminSideBar') %></div>
 			<div class="right" style="height: fit-content">
-				<select class="form-select" aria-label="Default select example">
-					<%# year.forEach(e => { %>
-						<option value="<%# e %> "><%# e %> </option>
-					<%# }) %>
-				  </select>
+					<form action="/year" method="post" class="position-absolute top-0 end-0 p-3" style="z-index: 2; width: 10%;">
+						<select class="form-select" aria-label="Default select example">
+							<%# year.forEach(e => { %>
+								<option value="<%# e %> "><%# e %> </option>
+							<%# }) %>
+						</select>
+						<button type="submit" class="btn btn-outline-primary">
+							Show
+						</button>
+					</form>	
+								
 				<div class="preview">
 					<h1 class="mb-5">Student Details</h1>
 					<form
@@ -172,6 +178,32 @@
 						</div>
 					</form>
 				</div>
+				<div class="preview3">
+					<h1 class="mb-5">Student Details</h1>
+					<form
+						action="/admin/results/studentupdate"
+						method="post"
+						class="d-flex justify-content-center align-items-center flex-column"
+						style="width: 100%"
+					>
+						<select class="form-select" aria-label="Default select example">
+						<%# year.forEach(e => { %>
+							<option value="<%# e %> "><%# e %> </option>
+						<%# }) %>
+					  	</select>
+						<div>
+							<button
+								type="button"
+								class="btn btn-outline-secondary px-3 mt-5 me-5 backbtn3"
+							>
+								Back
+							</button>
+							<button type="submit" class="btn btn-outline-primary mt-5">
+								submit
+							</button>
+						</div>
+					</form>
+				</div>
 				<form
 					action="/admin/results/studentdetails?_method=DELETE"
 					method="post"
@@ -214,6 +246,9 @@
 							disabled
 						>
 							Delete
+						</button>
+						<button type="button" class="btn btn-outline-primary addbtn px-4">
+							Add Year
 						</button>
 					</div>
 				</form>
