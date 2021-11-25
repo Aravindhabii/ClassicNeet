@@ -116,19 +116,19 @@ body.dark .chat {
 	height: 24rem;
 	width:18rem;
 
-	
+	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
 	/* box-shadow: 2px 2px 50px rgb(0,0,0,0.4);    */
 	/* border-radius: 10px;   #4E6B93*/
-	background-color:transparent;
+	background-color:#69DADB;
 
 	/* -webkit-box-reflect: below 0 linear-gradient(transparent, white); */
 }
 .nameStudent {
-	padding: 1rem;
+	padding: .5rem;
 }
 .scoreStudent {
 	font-size: 1.1rem;
@@ -195,52 +195,17 @@ body.dark .chat {
 	align-items: center;
 }
 .gridbox > span > p {
-	position: absolute;
-	top: 90%;
-	padding: 0.5rem 1rem;
-	border-radius: 50px;
-	transition: .1s ease-in-out;
-	/* color: black; */
+	color: black;
 }
 .gridbox > span > h3 {
 	font-size: 1.3rem;
 	text-align: center;
 	font-weight: 600;
 	color: rgb(0, 0, 0);
-	
-	position: absolute;
-	border-radius: 50px;
-	padding: 0.5rem 1rem;
-	top: 75%;
-	transition: .1s ease-in-out;
 }
-.i2name {
-	top: 70% !important;
-}
-.i2clg {
-	top: 80% !important;
-}
-.gridbox > span > h3:hover {
-	outline: 5px solid #FCEA0D;
-	padding: 0.5rem 1rem;
-}
-.gridbox > span > p:hover {
-	outline: 5px solid #FCEA0D;
-}
-.idea2 {
-	background-color: #9C19E0;
-	border-radius: 10px;
-}
-.idea3 {
-	background-color: #69DADB;
-	border-radius: 10px;
-}
-.idea4 {
-	background-color: #E05D5D;
-	border-radius: 10px;
-}
+
 body.dark .gridbox > span > h3 {
-	color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
 }
 /* pagination */
 .section2 {
