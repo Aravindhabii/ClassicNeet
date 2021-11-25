@@ -129,6 +129,9 @@ const loadDetails = async (page, type) => {
 			/>
 		</td>
 		<td>
+			<p>${detail.year}</p>
+		</td>
+		<td>
 			<button
 				type="button"
 				class="btn btn-danger ms-5 px-3 editbtn"

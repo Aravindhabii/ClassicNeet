@@ -23,62 +23,62 @@ router
 
 dotenv.config({ path: './.env' });
 
-router.route('/').get(async (req, res) => {
-	await db.query('SELECT * FROM homeslider', async (error, response) => {
-		var arr = [];
-		if (error) {
-			console.log(error);
-		} else {
-			for (let i = 0; i <= response.length - 1; i++) {
-				var image = {
-					sliderimg: response[i].sliderimg,
-					imgname: response[i].imgname
-				};
-				arr.push(image);
-			}
-			await db.query('SELECT * FROM ourtoppers', async (error, response) => {
-				var ourtoppers = [];
-				if (error) {
-					console.log(error);
-				} else {
-					for (let i = 0; i <= response.length - 1; i++) {
-						var image = {
-							name: response[i].name,
-							collegename: response[i].collegename,
-							cloudinaryname: response[i].cloudinaryname,
-							studentimg: response[i].studentimg,
-							score: response[i].score
-						};
-						ourtoppers.push(image);
-					}
-					await db.query(
-						'SELECT * FROM calendarevents',
-						async (error, response) => {
-							var calendar = [];
-							if (error) {
-								console.log(error);
-							} else {
-								for (let i = 0; i <= response.length - 1; i++) {
-									var c = {
-										date: response[i].date,
-										month: response[i].month,
-										event: response[i].event
-									};
-									calendar.push(c);
-								}
-								await db.query(
-									'SELECT * FROM latest_updates',
-									async (err, response) => {
-										latestupdates = [];
-										if (err) {
-											console.log(err);
-										} else {
-											for (let i = 0; i <= response.length - 1; i++) {
-												var link = response[i].latestupdates;
-												var link1 = response[i].link;
-												// console.log(image)
-												latestupdates.push({ link, link1 });
-											}
+router.route("/").get(async (req, res) => {
+  await db.query("SELECT * FROM homeslider", async (error, response) => {
+    var arr = [];
+    if (error) {
+      console.log(error);
+    } else {
+      for (let i = 0; i <= response.length - 1; i++) {
+        var image = {
+          sliderimg: response[i].sliderimg,
+          imgname: response[i].imgname,
+        };
+        arr.push(image);
+      }
+      await db.query("SELECT * FROM ourtoppers", async (error, response) => {
+        var ourtoppers = [];
+        if (error) {
+          console.log(error);
+        } else {
+          for (let i = 0; i <= response.length - 1; i++) {
+            var image = {
+              name: response[i].name,
+              collegename: response[i].collegename,
+              cloudinaryname: response[i].cloudinaryname,
+              studentimg: response[i].studentimg,
+              score: response[i].score,
+            };
+            ourtoppers.push(image);
+          }
+          await db.query(
+            "SELECT * FROM calendarevents",
+            async(error, response) => {
+              var calendar = [];
+              if (error) {
+                console.log(error);
+              } else {
+                for (let i = 0; i <= response.length - 1; i++) {
+                  var c = {
+                    date: response[i].date,
+                    month: response[i].month,
+                    event: response[i].event,
+                  };
+                  calendar.push(c);
+                }
+                await db.query(
+                  "SELECT * FROM latest_updates",
+                  async (err, response) => {
+                    latestupdates = [];
+                    if (err) {
+                      console.log(err);
+                    } else {
+                      for (let i = 0; i <= response.length - 1; i++) {
+                        var link = response[i].latestupdates;
+                        var link1 = response[i].link;
+                        // console.log(image)
+                        latestupdates.push({ link, link1 });
+                      }
 
 											await db.query(
 												'SELECT * FROM studenttestimonials',
@@ -888,110 +888,132 @@ router.route('/results').get(async (req, res) => {
 });
 
 router
-	.route('/admin/results/studentdetails')
-	.get(flash, isloggedin, async (req, res) => {
-		await db.query('SELECT * FROM studentdetails', async (error, response) => {
-			var arr = [];
-			if (error) {
-				console.log(error);
-			} else {
-				for (let i = 0; i <= response.length - 1; i++) {
-					var image = {
-						name: response[i].name,
-						collegename: response[i].collegename,
-						studentimg: response[i].image,
-						cloudinaryname: response[i].cloudinaryname,
-						score: response[i].score
-					};
-					arr.push(image);
-				}
-				res.render('admin/results/studentdetails', { students: arr });
-			}
-		});
-	})
-	.post(upload.single('studentimg'), async (req, res) => {
-		await db.query(
-			'INSERT INTO studentdetails SET ?',
-			{
-				name: req.body.name,
-				collegename: req.body.collegeName,
-				image: req.file.path,
-				cloudinaryname: req.file.filename.split('/')[1]
-			},
-			(err, response) => {
-				if (err) {
-					req.flash('error', 'Error occurred while adding');
-					console.log(err);
-				} else {
-					req.flash('success', 'Successfully Added');
-					res.redirect('/admin/results/studentdetails');
-				}
-			}
-		);
-	})
-	// .put(upload.single('sliderimg'), async (req, res) => {
-	// 	await db.query(
-	// 		'UPDATE studentdetails SET image = ? WHERE cloudinaryname = ?',
-	// 		[req.file.path, req.body.cloudinaryname]
-	// 	);
-	// 	res.redirect('/admin/results/studentdetails');
-	// })
-	// .put(async(req,res)=>{
-	// 	console.log(req.body);
-	// 	await db.query(
-	// 		'UPDATE studentdetails SET =? WHERE name = req.body.name',
-	// 		{score:req.body.score, name:req.body.name, collegename:req.body.collegeName },
-	// 		(err,response)=>{
-	// 			if(err){
-	// 				console.log(err);
-	// 			}else{
-	// 				res.redirect('/admin/results/studentdetails');
-	// 			}
-	// 		}
-	// 	);
-	// })
-	.delete(async (req, res) => {
-		if (typeof req.body.checkbox === 'string') {
-			await cloudinary.uploader.destroy(
-				'ClassicNeetAcademy/' + req.body.checkbox
-			);
-			await db.query(
-				'DELETE FROM studentdetails WHERE cloudinaryname = ?',
-				[req.body.checkbox],
-				(err, response) => {
-					if (err) {
-						req.flash('error', 'Error occurred while adding');
-						console.log(err);
-						return;
-					} else {
-						req.flash('success', 'Successfully Deleted');
-						res.redirect('/admin/results/studentdetails');
-					}
-				}
-			);
-		} else {
-			req.body.checkbox.forEach(async (link) => {
-				console.log('holll');
-				await cloudinary.uploader.destroy('ClassicNeetAcademy/' + link);
-				await db.query(
-					'DELETE FROM studentdetails WHERE cloudinaryname = ?',
-					[link],
-					(err, response) => {
-						if (err) {
-							req.flash('error', 'Error occurred while adding');
-							console.log(err);
-							return;
-						} else {
-						}
-					}
-				);
-			});
-			req.flash('success', 'Successfully Deleted');
-			res.redirect('/admin/results/studentdetails');
-		}
-	});
+  .route("/admin/results/studentdetails")
+  .get(flash, isloggedin, async (req, res) => {
+    await db.query("SELECT * FROM year", async (error, response) => {
+      var arr = [];
+      if (error) {
+        console.log(error);
+      } else {
+        for (let i = 0; i <= response.length - 1; i++) {
+          var image = {
+            year: response[i].year,
+          };
+          arr.push(image);
+        }
+        res.render("admin/results/studentdetails", { year: arr });
+      }
+    });
+  })
+  .post(upload.single("studentimg"), async (req, res) => {
+    await db.query(
+      "INSERT INTO studentdetails SET ?",
+      {
+        name: req.body.name,
+        collegename: req.body.collegeName,
+        image: req.file.path,
+        cloudinaryname: req.file.filename.split("/")[1],
+      },
+      (err, response) => {
+        if (err) {
+          req.flash("error", "Error occurred while adding");
+          console.log(err);
+        } else {
+          req.flash("success", "Successfully Added");
+          res.redirect("/admin/results/studentdetails");
+        }
+      }
+    );
+  })
+  // .put(upload.single('sliderimg'), async (req, res) => {
+  // 	await db.query(
+  // 		'UPDATE studentdetails SET image = ? WHERE cloudinaryname = ?',
+  // 		[req.file.path, req.body.cloudinaryname]
+  // 	);
+  // 	res.redirect('/admin/results/studentdetails');
+  // })
+  // .put(async(req,res)=>{
+  // 	console.log(req.body);
+  // 	await db.query(
+  // 		'UPDATE studentdetails SET =? WHERE name = req.body.name',
+  // 		{score:req.body.score, name:req.body.name, collegename:req.body.collegeName },
+  // 		(err,response)=>{
+  // 			if(err){
+  // 				console.log(err);
+  // 			}else{
+  // 				res.redirect('/admin/results/studentdetails');
+  // 			}
+  // 		}
+  // 	);
+  // })
+  .delete(async (req, res) => {
+    if (typeof req.body.checkbox === "string") {
+      await cloudinary.uploader.destroy(
+        "ClassicNeetAcademy/" + req.body.checkbox
+      );
+      await db.query(
+        "DELETE FROM studentdetails WHERE cloudinaryname = ?",
+        [req.body.checkbox],
+        (err, response) => {
+          if (err) {
+            req.flash("error", "Error occurred while adding");
+            console.log(err);
+            return;
+          } else {
+            req.flash("success", "Successfully Deleted");
+            res.redirect("/admin/results/studentdetails");
+          }
+        }
+      );
+    } else {
+      req.body.checkbox.forEach(async (link) => {
+        console.log("holll");
+        await cloudinary.uploader.destroy("ClassicNeetAcademy/" + link);
+        await db.query(
+          "DELETE FROM studentdetails WHERE cloudinaryname = ?",
+          [link],
+          (err, response) => {
+            if (err) {
+              req.flash("error", "Error occurred while adding");
+              console.log(err);
+              return;
+            } else {
+            }
+          }
+        );
+      });
+      req.flash("success", "Successfully Deleted");
+      res.redirect("/admin/results/studentdetails");
+    }
+  });
 // admin result images
 
+
+router.route("/year").post(async(req,res)=>{
+  await db.query(
+    "INSERT INTO year SET ?",(req.body),(err,response)=>{
+      if(err){
+        console.log(err);
+      }else{
+        req.flash("success","Year Successfully Added");
+        res.redirect('/admin/results/studentdetails');
+      }
+    }
+  )
+}).delete(async(req,res)=>{
+  await db.query(
+    "DELETE FROM year WHERE year = ?",
+    [req.body.year],
+    (err,response)=>{
+      if(err){
+        console.log(err);
+      }else{
+        req.flash("success","Year Successfully Deleted");
+        res.redirect('/admin/results/studentdetails');
+      }
+    }
+  )
+})
 router
 	.route('/admin/results/studentupdate')
 	.post(isloggedin, async (req, res) => {
@@ -1394,19 +1416,19 @@ router.post('/pagination', isloggedin, async (req, res) => {
 	const currentPage = req.body.page || 1;
 	const perPage = 5;
 
-	await db.query(
-		`SELECT * FROM studentdetails LIMIT ${perPage} OFFSET ${
-			(currentPage - 1) * perPage
-		}`,
-		(err, response) => {
-			if (err) {
-				console.log(err);
-				return;
-			} else {
-				res.json(response);
-			}
-		}
-	);
+  await db.query(
+    `SELECT * FROM studentdetails  LIMIT ${perPage} OFFSET ${
+      (currentPage - 1) * perPage
+    }`,
+    (err, response) => {
+      if (err) {
+        console.log(err);
+        return;
+      } else {
+        res.json(response);
+      }
+    }
+  );
 });
 
 router.post('/chatbotresponce', async (req, res) => {
