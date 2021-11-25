@@ -32,12 +32,24 @@
 		<section class="mainsection">
 			<div class="left"><%- include('../../layout/adminSideBar') %></div>
 			<div class="right" style="height: fit-content">
-					<form action="/year" method="post" class="position-absolute top-0 end-0 p-3" style="z-index: 2; width: 10%;">
-						<select class="form-select" aria-label="Default select example">
-							<%# year.forEach(e => { %>
-								<option value="<%# e %> "><%# e %> </option>
-							<%# }) %>
-						</select>
+				<select class="form-select" aria-label="Default select example">
+					<%# year.forEach(e => { %>
+						<option value="<%# e %> "><%# e %> </option>
+					<%# }) %>
+				</select>
+					<form action="/year" method="post" class="position-absolute p-3 d-flex flex-column justify-content-center align-items-center" style="z-index: 2; width: 10%;">
+						<div class="input-group d-flex flex-nowrap mb-3" style="width: 80%">
+							<span class="input-group-text" id="addon-wrapping">Add Year</span>
+							<input
+								type="date"
+								name="name"
+								class="form-control"
+								aria-label="Username"
+								aria-describedby="addon-wrapping"
+								id="uploadlink"
+								required
+							/>
+						</div>
 						<button type="submit" class="btn btn-outline-primary">
 							Show
 						</button>
