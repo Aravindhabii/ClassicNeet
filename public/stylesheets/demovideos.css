@@ -23,20 +23,25 @@ body.dark .chat {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
   margin-bottom: 5rem;
 }
 
 .grid {
   position: relative;
   width: 100%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
   left: 50%;
   transform: translateX(-50%);
+}
+.heading h1{
+  text-align: center;
+  margin: 3%;
+
 }
 iframe {
   z-index: 4;
