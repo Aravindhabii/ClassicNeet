@@ -890,14 +890,20 @@ router.route("/results").get(async (req, res) => {
 router
   .route("/admin/results/studentdetails")
   .get(flash, isloggedin, async (req, res) => {
-    await db.query("SELECT * FROM studentdetails", async (error, response) => {
+    await db.query("SELECT * FROM year", async (error, response) => {
+      var arr = [];
       if (error) {
         console.log(error);
-      }else{
-        console.log(response);
+      } else {
+        for (let i = 0; i <= response.length - 1; i++) {
+          var image = {
+            year: response[i].year,
+          };
+          arr.push(image);
+        }
+        res.render("admin/results/studentdetails", { year: arr });
       }
-    })
-    res.render("admin/results/studentdetails");
+    });
   })
   .post(upload.single("studentimg"), async (req, res) => {
     await db.query(
@@ -982,6 +988,32 @@ router
   });
 // admin result images
 
+
+router.route("/year").post(async(req,res)=>{
+  await db.query(
+    "INSERT INTO year SET ?",(req.body),(err,response)=>{
+      if(err){
+        console.log(err);
+      }else{
+        req.flash("success","Year Successfully Added");
+        res.redirect('/admin/results/studentdetails');
+      }
+    }
+  )
+}).delete(async(req,res)=>{
+  await db.query(
+    "DELETE FROM year WHERE year = ?",
+    [req.body.year],
+    (err,response)=>{
+      if(err){
+        console.log(err);
+      }else{
+        req.flash("success","Year Successfully Deleted");
+        res.redirect('/admin/results/studentdetails');
+      }
+    }
+  )
+})
 router
   .route("/admin/results/studentupdate")
   .post(isloggedin, async (req, res) => {

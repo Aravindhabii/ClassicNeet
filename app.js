@@ -10,7 +10,7 @@ const db = require('./database');
 const methodOverride = require('method-override');
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
-db.connect((err) => {
+db.getConnection((err) => {
 	if (err) {
 		console.log(err);
 	} else {
