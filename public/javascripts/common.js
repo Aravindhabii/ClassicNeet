@@ -1,11 +1,3 @@
-// const marquee = document.querySelector('.marqueetext');
-// console.log(marquee);
-
-// marquee.addEventListener('onmouseenter', () => {
-// 	console.log('hover');
-// 	marquee.setAttribute('scrollamount', '0');
-// })
-
 // swiper js
 
 var swiper = new Swiper('.mySwiper', {
@@ -71,7 +63,6 @@ $(window).scroll(function () {
 					},
 					complete: function () {
 						$this.text(this.countNum);
-						//alert('finished');
 					}
 				}
 			);

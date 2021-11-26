@@ -1,6 +1,5 @@
 var main = document.querySelector('.galleryMain');
 var item = document.querySelectorAll('.galleryItem');
-// item.parentNode.children;
 function getPageList(totalPages, page, maxLength) {
 	function range(start, end) {
 		return Array.from(Array(end - start + 1), (_, i) => i + start);
