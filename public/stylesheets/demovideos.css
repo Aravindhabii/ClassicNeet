@@ -9,7 +9,12 @@ body.dark .chat {
 
 .Getyourvideos {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 4rem);
+}
+
+.Getyourvideos img {
+  width: 100%;
+  height: 100%;
 }
 .gridcontainer {
   position: relative;
@@ -83,16 +88,35 @@ iframe {
     width: 70%;
     grid-template-columns: repeat(1, 1fr);
   }
+  .Getyourvideos {
+    height: 70vh;
+  }
   
 }
 
 @media (max-width: 600px) {
+  .Getyourvideos {
+    height: 40vh;
+  }
   .grid {
     width: 90%;
     grid-template-columns: repeat(1, 1fr);
 
   }
+  .heading h1 {
+    margin: 5%;
+  }
  
   
 
 }
+@media (max-width: 400px) {
+  .Getyourvideos {
+    height: 30vh;
+  }
+ 
+ 
+  
+
+}
+  
