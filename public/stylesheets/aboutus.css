@@ -584,21 +584,8 @@ iframe {
 	/* border-radius: 30px 0 0 0; */
 }
 
-.apppage h2 {
-	position: absolute;
-	right: 44%;
-	top: 104px;
-	font-size: 38px;
-	font-weight: 600;
-}
-.apppage a img {
-	width: 20%;
-	height: 15%;
-	position: absolute;
-	top: 14rem;
-	right: 50%;
-	border-radius: 10px;
-}
+
+
 /* mobile view */
 .apppage {
 	position: relative;
@@ -607,35 +594,48 @@ iframe {
 	background: #c4c4c4a6;
 	border-radius: 30px;
 	display: flex;
+	/* flex-direction: column; */
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
 }
-.apppage a img {
-	width: 17%;
-	height: 15%;
-	position: absolute;
-	top: 15rem;
-	right: 54%;
-}
+
 .Messaging {
-	position: absolute;
-	left: 4%;
-	width: 24%;
-	border-radius: 10px;
+	width: 80%;
+
+}
+.appLeft {
+	width: 30%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+.appRight {
+	height: 100%;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: left;
+}
+.appRight h2 {
+	font-size: 2.5rem;
+	padding-right: 1rem;
+	z-index: 2;
+}
+.appRight img {
+	width: 100%;
+	height: 100%;
+}
+.appRight a {
+	width: 30%;
+
+	
 }
 
-@media(max-width: 1250px){
-	.apppage h2 {
-		right: 40%;
-		font-size: 34px;
-	} 
-	.apppage a img{
-		top: 13rem;
-		width: 20%;
-		right: 50%;
-	} 
-}
 
 /* popup0 */
 
@@ -701,13 +701,7 @@ iframe {
 	.timelinePara p {
 		padding-right: 3rem;
 	}
-	.apppage h2 {
-		position: absolute;
-		right: 37%;
-		top: 104px;
-		font-size: 34px;
-		font-weight: 600;
-	}
+	
 }
 @media(max-width:1110px){
 	iframe {
@@ -715,16 +709,7 @@ iframe {
 		width: 50vw;
 		height: 55vh;
 	}
-	.apppage h2 {
-		right: 41%;
-		font-size: 30px;
-	}
-	.apppage a img{
-		top: 13rem;
-		right: 50%;
-		width: 20%;
-	    height: 15%;
-	}
+	
 }
 @media (max-width: 1000px) {
 	iframe {
@@ -732,13 +717,7 @@ iframe {
 		width: 50vw;
 		height: 55vh;
 	}
-	.apppage h2 {
-		right: 40%;
-		font-size: 28px;
-	} 
-	.apppage a img{
-		top: 13rem;
-	} 
+	
 
 }
 
@@ -775,16 +754,7 @@ iframe {
 		width: 70vw;
 		height: 55vh;
 	}
-	.apppage h2 {
-		right: 4%;
-		font-size: 40px;
-	} 
-	.apppage a img{
-		top: 14rem;
-		width: 25%;
-	    height: 15%;
-		right: 29%;
-	} 
+
 	.vector1 {
 		display: none;
 	}
@@ -794,21 +764,43 @@ iframe {
 	.vector3 {
 		display: none;
 	}
-	.Messaging{
-		left: 5%;
-        width: 40%;
+	.appLeft {
+		width: 50%;
+	}
+	.appRight {
+		width: 50%;
+	}
+	.appRight h2 {
+		font-size: 2rem;
+	}
+	.appRight a {
+		width: 50%;
 	}
 }
-@media(max-width: 800px){
-	.apppage h2 {
-		right: 7%;
-		font-size: 26px;
-	} 
-	.apppage a img{
-		top: 14rem;
-		width: 25%;
-		right: 25%;
-	    height: 15%;
+@media(max-width: 700px){
+	.apppage {
+		flex-direction: column;
+		justify-content: space-evenly;
+	}
+	.appLeft{
+		height: 60%;
+		width: 100%;
+	}
+	.appRight {
+		height: 40%;
+		width: 100%;
+		align-items: center;
+	}
+	.appRight h2 {
+		font-size: 1.5rem;
+		text-align: center;
+	}
+	.appRight a {
+		width: 30%;
+	}
+	.Messaging {
+		width: 40%;
+		/* height: 80%; */
 	}
 }
 
@@ -876,31 +868,21 @@ iframe {
 		line-height: 2.3rem;
 		padding: 0rem 3rem;
 	}
-	.apppage h2 {
-		right: 16%;
-		font-size: 20px;
-	} 
-	.apppage a img{
-		top: 50%;
-		right: 20%;
-		width: 35%;
-	    height: 15%;
+	.Messaging {
+		width: 50%;
+		/* height: 80%; */
 	}
+	
+	
 }
 
 @media (max-width: 500px) {
 	.gallery {
 		margin-bottom: 0rem;
 	}
-	.apppage h2 {
-		right: 4%;
-		font-size: 20px;
-	} 
-	.apppage a img{
-		top: 50%;
-		right: 16%;
-		width: 39%;
-	    height: 15%;
+	.Messaging {
+		width: 60%;
+		/* height: 80%; */
 	}
 }
 
@@ -910,21 +892,7 @@ iframe {
 		width: 70vw;
 		height: 25vh;
 	}
-	.apppage h2 {
-		right: 18%;
-		font-size: 25px;
-		
-		top: 57%;
-	} 
-	.apppage a img{
-		top: 17rem;
-		width: 65%;
-	    height: 15%;
-		left: 18%;
-	} 
-	.apppage{
-		width: 90%;
-	}
+	
 	.vector1 {
 		display: none;
 	}
@@ -934,15 +902,12 @@ iframe {
 	.vector3 {
 		display: none;
 	}
-	.Messaging{
-		left: 23%;
-        width: 56%;
-		top: 4%;
-	}
+	
 	.dropdown{
 		width: 35%;
 	}
-	.apppage{
-		width: 85%;
+	.Messaging {
+		width: 70%;
+		/* height: 80%; */
 	}
 }
