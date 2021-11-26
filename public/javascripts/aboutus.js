@@ -25,23 +25,34 @@ exit.addEventListener('click', (e) => {
 
 const opt = document.querySelectorAll('.opt');
 
-window.addEventListener('load', () => {
-	document.querySelectorAll('#imageid').forEach((i) => {
-		i.src = i.src.replace('SAMPLE', document.querySelector('.dropdown').value);
-		document
-			.querySelector('.dropdown')
-			.setAttribute('value', document.querySelector('.dropdown').value);
+const pagination = async (folder, start) => {
+	const res = await fetch('/aboutus/pagination', {
+		method: 'POST',
+		body: JSON.stringify({
+			folder,
+			start
+		}),
+		headers: {
+			'Content-Type': 'application/json'
+		}
 	});
-});
+	const data = await res.json();
+	return data;
+};
 
-document.querySelector('.dropdown').addEventListener('change', () => {
-	document.querySelectorAll('#imageid').forEach((i) => {
-		i.src = i.src.replace(
-			document.querySelector('.dropdown').getAttribute('value'),
-			document.querySelector('.dropdown').value
-		);
+const next = document.querySelector('.next');
+const prev = document.querySelector('.prev');
+const galleryMain = document.querySelector('.galleryMain');
+
+window.addEventListener('load', async () => {
+	const imgs = await pagination(dropdown.value, 0);
+	imgs.forEach((img) => {
+		galleryMain.innerHTML += `<div class="galleryItem">
+			<img
+				id="imageid"
+				src="../images/gallery/${dropdown.value}/${img}"
+				alt=""
+			/>
+		</div>`;
 	});
-	document
-		.querySelector('.dropdown')
-		.setAttribute('value', document.querySelector('.dropdown').value);
 });
