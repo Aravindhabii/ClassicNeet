@@ -32,24 +32,12 @@
 		<section class="mainsection">
 			<div class="left"><%- include('../../layout/adminSideBar') %></div>
 			<div class="right" style="height: fit-content">
-				<select class="form-select" aria-label="Default select example">
-					<%# year.forEach(e => { %>
-						<option value="<%# e %> "><%# e %> </option>
-					<%# }) %>
-				</select>
-					<form action="/year" method="post" class="position-absolute p-3 d-flex flex-column justify-content-center align-items-center" style="z-index: 2; width: 10%;">
-						<div class="input-group d-flex flex-nowrap mb-3" style="width: 80%">
-							<span class="input-group-text" id="addon-wrapping">Add Year</span>
-							<input
-								type="date"
-								name="name"
-								class="form-control"
-								aria-label="Username"
-								aria-describedby="addon-wrapping"
-								id="uploadlink"
-								required
-							/>
-						</div>
+				<form action="/year" method="post" class="position-absolute p-3 d-flex flex-column justify-content-center align-items-center" style="z-index: 2; width: 10%;">
+						<select class="form-select" aria-label="Default select example">
+							<%# year.forEach(e => { %>
+								<option value="<%# e %> "><%# e %></option>
+							<%# }) %>
+						</select>
 						<button type="submit" class="btn btn-outline-primary">
 							Show
 						</button>
@@ -198,11 +186,17 @@
 						class="d-flex justify-content-center align-items-center flex-column"
 						style="width: 100%"
 					>
-						<select class="form-select" aria-label="Default select example">
-						<%# year.forEach(e => { %>
-							<option value="<%# e %> "><%# e %> </option>
-						<%# }) %>
-					  	</select>
+						<input
+							type="number"
+							name="name"
+							class="form-control"
+							aria-label="Username"
+							aria-describedby="addon-wrapping"
+							id="uploadlink"
+							min="2010"
+							max="2030"
+							required
+						/>
 						<div>
 							<button
 								type="button"

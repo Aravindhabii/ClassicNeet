@@ -9,11 +9,6 @@ body {
 	transition: all 0.5s ease;
 }
 
-input::-webkit-datetime-edit-month-field,
-::-webkit-datetime-edit-day-field {
-  display:none;
-}
-
 .downarrow {
 	height: 3rem;
 	width: 3rem;
