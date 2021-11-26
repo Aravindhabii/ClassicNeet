@@ -211,8 +211,10 @@ a.site-logo {
 }
 
 /* mobile breakpoint start */
-@media screen and (max-width: 400px) {
-	
+@media  (max-width: 400px) {
+	nav {
+		height: 4rem;
+	}
 	.nav2 {
 		width: 40%;
 	}
