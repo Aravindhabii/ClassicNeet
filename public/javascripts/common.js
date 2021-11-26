@@ -125,7 +125,7 @@ var swiper = new Swiper(".swipTop", {
 	  640: {
 		slidesPerView: 1,
 		slidesPerGroup: 1,
-		spaceBetween: 20,
+		spaceBetween: 30,
 	  },
 	  850: {
 		slidesPerView: 2,
