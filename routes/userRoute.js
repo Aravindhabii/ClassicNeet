@@ -585,14 +585,8 @@ router.route('/courses').get(async (req, res) => {
 
 router.route('/aboutus').get(async (req, res) => {
 	var folderArray = [];
-	var imgsArray = [];
-	const folders = fs.readdirSync('public/images/gallery');
-	var obj = {};
-	folders.forEach((folder) => {
+	fs.readdirSync('public/images/gallery').forEach((folder) => {
 		folderArray.push(folder);
-		const files = fs.readdirSync(`public/images/gallery/${folder}`);
-		imgsArray.push(files);
-		obj[folder] = fs.readdirSync(`public/images/gallery/${folder}`);
 	});
 	await db.query('SELECT * FROM history', async (error, response) => {
 		var arr = [];
@@ -606,9 +600,16 @@ router.route('/aboutus').get(async (req, res) => {
 				};
 				arr.push(cont);
 			}
-			res.render('aboutus', { content: arr, folderArray, imgsArray, obj });
+			res.render('aboutus', { content: arr, folderArray });
 		}
 	});
+});
+
+router.post('/aboutus/pagination', async (req, res) => {
+	const imgs = await fs
+		.readdirSync(`public/images/gallery/${req.body.folder}`)
+		.slice(req.body.start, req.body.start + 8);
+	res.json(imgs);
 });
 
 router
