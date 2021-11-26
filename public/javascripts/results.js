@@ -14,27 +14,47 @@ const swiper = new Swiper('.swiper', {
 		prevEl: '.swiper-button-prev'
 	}
 });
-
+const gridContainer = document.querySelector('.gridcontainer');
 document.querySelector(".dropdown").addEventListener("change", async (e) => {
-    // tbody.innerHTML = "";
+    console.log('drop workin');
+    gridContainer.innerHTML = "";
   
     loadDetails(1, "load", e.target.value);
     await fetch(
-      `/pagination/totalCount/${document.querySelector(".currentYear").value}`
+      `/pagination/totalCount/${document.querySelector(".dropdown").value}`
     )
       .then((response) => response.json())
       .then((data) => {
-        tbody.setAttribute("data-total", Math.ceil(data / 5));
+        gridContainer.setAttribute("data-total", Math.ceil(data / 5));
       });
-    if (tbody.getAttribute("data-total") > 1) {
+    if (gridContainer.getAttribute("data-total") > 1) {
       next.removeAttribute("disabled");
     } else {
       next.setAttribute("disabled", true);
     }
   });
-
+  const pagination = async (currentPage, currentYear) => {
+    console.log(currentPage, currentYear);
+    const res = await fetch("/pagination", {
+      method: "POST",
+      body: JSON.stringify({
+        page: currentPage,
+        year: currentYear,
+      }),
+      
+      headers: {
+        "Content-Type": "application/json",
+      },
+      
+    });
+    
+    const data = await res.json();
+    console.log(data);
+    return data;
+  };
 
   const loadDetails = async (page, type, year) => {
+      console.log(page, year);
     const details = await pagination(page, year);
     details.forEach((detail) => {
       const row = 
@@ -50,13 +70,14 @@ document.querySelector(".dropdown").addEventListener("change", async (e) => {
         </div>`;
         switch (type) {
         case "load":
-          tbody.innerHTML += row;
+        gridContainer.innerHTML += row;
+        console.log(row,'lol');
           break;
         case "next":
-          tbody.innerHTML += row;
+        gridContainer.innerHTML += row;
           break;
         case "prev":
-          tbody.innerHTML += row;
+        gridContainer.innerHTML += row;
           break;
       }
     });

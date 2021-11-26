@@ -202,9 +202,10 @@ footer {
 	position: relative;
 	width: 100%;
 	height: fit-content;
+	color: black;
 }
 
-footer.dark {
+body.dark footer {
 	color: white !important;
 }
 

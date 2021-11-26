@@ -212,9 +212,7 @@ a.site-logo {
 
 /* mobile breakpoint start */
 @media screen and (max-width: 400px) {
-	nav {
-		height: 6rem;
-	}
+	
 	.nav2 {
 		width: 40%;
 	}
