@@ -8,26 +8,29 @@ const userRoutes = require('./routes/userRoute');
 const authentication = require('./routes/authentication');
 const db = require('./database');
 const methodOverride = require('method-override');
+const cpmpression = require('compression');
+const compression = require('compression');
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
 function disconnect() {
 	db.getConnection((err) => {
 		if (err) {
 			console.log(err);
-			db.release()
-			disconnect()
+			db.release();
+			disconnect();
 		} else {
 			console.log('Mysql connected');
 		}
 	});
 }
 
-disconnect()
+disconnect();
 
 // handleDisconnect();
 
 const app = express();
 app.use(express.json());
+app.use(compression());
 
 const sessionConfig = {
 	secret: 'thisshouldbeasecret!',
