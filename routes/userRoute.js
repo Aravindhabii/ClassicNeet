@@ -1017,6 +1017,7 @@ router.route("/year").post(async(req,res)=>{
     }
   )
 })
+
 router
 	.route('/admin/results/studentupdate')
 	.post(isloggedin, async (req, res) => {
