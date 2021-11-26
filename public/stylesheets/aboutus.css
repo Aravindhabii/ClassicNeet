@@ -887,6 +887,24 @@ iframe {
 		width: 60%;
 		/* height: 80%; */
 	}
+	.timelineContent {
+		height: 640px;
+	}
+	.timelinePara {
+		height: 640px;
+	}
+	.timelinePara p {
+		/* line-height: 2rem; */
+		min-height: 160px;
+		font-size: 15px;
+	}
+	.timelineDiv {
+		height: 160px;
+		display: none;
+	}
+	.timelinePara p {
+		padding-right: 2rem;
+	}
 }
 
 @media (max-width: 400px) {
