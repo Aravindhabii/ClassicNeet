@@ -12,8 +12,7 @@ const cpmpression = require('compression');
 const compression = require('compression');
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
-function disconnect() {
-	db.getConnection((err) => {
+	db.connect((err) => {
 		if (err) {
 			console.log(err);
 			db.release();
@@ -22,9 +21,7 @@ function disconnect() {
 			console.log('Mysql connected');
 		}
 	});
-}
 
-disconnect();
 
 // handleDisconnect();
 

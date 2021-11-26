@@ -890,7 +890,7 @@ router.route('/results').get(async (req, res) => {
 router
   .route("/admin/results/studentdetails")
   .get(flash, isloggedin, async (req, res) => {
-    await db.query("SELECT * FROM year", async (error, response) => {
+    await db.query("SELECT * FROM studentdetails", async (error, response) => {
       var arr = [];
       if (error) {
         console.log(error);
@@ -901,7 +901,9 @@ router
           };
           arr.push(image);
         }
-        res.render("admin/results/studentdetails", { year: arr });
+		let uniqueChars = [...new Set(arr)];
+		console.log(uniqueChars);
+        res.render("admin/results/studentdetails", { year: uniqueChars });
       }
     });
   })
@@ -912,6 +914,7 @@ router
         name: req.body.name,
         collegename: req.body.collegeName,
         image: req.file.path,
+		year: req.body.year,
         cloudinaryname: req.file.filename.split("/")[1],
       },
       (err, response) => {
@@ -1014,6 +1017,7 @@ router.route("/year").post(async(req,res)=>{
     }
   )
 })
+
 router
 	.route('/admin/results/studentupdate')
 	.post(isloggedin, async (req, res) => {

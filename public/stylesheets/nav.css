@@ -14,6 +14,8 @@ nav {
 .nav2 {
 	display: flex;
 	align-items: center;
+  justify-content: center;
+  /* width: 35%; */
 }
 /* navbar regular css start */
 .navbar-area {
@@ -148,9 +150,7 @@ a.site-logo {
 	.nav-toggler span:after {
 		transform: translateY(5px);
 	}
-	.nav2 {
-		width: 25%;
-	}
+
 
 	.container {
 		max-width: 720px;
@@ -202,6 +202,9 @@ a.site-logo {
 		margin-bottom: 15px;
 	}
 	/* navbar css for mobile end */
+  .nav2 {
+    width: 35%;
+  }
 }
 
 /* mobile breakpoint start */
@@ -209,6 +212,9 @@ a.site-logo {
 	nav {
 		height: 6rem;
 	}
+  .nav2 {
+    width: 40%;
+  }
 	a.site-logo {
 		width: 10rem;
 	}

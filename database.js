@@ -3,7 +3,7 @@ const mysql = require('mysql');
 const dotenv = require('dotenv');
 dotenv.config({ path: './.env' });
 
-const db = mysql.createPool({
+const db = mysql.createConnection({
 	connectionLimit : 1000,
     connectTimeout  : 60 * 60 * 1000,
     acquireTimeout  : 60 * 60 * 1000,

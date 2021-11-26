@@ -32,8 +32,8 @@ body{
     top: 20%;
 }
 .logo img{
-    width:11% ;
-    height: 10%;
+    width:10% ;
+    height: 11%;
     position: absolute;
     top: 2%;
     left: 2%;
@@ -183,7 +183,7 @@ button{
 }
 @media(max-width:600px){
     button{
-        width: 25%;
+        width: 49%;
         left: 25%;
         top: 60%;
     }
@@ -229,21 +229,29 @@ button{
 }
 @media(max-width:400px){
     button{
-        width: 66%;
-        left: 19%;
-        top: 62%;
+        width: 69%;
+        left: 15%;
+        top: 60%;
+        font-size: 25px;
     }
     .content h1{
-        font-size: 109px;
+        font-size: 90px;
         position: absolute;
         top: 19%;
         left: 9%;
     }
     .content p{
-        font-size: 34px;
+        font-size: 29px;
         position: absolute;
-        top: 42%;
+        top: 40%;
         left: 9%;
+    }
+    .logo img{
+        width:35% ;
+        height: 11%;
+        position: absolute;
+        top: 2%;
+        left: 2%;
     }
 }
 
