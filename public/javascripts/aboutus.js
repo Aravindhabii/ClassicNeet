@@ -44,8 +44,8 @@ const next = document.querySelector('.next');
 const prev = document.querySelector('.prev');
 const galleryMain = document.querySelector('.galleryMain');
 
-const loadImages = () => {
-	const imgs = await pagination(dropdown.value, );
+const loadImages = (start) => {
+	const imgs = await pagination(dropdown.value, start);
 	imgs.forEach((img) => {
 		galleryMain.innerHTML += `<div class="galleryItem">
 			<img
@@ -54,20 +54,20 @@ const loadImages = () => {
 				alt=""
 			/>
 		</div>`;
-		switch (type) {
-			case 'load':
-				tbody.innerHTML += row;
-				break;
-			case 'next':
-				tbody.innerHTML += row;
-				break;
-			case 'prev':
-				tbody.innerHTML += row;
-				break;
-		}
+		// switch (type) {
+		// 	case 'load':
+		// 		galleryMain.innerHTML += row;
+		// 		break;
+		// 	case 'next':
+		// 		galleryMain.innerHTML += row;
+		// 		break;
+		// 	case 'prev':
+		// 		galleryMain.innerHTML += row;
+		// 		break;
+		// }
 	});
 };
 
 window.addEventListener('load', async () => {
-	loadImages();
+	loadImages(0);
 });
