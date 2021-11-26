@@ -10,7 +10,7 @@
 	text-align: center;
 	font-size: 16px;
 	font-weight: 600;
-	margin-bottom: 2rem;
+	margin: 2rem 0rem;
 	left: 50%;
 	transform: translateX(-50%);
 	
@@ -48,7 +48,7 @@
 
 .swiper {
 	width: 100%;
-	height: 100vh;
+	height: calc(100vh - 4rem);
 }
 body {
 	background-color: EEEEEE;
@@ -64,7 +64,7 @@ body.dark .chat {
 }
 
 .swiper-slide img {
-	height: 90vh;
+	height: 100%;
 	width: 100%;
 }
 
@@ -127,9 +127,7 @@ body.dark .chat {
 
 	/* -webkit-box-reflect: below 0 linear-gradient(transparent, white); */
 }
-.nameStudent {
-	padding: .5rem;
-}
+
 .scoreStudent {
 	font-size: 1.1rem;
 	text-align: center;
@@ -196,6 +194,7 @@ body.dark .chat {
 }
 .gridbox > span > p {
 	color: black;
+	font-size: 1.3rem;
 }
 .gridbox > span > h3 {
 	font-size: 1.3rem;
@@ -308,9 +307,16 @@ body.dark .gridbox > span > h3 {
 	
 
 @media (max-width: 800px) {
+	.dropdown {
+		width: 20%;
+	}
+	.swiper {
+		height: 70vh;
+	}
 	.swiper-slide img {
-		object-fit: cover;
-		background-position: center;
+		
+		width: 100%;
+		height: 100%;
 	}
 	.gridcontainer {
 		
@@ -318,6 +324,9 @@ body.dark .gridbox > span > h3 {
 	}
 }
 @media (max-width:700px) {
+	.swiper {
+		height: 60vh;
+	}
 	.gridbox {
 		height: 18rem;
 		width:14rem;	
@@ -325,25 +334,59 @@ body.dark .gridbox > span > h3 {
 	.gridbox > span > h3 {
 		font-size: 1rem;
 	}
+	.gridbox > span > p {
+		font-size: 1rem;
+	}
 }
 @media (max-width: 600px) {
+	
+	.swiper {
+		height: 40vh;
+	}
+
 	.pagination li {
 		margin: 1rem 0.5rem;
 		padding: 0.2rem 0.5rem;
 		font-size: 13px;
 	}
 	.gridbox {
-		height: 16rem;
-		width:12rem;	
+		height: 15rem;
+		width:11rem;	
 	}
-	
+	.gridbox > span > h3 {
+		font-size: 0.8rem;
+		padding: .3rem;
+	}
+	.gridbox > span > p {
+		font-size: 0.8rem;
+		padding: .3rem;
+	}
 	
 }
 @media (max-width: 450px) {
+	.swiper {
+		height: 30vh;
+	}
 	.gridbox {
 		height: 14rem;
 		width:10rem;	
 	}
+}
+@media (max-width: 400px) {
+	.gridcontainer {
+		grid-row-gap: 1rem;
+	}
+	.gridbox {
+		height: 12rem;
+		width:8rem;	
+	}
+	.gridbox > span > h3 {
+		font-size: 0.7rem;
+	}
+	.gridbox > span > p {
+		font-size: 0.7rem;
+	}
+	
 }
 
 
