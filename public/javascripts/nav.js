@@ -80,6 +80,5 @@ document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
 
 const darkThemeMq = window.matchMedia('(prefers-color-scheme: dark)');
 if (darkThemeMq.matches) {
-	console.log('dark mode');
 	toggleDarkTheme();
 }
