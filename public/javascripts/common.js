@@ -115,7 +115,7 @@ var swiper = new Swiper(".swipTop", {
 	loop: true,
 	autoplay: true,
 	loopFillGroupWithBlank: false,
-	spaceBetween: 10,
+	
   
   navigation: {
 	nextEl: ".swiper-button-next",

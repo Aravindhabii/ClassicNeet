@@ -48,6 +48,7 @@ body.dark .chat {
 }
 .parentVector h1 {
 	font-size: 3rem;
+	margin-bottom: 1.5rem;
 	position: relative;
 }
 .cardMain {
@@ -113,13 +114,24 @@ body.dark .chat {
 	}
 }
 @media (max-width: 800px) {
-	.cardMain {
-		grid-template-columns: repeat(1, 1fr);
+	.card {
+		height: 240px;
+		width: 200px;
 	}
 }
 @media (max-width: 600px) {
 	.vector h1 {
-		font-size: 1.5rem;
+		font-size: 2rem;
+		top: 40%;
+	}
+	.parentVector h1 {
+		font-size: 2rem;
+	}
+	.video {
+		height: 40%;
+	}
+	.cardMain {
+		margin-bottom: 4rem;
 	}
 }
 	
@@ -127,11 +139,24 @@ body.dark .chat {
 @media (max-width: 500px) {
 	.cardMain {
 		margin-top: 3rem;
+		grid-row-gap: 5rem;
+	}
+	.card {
+		height: 220px;
+		width: 160px;
+	}
+	.profile {
+		width:60%;
+		height: 45%;
 	}
 }
 @media (max-width: 400px) {
+	.cardMain {
+		margin-top: 3rem;
+		grid-row-gap: 4rem;
+	}
 	.card {
-		height: 320px;
-		width: 300px;
+		height: 200px;
+		width: 140px;
 	}
 }
