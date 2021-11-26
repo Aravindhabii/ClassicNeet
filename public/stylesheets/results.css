@@ -327,6 +327,7 @@ body.dark .gridbox > span > h3 {
 	}
 }
 @media (max-width: 600px) {
+
 	.pagination li {
 		margin: 1rem 0.5rem;
 		padding: 0.2rem 0.5rem;
