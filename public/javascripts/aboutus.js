@@ -44,8 +44,8 @@ const next = document.querySelector('.next');
 const prev = document.querySelector('.prev');
 const galleryMain = document.querySelector('.galleryMain');
 
-window.addEventListener('load', async () => {
-	const imgs = await pagination(dropdown.value, 0);
+const loadImages = (start) => {
+	const imgs = await pagination(dropdown.value, start);
 	imgs.forEach((img) => {
 		galleryMain.innerHTML += `<div class="galleryItem">
 			<img
@@ -54,5 +54,20 @@ window.addEventListener('load', async () => {
 				alt=""
 			/>
 		</div>`;
+		// switch (type) {
+		// 	case 'load':
+		// 		galleryMain.innerHTML += row;
+		// 		break;
+		// 	case 'next':
+		// 		galleryMain.innerHTML += row;
+		// 		break;
+		// 	case 'prev':
+		// 		galleryMain.innerHTML += row;
+		// 		break;
+		// }
 	});
+};
+
+window.addEventListener('load', async () => {
+	loadImages(0);
 });
