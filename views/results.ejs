@@ -49,8 +49,9 @@
 				aria-label=".form-select-lg example"
 				data-select=""
 				>
-				
-				  <option value="">2020</option>
+					<% year.forEach((e,i) => { %>
+						<option value="<%= e %>" ><%= e %></option>
+					<% }) %>
 				
 			
 			  </select>

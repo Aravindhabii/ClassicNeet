@@ -15,289 +15,67 @@ const swiper = new Swiper('.swiper', {
 	}
 });
 
-//toppers
-
-// const box = document.querySelectorAll('.refbox');
-// const name1 = document.querySelectorAll('.nameStudent');
-// const score = document.querySelectorAll('.scoreStudent');
-// const img = document.querySelectorAll('.imgTopper');
-// const main = document.querySelector('.gridcontainer');
-// const card = document.querySelectorAll('.gridbox');
-// const arr = [];
-
-// box.forEach((n) => {
-// 	arr.push({
-// 		name: n.getAttribute('data-name'),
-// 		score: n.getAttribute('data-score'),
-// 		img: n.getAttribute('data-img')
-// 	});
-// });
-
-// var count = 0;
-
-// window.addEventListener('load', () => {
-// 	if (arr[count]) {
-// 		name1[0].innerText = arr[count].name;
-// 		score[0].innerText = arr[count].score;
-// 		card[0].classList.add('gridanime1');
-// 		img[0].src = arr[count].img;
-// 		count++;
-// 	} else {
-// 		count = 0;
-// 		name1[0].innerText = arr[count].name;
-// 		score[0].innerText = arr[count].score;
-// 		img[0].src = arr[count].img;
-// 		card[0].classList.add('gridanime1');
-// 		count++;
-// 	}
-
-// 	if (arr[count]) {
-// 		name1[1].innerText = arr[count].name;
-// 		score[1].innerText = arr[count].score;
-// 		img[1].src = arr[count].img;
-// 		card[1].classList.add('gridanime2');
-// 		count++;
-// 	} else {
-// 		count = 0;
-// 		name1[1].innerText = arr[count].name;
-// 		score[1].innerText = arr[count].score;
-// 		img[1].src = arr[count].img;
-// 		card[1].classList.add('gridanime2');
-// 		count++;
-// 	}
-// 	if (arr[count]) {
-// 		name1[2].innerText = arr[count].name;
-// 		score[2].innerText = arr[count].score;
-
-// 		img[2].src = arr[count].img;
-// 		card[2].classList.add('gridanime1');
-// 		count++;
-// 	} else {
-// 		count = 0;
-// 		name1[2].innerText = arr[count].name;
-// 		score[2].innerText = arr[count].score;
-// 		img[2].src = arr[count].img;
-// 		card[2].classList.add('gridanime1');
-// 		count++;
-// 	}
-// 	if (arr[count]) {
-// 		name1[3].innerText = arr[count].name;
-// 		score[3].innerText = arr[count].score;
-// 		img[3].src = arr[count].img;
-// 		card[3].classList.add('gridanime2');
-// 		count++;
-// 	} else {
-// 		count = 0;
-// 		name1[3].innerText = arr[count].name;
-// 		score[3].innerText = arr[count].score;
-// 		img[3].src = arr[count].img;
-// 		card[3].classList.add('gridanime2');
-// 		count++;
-// 	}
-// 	if (arr[count]) {
-// 		name1[4].innerText = arr[count].name;
-// 		score[4].innerText = arr[count].score;
-// 		img[4].src = arr[count].img;
-// 		card[4].classList.add('gridanime1');
-// 		count++;
-// 	} else {
-// 		count = 0;
-// 		name1[4].innerText = arr[count].name;
-// 		score[4].innerText = arr[count].score;
-// 		img[4].src = arr[count].img;
-// 		card[4].classList.add('gridanime1');
-// 		count++;
-// 	}
-// 	if (arr[count]) {
-// 		name1[5].innerText = arr[count].name;
-// 		score[5].innerText = arr[count].score;
-// 		img[5].src = arr[count].img;
-// 		card[5].classList.add('gridanime2');
-// 		count++;
-// 	} else {
-// 		count = 0;
-// 		name1[5].innerText = arr[count].name;
-// 		score[5].innerText = arr[count].score;
-// 		img[5].src = arr[count].img;
-// 		card[5].classList.add('gridanime2');
-// 		count++;
-// 	}
-// 	if (arr[count]) {
-// 		name1[6].innerText = arr[count].name;
-// 		score[6].innerText = arr[count].score;
-// 		img[6].src = arr[count].img;
-// 		card[6].classList.add('gridanime1');
-// 		count++;
-// 	} else {
-// 		count = 0;
-// 		name1[6].innerText = arr[count].name;
-// 		score[6].innerText = arr[count].score;
-// 		img[6].src = arr[count].img;
-// 		card[6].classList.add('gridanime1');
-// 		count++;
-// 	}
-// 	if (arr[count]) {
-// 		name1[7].innerText = arr[count].name;
-// 		score[7].innerText = arr[count].score;
-// 		img[7].src = arr[count].img;
-// 		card[7].classList.add('gridanime2');
-// 		count++;
-// 	} else {
-// 		count = 0;
-// 		name1[7].innerText = arr[count].name;
-// 		score[7].innerText = arr[count].score;
-// 		img[7].src = arr[count].img;
-// 		card[7].classList.add('gridanime2');
-// 		count++;
-// 	}
-// 	if (arr[count]) {
-// 		name1[8].innerText = arr[count].name;
-// 		score[8].innerText = arr[count].score;
-// 		img[8].src = arr[count].img;
-// 		card[8].classList.add('gridanime1');
-// 		count++;
-// 	} else {
-// 		count = 0;
-// 		name1[8].innerText = arr[count].name;
-// 		score[8].innerText = arr[count].score;
-// 		img[8].src = arr[count].img;
-// 		card[8].classList.add('gridanime1');
-// 		count++;
-// 	}
-// });
-// setInterval(() => {
-// 	if (arr[count]) {
-// 		name1[0].innerText = arr[count].name;
-// 		score[0].innerText = arr[count].score;
-// 		card[0].classList.add('gridanime1');
-// 		img[0].src = arr[count].img;
-// 		count++;
-// 	} else {
-// 		count = 0;
-// 		name1[0].innerText = arr[count].name;
-// 		score[0].innerText = arr[count].score;
-// 		img[0].src = arr[count].img;
-// 		card[0].classList.add('gridanime1');
-// 		count++;
-// 	}
-
-// 	if (arr[count]) {
-// 		name1[1].innerText = arr[count].name;
-// 		score[1].innerText = arr[count].score;
-// 		img[1].src = arr[count].img;
-// 		card[1].classList.add('gridanime2');
-// 		count++;
-// 	} else {
-// 		count = 0;
-// 		name1[1].innerText = arr[count].name;
-// 		score[1].innerText = arr[count].score;
-// 		img[1].src = arr[count].img;
-// 		card[1].classList.add('gridanime2');
-// 		count++;
-// 	}
-// 	if (arr[count]) {
-// 		name1[2].innerText = arr[count].name;
-// 		score[2].innerText = arr[count].score;
-
-// 		img[2].src = arr[count].img;
-// 		card[2].classList.add('gridanime1');
-// 		count++;
-// 	} else {
-// 		count = 0;
-// 		name1[2].innerText = arr[count].name;
-// 		score[2].innerText = arr[count].score;
-// 		img[2].src = arr[count].img;
-// 		card[2].classList.add('gridanime1');
-// 		count++;
-// 	}
-// 	if (arr[count]) {
-// 		name1[3].innerText = arr[count].name;
-// 		score[3].innerText = arr[count].score;
-// 		img[3].src = arr[count].img;
-// 		card[3].classList.add('gridanime2');
-// 		count++;
-// 	} else {
-// 		count = 0;
-// 		name1[3].innerText = arr[count].name;
-// 		score[3].innerText = arr[count].score;
-// 		img[3].src = arr[count].img;
-// 		card[3].classList.add('gridanime2');
-// 		count++;
-// 	}
-// 	if (arr[count]) {
-// 		name1[4].innerText = arr[count].name;
-// 		score[4].innerText = arr[count].score;
-// 		img[4].src = arr[count].img;
-// 		card[4].classList.add('gridanime1');
-// 		count++;
-// 	} else {
-// 		count = 0;
-// 		name1[4].innerText = arr[count].name;
-// 		score[4].innerText = arr[count].score;
-// 		img[4].src = arr[count].img;
-// 		card[4].classList.add('gridanime1');
-// 		count++;
-// 	}
-// 	if (arr[count]) {
-// 		name1[5].innerText = arr[count].name;
-// 		score[5].innerText = arr[count].score;
-// 		img[5].src = arr[count].img;
-// 		card[5].classList.add('gridanime2');
-// 		count++;
-// 	} else {
-// 		count = 0;
-// 		name1[5].innerText = arr[count].name;
-// 		score[5].innerText = arr[count].score;
-// 		img[5].src = arr[count].img;
-// 		card[5].classList.add('gridanime2');
-// 		count++;
-// 	}
-// 	if (arr[count]) {
-// 		name1[6].innerText = arr[count].name;
-// 		score[6].innerText = arr[count].score;
-// 		img[6].src = arr[count].img;
-// 		card[6].classList.add('gridanime1');
-// 		count++;
-// 	} else {
-// 		count = 0;
-// 		name1[6].innerText = arr[count].name;
-// 		score[6].innerText = arr[count].score;
-// 		img[6].src = arr[count].img;
-// 		card[6].classList.add('gridanime1');
-// 		count++;
-// 	}
-// 	if (arr[count]) {
-// 		name1[7].innerText = arr[count].name;
-// 		score[7].innerText = arr[count].score;
-// 		img[7].src = arr[count].img;
-// 		card[7].classList.add('gridanime2');
-// 		count++;
-// 	} else {
-// 		count = 0;
-// 		name1[7].innerText = arr[count].name;
-// 		score[7].innerText = arr[count].score;
-// 		img[7].src = arr[count].img;
-// 		card[7].classList.add('gridanime2');
-// 		count++;
-// 	}
-// 	if (arr[count]) {
-// 		name1[8].innerText = arr[count].name;
-// 		score[8].innerText = arr[count].score;
-// 		img[8].src = arr[count].img;
-// 		card[8].classList.add('gridanime1');
-// 		count++;
-// 	} else {
-// 		count = 0;
-// 		name1[8].innerText = arr[count].name;
-// 		score[8].innerText = arr[count].score;
-// 		img[8].src = arr[count].img;
-// 		card[8].classList.add('gridanime1');
-// 		count++;
-// 	}
-// }, 10000);
+document.querySelector(".dropdown").addEventListener("change", async (e) => {
+    // tbody.innerHTML = "";
+  
+    loadDetails(1, "load", e.target.value);
+    await fetch(
+      `/pagination/totalCount/${document.querySelector(".currentYear").value}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        tbody.setAttribute("data-total", Math.ceil(data / 5));
+      });
+    if (tbody.getAttribute("data-total") > 1) {
+      next.removeAttribute("disabled");
+    } else {
+      next.setAttribute("disabled", true);
+    }
+  });
 
 
-//pagination
+  const loadDetails = async (page, type, year) => {
+    const details = await pagination(page, year);
+    details.forEach((detail) => {
+      const row = 
+      `<div class = "gridbox">
+            <div class="imgDesign">
+							
+				<img class="imgTopper" src="${detail.image}" />
+			</div>
+            <span class="griditem1span">
+                <h3 class="nameStudent">${detail.name}</h3>
+				<p class="scoreStudent">${detail.collegename}</p
+			></span>
+        </div>`;
+        switch (type) {
+        case "load":
+          tbody.innerHTML += row;
+          break;
+        case "next":
+          tbody.innerHTML += row;
+          break;
+        case "prev":
+          tbody.innerHTML += row;
+          break;
+      }
+    });
+    return details.length;
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function getPageList(totalPages,page,maxLength) {
