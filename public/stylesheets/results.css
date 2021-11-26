@@ -337,6 +337,7 @@ body.dark .gridbox > span > h3 {
 	}
 }
 @media (max-width: 600px) {
+	
 	.swiper {
 		height: 40vh;
 	}

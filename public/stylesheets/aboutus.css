@@ -805,6 +805,9 @@ iframe {
 }
 
 @media screen and (max-width: 600px) {
+	.video h1 {
+		top: 60%;
+	}
 	.slide {
 		height: fit-content;
 	}
