@@ -10,6 +10,7 @@
 			crossorigin="anonymous"
 		></script>
 		<link rel="stylesheet" href="stylesheets/chatbot.css" />
+		<link rel="stylesheet" href="stylesheets/pagination.css" />
 		<title>Aboutus</title>
 		<style>
 			.aboutusnav {
@@ -84,74 +85,7 @@
 				></iframe>
 			</div>
 		</section>
-		<!-- Timeline -->
-		<!-- <section class="timeline">
-      <h1>Our Journey So Far</h1>
-      <img src="../images/aboutus/group19.png" class="book" alt="" />
-      <div class="cards1">
-        <p>
-          <span class="span"
-            ><img
-              src="https://img.icons8.com/external-itim2101-lineal-color-itim2101/64/000000/external-doctor-medical-itim2101-lineal-color-itim2101-2.png"
-          /></span>
-          <span class="span"
-            ><img class="do" src="../images/aboutus/dot2.png"
-          /></span>
-          <span
-            >48 Students got MBBS SEATS through Govt Quota in Tamilnadu Medical
-            Counselling <span style="color: red"> 2017</span></span
-          >
-        </p>
-      </div>
-      <div class="cards2">
-        <p>
-          <span class="span"
-            ><img
-              src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-trophy-reward-and-badges-justicon-flat-justicon-1.png"
-          /></span>
-          <span class="span"
-            ><img class="do" src="../images/aboutus/dot2.png"
-          /></span>
-          <span
-            >Salem District CEO Mrs. Gnanagowri has honoured our Student
-            Mr.Sarathkumar for securing NEET first mark in Salem Region in NEET
-            <span style="color: red"> 2018</span></span
-          >
-        </p>
-      </div>
-      <div class="cards3">
-        <p>
-          <span class="span"
-            ><img
-              src="https://img.icons8.com/color/64/000000/student-female.png"
-          /></span>
-          <span class="span"
-            ><img class="do" src="../images/aboutus/dot2.png"
-          /></span>
-          <span>
-            Salem District Collector Mrs. Rohini has honoured our Student
-            Ms.Elakkiya G for securing NEET first mark in Salem Region in NEET
-            <span style="color: red"> 2019</span></span
-          >
-        </p>
-      </div>
-      <div class="cards4">
-        <p>
-          <span class="span"
-            ><img
-              src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/64/000000/external-first-success-flatart-icons-flat-flatarticons.png"
-          /></span>
-          <span class="span"
-            ><img class="do" src="../images/aboutus/dot2.png"
-          /></span>
-          <span>
-            Our honourable CM appreciated our CLASSIC NEET student Ms.Sreya
-            Priyadharshini for securing NEET first mark in Salem Region in NEET
-            <span style="color: red"> 2020</span>.</span
-          >
-        </p>
-      </div>
-    </section> -->
+
 		<h1 class="ourjourney">Our Journey So Far</h1>
 		<section class="timelineNew">
 			<img
@@ -218,27 +152,9 @@
 				<% }) %>
 			</select>
 
-			<!-- <div class="btngrp"><div class="prev-btn btn" data-year="2019">Previous Year</div><div data-year="2020" class="current-btn btn">Next Year</div></div> -->
 			<section class="galleryMain"></section>
-			<div class="buttondiv mb-2">
-				<button type="button" class="btn btn-primary px-4 mx-1 prev" disabled>
-					Previous
-				</button>
-				<button type="button" disabled class="btn btn-primary px-4 mx-1 next">
-					&nbsp;&nbsp;Next&nbsp;&nbsp;
-				</button>
-			</div>
-
-			<div class="pagination">
-				<!-- <li class="page-item previous-page disable"><a class="page-link" href="#">prev</a></li>
-            <li class="page-item current-page active"><a class="page-link" href="#">1</a></li>
-            <li class="page-item dots"><a class="page-link" href="#">...</a></li>
-            <li class="page-item current-page"><a class="page-link" href="#">5</a></li>
-            <li class="page-item current-page"><a class="page-link" href="#">6</a></li>
-            <li class="page-item dots"><a class="page-link" href="#">...</a></li>
-            <li class="page-item current-page"><a class="page-link" href="#">10</a></li>
-            <li class="page-item next-page"><a class="page-link" href="#">Next</a></li> -->
-			</div>
+			<div id="pagination-container"></div>
+		
 		</section>
 		<section class="app">
 			<div class="apppage">
@@ -266,7 +182,16 @@
       </div> -->
 		</section>
 		<%- include('./layout/footer') %>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+			referrerpolicy="no-referrer"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"
+			integrity="sha512-1zzZ0ynR2KXnFskJ1C2s+7TIEewmkB2y+5o/+ahF7mwNj9n3PnzARpqalvtjSbUETwx6yuxP5AJXZCpnjEJkQw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
 		<script src="javascripts/aboutus.js"></script>
 		<!-- <script src="javascripts/pagination.js"></script> -->
 		<script src="javascripts/nav.js"></script>
