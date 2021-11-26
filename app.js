@@ -20,10 +20,6 @@ db.connect((err) => {
 		console.log('Mysql connected');
 	}
 });
-	
-
-
-// handleDisconnect();
 
 const app = express();
 app.use(express.json());
@@ -51,14 +47,6 @@ app.use(flash());
 
 app.use('/', userRoutes);
 app.use('/', authentication);
-
-// app.get('/fun', (req, res) => {
-// 	req.flash('success', 'you have been successfully loggedin');
-// 	res.render('404error');
-// });
-// app.get('/stories', (req, res) => {
-// 	res.render('successStories');
-// });
 
 app.get('*', (req, res) => {
 	res.render('404error');

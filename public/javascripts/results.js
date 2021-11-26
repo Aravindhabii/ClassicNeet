@@ -3,11 +3,6 @@ const swiper = new Swiper('.swiper', {
 	direction: 'horizontal',
 	loop: true,
 
-	// // If we need pagination
-	// pagination: {
-	// 	el: '.swiper-pagination'
-	// },
-
 	// Navigation arrows
 	navigation: {
 		nextEl: '.swiper-button-next',
@@ -16,9 +11,6 @@ const swiper = new Swiper('.swiper', {
 });
 const gridContainer = document.querySelector('.gridcontainer');
 document.querySelector(".dropdown").addEventListener("change", async (e) => {
-    console.log('drop workin');
-    gridContainer.innerHTML = "";
-  
     loadDetails(1, "load", e.target.value);
     await fetch(
       `/pagination/totalCount/${document.querySelector(".dropdown").value}`
@@ -166,12 +158,7 @@ $(function(){
         $("<img>").attr({src: "https://img.icons8.com/flat-round/64/000000/arrow--v1.png"}).addClass("btnItem2").addClass("prev-page1")
     )     
     $(".gridcontainer").show();
-    // const dropdown = document.querySelector('.dropdown');
 
-    // dropdown.addEventListener('change', (e) => {
-    //     showPage(1);
-	
-    // });
     showPage(1)
 
     $(document).on("click", ".pagination li.current-page:not(.active)",function(){

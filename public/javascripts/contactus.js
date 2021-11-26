@@ -23,15 +23,11 @@ phonenum.addEventListener('input', (e) => {
 		}
 	}
 
-	// console.log(
-	// 	parseInt(e.target.value.substr(e.target.value.length - 1, e.target.value))
-	// );
 });
 var inputs = document.querySelectorAll('.form-input');
 
 var submit = document.querySelector('.submit');
 document.querySelector('form').addEventListener('submit', (e) => {
-	// e.preventDefault();
 	var nameError = document.querySelector('.nameError');
 	var nameInput = document.querySelector('.name-input');
 	var phonenum = document.querySelector('.phoneError');
@@ -68,7 +64,6 @@ document.querySelector('form').addEventListener('submit', (e) => {
 		}
 		if (input.value == '') {
 			e.preventDefault();
-			// submit.style.backgroundColor = '#ff0000';
 		}
 	});
 });
