@@ -17,18 +17,14 @@ body.dark {
 body.dark .chat {
 	color: black !important;
 }
-
-.vector {
-	position: relative;
-	top: -35px;
-	width: 100%;
-	background: url('../images/successStories/Vector8.png');
-	height: 25.5rem;
-	z-index: -1;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+.headerPic {
+	width: 100vw;
+}
+.studentHeader {
+	text-align: center;
+	margin-bottom: 8rem;
+	font-size: 3rem;
+	
 }
 .parentVector {
 	position: relative;
@@ -120,9 +116,10 @@ body.dark .chat {
 	}
 }
 @media (max-width: 600px) {
-	.vector h1 {
+	.studentHeader {
 		font-size: 2rem;
-		top: 40%;
+		margin-bottom: 5rem;
+		
 	}
 	.parentVector h1 {
 		font-size: 2rem;
@@ -132,6 +129,9 @@ body.dark .chat {
 	}
 	.cardMain {
 		margin-bottom: 4rem;
+	}
+	.card h3 {
+		font-size: 1rem;
 	}
 }
 	
@@ -151,12 +151,19 @@ body.dark .chat {
 	}
 }
 @media (max-width: 400px) {
+	.studentHeader {
+		font-size: 1.5rem;
+		
+	}
+	.parentVector h1 {
+		font-size: 1.5rem;
+	}
 	.cardMain {
 		margin-top: 3rem;
 		grid-row-gap: 4rem;
 	}
 	.card {
-		height: 200px;
-		width: 140px;
+		height: 190px;
+		width: 130px;
 	}
 }

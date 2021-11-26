@@ -1,3 +1,11 @@
+// const marquee = document.querySelector('.marqueetext');
+// console.log(marquee);
+
+// marquee.addEventListener('onmouseenter', () => {
+// 	console.log('hover');
+// 	marquee.setAttribute('scrollamount', '0');
+// })
+
 // swiper js
 
 var swiper = new Swiper('.mySwiper', {
@@ -125,7 +133,7 @@ var swiper = new Swiper(".swipTop", {
 	  640: {
 		slidesPerView: 1,
 		slidesPerGroup: 1,
-		spaceBetween: 20,
+		spaceBetween: 30,
 	  },
 	  850: {
 		slidesPerView: 2,

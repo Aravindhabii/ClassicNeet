@@ -805,6 +805,9 @@ iframe {
 }
 
 @media screen and (max-width: 600px) {
+	.video h1 {
+		top: 60%;
+	}
 	.slide {
 		height: fit-content;
 	}
@@ -883,6 +886,24 @@ iframe {
 	.Messaging {
 		width: 60%;
 		/* height: 80%; */
+	}
+	.timelineContent {
+		height: 640px;
+	}
+	.timelinePara {
+		height: 640px;
+	}
+	.timelinePara p {
+		/* line-height: 2rem; */
+		min-height: 160px;
+		font-size: 15px;
+	}
+	.timelineDiv {
+		height: 160px;
+		display: none;
+	}
+	.timelinePara p {
+		padding-right: 2rem;
 	}
 }
 

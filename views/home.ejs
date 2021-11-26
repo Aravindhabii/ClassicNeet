@@ -76,7 +76,7 @@
 
 							</div>
 							<div class="scroll">
-								<marquee class="marqueetext" vspace="30%" onmousedown="stop();" onmouseup="start();">
+								<marquee class="marqueetext" vspace="30%" onmousedown="start();" onmouseup="stop();">
 									<p>
 										Admissions open for NEET Repeater 2022 New batch <a href="/contactus">JOIN NOW
 										</a> &nbsp;
@@ -97,10 +97,13 @@
 							<marquee class="news-box" direction="up" scrollamount="5" onmousedown="stop();"
 								onmouseup="start();">
 								<% latestupdates.forEach(update=> { %>
-									<a class="p" href="<%= update.link1 %>" target="_blank">
+									<span class="p">
 										<%= update.link %>
-									</a>
-									<% }) %>
+										<a  href="<%= update.link1 %>" target="_blank">
+											-Click here
+										</a>
+									</span>
+								<% }) %>
 							</marquee>
 						</div>
 						<div class="div-1">

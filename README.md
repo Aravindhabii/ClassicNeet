@@ -246,3 +246,36 @@
         
         <% } %> -->
 			</section>
+<!-- 
+<div class="preview3">
+					<h1 class="mb-5">Student Details</h1>
+					<form
+						action="/admin/results/studentupdate"
+						method="post"
+						class="d-flex justify-content-center align-items-center flex-column"
+						style="width: 100%"
+					>
+						<input
+							type="number"
+							name="name"
+							class="form-control"
+							aria-label="Username"
+							aria-describedby="addon-wrapping"
+							id="uploadlink"
+							min="2010"
+							max="2030"
+							required
+						/>
+						<div>
+							<button
+								type="button"
+								class="btn btn-outline-secondary px-3 mt-5 me-5 backbtn3"
+							>
+								Back
+							</button>
+							<button type="submit" class="btn btn-outline-primary mt-5">
+								submit
+							</button>
+						</div>
+					</form>
+				</div> -->
