@@ -140,5 +140,18 @@ var swiper = new Swiper(".swipTop", {
   });
 
 
+const newsbox = document.querySelector('.news-box');
+const scrollmarquee = document.querySelector('.marqueetext');
+if (innerWidth < 600) {
+	newsbox.removeAttribute('onmousedown');
+	newsbox.removeAttribute('onmouseup');
+	newsbox.removeAttribute('onmouseout');
+	newsbox.removeAttribute('onmousedown');
+	newsbox.removeAttribute('onmouseover'); 
 
-  
+	scrollmarquee.removeAttribute('onmousedown');
+	scrollmarquee.removeAttribute('onmouseup');
+	scrollmarquee.removeAttribute('onmouseout');
+	scrollmarquee.removeAttribute('onmousedown');
+	scrollmarquee.removeAttribute('onmouseover'); 
+} 
