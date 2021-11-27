@@ -713,6 +713,7 @@ router.route('/Demovideos').get(async (req, res) => {
 						cloudinaryName: response[0].cloudinaryname
 					};
 				}
+				console.log(arr);
 				res.render('demovideos', { link: arr, img: image });
 			});
 		}
