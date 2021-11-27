@@ -55,6 +55,8 @@ body.dark .chat {
 	min-height: 175px;
 	align-items: center;
 	scroll-snap-align: start;
+	padding-right
+	: 2rem;
 }
 /* scrollbar */
 .timelinePara::-webkit-scrollbar {
