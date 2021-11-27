@@ -649,7 +649,7 @@ router
 	.delete(async (req, res) => {
 		if (typeof req.body.checkbox === 'string') {
 			await db.query(
-				'DELETE FROM history WHERE year = ?',
+				'DELETE FROM history WHERE content = ?',
 				[req.body.checkbox],
 				(err, response) => {
 					if (err) {
@@ -664,7 +664,7 @@ router
 		} else {
 			req.body.checkbox.forEach(async (year) => {
 				await db.query(
-					'DELETE FROM history WHERE year = ?',
+					'DELETE FROM history WHERE content = ?',
 					[year],
 					(err, response) => {
 						if (err) {
