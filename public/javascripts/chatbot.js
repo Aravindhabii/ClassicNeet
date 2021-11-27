@@ -215,8 +215,8 @@ document.querySelector('#name_svg').addEventListener('click', (e) => {
 										span4.innerText = 'Read more';
 										div6.appendChild(img3);
 										div6.appendChild(span3);
+										div6.appendChild(span4);
 										document.querySelector('.chat-body').appendChild(div6);
-										document.querySelector('.chat-body').appendChild(span4);
 										document.querySelector('.chat-body').scrollTop =
 											document.querySelector('.chat-body').scrollHeight;
 
@@ -254,8 +254,8 @@ document.querySelector('#name_svg').addEventListener('click', (e) => {
 										span6.innerText = 'Read more';
 										div7.appendChild(img4);
 										div7.appendChild(span5);
+										div7.appendChild(span6);
 										document.querySelector('.chat-body').appendChild(div7);
-										document.querySelector('.chat-body').appendChild(span6);
 										document.querySelector('.chat-body').scrollTop =
 											document.querySelector('.chat-body').scrollHeight;
 
@@ -292,9 +292,8 @@ document.querySelector('#name_svg').addEventListener('click', (e) => {
 										span8.classList.add('read-more');
 										span8.innerText = 'Read more';
 										div8.appendChild(img5);
-										div8.appendChild(span7);
+										div8.appendChild(span8);
 										document.querySelector('.chat-body').appendChild(div8);
-										document.querySelector('.chat-body').appendChild(span8);
 										document.querySelector('.chat-body').scrollTop =
 											document.querySelector('.chat-body').scrollHeight;
 

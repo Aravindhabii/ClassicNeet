@@ -1,4 +1,4 @@
-const sweetp = document.querySelector('.sweetp')
+const sweetp = document.querySelector('.sweetp');
 
 const phonenum = document.querySelector('.phonenum');
 const phoneError = document.querySelector('.phoneError');
@@ -22,7 +22,6 @@ phonenum.addEventListener('input', (e) => {
 			phoneError.innerText = 'Not a valid number';
 		}
 	}
-
 });
 var inputs = document.querySelectorAll('.form-input');
 
@@ -110,19 +109,17 @@ phonenum.addEventListener('keypress', (evt) => {
 	}
 });
 
-console.log(sweetp.innerText);
 if (sweetp) {
 	function successdialog() {
-		console.log('hello');
 		Swal.fire({
 			position: 'center',
 			icon: 'success',
 			title: sweetp.innerText,
 			showConfirmButton: false,
 			timer: 2500
-		})
+		});
 	}
-	successdialog()
+	successdialog();
 }
 
-sweetp.parentNode.removeChild(sweetp)
+sweetp.parentNode.removeChild(sweetp);

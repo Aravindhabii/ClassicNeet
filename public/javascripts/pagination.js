@@ -36,26 +36,13 @@ function getPageList(totalPages, page, maxLength) {
 $(function () {
 	var main = document.querySelector('.galleryMain');
 	var item = document.querySelectorAll('.galleryItem');
-	// document.querySelectorAll('#imageid').forEach((img) => {
-	// 	img.addEventListener('error', () => {
-	// 		img.parentElement.removeChild(img);
-	// 		document
-	// 			.querySelector('.galleryMain')
-	// 			.setAttribute(
-	// 				'data-total',
-	// 				parseInt(
-	// 					document.querySelector('.galleryMain').getAttribute('data-total')
-	// 				) - 1
-	// 			);
-	// 	});
-	// });
+
 	var items = document
 		.querySelector('.galleryMain')
 		.setAttribute(
 			'data-final',
 			document.querySelector('.galleryMain').getAttribute('data-total')
 		);
-	console.log(items);
 	var limitperpage = 8;
 	if (window.innerWidth < 1150) {
 		limitperpage = 6;
@@ -64,7 +51,6 @@ $(function () {
 	var numberofitems = document
 		.querySelector('.galleryMain')
 		.getAttribute('data-total');
-	console.log(numberofitems);
 	var totalPages = Math.ceil(parseInt(numberofitems) / limitperpage);
 	var paginationSize =
 		totalPages <= 5 ? Math.ceil(numberofitems / limitperpage) : 5;
