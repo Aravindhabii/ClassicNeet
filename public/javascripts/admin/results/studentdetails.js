@@ -15,10 +15,8 @@ const editcollegename = document.querySelector('.editcollegename');
 const oldname = document.querySelector('.oldname');
 const select = document.querySelector('.form-select');
 
-console.log(select.value);
 
 function editbutton(edit) {
-	console.log(edit.parentNode.parentNode.children[2].innerText);
 	previewDiv2.style.display = 'flex';
 	imgform.style.transform = 'translate(300vw,0)';
 	previewDiv2.style.transform = 'none';

@@ -111,7 +111,6 @@ phonenum.addEventListener('keypress', (evt) => {
 
 if (sweetp) {
 	function successdialog() {
-		console.log('hello');
 		Swal.fire({
 			position: 'center',
 			icon: 'success',
