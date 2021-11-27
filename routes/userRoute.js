@@ -1423,22 +1423,4 @@ router.get('/pagination/totalCount/:year', isloggedin, async (req, res) => {
 	);
 });
 
-router.get('/toggledark', (req, res) => {
-	if (req.session.theme === 'dark') {
-		res.json('dark');
-	} else {
-		res.json('light');
-	}
-});
-
-router.get('/toggledark/:theme', (req, res) => {
-	if (req.params.theme === 'dark') {
-		req.session.theme = 'dark';
-		res.json('dark');
-	} else {
-		req.session.theme = 'light';
-		res.json('light');
-	}
-});
-
 module.exports = router;
