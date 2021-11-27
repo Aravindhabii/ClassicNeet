@@ -10,175 +10,68 @@ const swiper = new Swiper('.swiper', {
 	}
 });
 const gridContainer = document.querySelector('.gridcontainer');
-document.querySelector(".dropdown").addEventListener("change", async (e) => {
-    loadDetails(1, "load", e.target.value);
-    await fetch(
-      `/pagination/totalCount/${document.querySelector(".dropdown").value}`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        gridContainer.setAttribute("data-total", Math.ceil(data / 5));
-      });
-    if (gridContainer.getAttribute("data-total") > 1) {
-      next.removeAttribute("disabled");
-    } else {
-      next.setAttribute("disabled", true);
-    }
-  });
-  const pagination = async (currentPage, currentYear) => {
-    console.log(currentPage, currentYear);
-    const res = await fetch("/pagination", {
-      method: "POST",
-      body: JSON.stringify({
-        page: currentPage,
-        year: currentYear,
-      }),
-      
-      headers: {
-        "Content-Type": "application/json",
-      },
-      
-    });
-    
-    const data = await res.json();
-    console.log(data);
-    return data;
-  };
 
-  const loadDetails = async (page, type, year) => {
-      console.log(page, year);
-    const details = await pagination(page, year);
-    details.forEach((detail) => {
-      const row = 
-      `<div class = "gridbox">
-            <div class="imgDesign">
-							
-				<img class="imgTopper" src="${detail.image}" />
-			</div>
-            <span class="griditem1span">
-                <h3 class="nameStudent">${detail.name}</h3>
-				<p class="scoreStudent">${detail.collegename}</p
-			></span>
-        </div>`;
-        switch (type) {
-        case "load":
-        gridContainer.innerHTML += row;
-        console.log(row,'lol');
-          break;
-        case "next":
-        gridContainer.innerHTML += row;
-          break;
-        case "prev":
-        gridContainer.innerHTML += row;
-          break;
-      }
-    });
-    return details.length;
-  };
+window.addEventListener('load', (e) => {
+	$('#pagination-container').pagination({
+		dataSource: function (done) {
+			$.ajax({
+				type: 'GET',
+				url: `/aboutus/pagination/${dropdown.value}`,
+				success: function (response) {
+					done(response);
+				}
+			});
+		},
+		className: 'paginationjs-theme-blue paginationjs-big',
 
+		pageSize: 8,
+		callback: function (data, pagination) {
+			// template method of yourself
+			var dataHtml = '';
 
+			$.each(data, function (index, item) {
+				dataHtml += `<div class="galleryItem">
+				<img
+					id="imageid"
+					src="../images/gallery/${dropdown.value}/${item}"
+					alt=""
+				/>
+			</div>`;
+			});
 
+			$('.galleryMain').html(dataHtml);
+		}
+	});
+});
 
+dropdown.addEventListener('change', (e) => {
+	$('#galleryMainPagination').pagination({
+		dataSource: function (done) {
+			$.ajax({
+				type: 'GET',
+				url: `/aboutus/pagination/${e.target.value}`,
+				success: function (response) {
+					done(response);
+				}
+			});
+		},
+		className: 'paginationjs-theme-blue paginationjs-small',
+		pageSize: 8,
+		callback: function (data, pagination) {
+			// template method of yourself
+			var dataHtml = '';
 
+			$.each(data, function (index, item) {
+				dataHtml += `<div class="galleryItem">
+				<img
+					id="imageid"
+					src="../images/gallery/${e.target.value}/${item}"
+					alt=""
+				/>
+			</div>`;
+			});
 
-
-
-
-
-
-
-
-
-
-
-function getPageList(totalPages,page,maxLength) {
-    function range(start,end) {
-        return Array.from(Array(end - start + 1), (_,i) => i + start)
-    }
-
-
-    var sideWidth = maxLength < 6 ? 0 : 1
-    var leftWidth = (maxLength - sideWidth * 2 - 3) >> 1
-    var rightWidth = (maxLength - sideWidth * 2 - 3) >> 1
-
-    if(totalPages <= maxLength) {
-        return range(1,totalPages);
-    }
-    if(page <= maxLength - sideWidth - 1 - rightWidth) {
-        return range(1,maxLength - sideWidth - 1).concat(0,range(totalPages - sideWidth + 1, totalPages))
-    }
-
-    if (page >=  totalPages - sideWidth - 1 - rightWidth) {
-        return range(1,sideWidth).concat(0,range(totalPages - sideWidth - 1 - rightWidth - leftWidth, totalPages))
-    }
-    return range(1,sideWidth).concat(0, range(page - leftWidth, page +  rightWidth), 0, range(totalPages-sideWidth + 1 , totalPages));
-}
-
-
-$(function(){
-    var numberofitems = $(".gridcontainer .gridbox").length;
-    console.log($(".gridcontainer .gridbox"));
-    var limitperpage = 9;
-    if(window.innerWidth < 1150){
-
-        limitperpage = 6;
-    }
-   
-    var totalPages = Math.ceil(numberofitems/ limitperpage)
-    var paginationSize = ( totalPages <= 5 ?  Math.ceil(numberofitems/ limitperpage) : 5);
-    var currentPage;
-    function showPage (whichpage) {
-        if (whichpage < 1 || whichpage > totalPages) return false;
-
-        currentPage = whichpage;
-
-        $(".gridcontainer .gridbox").hide().slice((currentPage - 1) * limitperpage, currentPage * limitperpage).show();
-        $(".pagination li").slice(1,-1).remove();
-
-        getPageList(totalPages,currentPage,paginationSize).forEach(item => {
-            $("<li>").addClass("page-item").addClass(item ? "current-page" : "dott").toggleClass("active", item === currentPage).append($("<a>").addClass("page-link").attr({href: "javascript:void(0)"}).text(item || "...")).insertBefore(".next-page");
-        })
-
-        $(".previous-page").toggleClass("disable", currentPage === 1);
-        $(".next-page").toggleClass("disable", currentPage === totalPages);
-        $(".prev-page1").toggleClass("disable1", currentPage === 1);
-        $(".next-page1").toggleClass("disable1", currentPage === totalPages);
-        return true;
-    }
-    $(".pagination").append(
-
-         $("<li>").addClass("page-item").addClass("previous-page").append($("<a>").addClass("page-link").attr({href: "javascript:void(0)"}).text("Prev")),
-         $("<li>").addClass("page-item").addClass("next-page").append($("<a>").addClass("page-link").attr({href: "javascript:void(0)"}).text("Next")),
-        
-    );
-    $(".arrowRight").append(
-        $("<img>").attr({src: "https://img.icons8.com/flat-round/64/000000/arrow--v1.png"}).addClass("btnItem").addClass("next-page1")
-    )
-    $(".arrowLeft").append(
-        $("<img>").attr({src: "https://img.icons8.com/flat-round/64/000000/arrow--v1.png"}).addClass("btnItem2").addClass("prev-page1")
-    )     
-    $(".gridcontainer").show();
-
-    showPage(1)
-
-    $(document).on("click", ".pagination li.current-page:not(.active)",function(){
-        return showPage(+$(this).text())
-    })
-
-    $(".next-page").on("click", function(){
-        return showPage(currentPage+1)
-        
-    })
-    $(".next-page1").on("click", function(){
-        return showPage(currentPage+1)
-        
-    })
-    $(".previous-page").on("click", function(){
-        return showPage(currentPage-1)
-    })
-    $(".prev-page1").on("click", function(){
-        return showPage(currentPage-1)
-    })
-;})
-
-
+			$('.galleryMain').html(dataHtml);
+		}
+	});
+});

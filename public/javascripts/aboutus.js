@@ -25,49 +25,67 @@ exit.addEventListener('click', (e) => {
 
 const opt = document.querySelectorAll('.opt');
 
-const pagination = async (folder, start) => {
-	const res = await fetch('/aboutus/pagination', {
-		method: 'POST',
-		body: JSON.stringify({
-			folder,
-			start
-		}),
-		headers: {
-			'Content-Type': 'application/json'
+window.addEventListener('load', (e) => {
+	$('#pagination-container').pagination({
+		dataSource: function (done) {
+			$.ajax({
+				type: 'GET',
+				url: `/aboutus/pagination/${dropdown.value}`,
+				success: function (response) {
+					done(response);
+				}
+			});
+		},
+		className: 'paginationjs-theme-blue paginationjs-big',
+
+		pageSize: 8,
+		callback: function (data, pagination) {
+			// template method of yourself
+			var dataHtml = '';
+
+			$.each(data, function (index, item) {
+				dataHtml += `<div class="galleryItem">
+				<img
+					id="imageid"
+					src="../images/gallery/${dropdown.value}/${item}"
+					alt=""
+				/>
+			</div>`;
+			});
+
+			$('.galleryMain').html(dataHtml);
 		}
 	});
-	const data = await res.json();
-	return data;
-};
+});
 
-const next = document.querySelector('.next');
-const prev = document.querySelector('.prev');
-const galleryMain = document.querySelector('.galleryMain');
+dropdown.addEventListener('change', (e) => {
+	$('#galleryMainPagination').pagination({
+		dataSource: function (done) {
+			$.ajax({
+				type: 'GET',
+				url: `/aboutus/pagination/${e.target.value}`,
+				success: function (response) {
+					done(response);
+				}
+			});
+		},
+		className: 'paginationjs-theme-blue paginationjs-small',
+		pageSize: 8,
+		callback: function (data, pagination) {
+			// template method of yourself
+			var dataHtml = '';
 
-const loadImages = (start) => {
-	const imgs = await pagination(dropdown.value, start);
-	imgs.forEach((img) => {
-		galleryMain.innerHTML += `<div class="galleryItem">
-			<img
-				id="imageid"
-				src="../images/gallery/${dropdown.value}/${img}"
-				alt=""
-			/>
-		</div>`;
-		// switch (type) {
-		// 	case 'load':
-		// 		galleryMain.innerHTML += row;
-		// 		break;
-		// 	case 'next':
-		// 		galleryMain.innerHTML += row;
-		// 		break;
-		// 	case 'prev':
-		// 		galleryMain.innerHTML += row;
-		// 		break;
-		// }
+			$.each(data, function (index, item) {
+				dataHtml += `<div class="galleryItem">
+				<img
+					id="imageid"
+					src="../images/gallery/${e.target.value}/${item}"
+					alt=""
+				/>
+			</div>`;
+			});
+
+			$('.galleryMain').html(dataHtml);
+		}
 	});
-};
-
-window.addEventListener('load', async () => {
-	loadImages(0);
 });

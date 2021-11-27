@@ -554,7 +554,6 @@ router
 					admissions
 				});
 			}
-			// console.log(response[0].latestupdates);
 		});
 	})
 	.post(async (req, res) => {
@@ -605,11 +604,16 @@ router.route('/aboutus').get(async (req, res) => {
 	});
 });
 
-router.post('/aboutus/pagination', async (req, res) => {
+router.get('/aboutus/pagination/:folder', async (req, res) => {
 	const imgs = await fs
-		.readdirSync(`public/images/gallery/${req.body.folder}`)
-		.slice(req.body.start, req.body.start + 8);
+		.readdirSync(`public/images/gallery/${req.params.folder}`)
+		// .slice(req.body.start, req.body.start + 8);
 	res.json(imgs);
+});
+
+router.get('/aboutus/pagination/totalcount/:year', async (req, res) => {
+	const imgs = await fs.readdirSync(`public/images/gallery/${req.params.year}`);
+	res.json(imgs.length);
 });
 
 router
@@ -1089,7 +1093,7 @@ let transporter = nodemailer.createTransport({
 	service: 'gmail',
 	auth: {
 		user: 'srklohith05@gmail.com',
-		pass: 'Loki05@("*")'
+		pass: ''
 	}
 });
 
