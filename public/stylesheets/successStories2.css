@@ -155,10 +155,17 @@ body.dark .chat {
 		bottom: 3%;
 	}
 	.card h3 {
-		font-size: .7rem;
+		font-size: .8rem;
+		top: 28%;
+		padding: .8rem;
 	}
 }
 @media (max-width: 400px) {
+	.card h3 {
+		font-size: .8rem;
+		top: 25%;
+		padding: .8rem;
+	}
 	.studentHeader {
 		font-size: 1.5rem;
 		
