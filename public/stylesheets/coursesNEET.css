@@ -417,6 +417,20 @@ body.dark .headh1h2 {
 	margin-right: auto;
 	list-style: none;
 }
+.methodology1 ul li,
+.methodology2 ul li,
+.methodology3 ul li,
+.methodology4 ul li {
+	position: relative;
+	padding-left: 1.5em;
+}
+.methodology1 ul li > span,
+.methodology2 ul li > span,
+.methodology3 ul li > span,
+.methodology4 ul li > span {
+	position: absolute;
+	left: 0;
+}
 .tick {
 	width: 16px;
 	height: 14px;
