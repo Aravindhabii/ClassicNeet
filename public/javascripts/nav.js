@@ -56,8 +56,30 @@ const toggleDarkTheme = () => {
 	document.querySelector('footer')
 		? document.querySelector('footer').classList.toggle('dark')
 		: '';
+	if (document.querySelector('.dark-mode-toggle').classList.contains('dark')) {
+		window.localStorage.setItem('dark', 'true');
+	} else {
+		window.localStorage.setItem('dark', 'false');
+	}
 };
 
 document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
 	toggleDarkTheme();
 });
+
+if (window.localStorage.getItem('dark') === 'true') {
+	toggleDarkTheme();
+}
+
+
+
+
+// if (
+// 	document.querySelector('.dark-mode-toggle').classList.contains('dark') &&
+// 	document.querySelector('body').classList.contains('dark')
+// ) {
+// 	console.log("bloooom");
+// 	toggleDarkTheme();
+// }else{
+// }
+	
