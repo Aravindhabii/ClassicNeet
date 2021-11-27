@@ -12,10 +12,8 @@ const editstudentimg = document.querySelector('.editstudentimg');
 const editcollegename = document.querySelector('.editcollegename');
 const oldname = document.querySelector('.oldname');
 
-console.log('chatbot');
 
 function editbutton(edit) {
-	console.log(edit.parentNode.parentNode.children[2].innerText);
 
 	previewDiv2.style.display = 'flex';
 	imgform.style.transform = 'translate(300vw,0)';
@@ -90,7 +88,6 @@ const tbody = document.querySelector('.tbody');
 const loadDetails = async (page, type) => {
 	const details = await pagination(page);
 	details.forEach((detail) => {
-		console.log(detail);
 		const row = `<tr>
 		<td>
 			<p>${detail.name}</p>

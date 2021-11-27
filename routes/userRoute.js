@@ -258,7 +258,6 @@ router
 						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
 					} else {
-						console.log(response);
 						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/latestupdates');
 					}
@@ -276,7 +275,6 @@ router
 							return;
 						} else {
 							req.flash('success', 'Successfully Deleted');
-							console.log(response);
 						}
 					}
 				);
@@ -386,10 +384,8 @@ router
 			} else {
 				for (let i = 0; i <= response.length - 1; i++) {
 					var link = response[i].testimonialslink;
-					// console.log(image)
 					arr.push(link);
 				}
-				// console.log(response[0].latestupdates);
 				res.render('admin/home/studentTestimonials', { link: arr });
 			}
 		});
@@ -518,7 +514,6 @@ router
 			);
 		} else {
 			req.body.checkbox.forEach(async (link) => {
-				console.log(link);
 				await db.query(
 					'DELETE FROM calendarevents WHERE event = ?',
 					[link],
@@ -608,7 +603,6 @@ router.get('/aboutus/pagination/:folder', async (req, res) => {
 	const imgs = await fs.readdirSync(
 		`public/images/gallery/${req.params.folder}`
 	);
-	// .slice(req.body.start, req.body.start + 8);
 	res.json(imgs);
 });
 
@@ -721,7 +715,6 @@ router.route('/Demovideos').get(async (req, res) => {
 				}
 				res.render('demovideos', { link: arr, img: image });
 			});
-			// console.log(response[0].latestupdates);
 		}
 	});
 });
@@ -876,7 +869,7 @@ router.get('/results/pagination/:year', async (req, res) => {
 			if (error) {
 				console.log(error);
 			} else {
-				res.json(response)
+				res.json(response);
 			}
 		}
 	);
@@ -922,27 +915,7 @@ router
 			}
 		);
 	})
-	// .put(upload.single('sliderimg'), async (req, res) => {
-	// 	await db.query(
-	// 		'UPDATE studentdetails SET image = ? WHERE cloudinaryname = ?',
-	// 		[req.file.path, req.body.cloudinaryname]
-	// 	);
-	// 	res.redirect('/admin/results/studentdetails');
-	// })
-	// .put(async(req,res)=>{
-	// 	console.log(req.body);
-	// 	await db.query(
-	// 		'UPDATE studentdetails SET =? WHERE name = req.body.name',
-	// 		{score:req.body.score, name:req.body.name, collegename:req.body.collegeName },
-	// 		(err,response)=>{
-	// 			if(err){
-	// 				console.log(err);
-	// 			}else{
-	// 				res.redirect('/admin/results/studentdetails');
-	// 			}
-	// 		}
-	// 	);
-	// })
+
 	.delete(async (req, res) => {
 		if (typeof req.body.checkbox === 'string') {
 			await cloudinary.uploader.destroy(
@@ -964,7 +937,6 @@ router
 			);
 		} else {
 			req.body.checkbox.forEach(async (link) => {
-				console.log('holll');
 				await cloudinary.uploader.destroy('ClassicNeetAcademy/' + link);
 				await db.query(
 					'DELETE FROM studentdetails WHERE cloudinaryname = ?',
@@ -1015,7 +987,6 @@ router
 router
 	.route('/admin/results/studentupdate')
 	.post(isloggedin, async (req, res) => {
-		console.log(req.body);
 		await db.query(
 			'UPDATE studentdetails SET name = ?, collegename = ? WHERE name = ?',
 			[req.body.stdname, req.body.clgname, req.body.oldname],
@@ -1023,7 +994,6 @@ router
 				if (err) {
 					console.log(err);
 				} else {
-					console.log(response);
 					res.redirect('/admin/results/studentdetails');
 				}
 			}
@@ -1135,7 +1105,6 @@ router
 				req.flash('error', 'Something went wrong');
 				res.redirect('/contactus');
 			} else {
-				console.log(info);
 				req.flash('success', 'Mail was successfully sent');
 				res.redirect('/contactus');
 			}
@@ -1317,13 +1286,7 @@ router
 			}
 		);
 	})
-	// .put(upload.single('sliderimg'), async (req, res) => {
-	// 	await db.query(
-	// 		'UPDATE successstories SET image = ? WHERE cloudinaryname = ?',
-	// 		[req.file.path, req.body.cloudinaryname]
-	// 	);
-	// 	res.redirect('/admin/successstories/studentdetails');
-	// })
+
 	.delete(async (req, res) => {
 		if (typeof req.body.checkbox === 'string') {
 			await cloudinary.uploader.destroy(
@@ -1366,7 +1329,6 @@ router
 router
 	.route('/admin/chatbot')
 	.get(flash, isloggedin, async (req, res) => {
-		console.log('hello');
 		res.render('admin/chatbot/chatbot');
 	})
 	.delete(async (req, res) => {
@@ -1375,7 +1337,6 @@ router
 				req.flash('error', 'Error occurred while adding');
 				console.log(err);
 			} else {
-				console.log('delted');
 				req.flash('success', 'Successfully Deleted');
 				res.redirect('/admin/chatbot');
 			}
@@ -1391,7 +1352,6 @@ router.post('/signout', isloggedin, (req, res) => {
 });
 
 router.post('/chatbot', async (req, res) => {
-	console.log(req.body);
 	await db.query(
 		'INSERT INTO chatbot SET ?',
 		{
@@ -1424,7 +1384,6 @@ router.post('/pagination', isloggedin, async (req, res) => {
 				console.log(err);
 				return;
 			} else {
-				console.log(response);
 				res.json(response);
 			}
 		}
@@ -1458,11 +1417,18 @@ router.get('/pagination/totalCount/:year', isloggedin, async (req, res) => {
 				console.log(err);
 				return;
 			} else {
-				console.log(response.length);
 				res.json(response.length);
 			}
 		}
 	);
+});
+
+router.get('/toggledark/:theme', (req, res) => {
+	if (req.params.theme === 'dark') {
+		res.locals.theme = 'dark';
+	} else {
+		res.locals.theme = 'light';
+	}
 });
 
 module.exports = router;

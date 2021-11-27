@@ -3,7 +3,6 @@ const previewDiv = document.querySelector('.preview');
 const backbtn = document.querySelector('.backbtn');
 const sectionop = document.querySelector('.mainsection');
 const imgform = document.querySelector('.imgform');
-// const submit = document.querySelector('.submit');
 const submitbtn = document.querySelector('.submitbtn');
 const confirmdelete = document.querySelector('.confirmdelete');
 const latestupdateform = document.querySelector('.latestupdateform');

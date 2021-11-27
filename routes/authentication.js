@@ -101,7 +101,6 @@ router
 		const path = req.file.path;
 		const fieldname = req.file.originalname;
 		const cloudinaryName = req.file.filename.split('/')[1];
-		// console.log(req.files);
 
 		db.query(
 			'INSERT INTO homeslider SET ?',

@@ -9,7 +9,6 @@ const confirmdelete = document.querySelector('.confirmdelete');
 const latestupdateform = document.querySelector('.latestupdateform');
 var inputtext = document.querySelector('.inputtext');
 const changablespan = document.querySelector('.changablespan');
-console.log(latestupdateform);
 addbtn.addEventListener('click', () => {
 	previewDiv.style.display = 'flex';
 	imgform.style.transform = 'translate(300vw,0)';
