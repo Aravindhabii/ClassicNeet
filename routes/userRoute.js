@@ -699,6 +699,7 @@ router.route('/Demovideos').get(async (req, res) => {
 		if (err) {
 			console.log(err);
 		} else {
+			console.log(response);
 			for (let i = 0; i <= response.length - 1; i++) {
 				var link = response[i].videolink;
 				arr.push(link);

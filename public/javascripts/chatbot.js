@@ -58,7 +58,7 @@ window.addEventListener('scroll', (e) => {
 	if (scroll >= 100) {
 		botImg.style.top = '100vh';
 	} else {
-		botImg.style.top = '120vh';
+		botImg.style.top = '130vh';
 	}
 });
 
