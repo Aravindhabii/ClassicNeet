@@ -59,7 +59,7 @@ window.addEventListener('load', (e) => {
 });
 
 dropdown.addEventListener('change', (e) => {
-	$('#galleryMainPagination').pagination({
+	$('#pagination-container').pagination({
 		dataSource: function (done) {
 			$.ajax({
 				type: 'GET',

@@ -605,9 +605,10 @@ router.route('/aboutus').get(async (req, res) => {
 });
 
 router.get('/aboutus/pagination/:folder', async (req, res) => {
-	const imgs = await fs
-		.readdirSync(`public/images/gallery/${req.params.folder}`)
-		// .slice(req.body.start, req.body.start + 8);
+	const imgs = await fs.readdirSync(
+		`public/images/gallery/${req.params.folder}`
+	);
+	// .slice(req.body.start, req.body.start + 8);
 	res.json(imgs);
 });
 
@@ -843,9 +844,6 @@ router.route('/results').get(async (req, res) => {
 				arr.push(image);
 			}
 			let uniqueChars = [...new Set(arr)];
-			// res.render("admin/results/studentdetails", {
-			//   year: uniqueChars.reverse(),
-			// });
 			await db.query('SELECT * FROM resultslider', async (error, response) => {
 				var slider = [];
 				if (error) {
@@ -862,12 +860,26 @@ router.route('/results').get(async (req, res) => {
 					res.render('results', {
 						students: arr,
 						slider,
-						year: uniqueChars.reverse()
+						year: uniqueChars
 					});
 				}
 			});
 		}
 	});
+});
+
+router.get('/results/pagination/:year', async (req, res) => {
+	await db.query(
+		'SELECT * FROM studentdetails WHERE year = ?',
+		[req.params.year],
+		async (error, response) => {
+			if (error) {
+				console.log(error);
+			} else {
+				res.json(response)
+			}
+		}
+	);
 });
 
 router

@@ -9,14 +9,15 @@ const swiper = new Swiper('.swiper', {
 		prevEl: '.swiper-button-prev'
 	}
 });
-const gridContainer = document.querySelector('.gridcontainer');
+
+const dropdown = document.querySelector('.dropdown');
 
 window.addEventListener('load', (e) => {
 	$('#pagination-container').pagination({
 		dataSource: function (done) {
 			$.ajax({
 				type: 'GET',
-				url: `/aboutus/pagination/${dropdown.value}`,
+				url: `/results/pagination/${dropdown.value}`,
 				success: function (response) {
 					done(response);
 				}
@@ -24,54 +25,62 @@ window.addEventListener('load', (e) => {
 		},
 		className: 'paginationjs-theme-blue paginationjs-big',
 
-		pageSize: 8,
+		pageSize: 9,
 		callback: function (data, pagination) {
 			// template method of yourself
 			var dataHtml = '';
 
 			$.each(data, function (index, item) {
-				dataHtml += `<div class="galleryItem">
-				<img
-					id="imageid"
-					src="../images/gallery/${dropdown.value}/${item}"
-					alt=""
-				/>
-			</div>`;
+				dataHtml += `
+				<div class="gridbox">
+					<div class="imgDesign">
+						<img src="${item.image}" alt="" />
+					</div>
+					<span>
+						<h3>${item.name}</h3>
+						<p>${item.collegename}</p>
+					</span>
+				</div>
+			`;
 			});
 
-			$('.galleryMain').html(dataHtml);
+			$('.gridcontainer').html(dataHtml);
 		}
 	});
 });
 
 dropdown.addEventListener('change', (e) => {
-	$('#galleryMainPagination').pagination({
+	$('#pagination-container').pagination({
 		dataSource: function (done) {
 			$.ajax({
 				type: 'GET',
-				url: `/aboutus/pagination/${e.target.value}`,
+				url: `/results/pagination/${e.target.value}`,
 				success: function (response) {
 					done(response);
 				}
 			});
 		},
 		className: 'paginationjs-theme-blue paginationjs-small',
-		pageSize: 8,
+		pageSize: 9,
 		callback: function (data, pagination) {
 			// template method of yourself
 			var dataHtml = '';
 
 			$.each(data, function (index, item) {
-				dataHtml += `<div class="galleryItem">
-				<img
-					id="imageid"
-					src="../images/gallery/${e.target.value}/${item}"
-					alt=""
-				/>
-			</div>`;
+				dataHtml += `
+				<div class="gridbox">
+					<div class="imgDesign">
+						<img src="${item.image}" alt="" />
+					</div>
+					<span>
+						<h3>${item.name}</h3>
+						<p>${item.collegename}</p>
+					</span>
+				</div>
+			`;
 			});
 
-			$('.galleryMain').html(dataHtml);
+			$('.gridcontainer').html(dataHtml);
 		}
 	});
 });
