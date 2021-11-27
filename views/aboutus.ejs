@@ -1,157 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="stylesheets/aboutus.css" />
-		<script
-			src="https://kit.fontawesome.com/f93354d676.js"
-			crossorigin="anonymous"
-		></script>
-		<link rel="stylesheet" href="stylesheets/chatbot.css" />
-		<link rel="stylesheet" href="stylesheets/pagination.css" />
-		<title>Aboutus</title>
-		<style>
-			.aboutusnav {
-				background-color: #369afe;
-				border-radius: 0% 50% 0% 50%;
-				color: white;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="previewImg">
-			<svg
-				class="close"
-				xmlns="http://www.w3.org/2000/svg"
-				class="h-6 w-6"
-				fill="none"
-				viewBox="0 0 24 24"
-				stroke="currentColor"
-			>
-				<path
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					stroke-width="2"
-					d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-				/>
-			</svg>
-			<img src="" class="previewimg" />
-		</div>
-		<%- include('./layout/header') %> <%- include('./chatbot') %>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesheets/aboutus.css" />
+    <script
+      src="https://kit.fontawesome.com/f93354d676.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="stylesheets/chatbot.css" />
+    <link rel="stylesheet" href="stylesheets/pagination.css" />
+    <title>Aboutus</title>
+    <style>
+      .aboutusnav {
+        background-color: #369afe;
+        border-radius: 0% 50% 0% 50%;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="previewImg">
+      <svg
+        class="close"
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+      <img src="" class="previewimg" />
+    </div>
+    <%- include('./layout/header') %> <%- include('./chatbot') %>
 
-		<section class="video">
-			<video class="vidAbout" autoplay muted loop>
-				<source src="../images/aboutus/CLASSVIDEO.mp4" type="video/mp4" />
-			</video>
-			<h1>EXPECT THE BEST...</h1>
-		</section>
-		<!-- visionmission -->
-		<section class="missionNew">
-			<div class="ourvision">
-				<h1>OUR VISION</h1>
-				<p>
-					To be India's best training Institute to impart understanding and
-					application-based education to the young talents and carving them into
-					creative human resources who are having sufficient knowledge, with
-					competitive edge, National Integrity and social responsibility and who
-					are the input for India's top Medical Engineering and professional
-					colleges.
-				</p>
-			</div>
-			<div class="ourmission">
-				<h1>OUR MISSION</h1>
-				<p>
-					1. To give awareness on competitive exams among the school students
-					and develop science and maths foundation in school going children.
-				</p>
-				<p>
-					2.To impart state of art training for the competitive exams such as
-					NEET, JEE etc., to the students and develop competitive spirit to set
-				</p>
-			</div>
-		</section>
-		<!-- leaders -->
-		<section class="leaders">
-			<h1>Our Founders</h1>
-			<div class="leadervideo">
-				<iframe
-					src="https://www.youtube.com/embed/xfek1WNPTRU"
-					title="YouTube video player"
-					frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen
-				></iframe>
-			</div>
-		</section>
+    <section class="video">
+      <video class="vidAbout" autoplay muted loop>
+        <source src="../images/aboutus/CLASSVIDEO.mp4" type="video/mp4" />
+      </video>
+      <h1>EXPECT THE BEST...</h1>
+    </section>
+    <!-- visionmission -->
+    <section class="missionNew">
+      <div class="ourvision">
+        <h1>OUR VISION</h1>
+        <p>
+          To be India's best training Institute to impart understanding and
+          application-based education to the young talents and carving them into
+          creative human resources who are having sufficient knowledge, with
+          competitive edge, National Integrity and social responsibility and who
+          are the input for India's top Medical Engineering and professional
+          colleges.
+        </p>
+      </div>
+      <div class="ourmission">
+        <h1>OUR MISSION</h1>
+        <p>
+          1. To give awareness on competitive exams among the school students
+          and develop science and maths foundation in school going children.
+        </p>
+        <p>
+          2.To impart state of art training for the competitive exams such as
+          NEET, JEE etc., to the students and develop competitive spirit to set
+        </p>
+      </div>
+    </section>
+    <!-- leaders -->
+    <section class="leaders">
+      <h1>Our Founders</h1>
+      <div class="leadervideo">
+        <iframe
+          src="https://www.youtube.com/embed/xfek1WNPTRU"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
 
-		<h1 class="ourjourney">Our Journey So Far</h1>
-		<section class="timelineNew">
-			<img
-				class="timelineImg"
-				src="../images/aboutus/Group19.png"
-				class="book"
-				alt=""
-			/>
-			<div class="timelineContent">
-				<div class="timelineIcon">
-					<div class="timelineDiv">
-						<span
-							><img
-								src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/64/000000/external-first-success-flatart-icons-flat-flatarticons.png"
-						/></span>
-						<span><img src="../images/aboutus/dot2.png" /></span>
-					</div>
-					<div class="timelineDiv">
-						<span
-							><img
-								src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-trophy-reward-and-badges-justicon-flat-justicon-1.png"
-						/></span>
-						<span><img src="../images/aboutus/dot2.png" /></span>
-					</div>
-					<div class="timelineDiv">
-						<span
-							><img
-								src="https://img.icons8.com/color/64/000000/student-female.png"
-						/></span>
-						<span><img src="../images/aboutus/dot2.png" /></span>
-					</div>
+    <h1 class="ourjourney">Our Journey So Far</h1>
+    <section class="timelineNew">
+      <img
+        class="timelineImg"
+        src="../images/aboutus/Group19.png"
+        class="book"
+        alt=""
+      />
+      <div class="timelineContent">
+        <div class="timelineIcon">
+          <div class="timelineDiv">
+            <span
+              ><img
+                src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/64/000000/external-first-success-flatart-icons-flat-flatarticons.png"
+            /></span>
+            <span><img src="../images/aboutus/dot2.png" /></span>
+          </div>
+          <div class="timelineDiv">
+            <span
+              ><img
+                src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-trophy-reward-and-badges-justicon-flat-justicon-1.png"
+            /></span>
+            <span><img src="../images/aboutus/dot2.png" /></span>
+          </div>
+          <div class="timelineDiv">
+            <span
+              ><img
+                src="https://img.icons8.com/color/64/000000/student-female.png"
+            /></span>
+            <span><img src="../images/aboutus/dot2.png" /></span>
+          </div>
 
-					<div class="timelineDiv">
-						<span
-							><img
-								src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/64/000000/external-first-success-flatart-icons-flat-flatarticons.png"
-						/></span>
-						<span><img src="../images/aboutus/dot2.png" /></span>
-					</div>
-				</div>
-				<div class="timelinePara">
-					<% content.forEach(cont => { %>
-					<p><%= cont.content %> - <%= cont.year %></p>
-					<% }) %>
-				</div>
-			</div>
-		</section>
-		<section class="galleryNew">
-			<h1 class="galleryHead">Gallery</h1>
-			<select
-				class="form-select form-select-lg mb-3 dropdown"
-				aria-label=".form-select-lg example"
-				data-select=""
-			>
-				<% folderArray.forEach((folder,i) => { %>
-				<option
-					class="opt"
-					value="<%= folder %>"
-					selected="<%=i==0?true:false%>"
-					data-year="<%= folder %>"
-				>
-					<%= folder %>
-				</option>
-				<% }) %>
-			</select>
+          <div class="timelineDiv">
+            <span
+              ><img
+                src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/64/000000/external-first-success-flatart-icons-flat-flatarticons.png"
+            /></span>
+            <span><img src="../images/aboutus/dot2.png" /></span>
+          </div>
+        </div>
+        <div class="timelinePara">
+          <% content.forEach(cont => { %>
+          <p><%= cont.content %> - <%= cont.year %></p>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+    <section class="galleryNew">
+      <h1 class="galleryHead">Gallery</h1>
+      <select
+        class="form-select form-select-lg mb-3 dropdown"
+        aria-label=".form-select-lg example"
+        data-select=""
+      >
+        <% folderArray.forEach((folder,i) => { %>
+        <option
+          class="opt"
+          value="<%= folder %>"
+          selected="<%=i==0?true:false%>"
+          data-year="<%= folder %>"
+        >
+          <%= folder %>
+        </option>
+        <% }) %>
+      </select>
 
+<<<<<<< HEAD
+      <section class="galleryMain"></section>
+      <div id="pagination-container"></div>
+    </section>
+    <section class="app">
+      <div class="apppage">
+        <!-- phone -->
+        <div class="appLeft">
+          <img src="images/aboutus/phonebg.png" class="Messaging" />
+        </div>
+        <img src="images/aboutus/Vector2.png" class="vector3" />
+        <div class="appRight">
+          <h2>Get Our Learning<br />App</h2>
+          <!-- <img src="images/aboutus/Vector1.png" class="Vector2" /> 
+					<img src="images/aboutus/Vector.png" class="vector1" />  -->
+          <a
+            href="https://play.google.com/store/apps/details?id=com.sixerclass.classicneet&hl=en_IN&gl=US"
+            ><img src="images/aboutus/download.jpg"
+          /></a>
+        </div>
+      </div>
+      <!-- <div class="apppage1">
+        <img src="images/aboutus/phonebg.png" class="Messaging" />
+        <a
+          href="https://play.google.com/store/apps/details?id=com.sixerclass.classicneet&hl=en_IN&gl=US"
+          ><img src="images/aboutus/download.jpg"
+        /></a>
+      </div> -->
+    </section>
+    <%- include('./layout/footer') %>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"
+      integrity="sha512-1zzZ0ynR2KXnFskJ1C2s+7TIEewmkB2y+5o/+ahF7mwNj9n3PnzARpqalvtjSbUETwx6yuxP5AJXZCpnjEJkQw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="javascripts/aboutus.js"></script>
+    <!-- <script src="javascripts/pagination.js"></script> -->
+    <script src="javascripts/nav.js"></script>
+    <script src="javascripts/common.js"></script>
+    <script src="javascripts/chatbot.js"></script>
+  </body>
+=======
 			<section class="galleryMain"></section>
 			<div id="pagination-container"></div>
 		</section>
@@ -187,4 +234,5 @@
 		<script src="javascripts/common.js"></script>
 		<script src="javascripts/chatbot.js"></script>
 	</body>
+>>>>>>> b86d5523eace34b572a1906f491b2bae2463ef8c
 </html>

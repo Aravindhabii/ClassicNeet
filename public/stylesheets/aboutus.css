@@ -655,7 +655,9 @@ iframe {
 	margin: 2rem 0rem 0rem 0rem;
 }
 
-
+#pagination-container {
+	margin-top: 3rem;
+}
 
 /** Custom Select **/
 
