@@ -10,7 +10,6 @@ const db = require('./database');
 const methodOverride = require('method-override');
 const cpmpression = require('compression');
 const compression = require('compression');
-const morgan = require('morgan');
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
 db.connect((err) => {

@@ -876,7 +876,7 @@ router.get('/results/pagination/:year', async (req, res) => {
 			if (error) {
 				console.log(error);
 			} else {
-				res.json(response)
+				res.json(response);
 			}
 		}
 	);
@@ -1463,6 +1463,15 @@ router.get('/pagination/totalCount/:year', isloggedin, async (req, res) => {
 			}
 		}
 	);
+});
+
+router.get('/toggledark/:theme', (req, res) => {
+	if (req.params.theme === 'dark') {
+		res.locals.theme = 'dark';
+	} else {
+		res.locals.theme = 'light';
+	}
+	console.log(req.session.theme);
 });
 
 module.exports = router;

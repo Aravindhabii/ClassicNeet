@@ -1,4 +1,3 @@
-
 function topFunction() {
 	document.body.scrollTop = 0;
 	document.documentElement.scrollTop = 0;
@@ -65,5 +64,7 @@ document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
 
 const darkThemeMq = window.matchMedia('(prefers-color-scheme: dark)');
 if (darkThemeMq.matches) {
-	toggleDarkTheme();
+	fetch(`/toggledark/dark`);
+} else {
+	fetch(`/toggledark/light`);
 }
