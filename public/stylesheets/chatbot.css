@@ -197,8 +197,12 @@
 .chat-span {
 	width: fit-content !important;
 	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	align-items: center;
 	height: auto !important;
+	
+	padding: .5rem 0rem;
 }
 
 .chat-body .stream {
@@ -216,12 +220,13 @@
 .stream.read-more {
 	background-color: black;
 	padding: 0.5rem;
-	width: 55%;
-	margin: 0.5rem;
+	width: 70%;
+	border: 0;
 	border-radius: 10px;
 	text-align: center;
 	font-size: 0.8rem;
 	font-weight: 400;
+	position: relative;
 	cursor: pointer;
 	color: white;
 	transition: all 0.3s ease-in-out;
