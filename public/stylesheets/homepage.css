@@ -2169,7 +2169,7 @@ iframe {
 		height: fit-content;
 	}
 	.sliderRev {
-		height: 45vh;
+		height: 40vh;
 	}
 	.cardsDiv {
 		margin-top: 3rem;
@@ -2215,17 +2215,9 @@ iframe {
 }
 
 @media (max-width: 400px) {
-	/* .mySwiper2 {
-    height: 40vh !important;
-  }
-  .mySwiper2 .swiper-slide {
-    width: 18.5rem !important;
-    height: 10rem !important;
-  } */
-
-	/* .bgTopper {
-    height: 46vh;
-  }  */
+	.sliderRev {
+		height: 35vh;
+	}
 	.home {
 		height: fit-content;
 		margin-bottom: 2rem;

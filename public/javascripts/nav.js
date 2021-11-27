@@ -58,26 +58,6 @@ const toggleDarkTheme = () => {
 		: '';
 };
 
-// document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
-// 	if (body.classList.contains('dark')) {
-// 		fetch(`/toggledark/dark`)
-// 			.then((res) => res.json())
-// 			.then((data) => {
-// 					toggleDarkTheme();
-// 			});
-// 	} else {
-// 		fetch(`/toggledark/light`)
-// 			.then((res) => res.json())
-// 			.then((data) => {
-// 					toggleDarkTheme();
-// 			});
-// 	}
-// });
-
-fetch(`/toggledark`)
-	.then((res) => res.json())
-	.then((data) => {
-		if (data === 'dark') {
-			toggleDarkTheme();
-		}
-	});
+document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
+	toggleDarkTheme();
+});
