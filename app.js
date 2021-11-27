@@ -24,7 +24,6 @@ db.connect((err) => {
 const app = express();
 app.use(express.json());
 app.use(compression());
-app.use(morgan('dev'));
 
 const sessionConfig = {
 	secret: 'thisshouldbeasecret!',
