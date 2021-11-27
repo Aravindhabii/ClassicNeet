@@ -204,7 +204,7 @@ document.querySelector('#name_svg').addEventListener('click', (e) => {
 									const div12 = document.createElement('div');
 									const img3 = document.createElement('img');
 									const span3 = document.createElement('span');
-									const span4 = document.createElement('span');
+									const span4 = document.createElement('button');
 									div6.classList.add('each-chat');
 									div6.classList.add('bot');
 									img3.src = '../images/chatbot/chatbot1.png';
@@ -213,10 +213,12 @@ document.querySelector('#name_svg').addEventListener('click', (e) => {
 									span3.classList.add('chat-span');
 									span4.classList.add('stream');
 									span4.classList.add('read-more');
+									
 									span4.innerText = 'Read more';
 									div6.appendChild(img3);
+									span3.appendChild(span4);
 									div12.appendChild(span3);
-									div12.appendChild(span4);
+
 									div6.appendChild(div12);
 									document.querySelector('.chat-body').appendChild(div6);
 									document.querySelector('.chat-body').scrollTop =
