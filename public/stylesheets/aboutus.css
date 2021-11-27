@@ -41,7 +41,7 @@ body.dark .chat {
 .timelinePara {
 	display: flex;
 	flex-direction: column;
-	height: 600px;
+	height: 800px;
 	position: relative;
 	overflow: auto;
 	scroll-snap-type: y mandatory;
@@ -52,7 +52,7 @@ body.dark .chat {
 	align-items: center;
 	display: flex;
 	position: relative;
-	min-height: 150px;
+	min-height: 200px;
 	align-items: center;
 	scroll-snap-align: start;
 }
@@ -84,13 +84,13 @@ body.dark .chat {
 	position: relative;
 	width: 50%;
 	align-items: center;
-	height: 600px;
+	height: 800px;
 	margin-right: 3rem;
 }
 .timelineDiv {
 	display: flex;
 	position: relative;
-	height: 150px;
+	height: 200px;
 	align-items: center;
 }
 .timelineDiv p {
@@ -751,6 +751,9 @@ iframe {
 	.appRight a {
 		width: 50%;
 	}
+	.timelineContent {
+		width: 90%;
+	}
 }
 @media(max-width: 700px){
 	.apppage {
@@ -816,19 +819,13 @@ iframe {
 		margin: 2rem 0rem 4rem 0rem;
 		color: #568036;
 	}
-	.timelineContent {
-		height: 600px;
-	}
-	.timelinePara {
-		height: 600px;
-	}
+	
 	.timelinePara p {
-		/* line-height: 2rem; */
-		min-height: 120px;
+		
 		font-size: 15px;
 	}
 	.timelineDiv {
-		height: 120px;
+		/* height: 120px; */
 		display: none;
 	}
 	iframe {
@@ -862,19 +859,13 @@ iframe {
 		width: 60%;
 		/* height: 80%; */
 	}
-	.timelineContent {
-		height: 640px;
-	}
-	.timelinePara {
-		height: 640px;
-	}
+	
 	.timelinePara p {
-		/* line-height: 2rem; */
-		min-height: 160px;
-		font-size: 15px;
+		
+		font-size: 14px;
 	}
 	.timelineDiv {
-		height: 160px;
+		
 		display: none;
 	}
 	.timelinePara p {
