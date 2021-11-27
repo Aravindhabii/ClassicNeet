@@ -11,13 +11,12 @@ const previmg = document.querySelector('.previewimg');
 const prevContainer = document.querySelector('.previewImg');
 const bodyy = document.querySelector('body');
 const exit = document.querySelector('.close');
-galleryclick.forEach((galleryclick) => {
-	galleryclick.addEventListener('click', (e) => {
-		prevContainer.style.display = 'flex';
-		previmg.src = e.target.src;
-		bodyy.style.overflow = 'hidden';
-	});
-});
+
+const galCLick = (src) => {
+	prevContainer.style.display = 'flex';
+	previmg.src = src.src;
+	bodyy.style.overflow = 'hidden';
+}
 exit.addEventListener('click', (e) => {
 	prevContainer.style.display = 'none';
 	bodyy.style.overflow = 'unset';
@@ -46,6 +45,7 @@ window.addEventListener('load', (e) => {
 			$.each(data, function (index, item) {
 				dataHtml += `<div class="galleryItem">
 				<img
+					onclick="galCLick(this)"
 					id="imageid"
 					src="../images/gallery/${dropdown.value}/${item}"
 					alt=""
@@ -78,6 +78,7 @@ dropdown.addEventListener('change', (e) => {
 			$.each(data, function (index, item) {
 				dataHtml += `<div class="galleryItem">
 				<img
+					onclick="galCLick(this)"
 					id="imageid"
 					src="../images/gallery/${e.target.value}/${item}"
 					alt=""
