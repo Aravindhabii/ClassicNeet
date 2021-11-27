@@ -76,7 +76,7 @@
 
 							</div>
 							<div class="scroll">
-								<marquee class="marqueetext" vspace="30%" onmousedown="start();" onmouseup="stop();">
+								<marquee class="marqueetext" vspace="30%" onmouseover="this.stop();" onmouseout="this.start();">
 									<p>
 										Admissions open for NEET Repeater 2022 New batch <a href="/contactus">JOIN NOW
 										</a> &nbsp;
@@ -94,7 +94,7 @@
 						<div class="div-2">
 							<h1 class="div-2-title">Latest Updates</h1>
 
-							<marquee class="news-box" direction="up" scrollamount="5" onmouseover="this.stop();"
+							<marquee class="news-box" direction="up" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();"
 								onmouseout="this.start();">
 								<% latestupdates.forEach(update=> { %>
 									<span class="p">
