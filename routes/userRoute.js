@@ -649,7 +649,7 @@ router
 	.delete(async (req, res) => {
 		if (typeof req.body.checkbox === 'string') {
 			await db.query(
-				'DELETE FROM history WHERE year = ?',
+				'DELETE FROM history WHERE content = ?',
 				[req.body.checkbox],
 				(err, response) => {
 					if (err) {
@@ -664,7 +664,7 @@ router
 		} else {
 			req.body.checkbox.forEach(async (year) => {
 				await db.query(
-					'DELETE FROM history WHERE year = ?',
+					'DELETE FROM history WHERE content = ?',
 					[year],
 					(err, response) => {
 						if (err) {
@@ -1076,8 +1076,8 @@ router
 let transporter = nodemailer.createTransport({
 	service: 'gmail',
 	auth: {
-		user: 'srklohith05@gmail.com',
-		pass: ''
+		user: 'classicneetslm@gmail.com',
+		pass: 'Classic@123'
 	}
 });
 
@@ -1093,8 +1093,8 @@ router
 		const phone = req.body.phone;
 
 		let mailOptions = {
-			from: 'srklohith05@gmail.com',
-			to: 'aravindhabii27@gmail.com',
+			from: 'classicneetslm@gmail.com',
+			to: 'info@classicneetacademy.com',
 			subject: 'Comments from user',
 			html:
 				`<h1>${name}</h1>` +
