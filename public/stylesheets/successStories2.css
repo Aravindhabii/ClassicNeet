@@ -60,7 +60,7 @@ body.dark .chat {
 	margin-bottom: 8rem;
 }
 .card {
-	height: 360px;
+	height: 400px;
 	width: 340px;
 	background: linear-gradient(#369afe, #60efffda);
 	position: relative;
@@ -74,7 +74,7 @@ body.dark .chat {
 	transform: translate(-50%, -40%);
 	border-radius: 100%;
 	border: 2px solid black;
-	width: 52%;
+	width: 60%;
 	height: 50%;
 	object-fit: cover;
 }
@@ -85,12 +85,13 @@ body.dark .chat {
 	font-size: 1.3rem;
 	position: relative;
 	color: white;
+	padding: .5rem;
 }
 .video {
 	width: 90%;
-	height: 50%;
-	position: relative;
-	top: 38%;
+	height: 40%;
+	position: absolute;
+	bottom: 3%;
 	left: 50%;
 	transform: translateX(-50%);
 	margin-left: auto;
@@ -114,6 +115,9 @@ body.dark .chat {
 		height: 240px;
 		width: 200px;
 	}
+	.card h3 {
+		font-size: .8rem;
+	}
 }
 @media (max-width: 600px) {
 	.studentHeader {
@@ -130,9 +134,7 @@ body.dark .chat {
 	.cardMain {
 		margin-bottom: 4rem;
 	}
-	.card h3 {
-		font-size: 1rem;
-	}
+	
 }
 	
 
@@ -148,6 +150,12 @@ body.dark .chat {
 	.profile {
 		width:60%;
 		height: 45%;
+	}
+	.video {
+		bottom: 3%;
+	}
+	.card h3 {
+		font-size: .7rem;
 	}
 }
 @media (max-width: 400px) {
@@ -166,4 +174,8 @@ body.dark .chat {
 		height: 190px;
 		width: 130px;
 	}
+	.profile { 
+		width: 65%;
+	}
+
 }
