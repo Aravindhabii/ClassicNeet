@@ -5,7 +5,7 @@
 	border-radius: 10px 0px 10px 0px;
 	position: relative;
 	background: linear-gradient(#4885e7, #19cae6);
-	/* border: 5px solid #568037; */
+	
 	color: #000000;
 	text-align: center;
 	font-size: 16px;
@@ -74,7 +74,7 @@ body.dark .chat {
 	width: 100%;
 	margin-bottom: 2rem;
 
-	/* background:blue; */
+	
 }
 
 .gridcontainer {
@@ -93,7 +93,7 @@ body.dark .chat {
 .imgDesign {
 	background: url(../images/Result/des2.png) center/cover;
 	width: 100%;
-	height: 70%;
+	height: 65%;
 	right:2%;
 	background-size: 100%;
 	background-repeat: no-repeat;
@@ -107,8 +107,10 @@ body.dark .chat {
 	width:60%;
 	height: 70%;
 	border-radius: 50%;
-	margin-top: 1rem;
-	margin-left: .8rem;
+	left: 22%;
+
+	top: 18%;
+	position: absolute;
 
 }
 .gridbox {
@@ -121,61 +123,15 @@ body.dark .chat {
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
-	/* box-shadow: 2px 2px 50px rgb(0,0,0,0.4);    */
-	/* border-radius: 10px;   #4E6B93*/
+
 	background-color:#69DADB;
 
-	/* -webkit-box-reflect: below 0 linear-gradient(transparent, white); */
+	
 }
 
-.scoreStudent {
-	font-size: 1.1rem;
-	text-align: center;
-	color: white;
-	font-weight: 600;
-}
-.gridanime1 {
-	animation-name: card;
-	animation-iteration-count: infinite;
-	animation-duration: 20s;
-	animation-timing-function: ease-in-out;
-}
-.gridanime2 {
-	animation-name: card2;
-	animation-iteration-count: infinite;
-	animation-duration: 20s;
-	animation-timing-function: ease-in-out;
-}
 
-.griditem2 {
-	/* background: white; */
-	flex-direction: row-reverse;
-}
 
-.griditem4 {
-	/* background: white; */
-	flex-direction: row-reverse;
-}
 
-.griditem6 {
-
-	flex-direction: row-reverse;
-}
-
-.griditem8 {
-
-	flex-direction: row-reverse;
-}
-
-.griditem10 {
-
-	flex-direction: row-reverse;
-}
-
-.griditem12 {
-
-	flex-direction: row-reverse;
-}
 
 .swiper-horizontal>.swiper-scrollbar {
 	display: none;
@@ -195,12 +151,15 @@ body.dark .chat {
 .gridbox > span > p {
 	color: black;
 	font-size: 1.3rem;
+	padding-bottom: .5rem;
+	text-align: center;
 }
 .gridbox > span > h3 {
 	font-size: 1.3rem;
 	text-align: center;
 	font-weight: 600;
 	color: rgb(0, 0, 0);
+	padding: .5rem;
 }
 
 body.dark .gridbox > span > h3 {
@@ -233,7 +192,14 @@ body.dark .gridbox > span > h3 {
 .dott {
 	background-color: #969696;
 }
-
+#pagination-container {
+	margin-top: 3rem;
+	margin-left: auto;
+	margin-right: auto;
+	width: fit-content;
+	position: relative;
+	
+}
 .pagination li a {
 	color: white;
 	text-decoration: none;
