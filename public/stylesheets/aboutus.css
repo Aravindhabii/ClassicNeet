@@ -847,6 +847,7 @@ iframe {
 		width: 50%;
 		/* height: 80%; */
 	}
+
 	
 	
 }
@@ -870,6 +871,9 @@ iframe {
 	}
 	.timelinePara p {
 		padding-right: 2rem;
+	}
+	.previewImg img {
+		width: 80%;
 	}
 }
 
