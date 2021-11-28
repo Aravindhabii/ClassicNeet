@@ -251,7 +251,7 @@ router
 	.delete(async (req, res) => {
 		if (typeof req.body.checkbox === 'string') {
 			await db.query(
-				'DELETE FROM latest_updates WHERE latestupdates = ?',
+				'DELETE FROM latest_updates WHERE link = ?',
 				[req.body.checkbox],
 				(err, response) => {
 					if (err) {
@@ -266,7 +266,7 @@ router
 		} else {
 			req.body.checkbox.forEach(async (link) => {
 				await db.query(
-					'DELETE FROM latest_updates WHERE latestupdates = ?',
+					'DELETE FROM latest_updates WHERE link = ?',
 					[link],
 					(err, response) => {
 						if (err) {
