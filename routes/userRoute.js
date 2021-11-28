@@ -1352,23 +1352,22 @@ router.post('/signout', isloggedin, (req, res) => {
 	});
 });
 
-router.post('/chatbot', async (req, res) => {
+router.get('/chatbot/:name/:email/:number', async (req, res) => {
 	await db.query(
 		'INSERT INTO chatbot SET ?',
 		{
-			name: req.body.name,
-			number: req.body.number,
-			gmail: req.body.email
+			name: req.params.name,
+			number: req.params.number,
+			gmail: req.params.email
 		},
 		(err, response) => {
 			if (err) {
 				console.log(err);
 				return;
 			} else {
-				res.json({ message: 'Success' });
 			}
 		}
-	);
+		);
 });
 
 router.post('/pagination', isloggedin, async (req, res) => {

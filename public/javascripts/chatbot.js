@@ -168,17 +168,7 @@ const phoneFormSubmit = async () => {
 		chatBody.getAttribute('data-email');
 	document.querySelector('.phone-form input').value =
 		chatBody.getAttribute('data-phone');
-	await fetch('/chatbot', {
-		method: 'POST',
-		body: JSON.stringify({
-			name: chatBody.getAttribute('data-name'),
-			email: chatBody.getAttribute('data-email'),
-			number: chatBody.getAttribute('data-phone')
-		}),
-		headers: {
-			'Content-Type': 'application/json'
-		}
-	});
+
 	const neetContent =
 		'This course is meant for those who have completed their 12th class board exams and might have already attempted the NEET. They will appear for NEET in the coming year after one year of training focused on NEET.';
 
@@ -189,18 +179,18 @@ const phoneFormSubmit = async () => {
 		'CLASSIC NEET ACADEMY offers a unique IIT/Medical Foundation program aimed at students of the 6th, 7th, 8th, 9th and 10th classes. This program focuses on strengthening the students conceptual clarity of the fundamentals in Mathematics, Physics, Chemistry, Biology, Logical Reasoning & Communication Skills.';
 
 	chatBody.innerHTML += `<div class="each-chat bot">
-	<img src="../images/chatbot/chatbot1.png">
-	<span class="chat-span">Choose stream</span>
-	</div>
-	<div class="stream" onclick="coursesDisplay('${neetContent}','/coursesNEET')">NEET</div>
-	<div class="stream" onclick="coursesDisplay('${IITContent}','/coursesJEE')">IIT / NEET foundation</div>
-	<div class="stream" onclick="coursesDisplay('${medicalContent}','/coursesIIT&Medical')">IIT</div>`;
+		<img src="../images/chatbot/chatbot1.png">
+		<span class="chat-span">Choose stream</span>
+		</div>
+		<div class="stream" onclick="coursesDisplay('${neetContent}','/coursesNEET')">NEET</div>
+		<div class="stream" onclick="coursesDisplay('${IITContent}','/coursesJEE')">IIT / NEET foundation</div>
+		<div class="stream" onclick="coursesDisplay('${medicalContent}','/coursesIIT&Medical')">IIT</div>`;
 	chatBody.scrollTop = chatBody.scrollHeight;
-
 	return false;
 };
 
 const coursesDisplay = (content, redirect) => {
+	redirectPage();
 	const div1 = document.createElement('div');
 	const div2 = document.createElement('div');
 	const div3 = document.createElement('div');
@@ -227,11 +217,19 @@ const coursesDisplay = (content, redirect) => {
 	div3.classList.add('each-chat');
 	div3.classList.add('bot');
 	img2.src = '../images/chatbot/chatbot1.png';
-	span2.classList.add('chat-span');
+	b1.classList.add('chat-span');
 	b1.innerText =
 		'Thank you, our admin will contact you as soon as possible. 🤩';
 	div3.appendChild(img2);
 	div3.appendChild(b1);
 	chatBody.appendChild(div3);
 	chatBody.scrollTop = chatBody.scrollHeight;
+};
+
+const redirectPage = async () => {
+	await fetch(
+		`/chatbot/${chatBody.getAttribute('data-name')}/${chatBody.getAttribute(
+			'data-email'
+		)}/${chatBody.getAttribute('data-phone')}`
+	);
 };
