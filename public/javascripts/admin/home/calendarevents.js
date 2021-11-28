@@ -10,9 +10,6 @@ const changablespan = document.querySelector('.changablespan');
 const year = document.querySelector('.year');
 const date = new Date();
 
-
-
-
 console.log((date.getFullYear()-1)+'-'+(date.getMonth()+1)+'-'+date.getDate(),(date.getFullYear()+1)+'-'+(date.getMonth()+1)+'-'+date.getDate());
 
 year.setAttribute('min',(date.getFullYear()-1)+'-'+(date.getMonth()+1)+'-'+date.getDate())
@@ -28,7 +25,6 @@ backbtn.addEventListener('click', () => {
 	previewDiv.style.transform = 'translate(300vw,0)';
 	imgform.style.transform = 'translate(0,0)';
 });
-
 
 submitbtn.addEventListener('click', () => {
 	Swal.fire({

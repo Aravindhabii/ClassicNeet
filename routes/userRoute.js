@@ -322,10 +322,11 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Added successfully');
+					res.redirect('/admin/ourtoppers');	
 				}
 			}
 		);
-		res.redirect('/admin/ourtoppers');
 	})
 	.put(upload.single('sliderimg'), async (req, res) => {
 		await db.query(
@@ -400,6 +401,7 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Added successfully');
 					res.redirect('/admin/studenttestimonials');
 				}
 			}
@@ -492,6 +494,7 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Added successfully');
 					res.redirect('/admin/calendarevents');
 				}
 			}
@@ -641,6 +644,7 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Added successfully');
 					res.redirect('/admin/aboutus/history');
 				}
 			}
@@ -669,7 +673,7 @@ router
 				var checkcontent = content.split(',')[0];
 				var checkyear = content.split(',')[1];
 				await db.query(
-					'DELETE FROM history WHERE content = ? AND year = ?',
+					`DELETE FROM history WHERE content = ? AND year = ?`,
 					[checkcontent,checkyear],
 					(err, response) => {
 						if (err) {
@@ -1037,16 +1041,15 @@ router
 					req.files[0].originalname,
 					req.files[0].filename.split('/')[1],
 					req.body.checkbox
-				]
-			),
+				],
 				(err, response) => {
 					if (err) {
 						console.log(err);
 					} else {
-						req.flash('success', 'Successfully Added');
+						req.flash('success', 'Image Successfully Updated');
 						res.redirect('/admin/results/images');
 					}
-				};
+				});
 		} else {
 			for (let i = 0; i <= req.files.length - 1; i++) {
 				for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
@@ -1061,8 +1064,7 @@ router
 								req.files[j].originalname,
 								req.files[j].filename.split('/')[1],
 								req.body.checkbox[j]
-							]
-						),
+							],
 							(err, response) => {
 								if (err) {
 									req.flash('error', 'Error occurred while adding');
@@ -1071,7 +1073,7 @@ router
 									req.flash('success', 'Image Successfully Updated');
 									res.redirect('/admin/results/images');
 								}
-							};
+							});
 					}
 				}
 			}
@@ -1349,6 +1351,19 @@ router
 			}
 		});
 	});
+router.route('/chatbotdelete').post(async(req,res)=>{
+	await db.query('DELETE FROM chatbot WHERE name = ? AND gmail = ?',
+	[req.body.stuname,req.body.gmail],
+	(err,response)=>{
+		if(err){
+			req.flash('error','Error occurred while adding');
+			console.log(err);
+		}else{
+			console.log('okey');
+			req.flash('success', 'Successfully Deleted');
+		}
+	})
+})
 
 router.post('/signout', isloggedin, (req, res) => {
 	req.session.destroy(function () {
