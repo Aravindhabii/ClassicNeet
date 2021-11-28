@@ -206,7 +206,7 @@ $('#pagination-container').pagination({
 	}
 });
 
-function successdialog() {
+setTimeout( function successdialog() {
 	Swal.fire({
 		position: 'center',
 		icon: 'success',
@@ -214,13 +214,13 @@ function successdialog() {
 		showConfirmButton: false,
 		timer: 2500
 	})
-}
+})
 
 const reload = async(thisfun) => {
 	var name = thisfun.value.split(',')[0];
 	var mail = thisfun.value.split(',')[1];
 	resdelete(name, mail);
-	await window.location.reload();
+	window.location.reload();
 	await successdialog();
 }
 
