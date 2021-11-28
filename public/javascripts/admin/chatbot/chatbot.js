@@ -12,9 +12,7 @@ const editstudentimg = document.querySelector('.editstudentimg');
 const editcollegename = document.querySelector('.editcollegename');
 const oldname = document.querySelector('.oldname');
 
-
 function editbutton(edit) {
-
 	previewDiv2.style.display = 'flex';
 	imgform.style.transform = 'translate(300vw,0)';
 	previewDiv2.style.transform = 'none';
@@ -67,103 +65,138 @@ function checkboxCheck(check) {
 	}
 }
 
-const pagination = async (currentPage) => {
-	const res = await fetch('/chatbotresponce', {
-		method: 'POST',
-		body: JSON.stringify({
-			page: currentPage
-		}),
-		headers: {
-			'Content-Type': 'application/json'
-		}
-	});
-	const data = await res.json();
-	return data;
-};
+// const pagination = async (currentPage) => {
+// 	const res = await fetch('/chatbotresponce', {
+// 		method: 'POST',
+// 		body: JSON.stringify({
+// 			page: currentPage
+// 		}),
+// 		headers: {
+// 			'Content-Type': 'application/json'
+// 		}
+// 	});
+// 	const data = await res.json();
+// 	return data;
+// };
 
-const next = document.querySelector('.next');
-const prev = document.querySelector('.prev');
-const tbody = document.querySelector('.tbody');
+// const next = document.querySelector('.next');
+// const prev = document.querySelector('.prev');
+// const tbody = document.querySelector('.tbody');
 
-const loadDetails = async (page, type) => {
-	const details = await pagination(page);
-	details.forEach((detail) => {
-		const row = `<tr>
-		<td>
-			<p>${detail.name}</p>
-		</td>
-		<td>
-			<p>${detail.number}</p>
-		</td>
-		<td>
-			<p>${detail.gmail}</p>
-		</td>
-	</tr>`;
-		switch (type) {
-			case 'load':
-				tbody.innerHTML += row;
-				break;
-			case 'next':
-				tbody.innerHTML += row;
-				break;
-			case 'prev':
-				tbody.innerHTML += row;
-				break;
-		}
-	});
-	return details.length;
-};
+// const loadDetails = async (page, type) => {
+// 	const details = await pagination(page);
+// 	details.forEach((detail) => {
+// 		const row = `<tr>
+// 		<td>
+// 			<p>${detail.name}</p>
+// 		</td>
+// 		<td>
+// 			<p>${detail.number}</p>
+// 		</td>
+// 		<td>
+// 			<p>${detail.gmail}</p>
+// 		</td>
+// 	</tr>`;
+// 		switch (type) {
+// 			case 'load':
+// 				tbody.innerHTML += row;
+// 				break;
+// 			case 'next':
+// 				tbody.innerHTML += row;
+// 				break;
+// 			case 'prev':
+// 				tbody.innerHTML += row;
+// 				break;
+// 		}
+// 	});
+// 	return details.length;
+// };
 
-window.addEventListener('load', async () => {
-	loadDetails(1, 'load');
-	await fetch('/pagination/totalCount')
-		.then((response) => response.json())
-		.then((data) => {
-			tbody.setAttribute('data-total', Math.ceil(data / 5));
+// window.addEventListener('load', async () => {
+// 	loadDetails(1, 'load');
+// 	await fetch('/pagination/totalCount')
+// 		.then((response) => response.json())
+// 		.then((data) => {
+// 			tbody.setAttribute('data-total', Math.ceil(data / 5));
+// 		});
+// });
+
+// next.addEventListener('click', async (e) => {
+// 	if (
+// 		parseInt(tbody.getAttribute('data-total')) >
+// 		parseInt(tbody.getAttribute('data-current'))
+// 	) {
+// 		tbody.innerHTML = '';
+
+// 		next.removeAttribute('disabled');
+// 		prev.removeAttribute('disabled');
+// 		await loadDetails(parseInt(tbody.getAttribute('data-current')) + 1, 'next');
+// 		tbody.setAttribute(
+// 			'data-current',
+// 			parseInt(tbody.getAttribute('data-current')) + 1
+// 		);
+// 		if (
+// 			parseInt(tbody.getAttribute('data-total')) ===
+// 			parseInt(tbody.getAttribute('data-current'))
+// 		) {
+// 			next.setAttribute('disabled', true);
+// 		}
+// 	} else {
+// 		next.setAttribute('disabled', true);
+// 	}
+// });
+
+// prev.addEventListener('click', async (e) => {
+// 	next.removeAttribute('disabled');
+// 	tbody.innerHTML = '';
+// 	if (
+// 		parseInt(tbody.getAttribute('data-current')) != 1 &&
+// 		parseInt(tbody.getAttribute('data-current')) <=
+// 			parseInt(tbody.getAttribute('data-total'))
+// 	) {
+// 		prev.removeAttribute('disabled');
+// 		await loadDetails(parseInt(tbody.getAttribute('data-current')) - 1, 'prev');
+// 		tbody.setAttribute(
+// 			'data-current',
+// 			parseInt(tbody.getAttribute('data-current')) - 1
+// 		);
+// 		if (parseInt(tbody.getAttribute('data-current')) === 1) {
+// 			prev.setAttribute('disabled', true);
+// 		}
+// 	}
+// });
+
+$('#pagination-container').pagination({
+	dataSource: function (done) {
+		$.ajax({
+			type: 'GET',
+			url: `/chatbotresponce`,
+			success: function (response) {
+				done(response);
+			}
 		});
-});
+	},
+	className: 'paginationjs-theme-blue paginationjs-big',
 
-next.addEventListener('click', async (e) => {
-	if (
-		parseInt(tbody.getAttribute('data-total')) >
-		parseInt(tbody.getAttribute('data-current'))
-	) {
-		tbody.innerHTML = '';
+	pageSize: 5,
+	callback: function (data, pagination) {
+		// template method of yourself
+		var dataHtml = '';
 
-		next.removeAttribute('disabled');
-		prev.removeAttribute('disabled');
-		await loadDetails(parseInt(tbody.getAttribute('data-current')) + 1, 'next');
-		tbody.setAttribute(
-			'data-current',
-			parseInt(tbody.getAttribute('data-current')) + 1
-		);
-		if (
-			parseInt(tbody.getAttribute('data-total')) ===
-			parseInt(tbody.getAttribute('data-current'))
-		) {
-			next.setAttribute('disabled', true);
-		}
-	} else {
-		next.setAttribute('disabled', true);
-	}
-});
+		$.each(data, function (index, detail) {
+			dataHtml += `<tr>
+				<td>
+					<p>${detail.name}</p>
+				</td>
+				<td>
+					<p>${detail.number}</p>
+				</td>
+				<td>
+					<p>${detail.gmail}</p>
+				</td>
+			</tr>`;
+		});
 
-prev.addEventListener('click', async (e) => {
-	next.removeAttribute('disabled');
-	tbody.innerHTML = '';
-	if (
-		parseInt(tbody.getAttribute('data-current')) != 1 &&
-		parseInt(tbody.getAttribute('data-current')) <=
-			parseInt(tbody.getAttribute('data-total'))
-	) {
-		prev.removeAttribute('disabled');
-		await loadDetails(parseInt(tbody.getAttribute('data-current')) - 1, 'prev');
-		tbody.setAttribute(
-			'data-current',
-			parseInt(tbody.getAttribute('data-current')) - 1
-		);
-		if (parseInt(tbody.getAttribute('data-current')) === 1) {
-			prev.setAttribute('disabled', true);
-		}
+		$('.tbody').html(dataHtml);
 	}
 });

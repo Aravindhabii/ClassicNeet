@@ -1395,14 +1395,10 @@ router.post('/pagination', isloggedin, async (req, res) => {
 	);
 });
 
-router.post('/chatbotresponce', async (req, res) => {
-	const currentPage = req.body.page || 1;
-	const perPage = 5;
+router.get('/chatbotresponce', async (req, res) => {
 
 	await db.query(
-		`SELECT * FROM chatbot LIMIT ${perPage} OFFSET ${
-			(currentPage - 1) * perPage
-		}`,
+		`SELECT * FROM chatbot`,
 		(err, response) => {
 			if (err) {
 				console.log(err);
