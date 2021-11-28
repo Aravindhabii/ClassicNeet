@@ -12,6 +12,7 @@
 	transition: all 0.3s ease-in-out;
 }
 
+
 @keyframes bot-img-animate {
 	0% {
 		transform: translateY(-120%);
