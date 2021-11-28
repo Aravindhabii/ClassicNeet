@@ -1349,7 +1349,6 @@ router.post('/signout', isloggedin, (req, res) => {
 	req.session.destroy(function () {
 		res.clearCookie('connect.sid');
 		res.redirect('/login');
-		rs;
 	});
 });
 

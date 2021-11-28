@@ -183,7 +183,7 @@ a.site-logo {
 		transition: 0.3s;
 	}
 	.site-navbar ul li {
-		width: 100%;
+		width: fit-content;
 		text-align: center;
 	}
 	.site-navbar ul li a {

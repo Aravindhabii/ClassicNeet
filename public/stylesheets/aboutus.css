@@ -41,7 +41,7 @@ body.dark .chat {
 .timelinePara {
 	display: flex;
 	flex-direction: column;
-	height: 800px;
+	height: 700px;
 	position: relative;
 	overflow: auto;
 	scroll-snap-type: y mandatory;
@@ -52,9 +52,11 @@ body.dark .chat {
 	align-items: center;
 	display: flex;
 	position: relative;
-	min-height: 200px;
+	min-height: 175px;
 	align-items: center;
 	scroll-snap-align: start;
+	padding-right
+	: 2rem;
 }
 /* scrollbar */
 .timelinePara::-webkit-scrollbar {
@@ -84,13 +86,13 @@ body.dark .chat {
 	position: relative;
 	width: 50%;
 	align-items: center;
-	height: 800px;
+	height: 700px;
 	margin-right: 3rem;
 }
 .timelineDiv {
 	display: flex;
 	position: relative;
-	height: 200px;
+	height: 175px;
 	align-items: center;
 }
 .timelineDiv p {
@@ -692,7 +694,18 @@ iframe {
 		width: 50vw;
 		height: 55vh;
 	}
-	
+	.timelinePara {
+		height: 800px;
+	}
+	.timelinePara p {
+		min-height: 200px;
+	}
+	.timelineContent {
+		height: 800px;
+	}
+	.timelineDiv {
+		min-height: 200px;	
+	}
 
 }
 
@@ -754,6 +767,7 @@ iframe {
 	.timelineContent {
 		width: 90%;
 	}
+
 }
 @media(max-width: 700px){
 	.apppage {

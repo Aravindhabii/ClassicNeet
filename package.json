@@ -6,7 +6,8 @@
 	"homepage": "web.classicneetacademy.com",
 	"scripts": {
 		"dev": "node app.js",
-		"start": "nodemon app.js"
+		"start": "nodemon app.js",
+		"git": "git add . && git commit -m 'Changes' && git pull origin main && git push origin main"
 	},
 	"repository": {
 		"type": "git",
