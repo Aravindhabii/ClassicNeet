@@ -14,12 +14,14 @@ const editstudentimg = document.querySelector('.editstudentimg');
 const editcollegename = document.querySelector('.editcollegename');
 const oldname = document.querySelector('.oldname');
 const select = document.querySelector('.form-select');
-
+const currentyear = document.querySelector('.currentYear');
+const year = document.querySelector('.year');
 
 function editbutton(edit) {
 	previewDiv2.style.display = 'flex';
 	imgform.style.transform = 'translate(300vw,0)';
 	previewDiv2.style.transform = 'none';
+	currentyear.setAttribute('disabled', true);
 	const namevalue = edit.parentNode.parentNode.children[0].innerText;
 	editname.value = namevalue;
 	const collegenamevalue = edit.parentNode.parentNode.children[2].innerText;
@@ -31,17 +33,22 @@ addbtn.addEventListener('click', () => {
 	previewDiv.style.display = 'flex';
 	imgform.style.transform = 'translate(300vw,0)';
 	previewDiv.style.transform = 'none';
+	currentyear.setAttribute('disabled', true);
 });
 
 backbtn.addEventListener('click', () => {
 	previewDiv.style.transform = 'translate(300vw,0)';
 	imgform.style.transform = 'translate(0,0)';
+	currentyear.removeAttribute('disabled');
 });
 
 backbtn2.addEventListener('click', () => {
 	previewDiv2.style.transform = 'translate(300vw,0)';
 	imgform.style.transform = 'translate(0,0)';
+	currentyear.removeAttribute('disabled');
 });
+
+year.setAttribute('max', new Date().getFullYear());
 
 const previewTopper = document.querySelector('.previewTopper');
 const previewSpan = document.querySelectorAll('.currentPreviewSpan');

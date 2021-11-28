@@ -7,11 +7,14 @@ const submitbtn = document.querySelector('.submitbtn');
 const confirmdelete = document.querySelector('.confirmdelete');
 const latestupdateform = document.querySelector('.latestupdateform');
 
-addbtn.addEventListener('click', () => {
+if (addbtn) {
+  addbtn.addEventListener('click', () => {
 	previewDiv.style.display = 'flex';
 	imgform.style.transform = 'translate(300vw,0)';
 	previewDiv.style.transform = 'none';
-});
+	
+})
+}
 
 backbtn.addEventListener('click', () => {
 	previewDiv.style.transform = 'translate(300vw,0)';
