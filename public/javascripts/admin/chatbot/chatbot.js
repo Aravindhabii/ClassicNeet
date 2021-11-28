@@ -195,7 +195,7 @@ $('#pagination-container').pagination({
 					<p>${detail.gmail}</p>
 				</td>
 				<td>
-					<button type="button" class="btn btn-outline-danger submit ms-5 px-3 submitbtn" onclick="resdelete(this)" value ="${detail.name},${detail.gmail}">
+					<button type="button" class="btn btn-outline-danger submit ms-5 px-3 submitbtn" onclick="reload(this)" value ="${detail.name},${detail.gmail}">
 							Delete
 					</button>
 				</td>
@@ -210,16 +210,22 @@ function successdialog() {
 	Swal.fire({
 		position: 'center',
 		icon: 'success',
-		title: sweetp.innerText,
+		title: 'Successfully Deleted',
 		showConfirmButton: false,
 		timer: 2500
 	})
-	sweetp.parentNode.removeChild(sweetp);
 }
 
-const resdelete =async (thisfun) => {
+const reload = async(thisfun) => {
 	var name = thisfun.value.split(',')[0];
 	var mail = thisfun.value.split(',')[1];
+	resdelete(name, mail);
+	await window.location.reload();
+	await successdialog();
+}
+
+const resdelete =async (name,mail) => {
+	
 	const res = await fetch('/chatbotdelete', {
 		method: 'POST',
 		body: JSON.stringify({
@@ -230,6 +236,5 @@ const resdelete =async (thisfun) => {
 			'Content-Type': 'application/json'
 		}
 	});
-	window.location.reload();
-	successdialog() 
 }
+

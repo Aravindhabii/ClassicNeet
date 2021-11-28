@@ -1351,6 +1351,7 @@ router
 			}
 		});
 	});
+
 router.route('/chatbotdelete').post(async(req,res)=>{
 	await db.query('DELETE FROM chatbot WHERE name = ? AND gmail = ?',
 	[req.body.stuname,req.body.gmail],
@@ -1359,11 +1360,10 @@ router.route('/chatbotdelete').post(async(req,res)=>{
 			req.flash('error','Error occurred while adding');
 			console.log(err);
 		}else{
-			console.log('okey');
-			req.flash('success', 'Successfully Deleted');
+			console.log('hello');
 		}
 	})
-})
+});
 
 router.post('/signout', isloggedin, (req, res) => {
 	req.session.destroy(function () {
