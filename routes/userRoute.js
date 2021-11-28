@@ -673,7 +673,7 @@ router
 				var checkcontent = content.split(',')[0];
 				var checkyear = content.split(',')[1];
 				await db.query(
-					'DELETE FROM history WHERE content = ? AND year = ?',
+					`DELETE FROM history WHERE content = ? AND year = ?`,
 					[checkcontent,checkyear],
 					(err, response) => {
 						if (err) {
@@ -1041,16 +1041,15 @@ router
 					req.files[0].originalname,
 					req.files[0].filename.split('/')[1],
 					req.body.checkbox
-				]
-			),
+				],
 				(err, response) => {
 					if (err) {
 						console.log(err);
 					} else {
-						req.flash('success', 'Successfully Added');
+						req.flash('success', 'Image Successfully Updated');
 						res.redirect('/admin/results/images');
 					}
-				};
+				});
 		} else {
 			for (let i = 0; i <= req.files.length - 1; i++) {
 				for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
@@ -1065,8 +1064,7 @@ router
 								req.files[j].originalname,
 								req.files[j].filename.split('/')[1],
 								req.body.checkbox[j]
-							]
-						),
+							],
 							(err, response) => {
 								if (err) {
 									req.flash('error', 'Error occurred while adding');
@@ -1075,7 +1073,7 @@ router
 									req.flash('success', 'Image Successfully Updated');
 									res.redirect('/admin/results/images');
 								}
-							};
+							});
 					}
 				}
 			}
