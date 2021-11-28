@@ -322,10 +322,11 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Added successfully');
+					res.redirect('/admin/ourtoppers');	
 				}
 			}
 		);
-		res.redirect('/admin/ourtoppers');
 	})
 	.put(upload.single('sliderimg'), async (req, res) => {
 		await db.query(
@@ -400,6 +401,7 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Added successfully');
 					res.redirect('/admin/studenttestimonials');
 				}
 			}
@@ -492,6 +494,7 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Added successfully');
 					res.redirect('/admin/calendarevents');
 				}
 			}
@@ -641,6 +644,7 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Added successfully');
 					res.redirect('/admin/aboutus/history');
 				}
 			}
