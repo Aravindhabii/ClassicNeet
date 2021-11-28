@@ -206,7 +206,7 @@ $('#pagination-container').pagination({
 	}
 });
 
-setTimeout( function successdialog() {
+function success() {
 	Swal.fire({
 		position: 'center',
 		icon: 'success',
@@ -214,14 +214,20 @@ setTimeout( function successdialog() {
 		showConfirmButton: false,
 		timer: 2500
 	})
-})
+}
+
+if (window.localStorage.flash == "true") {
+	console.log('call from reload');
+	window.localStorage.removeItem("flash");
+	success();
+}
 
 const reload = async(thisfun) => {
 	var name = thisfun.value.split(',')[0];
 	var mail = thisfun.value.split(',')[1];
 	resdelete(name, mail);
-	window.location.reload();
-	await successdialog();
+	window.localStorage.setItem('flash', "true");
+	window.location.reload()
 }
 
 const resdelete =async (name,mail) => {

@@ -1360,7 +1360,7 @@ router.route('/chatbotdelete').post(async(req,res)=>{
 			req.flash('error','Error occurred while adding');
 			console.log(err);
 		}else{
-			console.log('hello');
+
 		}
 	})
 });
