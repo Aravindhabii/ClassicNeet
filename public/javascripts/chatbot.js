@@ -24,7 +24,7 @@ chatReset.addEventListener('click', () => {
 	<img src="../images/chatbot/chatbot1.png" alt="" />
 	<span class="chat-span">Enter your name</span>
 </div>
-<form class="each-chat client name-form">
+<form class="each-chat client name-form" onsubmit="nameFormSubmit()">
 	<button>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -60,9 +60,7 @@ window.addEventListener('scroll', (e) => {
 	}
 });
 
-const nameForm = document.querySelector('.name-form');
-nameForm.addEventListener('submit', (e) => {
-	e.preventDefault();
+const nameFormSubmit = () => {
 	document.querySelector('.name-form button').style.display = 'none';
 	document.querySelector('.name-form input').setAttribute('disabled', true);
 	chatBody.setAttribute(
@@ -99,7 +97,8 @@ nameForm.addEventListener('submit', (e) => {
 	document.querySelector('.name-form input').value =
 		chatBody.getAttribute('data-name');
 	chatBody.scrollTop = chatBody.scrollHeight;
-});
+	return false;
+};
 
 const validateNumber = (evt) => {
 	var ASCIICode = evt.value.slice(-1).charCodeAt(0);
@@ -162,21 +161,14 @@ const phoneFormSubmit = async () => {
 		document.querySelector('.phone-form input').value
 	);
 
-	document.querySelector('.name-form input').value =
-		chatBody.getAttribute('data-name');
-	document.querySelector('.email-form input').value =
-		chatBody.getAttribute('data-email');
-	document.querySelector('.phone-form input').value =
-		chatBody.getAttribute('data-phone');
-
 	const neetContent =
 		'This course is meant for those who have completed their 12th class board exams and might have already attempted the NEET. They will appear for NEET in the coming year after one year of training focused on NEET.';
 
 	const IITContent =
-		'This course is meant for students who have completed their 10th std board exams. The course will start at their 11th std and will be conducted till their JEE exam.';
+		'CLASSIC NEET ACADEMY offers a unique IIT/Medical Foundation program aimed at students of the 6th, 7th, 8th, 9th and 10th classes. This program focuses on strengthening the students conceptual clarity of the fundamentals in Mathematics, Physics, Chemistry, Biology, Logical Reasoning & Communication Skills.';
 
 	const medicalContent =
-		'CLASSIC NEET ACADEMY offers a unique IIT/Medical Foundation program aimed at students of the 6th, 7th, 8th, 9th and 10th classes. This program focuses on strengthening the students conceptual clarity of the fundamentals in Mathematics, Physics, Chemistry, Biology, Logical Reasoning & Communication Skills.';
+		'This course is meant for students who have completed their 10th std board exams. The course will start at their 11th std and will be conducted till their JEE exam.';
 
 	chatBody.innerHTML += `<div class="each-chat bot">
 		<img src="../images/chatbot/chatbot1.png">
@@ -185,6 +177,12 @@ const phoneFormSubmit = async () => {
 		<div class="stream" onclick="coursesDisplay('${neetContent}','/coursesNEET')">NEET</div>
 		<div class="stream" onclick="coursesDisplay('${IITContent}','/coursesJEE')">IIT / NEET foundation</div>
 		<div class="stream" onclick="coursesDisplay('${medicalContent}','/coursesIIT&Medical')">IIT</div>`;
+	document.querySelector('.name-form input').value =
+		chatBody.getAttribute('data-name');
+	document.querySelector('.email-form input').value =
+		chatBody.getAttribute('data-email');
+	document.querySelector('.phone-form input').value =
+		chatBody.getAttribute('data-phone');
 	chatBody.scrollTop = chatBody.scrollHeight;
 	return false;
 };
@@ -195,7 +193,7 @@ const coursesDisplay = (content, redirect) => {
 	const div2 = document.createElement('div');
 	const div3 = document.createElement('div');
 	const span1 = document.createElement('span');
-	const b1 = document.createElement('b');
+	const span2 = document.createElement('span');
 	const button1 = document.createElement('button');
 	const img = document.createElement('img');
 	const img2 = document.createElement('img');
@@ -217,11 +215,11 @@ const coursesDisplay = (content, redirect) => {
 	div3.classList.add('each-chat');
 	div3.classList.add('bot');
 	img2.src = '../images/chatbot/chatbot1.png';
-	b1.classList.add('chat-span');
-	b1.innerText =
-		'Thank you, our admin will contact you as soon as possible. 🤩';
+	span2.classList.add('chat-span');
+	span2.innerHTML =
+		'<b>Thank you, our admin will contact you as soon as possible.</b> 🤩';
 	div3.appendChild(img2);
-	div3.appendChild(b1);
+	div3.appendChild(span2);
 	chatBody.appendChild(div3);
 	chatBody.scrollTop = chatBody.scrollHeight;
 };
