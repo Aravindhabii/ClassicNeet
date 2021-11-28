@@ -168,17 +168,17 @@ const phoneFormSubmit = async () => {
 		chatBody.getAttribute('data-email');
 	document.querySelector('.phone-form input').value =
 		chatBody.getAttribute('data-phone');
-	// await fetch('/chatbot', {
-	// 	method: 'POST',
-	// 	body: JSON.stringify({
-	// 		name: chatBody.getAttribute('data-name'),
-	// 		email: chatBody.getAttribute('data-email'),
-	// 		number: chatBody.getAttribute('data-phone')
-	// 	}),
-	// 	headers: {
-	// 		'Content-Type': 'application/json'
-	// 	}
-	// });
+	await fetch('/chatbot', {
+		method: 'POST',
+		body: JSON.stringify({
+			name: chatBody.getAttribute('data-name'),
+			email: chatBody.getAttribute('data-email'),
+			number: chatBody.getAttribute('data-phone')
+		}),
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	});
 	const neetContent =
 		'This course is meant for those who have completed their 12th class board exams and might have already attempted the NEET. They will appear for NEET in the coming year after one year of training focused on NEET.';
 
