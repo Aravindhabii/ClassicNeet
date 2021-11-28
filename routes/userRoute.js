@@ -647,10 +647,13 @@ router
 		);
 	})
 	.delete(async (req, res) => {
-		if (typeof req.body.checkbox === 'string') {
+		
+			if (typeof req.body.checkbox === 'string') {
+			const checkcontent = req.body.checkbox.split(',')[0];
+			const checkyear = req.body.checkbox.split(',')[1];
 			await db.query(
-				'DELETE FROM history WHERE content = ?',
-				[req.body.checkbox],
+				'DELETE FROM history WHERE content = ? AND year = ?',
+				[checkcontent, checkyear],
 				(err, response) => {
 					if (err) {
 						req.flash('error', 'Error occurred while deleting');
@@ -662,10 +665,12 @@ router
 				}
 			);
 		} else {
-			req.body.checkbox.forEach(async (year) => {
+			req.body.checkbox.forEach(async (content) => {
+				var checkcontent = content.split(',')[0];
+				var checkyear = content.split(',')[1];
 				await db.query(
-					'DELETE FROM history WHERE content = ?',
-					[year],
+					'DELETE FROM history WHERE content = ? AND year = ?',
+					[checkcontent,checkyear],
 					(err, response) => {
 						if (err) {
 							req.flash('error', 'Error occurred while deleting');

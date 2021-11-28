@@ -20,6 +20,9 @@ const latestupdateform = document.querySelector(".latestupdateform");
 const contents = document.querySelectorAll(".content");
 const closebtn = document.querySelector(".closebtn");
 const previewdiv = document.querySelector(".previewdiv");
+const yearnum = document.querySelector(".yearnum");
+
+yearnum.setAttribute("max", new Date().getFullYear()+1);
 
 addbtn.addEventListener("click", () => {
   preview.style.display = "flex";
