@@ -205,7 +205,7 @@ const coursesDisplay = (content, redirect) => {
 	const div2 = document.createElement('div');
 	const div3 = document.createElement('div');
 	const span1 = document.createElement('span');
-	const span2 = document.createElement('span');
+	const b1 = document.createElement('b');
 	const button1 = document.createElement('button');
 	const img = document.createElement('img');
 	const img2 = document.createElement('img');
@@ -228,10 +228,10 @@ const coursesDisplay = (content, redirect) => {
 	div3.classList.add('bot');
 	img2.src = '../images/chatbot/chatbot1.png';
 	span2.classList.add('chat-span');
-	span2.innerText =
+	b1.innerText =
 		'Thank you, our admin will contact you as soon as possible. 🤩';
 	div3.appendChild(img2);
-	div3.appendChild(span2);
+	div3.appendChild(b1);
 	chatBody.appendChild(div3);
 	chatBody.scrollTop = chatBody.scrollHeight;
 };
