@@ -42,6 +42,7 @@
 							<th scope="col">Name</th>
 							<th scope="col">Phonenumber</th>
 							<th scope="col">Email</th>
+							<th scope="col">Date</th>
 							<th scope="col">Delete</th>
 						</tr>
 					</thead>
@@ -57,28 +58,30 @@
           </button>
         </div> -->
 
-				<form
-					action="/admin/chatbot?_method=DELETE"
-					method="post"
-					class="
-						d-flex
-						justify-content-center
-						align-items-center
-						flex-column
-						imgform
-					"
-					style="width: 100%"
-					enctype="multipart/form-data"
+				<% if (chatbot.length > 0) { %>
+					<form
+						action="/admin/chatbot?_method=DELETE"
+						method="post"
+						class="
+							d-flex
+							justify-content-center
+							align-items-center
+							flex-column
+							imgform"
+						style="width: 100%"
+						enctype="multipart/form-data"
 				>
 					<div class="buttondiv">
 						<button
 							type="button"
-							class="btn btn-outline-danger submit mt-3 submitbtn"
+							class="btn btn-outline-danger submit mt-3"
 						>
 							Empty Response
 						</button>
-					</div>
-				</form>
+						</div>
+					</form>
+				<% } %>
+				
 			</div>
 		</section>
 		<script

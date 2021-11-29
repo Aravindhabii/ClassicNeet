@@ -1338,7 +1338,15 @@ router
 router
 	.route('/admin/chatbot')
 	.get(flash, isloggedin, async (req, res) => {
-		res.render('admin/chatbot/chatbot');
+		await db.query("SELECT * FROM chatbot",(err,response)=>{
+			var arr = [];
+				if (err) {
+					console.log(err);
+				} else {
+				
+					res.render('admin/chatbot/chatbot',{chatbot:response});
+				}
+		})
 	})
 	.delete(async (req, res) => {
 		await db.query('DELETE FROM chatbot', (err, response) => {
@@ -1373,12 +1381,14 @@ router.post('/signout', isloggedin, (req, res) => {
 });
 
 router.get('/chatbot/:name/:email/:number', async (req, res) => {
+	const date = new Date();
 	await db.query(
 		'INSERT INTO chatbot SET ?',
 		{
 			name: req.params.name,
 			number: req.params.number,
-			gmail: req.params.email
+			gmail: req.params.email,
+			date: date.getDate()+'-'+(date.getMonth()+1)+'-'+date.getFullYear()
 		},
 		(err, response) => {
 			if (err) {
