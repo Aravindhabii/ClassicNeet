@@ -5,7 +5,6 @@ const sweetp = document.querySelector('.sweetp')
 setTimeout(function () {
     alerter.forEach(function (item) {
         item.classList.remove('show')
-        removesection.parentNode.removeChild(removesection);
     })
 }, 4000);
 
@@ -18,6 +17,7 @@ if(sweetp){
             showConfirmButton: false,
             timer: 2500
         })
+        sweetp.parentNode.removeChild(sweetp);
     }
     successdialog() 
 }

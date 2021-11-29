@@ -12,6 +12,7 @@
 	transition: all 0.3s ease-in-out;
 }
 
+
 @keyframes bot-img-animate {
 	0% {
 		transform: translateY(-120%);
@@ -181,12 +182,20 @@
 	right: -3rem;
 }
 
+.chat-body .each-chat.client button {
+	width: 2.5rem;
+	height: 2.5rem;
+	position: absolute;
+	background: transparent;
+	left: -2.5rem;
+	border: none;
+}
+
 .chat-body .each-chat.client svg {
 	width: 2.5rem;
 	height: 2.5rem;
 	transform: rotate(180deg);
-	left: 0rem;
-	position: absolute;
+	position: static;
 }
 
 .chat-body .each-chat.client > span {
@@ -201,8 +210,8 @@
 	justify-content: center;
 	align-items: center;
 	height: auto !important;
-	
-	padding: .5rem 0rem;
+
+	padding: 0.5rem 0rem;
 }
 
 .chat-body .stream {

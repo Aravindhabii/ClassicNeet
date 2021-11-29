@@ -16,7 +16,7 @@ phonenum.addEventListener('input', (e) => {
 				phoneError.style.display = 'none';
 				sub = true;
 			} else {
-				phoneError.innerText = 'Please put 10  digit mobile number';
+				phoneError.innerText = 'Please put 10 digit mobile number';
 			}
 		} else {
 			phoneError.innerText = 'Not a valid number';
