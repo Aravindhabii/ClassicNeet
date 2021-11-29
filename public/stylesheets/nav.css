@@ -247,8 +247,16 @@ a.site-logo {
 	.nav-toggler span:after {
 		transform: translateY(6px);
 	}
+	
 	/* navbar css for mobile end */
 }
+@media (max-width: 350px) {
+	.site-navbar ul li a {
+		padding: 20px;
+	}
+}
+	
+
 /* mobile breakpoint end */
 
 /* NAVBAR ENDS */
