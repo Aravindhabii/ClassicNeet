@@ -226,7 +226,7 @@ router
 					var link1 = response[i].link;
 					arr.push({ link, link1 });
 				}
-
+				console.log(arr);
 				res.render('admin/home/latestUpdates', { arr });
 			}
 		});
