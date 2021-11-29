@@ -226,14 +226,14 @@ router
 					var link1 = response[i].link;
 					arr.push({ link, link1 });
 				}
-
+				console.log(arr);
 				res.render('admin/home/latestUpdates', { arr });
 			}
 		});
 	})
 	.post(async (req, res) => {
 		const link = req.body.uploadlink;
-		const link1 = req.body.link;
+		const link1 = req.body.link || 'no link';
 		await db.query(
 			'INSERT INTO latest_updates SET ?',
 			{ latestupdates: link, link: link1 },
@@ -323,7 +323,7 @@ router
 					console.log(err);
 				} else {
 					req.flash('success', 'Added successfully');
-					res.redirect('/admin/ourtoppers');	
+					res.redirect('/admin/ourtoppers');
 				}
 			}
 		);
@@ -651,8 +651,7 @@ router
 		);
 	})
 	.delete(async (req, res) => {
-		
-			if (typeof req.body.checkbox === 'string') {
+		if (typeof req.body.checkbox === 'string') {
 			const checkcontent = req.body.checkbox.split(',')[0];
 			const checkyear = req.body.checkbox.split(',')[1];
 			await db.query(
@@ -674,7 +673,7 @@ router
 				var checkyear = content.split(',')[1];
 				await db.query(
 					`DELETE FROM history WHERE content = ? AND year = ?`,
-					[checkcontent,checkyear],
+					[checkcontent, checkyear],
 					(err, response) => {
 						if (err) {
 							req.flash('error', 'Error occurred while deleting');
@@ -1049,7 +1048,8 @@ router
 						req.flash('success', 'Image Successfully Updated');
 						res.redirect('/admin/results/images');
 					}
-				});
+				}
+			);
 		} else {
 			for (let i = 0; i <= req.files.length - 1; i++) {
 				for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
@@ -1073,7 +1073,8 @@ router
 									req.flash('success', 'Image Successfully Updated');
 									res.redirect('/admin/results/images');
 								}
-							});
+							}
+						);
 					}
 				}
 			}
@@ -1360,17 +1361,18 @@ router
 		});
 	});
 
-router.route('/chatbotdelete').post(async(req,res)=>{
-	await db.query('DELETE FROM chatbot WHERE name = ? AND gmail = ?',
-	[req.body.stuname,req.body.gmail],
-	(err,response)=>{
-		if(err){
-			req.flash('error','Error occurred while adding');
-			console.log(err);
-		}else{
-
+router.route('/chatbotdelete').post(async (req, res) => {
+	await db.query(
+		'DELETE FROM chatbot WHERE name = ? AND gmail = ?',
+		[req.body.stuname, req.body.gmail],
+		(err, response) => {
+			if (err) {
+				req.flash('error', 'Error occurred while adding');
+				console.log(err);
+			} else {
+			}
 		}
-	})
+	);
 });
 
 router.post('/signout', isloggedin, (req, res) => {
@@ -1397,7 +1399,7 @@ router.get('/chatbot/:name/:email/:number', async (req, res) => {
 			} else {
 			}
 		}
-		);
+	);
 });
 
 router.post('/pagination', isloggedin, async (req, res) => {
@@ -1421,18 +1423,14 @@ router.post('/pagination', isloggedin, async (req, res) => {
 });
 
 router.get('/chatbotresponce', async (req, res) => {
-
-	await db.query(
-		`SELECT * FROM chatbot`,
-		(err, response) => {
-			if (err) {
-				console.log(err);
-				return;
-			} else {
-				res.json(response);
-			}
+	await db.query(`SELECT * FROM chatbot`, (err, response) => {
+		if (err) {
+			console.log(err);
+			return;
+		} else {
+			res.json(response);
 		}
-	);
+	});
 });
 
 router.get('/pagination/totalCount/:year', isloggedin, async (req, res) => {
