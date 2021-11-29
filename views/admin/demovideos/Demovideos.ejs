@@ -98,9 +98,13 @@
 						</tbody>
 					</table>
 					<div class="buttondiv" id="buttonid">
-						<button type="button" class="btn btn-outline-primary addbtn px-4">
-							Add
-						</button>
+						<% if (link.length<9) { %>
+							<button type="button" class="btn btn-outline-primary addbtn px-4">
+								Add
+							</button>
+						<% }else{ %>
+							<p class="text-danger d-flex justify-content-center align-items-center">You have reached your limit</p> 
+						<% } %> 
 						<button
 							type="button"
 							disabled

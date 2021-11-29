@@ -26,7 +26,8 @@ function editbutton(edit) {
 	editname.value = namevalue;
 	const collegenamevalue = edit.parentNode.parentNode.children[2].innerText;
 	editcollegename.value = collegenamevalue;
-	oldname.value = namevalue;
+	const cloudinarynamevalue = edit.parentNode.parentNode.children[3].children[0].value;
+	oldname.value = cloudinarynamevalue;
 }
 
 addbtn.addEventListener('click', () => {

@@ -195,6 +195,9 @@ $('#pagination-container').pagination({
 					<p>${detail.gmail}</p>
 				</td>
 				<td>
+					<p>${detail.date}</p>
+				</td>
+				<td>
 					<button type="button" class="btn btn-outline-danger submit ms-5 px-3 submitbtn" onclick="reload(this)" value ="${detail.name},${detail.gmail}">
 							Delete
 					</button>
