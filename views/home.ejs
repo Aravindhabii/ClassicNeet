@@ -96,9 +96,11 @@
 								<% latestupdates.forEach(update=> { %>
 									<span class="p">
 										<%= update.link %>
-										<a  href="<%= update.link1 %>" target="_blank">
-											-Click here
-										</a>
+										<% if (!update.link1=='no content') { %>
+											<a  href="<%= update.link1 %>" target="_blank">
+												-Click here
+											</a>
+										<% } %>
 									</span>
 								<% }) %>
 							</marquee>
