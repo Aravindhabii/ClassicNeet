@@ -998,12 +998,14 @@ router
 	.route('/admin/results/studentupdate')
 	.post(isloggedin, async (req, res) => {
 		await db.query(
-			'UPDATE studentdetails SET name = ?, collegename = ? WHERE name = ?',
+			'UPDATE studentdetails SET name = ?, collegename = ? WHERE cloudinaryname = ?',
 			[req.body.stdname, req.body.clgname, req.body.oldname],
 			(err, response) => {
 				if (err) {
 					console.log(err);
 				} else {
+					console.log(response);
+					req.flash('success', 'Successfully Updated');
 					res.redirect('/admin/results/studentdetails');
 				}
 			}
