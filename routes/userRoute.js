@@ -1451,7 +1451,7 @@ router.get('/pagination/totalCount/:year', isloggedin, async (req, res) => {
 
 //for sql pagination
 
-router.get('/sql/homeslider',isloggedin,async(req,res)=>{
+router.get('/sql/homeslider',async(req,res)=>{
 	await db.query('SELECT * FROM homeslider', async (error, response) => {
 		var arr = [];
 		if (error) {
@@ -1470,7 +1470,7 @@ router.get('/sql/homeslider',isloggedin,async(req,res)=>{
 	});
 });
 
-router.get('/sql/latestupdates',isloggedin,async(req,res)=>{
+router.get('/sql/latestupdates',async(req,res)=>{
 	await db.query('SELECT * FROM latest_updates', (err, response) => {
 		arr = [];
 		if (err) {
@@ -1488,7 +1488,7 @@ router.get('/sql/latestupdates',isloggedin,async(req,res)=>{
 	});
 })
 
-router.get('/sql/calendarevents',isloggedin,async(req,res)=>{
+router.get('/sql/calendarevents',async(req,res)=>{
 	await db.query('SELECT * FROM calendarevents', async (error, response) => {
 		var arr = [];
 		if (error) {
@@ -1507,7 +1507,7 @@ router.get('/sql/calendarevents',isloggedin,async(req,res)=>{
 	});
 })
 
-router.get('/sql/ourtoppers',isloggedin,async(req,res)=>{
+router.get('/sql/ourtoppers',async(req,res)=>{
 	await db.query('SELECT * FROM ourtoppers', async (error, response) => {
 		var arr = [];
 		if (error) {
@@ -1529,7 +1529,7 @@ router.get('/sql/ourtoppers',isloggedin,async(req,res)=>{
 	});
 })
 
-router.get('/sql/homestudenttestimonials',isloggedin,async(req,res)=>{
+router.get('/sql/homestudenttestimonials',async(req,res)=>{
 	await db.query('SELECT * FROM studenttestimonials', (err, response) => {
 		arr = [];
 		if (err) {
@@ -1543,7 +1543,25 @@ router.get('/sql/homestudenttestimonials',isloggedin,async(req,res)=>{
 			res.json(arr);
 		}
 	});
-})
+});
+
+router.get('/sql/history',async(req,res)=>{
+	await db.query('SELECT * FROM history', (err, response) => {
+		arr = [];
+		if (err) {
+			req.flash('error', 'Error occurred while adding');
+			console.log(err);
+		} else {
+			for (let i = 0; i <= response.length - 1; i++) {
+				var link = response[i].history;
+				arr.push(link);
+			}
+			res.json(arr);
+		}
+	});
+});
+
+
 
 
 
