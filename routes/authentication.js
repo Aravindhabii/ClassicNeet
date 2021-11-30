@@ -59,7 +59,7 @@ router
 			'SELECT * FROM users WHERE username = ?',
 			[username],
 			(error, response) => {
-				if (response.length > 0) {
+				if (response && response.length > 0) {
 					const passcon = bcrypt.compare(
 						password,
 						response[0].password,
@@ -90,6 +90,35 @@ router.route('/logout').post((req,res)=>{
 	req.session.destroy(()=>{
 		res.redirect('/login');
 	});
+});
+
+router.route('/changepassword').post(isloggedin,(req,res)=>{
+	const {password,newpassword,confirmpassword} = req.body;
+	if(newpassword !== confirmpassword){
+		req.flash('error','New Password and Confirm Password does not match');
+		res.redirect('/changepassword');
+	}
+	else{
+		bcrypt.compare(password,req.user.password,(err,result)=>{
+			if(result){
+				bcrypt.hash(newpassword,8,(err,hash)=>{
+					db.query('UPDATE users SET password = ? WHERE id = ?',[hash,req.user.id],(err,results)=>{
+						if(err){
+							console.log(err);
+						}
+						else{
+							req.flash('success','Password Changed Successfully');
+							res.redirect('/changepassword');
+						}
+					});
+				});
+			}
+			else{
+				req.flash('error','Invalid Password');
+				res.redirect('/changepassword');
+			}
+		});
+	}
 });
 
 router
