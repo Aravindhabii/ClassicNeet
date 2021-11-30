@@ -18,7 +18,11 @@ body {
 	cursor: pointer;
 	z-index: 15;
 }
-
+.right {
+	height: fit-content;
+	margin-top: 10vh;
+	margin-left: auto;
+}
 .sidebar a {
 	text-decoration: none;
 }
@@ -232,4 +236,18 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type='number'] {
 	-moz-appearance: textfield;
+}
+
+
+@media screen and (max-width: 1150px) {
+	.right {
+		margin-left: 20vw !important;
+		width: 100%;
+	}
+	.table {
+		width: 80%;
+	}
+	td {
+		width: 400px !important;
+	}
 }
