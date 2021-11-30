@@ -1449,4 +1449,102 @@ router.get('/pagination/totalCount/:year', isloggedin, async (req, res) => {
 	);
 });
 
+//for sql pagination
+
+router.get('/sql/homeslider',isloggedin,async(req,res)=>{
+	await db.query('SELECT * FROM homeslider', async (error, response) => {
+		var arr = [];
+		if (error) {
+			console.log(error);
+		} else {
+			for (let i = 0; i <= response.length - 1; i++) {
+				var image = {
+					sliderimg: response[i].sliderimg,
+					imgname: response[i].imgname,
+					cloudinaryName: response[i].cloudinaryname
+				};
+				arr.push(image);
+			}
+		}
+		res.json(arr);
+	});
+});
+
+router.get('/sql/latestupdates',isloggedin,async(req,res)=>{
+	await db.query('SELECT * FROM latest_updates', (err, response) => {
+		arr = [];
+		if (err) {
+			req.flash('error', 'Error occurred while adding');
+			console.log(err);
+		} else {
+			for (let i = 0; i <= response.length - 1; i++) {
+				var link = response[i].latestupdates;
+				var link1 = response[i].link;
+				arr.push({ link, link1 });
+			}
+			console.log(arr);
+			res.json(arr);
+		}
+	});
+})
+
+router.get('/sql/calendarevents',isloggedin,async(req,res)=>{
+	await db.query('SELECT * FROM calendarevents', async (error, response) => {
+		var arr = [];
+		if (error) {
+			console.log(error);
+		} else {
+			for (let i = 0; i <= response.length - 1; i++) {
+				var calendar = {
+					date: response[i].date,
+					month: response[i].month,
+					event: response[i].event
+				};
+				arr.push(calendar);
+			}
+			res.json(arr);
+		}
+	});
+})
+
+router.get('/sql/ourtoppers',isloggedin,async(req,res)=>{
+	await db.query('SELECT * FROM ourtoppers', async (error, response) => {
+		var arr = [];
+		if (error) {
+			req.flash('error', 'Error occurred while adding');
+			console.log(error);
+		} else {
+			for (let i = 0; i <= response.length - 1; i++) {
+				var image = {
+					name: response[i].name,
+					collegename: response[i].collegename,
+					cloudinaryname: response[i].cloudinaryname,
+					studentimg: response[i].studentimg,
+					score: response[i].score
+				};
+				arr.push(image);
+			}
+			res.json(arr);
+		}
+	});
+})
+
+router.get('/sql/homestudenttestimonials',isloggedin,async(req,res)=>{
+	await db.query('SELECT * FROM studenttestimonials', (err, response) => {
+		arr = [];
+		if (err) {
+			req.flash('error', 'Error occurred while adding');
+			console.log(err);
+		} else {
+			for (let i = 0; i <= response.length - 1; i++) {
+				var link = response[i].testimonialslink;
+				arr.push(link);
+			}
+			res.json(arr);
+		}
+	});
+})
+
+
+
 module.exports = router;
