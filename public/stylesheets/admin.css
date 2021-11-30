@@ -59,8 +59,13 @@ body {
 	border-radius: 2px;
 	width: 80%;
 	overflow-y: auto;
+	height: 100px;
+	
 }
-
+tr {
+	min-height: 50px !important;
+	
+}
 tbody {
 	min-height: 10vh;
 	max-height: 30vh !important;
