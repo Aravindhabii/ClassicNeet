@@ -1916,7 +1916,7 @@ iframe {
 @media (max-width: 850px) {
 	.swiper-container {
 		width: 55%;
-		margin-top: 0rem;
+		margin-top: 1rem;
 		
 	}
 	.swiper-container2 {
