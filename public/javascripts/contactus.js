@@ -120,6 +120,7 @@ if (sweetp) {
 		});
 	}
 	successdialog();
+	sweetp.parentNode.removeChild(sweetp);
 }
 
-sweetp.parentNode.removeChild(sweetp);
+
