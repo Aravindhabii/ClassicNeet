@@ -1510,16 +1510,18 @@ router.get('/sql/ourtoppers', async (req, res) => {
 	});
 });
 
-router.get('/sql/history', isloggedin, async (req, res) => {
-	await db.query('SELECT * FROM history', (err, response) => {
-		arr = [];
-		if (err) {
-			req.flash('error', 'Error occurred while adding');
-			console.log(err);
+router.get('/sql/history',async(req,res)=>{
+	await db.query('SELECT * FROM history', async (error, response) => {
+		var arr = [];
+		if (error) {
+			console.log(error);
 		} else {
 			for (let i = 0; i <= response.length - 1; i++) {
-				var link = response[i].history;
-				arr.push(link);
+				var cont = {
+					content: response[i].content,
+					year: response[i].year
+				};
+				arr.push(cont);
 			}
 			res.json(arr);
 		}
