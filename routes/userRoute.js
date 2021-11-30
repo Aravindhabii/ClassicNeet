@@ -1526,8 +1526,4 @@ router.get('/sql/history',async(req,res)=>{
 	});
 });
 
-
-
-
-
 module.exports = router;
