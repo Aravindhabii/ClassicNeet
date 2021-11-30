@@ -175,6 +175,10 @@
 	color: yellow;
 }
 
+.marqueetext a:hover {
+	color: black;
+}
+
 
 /* section-2  latest updates*/
 .section-2 {
@@ -206,6 +210,9 @@
 	background-color: #f9fbfa;
 	z-index: 1;
 }
+
+
+
 .CalanderEvents {
 	text-align: center;
 	font-size: 25px;

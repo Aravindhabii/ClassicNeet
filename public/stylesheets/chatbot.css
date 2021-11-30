@@ -123,7 +123,7 @@
 }
 
 .chat-body::-webkit-scrollbar-thumb {
-	background-color: white;
+	background-color: black;
 	border-radius: 3px;
 }
 
