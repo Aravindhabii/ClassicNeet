@@ -1508,6 +1508,26 @@ router.get('/sql/ourtoppers', async (req, res) => {
 			res.json(arr);
 		}
 	});
+})
+
+router.get('/sql/history',async(req,res)=>{
+	await db.query('SELECT * FROM history', (err, response) => {
+		arr = [];
+		if (err) {
+			req.flash('error', 'Error occurred while adding');
+			console.log(err);
+		} else {
+			for (let i = 0; i <= response.length - 1; i++) {
+				var link = response[i].history;
+				arr.push(link);
+			}
+			res.json(arr);
+		}
+	});
 });
+
+
+
+
 
 module.exports = router;
