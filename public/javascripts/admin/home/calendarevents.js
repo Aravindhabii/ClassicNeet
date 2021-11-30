@@ -10,10 +10,19 @@ const changablespan = document.querySelector('.changablespan');
 const year = document.querySelector('.year');
 const date = new Date();
 
-console.log((date.getFullYear()-1)+'-'+(date.getMonth()+1)+'-'+date.getDate(),(date.getFullYear()+1)+'-'+(date.getMonth()+1)+'-'+date.getDate());
+console.log(
+	date.getFullYear() - 1 + '-' + (date.getMonth() + 1) + '-' + date.getDate(),
+	date.getFullYear() + 1 + '-' + (date.getMonth() + 1) + '-' + date.getDate()
+);
 
-year.setAttribute('min',(date.getFullYear()-1)+'-'+(date.getMonth()+1)+'-'+date.getDate())
-year.setAttribute('max', (date.getFullYear()+1)+'-'+(date.getMonth()+1)+'-'+date.getDate());
+year.setAttribute(
+	'min',
+	date.getFullYear() - 1 + '-' + (date.getMonth() + 1) + '-' + date.getDate()
+);
+year.setAttribute(
+	'max',
+	date.getFullYear() + 1 + '-' + (date.getMonth() + 1) + '-' + date.getDate()
+);
 
 addbtn.addEventListener('click', () => {
 	previewDiv.style.display = 'flex';
@@ -60,4 +69,68 @@ document.querySelectorAll('.updatesCheckbox').forEach((check, i) => {
 			document.querySelector('.submit').setAttribute('disabled', true);
 		}
 	});
+});
+
+$('#pagination-container').pagination({
+	dataSource: function (done) {
+		$.ajax({
+			type: 'GET',
+			url: `/results/pagination/${dropdown.value}`,
+			success: function (response) {
+				done(response);
+			}
+		});
+	},
+	className: 'paginationjs-theme-blue paginationjs-big',
+
+	pageSize: 9,
+	callback: function (data, pagination) {
+		// template method of yourself
+		var dataHtml = '';
+
+		$.each(data, function (index, i) {
+			dataHtml += `<tr>
+			<td>
+				<input
+					type="text"
+					id="linkinput"
+					value="${i.date}"
+					readonly
+					style="width: 80%; border: none"
+				/>
+			</td>
+			<td>
+				<input
+					type="text"
+					id="linkinput"
+					value="${i.month}"
+					readonly
+					style="width: 80%; border: none"
+				/>
+			</td>
+			<td>
+				<input
+					type="text"
+					id="linkinput"
+					value="${i.event}"
+					readonly
+					style="width: 80%; border: none"
+				/>
+			</td>
+			<td>
+				<input
+					type="checkbox"
+					id="checkbox"
+					class="updatesCheckbox"
+					name="checkbox"
+					value="${i.event}"
+					style="height: 20px; width: 20px"
+				/>
+			</td>
+		</tr>
+		`;
+		});
+
+		$('tbody').html(dataHtml);
+	}
 });

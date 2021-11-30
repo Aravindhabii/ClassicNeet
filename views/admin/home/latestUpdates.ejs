@@ -17,7 +17,9 @@
 	<body>
 		<%- include('../../layout/adminheader') %>
 		<section class="mainsection">
-			<div class="left"><%- include('../../layout/adminSideBar') %></div>
+			<div class="left" style="bottom: 0; position: fixed">
+				<%- include('../../layout/adminSideBar') %>
+			</div>
 			<div class="right">
 				<div class="preview">
 					<h1 class="mb-5">Latest Updates</h1>
@@ -28,7 +30,7 @@
 						style="width: 100%"
 					>
 						<div class="input-group flex-nowrap" style="width: 80%">
-							<span class="input-group-text" id="addon-wrapping">Add Link</span>
+							<span class="input-group-text" id="addon-wrapping">Add News</span>
 							<input
 								type="text"
 								name="uploadlink"

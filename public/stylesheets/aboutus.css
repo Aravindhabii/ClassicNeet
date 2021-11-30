@@ -646,7 +646,7 @@ iframe {
 	width: 10%;
 	height: 40px;
 	cursor: pointer;
-	border-radius: 10px 0px 10px 0px;
+	border-radius: 10px;
 	position: relative;
 	background: linear-gradient(#4885e7, #19cae6);
 	/* border: 5px solid #568037; */

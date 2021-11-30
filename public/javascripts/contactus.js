@@ -26,7 +26,8 @@ phonenum.addEventListener('input', (e) => {
 var inputs = document.querySelectorAll('.form-input');
 
 var submit = document.querySelector('.submit');
-document.querySelector('form').addEventListener('submit', (e) => {
+
+document.querySelector('.form').addEventListener('submit', (e) => {
 	var nameError = document.querySelector('.nameError');
 	var nameInput = document.querySelector('.name-input');
 	var phonenum = document.querySelector('.phoneError');
@@ -120,6 +121,5 @@ if (sweetp) {
 		});
 	}
 	successdialog();
+	sweetp.parentNode.removeChild(sweetp);
 }
-
-sweetp.parentNode.removeChild(sweetp);
