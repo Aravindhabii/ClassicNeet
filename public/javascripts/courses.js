@@ -13,35 +13,30 @@ const exit = document.querySelectorAll('.exit');
 if (btn1) {
 	btn1.addEventListener('click', (e) => {
 		meth.style.display = 'flex';
-		// meth.style.position = 'fixed';
 		bodyCourse.style.overflow = 'hidden';
 	});
 }
 if (btn2) {
 	btn2.addEventListener('click', (e) => {
 		meth.style.display = 'flex';
-		// meth.style.position = 'fixed';
 		bodyCourse.style.overflow = 'hidden';
 	});
 }
 if (btn3) {
 	btn3.addEventListener('click', (e) => {
 		meth.style.display = 'flex';
-		// meth.style.position = 'fixed';
 		bodyCourse.style.overflow = 'hidden';
 	});
 }
 if (btn4) {
 	btn4.addEventListener('click', (e) => {
 		meth.style.display = 'flex';
-		// meth.style.position = 'fixed';
 		bodyCourse.style.overflow = 'hidden';
 	});
 }
 if (btn5) {
 	btn5.addEventListener('click', (e) => {
 		meth.style.display = 'flex';
-		// meth.style.position = 'fixed';
 		bodyCourse.style.overflow = 'hidden';
 	});
 }

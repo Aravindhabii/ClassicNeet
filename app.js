@@ -8,6 +8,8 @@ const userRoutes = require('./routes/userRoute');
 const authentication = require('./routes/authentication');
 const db = require('./database');
 const methodOverride = require('method-override');
+const cpmpression = require('compression');
+const compression = require('compression');
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
 db.connect((err) => {
@@ -18,10 +20,9 @@ db.connect((err) => {
 	}
 });
 
-// handleDisconnect();
-
 const app = express();
 app.use(express.json());
+app.use(compression());
 
 const sessionConfig = {
 	secret: 'thisshouldbeasecret!',
@@ -45,14 +46,6 @@ app.use(flash());
 
 app.use('/', userRoutes);
 app.use('/', authentication);
-
-app.get('/fun', (req, res) => {
-	req.flash('success', 'you have been successfully loggedin');
-	res.render('404error');
-});
-app.get('/stories', (req, res) => {
-	res.render('successStories');
-});
 
 app.get('*', (req, res) => {
 	res.render('404error');

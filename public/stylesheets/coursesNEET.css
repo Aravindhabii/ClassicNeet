@@ -15,18 +15,25 @@ body.dark .methodology3,
 body.dark .methodology4 {
 	color: black !important;
 }
-
 .coursesneet {
-	width: 100%;
-	height: 90vh;
+
 	background: url('../images/courses/neet.jpg') center/cover;
+}
+.coursesBanner {
+	width: 100%;
+	height: calc(100vh - 4rem);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	position: relative;
+}
+.coursesjee {
+	background: url('../images/courses/jee.jpg') center/cover;
+}
+.coursesiit {
+	background: url('../images/courses/iitmedical.jpg') center/cover;
 }
 /*Heading*/
 .h1andh2 {
@@ -35,7 +42,9 @@ body.dark .methodology4 {
 .headh1h2 {
 	padding: 0.5% 0;
 }
-
+body.dark .headh1h2 {
+	color: rgb(0, 0, 0) ;
+}
 .coursesneet h1 {
 	color: #568036;
 	font-size: 45px;
@@ -408,6 +417,20 @@ body.dark .methodology4 {
 	margin-right: auto;
 	list-style: none;
 }
+.methodology1 ul li,
+.methodology2 ul li,
+.methodology3 ul li,
+.methodology4 ul li {
+	position: relative;
+	padding-left: 1.5em;
+}
+.methodology1 ul li > span,
+.methodology2 ul li > span,
+.methodology3 ul li > span,
+.methodology4 ul li > span {
+	position: absolute;
+	left: 0;
+}
 .tick {
 	width: 16px;
 	height: 14px;
@@ -696,7 +719,7 @@ body.dark .enroll:hover {
 	.methodology4 {
 		background-color: white;
 		width: 80%;
-		height: 450px;
+		height: 70%;
 		padding: 1rem;
 		border-radius: 20px;
 		position: relative;

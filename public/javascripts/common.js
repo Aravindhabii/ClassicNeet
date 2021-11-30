@@ -63,7 +63,6 @@ $(window).scroll(function () {
 					},
 					complete: function () {
 						$this.text(this.countNum);
-						//alert('finished');
 					}
 				}
 			);
@@ -102,6 +101,7 @@ var swiper = new Swiper(".swipTop", {
 	  1305: {
 		slidesPerView: 3,
 		spaceBetween: 50,
+		slidesPerGroup: 3
 	  },
 	},
   });
@@ -114,7 +114,7 @@ var swiper = new Swiper(".swipTop", {
 	loop: true,
 	autoplay: true,
 	loopFillGroupWithBlank: false,
-	spaceBetween: 10,
+	
   
   navigation: {
 	nextEl: ".swiper-button-next",
@@ -124,7 +124,7 @@ var swiper = new Swiper(".swipTop", {
 	  640: {
 		slidesPerView: 1,
 		slidesPerGroup: 1,
-		spaceBetween: 20,
+		spaceBetween: 30,
 	  },
 	  850: {
 		slidesPerView: 2,
@@ -134,10 +134,24 @@ var swiper = new Swiper(".swipTop", {
 	  1305: {
 		slidesPerView: 3,
 		spaceBetween: 50,
+		slidesPerGroup: 3
 	  },
 	},
   });
 
 
+const newsbox = document.querySelector('.news-box');
+const scrollmarquee = document.querySelector('.marqueetext');
+if (innerWidth < 600) {
+	newsbox.removeAttribute('onmousedown');
+	newsbox.removeAttribute('onmouseup');
+	newsbox.removeAttribute('onmouseout');
+	newsbox.removeAttribute('onmousedown');
+	newsbox.removeAttribute('onmouseover'); 
 
-  
+	scrollmarquee.removeAttribute('onmousedown');
+	scrollmarquee.removeAttribute('onmouseup');
+	scrollmarquee.removeAttribute('onmouseout');
+	scrollmarquee.removeAttribute('onmousedown');
+	scrollmarquee.removeAttribute('onmouseover'); 
+} 

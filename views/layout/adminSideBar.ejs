@@ -64,18 +64,7 @@
 				</ul>
 			</div>
 		</li>
-		<!-- <li class="mb-4">
-        <button class="btn btn-toggle align-items-center rounded collapsed fs-5" data-bs-toggle="collapse" data-bs-target="#courses-collapse" aria-expanded="false">
-          <b>Courses</b> 
-        </button>
-        <div class="collapse" id="courses-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ms-4 d-flex flex-column justify-content-center fs-6 mt-2 ms-4 small">
-            <li><a href="/admin/courses/neet" class="link-dark rounded ahover">Courses-NEET</a></li>
-            <li><a href="/admin/courses/jee" class="link-dark rounded ahover">Courses-JEE</a></li>
-            <li><a href="/admin/courses/iit&medical" class="link-dark rounded ahover">Courses-IIT&Medical</a></li>
-          </ul>
-        </div>
-      </li> -->
+	
 		<li class="mb-4">
 			<button
 				class="btn btn-toggle align-items-center rounded collapsed fs-5"
@@ -250,23 +239,45 @@
 				</ul>
 			</div>
 		</li>
-		<!-- <li class="mb-4">
-        <button class="btn btn-toggle align-items-center rounded collapsed fs-5" data-bs-toggle="collapse" data-bs-target="#contact-collapse" aria-expanded="false">
-           <b>Contact Us</b> 
-        </button>
-        <div class="collapse" id="contact-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ms-4 d-flex flex-column justify-content-center fs-6 mt-2 ms-4 small">
-            <li><a href="#" class="link-dark rounded ahover">Name</a></li>
-            <li><a href="#" class="link-dark rounded ahover">Phone Number </a></li>
-            <li><a href="#" class="link-dark rounded ahover">Message</a></li>
-          </ul>
-        </div>
-      </li> -->
+		<li class="mb-4">
+			<button
+				class="btn btn-toggle align-items-center rounded collapsed fs-5"
+				data-bs-toggle="collapse"
+				data-bs-target="#chatbot-collapse"
+				aria-expanded="false"
+			>
+				<b>Chatbot</b>
+			</button>
+			<div class="collapse" id="chatbot-collapse">
+				<ul
+					class="
+						btn-toggle-nav
+						list-unstyled
+						fw-normal
+						pb-1
+						ms-4
+						d-flex
+						flex-column
+						justify-content-center
+						fs-6
+						mt-2
+						ms-4
+						small
+					"
+				>
+					<li>
+						<a href="/admin/chatbot" class="link-dark rounded ahover"
+							>Response</a
+						>
+					</li>
+				</ul>
+			</div>
+		</li>
 	</ul>
 </div>
 
 <% if(success && success.length) {%>
-	<p class="sweetp"><%= success %> </p>
+	<p class="sweetp"><%= success %></p>
 <% } %>
 
 

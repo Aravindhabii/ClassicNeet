@@ -47,41 +47,7 @@
 	height: 100% !important;
 }
 
-/* .slide1{
-  height: 100%;
-  width: 100%;
-  background: url("../images/home/sliderimage1.jpg") left/cover;
 
-}
-
-.slide2{
-  position: relative;
-  height: 100%;
-  width: 100%;
-  background: url("../images/home/sliderimage2.jpg") left/cover;
-}
-
-.slide3{
-  height: 100%;
-  width: 100%;
-  background: url("../images/home/sliderimage3.jpg") left/cover;
-}
-
-.slide4{
-  height: 100%;
-  width: 100%;
-  background: url("../images/home/sliderimage4.jpg") left/cover;
-}
-
-.slide5{
-  height: 100%;
-  width: 100%;
-  background: url("../images/home/sliderimage5.jpg") left/cover;
-} */
-/* .contentTop {
-  background-color: skyblue;
-  padding: 5rem;
-} */
 .home {
 	position: relative;
 	height: 90vh;
@@ -208,6 +174,7 @@
 .marqueetext a {
 	color: yellow;
 }
+
 
 /* section-2  latest updates*/
 .section-2 {
@@ -999,9 +966,12 @@ p {
 	margin: 2rem 0rem;
 	text-align: center;
 	position: relative;
-	 
-	color: black;
+	
 	font-size: 1.5rem;
+}
+
+body.dark .studentsh1 {
+	color: white;
 }
 .video {
 	height: 28vh;
@@ -1513,7 +1483,10 @@ iframe {
 	background: black;
 	color: white;
 }
-
+body.dark .read:hover {
+	background: white;
+	color: black;
+}
 iframe {
 	border-radius: 30px 0 30px 0;
 }
@@ -1909,7 +1882,7 @@ iframe {
 @media (max-width: 850px) {
 	.swiper-container {
 		width: 55%;
-		margin-top: 0rem;
+		margin-top: 1rem;
 		
 	}
 	.swiper-container2 {
@@ -2128,6 +2101,9 @@ iframe {
 		height: 1px !important;
 		width: 1px !important;
 	}
+	.swipTop .swiper-slide {
+		height: 20rem!important;
+	}
 }
 @media (max-width: 500px) {
 	.cardsDiv {
@@ -2159,7 +2135,7 @@ iframe {
 		height: fit-content;
 	}
 	.sliderRev {
-		height: 45vh;
+		height: 40vh;
 	}
 	.cardsDiv {
 		margin-top: 3rem;
@@ -2205,17 +2181,9 @@ iframe {
 }
 
 @media (max-width: 400px) {
-	/* .mySwiper2 {
-    height: 40vh !important;
-  }
-  .mySwiper2 .swiper-slide {
-    width: 18.5rem !important;
-    height: 10rem !important;
-  } */
-
-	/* .bgTopper {
-    height: 46vh;
-  }  */
+	.sliderRev {
+		height: 35vh;
+	}
 	.home {
 		height: fit-content;
 		margin-bottom: 2rem;
@@ -2230,7 +2198,7 @@ iframe {
 	.box1,
 	.box2,
 	.box3 {
-		width: 20rem;
+		width: 18rem;
 		height: 23rem;
 	}
 	.bottom-drive {
@@ -2241,7 +2209,7 @@ iframe {
 	}
 	.calenderMain {
 		padding-right: 0rem;
-		width: 22rem;
+		width: 18rem;
 	}
 
 	.video {

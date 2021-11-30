@@ -1,19 +1,3 @@
-// var mybutton = document.querySelector('.topButton');
-
-// // When the user scrolls down 20px from the top of the document, show the button
-// window.onscroll = function () {
-// 	scrollFunction();
-// };
-
-// function scrollFunction() {
-// 	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-// 		mybutton.style.display = 'block';
-// 	} else {
-// 		mybutton.style.display = 'none';
-// 	}
-// }
-
-// When the user clicks on the button, scroll to the top of the document
 function topFunction() {
 	document.body.scrollTop = 0;
 	document.documentElement.scrollTop = 0;
@@ -34,7 +18,6 @@ function togglerClick() {
 	navToggler.classList.toggle('toggler-open');
 	navMenu.classList.toggle('open');
 	body.classList.toggle('overflow-hidden');
-	
 }
 
 function navLinkClick() {
@@ -73,13 +56,30 @@ const toggleDarkTheme = () => {
 	document.querySelector('footer')
 		? document.querySelector('footer').classList.toggle('dark')
 		: '';
+	if (document.querySelector('.dark-mode-toggle').classList.contains('dark')) {
+		window.localStorage.setItem('dark', 'true');
+	} else {
+		window.localStorage.setItem('dark', 'false');
+	}
 };
 
 document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
 	toggleDarkTheme();
 });
 
-const darkThemeMq = window.matchMedia('(prefers-color-scheme: dark)');
-if (darkThemeMq.matches) {
+if (window.localStorage.getItem('dark') === 'true') {
 	toggleDarkTheme();
 }
+
+
+
+
+// if (
+// 	document.querySelector('.dark-mode-toggle').classList.contains('dark') &&
+// 	document.querySelector('body').classList.contains('dark')
+// ) {
+// 	console.log("bloooom");
+// 	toggleDarkTheme();
+// }else{
+// }
+	

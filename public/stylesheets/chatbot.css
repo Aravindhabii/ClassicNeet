@@ -1,17 +1,17 @@
 .bot-img {
 	position: fixed;
 	top: 120vh;
-	right: 0;
 	transform: translateY(-120%);
 	z-index: 15;
 	width: 6rem;
 	height: 4rem;
-	margin-right: 2rem;
+	right: 0rem;
 	background: url(../images/chatbot/chatbot.png) center/cover no-repeat;
 	animation: bot-img-animate 0.5s ease-in-out infinite alternate;
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
 }
+
 
 @keyframes bot-img-animate {
 	0% {
@@ -182,12 +182,20 @@
 	right: -3rem;
 }
 
+.chat-body .each-chat.client button {
+	width: 2.5rem;
+	height: 2.5rem;
+	position: absolute;
+	background: transparent;
+	left: -2.5rem;
+	border: none;
+}
+
 .chat-body .each-chat.client svg {
 	width: 2.5rem;
 	height: 2.5rem;
 	transform: rotate(180deg);
-	left: 0rem;
-	position: absolute;
+	position: static;
 }
 
 .chat-body .each-chat.client > span {
@@ -198,8 +206,12 @@
 .chat-span {
 	width: fit-content !important;
 	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	align-items: center;
 	height: auto !important;
+
+	padding: 0.5rem 0rem;
 }
 
 .chat-body .stream {
@@ -217,12 +229,13 @@
 .stream.read-more {
 	background-color: black;
 	padding: 0.5rem;
-	width: 55%;
-	margin: 0.5rem;
+	width: 70%;
+	border: 0;
 	border-radius: 10px;
 	text-align: center;
 	font-size: 0.8rem;
 	font-weight: 400;
+	position: relative;
 	cursor: pointer;
 	color: white;
 	transition: all 0.3s ease-in-out;

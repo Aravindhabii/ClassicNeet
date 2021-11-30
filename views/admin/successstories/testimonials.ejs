@@ -141,9 +141,13 @@
 						</tbody>
 					</table>
 					<div class="buttondiv">
-						<button type="button" class="btn btn-outline-primary addbtn px-4">
-							Add
-						</button>
+						<% if (students.length<6) { %>
+							<button type="button" class="btn btn-outline-primary addbtn px-4">
+								Add
+							</button>
+						<% }else{ %>
+							<p class="text-danger d-flex justify-content-center align-items-center">You have reached your limit</p> 
+						<% } %> 
 						<button
 							type="button"
 							class="btn btn-outline-danger submit ms-5 px-3 submitbtn"

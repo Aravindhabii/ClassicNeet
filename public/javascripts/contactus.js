@@ -1,10 +1,4 @@
-document.querySelector('.reset').addEventListener('click', (r) => {
-	r.preventDefault();
-
-	document.querySelectorAll('.form-input').forEach((input) => {
-		input.value = '';
-	});
-});
+const sweetp = document.querySelector('.sweetp');
 
 const phonenum = document.querySelector('.phonenum');
 const phoneError = document.querySelector('.phoneError');
@@ -22,22 +16,17 @@ phonenum.addEventListener('input', (e) => {
 				phoneError.style.display = 'none';
 				sub = true;
 			} else {
-				phoneError.innerText = 'Please put 10  digit mobile number';
+				phoneError.innerText = 'Please put 10 digit mobile number';
 			}
 		} else {
 			phoneError.innerText = 'Not a valid number';
 		}
 	}
-
-	// console.log(
-	// 	parseInt(e.target.value.substr(e.target.value.length - 1, e.target.value))
-	// );
 });
 var inputs = document.querySelectorAll('.form-input');
 
 var submit = document.querySelector('.submit');
 document.querySelector('form').addEventListener('submit', (e) => {
-	// e.preventDefault();
 	var nameError = document.querySelector('.nameError');
 	var nameInput = document.querySelector('.name-input');
 	var phonenum = document.querySelector('.phoneError');
@@ -74,7 +63,6 @@ document.querySelector('form').addEventListener('submit', (e) => {
 		}
 		if (input.value == '') {
 			e.preventDefault();
-			// submit.style.backgroundColor = '#ff0000';
 		}
 	});
 });
@@ -104,9 +92,35 @@ inputs.forEach((input) => {
 	});
 });
 
+document.querySelector('.reset').addEventListener('click', (r) => {
+	r.preventDefault();
+	document.querySelectorAll('.form-input').forEach((input) => {
+		input.value = '';
+	});
+	document.querySelectorAll('.err').forEach((input) => {
+		input.style.display = 'none';
+	});
+});
+
 phonenum.addEventListener('keypress', (evt) => {
 	var ASCIICode = evt.which ? evt.which : evt.keyCode;
 	if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)) {
 		evt.preventDefault();
 	}
 });
+
+if (sweetp) {
+	function successdialog() {
+		Swal.fire({
+			position: 'center',
+			icon: 'success',
+			title: sweetp.innerText,
+			showConfirmButton: false,
+			timer: 2500
+		});
+	}
+	successdialog();
+	sweetp.parentNode.removeChild(sweetp);
+}
+
+

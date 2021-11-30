@@ -2,13 +2,18 @@ const addbtn = document.querySelector('.addbtn');
 const previewDiv = document.querySelector('.preview');
 const backbtn = document.querySelector('.backbtn');
 const sectionop = document.querySelector('.mainsection');
-// const imgform = document.querySelector(".imgform");
-// const submit = document.querySelector('.submit');
 const submitbtn = document.querySelector('.submitbtn');
 const confirmdelete = document.querySelector('.confirmdelete');
-const latestupdateform = document.querySelector('.imgform');
+const imgform = document.querySelector('.imgform');
 var inputtext = document.querySelector('.inputtext');
 const changablespan = document.querySelector('.changablespan');
+const year = document.querySelector('.year');
+const date = new Date();
+
+console.log((date.getFullYear()-1)+'-'+(date.getMonth()+1)+'-'+date.getDate(),(date.getFullYear()+1)+'-'+(date.getMonth()+1)+'-'+date.getDate());
+
+year.setAttribute('min',(date.getFullYear()-1)+'-'+(date.getMonth()+1)+'-'+date.getDate())
+year.setAttribute('max', (date.getFullYear()+1)+'-'+(date.getMonth()+1)+'-'+date.getDate());
 
 addbtn.addEventListener('click', () => {
 	previewDiv.style.display = 'flex';
@@ -21,7 +26,6 @@ backbtn.addEventListener('click', () => {
 	imgform.style.transform = 'translate(0,0)';
 });
 
-
 submitbtn.addEventListener('click', () => {
 	Swal.fire({
 		title: 'Are you sure?',
@@ -33,7 +37,7 @@ submitbtn.addEventListener('click', () => {
 		confirmButtonText: 'Yes, delete it!'
 	}).then((result) => {
 		if (result.isConfirmed) {
-			latestupdateform.submit();
+			imgform.submit();
 		}
 	});
 });

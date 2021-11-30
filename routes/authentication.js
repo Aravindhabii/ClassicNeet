@@ -18,7 +18,6 @@ router
 	.post((req, res) => {
 		const { email, password, username } = req.body;
 		const emailinuse = 'This email is already in use';
-		// console.log(req.body);
 		db.query(
 			'SELECT email FROM users WHERE email = ?',
 			[email],
@@ -39,7 +38,6 @@ router
 						if (err) {
 							console.log(err);
 						} else {
-							// console.log(results);
 							return res.render('home');
 						}
 					}
@@ -87,42 +85,6 @@ router
 const multer = require('multer');
 const { storage, cloudinary } = require('../cloudinary');
 const upload = multer({ storage });
-// router
-//   .route("/admin")
-//   .get((req, res) => {
-//     const imganame = "image1";
-//     db.query(
-//       "SELECT * FROM homeslider WHERE imgname = ?",
-//       [imganame],
-//       (error, response) => {
-//         if (error) {
-//           console.log(imganame);
-//           console.log(error);
-//         } else {
-//           const image = response[0].sliderimg.toString("base64").split("=")[0];
-//           console.log(image);
-//           res.render("sqlreg", { img: image });
-//         }
-//       }
-//     );
-//   })
-//   .post((req, res) => {
-//     const { imagename, sliderimg } = req.body;
-//     // db.query("SELECT email FROM homeslider WHERE imgname")
-//     console.log(imagename, sliderimg);
-//     db.query(
-//       "INSERT INTO homeslider SET ?",
-//       { imgname: imagename, sliderimg: sliderimg },
-//       (err, results) => {
-//         if (err) {
-//           console.log(err);
-//         } else {
-//           console.log(results);
-//           return res.render("home");
-//         }
-//       }
-//     );
-//   });
 
 router.route('/logout').post((req,res)=>{
 	req.session.destroy(()=>{
@@ -139,7 +101,6 @@ router
 		const path = req.file.path;
 		const fieldname = req.file.originalname;
 		const cloudinaryName = req.file.filename.split('/')[1];
-		// console.log(req.files);
 
 		db.query(
 			'INSERT INTO homeslider SET ?',

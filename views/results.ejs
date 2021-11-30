@@ -10,15 +10,15 @@
 			href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
 		/>
 		<link rel="stylesheet" href="stylesheets/chatbot.css" />
+		<link rel="stylesheet" href="stylesheets/pagination.css" />
 
 		<title>Results</title>
 		<style>
-			
-		.resultsnav{
-			background-color: #60efff;
-			border-radius: 0% 50% 0% 50%;
-            color: rgb(0, 0, 0);
-		}
+			.resultsnav {
+				background-color: #60efff;
+				border-radius: 0% 50% 0% 50%;
+				color: rgb(0, 0, 0);
+			}
 		</style>
 	</head>
 	<body>
@@ -45,87 +45,17 @@
 		</section>
 
 		<section class="section2">
-			<div class="gridcontainer">
-				<% students.forEach((student)=> { %>
-				<!-- <div class="griditem1 gridbox">
-            <img src="<%= student.studentimg %>" data-img="<%= student.studentimg %>" alt="studentimg1" />
-            <span class="griditem1span"
-              ><h3 data-name="<%= student.name %>" class="nameStudent"><%= student.name %></h3>
-              <p data-score="<%= student.score %>" class="scoreStudent"><%= student.score %></p></span
-            >
-          </div> -->
-				<div
-					class="refbox"
-					data-name="<%= student.name %>"
-					data-score="<%= student.collegename %>"
-					data-img="<%= student.studentimg %>"
-				></div>
+			<select
+				class="form-select form-select-lg mb-3 dropdown"
+				aria-label=".form-select-lg example"
+				data-select=""
+			>
+				<% year.forEach((e,i) => { %>
+				<option value="<%= e %>"><%= e %></option>
 				<% }) %>
-				<div class="griditem1 gridbox">
-					<img class="imgTopper" src="" />
-					<span class="griditem1span"
-						><h3 class="nameStudent"></h3>
-						<p class="scoreStudent"></p
-					></span>
-				</div>
-				<div class="griditem1 gridbox">
-					<img class="imgTopper" src="" />
-					<span class="griditem1span"
-						><h3 class="nameStudent"></h3>
-						<p class="scoreStudent"></p
-					></span>
-				</div>
-				<div class="griditem1 gridbox">
-					<img class="imgTopper" src="" />
-					<span class="griditem1span"
-						><h3 class="nameStudent"></h3>
-						<p class="scoreStudent"></p
-					></span>
-				</div>
-				<div class="griditem1 gridbox">
-					<img class="imgTopper" src="" />
-
-					<span class="griditem1span"
-						><h3 class="nameStudent"></h3>
-						<p class="scoreStudent"></p
-					></span>
-				</div>
-				<div class="griditem1 gridbox">
-					<img class="imgTopper" src="" />
-					<span class="griditem1span"
-						><h3 class="nameStudent"></h3>
-						<p class="scoreStudent"></p
-					></span>
-				</div>
-				<div class="griditem1 gridbox">
-					<img class="imgTopper" src="" />
-					<span class="griditem1span"
-						><h3 class="nameStudent"></h3>
-						<p class="scoreStudent"></p
-					></span>
-				</div>
-				<div class="griditem1 gridbox">
-					<img class="imgTopper" src="" />
-					<span class="griditem1span"
-						><h3 class="nameStudent"></h3>
-						<p class="scoreStudent"></p
-					></span>
-				</div>
-				<div class="griditem1 gridbox">
-					<img class="imgTopper" src="" />
-					<span class="griditem1span"
-						><h3 class="nameStudent"></h3>
-						<p class="scoreStudent"></p
-					></span>
-				</div>
-				<div class="griditem1 gridbox">
-					<img class="imgTopper" src="" />
-					<span class="griditem1span"
-						><h3 class="nameStudent"></h3>
-						<p class="scoreStudent"></p
-					></span>
-				</div>
-			</div>
+			</select>
+			<div class="gridcontainer"></div>
+			<div id="pagination-container"></div>
 		</section>
 
 		<%- include('./layout/footer') %>
@@ -134,11 +64,19 @@
 			rel="stylesheet"
 			href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
 		/>
-
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+			referrerpolicy="no-referrer"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"
+			integrity="sha512-1zzZ0ynR2KXnFskJ1C2s+7TIEewmkB2y+5o/+ahF7mwNj9n3PnzARpqalvtjSbUETwx6yuxP5AJXZCpnjEJkQw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
 		<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 		<script src="javascripts/results.js"></script>
 		<script src="javascripts/nav.js"></script>
-		<!-- <script src="javascripts/common.js"></script> -->
 		<script src="javascripts/chatbot.js"></script>
 	</body>
 </html>

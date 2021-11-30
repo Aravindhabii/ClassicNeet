@@ -5,7 +5,6 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Admin panel</title>
-		<!-- <link rel="stylesheet" href="alert/dist/sweetalert.css"> -->
 		<link rel="stylesheet" href="sweetalert2.min.css" />
 		<link rel="stylesheet" href="../../stylesheets/admin.css" />
 		<link
@@ -57,7 +56,6 @@
 								aria-label="Username"
 								aria-describedby="addon-wrapping"
 								id="uploadlink"
-								required
 							/>
 						</div>
 						<div>
@@ -115,7 +113,7 @@
 										id="checkbox"
 										class="updatesCheckbox"
 										name="checkbox"
-										value="<%= i.link %>"
+										value="<%= i.link1 %>"
 										style="height: 20px; width: 20px"
 									/>
 								</td>
@@ -127,7 +125,7 @@
 						<button type="button" class="btn btn-outline-primary addbtn px-4">
 							Add
 						</button>
-						<button
+						<button 
 							type="button"
 							disabled
 							class="btn btn-outline-danger submit ms-5 px-3 submitbtn"
@@ -138,9 +136,7 @@
 				</form>
 			</div>
 		</section>
-		<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
 		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.js" integrity="sha512-K3MtzSFJk6kgiFxCXXQKH6BbyBrTkTDf7E6kFh3xBZ2QNMtb6cU/RstENgQkdSLkAZeH/zAtzkxJOTTd8BqpHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

@@ -28,7 +28,7 @@
             style="width: 100%"
           >
             <div class="input-group flex-nowrap" style="width: 80%">
-              <span class="input-group-text" id="addon-wrapping">Add News</span>
+              <span class="input-group-text" id="addon-wrapping">Add Link</span>
               <input
                 type="url"
                 name="uploadlink"
@@ -94,9 +94,13 @@
             </tbody>
           </table>
           <div class="buttondiv">
-            <button type="button" class="btn btn-outline-primary addbtn px-4">
-              Add
-            </button>
+            <% if (link.length<9) { %>
+							<button type="button" class="btn btn-outline-primary addbtn px-4">
+								Add
+							</button>
+						<% }else{ %>
+							<p class="text-danger d-flex justify-content-center align-items-center">You have reached your limit</p> 
+						<% } %> 
             <button
               type="button"
               disabled

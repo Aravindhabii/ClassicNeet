@@ -5,21 +5,35 @@
     font-family: Rancho;
     
 }
-.error{
+body{
     width: 100%;
     height: 100vh;
-}
-.bg{
-    width: 100%;
-    height: 93vh;
-    background-image: url(image/home/404error.png);
+    background: url("../images/home/404error.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
+.error{
+    width: 100%;
+    height: 100vh;
+}
+.box{
+    width: 75%;
+    
+}
+.box img{
+    width: 33%;
+    height: 61%;
+    position: absolute;
+    
+    left: 53%;
+    top: 20%;
+}
 .logo img{
-    width:9% ;
-    height: 10%;
+    width:10% ;
+    height: 11%;
     position: absolute;
     top: 2%;
     left: 2%;
@@ -48,3 +62,196 @@ button{
     left: 28%;
     top: 64%;
 }
+
+@media(max-width:1200px){
+    button{
+        width: 24%;
+    }
+    .box img{
+        width: 40%;
+        height: 52%;
+    }
+    .logo img{
+        width:13% ;
+        height: 11%;
+        position: absolute;
+        top: 2%;
+        left: 2%;
+    }
+}
+@media(max-width:1000px){
+    button{
+        width: 27%;
+    }
+    .box img{
+        width: 33%;
+        height: 61%;
+        position: absolute;    
+        left: 60%;
+        top: 20%;
+    }
+    .logo img{
+        width:14% ;
+        height: 11%;
+        position: absolute;
+        top: 2%;
+        left: 2%;
+    }
+    
+}
+@media(max-width:900px){
+    button{
+        width: 29%;
+    }
+    .box img{
+        width: 40%;
+        height: 52%;
+    }
+    .content h1{
+        font-size: 140px;
+        position: absolute;
+        top: 23%;
+        left: 9%;
+    }
+    .content p{
+        font-size: 38px;
+        position: absolute;
+        top: 47%;
+        left: 10%;
+    }
+    .logo img{
+        width:15% ;
+        height: 11%;
+        position: absolute;
+        top: 2%;
+        left: 2%;
+    }
+    
+    
+}
+@media(max-width:800px){
+    button{
+        width: 33%;
+    }
+    .box img{
+        width: 40%;
+        height: 48%;
+    }
+    .content h1{
+        font-size: 135px;
+        position: absolute;
+        top: 23%;
+        left: 9%;
+    }
+    .content p{
+        font-size: 38px;
+        position: absolute;
+        top: 47%;
+        left: 10%;
+    }
+    .logo img{
+        width:17% ;
+        height: 11%;
+        position: absolute;
+        top: 2%;
+        left: 2%;
+    }
+    
+    
+}
+@media(max-width:700px){
+    button{
+        width: 38%;
+        left: 30%;
+        top: 60%;
+    }
+    .box img{
+       display: none;
+    }
+    .content h1{
+        font-size: 145px;
+        position: absolute;
+        top: 16%;
+        left: 18%;
+    }
+    .content p{
+        font-size: 38px;
+        position: absolute;
+        top: 44%;
+        left: 20%;
+    }
+}
+@media(max-width:600px){
+    button{
+        width: 49%;
+        left: 25%;
+        top: 60%;
+    }
+    .content h1{
+        font-size: 135px;
+        position: absolute;
+        top: 17%;
+        left: 11%;
+    }
+    .content p{
+        font-size: 37px;
+        position: absolute;
+        top: 41%;
+        left: 13%;
+    }
+    .logo img{
+        width:20% ;
+        height: 11%;
+        position: absolute;
+        top: 2%;
+        left: 2%;
+    }
+    
+}
+@media(max-width:500px){
+    button{
+        width: 60%;
+        left: 19%;
+        top: 60%;
+    }
+    .content h1{
+        font-size: 120px;
+        position: absolute;
+        top: 16%;
+        left: 11%;
+    }
+    .content p{
+        font-size: 37px;
+        position: absolute;
+        top: 39%;
+        left: 13%;
+    }
+}
+@media(max-width:400px){
+    button{
+        width: 69%;
+        left: 15%;
+        top: 60%;
+        font-size: 25px;
+    }
+    .content h1{
+        font-size: 90px;
+        position: absolute;
+        top: 19%;
+        left: 9%;
+    }
+    .content p{
+        font-size: 29px;
+        position: absolute;
+        top: 40%;
+        left: 9%;
+    }
+    .logo img{
+        width:35% ;
+        height: 11%;
+        position: absolute;
+        top: 2%;
+        left: 2%;
+    }
+}
+

@@ -76,7 +76,6 @@ router.route('/').get(async (req, res) => {
 											for (let i = 0; i <= response.length - 1; i++) {
 												var link = response[i].latestupdates;
 												var link1 = response[i].link;
-												// console.log(image)
 												latestupdates.push({ link, link1 });
 											}
 
@@ -89,10 +88,8 @@ router.route('/').get(async (req, res) => {
 													} else {
 														for (let i = 0; i <= response.length - 1; i++) {
 															var link = response[i].testimonialslink;
-															// console.log(image)
 															stutest.push(link);
 														}
-														// console.log(response[0].latestupdates);
 													}
 													await db.query(
 														'SELECT * FROM neetacheivements',
@@ -109,10 +106,8 @@ router.route('/').get(async (req, res) => {
 																		successrate: response[i].successrate,
 																		admissions: response[i].admissions
 																	};
-																	// console.log(image)
 																	neetachieve.push(neetvar);
 																}
-																// console.log(response[0].latestupdates);
 															}
 
 															res.render('home', {
@@ -189,7 +184,9 @@ router
 			for (let i = 0; i <= req.files.length - 1; i++) {
 				for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
 					if (i === j) {
-						await cloudinary.uploader.destroy(`ClassicNeetAcademy/${req.body.checkbox}`);
+						await cloudinary.uploader.destroy(
+							`ClassicNeetAcademy/${req.body.checkbox}`
+						);
 						await db.query(
 							'UPDATE homeslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
 							[
@@ -211,23 +208,6 @@ router
 			}
 			req.flash('success', 'Images successfully updated');
 			res.redirect('/admin/sliderrevolution');
-			// req.body.sliderimg.forEach((img, index1) => {
-			// 	req.body.checkbox.forEach(async (check, index2) => {
-			// 		if (index1 === index2) {
-			// 			console.log(check);
-			// 			// await cloudinary.uploader.destroy(check);
-			// 			await db.query(
-			// 				'UPDATE homeslider SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
-			// 				[
-			// 					req.file.path,
-			// 					req.file.originalname,
-			// 					req.file.filename.split('/')[1],
-			// 					req.body.checkbox
-			// 				]
-			// 			);
-			// 		}
-			// 	});
-			// });
 		}
 	});
 
@@ -244,18 +224,16 @@ router
 				for (let i = 0; i <= response.length - 1; i++) {
 					var link = response[i].latestupdates;
 					var link1 = response[i].link;
-					// console.log(image)
 					arr.push({ link, link1 });
 				}
-
-				// console.log(response[0].latestupdates);
+				console.log(arr);
 				res.render('admin/home/latestUpdates', { arr });
 			}
 		});
 	})
 	.post(async (req, res) => {
 		const link = req.body.uploadlink;
-		const link1 = req.body.link;
+		const link1 = req.body.link || 'no link';
 		await db.query(
 			'INSERT INTO latest_updates SET ?',
 			{ latestupdates: link, link: link1 },
@@ -273,14 +251,13 @@ router
 	.delete(async (req, res) => {
 		if (typeof req.body.checkbox === 'string') {
 			await db.query(
-				'DELETE FROM latest_updates WHERE latestupdates = ?',
+				'DELETE FROM latest_updates WHERE link = ?',
 				[req.body.checkbox],
 				(err, response) => {
 					if (err) {
 						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
 					} else {
-						console.log(response);
 						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/latestupdates');
 					}
@@ -289,7 +266,7 @@ router
 		} else {
 			req.body.checkbox.forEach(async (link) => {
 				await db.query(
-					'DELETE FROM latest_updates WHERE latestupdates = ?',
+					'DELETE FROM latest_updates WHERE link = ?',
 					[link],
 					(err, response) => {
 						if (err) {
@@ -298,7 +275,6 @@ router
 							return;
 						} else {
 							req.flash('success', 'Successfully Deleted');
-							console.log(response);
 						}
 					}
 				);
@@ -346,10 +322,11 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Added successfully');
+					res.redirect('/admin/ourtoppers');
 				}
 			}
 		);
-		res.redirect('/admin/ourtoppers');
 	})
 	.put(upload.single('sliderimg'), async (req, res) => {
 		await db.query(
@@ -408,10 +385,8 @@ router
 			} else {
 				for (let i = 0; i <= response.length - 1; i++) {
 					var link = response[i].testimonialslink;
-					// console.log(image)
 					arr.push(link);
 				}
-				// console.log(response[0].latestupdates);
 				res.render('admin/home/studentTestimonials', { link: arr });
 			}
 		});
@@ -426,6 +401,7 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Added successfully');
 					res.redirect('/admin/studenttestimonials');
 				}
 			}
@@ -518,6 +494,7 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Added successfully');
 					res.redirect('/admin/calendarevents');
 				}
 			}
@@ -540,7 +517,6 @@ router
 			);
 		} else {
 			req.body.checkbox.forEach(async (link) => {
-				console.log(link);
 				await db.query(
 					'DELETE FROM calendarevents WHERE event = ?',
 					[link],
@@ -576,7 +552,6 @@ router
 					admissions
 				});
 			}
-			// console.log(response[0].latestupdates);
 		});
 	})
 	.post(async (req, res) => {
@@ -607,16 +582,9 @@ router.route('/courses').get(async (req, res) => {
 
 router.route('/aboutus').get(async (req, res) => {
 	var folderArray = [];
-	var imgsArray = [];
-	const folders = fs.readdirSync('public/images/gallery');
-
-	folders.forEach((folder) => {
+	fs.readdirSync('public/images/gallery').forEach((folder) => {
 		folderArray.push(folder);
-		const files = fs.readdirSync(`public/images/gallery/${folder}`);
-		imgsArray.push(files);
-		
 	});
-	console.log(imgsArray);
 	await db.query('SELECT * FROM history', async (error, response) => {
 		var arr = [];
 		if (error) {
@@ -629,9 +597,21 @@ router.route('/aboutus').get(async (req, res) => {
 				};
 				arr.push(cont);
 			}
-			res.render('aboutus', { content: arr, folderArray, imgsArray });
+			res.render('aboutus', { content: arr, folderArray });
 		}
 	});
+});
+
+router.get('/aboutus/pagination/:folder', async (req, res) => {
+	const imgs = await fs.readdirSync(
+		`public/images/gallery/${req.params.folder}`
+	);
+	res.json(imgs);
+});
+
+router.get('/aboutus/pagination/totalcount/:year', async (req, res) => {
+	const imgs = await fs.readdirSync(`public/images/gallery/${req.params.year}`);
+	res.json(imgs.length);
 });
 
 router
@@ -664,6 +644,7 @@ router
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
 				} else {
+					req.flash('success', 'Added successfully');
 					res.redirect('/admin/aboutus/history');
 				}
 			}
@@ -671,9 +652,11 @@ router
 	})
 	.delete(async (req, res) => {
 		if (typeof req.body.checkbox === 'string') {
+			const checkcontent = req.body.checkbox.split(',')[0];
+			const checkyear = req.body.checkbox.split(',')[1];
 			await db.query(
-				'DELETE FROM history WHERE year = ?',
-				[req.body.checkbox],
+				'DELETE FROM history WHERE content = ? AND year = ?',
+				[checkcontent, checkyear],
 				(err, response) => {
 					if (err) {
 						req.flash('error', 'Error occurred while deleting');
@@ -685,10 +668,12 @@ router
 				}
 			);
 		} else {
-			req.body.checkbox.forEach(async (year) => {
+			req.body.checkbox.forEach(async (content) => {
+				var checkcontent = content.split(',')[0];
+				var checkyear = content.split(',')[1];
 				await db.query(
-					'DELETE FROM history WHERE year = ?',
-					[year],
+					`DELETE FROM history WHERE content = ? AND year = ?`,
+					[checkcontent, checkyear],
 					(err, response) => {
 						if (err) {
 							req.flash('error', 'Error occurred while deleting');
@@ -722,9 +707,9 @@ router.route('/Demovideos').get(async (req, res) => {
 		if (err) {
 			console.log(err);
 		} else {
+			console.log(response);
 			for (let i = 0; i <= response.length - 1; i++) {
 				var link = response[i].videolink;
-				// console.log(image)
 				arr.push(link);
 			}
 			db.query('SELECT * FROM demoimages', async (error, response) => {
@@ -737,9 +722,9 @@ router.route('/Demovideos').get(async (req, res) => {
 						cloudinaryName: response[0].cloudinaryname
 					};
 				}
+				console.log(arr);
 				res.render('demovideos', { link: arr, img: image });
 			});
-			// console.log(response[0].latestupdates);
 		}
 	});
 });
@@ -754,10 +739,8 @@ router
 			} else {
 				for (let i = 0; i <= response.length - 1; i++) {
 					var link = response[i].videolink;
-					// console.log(image)
 					arr.push(link);
 				}
-				// console.log(response[0].latestupdates);
 				res.render('admin/demovideos/Demovideos', { link: arr });
 			}
 		});
@@ -787,7 +770,7 @@ router
 					if (err) {
 						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
-					}else{
+					} else {
 						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/demovideos');
 					}
@@ -860,15 +843,10 @@ router.route('/results').get(async (req, res) => {
 			console.log(error);
 		} else {
 			for (let i = 0; i <= response.length - 1; i++) {
-				var image = {
-					name: response[i].name,
-					collegename: response[i].collegename,
-					studentimg: response[i].image,
-					cloudinaryname: response[i].cloudinaryname,
-					score: response[i].score
-				};
+				var image = response[i].year;
 				arr.push(image);
 			}
+			let uniqueChars = [...new Set(arr)];
 			await db.query('SELECT * FROM resultslider', async (error, response) => {
 				var slider = [];
 				if (error) {
@@ -882,11 +860,29 @@ router.route('/results').get(async (req, res) => {
 						};
 						slider.push(image1);
 					}
-					res.render('results', { students: arr, slider });
+					res.render('results', {
+						students: arr,
+						slider,
+						year: uniqueChars
+					});
 				}
 			});
 		}
 	});
+});
+
+router.get('/results/pagination/:year', async (req, res) => {
+	await db.query(
+		'SELECT * FROM studentdetails WHERE year = ?',
+		[req.params.year],
+		async (error, response) => {
+			if (error) {
+				console.log(error);
+			} else {
+				res.json(response);
+			}
+		}
+	);
 });
 
 router
@@ -898,16 +894,13 @@ router
 				console.log(error);
 			} else {
 				for (let i = 0; i <= response.length - 1; i++) {
-					var image = {
-						name: response[i].name,
-						collegename: response[i].collegename,
-						studentimg: response[i].image,
-						cloudinaryname: response[i].cloudinaryname,
-						score: response[i].score
-					};
+					var image = response[i].year;
 					arr.push(image);
 				}
-				res.render('admin/results/studentdetails', { students: arr });
+				let uniqueChars = [...new Set(arr)];
+				res.render('admin/results/studentdetails', {
+					year: uniqueChars.reverse()
+				});
 			}
 		});
 	})
@@ -918,6 +911,7 @@ router
 				name: req.body.name,
 				collegename: req.body.collegeName,
 				image: req.file.path,
+				year: req.body.year,
 				cloudinaryname: req.file.filename.split('/')[1]
 			},
 			(err, response) => {
@@ -931,27 +925,7 @@ router
 			}
 		);
 	})
-	// .put(upload.single('sliderimg'), async (req, res) => {
-	// 	await db.query(
-	// 		'UPDATE studentdetails SET image = ? WHERE cloudinaryname = ?',
-	// 		[req.file.path, req.body.cloudinaryname]
-	// 	);
-	// 	res.redirect('/admin/results/studentdetails');
-	// })
-	// .put(async(req,res)=>{
-	// 	console.log(req.body);
-	// 	await db.query(
-	// 		'UPDATE studentdetails SET =? WHERE name = req.body.name',
-	// 		{score:req.body.score, name:req.body.name, collegename:req.body.collegeName },
-	// 		(err,response)=>{
-	// 			if(err){
-	// 				console.log(err);
-	// 			}else{
-	// 				res.redirect('/admin/results/studentdetails');
-	// 			}
-	// 		}
-	// 	);
-	// })
+
 	.delete(async (req, res) => {
 		if (typeof req.body.checkbox === 'string') {
 			await cloudinary.uploader.destroy(
@@ -973,7 +947,6 @@ router
 			);
 		} else {
 			req.body.checkbox.forEach(async (link) => {
-				console.log('holll');
 				await cloudinary.uploader.destroy('ClassicNeetAcademy/' + link);
 				await db.query(
 					'DELETE FROM studentdetails WHERE cloudinaryname = ?',
@@ -995,17 +968,44 @@ router
 // admin result images
 
 router
+	.route('/year')
+	.post(async (req, res) => {
+		await db.query('INSERT INTO year SET ?', req.body, (err, response) => {
+			if (err) {
+				console.log(err);
+			} else {
+				req.flash('success', 'Year Successfully Added');
+				res.redirect('/admin/results/studentdetails');
+			}
+		});
+	})
+	.delete(async (req, res) => {
+		await db.query(
+			'DELETE FROM year WHERE year = ?',
+			[req.body.year],
+			(err, response) => {
+				if (err) {
+					console.log(err);
+				} else {
+					req.flash('success', 'Year Successfully Deleted');
+					res.redirect('/admin/results/studentdetails');
+				}
+			}
+		);
+	});
+
+router
 	.route('/admin/results/studentupdate')
 	.post(isloggedin, async (req, res) => {
-		console.log(req.body);
 		await db.query(
-			'UPDATE studentdetails SET name = ?, collegename = ? WHERE name = ?',
+			'UPDATE studentdetails SET name = ?, collegename = ? WHERE cloudinaryname = ?',
 			[req.body.stdname, req.body.clgname, req.body.oldname],
 			(err, response) => {
 				if (err) {
 					console.log(err);
 				} else {
 					console.log(response);
+					req.flash('success', 'Successfully Updated');
 					res.redirect('/admin/results/studentdetails');
 				}
 			}
@@ -1042,15 +1042,16 @@ router
 					req.files[0].originalname,
 					req.files[0].filename.split('/')[1],
 					req.body.checkbox
-				]
-			),(err,response)=>{
-				if (err) {
-					console.log(err);
-				}else{
-					req.flash('success', 'Successfully Added');
-					res.redirect('/admin/results/images');
+				],
+				(err, response) => {
+					if (err) {
+						console.log(err);
+					} else {
+						req.flash('success', 'Image Successfully Updated');
+						res.redirect('/admin/results/images');
+					}
 				}
-			}
+			);
 		} else {
 			for (let i = 0; i <= req.files.length - 1; i++) {
 				for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
@@ -1065,25 +1066,62 @@ router
 								req.files[j].originalname,
 								req.files[j].filename.split('/')[1],
 								req.body.checkbox[j]
-							]
-						),(err,response)=>{
-							if (err) {
-								req.flash('error', 'Error occurred while adding');
-								console.log(err);
-							}else{
-								req.flash('success', 'Image Successfully Updated');
-								res.redirect('/admin/results/images');
+							],
+							(err, response) => {
+								if (err) {
+									req.flash('error', 'Error occurred while adding');
+									console.log(err);
+								} else {
+									req.flash('success', 'Image Successfully Updated');
+									res.redirect('/admin/results/images');
+								}
 							}
-						}
+						);
 					}
 				}
 			}
 		}
 	});
 
-router.route('/contactus').get(async (req, res) => {
-	res.render('contactus');
+let transporter = nodemailer.createTransport({
+	service: 'gmail',
+	auth: {
+		user: 'classicneetslm@gmail.com',
+		pass: 'Classic@123'
+	}
 });
+
+router
+	.route('/contactus')
+	.get(flash, async (req, res) => {
+		res.render('contactus');
+	})
+	.post(async (req, res) => {
+		const email = req.body.email;
+		const comment = req.body.message;
+		const name = req.body.name;
+		const phone = req.body.phone;
+
+		let mailOptions = {
+			from: 'classicneetslm@gmail.com',
+			to: 'info@classicneetacademy.com',
+			subject: 'Comments from user',
+			html:
+				`<h1>${name}</h1>` +
+				`<h2> ${email} </h2>` +
+				`<h3>${phone}</h3>` +
+				`<p>${comment}</p>`
+		};
+		transporter.sendMail(mailOptions, function (error, info) {
+			if (error) {
+				req.flash('error', 'Something went wrong');
+				res.redirect('/contactus');
+			} else {
+				req.flash('success', 'Mail was successfully sent');
+				res.redirect('/contactus');
+			}
+		});
+	});
 
 router.route('/successstories').get(async (req, res) => {
 	await db.query('SELECT * FROM successstories', async (error, response) => {
@@ -1260,13 +1298,7 @@ router
 			}
 		);
 	})
-	// .put(upload.single('sliderimg'), async (req, res) => {
-	// 	await db.query(
-	// 		'UPDATE successstories SET image = ? WHERE cloudinaryname = ?',
-	// 		[req.file.path, req.body.cloudinaryname]
-	// 	);
-	// 	res.redirect('/admin/successstories/studentdetails');
-	// })
+
 	.delete(async (req, res) => {
 		if (typeof req.body.checkbox === 'string') {
 			await cloudinary.uploader.destroy(
@@ -1279,7 +1311,7 @@ router
 					if (err) {
 						req.flash('error', 'Error occurred while adding');
 						console.log(err);
-					req.flash('success', 'Successfully Added');
+						req.flash('success', 'Successfully Added');
 					} else {
 						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/successstories/parenttestimonials');
@@ -1306,29 +1338,67 @@ router
 			res.redirect('/admin/successstories/parenttestimonials');
 		}
 	});
+router
+	.route('/admin/chatbot')
+	.get(flash, isloggedin, async (req, res) => {
+		await db.query("SELECT * FROM chatbot",(err,response)=>{
+			var arr = [];
+				if (err) {
+					console.log(err);
+				} else {
+				
+					res.render('admin/chatbot/chatbot',{chatbot:response});
+				}
+		})
+	})
+	.delete(async (req, res) => {
+		await db.query('DELETE FROM chatbot', (err, response) => {
+			if (err) {
+				req.flash('error', 'Error occurred while adding');
+				console.log(err);
+			} else {
+				req.flash('success', 'Successfully Deleted');
+				res.redirect('/admin/chatbot');
+			}
+		});
+	});
+
+router.route('/chatbotdelete').post(async (req, res) => {
+	await db.query(
+		'DELETE FROM chatbot WHERE name = ? AND gmail = ?',
+		[req.body.stuname, req.body.gmail],
+		(err, response) => {
+			if (err) {
+				req.flash('error', 'Error occurred while adding');
+				console.log(err);
+			} else {
+			}
+		}
+	);
+});
 
 router.post('/signout', isloggedin, (req, res) => {
 	req.session.destroy(function () {
 		res.clearCookie('connect.sid');
-		res.redirect('/login');rs
+		res.redirect('/login');
 	});
 });
 
-router.post('/chatbot', async (req, res) => {
-	console.log(req.body);
+router.get('/chatbot/:name/:email/:number', async (req, res) => {
+	const date = new Date();
 	await db.query(
 		'INSERT INTO chatbot SET ?',
 		{
-			name: req.body.name,
-			number: req.body.number,
-			gmail: req.body.email
+			name: req.params.name,
+			number: req.params.number,
+			gmail: req.params.email,
+			date: date.getDate()+'-'+(date.getMonth()+1)+'-'+date.getFullYear()
 		},
 		(err, response) => {
 			if (err) {
 				console.log(err);
 				return;
 			} else {
-				res.json({ message: 'Success' });
 			}
 		}
 	);
@@ -1337,9 +1407,10 @@ router.post('/chatbot', async (req, res) => {
 router.post('/pagination', isloggedin, async (req, res) => {
 	const currentPage = req.body.page || 1;
 	const perPage = 5;
+	const currentYear = req.body.year;
 
 	await db.query(
-		`SELECT * FROM studentdetails LIMIT ${perPage} OFFSET ${
+		`SELECT * FROM studentdetails WHERE year = ${currentYear} LIMIT ${perPage} OFFSET ${
 			(currentPage - 1) * perPage
 		}`,
 		(err, response) => {
@@ -1353,48 +1424,29 @@ router.post('/pagination', isloggedin, async (req, res) => {
 	);
 });
 
-router.get('/pagination/totalCount', isloggedin, async (req, res) => {
-	await db.query('SELECT * FROM studentdetails', (err, response) => {
+router.get('/chatbotresponce', async (req, res) => {
+	await db.query(`SELECT * FROM chatbot`, (err, response) => {
 		if (err) {
 			console.log(err);
 			return;
 		} else {
-			res.json(response.length);
+			res.json(response);
 		}
 	});
 });
 
-let transporter = nodemailer.createTransport({
-	service: 'gmail',
-	auth: {
-		user: 'srklohith05@gmail.com',
-		pass: 'Loki05@("*")'
-	}
-});
-
-router.post('/contactus', (req, res) => {
-	const email = req.body.email;
-	const comment = req.body.message;
-	const name = req.body.name;
-	const phone = req.body.phone;
-
-	let mailOptions = {
-		from: 'srklohith05@gmail.com',
-		to: email,
-		subject: 'Comments from user',
-		html:
-			`<h1>${name}</h1>` +
-			`<h2> ${email} </h2>` +
-			`<h3>${phone}</h3>` +
-			`<p>${comment}</p>`
-	};
-	transporter.sendMail(mailOptions, function (error, info) {
-		if (error) {
-			res.redirect('/contactus');
-		} else {
-			res.redirect('/contactus');
+router.get('/pagination/totalCount/:year', isloggedin, async (req, res) => {
+	await db.query(
+		`SELECT * FROM studentdetails where year = ${req.params.year}`,
+		(err, response) => {
+			if (err) {
+				console.log(err);
+				return;
+			} else {
+				res.json(response.length);
+			}
 		}
-	});
+	);
 });
 
 module.exports = router;

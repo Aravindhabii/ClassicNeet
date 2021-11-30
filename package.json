@@ -6,7 +6,8 @@
 	"homepage": "web.classicneetacademy.com",
 	"scripts": {
 		"dev": "node app.js",
-		"start": "nodemon app.js"
+		"start": "nodemon app.js",
+		"git": "git add . && git commit -m 'Changes' && git pull origin main && git push origin main"
 	},
 	"repository": {
 		"type": "git",
@@ -20,6 +21,7 @@
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
 		"cloudinary": "^1.27.0",
+		"compression": "^1.7.4",
 		"connect-flash": "^0.1.1",
 		"cookie-parser": "^1.4.5",
 		"dotenv": "^10.0.0",
@@ -31,11 +33,13 @@
 		"jsonwebtoken": "^8.5.1",
 		"method-override": "^3.0.0",
 		"mongoose": "^6.0.7",
+		"morgan": "^1.10.0",
 		"multer": "^1.4.3",
 		"multer-storage-cloudinary": "^4.0.0",
 		"mysql": "^2.18.1",
 		"nodemailer": "^6.7.1",
 		"nodemon": "^2.0.15",
+		"paginationjs": "^2.1.5",
 		"passport": "^0.5.0",
 		"passport-local": "^1.0.0"
 	}

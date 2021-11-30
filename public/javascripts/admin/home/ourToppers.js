@@ -6,11 +6,13 @@ const imgform = document.querySelector('.imgform');
 const submitbtn = document.querySelector('.submitbtn');
 const latestupdateform = document.querySelector('.imgform');
 
-addbtn.addEventListener("click", () => {
-  previewDiv.style.display = "flex";
-  imgform.style.transform = "translate(300vw,0)";
-  previewDiv.style.transform = "none";
-});
+if (addbtn) {
+  addbtn.addEventListener('click', () => {
+    previewDiv.style.display = 'flex';
+    imgform.style.transform = 'translate(300vw,0)';
+    previewDiv.style.transform = 'none';
+  });
+}
 
 backbtn.addEventListener("click", () => {
   previewDiv.style.transform = "translate(300vw,0)";
@@ -54,6 +56,7 @@ submitbtn.addEventListener('click', () => {
 		}
 	});
 });
+
 document.querySelectorAll(".updatesCheckbox").forEach((check, i) => {
   check.addEventListener("change", () => {
     if (document.querySelectorAll('input[type="checkbox"]:checked').length) {

@@ -17,18 +17,14 @@ body.dark {
 body.dark .chat {
 	color: black !important;
 }
-
-.vector {
-	position: relative;
-	top: -35px;
-	width: 100%;
-	background: url('../images/successStories/Vector8.png');
-	height: 25.5rem;
-	z-index: -1;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+.headerPic {
+	width: 100vw;
+}
+.studentHeader {
+	text-align: center;
+	margin-bottom: 8rem;
+	font-size: 3rem;
+	
 }
 .parentVector {
 	position: relative;
@@ -48,6 +44,7 @@ body.dark .chat {
 }
 .parentVector h1 {
 	font-size: 3rem;
+	margin-bottom: 1.5rem;
 	position: relative;
 }
 .cardMain {
@@ -63,7 +60,7 @@ body.dark .chat {
 	margin-bottom: 8rem;
 }
 .card {
-	height: 360px;
+	height: 400px;
 	width: 340px;
 	background: linear-gradient(#369afe, #60efffda);
 	position: relative;
@@ -77,7 +74,7 @@ body.dark .chat {
 	transform: translate(-50%, -40%);
 	border-radius: 100%;
 	border: 2px solid black;
-	width: 52%;
+	width: 60%;
 	height: 50%;
 	object-fit: cover;
 }
@@ -88,12 +85,13 @@ body.dark .chat {
 	font-size: 1.3rem;
 	position: relative;
 	color: white;
+	padding: .5rem;
 }
 .video {
 	width: 90%;
-	height: 50%;
-	position: relative;
-	top: 38%;
+	height: 40%;
+	position: absolute;
+	bottom: 3%;
 	left: 50%;
 	transform: translateX(-50%);
 	margin-left: auto;
@@ -113,18 +111,78 @@ body.dark .chat {
 	}
 }
 @media (max-width: 800px) {
-	.cardMain {
-		grid-template-columns: repeat(1, 1fr);
+	.card {
+		height: 240px;
+		width: 200px;
+	}
+	.card h3 {
+		font-size: .8rem;
 	}
 }
+@media (max-width: 600px) {
+	.studentHeader {
+		font-size: 2rem;
+		margin-bottom: 5rem;
+		
+	}
+	.parentVector h1 {
+		font-size: 2rem;
+	}
+	.video {
+		height: 40%;
+	}
+	.cardMain {
+		margin-bottom: 4rem;
+	}
+	
+}
+	
+
 @media (max-width: 500px) {
 	.cardMain {
 		margin-top: 3rem;
+		grid-row-gap: 5rem;
+	}
+	.card {
+		height: 220px;
+		width: 160px;
+	}
+	.profile {
+		width:60%;
+		height: 45%;
+	}
+	.video {
+		bottom: 3%;
+	}
+	.card h3 {
+		font-size: .8rem;
+		top: 28%;
+		padding: .8rem;
 	}
 }
 @media (max-width: 400px) {
-	.card {
-		height: 320px;
-		width: 300px;
+	.card h3 {
+		font-size: .8rem;
+		top: 25%;
+		padding: .8rem;
 	}
+	.studentHeader {
+		font-size: 1.5rem;
+		
+	}
+	.parentVector h1 {
+		font-size: 1.5rem;
+	}
+	.cardMain {
+		margin-top: 3rem;
+		grid-row-gap: 4rem;
+	}
+	.card {
+		height: 190px;
+		width: 130px;
+	}
+	.profile { 
+		width: 65%;
+	}
+
 }
