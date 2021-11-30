@@ -58,7 +58,6 @@
 								aria-label="Username"
 								aria-describedby="addon-wrapping"
 								id="uploadlink"
-								
 								required
 							/>
 						</div>
@@ -89,49 +88,8 @@
 								<th scope="col">Event</th>
 							</tr>
 						</thead>
-						<tbody>
-							<% calendar.forEach(i => { %>
-							<tr>
-								<td>
-									<input
-										type="text"
-										id="linkinput"
-										value="<%= i.date %>"
-										readonly
-										style="width: 80%; border: none"
-									/>
-								</td>
-								<td>
-									<input
-										type="text"
-										id="linkinput"
-										value="<%= i.month %>"
-										readonly
-										style="width: 80%; border: none"
-									/>
-								</td>
-								<td>
-									<input
-										type="text"
-										id="linkinput"
-										value="<%= i.event %>"
-										readonly
-										style="width: 80%; border: none"
-									/>
-								</td>
-								<td>
-									<input
-										type="checkbox"
-										id="checkbox"
-										class="updatesCheckbox"
-										name="checkbox"
-										value="<%= i.event %>"
-										style="height: 20px; width: 20px"
-									/>
-								</td>
-							</tr>
-							<% }) %>
-						</tbody>
+						<tbody class="tbody"></tbody>
+						<div id="pagination-container"></div>
 					</table>
 					<div class="buttondiv">
 						<button type="button" class="btn btn-outline-primary addbtn px-4">

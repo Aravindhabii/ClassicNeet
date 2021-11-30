@@ -31,14 +31,14 @@
 		<%- include('../../layout/adminheader') %>
 		<section class="mainsection">
 			<div class="left"><%- include('../../layout/adminSideBar') %></div>
-			<div class="right" style="height: 100vh">
+			<div class="right">
 				<form
 					action="/admin/sliderrevolution"
 					method="post"
 					class="imgform"
 					enctype="multipart/form-data"
 				>
-					<h1 class="m-5">Slider Revolution</h1>
+					<h1 class="mt-5 mb-3">Slider Revolution</h1>
 					<table class="table" style="width: 70%">
 						<thead>
 							<tr>
@@ -50,14 +50,14 @@
 						<tbody>
 							<% img.forEach(i => { %>
 							<tr>
-								<td>
-									<p class="onclickimg"><%= i.imgname %></p>
+								<td style="padding: 0.3rem">
+									<p class="onclickimg mb-1"><%= i.imgname %></p>
 									<span class="currentPreviewSpan btn btn-info"
 										>Show Image</span
 									>
 									<span class="currentSliderimgurl"><%= i.sliderimg %> </span>
 								</td>
-								<td>
+								<td style="padding: 0.3rem">
 									<input
 										type="file"
 										id="image"
@@ -68,7 +68,7 @@
 									<span class="previewSpan btn btn-info">Preview</span>
 									<span class="sliderimgurl"></span>
 								</td>
-								<td>
+								<td style="padding: 0.3rem">
 									<input
 										type="checkbox"
 										id="checkbox"
