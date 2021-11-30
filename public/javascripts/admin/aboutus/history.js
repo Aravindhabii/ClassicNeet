@@ -79,7 +79,7 @@ $('#pagination-container').pagination({
 	dataSource: function (done) {
 		$.ajax({
 			type: 'GET',
-			url: `/sql/ourtoppers`,
+			url: `/sql/history`,
 			success: function (response) {
 				done(response);
 			}

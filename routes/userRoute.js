@@ -1508,9 +1508,9 @@ router.get('/sql/ourtoppers', async (req, res) => {
 			res.json(arr);
 		}
 	});
-})
+});
 
-router.get('/sql/history',async(req,res)=>{
+router.get('/sql/history', isloggedin, async (req, res) => {
 	await db.query('SELECT * FROM history', (err, response) => {
 		arr = [];
 		if (err) {
