@@ -1096,32 +1096,32 @@ router
 	.get(flash, async (req, res) => {
 		res.render('contactus');
 	})
-	.post(async (req, res) => {
-		const email = req.body.email;
-		const comment = req.body.message;
-		const name = req.body.name;
-		const phone = req.body.phone;
+	// .post(async (req, res) => {
+	// 	const email = req.body.email;
+	// 	const comment = req.body.message;
+	// 	const name = req.body.name;
+	// 	const phone = req.body.phone;
 
-		let mailOptions = {
-			from: 'classicneetslm@gmail.com',
-			to: 'info@classicneetacademy.com',
-			subject: 'Comments from user',
-			html:
-				`<h1>${name}</h1>` +
-				`<h2> ${email} </h2>` +
-				`<h3>${phone}</h3>` +
-				`<p>${comment}</p>`
-		};
-		transporter.sendMail(mailOptions, function (error, info) {
-			if (error) {
-				req.flash('error', 'Something went wrong');
-				res.redirect('/contactus');
-			} else {
-				req.flash('success', 'Mail was successfully sent');
-				res.redirect('/contactus');
-			}
-		});
-	});
+	// 	let mailOptions = {
+	// 		from: 'classicneetslm@gmail.com',
+	// 		to: 'info@classicneetacademy.com',
+	// 		subject: 'Comments from user',
+	// 		html:
+	// 			`<h1>${name}</h1>` +
+	// 			`<h2> ${email} </h2>` +
+	// 			`<h3>${phone}</h3>` +
+	// 			`<p>${comment}</p>`
+	// 	};
+	// 	transporter.sendMail(mailOptions, function (error, info) {
+	// 		if (error) {
+	// 			req.flash('error', 'Something went wrong');
+	// 			res.redirect('/contactus');
+	// 		} else {
+	// 			req.flash('success', 'Mail was successfully sent');
+	// 			res.redirect('/contactus');
+	// 		}
+	// 	});
+	// });
 
 router.route('/successstories').get(async (req, res) => {
 	await db.query('SELECT * FROM successstories', async (error, response) => {
