@@ -17,7 +17,9 @@
 	<body>
 		<%- include('../../layout/adminheader') %>
 		<section class="mainsection">
-			<div class="left"><%- include('../../layout/adminSideBar') %></div>
+			<div class="left" style="bottom: 0; position: fixed">
+				<%- include('../../layout/adminSideBar') %>
+			</div>
 			<div class="right">
 				<div class="preview">
 					<h1 class="mb-5">Latest Updates</h1>
@@ -125,7 +127,7 @@
 						<button type="button" class="btn btn-outline-primary addbtn px-4">
 							Add
 						</button>
-						<button 
+						<button
 							type="button"
 							disabled
 							class="btn btn-outline-danger submit ms-5 px-3 submitbtn"
