@@ -7,8 +7,6 @@ const sliderimgurl = document.querySelectorAll(".sliderimgurl");
 const displaybtn = document.querySelectorAll(".displaybtn");
 const uploaddisplay = document.querySelectorAll(".uploaddisplay");
 
-
-
 for (let i = 0; i <= fileimg.length - 1; i++) {
   fileimg[i].addEventListener("input", (e) => {
     document
@@ -25,11 +23,16 @@ for (let i = 0; i <= fileimg.length - 1; i++) {
 uploaddisplay.forEach((element, index) => {
   element.addEventListener("input", () => {
     console.log(displaybtn[index]);
-    displaybtn[index].classList.add('btn-info');
-    displaybtn[index].removeAttribute('disabled');
+    displaybtn[index].classList.add("btn-info");
+    displaybtn[index].removeAttribute("disabled");
   });
-})
-;
+  element.addEventListener("change", () => {
+    if (element.value === "") {
+      displaybtn[index].classList.remove("btn-info");
+      displaybtn[index].setAttribute("disabled", "disabled");
+    }
+  });
+});
 
 document.querySelectorAll(".updatesCheckbox").forEach((check, i) => {
   check.addEventListener("change", () => {
