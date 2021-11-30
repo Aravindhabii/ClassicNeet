@@ -226,7 +226,6 @@ router
 					var link1 = response[i].link;
 					arr.push({ link, link1 });
 				}
-				console.log(arr);
 				res.render('admin/home/latestUpdates', { arr });
 			}
 		});
@@ -721,7 +720,6 @@ router.route('/Demovideos').get(async (req, res) => {
 						cloudinaryName: response[0].cloudinaryname
 					};
 				}
-				console.log(arr);
 				res.render('demovideos', { link: arr, img: image });
 			});
 		}
@@ -1449,6 +1447,25 @@ router.get('/pagination/totalCount/:year', isloggedin, async (req, res) => {
 
 //for sql pagination
 
+router.get('/sql/homeslider',isloggedin, async (req, res) => {
+	await db.query('SELECT * FROM homeslider', async (error, response) => {
+		var arr = [];
+		if (error) {
+			console.log(error);
+		} else {
+			for (let i = 0; i <= response.length - 1; i++) {
+				var image = {
+					sliderimg: response[i].sliderimg,
+					imgname: response[i].imgname,
+					cloudinaryName: response[i].cloudinaryname
+				};
+				arr.push(image);
+			}
+		}
+		res.json(arr);
+	});
+});
+
 router.get('/sql/latestupdates', isloggedin, async (req, res) => {
 	await db.query('SELECT * FROM latest_updates', (err, response) => {
 		arr = [];
@@ -1507,7 +1524,7 @@ router.get('/sql/ourtoppers', async (req, res) => {
 	});
 });
 
-router.get('/sql/history',async(req,res)=>{
+router.get('/sql/history', async (req, res) => {
 	await db.query('SELECT * FROM history', async (error, response) => {
 		var arr = [];
 		if (error) {
