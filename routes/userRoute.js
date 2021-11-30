@@ -1341,15 +1341,14 @@ router
 router
 	.route('/admin/chatbot')
 	.get(flash, isloggedin, async (req, res) => {
-		await db.query("SELECT * FROM chatbot",(err,response)=>{
+		await db.query('SELECT * FROM chatbot', (err, response) => {
 			var arr = [];
-				if (err) {
-					console.log(err);
-				} else {
-				
-					res.render('admin/chatbot/chatbot',{chatbot:response});
-				}
-		})
+			if (err) {
+				console.log(err);
+			} else {
+				res.render('admin/chatbot/chatbot', { chatbot: response });
+			}
+		});
 	})
 	.delete(async (req, res) => {
 		await db.query('DELETE FROM chatbot', (err, response) => {
@@ -1392,7 +1391,8 @@ router.get('/chatbot/:name/:email/:number', async (req, res) => {
 			name: req.params.name,
 			number: req.params.number,
 			gmail: req.params.email,
-			date: date.getDate()+'-'+(date.getMonth()+1)+'-'+date.getFullYear()
+			date:
+				date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear()
 		},
 		(err, response) => {
 			if (err) {
@@ -1451,26 +1451,7 @@ router.get('/pagination/totalCount/:year', isloggedin, async (req, res) => {
 
 //for sql pagination
 
-router.get('/sql/homeslider',async(req,res)=>{
-	await db.query('SELECT * FROM homeslider', async (error, response) => {
-		var arr = [];
-		if (error) {
-			console.log(error);
-		} else {
-			for (let i = 0; i <= response.length - 1; i++) {
-				var image = {
-					sliderimg: response[i].sliderimg,
-					imgname: response[i].imgname,
-					cloudinaryName: response[i].cloudinaryname
-				};
-				arr.push(image);
-			}
-		}
-		res.json(arr);
-	});
-});
-
-router.get('/sql/latestupdates',async(req,res)=>{
+router.get('/sql/latestupdates', isloggedin, async (req, res) => {
 	await db.query('SELECT * FROM latest_updates', (err, response) => {
 		arr = [];
 		if (err) {
@@ -1486,9 +1467,9 @@ router.get('/sql/latestupdates',async(req,res)=>{
 			res.json(arr);
 		}
 	});
-})
+});
 
-router.get('/sql/calendarevents',async(req,res)=>{
+router.get('/sql/calendarevents', isloggedin, async (req, res) => {
 	await db.query('SELECT * FROM calendarevents', async (error, response) => {
 		var arr = [];
 		if (error) {
@@ -1505,9 +1486,9 @@ router.get('/sql/calendarevents',async(req,res)=>{
 			res.json(arr);
 		}
 	});
-})
+});
 
-router.get('/sql/ourtoppers',async(req,res)=>{
+router.get('/sql/ourtoppers', async (req, res) => {
 	await db.query('SELECT * FROM ourtoppers', async (error, response) => {
 		var arr = [];
 		if (error) {
@@ -1523,22 +1504,6 @@ router.get('/sql/ourtoppers',async(req,res)=>{
 					score: response[i].score
 				};
 				arr.push(image);
-			}
-			res.json(arr);
-		}
-	});
-})
-
-router.get('/sql/homestudenttestimonials',async(req,res)=>{
-	await db.query('SELECT * FROM studenttestimonials', (err, response) => {
-		arr = [];
-		if (err) {
-			req.flash('error', 'Error occurred while adding');
-			console.log(err);
-		} else {
-			for (let i = 0; i <= response.length - 1; i++) {
-				var link = response[i].testimonialslink;
-				arr.push(link);
 			}
 			res.json(arr);
 		}
