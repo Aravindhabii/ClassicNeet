@@ -28,8 +28,11 @@ uploaddisplay.forEach((element, index) => {
     displaybtn[index].classList.add('btn-info');
     displaybtn[index].removeAttribute('disabled');
   });
-})
-;
+  if (element.value === "") {
+    displaybtn[index].classList.remove('btn-info');
+    displaybtn[index].setAttribute('disabled', 'disabled');
+  }
+});
 
 document.querySelectorAll(".updatesCheckbox").forEach((check, i) => {
   check.addEventListener("change", () => {
