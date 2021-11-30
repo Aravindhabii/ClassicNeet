@@ -37,18 +37,12 @@ document.querySelector('.form').addEventListener('submit', (e) => {
 		commentError.innerText = 'Please enter your comment';
 		e.preventDefault();
 	}
-
-  // console.log(
-  // 	parseInt(e.target.value.substr(e.target.value.length - 1, e.target.value))
-  // );
 });
 var inputs = document.querySelectorAll(".form-input");
 
 var submit = document.querySelector(".submit");
 const form1 = document.querySelector("form");
-console.log(form1);
 document.querySelector("form").addEventListener("submit", (e) => {
-	console.log('form submitted');
   e.preventDefault();
   var nameError = document.querySelector(".nameError");
   var nameInput = document.querySelector(".name-input");
