@@ -6,28 +6,37 @@ document.querySelector(".reset").addEventListener("click", (r) => {
   });
 });
 
-const phonenum = document.querySelector(".phonenum");
-const phoneError = document.querySelector(".phoneError");
-var sub = false;
-phonenum.addEventListener("input", (e) => {
-  var num = e.target.value;
-  var filter =
-    /^((\+[1-9]{1,4}[ \-])|(\([0-9]{2,3}\)[ \-])|([0-9]{2,4})[ \-])?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
-  if (!e.target.value) {
-    phoneError.style.display = "none";
-  } else {
-    phoneError.style.display = "block";
-    if (filter.test(num)) {
-      if (num.length == 10) {
-        phoneError.style.display = "none";
-        sub = true;
-      } else {
-        phoneError.innerText = "Please put 10  digit mobile number";
-      }
-    } else {
-      phoneError.innerText = "Not a valid number";
-    }
-  }
+var submit = document.querySelector('.submit');
+
+document.querySelector('.form').addEventListener('submit', (e) => {
+	var nameError = document.querySelector('.nameError');
+	var nameInput = document.querySelector('.name-input');
+	var phonenum = document.querySelector('.phoneError');
+	var phoneInput = document.querySelector('.phonenum');
+	var emailError = document.querySelector('.emailError');
+	var emailInput = document.querySelector('.email-input');
+	var commentError = document.querySelector('.commentError');
+	var commentInput = document.querySelector('.comment-input');
+	if (nameInput.value == '') {
+		nameError.style.display = 'block';
+		nameError.innerText = 'Please enter your name';
+		e.preventDefault();
+	}
+	if (phoneInput.value == '') {
+		phonenum.style.display = 'block';
+		phonenum.innerText = 'Please enter your number';
+		e.preventDefault();
+	}
+	if (emailInput.value == '') {
+		emailError.style.display = 'block';
+		emailError.innerText = 'Please enter your email';
+		e.preventDefault();
+	}
+	if (commentInput.value == '') {
+		commentError.style.display = 'block';
+		commentError.innerText = 'Please enter your comment';
+		e.preventDefault();
+	}
 
   // console.log(
   // 	parseInt(e.target.value.substr(e.target.value.length - 1, e.target.value))
@@ -108,3 +117,20 @@ inputs.forEach((input) => {
     }
   });
 });
+<<<<<<< HEAD
+=======
+
+if (sweetp) {
+	function successdialog() {
+		Swal.fire({
+			position: 'center',
+			icon: 'success',
+			title: sweetp.innerText,
+			showConfirmButton: false,
+			timer: 2500
+		});
+	}
+	successdialog();
+	sweetp.parentNode.removeChild(sweetp);
+}
+>>>>>>> 810e89e6e1c62a603234511229c1731ad17127ed
