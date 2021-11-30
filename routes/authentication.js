@@ -10,41 +10,41 @@ const db = require('../database');
 
 const yepp = 'yes';
 
-router
-	.route('/register')
-	.get((req, res) => {
-		res.render('register');
-	})
-	.post((req, res) => {
-		const { email, password, username } = req.body;
-		const emailinuse = 'This email is already in use';
-		db.query(
-			'SELECT email FROM users WHERE email = ?',
-			[email],
-			async (err, results) => {
-				if (err) {
-					console.log(err);
-				}
-				if (results.length > 0) {
-					return res.render('login', { emailinuse });
-				}
+// router
+// 	.route('/register')
+// 	.get((req, res) => {
+// 		res.render('register');
+// 	})
+// 	.post((req, res) => {
+// 		const { email, password, username } = req.body;
+// 		const emailinuse = 'This email is already in use';
+// 		db.query(
+// 			'SELECT email FROM users WHERE email = ?',
+// 			[email],
+// 			async (err, results) => {
+// 				if (err) {
+// 					console.log(err);
+// 				}
+// 				if (results.length > 0) {
+// 					return res.render('login', { emailinuse });
+// 				}
 
-				let hashedPassword = await bcrypt.hash(password, 8);
+// 				let hashedPassword = await bcrypt.hash(password, 8);
 
-				db.query(
-					'INSERT INTO users SET ?',
-					{ username: username, email: email, password: hashedPassword },
-					(err, results) => {
-						if (err) {
-							console.log(err);
-						} else {
-							return res.render('home');
-						}
-					}
-				);
-			}
-		);
-	});
+// 				db.query(
+// 					'INSERT INTO users SET ?',
+// 					{ username: username, email: email, password: hashedPassword },
+// 					(err, results) => {
+// 						if (err) {
+// 							console.log(err);
+// 						} else {
+// 							return res.render('home');
+// 						}
+// 					}
+// 				);
+// 			}
+// 		);
+// 	});
 
 router
 	.route('/login')
