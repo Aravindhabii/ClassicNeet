@@ -117,8 +117,6 @@ inputs.forEach((input) => {
     }
   });
 });
-<<<<<<< HEAD
-=======
 
 if (sweetp) {
 	function successdialog() {
@@ -133,4 +131,3 @@ if (sweetp) {
 	successdialog();
 	sweetp.parentNode.removeChild(sweetp);
 }
->>>>>>> 810e89e6e1c62a603234511229c1731ad17127ed
