@@ -75,7 +75,7 @@ $('#pagination-container').pagination({
 	dataSource: function (done) {
 		$.ajax({
 			type: 'GET',
-			url: `/results/pagination/${dropdown.value}`,
+			url: `/sql/calendarevents`,
 			success: function (response) {
 				done(response);
 			}
@@ -83,7 +83,7 @@ $('#pagination-container').pagination({
 	},
 	className: 'paginationjs-theme-blue paginationjs-big',
 
-	pageSize: 9,
+	pageSize: 5,
 	callback: function (data, pagination) {
 		// template method of yourself
 		var dataHtml = '';

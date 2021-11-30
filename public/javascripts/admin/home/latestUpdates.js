@@ -56,49 +56,57 @@ document.querySelectorAll('.updatesCheckbox').forEach((check, i) => {
 	});
 });
 
-// $('#pagination-container').pagination({
-// 	dataSource: array,
-// 	className: 'paginationjs-theme-blue paginationjs-big',
+$('#pagination-container').pagination({
+	dataSource: function (done) {
+		$.ajax({
+			type: 'GET',
+			url: `/sql/latestupdates`,
+			success: function (response) {
+				done(response);
+			}
+		});
+	},
+	className: 'paginationjs-theme-blue paginationjs-big',
 
-// 	pageSize: 9,
-// 	callback: function (data, pagination) {
-// 		// template method of yourself
-// 		var dataHtml = '';
+	pageSize: 5,
+	callback: function (data, pagination) {
+		// template method of yourself
+		var dataHtml = '';
 
-// 		$.each(data, function (index, i) {
-// 			dataHtml += `<tr>
-// 			<td>
-// 				<input
-// 					type="text"
-// 					id="linkinput"
-// 					value="${i.link}"
-// 					readonly
-// 					style="width: 80%; border: none"
-// 				/>
-// 			</td>
-// 			<td>
-// 				<input
-// 					type="text"
-// 					id="linkinput"
-// 					value="${i.link1}"
-// 					readonly
-// 					style="width: 80%; border: none"
-// 				/>
-// 			</td>
-// 			<td>
-// 				<input
-// 					type="checkbox"
-// 					id="checkbox"
-// 					class="updatesCheckbox"
-// 					name="checkbox"
-// 					value="${i.link1}"
-// 					style="height: 20px; width: 20px"
-// 				/>
-// 			</td>
-// 		</tr>
-// 		`;
-// 		});
+		$.each(data, function (index, i) {
+			dataHtml += `<tr>
+			<td>
+				<input
+					type="text"
+					id="linkinput"
+					value="${i.link}"
+					readonly
+					style="width: 80%; border: none"
+				/>
+			</td>
+			<td>
+				<input
+					type="text"
+					id="linkinput"
+					value="${i.link1}"
+					readonly
+					style="width: 80%; border: none"
+				/>
+			</td>
+			<td>
+				<input
+					type="checkbox"
+					id="checkbox"
+					class="updatesCheckbox"
+					name="checkbox"
+					value="${i.link1}"
+					style="height: 20px; width: 20px"
+				/>
+			</td>
+		</tr>
+		`;
+		});
 
-// 		$('tbody').html(dataHtml);
-// 	}
-// });
+		$('.tbody').html(dataHtml);
+	}
+});
