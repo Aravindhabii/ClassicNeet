@@ -19,7 +19,7 @@ body {
 	background-repeat: no-repeat;
 }
 .login {
-	padding: 1rem 3rem;
+	padding: 3rem 6rem;
 	display: flex;
 	flex-direction: column;
 	background: rgba(256, 256, 256, 0.5);
@@ -28,7 +28,6 @@ body {
 	justify-content: space-around;
 	border-radius: 30px;
 	position: relative;
-	padding-bottom: 1rem;
 }
 ::placeholder {
 	text-align: center;
@@ -56,7 +55,7 @@ body {
 }
 
 .Username input {
-	width: 100%;
+	width: 130%;
 	height: 3rem;
 	border: 1px solid #c2c2c2;
 	font-size: 1rem;
