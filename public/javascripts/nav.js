@@ -70,16 +70,3 @@ document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
 if (window.localStorage.getItem('dark') === 'true') {
 	toggleDarkTheme();
 }
-
-
-
-
-// if (
-// 	document.querySelector('.dark-mode-toggle').classList.contains('dark') &&
-// 	document.querySelector('body').classList.contains('dark')
-// ) {
-// 	console.log("bloooom");
-// 	toggleDarkTheme();
-// }else{
-// }
-	

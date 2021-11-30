@@ -10,11 +10,6 @@ const changablespan = document.querySelector('.changablespan');
 const year = document.querySelector('.year');
 const date = new Date();
 
-console.log(
-	date.getFullYear() - 1 + '-' + (date.getMonth() + 1) + '-' + date.getDate(),
-	date.getFullYear() + 1 + '-' + (date.getMonth() + 1) + '-' + date.getDate()
-);
-
 year.setAttribute(
 	'min',
 	date.getFullYear() - 1 + '-' + (date.getMonth() + 1) + '-' + date.getDate()

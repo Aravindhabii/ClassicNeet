@@ -220,7 +220,6 @@ function success() {
 }
 
 if (window.localStorage.flash == "true") {
-	console.log('call from reload');
 	window.localStorage.removeItem("flash");
 	success();
 }

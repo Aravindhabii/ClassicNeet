@@ -22,7 +22,6 @@ for (let i = 0; i <= fileimg.length - 1; i++) {
 
 uploaddisplay.forEach((element, index) => {
   element.addEventListener("input", () => {
-    console.log(displaybtn[index]);
     displaybtn[index].classList.add("btn-info");
     displaybtn[index].removeAttribute("disabled");
   });

@@ -707,7 +707,6 @@ router.route('/Demovideos').get(async (req, res) => {
 		if (err) {
 			console.log(err);
 		} else {
-			console.log(response);
 			for (let i = 0; i <= response.length - 1; i++) {
 				var link = response[i].videolink;
 				arr.push(link);
@@ -1004,7 +1003,6 @@ router
 				if (err) {
 					console.log(err);
 				} else {
-					console.log(response);
 					req.flash('success', 'Successfully Updated');
 					res.redirect('/admin/results/studentdetails');
 				}
@@ -1463,7 +1461,6 @@ router.get('/sql/latestupdates', isloggedin, async (req, res) => {
 				var link1 = response[i].link;
 				arr.push({ link, link1 });
 			}
-			console.log(arr);
 			res.json(arr);
 		}
 	});
