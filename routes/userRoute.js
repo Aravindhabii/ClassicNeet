@@ -1447,7 +1447,7 @@ router.get('/pagination/totalCount/:year', isloggedin, async (req, res) => {
 
 //for sql pagination
 
-router.get('/sql/homeslider',isloggedin, async (req, res) => {
+router.get('/sql/homeslider', isloggedin, async (req, res) => {
 	await db.query('SELECT * FROM homeslider', async (error, response) => {
 		var arr = [];
 		if (error) {
