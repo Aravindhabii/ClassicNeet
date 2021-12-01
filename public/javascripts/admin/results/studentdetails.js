@@ -68,7 +68,18 @@ function showImg(show) {
 		sectionop.style.filter = 'blur(0px)';
 	});
 }
-submitbtn.addEventListener('click', () => {
+
+const nocontentswal = () => {
+	Swal.fire({
+		position: "center",
+		icon: "warning",
+		title: "Please check any checkbox",
+		showConfirmButton: false,
+		timer: 2500,
+	});
+}
+
+const checkswal = () => {
 	Swal.fire({
 		title: 'Are you sure?',
 		text: 'Are you sure you want to delete!',
@@ -82,13 +93,29 @@ submitbtn.addEventListener('click', () => {
 			document.querySelector('.latestupdateform').submit();
 		}
 	});
+  };
+
+submitbtn.addEventListener('click', () => {
+	if (
+		submitbtn.getAttribute("type") == "button" &&
+		submitbtn.classList.contains("warningcheck")
+	  ) {
+		nocontentswal();
+	  } else if (
+		submitbtn.getAttribute("type") == "button" &&
+		!submitbtn.classList.contains("warningcheck")
+	  ) {
+		checkswal();
+	  } else {
+		return;
+	  }
 });
 
 function checkboxCheck(check) {
 	if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
-		document.querySelector('.submit').removeAttribute('disabled');
+		submitbtn.classList.remove("warningcheck")
 	} else {
-		document.querySelector('.submit').setAttribute('disabled', true);
+		submitbtn.classList.add("warningcheck")
 	}
 }
 
