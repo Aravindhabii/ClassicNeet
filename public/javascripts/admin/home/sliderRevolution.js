@@ -7,78 +7,53 @@ const sliderimgurl = document.querySelectorAll(".sliderimgurl");
 const displaybtn = document.querySelectorAll(".displaybtn");
 const uploaddisplay = document.querySelectorAll(".uploaddisplay");
 
-for (let i = 0; i <= fileimg.length - 1; i++) {
-  fileimg[i].addEventListener("input", (e) => {
-    document
-      .querySelectorAll(".updatesCheckbox")
-      [i].removeAttribute("disabled");
-    for (let j = 0; j <= sliderimgurl.length - 1; j++) {
-      if (i === j) {
-        sliderimgurl[j].innerText = URL.createObjectURL(e.target.files[0]);
-      }
-    }
-  });
-}
-
 const uploadDisplayInput = (e) => {
-  e.classList.add("btn-info");
-  e.removeAttribute("disabled");
-};
-const uploadDisplayChange = () => {
-  e.classList.remove("btn-info");
-  e.setAttribute("disabled", "disabled");
+	e.parentNode.parentNode.children[2].children[0].removeAttribute('disabled');
+	e.parentNode.children[1].classList.add('btn-info');
+	e.parentNode.children[1].removeAttribute('disabled');
+	e.parentNode.children[2].innerText = URL.createObjectURL(e.files[0]);
 };
 
-document.querySelectorAll(".updatesCheckbox").forEach((check, i) => {
-  check.addEventListener("change", () => {
-    if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
-      document.querySelector(".submit").removeAttribute("disabled");
-    } else {
-      document.querySelector(".submit").setAttribute("disabled", true);
-    }
-  });
-});
+// const uploadDisplayChange = (e) => {
+// 	if (e.parentNode.childern[0].value == '') {
+// 		e.parentNode.childern[1].classList.remove('btn-info');
+// 		e.parentNode.childern[1].setAttribute('disabled', 'disabled');
+// 	}
+// };
 
-for (let i = 0; i <= previewSpan.length - 1; i++) {
-  previewSpan[i].addEventListener("click", (e) => {
-    for (let j = 0; j <= sliderimgurl.length - 1; j++) {
-      if (i === j) {
-        const img = document.createElement("img");
-        if (sliderimgurl[j].innerText.length < 1) return;
-        img.src = sliderimgurl[j].innerText;
-        previewDiv.appendChild(img);
-        previewDiv.style.display = "flex";
-        previewDiv.style.background = "rgba(104, 100, 100, 0.671)";
-        closesvg.addEventListener("click", () => {
-          previewDiv.removeChild(img);
-          previewDiv.style.display = "none";
-          previewDiv.style.background = "none";
-        });
-      }
-    }
-  });
-}
+const updatesCheckboxChange = (e) => {
+	if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
+		document.querySelector('.submit').removeAttribute('disabled');
+	} else {
+		document.querySelector('.submit').setAttribute('disabled', true);
+	}
+};
+const previewSpanClick = (e) => {
+	const img = document.createElement('img');
+	if (e.parentNode.children[2].innerText.length < 1) return;
+	img.src = e.parentNode.children[2].innerText;
+	previewDiv.appendChild(img);
+	previewDiv.style.display = 'flex';
+	previewDiv.style.background = 'rgba(104, 100, 100, 0.671)';
+	closesvg.addEventListener('click', () => {
+		previewDiv.removeChild(img);
+		previewDiv.style.display = 'none';
+		previewDiv.style.background = 'none';
+	});
+};
 
-const currentPreviewSpan = document.querySelectorAll(".currentPreviewSpan");
-const currentSliderimgurl = document.querySelectorAll(".currentSliderimgurl");
-for (let i = 0; i <= currentPreviewSpan.length - 1; i++) {
-  currentPreviewSpan[i].addEventListener("click", (e) => {
-    for (let j = 0; j <= currentSliderimgurl.length - 1; j++) {
-      if (i === j) {
-        const img = document.createElement("img");
-        img.src = currentSliderimgurl[j].innerText;
-        previewDiv.appendChild(img);
-        previewDiv.style.display = "flex";
-        previewDiv.style.background = "rgba(104, 100, 100, 0.671)";
-        closesvg.addEventListener("click", () => {
-          previewDiv.removeChild(img);
-          previewDiv.style.display = "none";
-          previewDiv.style.background = "none";
-        });
-      }
-    }
-  });
-}
+const currentPreviewSpan = (e) => {
+	const img = document.createElement('img');
+	img.src = e.parentNode.children[2].innerText;
+	previewDiv.appendChild(img);
+	previewDiv.style.display = 'flex';
+	previewDiv.style.background = 'rgba(104, 100, 100, 0.671)';
+	closesvg.addEventListener('click', () => {
+		previewDiv.removeChild(img);
+		previewDiv.style.display = 'none';
+		previewDiv.style.background = 'none';
+	});
+};
 
 $("#pagination-container").pagination({
   dataSource: function (done) {
@@ -101,7 +76,7 @@ $("#pagination-container").pagination({
       dataHtml += `<tr>
       <td style="padding: 0.3rem">
         <p class="onclickimg mb-1">${i.imgname}</p>
-        <span class="currentPreviewSpan btn btn-info"
+        <span class="currentPreviewSpan btn btn-info" onclick="currentPreviewSpan(this)"
           >Show Image</span
         >
         <span class="currentSliderimgurl">${i.sliderimg} </span>
@@ -114,8 +89,13 @@ $("#pagination-container").pagination({
           class="fileimg uploaddisplay"
 		  oninput="uploadDisplayInput(this)"
           name="sliderimg"
+		  oninput="uploadDisplayInput(this)"
         />
+<<<<<<< HEAD
         <button class="previewSpan displaybtn btn" onchange="uploadDisplayChange(this)" disabled>
+=======
+        <button class="previewSpan displaybtn btn" type="button" onclick="previewSpanClick(this)" disabled>
+>>>>>>> 01948e951371350613da57068b37c98b120dc9cb
           Display
         </button>
         <span class="sliderimgurl"></span>
@@ -126,6 +106,7 @@ $("#pagination-container").pagination({
           id="checkbox"
           class="updatesCheckbox"
           disabled
+		  onchange="updatesCheckboxChange(this)"
           name="checkbox"
           value="${i.cloudinaryName}"
           style="height: 20px; width: 20px"

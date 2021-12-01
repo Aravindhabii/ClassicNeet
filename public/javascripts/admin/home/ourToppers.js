@@ -23,23 +23,18 @@ const previewTopper = document.querySelector('.previewTopper');
 const previewSpan = document.querySelectorAll('.currentPreviewSpan');
 const closesvg = document.querySelector('.closesvg');
 const sliderimgurl = document.querySelectorAll('.currentSliderimgurl');
-for (let i = 0; i <= previewSpan.length - 1; i++) {
-	previewSpan[i].addEventListener('click', (e) => {
-		for (let j = 0; j <= sliderimgurl.length - 1; j++) {
-			if (i === j) {
-				const img = document.createElement('img');
-				if (sliderimgurl[j].innerText.length < 1) return;
-				img.src = sliderimgurl[j].innerText;
-				previewTopper.appendChild(img);
-				previewTopper.style.display = 'flex';
-				closesvg.addEventListener('click', () => {
-					previewTopper.removeChild(img);
-					previewTopper.style.display = 'none';
-				});
-			}
-		}
+
+const currentPreviewSpanClick = (e) => {
+	const img = document.createElement('img');
+	if (e.parentNode.children[2].innerText.length < 1) return;
+	img.src = e.parentNode.children[2].innerText;
+	previewTopper.appendChild(img);
+	previewTopper.style.display = 'flex';
+	closesvg.addEventListener('click', () => {
+		previewTopper.removeChild(img);
+		previewTopper.style.display = 'none';
 	});
-}
+};
 
 submitbtn.addEventListener('click', () => {
 	Swal.fire({
@@ -57,21 +52,18 @@ submitbtn.addEventListener('click', () => {
 	});
 });
 
-document.querySelectorAll('.updatesCheckbox').forEach((check, i) => {
-	check.addEventListener('change', () => {
-		if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
-			document.querySelector('.submit').removeAttribute('disabled');
-		} else {
-			document.querySelector('.submit').setAttribute('disabled', true);
-		}
-	});
-});
-
+const updatesCheckboxChange = (e) => {
+	if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
+		document.querySelector('.submit').removeAttribute('disabled');
+	} else {
+		document.querySelector('.submit').setAttribute('disabled', true);
+	}
+};
 $('#pagination-container').pagination({
 	dataSource: function (done) {
 		$.ajax({
 			type: 'GET',
-			url: `/sql/calendarevents`,
+			url: `/sql/ourtoppers`,
 			success: function (response) {
 				done(response);
 			}
@@ -91,7 +83,7 @@ $('#pagination-container').pagination({
       </td>
       <td>
         <p class="onclickimg">${i.imgname}</p>
-        <span class="currentPreviewSpan btn btn-info"
+        <span class="currentPreviewSpan btn btn-info" onclick="currentPreviewSpanClick(this)"
           >Show Image</span
         >
         <span class="currentSliderimgurl">${i.studentimg}</span>
@@ -107,6 +99,7 @@ $('#pagination-container').pagination({
           type="checkbox"
           id="checkbox"
           class="updatesCheckbox"
+		  onchange="updatesCheckboxChange(this)"
           name="checkbox"
           value="${i.cloudinaryname}"
           style="height: 20px; width: 20px"

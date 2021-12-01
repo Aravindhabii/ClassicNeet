@@ -194,7 +194,7 @@ $('#pagination-container').pagination({
 				<td>
 					<p>${detail.gmail}</p>
 				</td>
-				<td>
+				<td class="dateCol">
 					<p>${detail.date}</p>
 				</td>
 				<td>

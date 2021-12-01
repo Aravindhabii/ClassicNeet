@@ -342,6 +342,9 @@ iframe {
 	top: 50%;
 	transform: translateY(-30%);
 }
+option:hover {
+	background-color: yellow;
+}
 /* leader */
 .leaders {
 	width: 100%;
