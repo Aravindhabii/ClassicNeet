@@ -65,16 +65,13 @@ submitbtn.addEventListener('click', () => {
 	});
 });
 
-document.querySelectorAll('.updatesCheckbox').forEach((check, i) => {
-	check.addEventListener('change', () => {
-		if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
-			document.querySelector('.submit').removeAttribute('disabled');
-		} else {
-			document.querySelector('.submit').setAttribute('disabled', true);
-		}
-	});
-});
-
+const updatesCheckboxChange = (e) => {
+	if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
+		document.querySelector('.submit').removeAttribute('disabled');
+	} else {
+		document.querySelector('.submit').setAttribute('disabled', true);
+	}
+};
 $('#pagination-container').pagination({
 	dataSource: function (done) {
 		$.ajax({
@@ -119,6 +116,7 @@ $('#pagination-container').pagination({
           id="checkbox"
           class="updatesCheckbox"
           name="checkbox"
+		  onchange="updatesCheckboxChange(this)"
           value=" ${i.content}, ${i.year}"
           style="height: 20px; width: 20px"
         />

@@ -56,15 +56,13 @@ inputtext.addEventListener('input', (e) => {
 	changablespan.innerHTML = counternum;
 });
 
-document.querySelectorAll('.updatesCheckbox').forEach((check, i) => {
-	check.addEventListener('change', () => {
-		if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
-			document.querySelector('.submit').removeAttribute('disabled');
-		} else {
-			document.querySelector('.submit').setAttribute('disabled', true);
-		}
-	});
-});
+const updatesCheckboxChange = (e) => {
+	if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
+		document.querySelector('.submit').removeAttribute('disabled');
+	} else {
+		document.querySelector('.submit').setAttribute('disabled', true);
+	}
+};
 
 $('#pagination-container').pagination({
 	dataSource: function (done) {
@@ -117,6 +115,7 @@ $('#pagination-container').pagination({
 					type="checkbox"
 					id="checkbox"
 					class="updatesCheckbox"
+					onchange="updatesCheckboxChange(this)"
 					name="checkbox"
 					value="${i.event}"
 					style="height: 20px; width: 20px"
