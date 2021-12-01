@@ -13,7 +13,7 @@ body {
 	height: 3rem;
 	width: 3rem;
 	position: absolute;
-	right: 10%;
+	right: 5%;
 	bottom: 10%;
 	cursor: pointer;
 	z-index: 15;
@@ -64,13 +64,10 @@ body {
 	border-radius: 2px;
 	width: 80%;
 	overflow-y: auto;
-	height: 100px;
+	
 	
 }
-tr {
-	min-height: 50px !important;
-	
-}
+
 tbody {
 	min-height: 10vh;
 	max-height: 30vh !important;
@@ -247,7 +244,8 @@ input[type='number'] {
 	.table {
 		width: 80%;
 	}
-	td {
-		width: 400px !important;
+	
+	.dateCol p{
+		width:100px;
 	}
 }
