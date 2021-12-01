@@ -91,11 +91,7 @@ $("#pagination-container").pagination({
           name="sliderimg"
 		  oninput="uploadDisplayInput(this)"
         />
-<<<<<<< HEAD
-        <button class="previewSpan displaybtn btn" onchange="uploadDisplayChange(this)" disabled>
-=======
         <button class="previewSpan displaybtn btn" type="button" onclick="previewSpanClick(this)" disabled>
->>>>>>> 01948e951371350613da57068b37c98b120dc9cb
           Display
         </button>
         <span class="sliderimgurl"></span>
