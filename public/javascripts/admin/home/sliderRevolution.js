@@ -1,11 +1,11 @@
-const previewDiv = document.querySelector(".preview");
-const previewSpan = document.querySelectorAll(".previewSpan");
-const sectionop = document.querySelector(".mainsection");
-const closesvg = document.querySelector(".closesvg");
-const fileimg = document.querySelectorAll(".fileimg");
-const sliderimgurl = document.querySelectorAll(".sliderimgurl");
-const displaybtn = document.querySelectorAll(".displaybtn");
-const uploaddisplay = document.querySelectorAll(".uploaddisplay");
+const previewDiv = document.querySelector('.preview');
+const previewSpan = document.querySelectorAll('.previewSpan');
+const sectionop = document.querySelector('.mainsection');
+const closesvg = document.querySelector('.closesvg');
+const fileimg = document.querySelectorAll('.fileimg');
+const sliderimgurl = document.querySelectorAll('.sliderimgurl');
+const displaybtn = document.querySelectorAll('.displaybtn');
+const uploaddisplay = document.querySelectorAll('.uploaddisplay');
 
 const uploadDisplayInput = (e) => {
 	e.parentNode.parentNode.children[2].children[0].removeAttribute('disabled');
@@ -55,25 +55,25 @@ const currentPreviewSpan = (e) => {
 	});
 };
 
-$("#pagination-container").pagination({
-  dataSource: function (done) {
-    $.ajax({
-      type: "GET",
-      url: `/sql/homeslider`,
-      success: function (response) {
-        done(response);
-      },
-    });
-  },
-  className: "paginationjs-theme-blue paginationjs-big",
+$('#pagination-container').pagination({
+	dataSource: function (done) {
+		$.ajax({
+			type: 'GET',
+			url: `/sql/homeslider`,
+			success: function (response) {
+				done(response);
+			}
+		});
+	},
+	className: 'paginationjs-theme-blue paginationjs-big',
 
-  pageSize: 3,
-  callback: function (data, pagination) {
-    // template method of yourself
-    var dataHtml = "";
+	pageSize: 3,
+	callback: function (data, pagination) {
+		// template method of yourself
+		var dataHtml = '';
 
-    $.each(data, function (index, i) {
-      dataHtml += `<tr>
+		$.each(data, function (index, i) {
+			dataHtml += `<tr>
       <td style="padding: 0.3rem">
         <p class="onclickimg mb-1">${i.imgname}</p>
         <span class="currentPreviewSpan btn btn-info" onclick="currentPreviewSpan(this)"
@@ -89,7 +89,6 @@ $("#pagination-container").pagination({
           class="fileimg uploaddisplay"
 		  oninput="uploadDisplayInput(this)"
           name="sliderimg"
-		  oninput="uploadDisplayInput(this)"
         />
         <button class="previewSpan displaybtn btn" type="button" onclick="previewSpanClick(this)" disabled>
           Display
@@ -110,8 +109,8 @@ $("#pagination-container").pagination({
       </td>
     </tr>
 		`;
-    });
+		});
 
-    $(".tbody").html(dataHtml);
-  },
+		$('.tbody').html(dataHtml);
+	}
 });
