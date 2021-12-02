@@ -94,6 +94,7 @@ inputs.forEach((input) => {
     var nameError = document.querySelector(".nameError");
     var commentError = document.querySelector(".commentError");
     var emailError = document.querySelector(".emailError");
+    var phoneErr = document.querySelector(".phoneError");
     if (
       !nameInput.value == "" &&
       !phoneInput.value == "" &&
@@ -108,6 +109,7 @@ inputs.forEach((input) => {
       nameError.style.display = "none";
       commentError.style.display = "none";
       emailError.style.display = "none";
+      phoneErr.style.display = "none";
     }
   });
 });

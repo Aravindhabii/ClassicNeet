@@ -1111,9 +1111,11 @@ router
 		};
 		transporter.sendMail(mailOptions, function (error, info) {
 			if (error) {
+				console.log(err);
 				req.flash('error', 'Something went wrong');
 				res.redirect('/contactus');
 			} else {
+				console.log(info);
 				req.flash('success', 'Mail was successfully sent');
 				res.redirect('/contactus');
 			}
