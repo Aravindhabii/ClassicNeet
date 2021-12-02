@@ -755,12 +755,13 @@ p {
 .stats {
 	width: 100%;
 	height: 60vh;
-	background: url('../images/home/stats_bg_img.jpg');
+	background: url('../images/home/neetAchievements.jpeg');
 	background-size: cover;
 	background-position: 0px 54%;
 	margin-top: 5rem;
 	position: relative;
 	display: flex;
+	color: white;
 }
 .statBox {
 	width: 100%;

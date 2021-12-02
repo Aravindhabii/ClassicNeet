@@ -16,7 +16,6 @@ nav {
 	background-color: #fff;
 	height: 4rem;
 	width: 100%;
-	margin: .5rem 0;
 }
 .nav2 {
 	display: flex;
@@ -28,6 +27,8 @@ nav {
 /* navbar regular css start */
 .navbar-area {
 	background: var(--dark);
+	padding: .5rem 0;
+
 }
 .site-navbar {
 	display: flex;
