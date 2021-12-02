@@ -144,6 +144,7 @@ tbody {
 	align-items: center;
 	height: 90%;
 	width: 90%;
+	object-fit: contain;
 }
 
 .closesvg {
