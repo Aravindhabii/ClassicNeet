@@ -166,6 +166,26 @@
 // 	}
 // });
 
+const submitbtn = document.querySelector('.submit');
+
+
+submitbtn.addEventListener('click', () => {
+	Swal.fire({
+		title: 'Are you sure?',
+		text: 'Are you sure you want to delete!',
+		icon: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: 'Yes, delete it!'
+	}).then((result) => {
+		if (result.isConfirmed) {
+			document.querySelector('.chatbotform').submit();
+		}
+	});
+})
+
+
 $('#pagination-container').pagination({
 	dataSource: function (done) {
 		$.ajax({
