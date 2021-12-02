@@ -264,9 +264,8 @@ body.dark footer {
 }
 .footerInner {
 	display: flex;
-	width:100%;
+	width: 100%;
 	justify-content: space-evenly;
-	
 }
 .addressbox {
 	display: flex;
@@ -294,7 +293,7 @@ body.dark footer {
 	width: 2rem;
 	margin-right: 1rem;
 }
-.addressbox  span  svg  {
+.addressbox span svg {
 	width: 2rem;
 	margin-right: 1rem;
 }
