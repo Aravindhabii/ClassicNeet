@@ -651,8 +651,8 @@ router
 	})
 	.delete(async (req, res) => {
 		if (typeof req.body.checkbox === 'string') {
-			const checkcontent = req.body.checkbox.split(',')[0];
-			const checkyear = req.body.checkbox.split(',')[1];
+			const checkcontent = req.body.checkbox.split('**')[0];
+			const checkyear = req.body.checkbox.split('**')[1];
 			await db.query(
 				'DELETE FROM history WHERE content = ? AND year = ?',
 				[checkcontent, checkyear],
@@ -668,8 +668,8 @@ router
 			);
 		} else {
 			req.body.checkbox.forEach(async (content) => {
-				var checkcontent = content.split(',')[0];
-				var checkyear = content.split(',')[1];
+				var checkcontent = content.split('**')[0];
+				var checkyear = content.split('**')[1];
 				await db.query(
 					`DELETE FROM history WHERE content = ? AND year = ?`,
 					[checkcontent, checkyear],
@@ -843,7 +843,8 @@ router.route('/results').get(async (req, res) => {
 				var image = response[i].year;
 				arr.push(image);
 			}
-			let uniqueChars = [...new Set(arr)];
+			let uniqueChars = [...new Set(arr)].sort();
+			
 			await db.query('SELECT * FROM resultslider', async (error, response) => {
 				var slider = [];
 				if (error) {
@@ -894,7 +895,8 @@ router
 					var image = response[i].year;
 					arr.push(image);
 				}
-				let uniqueChars = [...new Set(arr)];
+				let uniqueChars = [...new Set(arr)].sort();
+				console.log(uniqueChars);
 				res.render('admin/results/studentdetails', {
 					year: uniqueChars.reverse()
 				});

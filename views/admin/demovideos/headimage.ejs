@@ -51,7 +51,9 @@
 							<tr>
 								<td>
 									<p class="onclickimg"><%= img.imgname %></p>
-									<span class="currentPreviewSpan btn btn-info"
+									<span
+										class="currentPreviewSpan btn btn-info"
+										onclick="currentPreviewSpan(this)"
 										>Show Image</span
 									>
 									<span class="currentSliderimgurl"><%= img.sliderimg %> </span>
@@ -62,9 +64,14 @@
 										id="image"
 										accept="image/*"
 										class="fileimg uploaddisplay"
+										oninput="uploadDisplayInput(this)"
 										name="sliderimg"
 									/>
-									<button class="previewSpan displaybtn btn" disabled>
+									<button
+										class="previewSpan displaybtn btn"
+										onclick="previewSpanClick(this)"
+										disabled
+									>
 										Display
 									</button>
 									<span class="sliderimgurl"></span>
@@ -78,6 +85,7 @@
 										name="checkbox"
 										value="<%= img.cloudinaryName %>"
 										style="height: 20px; width: 20px"
+										onchange="updatesCheckboxChange(this)"
 									/>
 								</td>
 							</tr>
@@ -99,11 +107,59 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		></script>
-		<script src="../../javascripts/admin/home/sliderRevolution.js"></script>
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 			crossorigin="anonymous"
 		></script>
+		<script>
+			const previewDiv = document.querySelector('.preview');
+			const closesvg = document.querySelector('.closesvg');
+			const uploadDisplayInput = (e) => {
+				e.parentNode.parentNode.children[2].children[0].removeAttribute(
+					'disabled'
+				);
+				e.parentNode.children[1].classList.add('btn-info');
+				e.parentNode.children[1].removeAttribute('disabled');
+				e.parentNode.children[2].innerText = URL.createObjectURL(e.files[0]);
+			};
+			
+
+			const updatesCheckboxChange = (e) => {
+				if (
+					document.querySelectorAll('input[type="checkbox"]:checked').length
+				) {
+					document.querySelector('.submit').removeAttribute('disabled');
+				} else {
+					document.querySelector('.submit').setAttribute('disabled', true);
+				}
+			};
+			const previewSpanClick = (e) => {
+				const img = document.createElement('img');
+				if (e.parentNode.children[2].innerText.length < 1) return;
+				img.src = e.parentNode.children[2].innerText;
+				previewDiv.appendChild(img);
+				previewDiv.style.display = 'flex';
+				previewDiv.style.background = 'rgba(104, 100, 100, 0.671)';
+				closesvg.addEventListener('click', () => {
+					previewDiv.removeChild(img);
+					previewDiv.style.display = 'none';
+					previewDiv.style.background = 'none';
+				});
+			};
+
+			const currentPreviewSpan = (e) => {
+				const img = document.createElement('img');
+				img.src = e.parentNode.children[2].innerText;
+				previewDiv.appendChild(img);
+				previewDiv.style.display = 'flex';
+				previewDiv.style.background = 'rgba(104, 100, 100, 0.671)';
+				closesvg.addEventListener('click', () => {
+					previewDiv.removeChild(img);
+					previewDiv.style.display = 'none';
+					previewDiv.style.background = 'none';
+				});
+			};
+		</script>
 	</body>
 </html>

@@ -49,11 +49,21 @@ contents.forEach((content) => {
 	});
 });
 
-submitbtn.addEventListener('click', () => {
+const nocontentswal = () => {
+	Swal.fire({
+		position: "center",
+		icon: "warning",
+		title: "Please check any checkbox",
+		showConfirmButton: false,
+		timer: 2500,
+	});
+}
+
+const checkswal = () => {
 	Swal.fire({
 		title: 'Are you sure?',
 		text: 'Are you sure you want to delete!',
-		icon: 'warning',
+		icon: 'question',
 		showCancelButton: true,
 		confirmButtonColor: '#3085d6',
 		cancelButtonColor: '#d33',
@@ -63,15 +73,32 @@ submitbtn.addEventListener('click', () => {
 			latestupdateform.submit();
 		}
 	});
+  };
+
+submitbtn.addEventListener('click', () => {
+	if (
+		submitbtn.getAttribute("type") == "button" &&
+		submitbtn.classList.contains("warningcheck")
+	  ) {
+		nocontentswal();
+	  } else if (
+		submitbtn.getAttribute("type") == "button" &&
+		!submitbtn.classList.contains("warningcheck")
+	  ) {
+		checkswal();
+	  } else {
+		return;
+	  }
 });
 
 const updatesCheckboxChange = (e) => {
 	if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
-		document.querySelector('.submit').removeAttribute('disabled');
+		submitbtn.classList.remove("warningcheck");
 	} else {
-		document.querySelector('.submit').setAttribute('disabled', true);
+		submitbtn.classList.add("warningcheck");
 	}
 };
+
 $('#pagination-container').pagination({
 	dataSource: function (done) {
 		$.ajax({
@@ -117,7 +144,7 @@ $('#pagination-container').pagination({
           class="updatesCheckbox"
           name="checkbox"
 		  onchange="updatesCheckboxChange(this)"
-          value=" ${i.content}, ${i.year}"
+          value="${i.content}**${i.year}"
           style="height: 20px; width: 20px"
         />
       </td>
