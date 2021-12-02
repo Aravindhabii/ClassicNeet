@@ -141,6 +141,16 @@ a.site-logo {
 .intro-area p {
 	font-size: 18px;
 }
+@media (max-width:1275px) {
+	.nav2 {
+		width: 80%;
+	}
+}
+@media (max-width:1150px) {
+	.nav2 {
+		width: 85%;
+	}
+}
 /* intro-area css end */
 @media (max-width: 1100px) {
 	.site-navbar ul li a {
