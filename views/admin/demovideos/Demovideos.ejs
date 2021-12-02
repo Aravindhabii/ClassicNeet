@@ -23,8 +23,8 @@
 		<%- include('../../layout/adminheader') %>
 		<section class="mainsection">
 			<div class="left"><%- include('../../layout/adminSideBar') %></div>
-			<div class="right">
-				<div class="preview">
+			<div class="right ">
+				<div class="preview ">
 					<h1 class="mb-5 fs-4 fw-bold">Demo Videos</h1>
 					<form
 						action="/admin/demovideos"
@@ -60,7 +60,7 @@
 				<form
 					action="/admin/demovideos?_method=DELETE"
 					method="post"
-					class="imgform demoVideosForm"
+					class="imgform demoVideosForm demo1"
 				>
 					<h1 class="m-5 fs-4 fw-bold">Demo Videos</h1>
 
@@ -107,8 +107,7 @@
 						<% } %> 
 						<button
 							type="button"
-							disabled
-							class="btn btn-outline-danger submit ms-5 px-3 submitbtn"
+							class="btn btn-outline-danger submit ms-5 px-3 submitbtn warningcheck"
 						>
 							Delete
 						</button>
