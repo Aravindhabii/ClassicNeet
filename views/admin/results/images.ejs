@@ -52,7 +52,9 @@
 							<tr>
 								<td>
 									<p class="onclickimg"><%= i.imgname %></p>
-									<span class="currentPreviewSpan btn btn-info"
+									<span
+										class="currentPreviewSpan btn btn-info"
+										onclick="currentPreviewSpan(this)"
 										>Show Image</span
 									>
 									<span class="currentSliderimgurl"><%= i.sliderimg %> </span>
@@ -64,8 +66,13 @@
 										accept="image/*"
 										class="fileimg uploaddisplay"
 										name="sliderimg"
+										oninput="uploadDisplayInput(this)"
 									/>
-									<button class="previewSpan displaybtn btn" disabled>
+									<button
+										class="previewSpan displaybtn btn"
+										onclick="previewSpanClick(this)"
+										disabled
+									>
 										Display
 									</button>
 									<span class="sliderimgurl"></span>
@@ -76,6 +83,7 @@
 										id="checkbox"
 										class="updatesCheckbox"
 										disabled
+										onchange="updatesCheckboxChange(this)"
 										name="checkbox"
 										value="<%= i.cloudinaryName %>"
 										style="height: 20px; width: 20px"
@@ -106,7 +114,61 @@
 			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 			crossorigin="anonymous"
 		></script>
+		<script>
+			const previewDiv = document.querySelector('.preview');
+			const closesvg = document.querySelector('.closesvg');
 
-		<script src="../../javascripts/admin/home/sliderRevolution.js"></script>
+			const uploadDisplayInput = (e) => {
+				e.parentNode.parentNode.children[2].children[0].removeAttribute(
+					'disabled'
+				);
+				e.parentNode.children[1].classList.add('btn-info');
+				e.parentNode.children[1].removeAttribute('disabled');
+				e.parentNode.children[2].innerText = URL.createObjectURL(e.files[0]);
+			};
+
+			// const uploadDisplayChange = (e) => {
+			// 	if (e.parentNode.childern[0].value == '') {
+			// 		e.parentNode.childern[1].classList.remove('btn-info');
+			// 		e.parentNode.childern[1].setAttribute('disabled', 'disabled');
+			// 	}
+			// };
+
+			const updatesCheckboxChange = (e) => {
+				if (
+					document.querySelectorAll('input[type="checkbox"]:checked').length
+				) {
+					document.querySelector('.submit').removeAttribute('disabled');
+				} else {
+					document.querySelector('.submit').setAttribute('disabled', true);
+				}
+			};
+			const previewSpanClick = (e) => {
+				const img = document.createElement('img');
+				if (e.parentNode.children[2].innerText.length < 1) return;
+				img.src = e.parentNode.children[2].innerText;
+				previewDiv.appendChild(img);
+				previewDiv.style.display = 'flex';
+				previewDiv.style.background = 'rgba(104, 100, 100, 0.671)';
+				closesvg.addEventListener('click', () => {
+					previewDiv.removeChild(img);
+					previewDiv.style.display = 'none';
+					previewDiv.style.background = 'none';
+				});
+			};
+
+			const currentPreviewSpan = (e) => {
+				const img = document.createElement('img');
+				img.src = e.parentNode.children[2].innerText;
+				previewDiv.appendChild(img);
+				previewDiv.style.display = 'flex';
+				previewDiv.style.background = 'rgba(104, 100, 100, 0.671)';
+				closesvg.addEventListener('click', () => {
+					previewDiv.removeChild(img);
+					previewDiv.style.display = 'none';
+					previewDiv.style.background = 'none';
+				});
+			};
+		</script>
 	</body>
 </html>
