@@ -1071,14 +1071,15 @@ router
 									req.flash('error', 'Error occurred while adding');
 									console.log(err);
 								} else {
-									req.flash('success', 'Image Successfully Updated');
-									res.redirect('/admin/results/images');
+								
 								}
 							}
 						);
 					}
 				}
 			}
+			req.flash('success', 'Image Successfully Updated');
+			res.redirect('/admin/results/images');
 		}
 	});
 
