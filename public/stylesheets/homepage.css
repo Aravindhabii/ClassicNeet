@@ -121,29 +121,29 @@
 
 
 
-.section-1 {
+/* .section-1 {
 	position: relative;
 	width: 100%;
 	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
+} */
 
-.swiper1img {
+/* .swiper1img {
 	position: relative;
-	/* display: inline; */
+	
 	width: 90%;
 	height: 90%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	object-fit: cover;
-}
+} */
 
 
 
-.background {
+/* .background {
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -154,7 +154,7 @@
 	justify-content: center;
 	background: #2b72e4;
 	border-radius: 20px;
-}
+} */
 
 .marqueetext {
 	font-family: 'Roboto', sans-serif;
@@ -181,7 +181,7 @@
 
 
 /* section-2  latest updates*/
-.section-2 {
+/* .section-2 {
 	position: relative;
 	width: 100%;
 	height: 90vh;
@@ -189,11 +189,11 @@
 	justify-content: center;
 	align-items: center;
 	padding: 0 5rem;
-	/* background: url("../images/home/TopAir.png") center; */
+
 	background-size: 170%;
 	background-color: #f9fbfa;
-}
-.hexa1 {
+} */
+/* .hexa1 {
 	border: 1px solid #2b72e4;
 }
 .hexa2 {
@@ -201,15 +201,15 @@
 }
 .hexa3 {
 	border: 1px solid #106dff;
-}
-.section-2::after {
+} */
+/* .section-2::after {
 	content: '';
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	background-color: #f9fbfa;
 	z-index: 1;
-}
+} */
 
 
 
@@ -334,11 +334,7 @@ p {
 	background: linear-gradient(90deg, #02c3d8, #0061ff);
 }
 
-.calandersvg {
-	top: 10%;
-	left: 20%;
-	position: absolute;
-}
+
 
 .news-box {
 	overflow-y: scroll;
@@ -427,56 +423,7 @@ p {
 	position: absolute;
 }
 
-/* Admission */
-.admission {
-	position: relative;
-	/* top: 63%; */
-	width: 121vw;
-	height: 30vh;
-	padding: 1%;
-	right: 0%;
-	font-size: 24px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-/* courses */
-.Hexagon {
-	position: relative;
-	width: 100%;
-	/* height: 150vh; */
-	display: flex;
-}
 
-.hexadiv1 {
-	position: relative;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	padding: 0%;
-	transform: translateX(0%);
-	transform: translateY(0%);
-}
-.hexadiv1 h3 {
-	padding-left: 10%;
-	font-size: 31px;
-}
-.hexadiv2 h3 {
-	padding-right: 11%;
-	font-size: 31px;
-}
-.hexadiv3 h3 {
-	padding-left: 10%;
-	font-size: 31px;
-}
-.hexadiv2 {
-	display: flex;
-	flex-direction: row-reverse;
-	justify-content: flex-start;
-	align-items: center;
-	position: relative;
-	transform: translate(-18%, -14%);
-}
 .hexadiv3 {
 	display: flex;
 	justify-content: flex-start;
@@ -489,12 +436,7 @@ p {
 	width: 50%;
 	height: 50%;
 }
-/* .right {
-  position: relative;
-   right: -8%;
-  width: 50%;
-  height: 73%; 
-} */
+
 .HexagonDiv {
 	width: 90%;
 	margin-left: auto;
@@ -551,32 +493,14 @@ p {
 .cardsDiv.dark .box3 {
 	box-shadow: 5px 5px 100px rgb(255, 255, 255, 20%);
 }
-/* .cardsDiv {
-	position: relative;
-	display: flex;
-	margin: 5rem 0rem;
-	align-items: center;
-	justify-content: space-evenly;
-	height: 70vh;
-	width: 100% ;
-	
-} */
+
 .imgHeader {
 	text-align: center;
 	color: rgb(0, 0, 0);
 	font-size: 20px;
-	/* margin-top: 1.5rem; */
+	
 }
-/* .box1,
-.box2,
-.box3 {
-	
-	transition: all 0.5s ease-in-out;
-	
-	text-align: center;
-	
-	position: relative;
-} */
+
 .box1,
 .box2,
 .box3 {
@@ -591,14 +515,7 @@ p {
 	justify-content: space-around;
 	align-items: center;
 }
-/* .box1 {
-	background: url('../images/home/jee.jpg') center/cover;
-}
-.box2 {
-	background: url('../images/home/iit\ &medical.jpg') center/cover;
-}.box3 {
-	background: url('../images/home/neet.jpg') center/cover;
-} */
+
 .box1 h3,
 .box2 h3,
 .box3 h3 {
@@ -606,17 +523,7 @@ p {
 
 	z-index: 5;
 }
-/* .box1::after,
-.box2::after,
-.box3::after {
-	content: '';
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left:0;
-	background: rgba(0, 0, 0, 0.3);
-}  */
+
 .right {
 	position: relative;
 	display: flex;
@@ -633,14 +540,7 @@ p {
 	transition: all 0.3s ease-in-out;
 	object-fit: cover;
 }
-/* .hexaimg:hover {
-	clip-path: circle(100%);
-} */
-/* .box1:hover,
-.box2:hover,
-.box3:hover .box1 img {
-	border-radius: 100%;
-} */
+
 
 .hexaimg img {
 	box-shadow: 2px 2px 60px rgba(0, 0, 0, 0.9);
@@ -1001,126 +901,7 @@ body.dark .studentsh1 {
 	font-size: 30px;
 	cursor: pointer;
 }
-/* 
-@media (max-width: 400px) {
-	.swipersection {
-		height: 50vh;
-	}
-	.swiper-slide img {
-		height: 35vh;
-	}
-	.importantdates {
-		flex-direction: column;
-	}
-	.grid {
-		display: block;
-		width: 70%;
-	}
-	.grid-item {
-		width: 250px;
-		padding: 0;
-		margin: 25px 0px;
-	}
-	.design {
-		display: none;
-	}
-	.section-2 .div-1 {
-		display: none;
-	}
-	.section-2 .div-2 {
-		width: 100%;
-		margin: 50% 0;
-	}
-	.section-2 {
-		display: none;
-	}
-	.neet-toppers {
-		margin-top: 80vh;
-	}
-	.topper-card-container {
-		flex-direction: column;
-	}
-	.topper-card {
-		width: 100%;
-		margin: 5%;
-	}
-	.neet-2020-toppers img {
-		display: none;
-	}
-	.neet-2020-toppers-a {
-		top: 25px;
-		width: fit-content;
-		font-size: 20px;
-		padding: 20px 15px;
-	}
-	.stats-details {
-	
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-	}
-	.stat {
-		position: relative;
-		width: 100px;
-		right: 30px;
-	}
-	.stat h1 {
-		font-size: 3rem;
-	}
-	.stat h3 {
-		font-size: 18px;
-	}
-	
-	.left {
-		display: none;
-	}
-	.right {
-		width: 90%;
-		margin-top: 5%;
-		left: 10%;
-		height: 80%;
-	}
-	.Hexagon {
-		position: relative;
-		height: 85vh;
-	}
-	.testimonialsbox
-	{
-		flex-direction: column;
-	}
-	.studentstestimonials
-	{
-		height: 130vh;
-	}
-	.studentsh1
-	{
-	
-		text-align: center;
-	}
-	.pbody
-	{
-		width: 100%;
-	}
-	.testimonials span img
-	{
-		width: 80px;
-		height: 80px;
-	}
-	.testimonials
-	{
-		margin: 3%;
-		font-size: 15px;
-		padding: 2%;
-	}
-	.aprev, .anext
-	{
-		display: none;
-	}
-	.neet-toppers > h1
-	{
-		text-align: center;
-		margin: 5%;
-	}
-} */
+
 .bottom-drive {
 	border: 1px solid black;
 	padding: 10px 90px;
@@ -1311,44 +1092,35 @@ iframe {
 	box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.2);
 	border-radius: 10px;
 }
-/* .mySwiper2 .swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} */
+
 .topperCard {
-	/* background-color: slategray; */
+	
 	height: 100%;
 	display: flex;
-	/* width: 30vw; */
+	
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
 	justify-content: space-evenly;
 	align-items: center;
 	flex-direction: column;
-	/* margin-top: 5rem; */
+	
 }
 .topper1 {
 	width: 40%;
 	height: 90%;
-	/* background-color: springgreen; */
+	
 	display: flex;
 	box-shadow: 5px 5px 60px rgba(0, 0, 0, 0.2);
 	border-radius: 20px;
-	/* background-color: rgba(255, 255, 255, 0.445); */
-	/* background-color: white; */
 	background-color: rgb(255, 255, 255);
 }
 .topper2 {
 	width: 40%;
 	height: 90%;
-	/* background-color: rgb(142, 202, 172); */
 	display: flex;
 	box-shadow: 2px 2px 60px rgba(0, 0, 0, 0.2);
 	border-radius: 20px;
-	/* background-color: white; */
 	background-color: rgb(255, 255, 255);
 }
 .imgTopper {
@@ -1368,15 +1140,14 @@ iframe {
 }
 
 .profile {
-	/* position: absolute; */
+	
 
 	width: 50%;
 	border-radius: 50%;
 }
 .topperImg {
-	/* background-color:#A2D2FF; */
+
 	width: 50%;
-	/* height: 100%; */
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -1384,10 +1155,7 @@ iframe {
 	background-size: cover;
 }
 .topperImg2 {
-	/* background-color: rgba(255, 255, 255, 0.445); */
-	/* background-color:#A2D2FF; */
-	/* width: 50%; */
-	/* height: 100%; */
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -1402,14 +1170,11 @@ iframe {
 }
 .topperImg2 img {
 	width: 45%;
-	/* height: 70%; */
 	border-radius: 50%;
 	border: 5px solid black;
 }
 .topperContent {
-	/* background-color: rgb(177, 27, 177); */
-	/* width: 65%; */
-	/* height: 100%; */
+
 	text-align: center;
 	display: flex;
 	flex-direction: column;
@@ -1418,7 +1183,7 @@ iframe {
 .name {
 	font-size: 14px;
 	font-weight: 600;
-	/* margin-bottom: 1.5rem; */
+
 }
 .nameNew {
 	font-size: 22px;
@@ -1527,15 +1292,7 @@ iframe {
 		font-size: 16px;
 		font-weight: 700;
 	}
-	/* .mySwiper1 .swiper-slide {
-    width: 18.82rem !important;
-    height: 14rem !important;
-  } */
-
-	/* .mySwiper2 .swiper-slide {
-    width: 18.82rem !important;
-    height: 14rem !important;
-  } */
+	
 	iframe {
 		height: 10rem;
 	}
@@ -1551,14 +1308,12 @@ iframe {
 		color: #02c3d8;
 		position: absolute;
 		top: 82%;
-		/* transform: translateY(-50%); */
 		right: 3% !important;
 	}
 	.arrowprev2 {
 		color: #02c3d8;
 		position: absolute;
 		top: 82%;
-		/* transform: translateY(-50%); */
 		left: 3% !important;
 	}
 	.mySwiper1 {
@@ -1638,31 +1393,24 @@ iframe {
 	}
 	.div-2-title {
 		font-size: 20px;
-		/* border: 1px solid #1E2886; */
+		
 	}
 	.CalanderEvents {
 		font-size: 20px;
 	}
 	.sec-2 {
-		/* background-color: blanchedalmond; */
+		
 
 		height: fit-content;
 	}
 	.cardsDiv {
-		/* height: 65vh; */
+		
 		margin: 5rem 0rem;
 	}
 	.bottom-drive {
 		width: 80%;
 	}
-	/* .mySwiper1 .swiper-slide {
-    width: 16.82rem !important;
-    height: 12rem !important;
-  }
-  .mySwiper2 .swiper-slide {
-    width: 16.82rem !important;
-    height: 12rem !important;
-  } */
+	
 	.bgTopper {
 		height: 62vh;
 	}
@@ -1681,11 +1429,7 @@ iframe {
 		min-height: fit-content;
 	}
 
-	/* .blob1 {
-		width: 50%;
-		height: 74vh;
-		top: 8%;
-	} */
+	
 	.blob2 {
 		transform: scale(0.7);
 		right: -5%;
@@ -1706,24 +1450,7 @@ iframe {
 		height: fit-content;
 		margin: 4rem 0rem;
 	}
-	/* .mySwiper1 .swiper-slide {
-    
-    height: 10rem !important;
-  }
-  .mySwiper2 .swiper-slide {
-    width: 23.82rem !important;
-    height: 14rem !important;
-  } */
-
-	/* .mySwiper1 {
-    height: 16vh !important;
-    margin-bottom: 3rem;
-    margin-top: 3rem;
-  } */
-	/* .mySwiper2 {
-    height: 34vh !important;
-    
-  } */
+	
 	.neet-2020-toppers-a {
 		margin-top: 1rem;
 	}
@@ -1834,17 +1561,15 @@ iframe {
 	}
 
 	.sec-2 {
-		/* background-color: blanchedalmond; */
+		
 		position: relative;
-		/* min-height: 70vh; */
+		
 		display: flex;
-		/* flex-direction: column; */
+		
 		align-items: center;
 		justify-content: space-evenly;
 	}
-	/* .sliderRev {
-		height: 85vh;
-	}	 */
+	
 	.news-box {
 		height: 25rem;
 		width: 20rem;
@@ -2163,23 +1888,7 @@ iframe {
 	.stats {
 		margin-top: 3rem;
 	}
-	/* .mySwiper2 .swiper-slide {
-    width: 21.5rem !important;
-    height: 12rem !important;
-  }
-  .mySwiper1.swiper-slide {
-    
-    height: 10rem !important;
-  } */
-	/* .mySwiper1 {
-    width: 74% !important;
-    height: 24vh !important;
-    
-  }
-  .mySwiper2 {
-    
-    height: 38vh !important;
-  } */
+	
 
 	.div-2-title {
 		margin-top: 0rem;

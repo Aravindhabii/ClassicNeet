@@ -21,3 +21,17 @@ if(sweetp){
     }
     successdialog() 
 }
+
+const width = window.screen.width;
+const height = window.screen.height;
+window.addEventListener('resize', function (e) {
+    if (window.screen.width < 1280) {
+        console.log('ready to resize');
+        window.location.href = '/';
+    }
+});
+
+if (parseInt(width) < 1280) {
+    console.log('ready to resize');
+    window.location.href = '/';
+};

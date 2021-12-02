@@ -17,6 +17,31 @@ h4 {
 	font-family: 'Roboto', sans-serif;
 }
 
+/* scrollbar */
+body::-webkit-scrollbar {
+	width: 12px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+	background: transparent;	  
+}
+
+body.dark::-webkit-scrollbar-track {
+	background: black;	  
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+	background: linear-gradient(to top, #60EFFF, #2B72E4);
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(to bottom, #60EFFF, #2B72E4);
+}
+
 /* NavBar */
 
 /* nav {
