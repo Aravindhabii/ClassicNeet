@@ -109,7 +109,11 @@ phoneInput.addEventListener("input", (e) => {
     phoneErr.style.display = "none";
   } 
 });
+
+const sweetp = document.querySelector(".sweetp");
+
 if (sweetp) {
+	console.log('hello');
 	function successdialog() {
 		Swal.fire({
 			position: 'center',
