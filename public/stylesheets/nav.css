@@ -6,6 +6,8 @@ body.dark .nav-toggler span::after {
 	background-color: white !important;
 }
 
+
+
 body.dark .nav-toggler.toggler-open span {
 	background-color: transparent !important;
 }
