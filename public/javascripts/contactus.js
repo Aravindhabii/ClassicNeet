@@ -111,16 +111,19 @@ phoneInput.addEventListener("input", (e) => {
   }
 });
 
+const sweetp = document.querySelector(".sweetp");
+
 if (sweetp) {
-  function successdialog() {
-    Swal.fire({
-      position: "center",
-      icon: "success",
-      title: sweetp.innerText,
-      showConfirmButton: false,
-      timer: 2500,
-    });
-  }
-  successdialog();
-  sweetp.parentNode.removeChild(sweetp);
+	console.log('hello');
+	function successdialog() {
+		Swal.fire({
+			position: 'center',
+			icon: 'success',
+			title: sweetp.innerText,
+			showConfirmButton: false,
+			timer: 2500
+		});
+	}
+	successdialog();
+	sweetp.parentNode.removeChild(sweetp);
 }
