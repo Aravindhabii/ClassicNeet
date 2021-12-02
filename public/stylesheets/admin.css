@@ -180,7 +180,20 @@ tbody {
 	align-items: center;
 	background: rgba(104, 100, 100, 0.371);
 }
-
+.closesvg {
+	position: absolute;
+	cursor: pointer;
+	right: 25%;
+	top: 14%;
+	z-index: 5;
+	text-align: center;
+	
+	
+  }
+.closesvg img {
+	width: 100%;
+	z-index: 5;
+}
 .interior {
 	height: 40%;
 	width: 40%;
