@@ -69,7 +69,7 @@ const nameFormSubmit = () => {
 	);
 	chatBody.innerHTML += `<div class="each-chat bot">
 	<img src="../images/chatbot/chatbot1.png">
-	<span class="chat-span">Enter you e-mail</span>
+	<span class="chat-span">Enter your e-mail</span>
 	</div>
 	<form class="each-chat client email-form" onsubmit="emailFormSubmit(this)">
 			<button>
@@ -116,7 +116,7 @@ const emailFormSubmit = () => {
 	);
 	chatBody.innerHTML += `<div class="each-chat bot">
 	<img src="../images/chatbot/chatbot1.png">
-	<span class="chat-span">Enter you phone number</span>
+	<span class="chat-span">Enter your phone number</span>
 	</div>
 	<form class="each-chat client phone-form" onsubmit="phoneFormSubmit(this)">
 			<button>

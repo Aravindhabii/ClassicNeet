@@ -302,7 +302,9 @@ router
 					};
 					arr.push(image);
 				}
+				console.log(arr);
 				res.render('admin/home/ourToppers', { students: arr });
+				
 			}
 		});
 	})
@@ -554,14 +556,14 @@ router
 		});
 	})
 	.post(async (req, res) => {
-		const { seat, years, rate, admiss } = req.body;
+		const { seat, years, rate, admissions } = req.body;
 		await db.query(
 			'UPDATE neetacheivements SET ? WHERE id = 1',
 			{
 				seats: seat,
 				consecutiveyears: years,
 				successrate: rate,
-				admissions: admiss
+				admissions: admissions
 			},
 			(err, results) => {
 				if (err) {
@@ -1069,14 +1071,15 @@ router
 									req.flash('error', 'Error occurred while adding');
 									console.log(err);
 								} else {
-									req.flash('success', 'Image Successfully Updated');
-									res.redirect('/admin/results/images');
+								
 								}
 							}
 						);
 					}
 				}
 			}
+			req.flash('success', 'Image Successfully Updated');
+			res.redirect('/admin/results/images');
 		}
 	});
 

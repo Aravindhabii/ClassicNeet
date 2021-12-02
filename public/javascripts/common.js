@@ -1,45 +1,12 @@
 // swiper js
 
-var swiper = new Swiper('.mySwiper', {
-	pagination: {
-		el: '.swiper-pagination'
-	}
-});
+// var swiper = new Swiper('.mySwiper', {
+// 	pagination: {
+// 		el: '.swiper-pagination'
+// 	}
+// });
 
-var swiper2 = new Swiper('.mySwiper2', {
-	slidesPerView: 3,
-	spaceBetween: 30,
-	slidesPerGroup: 3,
-	loop: true,
-	autoplay: true,
-	loopFillGroupWithBlank: true,
-	pagination: {
-		el: '.swiper-pagination',
-		clickable: true
-	},
 
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev'
-	}
-});
-var swiper1 = new Swiper('.mySwiper1', {
-	slidesPerView: 3,
-	spaceBetween: 30,
-	slidesPerGroup: 3,
-	loop: true,
-	autoplay: true,
-	loopFillGroupWithBlank: true,
-	pagination: {
-		el: '.swiper-pagination',
-		clickable: true
-	},
-
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev'
-	}
-});
 
 var a = 0;
 $(window).scroll(function () {
@@ -78,9 +45,9 @@ var swiper = new Swiper(".swipTop", {
 	slidesPerView: 1,
 	spaceBetween: 30,
 	slidesPerGroup: 1,
-	loop: true,
+	// loop: true,
 	autoplay: true,
-	loopFillGroupWithBlank: false,
+	// loopFillGroupWithBlank: false,
 	spaceBetween: 10,
   
   navigation: {
@@ -111,9 +78,9 @@ var swiper = new Swiper(".swipTop", {
 	slidesPerView: 1,
 	spaceBetween: 30,
 	slidesPerGroup: 1,
-	loop: true,
+	// loop: true,
 	autoplay: true,
-	loopFillGroupWithBlank: false,
+	// loopFillGroupWithBlank: false,
 	
   
   navigation: {

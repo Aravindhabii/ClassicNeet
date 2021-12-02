@@ -56,12 +56,12 @@
 											<% }) %>
 												<button class="carousel-control-prev" type="button"
 													data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-													<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+													<span class="carousel-control-prev-icon" style="height: 50px; width: 50px; font-weight: bolder;" aria-hidden="true"></span>
 													<span class="visually-hidden">Previous</span>
 												</button>
 												<button class="carousel-control-next" type="button"
 													data-bs-target="#carouselExampleControls" data-bs-slide="next">
-													<span class="carousel-control-next-icon" aria-hidden="true"></span>
+													<span class="carousel-control-next-icon" style="height: 50px; width: 50px; font-weight: bolder;" aria-hidden="true"></span>
 													<span class="visually-hidden">Next</span>
 												</button>
 									</div>
@@ -166,9 +166,32 @@
 					</div>
 				
 					<div class="swiper-container">
-						<div class="swiper mySwiper swipTop">
+						<!-- <div class="swiper mySwiper swipTop">
 							<div class="swiper-wrapper">
 						<% ourtoppers.forEach(topper=> { %>
+							<% console.log(topper) %>
+							  <div class="swiper-slide swiperTopper">
+								<img class="profile" src="<%= topper.studentimg %>" alt="" />
+								<div class="toppersDiv">
+									<p class="markNew">
+										<%= topper.score %> / 720
+									</p>
+									<p class="nameNew">
+										<%= topper.name %>
+									</p>
+									<p class="colNew">
+										<%= topper.collegename %>
+									</p>
+								</div>
+								</div>
+						<% }) %>	 
+							</div>
+							
+						  </div> -->
+						  <div class="swiper mySwiper swipTop">
+							<div class="swiper-wrapper">
+						<% ourtoppers.forEach(topper=> { %>
+							<% console.log(topper) %>
 							  <div class="swiper-slide swiperTopper">
 								<img class="profile" src="<%= topper.studentimg %>" alt="" />
 								<div class="toppersDiv">
@@ -210,7 +233,8 @@
 								<h3>Consecutive years <br> of District first in <br>Salem</h3>
 							</div>
 							<div class="Stat">
-								<h1 class="counter successRate counter-value" data-count="<%= neetfor.successrate %>">0.</h1>
+								<span style="display: flex;"><h1 class="counter successRate counter-value" data-count="<%= neetfor.successrate %>">0 </h1><div class="percentage"> %</div></span>
+								
 								<h3>Success <br> rate in <br> NEET</h3>
 							</div>
 							<div class="Stat">
@@ -240,6 +264,7 @@
 								<% }) %>
 
 							</div>
+							
 					
 						  </div>
 						  <div class="swiper-button-next btnNext2"></div>
@@ -264,6 +289,13 @@
 	<script src="javascripts/nav.js"></script>
 	<script src="javascripts/common.js"></script>
 	<script src="javascripts/chatbot.js"></script>
+	<script>
+		var myCarousel = document.querySelector('#myCarousel')
+		var carousel = new bootstrap.Carousel(myCarousel, {
+		interval: 2000,
+		wrap: false
+		})
+	</script>
 </body>
 
 </html>

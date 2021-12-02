@@ -10,14 +10,10 @@ const changablespan = document.querySelector(".changablespan");
 const year = document.querySelector(".year");
 const date = new Date();
 
-year.setAttribute(
-  "min",
-  date.getFullYear() - 1 + "-" + (date.getMonth() + 1) + "-" + date.getDate()
-);
-year.setAttribute(
-  "max",
-  date.getFullYear() + 1 + "-" + (date.getMonth() + 1) + "-" + date.getDate()
-);
+// year.setAttribute('min', date.getFullYear() - 1 + "-" + (date.getMonth() + 1) + "-" + date.getDate())
+// year.setAttribute('max', date.getFullYear() + 1 + "-" + (date.getMonth() + 1) + "-" + date.getDate())
+
+
 
 addbtn.addEventListener("click", () => {
   previewDiv.style.display = "flex";
