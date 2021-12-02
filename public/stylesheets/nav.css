@@ -6,6 +6,8 @@ body.dark .nav-toggler span::after {
 	background-color: white !important;
 }
 
+
+
 body.dark .nav-toggler.toggler-open span {
 	background-color: transparent !important;
 }
@@ -19,11 +21,14 @@ nav {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	width: 70%;
 	/* width: 35%; */
 }
 /* navbar regular css start */
 .navbar-area {
 	background: var(--dark);
+	padding: .5rem 0;
+
 }
 .site-navbar {
 	display: flex;
@@ -53,6 +58,8 @@ a.site-logo {
 	list-style: none;
 	display: flex;
 	align-items: center;
+	width: 100%;
+	justify-content: space-between;
 }
 .site-navbar ul li a {
 	color: #1e2886;
