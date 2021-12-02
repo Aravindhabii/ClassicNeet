@@ -55,10 +55,14 @@ body {
 	justify-content: center;
 	flex-direction: column;
 	transition: all 0.5s ease;
-	overflow-y: hidden;
+	height: 450px;
+	/* overflow-y: hidden; */
 	overflow-x: hidden;
 }
-
+.succ1 {
+	height: fit-content;
+	
+}
 .table {
 	border: 2px solid rgb(53, 49, 49);
 	border-radius: 2px;
@@ -100,7 +104,13 @@ tbody {
 	height: 0%;
 	width: 0%;
 }
-
+.top {
+	height: 450px;
+}
+.demo1 {
+	/* margin-top: 60vh; */
+	padding-top: 10vh;
+}
 .preview {
 	position: absolute;
 	height: 80%;
@@ -234,8 +244,13 @@ input::-webkit-inner-spin-button {
 input[type='number'] {
 	-moz-appearance: textfield;
 }
-
-
+@media (max-width: 1300px) {
+	.imgform {
+		/* margin-top: 30vh; */
+	}
+	
+	
+}
 @media screen and (max-width: 1150px) {
 	.right {
 		margin-left: 20vw !important;
@@ -247,5 +262,8 @@ input[type='number'] {
 	
 	.dateCol p{
 		width:100px;
+	}
+	.imgform {
+		margin-top: 40vh;
 	}
 }
