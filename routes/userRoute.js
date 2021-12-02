@@ -556,14 +556,14 @@ router
 		});
 	})
 	.post(async (req, res) => {
-		const { seat, years, rate, admiss } = req.body;
+		const { seat, years, rate, admissions } = req.body;
 		await db.query(
 			'UPDATE neetacheivements SET ? WHERE id = 1',
 			{
 				seats: seat,
 				consecutiveyears: years,
 				successrate: rate,
-				admissions: admiss
+				admissions: admissions
 			},
 			(err, results) => {
 				if (err) {
