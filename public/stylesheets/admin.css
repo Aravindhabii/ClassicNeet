@@ -48,10 +48,11 @@ body {
 
 .right {
 	position: relative;
+	
 	padding-bottom: 10px;
 	width: 90%;
 	display: flex;
-	
+
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
