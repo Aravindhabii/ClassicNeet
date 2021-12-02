@@ -355,7 +355,9 @@ body.dark footer {
 .social img {
 	margin: 0.5rem;
 }
-
+.mobspan {
+	display: none;
+}
 /* swiper  */
 @media (max-width: 800px) {
 	.social {
@@ -374,6 +376,15 @@ body.dark footer {
 	}
 	.footer-body {
 		flex-direction: column;
+	}
+	.footerInner {
+		flex-direction: column;
+	}
+	.addressbox {
+		display: none;
+	}
+	.mobspan {
+		display: block;
 	}
 	.address-container {
 		width: 90%;
