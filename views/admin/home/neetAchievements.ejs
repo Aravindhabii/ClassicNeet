@@ -39,7 +39,7 @@
 								id="uploadlink"
 								value="<%= parseInt(seats) %>"
 								minlength="1"
-								maxlength="30"
+								maxlength="999"
 								required
 							/>
 						</div>
@@ -55,6 +55,8 @@
 								aria-describedby="addon-wrapping"
 								id="uploadlink"
 								value="<%= parseInt(consecutiveyears) %>"
+								minlength="1"
+								maxlength="99"
 								required
 							/>
 						</div>
@@ -70,6 +72,8 @@
 								aria-describedby="addon-wrapping"
 								id="uploadlink"
 								value="<%= parseInt(successrate)  %>"
+								minlength="1"
+								maxlength="100"
 								required
 							/>
 						</div>
@@ -79,12 +83,14 @@
 							>
 							<input
 								type="number"
-								name="admiss"
+								name="admission"
 								class="form-control"
 								aria-label="Username"
 								aria-describedby="addon-wrapping"
 								id="uploadlink"
 								value="<%= parseInt(admissions) %>"
+								minlength="1"
+								maxlength="999"
 								required
 							/>
 						</div>
