@@ -172,9 +172,32 @@
 					</div>
 				
 					<div class="swiper-container">
-						<div class="swiper mySwiper swipTop">
+						<!-- <div class="swiper mySwiper swipTop">
 							<div class="swiper-wrapper">
 						<% ourtoppers.forEach(topper=> { %>
+							<% console.log(topper) %>
+							  <div class="swiper-slide swiperTopper">
+								<img class="profile" src="<%= topper.studentimg %>" alt="" />
+								<div class="toppersDiv">
+									<p class="markNew">
+										<%= topper.score %> / 720
+									</p>
+									<p class="nameNew">
+										<%= topper.name %>
+									</p>
+									<p class="colNew">
+										<%= topper.collegename %>
+									</p>
+								</div>
+								</div>
+						<% }) %>	 
+							</div>
+							
+						  </div> -->
+						  <div class="swiper mySwiper swipTop">
+							<div class="swiper-wrapper">
+						<% ourtoppers.forEach(topper=> { %>
+							<% console.log(topper) %>
 							  <div class="swiper-slide swiperTopper">
 								<img class="profile" src="<%= topper.studentimg %>" alt="" />
 								<div class="toppersDiv">
@@ -246,6 +269,7 @@
 								<% }) %>
 
 							</div>
+							
 					
 						  </div>
 						  <div class="swiper-button-next btnNext2"></div>
