@@ -102,9 +102,7 @@ tbody {
 	height: 0%;
 	width: 0%;
 }
-.top {
-	height: 450px;
-}
+
 .demo1 {
 	/* margin-top: 60vh; */
 	padding-top: 10vh;
@@ -180,7 +178,21 @@ tbody {
 	align-items: center;
 	background: rgba(104, 100, 100, 0.371);
 }
+.closesvg {
+	position: absolute;
+	cursor: pointer;
+	right: 25%;
+	top: 14%;
+	z-index: 5;
+	text-align: center;
 
+	
+	
+  }
+.closesvg img {
+	width: 100%;
+	z-index: 5;
+}
 .interior {
 	height: 40%;
 	width: 40%;
@@ -191,7 +203,9 @@ tbody {
 	background: #fff;
 	border-radius: 20px;
 }
-
+p {
+	margin-bottom: 0 !important;
+}
 .spanp {
 	font-size: 14px;
 	display: flex;

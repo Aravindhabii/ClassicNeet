@@ -436,7 +436,11 @@ p {
 	width: 50%;
 	height: 50%;
 }
-
+.percentage {
+	font-size: 3rem;
+	/* position: absolute;
+	top: 0%; */
+}
 .HexagonDiv {
 	width: 90%;
 	margin-left: auto;
@@ -810,6 +814,7 @@ p {
 
 .stat h1 {
 	font-size: 4rem;
+	
 }
 
 .stat h3 {
