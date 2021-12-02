@@ -14,11 +14,13 @@ nav {
 	background-color: #fff;
 	height: 4rem;
 	width: 100%;
+	margin: .5rem 0;
 }
 .nav2 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	width: 70%;
 	/* width: 35%; */
 }
 /* navbar regular css start */
@@ -53,6 +55,8 @@ a.site-logo {
 	list-style: none;
 	display: flex;
 	align-items: center;
+	width: 100%;
+	justify-content: space-between;
 }
 .site-navbar ul li a {
 	color: #1e2886;
