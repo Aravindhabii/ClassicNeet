@@ -48,9 +48,11 @@ body {
 
 .right {
 	position: relative;
+	
 	padding-bottom: 10px;
 	width: 90%;
 	display: flex;
+
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
@@ -176,7 +178,7 @@ tbody {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: rgba(104, 100, 100, 0.771);
+	background: rgba(104, 100, 100, 0.371);
 }
 
 .interior {
