@@ -1116,7 +1116,7 @@ router
 				res.redirect('/contactus');
 			} else {
 				console.log(info);
-				req.flash('success', 'Mail was successfully sent');
+				req.flash('success', 'Mail sent successfully');
 				res.redirect('/contactus');
 			}
 		});
