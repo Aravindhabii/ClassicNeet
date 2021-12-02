@@ -102,9 +102,7 @@ tbody {
 	height: 0%;
 	width: 0%;
 }
-.top {
-	height: 450px;
-}
+
 .demo1 {
 	/* margin-top: 60vh; */
 	padding-top: 10vh;
@@ -187,6 +185,7 @@ tbody {
 	top: 14%;
 	z-index: 5;
 	text-align: center;
+
 	
 	
   }
@@ -204,7 +203,9 @@ tbody {
 	background: #fff;
 	border-radius: 20px;
 }
-
+p {
+	margin-bottom: 0 !important;
+}
 .spanp {
 	font-size: 14px;
 	display: flex;
