@@ -13,12 +13,16 @@ body {
 	height: 3rem;
 	width: 3rem;
 	position: absolute;
-	right: 10%;
+	right: 5%;
 	bottom: 10%;
 	cursor: pointer;
 	z-index: 15;
 }
-
+.right {
+	height: fit-content;
+	margin-top: 10vh;
+	margin-left: auto;
+}
 .sidebar a {
 	text-decoration: none;
 }
@@ -38,7 +42,8 @@ body {
 }
 
 .left {
-	position: relative;
+	position: fixed;
+	bottom: 0;
 }
 
 .right {
@@ -50,10 +55,12 @@ body {
 	justify-content: center;
 	flex-direction: column;
 	transition: all 0.5s ease;
-	overflow-y: scroll;
+	height: 100%; /* overflow-y: hidden; */
 	overflow-x: hidden;
 }
-
+.succ1 {
+	height: fit-content;
+}
 .table {
 	border: 2px solid rgb(53, 49, 49);
 	border-radius: 2px;
@@ -93,7 +100,13 @@ tbody {
 	height: 0%;
 	width: 0%;
 }
-
+.top {
+	height: 450px;
+}
+.demo1 {
+	/* margin-top: 60vh; */
+	padding-top: 10vh;
+}
 .preview {
 	position: absolute;
 	height: 80%;
@@ -131,6 +144,7 @@ tbody {
 	align-items: center;
 	height: 90%;
 	width: 90%;
+	object-fit: contain;
 }
 
 .closesvg {
@@ -226,4 +240,25 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type='number'] {
 	-moz-appearance: textfield;
+}
+@media (max-width: 1300px) {
+	.imgform {
+		/* margin-top: 30vh; */
+	}
+}
+@media screen and (max-width: 1150px) {
+	.right {
+		margin-left: 20vw !important;
+		width: 100%;
+	}
+	.table {
+		width: 80%;
+	}
+
+	.dateCol p {
+		width: 100px;
+	}
+	.imgform {
+		margin-top: 40vh;
+	}
 }

@@ -4,16 +4,15 @@ const backbtn = document.querySelector('.backbtn');
 const sectionop = document.querySelector('.mainsection');
 const imgform = document.querySelector('.imgform');
 const submit = document.querySelector('.submit');
+const submitbtn = document.querySelector('.submitbtn');
 
 if (addbtn) {
-  addbtn.addEventListener('click', () => {
-	previewDiv.style.display = 'flex';
-	imgform.style.transform = 'translate(300vw,0)';
-	previewDiv.style.transform = 'none';
-  });
+	addbtn.addEventListener('click', () => {
+		previewDiv.style.display = 'flex';
+		imgform.style.transform = 'translate(300vw,0)';
+		previewDiv.style.transform = 'none';
+	});
 }
-	
-
 
 backbtn.addEventListener('click', () => {
 	previewDiv.style.transform = 'translate(300vw,0)';
@@ -23,14 +22,24 @@ backbtn.addEventListener('click', () => {
 document.querySelectorAll('.updatesCheckbox').forEach((check, i) => {
 	check.addEventListener('change', () => {
 		if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
-			document.querySelector('.submit').removeAttribute('disabled');
+			submitbtn.classList.remove('warningcheck');
 		} else {
-			document.querySelector('.submit').setAttribute('disabled', true);
+			submitbtn.classList.add('warningcheck');
 		}
 	});
 });
 
-document.querySelector('.submitbtn').addEventListener('click', () => {
+const nocontentswal = () => {
+	Swal.fire({
+		position: 'center',
+		icon: 'warning',
+		title: 'Please check any checkbox',
+		showConfirmButton: false,
+		timer: 2500
+	});
+};
+
+const checkswal = () => {
 	Swal.fire({
 		title: 'Are you sure?',
 		text: 'Are you sure you want to delete!',
@@ -44,4 +53,20 @@ document.querySelector('.submitbtn').addEventListener('click', () => {
 			document.querySelector('.demoVideosForm').submit();
 		}
 	});
+};
+
+document.querySelector('.submitbtn').addEventListener('click', () => {
+	if (
+		submitbtn.getAttribute('type') == 'button' &&
+		submitbtn.classList.contains('warningcheck')
+	) {
+		nocontentswal();
+	} else if (
+		submitbtn.getAttribute('type') == 'button' &&
+		!submitbtn.classList.contains('warningcheck')
+	) {
+		checkswal();
+	} else {
+		return;
+	}
 });

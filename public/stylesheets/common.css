@@ -7,6 +7,7 @@
 	padding: 0%;
 	margin: 0%;
 	font-family: 'Poppins', sans-serif;
+	user-select: none;
 }
 
 h1,
@@ -258,11 +259,20 @@ body.dark footer {
 .footer-body {
 	position: relative;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	margin-top: 2rem;
 	justify-content: space-around;
 }
-
+.footerInner {
+	display: flex;
+	width: 100%;
+	justify-content: space-evenly;
+}
+.addressbox {
+	display: flex;
+	justify-content: space-evenly;
+	margin-top: 1rem;
+}
 .address-container {
 	width: 18%;
 	display: flex;
@@ -284,7 +294,10 @@ body.dark footer {
 	width: 2rem;
 	margin-right: 1rem;
 }
-
+.addressbox span svg {
+	width: 2rem;
+	margin-right: 1rem;
+}
 .address-container > span > svg {
 	width: 1.8rem;
 }
@@ -293,7 +306,10 @@ body.dark footer {
 	font-size: 1rem;
 	font-weight: 500;
 }
-
+.addressbox span {
+	font-size: 1.2rem;
+	font-weight: 500;
+}
 .address-container h1 {
 	padding-bottom: 2rem;
 }
@@ -340,7 +356,9 @@ body.dark footer {
 .social img {
 	margin: 0.5rem;
 }
-
+.mobspan {
+	display: none;
+}
 /* swiper  */
 @media (max-width: 800px) {
 	.social {
@@ -359,6 +377,15 @@ body.dark footer {
 	}
 	.footer-body {
 		flex-direction: column;
+	}
+	.footerInner {
+		flex-direction: column;
+	}
+	.addressbox {
+		display: none;
+	}
+	.mobspan {
+		display: block;
 	}
 	.address-container {
 		width: 90%;

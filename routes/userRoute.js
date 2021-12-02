@@ -226,7 +226,6 @@ router
 					var link1 = response[i].link;
 					arr.push({ link, link1 });
 				}
-				console.log(arr);
 				res.render('admin/home/latestUpdates', { arr });
 			}
 		});
@@ -652,8 +651,8 @@ router
 	})
 	.delete(async (req, res) => {
 		if (typeof req.body.checkbox === 'string') {
-			const checkcontent = req.body.checkbox.split(',')[0];
-			const checkyear = req.body.checkbox.split(',')[1];
+			const checkcontent = req.body.checkbox.split('**')[0];
+			const checkyear = req.body.checkbox.split('**')[1];
 			await db.query(
 				'DELETE FROM history WHERE content = ? AND year = ?',
 				[checkcontent, checkyear],
@@ -669,8 +668,8 @@ router
 			);
 		} else {
 			req.body.checkbox.forEach(async (content) => {
-				var checkcontent = content.split(',')[0];
-				var checkyear = content.split(',')[1];
+				var checkcontent = content.split('**')[0];
+				var checkyear = content.split('**')[1];
 				await db.query(
 					`DELETE FROM history WHERE content = ? AND year = ?`,
 					[checkcontent, checkyear],
@@ -707,7 +706,6 @@ router.route('/Demovideos').get(async (req, res) => {
 		if (err) {
 			console.log(err);
 		} else {
-			console.log(response);
 			for (let i = 0; i <= response.length - 1; i++) {
 				var link = response[i].videolink;
 				arr.push(link);
@@ -722,7 +720,6 @@ router.route('/Demovideos').get(async (req, res) => {
 						cloudinaryName: response[0].cloudinaryname
 					};
 				}
-				console.log(arr);
 				res.render('demovideos', { link: arr, img: image });
 			});
 		}
@@ -846,7 +843,8 @@ router.route('/results').get(async (req, res) => {
 				var image = response[i].year;
 				arr.push(image);
 			}
-			let uniqueChars = [...new Set(arr)];
+			let uniqueChars = [...new Set(arr)].sort();
+			
 			await db.query('SELECT * FROM resultslider', async (error, response) => {
 				var slider = [];
 				if (error) {
@@ -897,7 +895,7 @@ router
 					var image = response[i].year;
 					arr.push(image);
 				}
-				let uniqueChars = [...new Set(arr)];
+				let uniqueChars = [...new Set(arr)].sort();
 				res.render('admin/results/studentdetails', {
 					year: uniqueChars.reverse()
 				});
@@ -1004,7 +1002,6 @@ router
 				if (err) {
 					console.log(err);
 				} else {
-					console.log(response);
 					req.flash('success', 'Successfully Updated');
 					res.redirect('/admin/results/studentdetails');
 				}
@@ -1114,10 +1111,12 @@ router
 		};
 		transporter.sendMail(mailOptions, function (error, info) {
 			if (error) {
+				console.log(error);
 				req.flash('error', 'Something went wrong');
 				res.redirect('/contactus');
 			} else {
-				req.flash('success', 'Mail was successfully sent');
+				console.log(info);
+				req.flash('success', 'Mail sent successfully');
 				res.redirect('/contactus');
 			}
 		});
@@ -1341,15 +1340,14 @@ router
 router
 	.route('/admin/chatbot')
 	.get(flash, isloggedin, async (req, res) => {
-		await db.query("SELECT * FROM chatbot",(err,response)=>{
+		await db.query('SELECT * FROM chatbot', (err, response) => {
 			var arr = [];
-				if (err) {
-					console.log(err);
-				} else {
-				
-					res.render('admin/chatbot/chatbot',{chatbot:response});
-				}
-		})
+			if (err) {
+				console.log(err);
+			} else {
+				res.render('admin/chatbot/chatbot', { chatbot: response });
+			}
+		});
 	})
 	.delete(async (req, res) => {
 		await db.query('DELETE FROM chatbot', (err, response) => {
@@ -1392,7 +1390,8 @@ router.get('/chatbot/:name/:email/:number', async (req, res) => {
 			name: req.params.name,
 			number: req.params.number,
 			gmail: req.params.email,
-			date: date.getDate()+'-'+(date.getMonth()+1)+'-'+date.getFullYear()
+			date:
+				date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear()
 		},
 		(err, response) => {
 			if (err) {
@@ -1447,6 +1446,103 @@ router.get('/pagination/totalCount/:year', isloggedin, async (req, res) => {
 			}
 		}
 	);
+});
+
+//for sql pagination
+
+router.get('/sql/homeslider', isloggedin, async (req, res) => {
+	await db.query('SELECT * FROM homeslider', async (error, response) => {
+		var arr = [];
+		if (error) {
+			console.log(error);
+		} else {
+			for (let i = 0; i <= response.length - 1; i++) {
+				var image = {
+					sliderimg: response[i].sliderimg,
+					imgname: response[i].imgname,
+					cloudinaryName: response[i].cloudinaryname
+				};
+				arr.push(image);
+			}
+		}
+		res.json(arr);
+	});
+});
+
+router.get('/sql/latestupdates', isloggedin, async (req, res) => {
+	await db.query('SELECT * FROM latest_updates', (err, response) => {
+		arr = [];
+		if (err) {
+			req.flash('error', 'Error occurred while adding');
+			console.log(err);
+		} else {
+			for (let i = 0; i <= response.length - 1; i++) {
+				var link = response[i].latestupdates;
+				var link1 = response[i].link;
+				arr.push({ link, link1 });
+			}
+			res.json(arr);
+		}
+	});
+});
+
+router.get('/sql/calendarevents', isloggedin, async (req, res) => {
+	await db.query('SELECT * FROM calendarevents', async (error, response) => {
+		var arr = [];
+		if (error) {
+			console.log(error);
+		} else {
+			for (let i = 0; i <= response.length - 1; i++) {
+				var calendar = {
+					date: response[i].date,
+					month: response[i].month,
+					event: response[i].event
+				};
+				arr.push(calendar);
+			}
+			res.json(arr);
+		}
+	});
+});
+
+router.get('/sql/ourtoppers', async (req, res) => {
+	await db.query('SELECT * FROM ourtoppers', async (error, response) => {
+		var arr = [];
+		if (error) {
+			req.flash('error', 'Error occurred while adding');
+			console.log(error);
+		} else {
+			for (let i = 0; i <= response.length - 1; i++) {
+				var image = {
+					name: response[i].name,
+					collegename: response[i].collegename,
+					cloudinaryname: response[i].cloudinaryname,
+					studentimg: response[i].studentimg,
+					score: response[i].score
+				};
+				arr.push(image);
+			}
+			res.json(arr);
+		}
+	});
+});
+
+router.get('/sql/history', async (req, res) => {
+	await db.query('SELECT * FROM history', async (error, response) => {
+		var arr = [];
+		if (error) {
+			console.log(error);
+		} else {
+			for (let i = 0; i <= response.length - 1; i++) {
+				var cont = {
+					content: response[i].content,
+					year: response[i].year
+				};
+				arr.push(cont);
+			}
+			res.json(arr);
+		}
+	});
 });
 
 module.exports = router;

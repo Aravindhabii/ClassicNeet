@@ -166,6 +166,26 @@
 // 	}
 // });
 
+const submitbtn = document.querySelector('.submit');
+
+
+submitbtn.addEventListener('click', () => {
+	Swal.fire({
+		title: 'Are you sure?',
+		text: 'Are you sure you want to delete!',
+		icon: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: 'Yes, delete it!'
+	}).then((result) => {
+		if (result.isConfirmed) {
+			document.querySelector('.chatbotform').submit();
+		}
+	});
+})
+
+
 $('#pagination-container').pagination({
 	dataSource: function (done) {
 		$.ajax({
@@ -194,7 +214,7 @@ $('#pagination-container').pagination({
 				<td>
 					<p>${detail.gmail}</p>
 				</td>
-				<td>
+				<td class="dateCol">
 					<p>${detail.date}</p>
 				</td>
 				<td>
@@ -220,7 +240,6 @@ function success() {
 }
 
 if (window.localStorage.flash == "true") {
-	console.log('call from reload');
 	window.localStorage.removeItem("flash");
 	success();
 }

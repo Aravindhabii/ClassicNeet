@@ -12,6 +12,8 @@
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="../../stylesheets/admin.css" />
+		<link rel="stylesheet" href="../../stylesheets/pagination.css" />
+
 		<link rel="stylesheet" href="sweetalert2.min.css" />
 	</head>
 	<body>
@@ -20,7 +22,7 @@
 			<div class="left"><%- include('../../layout/adminSideBar') %></div>
 			<div class="right">
 				<div class="preview">
-					<h1 class="mb-5">Calendar Events</h1>
+					<h1 class="mb-5 fs-4 fw-bold">Calendar Events</h1>
 					<form
 						action="/admin/calendarevents"
 						method="post"
@@ -58,7 +60,6 @@
 								aria-label="Username"
 								aria-describedby="addon-wrapping"
 								id="uploadlink"
-								
 								required
 							/>
 						</div>
@@ -80,7 +81,7 @@
 					method="post"
 					class="imgform latestupdateform"
 				>
-					<h1 class="m-5">Calendar Events</h1>
+					<h1 class="m-3 fs-4 fw-bold">Calendar Events</h1>
 					<table class="table" style="width: 70%">
 						<thead>
 							<tr>
@@ -89,58 +90,16 @@
 								<th scope="col">Event</th>
 							</tr>
 						</thead>
-						<tbody>
-							<% calendar.forEach(i => { %>
-							<tr>
-								<td>
-									<input
-										type="text"
-										id="linkinput"
-										value="<%= i.date %>"
-										readonly
-										style="width: 80%; border: none"
-									/>
-								</td>
-								<td>
-									<input
-										type="text"
-										id="linkinput"
-										value="<%= i.month %>"
-										readonly
-										style="width: 80%; border: none"
-									/>
-								</td>
-								<td>
-									<input
-										type="text"
-										id="linkinput"
-										value="<%= i.event %>"
-										readonly
-										style="width: 80%; border: none"
-									/>
-								</td>
-								<td>
-									<input
-										type="checkbox"
-										id="checkbox"
-										class="updatesCheckbox"
-										name="checkbox"
-										value="<%= i.event %>"
-										style="height: 20px; width: 20px"
-									/>
-								</td>
-							</tr>
-							<% }) %>
-						</tbody>
+						<tbody class="tbody"></tbody>
 					</table>
+					<div id="pagination-container" class="mb-3"></div>
 					<div class="buttondiv">
 						<button type="button" class="btn btn-outline-primary addbtn px-4">
 							Add
 						</button>
 						<button
 							type="button"
-							disabled
-							class="btn btn-outline-danger submit ms-5 px-3 submitbtn"
+							class="btn btn-outline-danger submit ms-5 px-3 submitbtn warningcheck"
 						>
 							Delete
 						</button>
@@ -148,6 +107,16 @@
 				</form>
 			</div>
 		</section>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+			referrerpolicy="no-referrer"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"
+			integrity="sha512-1zzZ0ynR2KXnFskJ1C2s+7TIEewmkB2y+5o/+ahF7mwNj9n3PnzARpqalvtjSbUETwx6yuxP5AJXZCpnjEJkQw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
 		<script src="../../javascripts/admin/home/calendarevents.js"></script>
 		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		<script

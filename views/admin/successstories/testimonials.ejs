@@ -31,9 +31,9 @@
 		<%- include('../../layout/adminheader') %>
 		<section class="mainsection">
 			<div class="left"><%- include('../../layout/adminSideBar') %></div>
-			<div class="right">
+			<div class="right succ1">
 				<div class="preview">
-					<h1 class="mb-5">Student Testimonials</h1>
+					<h1 class="mb-5 fs-4 fw-bold">Student Testimonials</h1>
 					<form
 						action="/admin/successstories/testimonials"
 						method="post"
@@ -74,6 +74,7 @@
 							<input
 								type="file"
 								name="studentimg"
+								accept="image/*"
 								class="form-control"
 								aria-label="Username"
 								aria-describedby="addon-wrapping"
@@ -98,7 +99,7 @@
 					method="post"
 					class="imgform"
 				>
-					<h1 class="m-5">Student Testimonials</h1>
+					<h1 class="m-5 fs-4 fw-bold">Student Testimonials</h1>
 
 					<table class="table" style="width: 70%">
 						<thead>
@@ -150,8 +151,7 @@
 						<% } %> 
 						<button
 							type="button"
-							class="btn btn-outline-danger submit ms-5 px-3 submitbtn"
-							disabled
+							class="btn btn-outline-danger submit ms-5 px-3 submitbtn warningcheck"
 						>
 							Delete
 						</button>
