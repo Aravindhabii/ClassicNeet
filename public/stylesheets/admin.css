@@ -218,7 +218,9 @@ p {
 .formtextarea::-webkit-scrollbar-thumb {
 	display: none;
 }
-
+.succ2 {
+	height: 500px;
+}
 .previewTopper {
 	position: fixed;
 	height: 100vh;
