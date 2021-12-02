@@ -52,7 +52,9 @@
 							<tr>
 								<td>
 									<p class="onclickimg"><%= i.imgname %></p>
-									<span class="currentPreviewSpan btn btn-info"
+									<span
+										class="currentPreviewSpan btn btn-info"
+										onclick="currentPreviewSpan(this)"
 										>Show Image</span
 									>
 									<span class="currentSliderimgurl"><%= i.sliderimg %> </span>
@@ -64,8 +66,13 @@
 										accept="image/*"
 										class="fileimg uploaddisplay"
 										name="sliderimg"
+										onchange="uploadDisplayInput(this)"
 									/>
-									<button class="previewSpan displaybtn btn" disabled>
+									<button
+										class="previewSpan displaybtn btn"
+										onclick="previewSpanClick(this)"
+										disabled
+									>
 										Display
 									</button>
 									<span class="sliderimgurl"></span>
@@ -76,6 +83,7 @@
 										id="checkbox"
 										class="updatesCheckbox"
 										disabled
+										onchange="updatesCheckboxChange(this)"
 										name="checkbox"
 										value="<%= i.cloudinaryName %>"
 										style="height: 20px; width: 20px"
@@ -85,7 +93,7 @@
 							<% }) %>
 						</tbody>
 					</table>
-					<button type="submit" class="btn btn-outline-primary submit" disabled>
+					<button type="button" class="btn btn-outline-primary submit warningcheck" >
 						Submit
 					</button>
 				</form>
@@ -106,7 +114,99 @@
 			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 			crossorigin="anonymous"
 		></script>
+		<script>
+			const previewDiv = document.querySelector('.preview');
+			const closesvg = document.querySelector('.closesvg');
+			const submitbtn = document.querySelector('.submit');
 
-		<script src="../../javascripts/admin/home/sliderRevolution.js"></script>
+			
+			const uploadDisplayInput = (e) => {
+				e.parentNode.parentNode.children[2].children[0].removeAttribute("disabled");
+				if(e.value != ""){
+				e.parentNode.parentNode.children[2].children[0].removeAttribute("disabled");
+				submitbtn.classList.remove("warningcheck");
+				e.parentNode.children[1].classList.add("btn-info");
+				e.parentNode.children[1].removeAttribute("disabled");
+				e.parentNode.children[2].innerText = URL.createObjectURL(e.files[0]);
+				}else{
+				e.parentNode.parentNode.children[2].children[0].setAttribute("disabled", true);
+				e.parentNode.children[1].classList.remove("btn-info");
+				e.parentNode.children[1].setAttribute("disabled", true);
+				submitbtn.classList.add("warningcheck");
+				}
+			};
+
+			const nocontentswal = () => {
+			Swal.fire({
+				position: "center",
+				icon: "warning",
+				title: "Please upload any image",
+				showConfirmButton: false,
+				timer: 2500,
+			});
+			};
+			const checkswal = () => {
+			Swal.fire({
+				position: "center",
+				icon: "warning",
+				title: "Please check any checkbox",
+				showConfirmButton: false,
+				timer: 2500,
+			});
+			};
+
+
+			submitbtn.addEventListener("click", () => {
+				if (
+					submitbtn.getAttribute("type") == "button" &&
+					submitbtn.classList.contains("warningcheck")
+				) {
+					nocontentswal();
+				} else if (
+					submitbtn.getAttribute("type") == "button" &&
+					!submitbtn.classList.contains("warningcheck")
+				) {
+					checkswal();
+				} else {
+					return;
+				}
+			});
+
+			const updatesCheckboxChange = (e) => {
+				if (
+					document.querySelectorAll('input[type="checkbox"]:checked').length
+				) {
+					submitbtn.setAttribute("type", "submit");
+				} else {
+					submitbtn.classList.add("warningcheck");
+				}
+			};
+			const previewSpanClick = (e) => {
+				const img = document.createElement('img');
+				if (e.parentNode.children[2].innerText.length < 1) return;
+				img.src = e.parentNode.children[2].innerText;
+				previewDiv.appendChild(img);
+				previewDiv.style.display = 'flex';
+				previewDiv.style.background = 'rgba(104, 100, 100, 0.671)';
+				closesvg.addEventListener('click', () => {
+					previewDiv.removeChild(img);
+					previewDiv.style.display = 'none';
+					previewDiv.style.background = 'none';
+				});
+			};
+
+			const currentPreviewSpan = (e) => {
+				const img = document.createElement('img');
+				img.src = e.parentNode.children[2].innerText;
+				previewDiv.appendChild(img);
+				previewDiv.style.display = 'flex';
+				previewDiv.style.background = 'rgba(104, 100, 100, 0.671)';
+				closesvg.addEventListener('click', () => {
+					previewDiv.removeChild(img);
+					previewDiv.style.display = 'none';
+					previewDiv.style.background = 'none';
+				});
+			};
+		</script>
 	</body>
 </html>
