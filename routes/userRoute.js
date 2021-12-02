@@ -896,7 +896,6 @@ router
 					arr.push(image);
 				}
 				let uniqueChars = [...new Set(arr)].sort();
-				console.log(uniqueChars);
 				res.render('admin/results/studentdetails', {
 					year: uniqueChars.reverse()
 				});
