@@ -55,21 +55,17 @@ body {
 	justify-content: center;
 	flex-direction: column;
 	transition: all 0.5s ease;
-	height: 450px;
-	/* overflow-y: hidden; */
+	height: 100%; /* overflow-y: hidden; */
 	overflow-x: hidden;
 }
 .succ1 {
 	height: fit-content;
-	
 }
 .table {
 	border: 2px solid rgb(53, 49, 49);
 	border-radius: 2px;
 	width: 80%;
 	overflow-y: auto;
-	
-	
 }
 
 tbody {
@@ -248,8 +244,6 @@ input[type='number'] {
 	.imgform {
 		/* margin-top: 30vh; */
 	}
-	
-	
 }
 @media screen and (max-width: 1150px) {
 	.right {
@@ -259,9 +253,9 @@ input[type='number'] {
 	.table {
 		width: 80%;
 	}
-	
-	.dateCol p{
-		width:100px;
+
+	.dateCol p {
+		width: 100px;
 	}
 	.imgform {
 		margin-top: 40vh;

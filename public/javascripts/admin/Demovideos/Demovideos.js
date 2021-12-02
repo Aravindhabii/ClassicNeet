@@ -7,13 +7,13 @@ const submit = document.querySelector('.submit');
 const submitbtn = document.querySelector('.submitbtn');
 
 if (addbtn) {
-  addbtn.addEventListener('click', () => {
-	previewDiv.style.display = 'flex';
-	imgform.style.transform = 'translate(300vw,0)';
-	previewDiv.style.transform = 'none';
-  });
+	addbtn.addEventListener('click', () => {
+		previewDiv.style.display = 'flex';
+		imgform.style.transform = 'translate(300vw,0)';
+		previewDiv.style.transform = 'none';
+	});
 }
-	
+
 backbtn.addEventListener('click', () => {
 	previewDiv.style.transform = 'translate(300vw,0)';
 	imgform.style.transform = 'translate(0,0)';
@@ -22,22 +22,22 @@ backbtn.addEventListener('click', () => {
 document.querySelectorAll('.updatesCheckbox').forEach((check, i) => {
 	check.addEventListener('change', () => {
 		if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
-			submitbtn.classList.remove("warningcheck");
+			submitbtn.classList.remove('warningcheck');
 		} else {
-			submitbtn.classList.add("warningcheck");
+			submitbtn.classList.add('warningcheck');
 		}
 	});
 });
 
 const nocontentswal = () => {
 	Swal.fire({
-		position: "center",
-		icon: "warning",
-		title: "Please check any checkbox",
+		position: 'center',
+		icon: 'warning',
+		title: 'Please check any checkbox',
 		showConfirmButton: false,
-		timer: 2500,
+		timer: 2500
 	});
-}
+};
 
 const checkswal = () => {
 	Swal.fire({
@@ -53,20 +53,20 @@ const checkswal = () => {
 			document.querySelector('.demoVideosForm').submit();
 		}
 	});
-  };
+};
 
 document.querySelector('.submitbtn').addEventListener('click', () => {
 	if (
-		submitbtn.getAttribute("type") == "button" &&
-		submitbtn.classList.contains("warningcheck")
-	  ) {
+		submitbtn.getAttribute('type') == 'button' &&
+		submitbtn.classList.contains('warningcheck')
+	) {
 		nocontentswal();
-	  } else if (
-		submitbtn.getAttribute("type") == "button" &&
-		!submitbtn.classList.contains("warningcheck")
-	  ) {
+	} else if (
+		submitbtn.getAttribute('type') == 'button' &&
+		!submitbtn.classList.contains('warningcheck')
+	) {
 		checkswal();
-	  } else {
+	} else {
 		return;
-	  }
+	}
 });

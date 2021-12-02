@@ -896,7 +896,6 @@ router
 					arr.push(image);
 				}
 				let uniqueChars = [...new Set(arr)].sort();
-				console.log(uniqueChars);
 				res.render('admin/results/studentdetails', {
 					year: uniqueChars.reverse()
 				});
@@ -1112,7 +1111,7 @@ router
 		};
 		transporter.sendMail(mailOptions, function (error, info) {
 			if (error) {
-				console.log(err);
+				console.log(error);
 				req.flash('error', 'Something went wrong');
 				res.redirect('/contactus');
 			} else {
