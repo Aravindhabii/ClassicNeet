@@ -67,56 +67,7 @@ document.querySelector('.form').addEventListener('submit', (e) => {
 });
 var inputs = document.querySelectorAll(".form-input");
 
-var submit = document.querySelector(".submit");
-const form1 = document.querySelector("form");
-document.querySelector("form").addEventListener("submit", (e) => {
-  e.preventDefault();
-  var nameError = document.querySelector(".nameError");
-  var nameInput = document.querySelector(".name-input");
-  var phonenum = document.querySelector(".phoneError");
-  var phoneInput = document.querySelector(".phonenum");
-  var emailError = document.querySelector(".emailError");
-  var emailInput = document.querySelector(".email-input");
-  var commentError = document.querySelector(".commentError");
-  var commentInput = document.querySelector(".comment-input");
-  if (nameInput.value == "") {
-    nameError.style.display = "block";
-    nameError.innerText = "Please enter your name";
-    e.preventDefault();
-  }
-  if (phoneInput.value == "") {
-    phonenum.style.display = "block";
-    phonenum.innerText = "Please enter your number";
-    e.preventDefault();
-  }
-  if (emailInput.value == "") {
-    emailError.style.display = "block";
-    emailError.innerText = "Please enter your email";
-    e.preventDefault();
-  }
-  if (commentInput.value == "") {
-    commentError.style.display = "block";
-    commentError.innerText = "Please enter your comment";
-    e.preventDefault();
-  }
-  if(phoneInput.value.length != 10){
-  	phonenum.style.display = "block";
-  	phonenum.innerText = "Please enter 10 digit number";
-  	e.preventDefault();
-  }
-  // inputs.forEach((input) => {
-  //   var phoneInput = document.querySelector(".phonenum");
-    
-  //   if (phoneInput.value.length !== 10) {
-  //     e.preventDefault();
 
-  //   }
-  //   if (input.value == "") {
-  //     e.preventDefault();
-  //     // submit.style.backgroundColor = '#ff0000';
-  //   }
-  // });
-});
 
 inputs.forEach((input) => {
   input.addEventListener("input", (e) => {
