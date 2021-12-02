@@ -5,6 +5,14 @@ const sectionop = document.querySelector(".mainsection");
 const imgform = document.querySelector(".imgform");
 const submitbtn = document.querySelector(".submitbtn");
 const latestupdateform = document.querySelector(".imgform");
+const collegenum = document.querySelector(".collegenum");
+
+collegenum.addEventListener("input", (evt) => {
+  var ASCIICode = evt.target.value.slice(-1).charCodeAt(0);
+  if (!(ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))) {
+    evt.target.value = evt.target.value.slice(0, -1);
+  }
+});
 
 if (addbtn) {
   addbtn.addEventListener("click", () => {
