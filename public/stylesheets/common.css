@@ -296,6 +296,7 @@ body.dark footer {
 .addressbox {
 	display: flex;
 	justify-content: space-evenly;
+	width:100%;
 	margin-top: 1rem;
 }
 .address-container {
@@ -328,7 +329,7 @@ body.dark footer {
 }
 
 .address-container span {
-	font-size: 1rem;
+	font-size: 1.2rem;
 	font-weight: 500;
 }
 .addressbox span {
@@ -382,8 +383,10 @@ body.dark footer {
 	margin: 0.5rem;
 }
 .mobspan {
-	display: none;
+	margin-top: 1rem;
+	
 }
+
 /* swiper  */
 @media (max-width: 800px) {
 	.social {
