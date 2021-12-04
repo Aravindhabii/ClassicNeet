@@ -213,7 +213,7 @@ a.site-logo {
 	}
 	.site-navbar ul.open {
 		height: 100%;
-		max-height: -webkit-fill-available;
+		min-height: -webkit-fill-available;
 		overflow: visible;
 		z-index: 20;
 		padding-top: 1%;
