@@ -767,6 +767,7 @@ p {
 	/* background-color: #2b72e4; */
 	/* height: 25%; */
 	display: grid;
+	
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	position: absolute;
 	z-index: 2;
