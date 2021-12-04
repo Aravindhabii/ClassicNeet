@@ -60,7 +60,6 @@ window.addEventListener('scroll', (e) => {
 	}
 });
 
-
 const nameFormSubmit = () => {
 	document.querySelector('.name-form button').style.display = 'none';
 	document.querySelector('.name-form input').setAttribute('disabled', true);
