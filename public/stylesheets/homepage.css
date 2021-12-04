@@ -768,12 +768,13 @@ p {
 
 .statBox {
 	width: 100%;
+
 	/* background-color: #2b72e4; */
 	/* height: 25%; */
 	display: grid;
 
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	position: absolute;
+	position: relative;
 	z-index: 2;
 }
 .Stat {
