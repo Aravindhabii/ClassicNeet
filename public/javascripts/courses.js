@@ -62,10 +62,9 @@ exit.forEach((e) => {
 
 //media query
 const para1 = document.querySelector('.para1');
-
 $(window)
-	.resize(function () {
-		if (window.innerWidth < 600) {
+	.change(function () {
+		if (window.screen.width  < 600) {
 			$('.para1neet').replaceWith(
 				"<p class='hexContent'>This course is meant for those who have completed their 12th...</p>"
 			);
@@ -93,7 +92,7 @@ $(window)
 				"<p class='hexContent'>This course is meant for those who are appearing for their 12th class...</p>"
 			);
 		}
-		if (window.innerWidth < 750) {
+		if (window.screen.width  < 750) {
 			$('.para1neet').replaceWith(
 				"<p class='hexContent'>This course is meant for those who have completed their 12th classboard exams and might have already attempted the NEET.</p>"
 			);
@@ -113,5 +112,35 @@ $(window)
 				"<p class='hexContent'>This course is meant for those who are appearing for their 12th class board exams and wish to focus on JEE...</p>"
 			);
 		}
+		if (window.screen.width  > 750) {
+			$('.para1neet').replaceWith(
+				"<p class='hexContent'>This course is meant for those who have completed their 12 th class board exams andmight have already attempted the NEET. They will appear for NEET in the coming year after one year of training focused on NEET.</p>"
+			);
+			$('.para2neet').replaceWith(
+				"<p class='hexContent'>This course is meant for students who have completed their 10 th  std board exams. The course will start at their 11 th  std and will be conducted till their NEET exam.</p>"
+			);
+
+			$('.para3neet').replaceWith(
+				"<p class='hexContent'>The course is specifically designed for those who wish to focus on NEET after completing their 11 th  class exams.</p>"
+			);
+
+			$('.para4neet').replaceWith(
+				"<p class='hexContent'>This course is meant for those who are appearing for their 12 th  class board exams and wish to focus on NEET after the Board exams. These students will be attempting NEET the same year.</p>"
+			);
+			$('.paraIIT').replaceWith(
+				"<p class='hexContent'>CLASSIC NEET ACADEMY offers a unique IIT/Medical Foundation program aimed at students of the 6 th , 7 th , 8 th , 9 th  and 10 th  classes. This program focuses on strengthening the students conceptual clarity of the fundamentals in Mathematics, Physics, Chemistry, Biology, Logical Reasoning &amp; Communication Skills.</p>"
+			);
+			$('.para1JEE').replaceWith(
+				"<p class='hexContent'>This course is meant for students who have completed their 10 th  std board exams. The course will start at their 11 th  std and will be conducted till their JEE exam. Course Methodology</p>"
+			);
+			$('.para2JEE').replaceWith(
+				"<p class='hexContent'>The course is specifically designed for those who wish to focus on JEE after completing their 11 th  class exams.</p>"
+			);
+			$('.para3JEE').replaceWith(
+				"<p class='hexContent'>This course is meant for those who are appearing for their 12 th  class board exams and wish to focus on JEE after the Board exams. These students will be attempting JEE the same year.</p>"
+			);
+		}
 	})
-	.resize();
+	.change();
+
+
