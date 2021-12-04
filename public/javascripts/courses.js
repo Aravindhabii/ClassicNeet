@@ -18,25 +18,25 @@ if (btn1) {
 }
 if (btn2) {
 	btn2.addEventListener('click', (e) => {
-		meth.style.display = 'flex';
+		meth2.style.display = 'flex';
 		bodyCourse.style.overflow = 'hidden';
 	});
 }
 if (btn3) {
 	btn3.addEventListener('click', (e) => {
-		meth.style.display = 'flex';
+		meth3.style.display = 'flex';
 		bodyCourse.style.overflow = 'hidden';
 	});
 }
 if (btn4) {
 	btn4.addEventListener('click', (e) => {
-		meth.style.display = 'flex';
+		meth4.style.display = 'flex';
 		bodyCourse.style.overflow = 'hidden';
 	});
 }
 if (btn5) {
 	btn5.addEventListener('click', (e) => {
-		meth.style.display = 'flex';
+		meth5.style.display = 'flex';
 		bodyCourse.style.overflow = 'hidden';
 	});
 }

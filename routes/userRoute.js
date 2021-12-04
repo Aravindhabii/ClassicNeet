@@ -846,7 +846,7 @@ router.route('/results').get(async (req, res) => {
 				arr.push(image);
 			}
 			let uniqueChars = [...new Set(arr)].sort();
-			
+
 			await db.query('SELECT * FROM resultslider', async (error, response) => {
 				var slider = [];
 				if (error) {
