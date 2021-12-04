@@ -24,6 +24,7 @@ function togglerClick() {
 		if (siteNavbarUl.classList.contains('open')) {
 			siteNavbarUl.style.overflow = 'hidden';
 			siteNavbarUl.style.height = `${window.innerHeight}px`;
+      
 		} else {
 			siteNavbarUl.style.overflow = 'auto';
 		}
