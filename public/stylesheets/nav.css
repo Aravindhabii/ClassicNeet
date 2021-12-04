@@ -212,11 +212,11 @@ a.site-logo {
 		background-color: rgba(255, 255, 255, 0.1);
 	}
 	.site-navbar ul.open {
-		height: 100%;
-		min-height: -webkit-fill-available;
+		max-height: 100vh;
 		overflow: visible;
 		z-index: 20;
 		padding-top: 1%;
+
 	}
 	.intro-area h2 {
 		font-size: 36px;
