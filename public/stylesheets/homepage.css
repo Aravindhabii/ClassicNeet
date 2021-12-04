@@ -436,7 +436,10 @@ p {
 	width: 50%;
 	height: 50%;
 }
-
+.percentage {
+	font-size: 3rem;
+	
+}
 .HexagonDiv {
 	width: 90%;
 	margin-left: auto;
@@ -810,6 +813,7 @@ p {
 
 .stat h1 {
 	font-size: 4rem;
+	
 }
 
 .stat h3 {
@@ -1350,6 +1354,9 @@ iframe {
 		/* margin-top: 2rem; */
 		font-size: 3rem;
 	}
+	.percentage {
+		font-size: 2rem;
+	}
 	.Stat h3 {
 		font-size: 1.2rem;
 		font-weight: 400;
@@ -1488,6 +1495,9 @@ iframe {
 	.stat h1 {
 		font-size: 3rem;
 	}
+	.percentage {
+		font-size: 2rem;
+	}
 	.stat h3 {
 		font-size: 1rem;
 		margin-left: 0.5rem;
@@ -1547,6 +1557,9 @@ iframe {
 	.Stat h1 {
 		/* margin-top: 2rem; */
 		font-size: 2.5rem;
+	}
+	.percentage {
+		font-size: 1.5rem;
 	}
 	.Stat h3 {
 		font-size: 1.2rem;
@@ -1760,6 +1773,9 @@ iframe {
 	.stat h1 {
 		font-size: 2rem;
 	}
+	.percentage {
+		font-size: 2rem;
+	}
 	.stat h3 {
 		font-size: 0.8rem;
 		margin-left: 0.5rem;
@@ -1792,6 +1808,10 @@ iframe {
 	}
 	.Stat h1 {
 		font-size: 2.2rem;
+	}
+	.percentage {
+		font-size: 1.5rem;
+		
 	}
 	.Stat h3 {
 		font-size: 1.2rem;
