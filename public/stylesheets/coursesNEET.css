@@ -16,7 +16,6 @@ body.dark .methodology4 {
 	color: black !important;
 }
 .coursesneet {
-
 	background: url('../images/courses/neet.jpg') center/cover;
 }
 .coursesBanner {
@@ -31,9 +30,11 @@ body.dark .methodology4 {
 }
 .coursesjee {
 	background: url('../images/courses/jee.jpg') center/cover;
+	background-attachment: fixed;
 }
 .coursesiit {
 	background: url('../images/courses/iitmedical.jpg') center/cover;
+	background-attachment: fixed;
 }
 /*Heading*/
 .h1andh2 {
