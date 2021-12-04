@@ -18,6 +18,16 @@ function togglerClick() {
 	navToggler.classList.toggle('toggler-open');
 	navMenu.classList.toggle('open');
 	body.classList.toggle('overflow-hidden');
+	const siteNavbarUl = document.querySelector('.site-navbar ul');
+
+	if (window.innerWidth <= 1000) {
+		if (siteNavbarUl.classList.contains('open')) {
+			document.querySelector('body').style.overflow = 'hidden';
+			siteNavbarUl.style.height = `${window.innerHeight}px`;
+		} else {
+			document.querySelector('body').style.overflow = 'auto';
+		}
+	}
 }
 
 function navLinkClick() {
