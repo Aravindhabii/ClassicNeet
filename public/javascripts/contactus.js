@@ -9,26 +9,6 @@ document.querySelector(".reset").addEventListener("click", (r) => {
   });
 });
 
-// var submit = document.querySelector('.submit');
-// phonenum.addEventListener('input', (e) => {
-// 	var num = e.target.value;
-
-// 	if (!e.target.value) {
-// 		phoneError.style.display = 'none';
-// 	} else {
-// 		// phoneError.style.display = 'block';
-// 		// if (filter.test(num)) {
-// 		// 	if (num.length == 10) {
-// 		// 		phoneError.style.display = 'none';
-// 		// 		sub = true;
-// 		// 	} else {
-// 		// 		phoneError.innerText = 'Please put 10 digit mobile number';
-// 		// 	}
-// 		// } else {
-// 		// 	phoneError.innerText = 'Not a valid number';
-// 		// }
-// 	}
-// });
 
 document.querySelector(".form").addEventListener("submit", (e) => {
   var nameError = document.querySelector(".nameError");
@@ -86,8 +66,6 @@ inputs.forEach((input) => {
       phoneInput.value.length == 10
     ) {
     } else {
-      // submit.style.backgroundColor = "#AAAAAA";
-
       nameError.style.display = "none";
       commentError.style.display = "none";
       emailError.style.display = "none";

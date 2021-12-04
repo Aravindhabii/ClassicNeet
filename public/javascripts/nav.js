@@ -20,7 +20,6 @@ function togglerClick() {
   body.classList.toggle("overflow-hidden");
   const siteNavbarUl = document.querySelector(".site-navbar ul");
   navToggler.childNodes[1].style.zIndex = "100";
-  // navToggler.style.color = 'white !important';
   
   if (window.innerWidth <= 1000) {
     if (siteNavbarUl.classList.contains("open")) {
