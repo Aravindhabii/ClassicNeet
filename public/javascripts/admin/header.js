@@ -1,6 +1,8 @@
 const removesection = document.querySelector('.removesection');
 const alerter = document.querySelectorAll('.alert')
 const sweetp = document.querySelector('.sweetp')
+const sweetperr = document.querySelector('.sweetperr')
+
 
 setTimeout(function () {
     alerter.forEach(function (item) {
@@ -21,6 +23,20 @@ if(sweetp){
     }
     successdialog() 
 }
+if(sweetperr){
+    function errdialog() {
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: sweetperr.innerText,
+            showConfirmButton: false,
+            timer: 2500
+        })
+        sweetperr.parentNode.removeChild(sweetperr);
+    }
+    errdialog() 
+}
+
 
 const width = window.screen.width;
 const height = window.screen.height;

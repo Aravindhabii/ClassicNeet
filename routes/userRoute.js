@@ -174,6 +174,7 @@ router
 					if (err) {
 						req.flash('error', 'Error occurred while Updating');
 						console.log(err);
+						res.redirect('/admin/sliderrevolution');
 					} else {
 						req.flash('success', 'Image successfully updated');
 						res.redirect('/admin/sliderrevolution');
@@ -199,6 +200,7 @@ router
 								if (err) {
 									req.flash('error', 'Error occurred while Updating');
 									console.log(err);
+									res.redirect('/admin/sliderrevolution');
 									return;
 								}
 							}
@@ -256,6 +258,7 @@ router
 					if (err) {
 						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
+						res.redirect('/admin/latestupdates');
 					} else {
 						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/latestupdates');
@@ -271,6 +274,7 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
+							res.redirect('/admin/latestupdates');
 							return;
 						} else {
 							req.flash('success', 'Successfully Deleted');
@@ -322,6 +326,7 @@ router
 				if (err) {
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
+					res.redirect('/admin/ourtoppers');
 				} else {
 					req.flash('success', 'Added successfully');
 					res.redirect('/admin/ourtoppers');
@@ -348,6 +353,7 @@ router
 					if (err) {
 						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
+						res.redirect('/admin/ourtoppers');
 					} else {
 						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/ourtoppers');
@@ -364,6 +370,7 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
+							res.redirect('/admin/ourtoppers');
 							return;
 						}
 					}
@@ -401,6 +408,7 @@ router
 				if (err) {
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
+					res.redirect('/admin/studenttestimonials');
 				} else {
 					req.flash('success', 'Added successfully');
 					res.redirect('/admin/studenttestimonials');
@@ -417,6 +425,7 @@ router
 					if (err) {
 						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
+						res.redirect('/admin/studenttestimonials');
 					} else {
 						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/studenttestimonials');
@@ -432,6 +441,7 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
+							res.redirect('/admin/studenttestimonials');
 							return;
 						} else {
 						}
@@ -494,6 +504,7 @@ router
 				if (err) {
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
+					res.redirect('/admin/calendarevents');
 				} else {
 					req.flash('success', 'Added successfully');
 					res.redirect('/admin/calendarevents');
@@ -510,6 +521,7 @@ router
 					if (err) {
 						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
+						res.redirect('/admin/calendarevents');
 					} else {
 						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/calendarevents');
@@ -525,6 +537,8 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
+							res.redirect('/admin/calendarevents');
+							return;
 						}
 					}
 				);
@@ -569,6 +583,7 @@ router
 				if (err) {
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
+					res.redirect('/admin/neetachievements');
 				} else {
 					req.flash('success', 'Successfully Updated');
 					res.redirect('/admin/neetachievements');
@@ -644,6 +659,7 @@ router
 				if (err) {
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
+					res.redirect('/admin/aboutus/history');
 				} else {
 					req.flash('success', 'Added successfully');
 					res.redirect('/admin/aboutus/history');
@@ -662,6 +678,7 @@ router
 					if (err) {
 						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
+						res.redirect('/admin/aboutus/history');
 					} else {
 						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/aboutus/history');
@@ -679,6 +696,7 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
+							res.redirect('/admin/aboutus/history');
 							return;
 						} else {
 						}
@@ -753,6 +771,7 @@ router
 				if (err) {
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
+					res.redirect('/admin/demovideos');
 				} else {
 					req.flash('success', 'Successfully Added');
 					res.redirect('/admin/demovideos');
@@ -769,6 +788,7 @@ router
 					if (err) {
 						req.flash('error', 'Error occurred while deleting');
 						console.log(err);
+						res.redirect('/admin/demovideos');
 					} else {
 						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/demovideos');
@@ -784,6 +804,7 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while deleting');
 							console.log(err);
+							res.redirect('/admin/demovideos');
 							return;
 						} else {
 						}
@@ -827,6 +848,7 @@ router
 				if (err) {
 					req.flash('error', 'Error occurred while Updating');
 					console.log(err);
+					res.redirect('/admin/bannerimg');
 				} else {
 					req.flash('success', 'Image successfully updated');
 					res.redirect('/admin/bannerimg');
@@ -918,6 +940,7 @@ router
 				if (err) {
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
+					res.redirect('/admin/results/studentdetails');
 				} else {
 					req.flash('success', 'Successfully Added');
 					res.redirect('/admin/results/studentdetails');
@@ -938,6 +961,7 @@ router
 					if (err) {
 						req.flash('error', 'Error occurred while adding');
 						console.log(err);
+						res.redirect('/admin/results/studentdetails');
 						return;
 					} else {
 						req.flash('success', 'Successfully Deleted');
@@ -955,6 +979,7 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while adding');
 							console.log(err);
+							res.redirect('/admin/results/studentdetails');
 							return;
 						} else {
 						}
@@ -1002,7 +1027,9 @@ router
 			[req.body.stdname, req.body.clgname, req.body.oldname],
 			(err, response) => {
 				if (err) {
+					req.flash('error', 'Error occurred while updating');
 					console.log(err);
+					res.redirect('/admin/results/studentdetails');
 				} else {
 					req.flash('success', 'Successfully Updated');
 					res.redirect('/admin/results/studentdetails');
@@ -1044,7 +1071,9 @@ router
 				],
 				(err, response) => {
 					if (err) {
+						req.flash('error', 'Error occurred while adding');
 						console.log(err);
+						res.redirect('/admin/results/images');
 					} else {
 						req.flash('success', 'Image Successfully Updated');
 						res.redirect('/admin/results/images');
@@ -1070,6 +1099,8 @@ router
 								if (err) {
 									req.flash('error', 'Error occurred while adding');
 									console.log(err);
+									res.redirect('/admin/results/images');
+									return;
 								} else {
 								
 								}
@@ -1201,6 +1232,7 @@ router
 				if (err) {
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
+					res.redirect('/admin/successstories/testimonials');
 				} else {
 					req.flash('success', 'Successfully Added');
 					res.redirect('/admin/successstories/testimonials');
@@ -1227,6 +1259,7 @@ router
 					if (err) {
 						req.flash('error', 'Error occurred while adding');
 						console.log(err);
+						res.redirect('/admin/successstories/testimonials');
 					} else {
 						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/successstories/testimonials');
@@ -1243,6 +1276,7 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while adding');
 							console.log(err);
+							res.redirect('/admin/successstories/testimonials');
 							return;
 						} else {
 						}
@@ -1293,6 +1327,7 @@ router
 				if (err) {
 					req.flash('error', 'Error occurred while adding');
 					console.log(err);
+					res.redirect('/admin/successstories/parenttestimonials');
 				} else {
 					req.flash('success', 'Successfully Added');
 					res.redirect('/admin/successstories/parenttestimonials');
@@ -1313,7 +1348,7 @@ router
 					if (err) {
 						req.flash('error', 'Error occurred while adding');
 						console.log(err);
-						req.flash('success', 'Successfully Added');
+						res.redirect('/admin/successstories/parenttestimonials');
 					} else {
 						req.flash('success', 'Successfully Deleted');
 						res.redirect('/admin/successstories/parenttestimonials');
@@ -1330,6 +1365,7 @@ router
 						if (err) {
 							req.flash('error', 'Error occurred while adding');
 							console.log(err);
+							res.redirect('/admin/successstories/parenttestimonials');
 							return;
 						} else {
 						}
@@ -1355,8 +1391,9 @@ router
 	.delete(async (req, res) => {
 		await db.query('DELETE FROM chatbot', (err, response) => {
 			if (err) {
-				req.flash('error', 'Error occurred while adding');
+				req.flash('error', 'Error occurred while deleting');
 				console.log(err);
+				res.redirect('/admin/chatbot');
 			} else {
 				req.flash('success', 'Successfully Deleted');
 				res.redirect('/admin/chatbot');
@@ -1370,8 +1407,9 @@ router.route('/chatbotdelete').post(async (req, res) => {
 		[req.body.stuname, req.body.gmail],
 		(err, response) => {
 			if (err) {
-				req.flash('error', 'Error occurred while adding');
+				req.flash('error', 'Error occurred while deleting');
 				console.log(err);
+				res.redirect('/admin/chatbot');
 			} else {
 			}
 		}
