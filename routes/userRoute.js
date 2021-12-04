@@ -846,7 +846,7 @@ router.route('/results').get(async (req, res) => {
 				arr.push(image);
 			}
 			let uniqueChars = [...new Set(arr)].sort();
-			
+
 			await db.query('SELECT * FROM resultslider', async (error, response) => {
 				var slider = [];
 				if (error) {
@@ -1071,14 +1071,15 @@ router
 									req.flash('error', 'Error occurred while adding');
 									console.log(err);
 								} else {
-									req.flash('success', 'Image Successfully Updated');
-									res.redirect('/admin/results/images');
+								
 								}
 							}
 						);
 					}
 				}
 			}
+			req.flash('success', 'Image Successfully Updated');
+			res.redirect('/admin/results/images');
 		}
 	});
 
