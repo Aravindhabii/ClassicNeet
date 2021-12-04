@@ -54,9 +54,9 @@ chatReset.addEventListener('click', () => {
 window.addEventListener('scroll', (e) => {
 	var scroll = window.scrollY;
 	if (scroll >= 100) {
-		botImg.style.top = '100vh';
+		botImg.style.top = `${window.innerHeight}px`;
 	} else {
-		botImg.style.top = '130vh';
+		botImg.style.top = `${window.innerHeight + 300}px`;
 	}
 });
 
