@@ -6,8 +6,6 @@ body.dark .nav-toggler span::after {
 	background-color: white !important;
 }
 
-
-
 body.dark .nav-toggler.toggler-open span {
 	background-color: transparent !important;
 }
@@ -27,8 +25,7 @@ nav {
 /* navbar regular css start */
 .navbar-area {
 	background: var(--dark);
-	padding: .5rem 0;
-
+	padding: 0.5rem 0;
 }
 .site-navbar {
 	display: flex;
@@ -142,12 +139,12 @@ a.site-logo {
 .intro-area p {
 	font-size: 18px;
 }
-@media (max-width:1275px) {
+@media (max-width: 1275px) {
 	.nav2 {
 		width: 80%;
 	}
 }
-@media (max-width:1150px) {
+@media (max-width: 1150px) {
 	.nav2 {
 		width: 85%;
 	}
@@ -212,11 +209,10 @@ a.site-logo {
 		background-color: rgba(255, 255, 255, 0.1);
 	}
 	.site-navbar ul.open {
-		max-height: 100vh;
+		max-height: 100%;
 		overflow: visible;
 		z-index: 20;
 		padding-top: 1%;
-
 	}
 	.intro-area h2 {
 		font-size: 36px;
@@ -229,7 +225,7 @@ a.site-logo {
 }
 
 /* mobile breakpoint start */
-@media  (max-width: 400px) {
+@media (max-width: 400px) {
 	nav {
 		height: 4rem;
 	}
@@ -265,7 +261,7 @@ a.site-logo {
 	.nav-toggler span:after {
 		transform: translateY(6px);
 	}
-	
+
 	/* navbar css for mobile end */
 }
 @media (max-width: 350px) {
@@ -273,7 +269,6 @@ a.site-logo {
 		padding: 20px;
 	}
 }
-	
 
 /* mobile breakpoint end */
 
