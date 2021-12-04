@@ -753,23 +753,28 @@ p {
 
 .stats::after {
 	position: absolute;
-    content: '';
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 1%, transparent 50%);
+	content: '';
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background: linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 0.8) 1%,
+		transparent 50%
+	);
 }
 
 .statBox {
 	width: 100%;
+
 	/* background-color: #2b72e4; */
 	/* height: 25%; */
 	display: grid;
 
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	position: absolute;
+	position: relative;
 	z-index: 2;
 }
 .Stat {
@@ -778,6 +783,7 @@ p {
 	/* font-size: .5rem; */
 	justify-self: center;
 	margin-top: 2rem;
+	color: yellow;
 }
 .Stat h1 {
 	/* margin-top: 2rem; */

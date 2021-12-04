@@ -25,7 +25,7 @@ window.addEventListener('load', (e) => {
 		},
 		className: 'paginationjs-theme-blue paginationjs-big',
 
-		pageSize: 9,
+		pageSize: window.innerWidth <= 1250 ? 8 : 9,
 		callback: function (data, pagination) {
 			// template method of yourself
 			var dataHtml = '';
@@ -61,7 +61,7 @@ dropdown.addEventListener('change', (e) => {
 			});
 		},
 		className: 'paginationjs-theme-blue paginationjs-small',
-		pageSize: 9,
+		pageSize: window.innerWidth <= 1250 ? 8 : 9,
 		callback: function (data, pagination) {
 			// template method of yourself
 			var dataHtml = '';
