@@ -22,10 +22,10 @@ function togglerClick() {
 
 	if (window.innerWidth <= 1000) {
 		if (siteNavbarUl.classList.contains('open')) {
-			document.querySelector('body').style.overflow = 'hidden';
+			siteNavbarUl.style.overflow = 'hidden';
 			siteNavbarUl.style.height = `${window.innerHeight}px`;
 		} else {
-			document.querySelector('body').style.overflow = 'auto';
+			siteNavbarUl.style.overflow = 'auto';
 		}
 	}
 }
