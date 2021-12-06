@@ -52,7 +52,7 @@
 				aria-label=".form-select-lg example"
 				data-select=""
 			>
-				<% year.forEach((e,i) => { %>
+				<% year.reverse().forEach((e,i) => { %>
 				<option value="<%= e %>"><%= e %></option>
 				<% }) %>
 			</select>
