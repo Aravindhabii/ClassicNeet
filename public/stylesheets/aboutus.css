@@ -57,7 +57,7 @@ body.dark .chat {
 	scroll-snap-align: start;
 	padding: 5rem 4rem;
 	height: fit-content;
-	border:10px solid yellow;
+	border: 10px solid yellow;
 	border-radius: 0px 25px 0px 25px;
 	margin: 20px;
 
