@@ -19,8 +19,14 @@ const confirmdelete = document.querySelector('.confirmdelete');
 const latestupdateform = document.querySelector('.latestupdateform');
 const contents = document.querySelectorAll('.content');
 const closebtn = document.querySelector('.closebtn');
+const backbtn2 = document.querySelector('.backbtn2');
 const previewdiv = document.querySelector('.previewdiv');
 const yearnum = document.querySelector('.yearnum');
+const previewDiv2 = document.querySelector('.preview2');
+const edityear = document.querySelector('.edityear');
+const editcontent = document.querySelector('.editcontent');
+const oldid = document.querySelector('.oldid');
+
 
 yearnum.setAttribute('max', new Date().getFullYear() + 1);
 
@@ -35,10 +41,10 @@ backbtn.addEventListener('click', () => {
 	imgform.style.transform = 'translate(0,0)';
 });
 
-closebtn.addEventListener('click', () => {
-	previewdiv.style.opacity = '0';
-	previewdiv.style.zIndex = '-5';
-});
+// closebtn.addEventListener('click', () => {
+// 	previewdiv.style.opacity = '0';
+// 	previewdiv.style.zIndex = '-5';
+// });
 
 contents.forEach((content) => {
 	content.addEventListener('click', () => {
@@ -91,6 +97,26 @@ submitbtn.addEventListener('click', () => {
 	  }
 });
 
+function editbutton(edit) {
+	previewDiv2.style.display = 'flex';
+	imgform.style.transform = 'translate(300vw,0)';
+	previewDiv2.style.transform = 'none';
+	const cloudinarynamevalue = edit.parentNode.parentNode.children[3].children[0].value;
+	oldid.value = cloudinarynamevalue;
+	const contval = cloudinarynamevalue.split('**')[0];
+	const yearval = cloudinarynamevalue.split('**')[1];
+	edityear.value = yearval;
+	editcontent.value = contval;
+	// const namevalue = edit.parentNode.parentNode.children[0].innerText;
+	// const collegenamevalue = edit.parentNode.parentNode.children[2].innerText;
+	
+}
+
+backbtn2.addEventListener('click', () => {
+	previewDiv2.style.transform = 'translate(300vw,0)';
+	imgform.style.transform = 'translate(0,0)';
+});
+
 const updatesCheckboxChange = (e) => {
 	if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
 		submitbtn.classList.remove("warningcheck");
@@ -137,6 +163,16 @@ $('#pagination-container').pagination({
           style="width: 80%; border: none"
         />
       </td>
+	  <td>
+			<button
+				type="button"
+				class="btn btn-danger editbtn"
+        onclick="editbutton(this)"
+				value="${i.content}, ${i.year}"
+			>
+				Edit
+			</button>
+		</td>
       <td>
         <input
           type="checkbox"

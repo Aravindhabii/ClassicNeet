@@ -708,6 +708,29 @@ router
 		}
 	});
 
+	router
+	.route('/admin/aboutus/historyupdate')
+	.post(isloggedin, async (req, res) => {
+		const oldcont =  req.body.oldname.split('**')[0];
+		const oldyear = req.body.oldname.split('**')[1];
+		await db.query(
+			'UPDATE history SET content = ?, year = ? WHERE content = ? AND year = ?',
+			[req.body.content, req.body.year,oldcont, oldyear],
+			(err, response) => {
+				if (err) {
+					req.flash('error', 'Error occurred while updating');
+					console.log(err);
+					res.redirect('/admin/aboutus/history');
+				} else {
+					req.flash('success', 'Successfully Updated');
+					res.redirect('/admin/aboutus/history');
+				}
+			}
+		);
+	});
+
+
+
 router.route('/coursesNEET').get(async (req, res) => {
 	res.render('coursesNEET');
 });
