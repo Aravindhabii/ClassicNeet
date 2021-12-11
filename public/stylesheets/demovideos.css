@@ -77,12 +77,145 @@ iframe {
   width: 100%;
   height: 100%;
 }
+/* app */
+.app {
+	position: relative;
+	width: 100%;
+	height: 75vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.apppage {
+	position: relative;
+	height: 73%;
+	width: 70%;
+	background: #c4c4c4a6;
+	border-radius: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+.vector1 {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 40%;
+	height: 74%;
+	/* border-radius: 30px 0 0 0; */
+}
+.Vector2 {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 43%;
+	height: 80%;
+	/* border-radius: 30px 0 0 0; */
+}
+.vector3 {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 46%;
+	height: 85%;
+	/* border-radius: 30px 0 0 0; */
+}
+
+
+
+/* mobile view */
+.apppage {
+	position: relative;
+	height: 73%;
+	width: 70%;
+	background: #c4c4c4a6;
+	border-radius: 30px;
+	display: flex;
+	/* flex-direction: column; */
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.Messaging {
+	width: 80%;
+
+}
+.appLeft {
+	width: 30%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+.appRight {
+	height: 100%;
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: left;
+}
+.appRight h2 {
+	font-size: 1.5rem;
+	padding-right: 1rem;
+	z-index: 2;
+  width: 44%;
+  word-wrap: break-word;
+  height: 5%;
+  line-height: 135%;
+}
+.user{
+  color: red;
+}
+.appRight img {
+	width: 100%;
+	height: 100%;
+  border-radius: 10px;
+}
+.appRight a {
+	width: 30%;
+}
 @media (max-width: 1100px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
-}
 
+}
+@media(max-width : 1000px){
+  .appRight h2 {
+		font-size: 1.2rem;
+    width: 42%;
+	}
+}
+@media (max-width: 900px) {
+	.vector1 {
+		display: none;
+	}
+	.Vector2 {
+		display: none;
+	}
+	.vector3 {
+		display: none;
+	}
+	.appLeft {
+		width: 50%;
+	}
+	.appRight {
+		width: 50%;
+	}
+	.appRight h2 {
+		font-size: 1.2rem;
+    width: 90%;
+	}
+	.appRight a {
+		width: 50%;
+	}
+
+}
 @media (max-width: 800px) {
   .grid {
     width: 70%;
@@ -91,7 +224,37 @@ iframe {
   .Getyourvideos {
     height: 70vh;
   }
+  .appRight a {
+		width: 45%;
+	}
   
+}
+@media(max-width: 700px){
+	.apppage {
+		flex-direction: column;
+		justify-content: space-evenly;
+	}
+	.appLeft{
+		height: 50%;
+		width: 100%;
+	}
+	.appRight {
+		height: 50%;
+		width: 100%;
+		align-items: center;
+    justify-content: space-around;
+	}
+	.appRight h2 {
+		font-size: 1.2rem;
+		text-align: center;
+	}
+	.appRight a {
+		width: 50%;
+	}
+	.Messaging {
+		width: 40%;
+		
+	}
 }
 
 @media (max-width: 600px) {
@@ -106,17 +269,41 @@ iframe {
   .heading h1 {
     margin: 5%;
   }
- 
-  
-
+  .Messaging {
+		width: 45%;
+		
+	}
+  .appRight a{
+    width: 55%;
+  }
 }
 @media (max-width: 400px) {
-  .Getyourvideos {
+	iframe {
+		position: relative;
+		width: 70vw;
+		height: 25vh;
+	}
+	.Getyourvideos {
     height: 30vh;
   }
- 
- 
-  
-
+	.vector1 {
+		display: none;
+	}
+	.Vector2 {
+		display: none;
+	}
+	.vector3 {
+		display: none;
+	}
+	
+	.dropdown{
+		width: 35%;
+	}
+	.Messaging {
+		width: 60%;
+		
+	}
+  .appRight a{
+    width: 50%;
+  }
 }
-  

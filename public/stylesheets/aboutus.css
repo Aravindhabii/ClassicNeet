@@ -521,102 +521,7 @@ option:hover {
 
 
 
-/* app */
-.app {
-	position: relative;
-	width: 100%;
-	height: 75vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-.apppage {
-	position: relative;
-	height: 73%;
-	width: 70%;
-	background: #c4c4c4a6;
-	border-radius: 30px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
-}
-.vector1 {
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 40%;
-	height: 74%;
-	/* border-radius: 30px 0 0 0; */
-}
-.Vector2 {
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 43%;
-	height: 80%;
-	/* border-radius: 30px 0 0 0; */
-}
-.vector3 {
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 46%;
-	height: 85%;
-	/* border-radius: 30px 0 0 0; */
-}
 
-
-
-/* mobile view */
-.apppage {
-	position: relative;
-	height: 73%;
-	width: 70%;
-	background: #c4c4c4a6;
-	border-radius: 30px;
-	display: flex;
-	/* flex-direction: column; */
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
-}
-
-.Messaging {
-	width: 80%;
-
-}
-.appLeft {
-	width: 30%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	
-}
-.appRight {
-	height: 100%;
-	width: 70%;
-
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	align-items: left;
-}
-.appRight h2 {
-	font-size: 2.5rem;
-	padding-right: 1rem;
-	z-index: 2;
-}
-.appRight img {
-	width: 100%;
-	height: 100%;
-}
-.appRight a {
-	width: 30%;
-
-	
-}
 
 
 /* popup0 */
@@ -749,59 +654,12 @@ option:hover {
 		width: 70vw;
 		height: 55vh;
 	}
-
-	.vector1 {
-		display: none;
-	}
-	.Vector2 {
-		display: none;
-	}
-	.vector3 {
-		display: none;
-	}
-	.appLeft {
-		width: 50%;
-	}
-	.appRight {
-		width: 50%;
-	}
-	.appRight h2 {
-		font-size: 2rem;
-	}
-	.appRight a {
-		width: 50%;
-	}
 	.timelineContent {
 		width: 90%;
 	}
 
 }
-@media(max-width: 700px){
-	.apppage {
-		flex-direction: column;
-		justify-content: space-evenly;
-	}
-	.appLeft{
-		height: 60%;
-		width: 100%;
-	}
-	.appRight {
-		height: 40%;
-		width: 100%;
-		align-items: center;
-	}
-	.appRight h2 {
-		font-size: 1.5rem;
-		text-align: center;
-	}
-	.appRight a {
-		width: 30%;
-	}
-	.Messaging {
-		width: 40%;
-		/* height: 80%; */
-	}
-}
+
 
 @media screen and (max-width: 600px) {
 	.video h1 {
@@ -846,7 +704,7 @@ option:hover {
 		font-size: 15px;
 	}
 	.timelineDiv {
-		/* height: 120px; */
+		
 		display: none;
 	}
 	iframe {
@@ -866,7 +724,7 @@ option:hover {
 	}
 	.Messaging {
 		width: 50%;
-		/* height: 80%; */
+		
 	}
 	.dropdown {
 		width: 26%;
@@ -880,11 +738,6 @@ option:hover {
 	.gallery {
 		margin-bottom: 0rem;
 	}
-	.Messaging {
-		width: 60%;
-		/* height: 80%; */
-	}
-	
 	.timelinePara p {
 		
 		font-size: 14px;
@@ -901,28 +754,4 @@ option:hover {
 	}
 }
 
-@media (max-width: 400px) {
-	iframe {
-		position: relative;
-		width: 70vw;
-		height: 25vh;
-	}
-	
-	.vector1 {
-		display: none;
-	}
-	.Vector2 {
-		display: none;
-	}
-	.vector3 {
-		display: none;
-	}
-	
-	.dropdown{
-		width: 35%;
-	}
-	.Messaging {
-		width: 70%;
-		/* height: 80%; */
-	}
-}
+
