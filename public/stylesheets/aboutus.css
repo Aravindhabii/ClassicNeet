@@ -563,7 +563,7 @@ option:hover {
 }
 
 #pagination-container {
-	margin-top: 3rem;
+	margin: 2rem 0;
 }
 
 /** Custom Select **/
@@ -606,7 +606,6 @@ option:hover {
 }
 
 @media (max-width: 900px) {
-
 	.prev-btn,
 	.current-btn {
 		width: 40%;
