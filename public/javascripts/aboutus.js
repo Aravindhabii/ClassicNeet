@@ -16,7 +16,7 @@ const galCLick = (src) => {
 	prevContainer.style.display = 'flex';
 	previmg.src = src.src;
 	bodyy.style.overflow = 'hidden';
-}
+};
 exit.addEventListener('click', (e) => {
 	prevContainer.style.display = 'none';
 	bodyy.style.overflow = 'unset';
@@ -35,7 +35,7 @@ window.addEventListener('load', (e) => {
 				}
 			});
 		},
-		className: 'paginationjs-theme-blue paginationjs-big',
+		className: 'paginationjs-theme-blue paginationjs-small',
 
 		pageSize: 8,
 		callback: function (data, pagination) {
