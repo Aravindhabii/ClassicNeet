@@ -52,15 +52,13 @@ body.dark .chat {
 	align-items: center;
 	display: flex;
 	position: relative;
-	min-height: 175px;
 	align-items: center;
 	scroll-snap-align: start;
-	padding: 5rem 4rem;
+	padding: 2rem;
 	height: fit-content;
 	border: 10px solid yellow;
 	border-radius: 0px 25px 0px 25px;
-	margin: 20px;
-
+	margin: 10px;
 }
 /* scrollbar */
 .timelinePara::-webkit-scrollbar {
@@ -519,11 +517,6 @@ option:hover {
 	background: #696969 !important;
 }
 
-
-
-
-
-
 /* popup0 */
 
 .previewImg {
@@ -555,18 +548,18 @@ option:hover {
 /* dropdown */
 
 .dropdown {
-	width: 10%;
 	height: 40px;
 	cursor: pointer;
 	border-radius: 10px;
 	position: relative;
-	background: linear-gradient(#ffafbd, #ffc3a0);  
+	background: linear-gradient(#ffafbd, #ffc3a0);
 	/* border: 5px solid #568037; */
 	color: #000000;
 	text-align: center;
 	font-size: 16px;
 	font-weight: 600;
 	margin: 2rem 0rem 0rem 0rem;
+	padding: 0 1rem;
 }
 
 #pagination-container {
@@ -587,18 +580,13 @@ option:hover {
 		margin-left: auto;
 		margin-right: auto;
 	}
-	.timelinePara p {
-		padding-right: 3rem;
-	}
-	
 }
-@media(max-width:1110px){
+@media (max-width: 1110px) {
 	iframe {
 		position: relative;
 		width: 50vw;
 		height: 55vh;
 	}
-	
 }
 @media (max-width: 1000px) {
 	iframe {
@@ -609,22 +597,16 @@ option:hover {
 	.timelinePara {
 		height: 800px;
 	}
-	.timelinePara p {
-		min-height: 200px;
-	}
 	.timelineContent {
 		height: 800px;
 	}
 	.timelineDiv {
-		min-height: 200px;	
+		min-height: 200px;
 	}
-
 }
 
 @media (max-width: 900px) {
-	.dropdown {
-		width: 20%;
-	}
+
 	.prev-btn,
 	.current-btn {
 		width: 40%;
@@ -657,9 +639,7 @@ option:hover {
 	.timelineContent {
 		width: 90%;
 	}
-
 }
-
 
 @media screen and (max-width: 600px) {
 	.video h1 {
@@ -698,13 +678,11 @@ option:hover {
 		margin: 2rem 0rem 4rem 0rem;
 		color: #568036;
 	}
-	
+
 	.timelinePara p {
-		
 		font-size: 15px;
 	}
 	.timelineDiv {
-		
 		display: none;
 	}
 	iframe {
@@ -724,14 +702,7 @@ option:hover {
 	}
 	.Messaging {
 		width: 50%;
-		
 	}
-	.dropdown {
-		width: 26%;
-	}
-
-	
-	
 }
 
 @media (max-width: 500px) {
@@ -739,19 +710,12 @@ option:hover {
 		margin-bottom: 0rem;
 	}
 	.timelinePara p {
-		
 		font-size: 14px;
 	}
 	.timelineDiv {
-		
 		display: none;
-	}
-	.timelinePara p {
-		padding-right: 2rem;
 	}
 	.previewImg img {
 		width: 80%;
 	}
 }
-
-
