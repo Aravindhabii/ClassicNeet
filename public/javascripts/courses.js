@@ -62,7 +62,8 @@ exit.forEach((e) => {
 
 //media query
 const para1 = document.querySelector('.para1');
-window.addEventListener('resize', ()=>{
+$(window)
+	.resize(function () {
 	if (window.screen.width  < 600) {
 		$('.para1neet').replaceWith(
 			"<p class='hexContent'>Repeaters course is meant for those who have completed their 12th...</p>"
@@ -112,4 +113,5 @@ window.addEventListener('resize', ()=>{
 		);
 	}
 })
+.resize();
 
