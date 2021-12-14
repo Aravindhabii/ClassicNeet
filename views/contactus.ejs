@@ -4,7 +4,11 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="shortcut icon" href="images/home/classic-nee-tacademy-logo.png" type="image/x-icon" />
+		<link
+			rel="shortcut icon"
+			href="images/home/classic-nee-tacademy-logo.png"
+			type="image/x-icon"
+		/>
 		<link rel="stylesheet" href="stylesheets/contactus.css" />
 		<link rel="stylesheet" href="stylesheets/chatbot.css" />
 		<link rel="stylesheet" href="sweetalert2.min.css" />
@@ -37,8 +41,8 @@
 								/>
 							</svg>
 							<p>
-								1/1, First Floor, PS Square, KHS Hospital Road, <br />
-								Opp. to Ponnuswamy Gounder Kalyana Mandapam, Salem - 4
+								1/1, First Floor, PS Square, SKS Hospital Road,<br />
+								Opp. Ponnusamy Goundar Kalyana Mandapam, Salem- 636004
 							</p>
 						</div>
 						<div class="phone">
@@ -129,11 +133,9 @@
 				</div>
 			</div>
 		</section>
-		<% console.log(success); %> 
-		<% if(success && success.length) {%>
+		<% console.log(success); %> <% if(success && success.length) {%>
 		<p class="sweetp"><%= success %></p>
-		<% } %>
-		<%- include('./layout/footer') %>
+		<% } %> <%- include('./layout/footer') %>
 		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		<script src="javascripts/nav.js"></script>
 		<script src="javascripts/contactus.js"></script>
