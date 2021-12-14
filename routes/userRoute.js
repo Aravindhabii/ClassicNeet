@@ -306,7 +306,6 @@ router
 					};
 					arr.push(image);
 				}
-				console.log(arr);
 				res.render('admin/home/ourToppers', { students: arr });
 				
 			}
