@@ -1171,7 +1171,6 @@ router
 				req.flash('error', 'Something went wrong');
 				res.redirect('/contactus');
 			} else {
-				console.log(info);
 				req.flash('success', 'Mail sent successfully');
 				res.redirect('/contactus');
 			}
