@@ -92,7 +92,6 @@ phoneInput.addEventListener("input", (e) => {
 const sweetp = document.querySelector(".sweetp");
 
 if (sweetp) {
-	console.log('hello');
 	function successdialog() {
 		Swal.fire({
 			position: 'center',

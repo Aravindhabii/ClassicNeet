@@ -141,6 +141,10 @@ nav.dark .navlinks a {
 	color: rgb(133, 171, 228) !important;
 }
 
+body.dark .salem{
+	color: yellow !important;
+}
+
 @keyframes navlinkFade {
 	from {
 		opacity: 0;

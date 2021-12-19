@@ -796,3 +796,11 @@ body.dark .enroll:hover {
 		line-height: 1.4rem;
 	}
 }
+
+@media (max-width: 370px) {
+	.hexContent {
+		font-size: 11px;
+		line-height: 1.1rem;
+		
+	}
+}
