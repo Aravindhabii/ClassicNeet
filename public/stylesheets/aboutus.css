@@ -35,7 +35,7 @@ body.dark .chat {
 }
 .ourjourney {
 	text-align: center;
-	margin: 2rem 0rem 4rem 4rem;
+	margin: 5rem 0rem 4rem 4rem;
 	color: #568036;
 }
 .timelinePara {
@@ -350,6 +350,7 @@ option:hover {
 /* leader */
 .leaders {
 	width: 100%;
+	height: 270vh;
 	position: relative;
 }
 .leaders h1 {
@@ -357,23 +358,70 @@ option:hover {
 	padding: 2% 0%;
 	text-align: center;
 	font-size: 35px;
+	margin-bottom: 3%;
 }
-.leaders span img {
-	width: 60%;
-	height: 80vh;
-}
-.leaders span {
-	display: flex;
-	height: 90vh;
+.leaderimg{
 	width: 100%;
-	justify-content: center;
-}
-.leadervideo {
+	height: 50vh;
+	position: relative;
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
-	padding: 2%;
 }
+.imageabout{
+	width: 39%;
+    margin-left: 6%;
+}
+.imageabout img{
+	width: 30vw ;
+	height: 60vh ;
+	margin-bottom: 6%;
+}
+.content1{
+	width: 61%;
+	position: relative;
+	height: fit-content;
+}
+.content1 p{
+	width: 55vw;
+	height: 100%;
+	font-weight: 500;
+	font-size:0.9rem;
+	text-align: justify;
+}
+.leadervideo{
+	width: 100%;
+	height: 50vh;
+	margin-top: 8%;
+	margin-bottom: 5%;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.leadvideo{
+	width: 45%;
+}
+.content2{
+	position: relative;
+	width: 55%;
+	height: 100%;
+	height: fit-content;
+	margin-left: 6%;
+}
+.content2 p{
+	width: 47vw;
+	font-weight: 500;
+	font-size:0.9rem;
+	text-align: justify;
+	
+}
+.iframe1{
+	width: 40vw;
+	height: 51vh;
+}
+
+
 /* gallery */
 .gallery {
 	width: 100%;
@@ -384,7 +432,6 @@ option:hover {
 	height: 600px;
 	margin: 20px auto;
 }
-
 .slide {
 	position: absolute;
 	top: 0;
@@ -580,12 +627,30 @@ option:hover {
 		margin-left: auto;
 		margin-right: auto;
 	}
+	.leadervideo{
+		margin-top: 12%;
+		margin-bottom: 5%;
+		
+	}
+	.leaders h1 {
+		margin-bottom: 5%;
+		
+	}
 }
 @media (max-width: 1110px) {
 	iframe {
 		position: relative;
 		width: 50vw;
 		height: 55vh;
+	}
+	.leadervideo{
+		margin-top: 15%;
+		margin-bottom: 7%;
+		
+	}
+	.leaders h1 {
+		margin-bottom: 7%;
+		
 	}
 }
 @media (max-width: 1000px) {
@@ -602,6 +667,15 @@ option:hover {
 	}
 	.timelineDiv {
 		min-height: 200px;
+	}
+	.leadervideo{
+		margin-top: 17%;
+		margin-bottom: 10%;
+		
+	}
+	.leaders h1 {
+		margin-bottom: 10%;
+		
 	}
 }
 
@@ -638,8 +712,63 @@ option:hover {
 	.timelineContent {
 		width: 90%;
 	}
-}
+	.leadervideo{
+		margin-top: 4%;
+		margin-bottom: 13%;
+		flex-direction: column;
+		height: 100vh;
 
+	}
+	.leaderimg{
+		
+		flex-direction: column;
+        height: fit-content;
+	}
+	.leadervideo{
+		height: fit-content;
+	}
+	.leaders h1 {
+		margin-bottom: 13%;
+		
+	}
+	.content1 p{
+		font-size:0.9rem;
+		width: 80vw;
+	}
+	.content2 p{
+		font-size:0.9rem;
+		width: 80vw;
+	}
+	.content1,.content2
+	{
+		width: 80%;
+		margin-left: 0;
+		height: fit-content;
+	} 
+	.imageabout img{
+		width: 38vw ;
+		height: 50vh ;
+		margin-bottom: 6%;
+	}
+	.leaders h1 {
+		margin-bottom: 0%;
+	}
+    .iframe1{
+		width: 70vw;
+		height: 50vh;
+	}
+	.leadvideo{
+		width: 72%;
+		margin-top: 4%;
+	}
+	.leaders h1 {
+		color: #568036;
+		padding: 2% 0%;
+		text-align: center;
+		font-size: 35px;
+		margin-bottom: 3%;
+	}
+}
 @media screen and (max-width: 600px) {
 	.video h1 {
 		top: 60%;
@@ -674,7 +803,7 @@ option:hover {
 	}
 	.ourjourney {
 		text-align: center;
-		margin: 2rem 0rem 4rem 0rem;
+		margin: 5rem 0rem 4rem 0rem;
 		color: #568036;
 	}
 
@@ -694,14 +823,39 @@ option:hover {
 	}
 	.ourvision p,
 	.ourmission p {
-		font-size: 18px;
-		font-weight: 500;
-		line-height: 2.3rem;
+		font-size: 15px;
+		font-weight: 400;
+		line-height: 1.3rem;
 		padding: 0rem 3rem;
 	}
 	.Messaging {
 		width: 50%;
 	}
+	.leadervideo{
+		
+		margin-bottom:3%;
+		
+	}
+	.imageabout{
+		width: 51%;
+		margin-left: 0%;
+	}
+	.imageabout img{
+		width: 58vw ;
+		height: 55vh ;
+		margin-bottom: 6%;
+	}
+	.leaders h1 {
+		color: #568036;
+		padding: 2% 0%;
+		text-align: center;
+		font-size: 32px;
+		margin-bottom: 3%;
+	}
+	.iframe1{
+	width: 70vw;
+	height: 40vh;
+}
 }
 
 @media (max-width: 500px) {
@@ -716,5 +870,20 @@ option:hover {
 	}
 	.previewImg img {
 		width: 80%;
+	}
+	.leadervideo{
+		
+		margin-bottom:14%;
+		
+	}
+	.timeline h1 {
+		margin-bottom: 9%;
+	}
+}
+@media(max-width:400px){
+	.leaders {
+	
+		height: 320vh;
+		
 	}
 }
