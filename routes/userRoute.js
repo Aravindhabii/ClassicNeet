@@ -668,7 +668,7 @@ router.route("/aboutus").get(async (req, res) => {
       }
       res.render("aboutus", {
         content: arr,
-        folderArray: folderArray.reverse(),
+        folderArray: folderArray.sort(),
       });
     }
   });
