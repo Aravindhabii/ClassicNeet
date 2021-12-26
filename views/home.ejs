@@ -18,14 +18,19 @@
 	<link rel="shortcut icon" href="../../images/home/classic-nee-tacademy-logo.png" type="image/x-icon" />
 	<title>ClassicNeetAcademy</title>
 	<style>
-		.homenav{
+		.homenav {
 			background-color: #369afe;
 			border-radius: 0% 50% 0% 50%;
 			color: white !important;
 		}
 	</style>
 </head>
-<body>
+
+<body class="body">
+	<div class="closeimage">
+		<span class="exit1"><img src="https://img.icons8.com/ios-glyphs/40/000000/macos-close.png" /></span>
+		<img src="images/aboutus/Gallery1.jpg" alt="">
+	</div>
 	<div class="backgroundMain">
 		<%- include('./layout/header') %>
 			<%- include('./chatbot') %>
@@ -37,134 +42,146 @@
 				<!-- slideshow -->
 				<!-- Swiper -->
 
-					<section class="home">
-						<div class="homeLeft">
-							<div class="spilldiv">
-								<img class="blob1" src="images/home/blob_big.png" alt="" />
-							</div>
-							<img class="blob2" src="images/home/blob3final.png" alt="" />
-							<img class="blob3" src="images/home/blob2final.png" alt="" />
+				<section class="home">
+					<div class="homeLeft">
+						<div class="spilldiv">
+							<img class="blob1" src="images/home/blob_big.png" alt="" />
 						</div>
-						<div class="homeRight">
-							<div class="sliderRev">
-								<div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
-									<div class="carousel-inner">
-										<% img.forEach((i,index)=> { %>
-											<div class="carousel-item <%= index===0?'active':'' %>  ">
-												<img src="<%= i.sliderimg %> " class="d-block w-100 h-100" alt="..." />
-											</div>
-											<% }) %>
-												<button class="carousel-control-prev" type="button"
-													data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-													<span class="carousel-control-prev-icon" style="height: 50px; width: 50px; font-weight: bolder;" aria-hidden="true"></span>
-													<span class="visually-hidden">Previous</span>
-												</button>
-												<button class="carousel-control-next" type="button"
-													data-bs-target="#carouselExampleControls" data-bs-slide="next">
-													<span class="carousel-control-next-icon" style="height: 50px; width: 50px; font-weight: bolder;" aria-hidden="true"></span>
-													<span class="visually-hidden">Next</span>
-												</button>
-									</div>
+						<img class="blob2" src="images/home/blob3final.png" alt="" />
+						<img class="blob3" src="images/home/blob2final.png" alt="" />
+					</div>
+					<div class="homeRight">
+						<div class="sliderRev">
+							<div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+								<div class="carousel-inner">
+									<% img.forEach((i,index)=> { %>
+										<div class="carousel-item <%= index===0?'active':'' %>  ">
+											<img src="<%= i.sliderimg %> " class="d-block w-100 h-100" alt="..." />
+										</div>
+										<% }) %>
+											<button class="carousel-control-prev" type="button"
+												data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+												<span class="carousel-control-prev-icon"
+													style="height: 50px; width: 50px; font-weight: bolder;"
+													aria-hidden="true"></span>
+												<span class="visually-hidden">Previous</span>
+											</button>
+											<button class="carousel-control-next" type="button"
+												data-bs-target="#carouselExampleControls" data-bs-slide="next">
+												<span class="carousel-control-next-icon"
+													style="height: 50px; width: 50px; font-weight: bolder;"
+													aria-hidden="true"></span>
+												<span class="visually-hidden">Next</span>
+											</button>
 								</div>
-
-
 							</div>
-							<div class="scroll">
-								<marquee class="marqueetext" vspace="30%" scrollamount="5" scrollamount="5" onmousedown='' onmouseup='' onmouseover="this.stop();"
-								onmouseout="this.start();" ontouchstart="this.stop()" ontouchend="this.start()">
-									<p>
-										<%= marq[0].text %>  <a href="/contactus"><%= marq[0].link %></a>&nbsp;
-										&ensp; <%= marq[1].text %> 
-										<a href="/contactus"><%= marq[1].link %></a>&nbsp; &ensp; <%= marq[2].text %> 
-										<a href="/contactus"><%= marq[2].link %></a>
-									</p>
-								</marquee>
-							</div>
-					</section>
 
-					<section class="sec-2">
-						<div class="div-2">
-							<h1 class="div-2-title">LATEST UPDATES</h1>
 
-							<marquee class="news-box" direction="up" scrollamount="5" onmousedown='' onmouseup='' onmouseover="this.stop();" onmouseout="this.start();"
-								onmouseout="this.start();" ontouchstart="this.stop()" ontouchend="this.start()">
-								<% latestupdates.forEach(update=> { %>
-									<span class="p">
-										<%= update.link %>
-										<% if (!(update.link1=='no link')) { %>
-											<a class="clickhereclr"  href="<%= update.link1 %>" target="_blank">
-												-Click here
-											</a>
-										<% } %>
-									</span>
-								<% }) %>
+						</div>
+						<div class="scroll">
+							<marquee class="marqueetext" vspace="30%" scrollamount="5" scrollamount="5" onmousedown=''
+								onmouseup='' onmouseover="this.stop();" onmouseout="this.start();"
+								ontouchstart="this.stop()" ontouchend="this.start()">
+								<p>
+									<%= marq[0].text %> <a href="/contactus">
+											<%= marq[0].link %>
+										</a>&nbsp;
+										&ensp; <%= marq[1].text %>
+											<a href="/contactus">
+												<%= marq[1].link %>
+											</a>&nbsp; &ensp; <%= marq[2].text %>
+												<a href="/contactus">
+													<%= marq[2].link %>
+												</a>
+								</p>
 							</marquee>
 						</div>
-						<div class="div-1">
-							<h1 class="CalanderEvents">CALENDAR EVENTS</h1>
-							<div class="calenderMain">
+				</section>
 
-								<% calendar.forEach(cal=> { %>
-									<div class="calenderCard">
-										<div class="date">
-											<span class="month">
-												<%= cal.month %>
-											</span>
-											<span class="dateMain">
-												<%= cal.date %>
-											</span>
-										</div>
-										<p>
-											<%= cal.event %>
-										</p>
-									</div>
+				<section class="sec-2">
+					<div class="div-2">
+						<h1 class="div-2-title">LATEST UPDATES</h1>
+
+						<marquee class="news-box" direction="up" scrollamount="5" onmousedown='' onmouseup=''
+							onmouseover="this.stop();" onmouseout="this.start();" onmouseout="this.start();"
+							ontouchstart="this.stop()" ontouchend="this.start()">
+							<% latestupdates.forEach(update=> { %>
+								<span class="p">
+									<%= update.link %>
+										<% if (!(update.link1=='no link' )) { %>
+											<a class="clickhereclr" href="<%= update.link1 %>" target="_blank">
+												-Click here
+											</a>
+											<% } %>
+								</span>
 								<% }) %>
-							</div>
-						</div>
-					</section>
-					<section class="HexagonDiv" id="courses">
-					
-						<div class="cardsDiv" id="courses">
-							<div class="box3">
-								<img class="hexaimg" src="images/home/neet.jpg" alt="" />
-								<h3 class="imgHeader">NEET</h3>
-								<a class="read" href="/coursesNEET">Read More</a>
-							</div>
-							<div class="box1">
-								<img class="hexaimg" src="images/home/jee.jpg" alt="" />
-								<h3 class="imgHeader">IIT-JEE</h3>
-								<a class="read" href="/coursesJEE">Read More</a>
-							</div>
-							<div class="box2">
-								<img class="hexaimg" src="images/home/iit &medical.jpg" alt="" />
-								<h3 class="imgHeader">IIT & Medical Foundation</h3>
-								<a class="read" href="/coursesIIT&Medical">Read More</a>
-							</div>
-						</div>
-					</section>
-					<section class="drive">
-						<div class="bottom-drive">
-							<a
-								href="https://drive.google.com/drive/folders/1PmazQPJYZUcO2_XeZoLK5Ho6P_jmVv--?usp=sharing" target="_blank">Download
-								Free Questions NEET Bank and Solution
-								<span class="latestEdition">Latest Edition</span></a>
-						</div>
-					</section>
-
-			
-					<div class="neet-2020-toppers">
-
-						<div class="neet-2020-toppers-a">
-							<p>Our Results - NEET Toppers</p>
-							<img src="https://img.icons8.com/plumpy/50/000000/sparkling--v2.png"
-								style="height: 30px; width: 30px;" />
-						</div>
-
-
+						</marquee>
 					</div>
-				
-					<div class="swiper-container">
-						<!-- <div class="swiper mySwiper swipTop">
+					<div class="div-1">
+						<h1 class="CalanderEvents">CALENDAR EVENTS</h1>
+						<div class="calenderMain">
+
+							<% calendar.forEach(cal=> { %>
+								<div class="calenderCard">
+									<div class="date">
+										<span class="month">
+											<%= cal.month %>
+										</span>
+										<span class="dateMain">
+											<%= cal.date %>
+										</span>
+									</div>
+									<p>
+										<%= cal.event %>
+									</p>
+								</div>
+								<% }) %>
+						</div>
+					</div>
+				</section>
+				<section class="HexagonDiv" id="courses">
+
+					<div class="cardsDiv" id="courses">
+						<div class="box3">
+							<img class="hexaimg" src="images/home/neet.jpg" alt="" />
+							<h3 class="imgHeader">NEET</h3>
+							<a class="read" href="/coursesNEET">Read More</a>
+						</div>
+						<div class="box1">
+							<img class="hexaimg" src="images/home/jee.jpg" alt="" />
+							<h3 class="imgHeader">IIT-JEE</h3>
+							<a class="read" href="/coursesJEE">Read More</a>
+						</div>
+						<div class="box2">
+							<img class="hexaimg" src="images/home/iit &medical.jpg" alt="" />
+							<h3 class="imgHeader">IIT & Medical Foundation</h3>
+							<a class="read" href="/coursesIIT&Medical">Read More</a>
+						</div>
+					</div>
+				</section>
+				<section class="drive">
+					<div class="bottom-drive">
+						<a href="https://drive.google.com/drive/folders/1PmazQPJYZUcO2_XeZoLK5Ho6P_jmVv--?usp=sharing"
+							target="_blank">Download
+							Free Questions NEET Bank and Solution
+							<span class="latestEdition">Latest Edition</span></a>
+					</div>
+				</section>
+
+
+				<div class="neet-2020-toppers">
+
+					<div class="neet-2020-toppers-a">
+						<p>Our Results - NEET Toppers</p>
+						<img src="https://img.icons8.com/plumpy/50/000000/sparkling--v2.png"
+							style="height: 30px; width: 30px;" />
+					</div>
+
+
+				</div>
+
+				<div class="swiper-container">
+					<!-- <div class="swiper mySwiper swipTop">
 							<div class="swiper-wrapper">
 						<% ourtoppers.forEach(topper=> { %>
 							  <div class="swiper-slide swiperTopper">
@@ -185,89 +202,92 @@
 							</div>
 							
 						  </div> -->
-						  <div class="swiper mySwiper swipTop">
-							<div class="swiper-wrapper">
-						<% ourtoppers.forEach(topper=> { %>
-							  <div class="swiper-slide swiperTopper">
-								<img class="profile" src="<%= topper.studentimg %>" alt="" />
-								<div class="toppersDiv">
-									<p class="markNew">
-										<%= topper.score %> / 720
-									</p>
-									<p class="nameNew">
-										<%= topper.name %>
-									</p>
-									<p class="colNew">
-										<%= topper.collegename %>
-									</p>
+					<div class="swiper mySwiper swipTop">
+						<div class="swiper-wrapper">
+							<% ourtoppers.forEach(topper=> { %>
+								<div class="swiper-slide swiperTopper">
+									<img class="profile" src="<%= topper.studentimg %>" alt="" />
+									<div class="toppersDiv">
+										<p class="markNew">
+											<%= topper.score %> / 720
+										</p>
+										<p class="nameNew">
+											<%= topper.name %>
+										</p>
+										<p class="colNew">
+											<%= topper.collegename %>
+										</p>
+									</div>
 								</div>
-								</div>
-						<% }) %>	 
-							</div>
-							
-						  </div>
-						  <div class="swiper-button-next btnNext"></div>
-							<div class="swiper-button-prev btnPrev"></div>
-						 
+								<% }) %>
+						</div>
+
 					</div>
+					<div class="swiper-button-next btnNext"></div>
+					<div class="swiper-button-prev btnPrev"></div>
+
+				</div>
 
 
 
 
-					<section class="stats">
-					
-						<div class="statBox" id="counter">
-							<% neetachieve.forEach(neetfor => { %>
+				<section class="stats">
+
+					<div class="statBox" id="counter">
+						<% neetachieve.forEach(neetfor=> { %>
 							<div class="Stat">
-								<h1 class="counter MBBS_Seats counter-value" 
-								data-count="<%= neetfor.seats %>"
-								>0.</h1>
+								<h1 class="counter MBBS_Seats counter-value" data-count="<%= neetfor.seats %>">0.</h1>
 								<h3>MBBS <br> Seats <br> through <br> NEET</h3>
 							</div>
 							<div class="Stat">
-								<h1 class="counter Consecutive counter-value" data-count="<%= neetfor.consecutiveyears %>">0.</h1>
+								<h1 class="counter Consecutive counter-value"
+									data-count="<%= neetfor.consecutiveyears %>">0.</h1>
 								<h3>Consecutive years <br> of District first in <br>Salem</h3>
 							</div>
 							<div class="Stat">
-								<span style="display: flex;"><h1 class="counter successRate counter-value" data-count="<%= neetfor.successrate %>">0 </h1><div class="percentage"> %</div></span>
-								
+								<span style="display: flex;">
+									<h1 class="counter successRate counter-value"
+										data-count="<%= neetfor.successrate %>">0 </h1>
+									<div class="percentage"> %</div>
+								</span>
+
 								<h3>Success <br> rate in <br> NEET</h3>
 							</div>
 							<div class="Stat">
 								<h1 class="counter counter-value" data-count="<%= neetfor.admissions %>">0.</h1>
 								<h3>NIT & IIST <br> Admission</h3>
 							</div>
-							<% }); %> 
-						</div>
-					</section>
+							<% }); %>
+					</div>
+				</section>
 
-					<!-- Swiper -->
-					
-						<h1 class="studentsh1">STUDENTS TESTIMONIALS</h1>
-						<div class="swiper-container2">
-							<div class="swiper mySwiper swipYt">
-								<div class="swiper-wrapper">
-								<% stutest.forEach(link=> { %>
-								
-									<div class="swiper-slide">
-										<div class="testimonials">
-											<iframe class="video" src="<%= link %>" title="YouTube video player"
-												frameborder="0"
-												allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-												allowfullscreen></iframe>
-										</div>
+				<!-- Swiper -->
+
+				<h1 class="studentsh1">STUDENTS TESTIMONIALS</h1>
+				<div class="swiper-container2">
+					<div class="swiper mySwiper swipYt">
+						<div class="swiper-wrapper">
+							<% stutest.forEach(link=> { %>
+
+								<div class="swiper-slide">
+									<div class="testimonials">
+										<iframe class="video" src="<%= link %>" title="YouTube video player"
+											frameborder="0"
+											allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+											allowfullscreen></iframe>
 									</div>
+								</div>
 								<% }) %>
 
-							</div>
-							
-					
-						  </div>
-						  <div class="swiper-button-next btnNext2"></div>
-						  <div class="swiper-button-prev btnPrev2"></div>
 						</div>
-						
-					<%- include('./layout/footer') %>
+
+
+					</div>
+					<div class="swiper-button-next btnNext2"></div>
+					<div class="swiper-button-prev btnPrev2"></div>
+				</div>
+
+				<%- include('./layout/footer') %>
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -288,10 +308,11 @@
 	<script>
 		var myCarousel = document.querySelector('#myCarousel')
 		var carousel = new bootstrap.Carousel(myCarousel, {
-		interval: 2000,
-		wrap: false
+			interval: 2000,
+			wrap: false
 		})
 	</script>
+	<script src="javascripts/index.js"></script>
 </body>
 
 </html>
