@@ -387,6 +387,37 @@ router
     );
   });
 
+  router
+  .route("/admin/loadingimg")
+  .get(flash, isloggedin, async (req, res) => {
+    await db.query("SELECT * FROM loadingimg", (error, response) => {
+      if (error) {
+        req.flash("error", "Error occurred while adding");
+        console.log(error);
+      } else {
+          var state = response[0].state
+
+        res.render("admin/home/loadingimg", { state });
+      }
+    });
+  })
+  .post(async (req, res) => {
+    console.log(req.body);
+    // await db.query(
+    //   "UPDATE loadingimg SET state = ? WHERE id = 1",
+    //   [state],
+    //   (err, results) => {
+    //     if (err) {
+    //       req.flash("error", "Error occurred while adding");
+    //       console.log(err);
+    //     } else {
+    //       req.flash("success", "Updated successfully");
+    //       res.redirect("/admin/questionbank");
+    //     }
+    //   }
+    // );
+  });
+
 // Our Toppers Route
 router
   .route("/admin/ourtoppers")
