@@ -21,7 +21,7 @@
       <div class="left"><%- include('../../layout/adminSideBar') %></div>
       <div class="right">
         <form
-          action="/admin/studenttestimonials?_method=DELETE"
+          action="/admin/loadingimg"
           method="post"
           class="imgform latestupdateform"
         >
@@ -29,7 +29,7 @@
           <table class="table" style="width: 70%">
             <thead>
               <tr class="d-flex justify-content-center">
-                <th scope="col">Image State (<span class="loadingspan"></span>)</th>
+                <th scope="col">Image State (<span class="loadingspan"><%= (state === "active")? "Active": "Inactive"%></span>)</th>
               </tr>
             </thead>
             <tbody class="tbody">
