@@ -111,7 +111,7 @@ router.route("/").get(async (req, res) => {
                               }
                               await db.query(
                                 "SELECT * FROM marquee",
-                                (error, response) => {
+                                async(error, response) => {
                                   marq = [];
                                   if (error) {
                                     console.log(error);
@@ -129,15 +129,24 @@ router.route("/").get(async (req, res) => {
                                       marq.push(image);
                                     }
                                   }
-                                  res.render("home", {
-                                    img: arr,
-                                    ourtoppers,
-                                    calendar: calendar,
-                                    latestupdates,
-                                    stutest,
-                                    neetachieve,
-                                    marq,
-                                  });
+                                  await db.query("SELECT * FROM loadingimg", (error, response) => {
+                                    if (error) {
+                                      console.log(error);
+                                    } else {
+                                      var state = response[0].state;
+                                    }
+                                    res.render("home", {
+                                      img: arr,
+                                      ourtoppers,
+                                      calendar: calendar,
+                                      latestupdates,
+                                      stutest,
+                                      neetachieve,
+                                      marq,
+                                      state,
+                                    });
+                                  })
+                                  
                                 }
                               );
                             }
@@ -402,8 +411,7 @@ router
     });
   })
   .post(async (req, res) => {
-    console.log(req.body);
-    const state = req.body.state === "active" ? "active" : "inactive";
+    const state = req.body.currentstate === "active" ? "active" : "inactive";
     await db.query(
       "UPDATE loadingimg SET state = ? WHERE id = 1",
       [state],
@@ -413,7 +421,7 @@ router
           console.log(err);
         } else {
           req.flash("success", "Updated successfully");
-          res.redirect("/admin/questionbank");
+          res.redirect("/admin/loadingimg");
         }
       }
     );
