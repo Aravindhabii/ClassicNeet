@@ -357,12 +357,12 @@ router
         req.flash("error", "Error occurred while adding");
         console.log(error);
       } else {
-          var image = {
-            text: response[0].text,
-            link: response[0].link,
-            id: response[0].id,
-          };
-          arr.push(image);
+        var image = {
+          text: response[0].text,
+          link: response[0].link,
+          id: response[0].id,
+        };
+        arr.push(image);
 
         res.render("admin/home/questionbank", { marquee: arr });
       }
@@ -375,6 +375,38 @@ router
     await db.query(
       "UPDATE questionbank SET text = ?, link = ? WHERE id = ?",
       [text, link, id],
+      (err, results) => {
+        if (err) {
+          req.flash("error", "Error occurred while adding");
+          console.log(err);
+        } else {
+          req.flash("success", "Updated successfully");
+          res.redirect("/admin/questionbank");
+        }
+      }
+    );
+  });
+
+router
+  .route("/admin/loadingimg")
+  .get(flash, isloggedin, async (req, res) => {
+    await db.query("SELECT * FROM loadingimg", (error, response) => {
+      if (error) {
+        req.flash("error", "Error occurred while adding");
+        console.log(error);
+      } else {
+        var state = response[0].state;
+
+        res.render("admin/home/loadingimg", { state });
+      }
+    });
+  })
+  .post(async (req, res) => {
+    console.log(req.body);
+    const state = req.body.state === "active" ? "active" : "inactive";
+    await db.query(
+      "UPDATE loadingimg SET state = ? WHERE id = 1",
+      [state],
       (err, results) => {
         if (err) {
           req.flash("error", "Error occurred while adding");
@@ -826,6 +858,40 @@ router
         } else {
           req.flash("success", "Successfully Updated");
           res.redirect("/admin/aboutus/history");
+        }
+      }
+    );
+  });
+
+router
+  .route("/admin/aboutus/foundervideo")
+  .get(flash, isloggedin, async (req, res) => {
+    await db.query("SELECT * FROM foundervideo", (error, response) => {
+      if (error) {
+        req.flash("error", "Error occurred while adding");
+        console.log(error);
+      } else {
+        var image = {
+          id: response[0].id,
+          link: response[0].link,
+        };
+        res.render("admin/aboutus/foundervideo", { url: image });
+      }
+    });
+  })
+  .post(async (req, res) => {
+    const link = req.body.text;
+    const id = req.body.id;
+    await db.query(
+      "UPDATE foundervideo SET link = ? WHERE id = ?",
+      [link, id],
+      (err, results) => {
+        if (err) {
+          req.flash("error", "Error occurred while adding");
+          console.log(err);
+        } else {
+          req.flash("success", "Updated successfully");
+          res.redirect("/admin/aboutus/foundervideo");
         }
       }
     );

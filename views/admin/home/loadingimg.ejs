@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin panel</title>
+    <link rel="shortcut icon" href="../../images/home/classic-nee-tacademy-logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../../stylesheets/admin.css" />
+    <link rel="stylesheet" href="sweetalert2.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <%- include('../../layout/adminheader') %>
+    <section class="mainsection">
+      <div class="left"><%- include('../../layout/adminSideBar') %></div>
+      <div class="right">
+        <form
+          action="/admin/loadingimg"
+          method="post"
+          class="imgform latestupdateform"
+        >
+          <h1 class="m-5 fs-4 fw-bold">Loading Page Image</h1>
+          <table class="table" style="width: 70%">
+            <thead>
+              <tr class="d-flex justify-content-center">
+                <th scope="col">Image State (<span class="loadingspan"><%= (state === "active")? "Active": "Inactive"%></span>)</th>
+              </tr>
+            </thead>
+            <tbody class="tbody">
+              <tr class="d-flex justify-content-center">
+                <td>
+                    <label class="switch">
+                        <input type="checkbox" class="toggleswitch" <%= (state === "active") ? "checked": "" %>>
+                        <span class="slider round"></span>
+                    </label> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </section>
+    <script src="../../javascripts/admin/home/loadingimg.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

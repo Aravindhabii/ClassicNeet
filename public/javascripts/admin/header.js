@@ -2,7 +2,8 @@ const removesection = document.querySelector('.removesection');
 const alerter = document.querySelectorAll('.alert')
 const sweetp = document.querySelector('.sweetp')
 const sweetperr = document.querySelector('.sweetperr')
-
+const collapsed = document.querySelectorAll('.collapsed')
+const collapse = document.querySelectorAll('.collapse')
 
 setTimeout(function () {
     alerter.forEach(function (item) {
@@ -49,3 +50,15 @@ window.addEventListener('resize', function (e) {
 if (parseInt(width) < 1280) {
     window.location.href = '/';
 };
+
+collapsed.forEach(function (item) {
+    item.addEventListener('click', function () {
+        collapse.forEach(function (item2) {
+            if (item2 === item.childNodes[1]) {
+                item2.classList.add('show');
+            }else{
+                item2.classList.remove('show');
+            }
+        })
+    })
+});
