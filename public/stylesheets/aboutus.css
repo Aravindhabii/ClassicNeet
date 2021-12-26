@@ -696,6 +696,7 @@ option:hover {
 		line-height: 2.3rem;
 		padding: 0rem 4rem;
 	}
+	
 	.ourvision h1,
 	.ourmission h1 {
 		margin: 1rem 0rem;
@@ -707,6 +708,11 @@ option:hover {
 		position: relative;
 		width: 70vw;
 		height: 55vh;
+	}
+	.ourjourney {
+		text-align: center;
+		margin: 10rem 0rem 4rem 0rem;
+		color: #568036;
 	}
 	.timelineContent {
 		width: 90%;
@@ -744,9 +750,13 @@ option:hover {
 		margin-left: 0;
 		height: fit-content;
 	} 
+	.imageabout{
+		width: 53%;
+		margin-left: 6%;
+	}
 	.imageabout img{
-		width: 38vw ;
-		height: 50vh ;
+		width: 50vw ;
+		height: 55vh ;
 		margin-bottom: 6%;
 	}
 	.leaders h1 {
@@ -767,15 +777,34 @@ option:hover {
 		font-size: 35px;
 		margin-bottom: 3%;
 	}
+
 }
 @media(max-width:800px){
 	.leaders{
 		height: 250vh;
 	}
+	.imageabout{
+		width: 53%;
+		margin-left: 6%;
+	}
+	.imageabout img{
+		width: 51vw ;
+		height: 55vh ;
+		margin-bottom: 6%;
+	}
 }
 @media(max-width:700px){
 	.leaders{
 		height: 260vh;
+	}
+	.imageabout{
+		width: 61%;
+		margin-left: 6%;
+	}
+	.imageabout img{
+		width: 54vw ;
+		height: 53vh ;
+		margin-bottom: 6%;
 	}
 }
 @media screen and (max-width: 600px) {
@@ -812,7 +841,7 @@ option:hover {
 	}
 	.ourjourney {
 		text-align: center;
-		margin: 5rem 0rem 4rem 0rem;
+		margin: 0rem 0rem 4rem 0rem;
 		color: #568036;
 	}
 
@@ -846,12 +875,12 @@ option:hover {
 		
 	}
 	.imageabout{
-		width: 51%;
+		width: 60%;
 		margin-left: 0%;
 	}
 	.imageabout img{
-		width: 58vw ;
-		height: 55vh ;
+		width: 60vw ;
+		height: 45vh ;
 		margin-bottom: 6%;
 	}
 	.leaders h1 {
@@ -859,14 +888,14 @@ option:hover {
 		padding: 2% 0%;
 		text-align: center;
 		font-size: 32px;
-		margin-bottom: 3%;
+		margin-bottom: 0%;
 	}
 	.iframe1{
 	width: 70vw;
 	height: 40vh;
 }
 .leaders{
-	height: 270vh;
+	height: 280vh;
 }
 }
 
@@ -892,20 +921,47 @@ option:hover {
 		margin-bottom: 9%;
 	}
 	.leaders{
-		height: 285vh;
+		height: 300vh;
+	}
+	.imageabout{
+		width: 64%;
+		margin-left: 0%;
+	}
+	.imageabout img{
+		width: 62vw ;
+		height: 44vh ;
+		margin-bottom: 6%;
 	}
 }
 @media(max-width:450px){
 	.leaders {
 	
-		height: 300vh;
+		height: 315vh;
 		
+	}
+	.imageabout{
+		width: 64%;
+		margin-left: 0%;
+	}
+	.imageabout img{
+		width: 62vw ;
+		height: 44vh ;
+		margin-bottom: 6%;
 	}
 }
 @media(max-width:400px){
 	.leaders {
 	
-		height: 355vh;
+		height: 330vh;
 		
+	}
+	.imageabout{
+		width: 73%;
+		margin-left: 0%;
+	}
+	.imageabout img{
+		width: 73vw ;
+		height: 40vh ;
+		margin-bottom: 6%;
 	}
 }
