@@ -109,30 +109,37 @@ router.route("/").get(async (req, res) => {
                                   neetachieve.push(neetvar);
                                 }
                               }
-							  await db.query("SELECT * FROM marquee", (error, response) => {
-								marq = [];
-								if (error) {
-									console.log(error);
-								  } else {
-									for (let i = 0; i <= response.length - 1; i++) {
-									  var image = {
-										text: response[i].text,
-										link: response[i].linkbtn,
-										id: response[i].id,
-									  };
-									  marq.push(image);
-									}
-								}
-								res.render("home", {
-									img: arr,
-									ourtoppers,
-									calendar: calendar,
-									latestupdates,
-									stutest,
-									neetachieve,
-									marq
-								});      
-                              });
+                              await db.query(
+                                "SELECT * FROM marquee",
+                                (error, response) => {
+                                  marq = [];
+                                  if (error) {
+                                    console.log(error);
+                                  } else {
+                                    for (
+                                      let i = 0;
+                                      i <= response.length - 1;
+                                      i++
+                                    ) {
+                                      var image = {
+                                        text: response[i].text,
+                                        link: response[i].linkbtn,
+                                        id: response[i].id,
+                                      };
+                                      marq.push(image);
+                                    }
+                                  }
+                                  res.render("home", {
+                                    img: arr,
+                                    ourtoppers,
+                                    calendar: calendar,
+                                    latestupdates,
+                                    stutest,
+                                    neetachieve,
+                                    marq,
+                                  });
+                                }
+                              );
                             }
                           );
                         }
@@ -304,42 +311,81 @@ router
 router
   .route("/admin/marquee")
   .get(flash, isloggedin, async (req, res) => {
-	await db.query("SELECT * FROM marquee", (error, response) => {
-		arr = [];
-		if (error) {
-			req.flash("error", "Error occurred while adding");
-			console.log(error);
-		  } else {
-			for (let i = 0; i <= response.length - 1; i++) {
-			  var image = {
-				text: response[i].text,
-				link: response[i].linkbtn,
-				id: response[i].id,
-			  };
-			  arr.push(image);
-			}
-			res.render("admin/home/marquee", { marquee: arr });
-		}
-	});
+    await db.query("SELECT * FROM marquee", (error, response) => {
+      arr = [];
+      if (error) {
+        req.flash("error", "Error occurred while adding");
+        console.log(error);
+      } else {
+        for (let i = 0; i <= response.length - 1; i++) {
+          var image = {
+            text: response[i].text,
+            link: response[i].linkbtn,
+            id: response[i].id,
+          };
+          arr.push(image);
+        }
+        res.render("admin/home/marquee", { marquee: arr });
+      }
+    });
   })
   .post(async (req, res) => {
-	const text = req.body.text;
-	const link = req.body.link;
-	const id = req.body.id;
-	await db.query(
-		"UPDATE marquee SET text = ?,  linkbtn = ? WHERE id = ?",
-		[text, link, id],
-	  (err, results) => {
-		if (err) {
-		  req.flash("error", "Error occurred while adding");
-		  console.log(err);
-		} else {
-		  req.flash("success", "Updated successfully");
-		  res.redirect("/admin/marquee");
-		}
-	  }
-	);
+    const text = req.body.text;
+    const link = req.body.link;
+    const id = req.body.id;
+    await db.query(
+      "UPDATE marquee SET text = ?,  linkbtn = ? WHERE id = ?",
+      [text, link, id],
+      (err, results) => {
+        if (err) {
+          req.flash("error", "Error occurred while adding");
+          console.log(err);
+        } else {
+          req.flash("success", "Updated successfully");
+          res.redirect("/admin/marquee");
+        }
+      }
+    );
+  });
+
+router
+  .route("/admin/questionbank")
+  .get(flash, isloggedin, async (req, res) => {
+    await db.query("SELECT * FROM questionbank", (error, response) => {
+      arr = [];
+      if (error) {
+        req.flash("error", "Error occurred while adding");
+        console.log(error);
+      } else {
+          var image = {
+            text: response[0].text,
+            link: response[0].link,
+            id: response[0].id,
+          };
+          arr.push(image);
+
+        res.render("admin/home/questionbank", { marquee: arr });
+      }
+    });
   })
+  .post(async (req, res) => {
+    const text = req.body.text;
+    const link = req.body.link;
+    const id = req.body.id;
+    await db.query(
+      "UPDATE questionbank SET text = ?, link = ? WHERE id = ?",
+      [text, link, id],
+      (err, results) => {
+        if (err) {
+          req.flash("error", "Error occurred while adding");
+          console.log(err);
+        } else {
+          req.flash("success", "Updated successfully");
+          res.redirect("/admin/questionbank");
+        }
+      }
+    );
+  });
 
 // Our Toppers Route
 router
