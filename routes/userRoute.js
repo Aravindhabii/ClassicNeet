@@ -2115,17 +2115,77 @@ router.get("/sql/history", async (req, res) => {
   });
 });
 
-router.route("/salem").get((req,res)=>{
-  res.render("salem")
+router.route("/salem").get(async(req,res)=>{
+  await db.query("SELECT * FROM branchone", async (error, response) => {
+    var arr = [];
+    if (error) {
+      console.log(error);
+    } else {
+      for (let i = 0; i <= response.length - 1; i++) {
+        var image = {
+          sliderimg: response[i].sliderimg,
+          imgname: response[i].imgname,
+          cloudinaryName: response[i].cloudinaryname,
+        };
+        arr.push(image);
+      }
+    }
+    res.render("salem",{ img: arr })
+  });
 })
-router.route("/namakkal").get((req,res)=>{
-  res.render("Namakkal")
+router.route("/namakkal").get(async(req,res)=>{
+  await db.query("SELECT * FROM branchtwo", async (error, response) => {
+    var arr = [];
+    if (error) {
+      console.log(error);
+    } else {
+      for (let i = 0; i <= response.length - 1; i++) {
+        var image = {
+          sliderimg: response[i].sliderimg,
+          imgname: response[i].imgname,
+          cloudinaryName: response[i].cloudinaryname,
+        };
+        arr.push(image);
+      }
+    }
+    res.render("Namakkal",{ img: arr })
+  });
 })
-router.route("/dharmapuri").get((req,res)=>{
-  res.render("dharmapuri")
+router.route("/dharmapuri").get(async(req,res)=>{
+  await db.query("SELECT * FROM branchthree", async (error, response) => {
+    var arr = [];
+    if (error) {
+      console.log(error);
+    } else {
+      for (let i = 0; i <= response.length - 1; i++) {
+        var image = {
+          sliderimg: response[i].sliderimg,
+          imgname: response[i].imgname,
+          cloudinaryName: response[i].cloudinaryname,
+        };
+        arr.push(image);
+      }
+    }
+    res.render("dharmapuri",{ img: arr })
+  });
 })
-router.route("/vellore").get((req,res)=>{
-  res.render("vellore")
+router.route("/vellore").get(async(req,res)=>{
+  await db.query("SELECT * FROM branchfour", async (error, response) => {
+    var arr = [];
+    if (error) {
+      console.log(error);
+    } else {
+      for (let i = 0; i <= response.length - 1; i++) {
+        var image = {
+          sliderimg: response[i].sliderimg,
+          imgname: response[i].imgname,
+          cloudinaryName: response[i].cloudinaryname,
+        };
+        arr.push(image);
+      }
+    }
+    res.render("vellore",{ img: arr })
+  });
 })
 
 module.exports = router;

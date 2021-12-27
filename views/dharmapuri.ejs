@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="stylesheets/pagination.css" />
 	<link rel="shortcut icon" href="../../images/home/classic-nee-tacademy-logo.png" type="image/x-icon" />
 
-	<title>Salem</title>
+	<title>Dharmapuri</title>
 </head>
 
 <body>
@@ -22,18 +22,11 @@
 				<!-- Additional required wrapper -->
 				<div class="swiper-wrapper">
 					<!-- Slides -->
-					<div class="swiper-slide">
-						<img src="images/home/carousel/8.jpg" alt="" />
-					</div>
-					<div class="swiper-slide">
-						<img src="images/home/carousel/9.jpg" alt="" />
-					</div>
-					<div class="swiper-slide">
-						<img src="images/home/carousel/10.jpg" alt="" />
-					</div>
-					<div class="swiper-slide">
-						<img src="images/home/carousel/7.jpg" alt="" />
-					</div>
+					<% img.forEach(i => { %>
+						<div class="swiper-slide">
+							<img src="<%= i.sliderimg %> " alt="" />
+						</div>
+					<% }) %>
 				</div>
 				<!-- If we need pagination -->
 				<div class="swiper-pagination"></div>
