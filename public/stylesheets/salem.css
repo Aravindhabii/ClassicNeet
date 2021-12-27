@@ -1,82 +1,78 @@
 body {
-	background-color: EEEEEE;
+  background-color: EEEEEE;
 }
 
 body.dark {
-	background-color: #181a1b;
-	color: white;
+  background-color: #181a1b;
+  color: white;
 }
 
 body.dark .chat {
-	color: black !important;
+  color: black !important;
 }
 /* Swiper */
 .swiper {
-	width: 100%;
-	height: calc(100vh - 4rem);
+  width: 100%;
+  height: calc(100vh - 4rem);
 }
 .swiper-slide img {
-	height: 90vh;
-	width: 100%;
+  height: 90vh;
+  width: 100%;
 }
-.swiper-horizontal>.swiper-scrollbar {
-	display: none;
+.swiper-horizontal > .swiper-scrollbar {
+  display: none;
 }
 /* About Branch */
-.head{
-    text-align: center;
-	margin: 2rem 0rem 2rem 0rem;
-	color: #568036;
-    font-size: 40px;
-    font-weight: 600;
+.head {
+  text-align: center;
+  margin: 2rem 0rem 2rem 0rem;
+  color: #568036;
+  font-size: 40px;
+  font-weight: 600;
 }
-.para p{
-    width: 80%;
-    height: 100%;
-    margin: 2rem 0rem 2rem 8rem;
-    line-height: 40px;
-    
+.para p {
+  width: 80%;
+  height: 100%;
+  margin: 2rem 0rem 2rem 8rem;
+  line-height: 40px;
 }
 @media (max-width: 1000px) {
-	.arrowLeft , .arrowRight {
-		display: none;
-	}
-    .para p{
-        margin: 2rem 0rem 2rem 6rem;
-        
-    }
-    
+  .arrowLeft,
+  .arrowRight {
+    display: none;
+  }
+  .para p {
+    margin: 2rem 0rem 2rem 6rem;
+  }
 }
 @media (max-width: 800px) {
-	
-	.swiper {
-		height: 70vh;
-	}
-	.swiper-slide img {
-		
-		width: 100%;
-		height: 100%;
-	}
-	
+  .swiper {
+    height: 70vh;
+  }
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+  }
+  .head {
+    font-size: 32px;
+  }
 }
-@media (max-width:700px) {
-	.swiper {
-		height: 60vh;
-	}
-	
+@media (max-width: 700px) {
+  .swiper {
+    height: 60vh;
+  }
 }
 @media (max-width: 600px) {
-	
-	.swiper {
-		height: 40vh;
-	}
-    .para p{
-        width: 80%;
-        height: 100%;
-        margin: 2rem 0rem 2rem 3rem;
-        line-height: 40px;
-        
-    }
-    
-
+  .swiper {
+    height: 40vh;
+  }
+  .para p {
+    width: 80%;
+    height: 100%;
+    margin: 2rem 0rem 2rem 3rem;
+    line-height: 40px;
+  }
+  .head {
+    font-size: 28px;
+  }
 }
