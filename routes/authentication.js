@@ -139,35 +139,35 @@ router
     }
   });
 
-router
-  .route("/homeslider")
-  .get((req, res) => {
-    res.render("cloudinary");
-  })
-  .post(upload.single("sliderimg"), (req, res) => {
-    const path = req.file.path;
-    const fieldname = req.file.originalname;
-    const cloudinaryName = req.file.filename.split("/")[1];
+// router
+//   .route("/homeslider")
+//   .get((req, res) => {
+//     res.render("cloudinary");
+//   })
+//   .post(upload.single("sliderimg"), (req, res) => {
+//     const path = req.file.path;
+//     const fieldname = req.file.originalname;
+//     const cloudinaryName = req.file.filename.split("/")[1];
 
-    db.query(
-      "INSERT INTO branchfour SET ?",
-      { imgname: fieldname, sliderimg: path, cloudinaryname: cloudinaryName },
-      (err, results) => {
-        if (err) {
-          console.log(err);
-        } else {
-          res.redirect("/homeslider");
-        }
-      }
-    );
-  });
+//     db.query(
+//       "INSERT INTO branchfour SET ?",
+//       { imgname: fieldname, sliderimg: path, cloudinaryname: cloudinaryName },
+//       (err, results) => {
+//         if (err) {
+//           console.log(err);
+//         } else {
+//           res.redirect("/homeslider");
+//         }
+//       }
+//     );
+//   });
 
-router
-  .route("/latestupdatesform")
-  .get((req, res) => {
-    res.render("latestupdatesform");
-  })
-  .post((req, res) => {
-    const link = req.body;
-  });
+// router
+//   .route("/latestupdatesform")
+//   .get((req, res) => {
+//     res.render("latestupdatesform");
+//   })
+//   .post((req, res) => {
+//     const link = req.body;
+//   });
 module.exports = router;
