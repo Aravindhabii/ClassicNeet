@@ -1,3 +1,6 @@
+const menu = document.querySelector(".ourbranchesnav");
+const submenu = document.querySelector(".submenu");
+const subli = document.querySelector(".submenu li")
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
@@ -78,3 +81,11 @@ document.querySelector(".dark-mode-toggle").addEventListener("click", () => {
 if (window.localStorage.getItem("dark") === "true") {
   toggleDarkTheme();
 }
+
+menu.addEventListener("click", ()=>{
+    submenu.classList.toggle("none") 
+})
+menu.addEventListener("touchstart", (e)=>{
+    e.preventDefault();
+    console.log("Hello");
+})
