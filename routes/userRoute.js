@@ -139,7 +139,7 @@ router.route("/").get(async (req, res) => {
                                       }
                                       await db.query(
                                         "SELECT * FROM questionbank",
-                                        (error, response) => {
+                                        async (error, response) => {
                                           bank = [];
                                           if (error) {
                                             req.flash(
@@ -155,17 +155,44 @@ router.route("/").get(async (req, res) => {
                                             };
                                             bank.push(image);
                                           }
-                                          res.render("home", {
-                                            img: arr,
-                                            ourtoppers,
-                                            calendar: calendar,
-                                            latestupdates,
-                                            stutest,
-                                            neetachieve,
-                                            marq,
-                                            state,
-                                            bank,
-                                          });
+                                          await db.query(
+                                            "SELECT * FROM homeslider",
+                                            async (error, response) => {
+                                              var array = [];
+                                              if (error) {
+                                                console.log(error);
+                                              } else {
+                                                for (
+                                                  let i = 0;
+                                                  i <= response.length - 1;
+                                                  i++
+                                                ) {
+                                                  var image = {
+                                                    sliderimg:
+                                                      response[i].sliderimg,
+                                                    imgname:
+                                                      response[i].imgname,
+                                                    cloudinaryName:
+                                                      response[i]
+                                                        .cloudinaryname,
+                                                  };
+                                                  array.push(image);
+                                                }
+                                              }
+                                              res.render("home", {
+                                                img: arr,
+                                                ourtoppers,
+                                                calendar: calendar,
+                                                latestupdates,
+                                                stutest,
+                                                neetachieve,
+                                                marq,
+                                                state,
+                                                bank,
+                                                array,
+                                              });
+                                            }
+                                          );
                                         }
                                       );
                                     }
@@ -422,15 +449,30 @@ router
 router
   .route("/admin/loadingimg")
   .get(flash, isloggedin, async (req, res) => {
-    await db.query("SELECT * FROM loadingimg", (error, response) => {
+    await db.query("SELECT * FROM loadingimage", async (error, response) => {
+      var arr = [];
       if (error) {
-        req.flash("error", "Error occurred while adding");
         console.log(error);
       } else {
-        var state = response[0].state;
-
-        res.render("admin/home/loadingimg", { state });
+        for (let i = 0; i <= response.length - 1; i++) {
+          var image = {
+            sliderimg: response[i].sliderimg,
+            imgname: response[i].imgname,
+            cloudinaryName: response[i].cloudinaryname,
+          };
+          arr.push(image);
+        }
       }
+      await db.query("SELECT * FROM loadingimg", (error, response) => {
+        if (error) {
+          req.flash("error", "Error occurred while adding");
+          console.log(error);
+        } else {
+          var state = response[0].state;
+
+          res.render("admin/home/loadingimg", { state, img: arr });
+        }
+      });
     });
   })
   .post(async (req, res) => {
@@ -448,6 +490,61 @@ router
         }
       }
     );
+  })
+  .put(upload.array("sliderimg"), async (req, res) => {
+    if (typeof req.body.checkbox === "string") {
+      await cloudinary.uploader.destroy(
+        `ClassicNeetAcademy/${req.body.checkbox}`
+      );
+      await db.query(
+        "UPDATE loadingimage SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?",
+        [
+          req.files[0].path,
+          req.files[0].originalname,
+          req.files[0].filename.split("/")[1],
+          req.body.checkbox,
+        ],
+        (err, response) => {
+          if (err) {
+            req.flash("error", "Error occurred while Updating");
+            console.log(err);
+            res.redirect("/admin/loadingimg");
+          } else {
+            req.flash("success", "Image successfully updated");
+            res.redirect("/admin/loadingimg");
+          }
+        }
+      );
+    } else {
+      for (let i = 0; i <= req.files.length - 1; i++) {
+        for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
+          if (i === j) {
+            await cloudinary.uploader.destroy(
+              `ClassicNeetAcademy/${req.body.checkbox[i]}`
+            );
+            await db.query(
+              "UPDATE loadingimage SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?",
+              [
+                req.files[j].path,
+                req.files[j].originalname,
+                req.files[j].filename.split("/")[1],
+                req.body.checkbox[j],
+              ],
+              (err, response) => {
+                if (err) {
+                  req.flash("error", "Error occurred while Updating");
+                  console.log(err);
+                  res.redirect("/admin/loadingimg");
+                  return;
+                }
+              }
+            );
+          }
+        }
+      }
+      req.flash("success", "Images successfully updated");
+      res.redirect("/admin/loadingimg");
+    }
   });
 
 // Our Toppers Route
@@ -1605,7 +1702,7 @@ router
     }
   });
 
-  router
+router
   .route("/admin/branch/salem")
   .get(flash, isloggedin, async (req, res) => {
     await db.query("SELECT * FROM branchone", async (error, response) => {
@@ -1627,7 +1724,9 @@ router
   })
   .post(upload.array("sliderimg"), async (req, res) => {
     if (typeof req.body.checkbox === "string") {
-      await cloudinary.uploader.destroy(`ClassicNeetAcademy/${req.body.checkbox}`);
+      await cloudinary.uploader.destroy(
+        `ClassicNeetAcademy/${req.body.checkbox}`
+      );
       await db.query(
         "UPDATE branchone SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?",
         [
@@ -1679,8 +1778,7 @@ router
     }
   });
 
-
-  router
+router
   .route("/admin/branch/namakkal")
   .get(flash, isloggedin, async (req, res) => {
     await db.query("SELECT * FROM branchtwo", async (error, response) => {
@@ -1702,7 +1800,9 @@ router
   })
   .post(upload.array("sliderimg"), async (req, res) => {
     if (typeof req.body.checkbox === "string") {
-      await cloudinary.uploader.destroy(`ClassicNeetAcademy/${req.body.checkbox}`);
+      await cloudinary.uploader.destroy(
+        `ClassicNeetAcademy/${req.body.checkbox}`
+      );
       await db.query(
         "UPDATE branchtwo SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?",
         [
@@ -1754,7 +1854,7 @@ router
     }
   });
 
-  router
+router
   .route("/admin/branch/dharmapuri")
   .get(flash, isloggedin, async (req, res) => {
     await db.query("SELECT * FROM branchthree", async (error, response) => {
@@ -1776,7 +1876,9 @@ router
   })
   .post(upload.array("sliderimg"), async (req, res) => {
     if (typeof req.body.checkbox === "string") {
-      await cloudinary.uploader.destroy(`ClassicNeetAcademy/${req.body.checkbox}`);
+      await cloudinary.uploader.destroy(
+        `ClassicNeetAcademy/${req.body.checkbox}`
+      );
       await db.query(
         "UPDATE branchthree SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?",
         [
@@ -1829,7 +1931,7 @@ router
     }
   });
 
-  router
+router
   .route("/admin/branch/vellore")
   .get(flash, isloggedin, async (req, res) => {
     await db.query("SELECT * FROM branchfour", async (error, response) => {
@@ -1851,7 +1953,9 @@ router
   })
   .post(upload.array("sliderimg"), async (req, res) => {
     if (typeof req.body.checkbox === "string") {
-      await cloudinary.uploader.destroy(`ClassicNeetAcademy/${req.body.checkbox}`);
+      await cloudinary.uploader.destroy(
+        `ClassicNeetAcademy/${req.body.checkbox}`
+      );
       await db.query(
         "UPDATE branchfour SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?",
         [
@@ -1903,7 +2007,6 @@ router
       res.redirect("/admin/branch/vellore");
     }
   });
-
 
 router
   .route("/admin/chatbot")
@@ -2115,7 +2218,7 @@ router.get("/sql/history", async (req, res) => {
   });
 });
 
-router.route("/salem").get(async(req,res)=>{
+router.route("/salem").get(async (req, res) => {
   await db.query("SELECT * FROM branchone", async (error, response) => {
     var arr = [];
     if (error) {
@@ -2130,10 +2233,10 @@ router.route("/salem").get(async(req,res)=>{
         arr.push(image);
       }
     }
-    res.render("salem",{ img: arr })
+    res.render("salem", { img: arr });
   });
-})
-router.route("/namakkal").get(async(req,res)=>{
+});
+router.route("/namakkal").get(async (req, res) => {
   await db.query("SELECT * FROM branchtwo", async (error, response) => {
     var arr = [];
     if (error) {
@@ -2148,10 +2251,10 @@ router.route("/namakkal").get(async(req,res)=>{
         arr.push(image);
       }
     }
-    res.render("Namakkal",{ img: arr })
+    res.render("Namakkal", { img: arr });
   });
-})
-router.route("/dharmapuri").get(async(req,res)=>{
+});
+router.route("/dharmapuri").get(async (req, res) => {
   await db.query("SELECT * FROM branchthree", async (error, response) => {
     var arr = [];
     if (error) {
@@ -2166,10 +2269,10 @@ router.route("/dharmapuri").get(async(req,res)=>{
         arr.push(image);
       }
     }
-    res.render("dharmapuri",{ img: arr })
+    res.render("dharmapuri", { img: arr });
   });
-})
-router.route("/vellore").get(async(req,res)=>{
+});
+router.route("/vellore").get(async (req, res) => {
   await db.query("SELECT * FROM branchfour", async (error, response) => {
     var arr = [];
     if (error) {
@@ -2184,8 +2287,8 @@ router.route("/vellore").get(async(req,res)=>{
         arr.push(image);
       }
     }
-    res.render("vellore",{ img: arr })
+    res.render("vellore", { img: arr });
   });
-})
+});
 
 module.exports = router;

@@ -1,6 +1,8 @@
 const menu = document.querySelector(".ourbranchesnav");
 const submenu = document.querySelector(".submenu");
-const subli = document.querySelector(".submenu li")
+const mobilebefore = document.querySelectorAll(".mobilebefore");
+const mobile = document.querySelector(".mobile");
+
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
@@ -23,7 +25,10 @@ function togglerClick() {
   body.classList.toggle("overflow-hidden");
   const siteNavbarUl = document.querySelector(".site-navbar ul");
   navToggler.childNodes[1].style.zIndex = "100";
-  
+  mobilebefore.forEach((elem) => {
+    elem.classList.remove("none");
+  });
+    mobile.classList.add("none");
   if (window.innerWidth <= 1000) {
     if (siteNavbarUl.classList.contains("open")) {
       siteNavbarUl.style.height = `${window.innerHeight}px`;
@@ -82,10 +87,15 @@ if (window.localStorage.getItem("dark") === "true") {
   toggleDarkTheme();
 }
 
-menu.addEventListener("click", ()=>{
-    submenu.classList.toggle("none") 
-})
-menu.addEventListener("touchstart", (e)=>{
-    e.preventDefault();
-    console.log("Hello");
-})
+menu.addEventListener("click", () => {
+  submenu.classList.toggle("none");
+});
+
+menu.addEventListener("touchstart", (e) => {
+  e.preventDefault();
+  mobilebefore.forEach((elem) => {
+    elem.classList.add("none");
+  });
+  mobile.classList.remove("none");
+});
+

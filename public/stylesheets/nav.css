@@ -154,8 +154,23 @@ a.site-logo {
 	background: #fff;
 	color: #000;
 }
+body.dark .submenu{
+	background: #000;
+	color: #fff;
+}
+
 .none{
 	display: none !important;
+}
+
+.mobile{
+	height: 70%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	margin-top: 20%;
 }
 
 @media (max-width: 1275px) {

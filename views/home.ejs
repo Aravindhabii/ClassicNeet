@@ -28,10 +28,12 @@
 
 <body class="body">
 	<% if (state === "active") { %>
-		<div class="closeimage">
-			<span class="exit1"><img src="https://img.icons8.com/ios-glyphs/40/000000/macos-close.png" /></span>
-			<img src="images/aboutus/Gallery1.jpg" alt="">
-		</div>
+		<% array.forEach(ele => { %>
+			<div class="closeimage">
+				<span class="exit1"><img src="https://img.icons8.com/ios-glyphs/40/000000/macos-close.png" /></span>
+				<img src="<%= ele.sliderimg %> " alt="">
+			</div>
+		<% }) %>
 	<% } %>
 	<div class="backgroundMain">
 		<%- include('./layout/header') %>

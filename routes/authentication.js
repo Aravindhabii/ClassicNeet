@@ -150,7 +150,7 @@ router
 //     const cloudinaryName = req.file.filename.split("/")[1];
 
 //     db.query(
-//       "INSERT INTO branchfour SET ?",
+//       "INSERT INTO loadingimage SET ?",
 //       { imgname: fieldname, sliderimg: path, cloudinaryname: cloudinaryName },
 //       (err, results) => {
 //         if (err) {
