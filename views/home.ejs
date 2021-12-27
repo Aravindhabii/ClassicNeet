@@ -27,7 +27,6 @@
 </head>
 
 <body class="body">
-	<% console.log(state); %> 
 	<% if (state === "active") { %>
 		<div class="closeimage">
 			<span class="exit1"><img src="https://img.icons8.com/ios-glyphs/40/000000/macos-close.png" /></span>
@@ -166,9 +165,8 @@
 					<marquee class="bottom-drive" scrollamount="5" scrollamount="5" onmousedown=''
 					onmouseup='' onmouseover="this.stop();" onmouseout="this.start();"
 					ontouchstart="this.stop()" ontouchend="this.start()" >
-						<a href="https://drive.google.com/drive/folders/1PmazQPJYZUcO2_XeZoLK5Ho6P_jmVv--?usp=sharing"
-							target="_blank">Download
-							Free Questions NEET Bank and Solution
+						<a href="<%= bank[0].link %> "
+							target="_blank"><%= bank[0].text %> 
 							<span class="latestEdition">Latest Edition</span></a>
 					</marquee>
 				</section>

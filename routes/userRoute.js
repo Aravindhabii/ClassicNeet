@@ -111,7 +111,7 @@ router.route("/").get(async (req, res) => {
                               }
                               await db.query(
                                 "SELECT * FROM marquee",
-                                async(error, response) => {
+                                async (error, response) => {
                                   marq = [];
                                   if (error) {
                                     console.log(error);
@@ -129,24 +129,47 @@ router.route("/").get(async (req, res) => {
                                       marq.push(image);
                                     }
                                   }
-                                  await db.query("SELECT * FROM loadingimg", (error, response) => {
-                                    if (error) {
-                                      console.log(error);
-                                    } else {
-                                      var state = response[0].state;
+                                  await db.query(
+                                    "SELECT * FROM loadingimg",
+                                    async (error, response) => {
+                                      if (error) {
+                                        console.log(error);
+                                      } else {
+                                        var state = response[0].state;
+                                      }
+                                      await db.query(
+                                        "SELECT * FROM questionbank",
+                                        (error, response) => {
+                                          bank = [];
+                                          if (error) {
+                                            req.flash(
+                                              "error",
+                                              "Error occurred while adding"
+                                            );
+                                            console.log(error);
+                                          } else {
+                                            var image = {
+                                              text: response[0].text,
+                                              link: response[0].link,
+                                              id: response[0].id,
+                                            };
+                                            bank.push(image);
+                                          }
+                                          res.render("home", {
+                                            img: arr,
+                                            ourtoppers,
+                                            calendar: calendar,
+                                            latestupdates,
+                                            stutest,
+                                            neetachieve,
+                                            marq,
+                                            state,
+                                            bank,
+                                          });
+                                        }
+                                      );
                                     }
-                                    res.render("home", {
-                                      img: arr,
-                                      ourtoppers,
-                                      calendar: calendar,
-                                      latestupdates,
-                                      stutest,
-                                      neetachieve,
-                                      marq,
-                                      state,
-                                    });
-                                  })
-                                  
+                                  );
                                 }
                               );
                             }
@@ -752,9 +775,18 @@ router.route("/aboutus").get(async (req, res) => {
         };
         arr.push(cont);
       }
-      res.render("aboutus", {
-        content: arr,
-        folderArray: folderArray.sort(),
+      await db.query("SELECT * FROM foundervideo", (error, response) => {
+        if (error) {
+          req.flash("error", "Error occurred while adding");
+          console.log(error);
+        } else {
+          var link = response[0].link;
+        }
+        res.render("aboutus", {
+          content: arr,
+          folderArray: folderArray.sort(),
+          url: link,
+        });
       });
     }
   });
@@ -1572,6 +1604,307 @@ router
       res.redirect("/admin/successstories/parenttestimonials");
     }
   });
+
+  router
+  .route("/admin/branch/salem")
+  .get(flash, isloggedin, async (req, res) => {
+    await db.query("SELECT * FROM branchone", async (error, response) => {
+      var arr = [];
+      if (error) {
+        console.log(error);
+      } else {
+        for (let i = 0; i <= response.length - 1; i++) {
+          var image = {
+            sliderimg: response[i].sliderimg,
+            imgname: response[i].imgname,
+            cloudinaryName: response[i].cloudinaryname,
+          };
+          arr.push(image);
+        }
+      }
+      res.render("admin/branch/salem", { img: arr });
+    });
+  })
+  .post(upload.array("sliderimg"), async (req, res) => {
+    if (typeof req.body.checkbox === "string") {
+      await cloudinary.uploader.destroy(`ClassicNeetAcademy/${req.body.checkbox}`);
+      await db.query(
+        "UPDATE branchone SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?",
+        [
+          req.files[0].path,
+          req.files[0].originalname,
+          req.files[0].filename.split("/")[1],
+          req.body.checkbox,
+        ],
+        (err, response) => {
+          if (err) {
+            req.flash("error", "Error occurred while Updating");
+            console.log(err);
+            res.redirect("/admin/branch/salem");
+          } else {
+            req.flash("success", "Image successfully updated");
+            res.redirect("/admin/branch/salem");
+          }
+        }
+      );
+    } else {
+      for (let i = 0; i <= req.files.length - 1; i++) {
+        for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
+          if (i === j) {
+            await cloudinary.uploader.destroy(
+              `ClassicNeetAcademy/${req.body.checkbox[i]}`
+            );
+            await db.query(
+              "UPDATE branchone SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?",
+              [
+                req.files[j].path,
+                req.files[j].originalname,
+                req.files[j].filename.split("/")[1],
+                req.body.checkbox[j],
+              ],
+              (err, response) => {
+                if (err) {
+                  req.flash("error", "Error occurred while Updating");
+                  console.log(err);
+                  res.redirect("/admin/branch/salem");
+                  return;
+                }
+              }
+            );
+          }
+        }
+      }
+      req.flash("success", "Images successfully updated");
+      res.redirect("/admin/branch/salem");
+    }
+  });
+
+
+  router
+  .route("/admin/branch/namakkal")
+  .get(flash, isloggedin, async (req, res) => {
+    await db.query("SELECT * FROM branchtwo", async (error, response) => {
+      var arr = [];
+      if (error) {
+        console.log(error);
+      } else {
+        for (let i = 0; i <= response.length - 1; i++) {
+          var image = {
+            sliderimg: response[i].sliderimg,
+            imgname: response[i].imgname,
+            cloudinaryName: response[i].cloudinaryname,
+          };
+          arr.push(image);
+        }
+      }
+      res.render("admin/branch/namakkal", { img: arr });
+    });
+  })
+  .post(upload.array("sliderimg"), async (req, res) => {
+    if (typeof req.body.checkbox === "string") {
+      await cloudinary.uploader.destroy(`ClassicNeetAcademy/${req.body.checkbox}`);
+      await db.query(
+        "UPDATE branchtwo SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?",
+        [
+          req.files[0].path,
+          req.files[0].originalname,
+          req.files[0].filename.split("/")[1],
+          req.body.checkbox,
+        ],
+        (err, response) => {
+          if (err) {
+            req.flash("error", "Error occurred while Updating");
+            console.log(err);
+            res.redirect("/admin/branch/namakkal");
+          } else {
+            req.flash("success", "Image successfully updated");
+            res.redirect("/admin/branch/namakkal");
+          }
+        }
+      );
+    } else {
+      for (let i = 0; i <= req.files.length - 1; i++) {
+        for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
+          if (i === j) {
+            await cloudinary.uploader.destroy(
+              `ClassicNeetAcademy/${req.body.checkbox[i]}`
+            );
+            await db.query(
+              "UPDATE branchtwo SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?",
+              [
+                req.files[j].path,
+                req.files[j].originalname,
+                req.files[j].filename.split("/")[1],
+                req.body.checkbox[j],
+              ],
+              (err, response) => {
+                if (err) {
+                  req.flash("error", "Error occurred while Updating");
+                  console.log(err);
+                  res.redirect("/admin/branch/namakkal");
+                  return;
+                }
+              }
+            );
+          }
+        }
+      }
+      req.flash("success", "Images successfully updated");
+      res.redirect("/admin/branch/namakkal");
+    }
+  });
+
+  router
+  .route("/admin/branch/dharmapuri")
+  .get(flash, isloggedin, async (req, res) => {
+    await db.query("SELECT * FROM branchthree", async (error, response) => {
+      var arr = [];
+      if (error) {
+        console.log(error);
+      } else {
+        for (let i = 0; i <= response.length - 1; i++) {
+          var image = {
+            sliderimg: response[i].sliderimg,
+            imgname: response[i].imgname,
+            cloudinaryName: response[i].cloudinaryname,
+          };
+          arr.push(image);
+        }
+      }
+      res.render("admin/branch/dharmapuri", { img: arr });
+    });
+  })
+  .post(upload.array("sliderimg"), async (req, res) => {
+    if (typeof req.body.checkbox === "string") {
+      await cloudinary.uploader.destroy(`ClassicNeetAcademy/${req.body.checkbox}`);
+      await db.query(
+        "UPDATE branchthree SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?",
+        [
+          req.files[0].path,
+          req.files[0].originalname,
+          req.files[0].filename.split("/")[1],
+          req.body.checkbox,
+        ],
+        (err, response) => {
+          if (err) {
+            req.flash("error", "Error occurred while adding");
+            console.log(err);
+            res.redirect("/admin/branch/dharmapuri");
+          } else {
+            req.flash("success", "Image Successfully Updated");
+            res.redirect("/admin/branch/dharmapuri");
+          }
+        }
+      );
+    } else {
+      for (let i = 0; i <= req.files.length - 1; i++) {
+        for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
+          if (i === j) {
+            await cloudinary.uploader.destroy(
+              `ClassicNeetAcademy/${req.body.checkbox[i]}`
+            );
+            await db.query(
+              "UPDATE branchthree SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?",
+              [
+                req.files[j].path,
+                req.files[j].originalname,
+                req.files[j].filename.split("/")[1],
+                req.body.checkbox[j],
+              ],
+              (err, response) => {
+                if (err) {
+                  req.flash("error", "Error occurred while adding");
+                  console.log(err);
+                  res.redirect("/admin/branch/dharmapuri");
+                  return;
+                } else {
+                }
+              }
+            );
+          }
+        }
+      }
+      req.flash("success", "Image Successfully Updated");
+      res.redirect("/admin/branch/dharmapuri");
+    }
+  });
+
+  router
+  .route("/admin/branch/vellore")
+  .get(flash, isloggedin, async (req, res) => {
+    await db.query("SELECT * FROM branchfour", async (error, response) => {
+      var arr = [];
+      if (error) {
+        console.log(error);
+      } else {
+        for (let i = 0; i <= response.length - 1; i++) {
+          var image = {
+            sliderimg: response[i].sliderimg,
+            imgname: response[i].imgname,
+            cloudinaryName: response[i].cloudinaryname,
+          };
+          arr.push(image);
+        }
+      }
+      res.render("admin/branch/vellore", { img: arr });
+    });
+  })
+  .post(upload.array("sliderimg"), async (req, res) => {
+    if (typeof req.body.checkbox === "string") {
+      await cloudinary.uploader.destroy(`ClassicNeetAcademy/${req.body.checkbox}`);
+      await db.query(
+        "UPDATE branchfour SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?",
+        [
+          req.files[0].path,
+          req.files[0].originalname,
+          req.files[0].filename.split("/")[1],
+          req.body.checkbox,
+        ],
+        (err, response) => {
+          if (err) {
+            req.flash("error", "Error occurred while adding");
+            console.log(err);
+            res.redirect("/admin/branch/vellore");
+          } else {
+            req.flash("success", "Image Successfully Updated");
+            res.redirect("/admin/branch/vellore");
+          }
+        }
+      );
+    } else {
+      for (let i = 0; i <= req.files.length - 1; i++) {
+        for (let j = 0; j <= req.body.checkbox.length - 1; j++) {
+          if (i === j) {
+            await cloudinary.uploader.destroy(
+              `ClassicNeetAcademy/${req.body.checkbox[i]}`
+            );
+            await db.query(
+              "UPDATE branchfour SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?",
+              [
+                req.files[j].path,
+                req.files[j].originalname,
+                req.files[j].filename.split("/")[1],
+                req.body.checkbox[j],
+              ],
+              (err, response) => {
+                if (err) {
+                  req.flash("error", "Error occurred while adding");
+                  console.log(err);
+                  res.redirect("/admin/branch/vellore");
+                  return;
+                } else {
+                }
+              }
+            );
+          }
+        }
+      }
+      req.flash("success", "Image Successfully Updated");
+      res.redirect("/admin/branch/vellore");
+    }
+  });
+
+
 router
   .route("/admin/chatbot")
   .get(flash, isloggedin, async (req, res) => {
@@ -1782,17 +2115,77 @@ router.get("/sql/history", async (req, res) => {
   });
 });
 
-router.route("/salem").get((req,res)=>{
-  res.render("salem")
+router.route("/salem").get(async(req,res)=>{
+  await db.query("SELECT * FROM branchone", async (error, response) => {
+    var arr = [];
+    if (error) {
+      console.log(error);
+    } else {
+      for (let i = 0; i <= response.length - 1; i++) {
+        var image = {
+          sliderimg: response[i].sliderimg,
+          imgname: response[i].imgname,
+          cloudinaryName: response[i].cloudinaryname,
+        };
+        arr.push(image);
+      }
+    }
+    res.render("salem",{ img: arr })
+  });
 })
-router.route("/namakkal").get((req,res)=>{
-  res.render("Namakkal")
+router.route("/namakkal").get(async(req,res)=>{
+  await db.query("SELECT * FROM branchtwo", async (error, response) => {
+    var arr = [];
+    if (error) {
+      console.log(error);
+    } else {
+      for (let i = 0; i <= response.length - 1; i++) {
+        var image = {
+          sliderimg: response[i].sliderimg,
+          imgname: response[i].imgname,
+          cloudinaryName: response[i].cloudinaryname,
+        };
+        arr.push(image);
+      }
+    }
+    res.render("Namakkal",{ img: arr })
+  });
 })
-router.route("/dharmapuri").get((req,res)=>{
-  res.render("dharmapuri")
+router.route("/dharmapuri").get(async(req,res)=>{
+  await db.query("SELECT * FROM branchthree", async (error, response) => {
+    var arr = [];
+    if (error) {
+      console.log(error);
+    } else {
+      for (let i = 0; i <= response.length - 1; i++) {
+        var image = {
+          sliderimg: response[i].sliderimg,
+          imgname: response[i].imgname,
+          cloudinaryName: response[i].cloudinaryname,
+        };
+        arr.push(image);
+      }
+    }
+    res.render("dharmapuri",{ img: arr })
+  });
 })
-router.route("/vellore").get((req,res)=>{
-  res.render("vellore")
+router.route("/vellore").get(async(req,res)=>{
+  await db.query("SELECT * FROM branchfour", async (error, response) => {
+    var arr = [];
+    if (error) {
+      console.log(error);
+    } else {
+      for (let i = 0; i <= response.length - 1; i++) {
+        var image = {
+          sliderimg: response[i].sliderimg,
+          imgname: response[i].imgname,
+          cloudinaryName: response[i].cloudinaryname,
+        };
+        arr.push(image);
+      }
+    }
+    res.render("vellore",{ img: arr })
+  });
 })
 
 module.exports = router;
