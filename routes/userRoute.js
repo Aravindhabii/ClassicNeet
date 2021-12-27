@@ -2115,4 +2115,17 @@ router.get("/sql/history", async (req, res) => {
   });
 });
 
+router.route("/salem").get((req,res)=>{
+  res.render("salem")
+})
+router.route("/namakkal").get((req,res)=>{
+  res.render("Namakkal")
+})
+router.route("/dharmapuri").get((req,res)=>{
+  res.render("dharmapuri")
+})
+router.route("/vellore").get((req,res)=>{
+  res.render("vellore")
+})
+
 module.exports = router;
