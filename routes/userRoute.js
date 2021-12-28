@@ -158,26 +158,18 @@ router.route("/").get(async (req, res) => {
                                           await db.query(
                                             "SELECT * FROM homeslider",
                                             async (error, response) => {
-                                              var array = [];
                                               if (error) {
                                                 console.log(error);
                                               } else {
-                                                for (
-                                                  let i = 0;
-                                                  i <= response.length - 1;
-                                                  i++
-                                                ) {
                                                   var image = {
                                                     sliderimg:
-                                                      response[i].sliderimg,
+                                                      response[0].sliderimg,
                                                     imgname:
-                                                      response[i].imgname,
+                                                      response[0].imgname,
                                                     cloudinaryName:
-                                                      response[i]
+                                                      response[0]
                                                         .cloudinaryname,
-                                                  };
-                                                  array.push(image);
-                                                }
+                                                  };   
                                               }
                                               res.render("home", {
                                                 img: arr,
@@ -189,7 +181,7 @@ router.route("/").get(async (req, res) => {
                                                 marq,
                                                 state,
                                                 bank,
-                                                array,
+                                                image,
                                               });
                                             }
                                           );
