@@ -2442,7 +2442,7 @@ router.route('/namakkal').get(async (req, res) => {
 					if (error) {
 						console.log(error);
 					} else {
-						res.render('Namakkal', {
+						res.render('namakkal', {
 							content1: response[0].content1,
 							content2: response[0].content2,
 							img: arr
