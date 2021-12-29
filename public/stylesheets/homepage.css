@@ -1918,6 +1918,20 @@ iframe {
 }
 
 @media (max-width: 400px) {
+	.closeimage img {
+		width: 100vw !important;
+		height: auto;
+	}
+	.exit1 {
+		position: absolute;
+		right: 5%;
+		top: 25%;
+	
+	}
+	.exit1 img {
+		width: 3rem !important;
+		height: auto;
+	}
 	.sliderRev {
 		height: 35vh;
 	}

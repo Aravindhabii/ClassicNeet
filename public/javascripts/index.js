@@ -4,7 +4,7 @@ const exit = document.querySelector(".exit1");
 if (closeimg) {
   document.querySelector(".body").style.overflow = "hidden";
   exit.addEventListener("click", () => {
-    closeimg.parentNode.removeChild(closeimg);
+    document.querySelector(".body").removeChild(closeimg);
     document.querySelector(".body").style.overflow = "scroll";
   });
 }

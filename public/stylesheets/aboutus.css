@@ -780,6 +780,10 @@ option:hover {
 		height: 55vh;
 		margin-bottom: 6%;
 	}
+	.content1 pre,
+	.content2 pre {
+		width: 100% !important;
+	}
 	footer .salem {
 		color: yellow !important;
 	}
