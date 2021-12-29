@@ -7,7 +7,7 @@ formtextarea.addEventListener('input', (e) => {
 
 const changablespan1 = document.querySelector('.changablespan2');
 const formtextarea1 = document.querySelector('.formtextarea2');
-changablespan1.innerText = formtextarea.value.length;
+changablespan1.innerText = formtextarea1.value.length;
 formtextarea1.addEventListener('input', (e) => {
 	changablespan1.innerText = e.target.value.length;
 });
