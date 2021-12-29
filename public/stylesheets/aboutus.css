@@ -359,7 +359,7 @@ option:hover {
 	font-size: 35px;
 	margin-bottom: 3%;
 }
-.leaderimg{
+.leaderimg {
 	width: 100%;
 	height: 50vh;
 	position: relative;
@@ -367,28 +367,28 @@ option:hover {
 	justify-content: space-between;
 	align-items: center;
 }
-.imageabout{
+.imageabout {
 	width: 39%;
-    margin-left: 6%;
+	margin-left: 6%;
 }
-.imageabout img{
-	width: 30vw ;
-	height: 55vh ;
+.imageabout img {
+	width: 30vw;
+	height: 55vh;
 	margin-bottom: 6%;
 }
-.content1{
+.content1 {
 	width: 61%;
 	position: relative;
 	height: fit-content;
 }
-.content1 p{
+.content1 pre {
 	width: 55vw;
 	height: 100%;
 	font-weight: 500;
-	font-size:0.9rem;
+	font-size: 0.9rem;
 	text-align: justify;
 }
-.leadervideo{
+.leadervideo {
 	width: 100%;
 	height: 50vh;
 	margin-top: 8%;
@@ -398,28 +398,26 @@ option:hover {
 	justify-content: space-between;
 	align-items: center;
 }
-.leadvideo{
+.leadvideo {
 	width: 45%;
 }
-.content2{
+.content2 {
 	position: relative;
 	width: 55%;
 	height: 100%;
 	height: fit-content;
 	margin-left: 6%;
 }
-.content2 p{
+.content2 pre {
 	width: 47vw;
 	font-weight: 500;
-	font-size:0.9rem;
+	font-size: 0.9rem;
 	text-align: justify;
-	
 }
-.iframe1{
+.iframe1 {
 	width: 40vw;
 	height: 51vh;
 }
-
 
 /* gallery */
 .gallery {
@@ -593,7 +591,7 @@ option:hover {
 
 /* dropdown */
 
-.dropdown {
+.dropdownNeet {
 	height: 40px;
 	cursor: pointer;
 	border-radius: 10px;
@@ -626,14 +624,12 @@ option:hover {
 		margin-left: auto;
 		margin-right: auto;
 	}
-	.leadervideo{
+	.leadervideo {
 		margin-top: 12%;
 		margin-bottom: 5%;
-		
 	}
 	.leaders h1 {
 		margin-bottom: 5%;
-		
 	}
 }
 @media (max-width: 1110px) {
@@ -642,14 +638,12 @@ option:hover {
 		width: 50vw;
 		height: 55vh;
 	}
-	.leadervideo{
+	.leadervideo {
 		margin-top: 15%;
 		margin-bottom: 7%;
-		
 	}
 	.leaders h1 {
 		margin-bottom: 7%;
-		
 	}
 }
 @media (max-width: 1000px) {
@@ -667,14 +661,12 @@ option:hover {
 	.timelineDiv {
 		min-height: 200px;
 	}
-	.leadervideo{
+	.leadervideo {
 		margin-top: 17%;
 		margin-bottom: 10%;
-		
 	}
 	.leaders h1 {
 		margin-bottom: 10%;
-		
 	}
 }
 
@@ -696,7 +688,7 @@ option:hover {
 		line-height: 2.3rem;
 		padding: 0rem 4rem;
 	}
-	
+
 	.ourvision h1,
 	.ourmission h1 {
 		margin: 1rem 0rem;
@@ -717,56 +709,53 @@ option:hover {
 	.timelineContent {
 		width: 90%;
 	}
-	.leaders{
+	.leaders {
 		height: 240vh;
 	}
-	.leadervideo{
+	.leadervideo {
 		margin-top: 4%;
 		margin-bottom: 13%;
 		flex-direction: column;
 		height: 100vh;
-
 	}
-	.leaderimg{
-		
+	.leaderimg {
 		flex-direction: column;
-        height: fit-content;
+		height: fit-content;
 	}
 	.leaders h1 {
 		margin-bottom: 13%;
-		
 	}
-	.content1 p{
-		font-size:0.9rem;
+	.content1 p {
+		font-size: 0.9rem;
 		width: 80vw;
 	}
-	.content2 p{
-		font-size:0.9rem;
+	.content2 p {
+		font-size: 0.9rem;
 		width: 80vw;
 	}
-	.content1,.content2
-	{
+	.content1,
+	.content2 {
 		width: 80%;
 		margin-left: 0;
 		height: fit-content;
-	} 
-	.imageabout{
+	}
+	.imageabout {
 		width: 53%;
 		margin-left: 6%;
 	}
-	.imageabout img{
-		width: 50vw ;
-		height: 55vh ;
+	.imageabout img {
+		width: 50vw;
+		height: 55vh;
 		margin-bottom: 6%;
 	}
 	.leaders h1 {
 		margin-bottom: 0%;
 	}
-    .iframe1{
+	.iframe1 {
 		width: 70vw;
 		height: 50vh;
 	}
-	.leadvideo{
+	.leadvideo {
 		width: 72%;
 		margin-top: 4%;
 	}
@@ -777,33 +766,35 @@ option:hover {
 		font-size: 35px;
 		margin-bottom: 3%;
 	}
-
 }
-@media(max-width:800px){
-	.leaders{
+@media (max-width: 800px) {
+	.leaders {
 		height: 250vh;
 	}
-	.imageabout{
+	.imageabout {
 		width: 53%;
 		margin-left: 6%;
 	}
-	.imageabout img{
-		width: 51vw ;
-		height: 55vh ;
+	.imageabout img {
+		width: 51vw;
+		height: 55vh;
 		margin-bottom: 6%;
 	}
+	footer .salem {
+		color: yellow !important;
+	}
 }
-@media(max-width:700px){
-	.leaders{
+@media (max-width: 700px) {
+	.leaders {
 		height: 260vh;
 	}
-	.imageabout{
+	.imageabout {
 		width: 61%;
 		margin-left: 6%;
 	}
-	.imageabout img{
-		width: 54vw ;
-		height: 53vh ;
+	.imageabout img {
+		width: 54vw;
+		height: 53vh;
 		margin-bottom: 6%;
 	}
 }
@@ -869,18 +860,16 @@ option:hover {
 	.Messaging {
 		width: 50%;
 	}
-	.leadervideo{
-		
-		margin-bottom:3%;
-		
+	.leadervideo {
+		margin-bottom: 3%;
 	}
-	.imageabout{
+	.imageabout {
 		width: 60%;
 		margin-left: 0%;
 	}
-	.imageabout img{
-		width: 60vw ;
-		height: 45vh ;
+	.imageabout img {
+		width: 60vw;
+		height: 45vh;
 		margin-bottom: 6%;
 	}
 	.leaders h1 {
@@ -890,13 +879,13 @@ option:hover {
 		font-size: 32px;
 		margin-bottom: 0%;
 	}
-	.iframe1{
-	width: 70vw;
-	height: 40vh;
-}
-.leaders{
-	height: 280vh;
-}
+	.iframe1 {
+		width: 70vw;
+		height: 40vh;
+	}
+	.leaders {
+		height: 280vh;
+	}
 }
 
 @media (max-width: 500px) {
@@ -912,56 +901,67 @@ option:hover {
 	.previewImg img {
 		width: 80%;
 	}
-	.leadervideo{
-		
-		margin-bottom:14%;
-		
+	.leadervideo {
+		margin-bottom: 14%;
 	}
 	.timeline h1 {
 		margin-bottom: 9%;
 	}
-	.leaders{
+	.leaders {
 		height: 300vh;
 	}
-	.imageabout{
+	.imageabout {
 		width: 64%;
 		margin-left: 0%;
 	}
-	.imageabout img{
-		width: 62vw ;
-		height: 44vh ;
+	.imageabout img {
+		width: 62vw;
+		height: 44vh;
 		margin-bottom: 6%;
 	}
 }
-@media(max-width:450px){
+@media (max-width: 450px) {
 	.leaders {
-	
 		height: 315vh;
-		
 	}
-	.imageabout{
+	.imageabout {
 		width: 64%;
 		margin-left: 0%;
 	}
-	.imageabout img{
-		width: 62vw ;
-		height: 44vh ;
+	.imageabout img {
+		width: 62vw;
+		height: 44vh;
 		margin-bottom: 6%;
 	}
 }
-@media(max-width:400px){
-	.leaders {
-	
-		height: 330vh;
-		
+@media (max-width: 400px) {
+	.video {
+		width: 100%;
+		height: 30vh;
+		position: relative;
 	}
-	.imageabout{
+	.video h1 {
+		border: 1px solid black;
+		background-color: white;
+		border-radius: 35px;
+		width: 80%;
+		display: flex;
+		justify-content: center;
+		padding: 0.5rem;
+	}
+	.vidAbout {
+		height: auto;
+	}
+	.leaders {
+		height: 360vh;
+	}
+	.imageabout {
 		width: 73%;
 		margin-left: 0%;
 	}
-	.imageabout img{
-		width: 73vw ;
-		height: 40vh ;
+	.imageabout img {
+		width: 73vw;
+		height: 40vh;
 		margin-bottom: 6%;
 	}
 }

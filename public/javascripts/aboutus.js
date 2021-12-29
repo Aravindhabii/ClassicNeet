@@ -1,7 +1,6 @@
 //dropdown
 
-const dropdown = document.querySelector('.dropdown');
-
+const dropdown = document.querySelector('.dropdownNeet');
 const prevYear = document.querySelector('.prev-btn'); //2019
 const currentYear = document.querySelector('.current-btn'); //2020
 const btn = document.querySelectorAll('.btn');

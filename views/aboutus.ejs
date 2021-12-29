@@ -1,125 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="images/home/classic-nee-tacademy-logo.png"
+			type="image/x-icon"
+		/>
+		<link rel="stylesheet" href="stylesheets/aboutus.css" />
+		<script
+			src="https://kit.fontawesome.com/f93354d676.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="stylesheets/chatbot.css" />
+		<link rel="stylesheet" href="stylesheets/pagination.css" />
+		<title>Aboutus</title>
+		<style>
+			.aboutusnav {
+				background-color: #369afe;
+				border-radius: 0% 50% 0% 50%;
+				color: white !important;
+			}
+		</style>
+	</head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="images/home/classic-nee-tacademy-logo.png" type="image/x-icon" />
-  <link rel="stylesheet" href="stylesheets/aboutus.css" />
-  <script src="https://kit.fontawesome.com/f93354d676.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="stylesheets/chatbot.css" />
-  <link rel="stylesheet" href="stylesheets/pagination.css" />
-  <title>Aboutus</title>
-  <style>
-    .aboutusnav {
-      background-color: #369afe;
-      border-radius: 0% 50% 0% 50%;
-      color: white !important;
-    }
-  </style>
-</head>
+	<body>
+		<div class="previewImg">
+			<svg
+				class="close"
+				xmlns="http://www.w3.org/2000/svg"
+				class="h-6 w-6"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke="currentColor"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+				/>
+			</svg>
+			<img src="" class="previewimg" />
+		</div>
+		<%- include('./layout/header') %> <%- include('./chatbot') %>
 
-<body>
-  <div class="previewImg">
-    <svg class="close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-      stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <img src="" class="previewimg" />
-  </div>
-  <%- include('./layout/header') %>
-    <%- include('./chatbot') %>
+		<section class="video">
+			<video class="vidAbout" autoplay muted loop>
+				<source src="../images/aboutus/CLASSVIDEO.mp4" type="video/mp4" />
+			</video>
+			<h1>EXPECT THE BEST...</h1>
+		</section>
+		<!-- visionmission -->
+		<section class="missionNew">
+			<div class="ourvision">
+				<h1>OUR VISION</h1>
+				<p>
+					To be India's best training Institute to impart understanding and
+					application-based education to the young talents and carving them into
+					creative human resources who are having sufficient knowledge, with
+					competitive edge, National Integrity and social responsibility and who
+					are the input for India's top Medical Engineering and professional
+					colleges.
+				</p>
+			</div>
+			<div class="ourmission">
+				<h1>OUR MISSION</h1>
+				<p>
+					1. To give awareness on competitive exams among the school students
+					and develop science and math foundation in school going children.
+				</p>
+				<p>
+					2. To impart state of art training for the competitive exams such as
+					NEET, JEE etc., to the students and develop competitive spirit to set.
+				</p>
+			</div>
+		</section>
+		<!-- leaders -->
+		<section class="leaders">
+			<h1>Our Founder</h1>
+			<div class="leaderimg">
+				<span class="imageabout">
+					<img src="images/aboutus/TPS.png" alt="" />
+				</span>
+				<span class="content1">
+					<pre style="white-space: pre-wrap"><%= ourFounderContent1 %></pre>
+				</span>
+			</div>
+			<div class="leadervideo">
+				<span class="content2">
+					<pre style="white-space: pre-wrap"><%= ourFounderContent2 %></pre>
+				</span>
+				<span class="leadvideo">
+					<iframe
+						class="iframe1"
+						src="<%= url %>"
+						title="YouTube video player"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen
+					></iframe>
+				</span>
+			</div>
+		</section>
 
-      <section class="video">
-        <video class="vidAbout" autoplay muted loop>
-          <source src="../images/aboutus/CLASSVIDEO.mp4" type="video/mp4" />
-        </video>
-        <h1>EXPECT THE BEST...</h1>
-      </section>
-      <!-- visionmission -->
-      <section class="missionNew">
-        <div class="ourvision">
-          <h1>OUR VISION</h1>
-          <p>
-            To be India's best training Institute to impart understanding and
-            application-based education to the young talents and carving them into
-            creative human resources who are having sufficient knowledge, with
-            competitive edge, National Integrity and social responsibility and who
-            are the input for India's top Medical Engineering and professional
-            colleges.
-          </p>
-        </div>
-        <div class="ourmission">
-          <h1>OUR MISSION</h1>
-          <p>
-            1. To give awareness on competitive exams among the school students
-            and develop science and math foundation in school going children.
-          </p>
-          <p>
-            2. To impart state of art training for the competitive exams such as
-            NEET, JEE etc., to the students and develop competitive spirit to set.
-          </p>
-        </div>
-      </section>
-      <!-- leaders -->
-      <section class="leaders">
-        <h1>Our Founder</h1>
-        <div class="leaderimg">
-          <span class="imageabout">
-            <img src="images/aboutus/TPS.png" alt="">
-          </span>
-          <span class="content1">
-            <p>Dr. T. Periasamy, an edupreneur, was born in a small village in Karur District of Tamil Nadu. He is
-              having
-              20 years of experience in teaching, research and industry.</p>
-            <br><p>Being a Government School Tamil Medium student, he excelled in his education and become an IITian. He
-              completed his Bachelor’s degree in Mechanical engineering from University of Madras and Master’s degree in
-              Mechtronics engineering from VIT.</p>
-            <br><p>He pursued his doctorate (Ph.D) in the field of Mechanical Engineering (Robotics) from IIT Madras. He
-              published nearly 10 papers in the international journals and conferences.</p>
-            <br><p>After completing his masters in the year 2002, he worked as a lecturer in a reputed institute for few
-              years, where his journey of teaching started. He loved to teach students and received the Best Faculty
-              Award.</p>
-            <br><p>Not only in academics but also involved himself in extracurricular activities like NCC and sports. He
-              served as NCC officer of the college and got trained by Indian Army at Officer Training Academy (OTA),
-              Kamptee, Nagpur for a period of 3 months and commissioned as Lieutenant.</p>
-            <br><p>After his doctorate he worked in various industries such as Eaton Technologies, Pune & USA; Mahindra &
-              Mahindra, India in various capacities.</p>
-            </span>
-        </div>
-        <div class="leadervideo">
-          <span class="content2">
-            <p>He has visited around 10 various countries such as USA, UK,
-              Germany, Austria, etc., during his research and industry career.</p>
-            <br><p>He is an invited lecturer for many tier-1 institutions such as IIT-Madras, NIT, etc.,
-            </p>
-            <br><p>Due to his passion in teaching and education, he joined as the Director in a reputed coaching institute
-              at Salem.</p>
-            <br><p>Through his uninterrupted heartfelt dedication, hard work and zeal to serve the student community, he
-              became very admirable and popular physics teacher amongst students, for his exhaustive subject knowledge,
-              incomparable teaching ability and excellent directive skills. His dream of becoming an Edupreneur resulted
-              in the birth of CLASSIC NEET ACADEMY.</p>
-            <br><p>Under his leadership, 98% of his students cleared NEET 2020; 108 students got MBBS seats through Govt.
-              Quota during NEET 2020. 2 of his students got MBBS seats through All India Government Quota. Since 2016,
-              345 of his students got MBBS seats in various medical colleges in Tamil Nadu through Government Quota
-              based on NEET marks. This is the highest ever result in Salem region for any institute or school.</p>
-          </span>
-          <span class="leadvideo">
-            <iframe class="iframe1" src="<%= url %> "
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-          </span>
-        </div>
-      </section>
-
-      <h1 class="ourjourney">Our Journey So Far</h1>
-      <section class="timelineNew">
-        <img class="timelineImg" src="../images/aboutus/Group19.png" class="book" alt="" />
-        <div class="timelineContent">
-          <!-- <div class="timelineIcon">
+		<h1 class="ourjourney">Our Journey So Far</h1>
+		<section class="timelineNew">
+			<img
+				class="timelineImg"
+				src="../images/aboutus/Group19.png"
+				class="book"
+				alt=""
+			/>
+			<div class="timelineContent">
+				<!-- <div class="timelineIcon">
           <div class="timelineDiv">
             <span
               ><img
@@ -150,39 +146,50 @@
             <span><img src="../images/aboutus/dot2.png" /></span>
           </div>
         </div> -->
-          <div class="timelinePara">
-            <% content.forEach(cont=> { %>
-              <p>
-                <%= cont.content %> - <%= cont.year %>
-              </p>
-              <% }) %>
-          </div>
-        </div>
-      </section>
-      <section class="galleryNew">
-        <h1 class="galleryHead">Gallery</h1>
-        <select class="form-select form-select-lg mb-3 dropdown" aria-label=".form-select-lg example" data-select="">
-          <% folderArray.forEach((folder,i)=> { %>
-            <option class="opt" value="<%= folder %>" selected="<%=i==0?true:false%>" data-year="<%= folder %>">
-              NEET <%= folder %>
-            </option>
-            <% }) %>
-        </select>
+				<div class="timelinePara">
+					<% content.forEach(cont=> { %>
+					<p><%= cont.content %> - <%= cont.year %></p>
+					<% }) %>
+				</div>
+			</div>
+		</section>
+		<section class="galleryNew">
+			<h1 class="galleryHead">Gallery</h1>
+			<select
+				class="form-select form-select-lg mb-3 dropdownNeet"
+				aria-label=".form-select-lg example"
+				data-select=""
+			>
+				<% folderArray.forEach((folder,i)=> { %>
+				<option
+					class="opt"
+					value="<%= folder %>"
+					selected="<%=i==0?true:false%>"
+					data-year="<%= folder %>"
+				>
+					NEET <%= folder %>
+				</option>
+				<% }) %>
+			</select>
 
-        <section class="galleryMain"></section>
-        <div id="pagination-container"></div>
-      </section>
+			<section class="galleryMain"></section>
+			<div id="pagination-container"></div>
+		</section>
 
-      <%- include('./layout/footer') %>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-          referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"
-          integrity="sha512-1zzZ0ynR2KXnFskJ1C2s+7TIEewmkB2y+5o/+ahF7mwNj9n3PnzARpqalvtjSbUETwx6yuxP5AJXZCpnjEJkQw=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="javascripts/aboutus.js"></script>
-        <script src="javascripts/nav.js"></script>
-        <script src="javascripts/common.js"></script>
-        <script src="javascripts/chatbot.js"></script>
-</body>
-
+		<%- include('./layout/footer') %>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+			referrerpolicy="no-referrer"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"
+			integrity="sha512-1zzZ0ynR2KXnFskJ1C2s+7TIEewmkB2y+5o/+ahF7mwNj9n3PnzARpqalvtjSbUETwx6yuxP5AJXZCpnjEJkQw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script src="javascripts/aboutus.js"></script>
+		<script src="javascripts/nav.js"></script>
+		<script src="javascripts/common.js"></script>
+		<script src="javascripts/chatbot.js"></script>
+	</body>
 </html>

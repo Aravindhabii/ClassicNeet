@@ -1,6 +1,6 @@
 <div
 	class="flex-shrink-0 p-3 border-end bg-light sidebar"
-	style="width: 220px; height: 90vh; margin-top: 10vh;"
+	style="width: 220px; height: 90vh; margin-top: 10vh; overflow-y: scroll"
 >
 	<ul class="list-unstyled ps-0">
 		<li class="mb-4">
@@ -62,30 +62,24 @@
 						>
 					</li>
 					<li>
-						<a
-							href="/admin/marquee"
-							class="link-dark rounded ahover"
+						<a href="/admin/marquee" class="link-dark rounded ahover"
 							>Marquee Text</a
 						>
 					</li>
 					<li>
-						<a
-							href="/admin/questionbank"
-							class="link-dark rounded ahover"
+						<a href="/admin/questionbank" class="link-dark rounded ahover"
 							>Questionbank</a
 						>
 					</li>
 					<li>
-						<a
-							href="/admin/loadingimg"
-							class="link-dark rounded ahover"
+						<a href="/admin/loadingimg" class="link-dark rounded ahover"
 							>Loading Img</a
 						>
 					</li>
 				</ul>
 			</div>
 		</li>
-	
+
 		<li class="mb-4">
 			<button
 				class="btn btn-toggle align-items-center rounded collapsed fs-5"
@@ -118,8 +112,15 @@
 						>
 					</li>
 					<li>
-						<a href="/admin/aboutus/foundervideo" class="link-dark rounded ahover"
-							>FounderVideo</a
+						<a
+							href="/admin/aboutus/foundervideo"
+							class="link-dark rounded ahover"
+							>Founder video</a
+						>
+					</li>
+					<li>
+						<a href="/admin/aboutus/ourfounder" class="link-dark rounded ahover"
+							>Our Founder</a
 						>
 					</li>
 				</ul>
@@ -327,22 +328,51 @@
 				>
 					<li>
 						<a href="/admin/branch/salem" class="link-dark rounded ahover"
-							>Salem</a
+							>Salem - Carousel</a
 						>
 					</li>
 					<li>
+						<a
+							href="/admin/branch/salemcontent"
+							class="link-dark rounded ahover"
+							>Salem - Content</a
+						>
+					</li>
+
+					<li>
 						<a href="/admin/branch/namakkal" class="link-dark rounded ahover"
-							>Namakkal</a
+							>Namakkal - Carousel</a
+						>
+					</li>
+					<li>
+						<a
+							href="/admin/branch/namakkalcontent"
+							class="link-dark rounded ahover"
+							>Namakkal - Content</a
 						>
 					</li>
 					<li>
 						<a href="/admin/branch/dharmapuri" class="link-dark rounded ahover"
-							>Dharmapuri</a
+							>Dharmapuri - Carousel</a
+						>
+					</li>
+					<li>
+						<a
+							href="/admin/branch/dharmapuricontent"
+							class="link-dark rounded ahover"
+							>Dharmapuri - Content</a
 						>
 					</li>
 					<li>
 						<a href="/admin/branch/vellore" class="link-dark rounded ahover"
-							>Vellore</a
+							>Vellore - Carousel</a
+						>
+					</li>
+					<li>
+						<a
+							href="/admin/branch/vellorecontent"
+							class="link-dark rounded ahover"
+							>Vellore - Content</a
 						>
 					</li>
 				</ul>
@@ -352,11 +382,9 @@
 </div>
 
 <% if(success && success.length) {%>
-	<p class="sweetp"><%= success %></p>
+<p class="sweetp"><%= success %></p>
+<% } %> <% if(error && error.length) {%>
+<p class="sweetperr"><%= error %></p>
 <% } %>
-<% if(error && error.length) {%>
-	<p class="sweetperr"><%= error %></p>
-<% } %>
-
 
 <script src="../../javascripts/admin/header.js"></script>

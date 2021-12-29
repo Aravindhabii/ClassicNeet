@@ -10,7 +10,7 @@ const swiper = new Swiper('.swiper', {
 	}
 });
 
-const dropdown = document.querySelector('.dropdown');
+const dropdown = document.querySelector('.dropdown1');
 
 window.addEventListener('load', (e) => {
 	$('#pagination-container').pagination({

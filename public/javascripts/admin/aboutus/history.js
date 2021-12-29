@@ -27,7 +27,6 @@ const edityear = document.querySelector('.edityear');
 const editcontent = document.querySelector('.editcontent');
 const oldid = document.querySelector('.oldid');
 
-
 yearnum.setAttribute('max', new Date().getFullYear() + 1);
 
 addbtn.addEventListener('click', () => {
@@ -57,13 +56,13 @@ contents.forEach((content) => {
 
 const nocontentswal = () => {
 	Swal.fire({
-		position: "center",
-		icon: "warning",
-		title: "Please check any checkbox",
+		position: 'center',
+		icon: 'warning',
+		title: 'Please check any checkbox',
 		showConfirmButton: false,
-		timer: 2500,
+		timer: 2500
 	});
-}
+};
 
 const checkswal = () => {
 	Swal.fire({
@@ -79,29 +78,30 @@ const checkswal = () => {
 			latestupdateform.submit();
 		}
 	});
-  };
+};
 
 submitbtn.addEventListener('click', () => {
 	if (
-		submitbtn.getAttribute("type") == "button" &&
-		submitbtn.classList.contains("warningcheck")
-	  ) {
+		submitbtn.getAttribute('type') == 'button' &&
+		submitbtn.classList.contains('warningcheck')
+	) {
 		nocontentswal();
-	  } else if (
-		submitbtn.getAttribute("type") == "button" &&
-		!submitbtn.classList.contains("warningcheck")
-	  ) {
+	} else if (
+		submitbtn.getAttribute('type') == 'button' &&
+		!submitbtn.classList.contains('warningcheck')
+	) {
 		checkswal();
-	  } else {
+	} else {
 		return;
-	  }
+	}
 });
 
 function editbutton(edit) {
 	previewDiv2.style.display = 'flex';
 	imgform.style.transform = 'translate(300vw,0)';
 	previewDiv2.style.transform = 'none';
-	const cloudinarynamevalue = edit.parentNode.parentNode.children[3].children[0].value;
+	const cloudinarynamevalue =
+		edit.parentNode.parentNode.children[3].children[0].value;
 	oldid.value = cloudinarynamevalue;
 	const contval = cloudinarynamevalue.split('**')[0];
 	const yearval = cloudinarynamevalue.split('**')[1];
@@ -109,7 +109,6 @@ function editbutton(edit) {
 	editcontent.value = contval;
 	// const namevalue = edit.parentNode.parentNode.children[0].innerText;
 	// const collegenamevalue = edit.parentNode.parentNode.children[2].innerText;
-	
 }
 
 backbtn2.addEventListener('click', () => {
@@ -119,9 +118,9 @@ backbtn2.addEventListener('click', () => {
 
 const updatesCheckboxChange = (e) => {
 	if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
-		submitbtn.classList.remove("warningcheck");
+		submitbtn.classList.remove('warningcheck');
 	} else {
-		submitbtn.classList.add("warningcheck");
+		submitbtn.classList.add('warningcheck');
 	}
 };
 
