@@ -334,8 +334,9 @@ iframe {
 }
 .video h1 {
 	position: absolute;
-	top: 80%;
 	z-index: 5;
+	bottom: 0;
+	margin-bottom: 2rem;
 }
 .book {
 	position: absolute;
@@ -709,14 +710,11 @@ option:hover {
 	.timelineContent {
 		width: 90%;
 	}
-	.leaders {
-		height: 240vh;
-	}
 	.leadervideo {
 		margin-top: 4%;
 		margin-bottom: 13%;
 		flex-direction: column;
-		height: 100vh;
+		height: auto;
 	}
 	.leaderimg {
 		flex-direction: column;
@@ -768,9 +766,6 @@ option:hover {
 	}
 }
 @media (max-width: 800px) {
-	.leaders {
-		height: 250vh;
-	}
 	.imageabout {
 		width: 53%;
 		margin-left: 6%;
@@ -789,8 +784,17 @@ option:hover {
 	}
 }
 @media (max-width: 700px) {
-	.leaders {
-		height: 260vh;
+	.video {
+		height: auto;
+	}
+
+	.vidAbout {
+		height: auto;
+		position: relative;
+	}
+	.video h1 {
+		width: auto;
+		padding: 0.5rem 1rem;
 	}
 	.imageabout {
 		width: 61%;
@@ -803,9 +807,7 @@ option:hover {
 	}
 }
 @media screen and (max-width: 600px) {
-	.video h1 {
-		top: 60%;
-	}
+	
 	.slide {
 		height: fit-content;
 	}
@@ -827,9 +829,6 @@ option:hover {
 		margin: 1rem 0.5rem;
 		padding: 0.2rem 0.5rem;
 		font-size: 13px;
-	}
-	.video h1 {
-		width: 80%;
 	}
 	.gallery {
 		margin-bottom: 5rem;
@@ -887,9 +886,6 @@ option:hover {
 		width: 70vw;
 		height: 40vh;
 	}
-	.leaders {
-		height: 280vh;
-	}
 }
 
 @media (max-width: 500px) {
@@ -911,9 +907,6 @@ option:hover {
 	.timeline h1 {
 		margin-bottom: 9%;
 	}
-	.leaders {
-		height: 300vh;
-	}
 	.imageabout {
 		width: 64%;
 		margin-left: 0%;
@@ -925,9 +918,6 @@ option:hover {
 	}
 }
 @media (max-width: 450px) {
-	.leaders {
-		height: 315vh;
-	}
 	.imageabout {
 		width: 64%;
 		margin-left: 0%;
@@ -948,16 +938,12 @@ option:hover {
 		border: 1px solid black;
 		background-color: white;
 		border-radius: 35px;
-		width: 80%;
 		display: flex;
 		justify-content: center;
-		padding: 0.5rem;
+		padding: 0.5rem 1rem;
 	}
 	.vidAbout {
 		height: auto;
-	}
-	.leaders {
-		height: 360vh;
 	}
 	.imageabout {
 		width: 73%;
