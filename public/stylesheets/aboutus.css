@@ -374,7 +374,6 @@ option:hover {
 }
 .imageabout img {
 	width: 30vw;
-	height: 55vh;
 	margin-bottom: 6%;
 }
 .content1 {
@@ -743,7 +742,6 @@ option:hover {
 	}
 	.imageabout img {
 		width: 50vw;
-		height: 55vh;
 		margin-bottom: 6%;
 	}
 	.leaders h1 {
@@ -772,7 +770,6 @@ option:hover {
 	}
 	.imageabout img {
 		width: 51vw;
-		height: 55vh;
 		margin-bottom: 6%;
 	}
 	.content1 pre,
@@ -802,12 +799,10 @@ option:hover {
 	}
 	.imageabout img {
 		width: 54vw;
-		height: 53vh;
 		margin-bottom: 6%;
 	}
 }
 @media screen and (max-width: 600px) {
-	
 	.slide {
 		height: fit-content;
 	}
@@ -872,7 +867,6 @@ option:hover {
 	}
 	.imageabout img {
 		width: 60vw;
-		height: 45vh;
 		margin-bottom: 6%;
 	}
 	.leaders h1 {
@@ -884,7 +878,7 @@ option:hover {
 	}
 	.iframe1 {
 		width: 70vw;
-		height: 40vh;
+		height: 35vw;
 	}
 }
 
@@ -913,7 +907,6 @@ option:hover {
 	}
 	.imageabout img {
 		width: 62vw;
-		height: 44vh;
 		margin-bottom: 6%;
 	}
 }
@@ -924,7 +917,6 @@ option:hover {
 	}
 	.imageabout img {
 		width: 62vw;
-		height: 44vh;
 		margin-bottom: 6%;
 	}
 }
@@ -951,7 +943,6 @@ option:hover {
 	}
 	.imageabout img {
 		width: 73vw;
-		height: 40vh;
 		margin-bottom: 6%;
 	}
 }
