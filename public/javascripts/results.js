@@ -23,7 +23,7 @@ window.addEventListener('load', (e) => {
 				}
 			});
 		},
-		className: 'paginationjs-theme-blue paginationjs-big',
+		className: 'paginationjs-theme-blue paginationjs-small',
 
 		pageSize: window.innerWidth <= 1250 ? 8 : 9,
 		callback: function (data, pagination) {

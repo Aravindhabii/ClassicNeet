@@ -58,7 +58,7 @@ a.site-logo {
 }
 .site-navbar ul li a {
 	color: #1e2886;
-	padding: 20px;
+	padding: 0;
 	display: block;
 	font-size: 1rem;
 	text-decoration: none;
@@ -184,11 +184,6 @@ body.dark .submenu{
 	}
 }
 /* intro-area css end */
-@media (max-width: 1100px) {
-	.site-navbar ul li a {
-		padding: 12px;
-	}
-}
 @media (max-width: 1000px) {
 	.nav-toggler span,
 	.nav-toggler span:before,
@@ -235,7 +230,6 @@ body.dark .submenu{
 		text-align: center;
 	}
 	.site-navbar ul li a {
-		padding: 25px;
 		font-size: 1.5rem;
 		color: white;
 	}
@@ -297,11 +291,6 @@ body.dark .submenu{
 	}
 
 	/* navbar css for mobile end */
-}
-@media (max-width: 350px) {
-	.site-navbar ul li a {
-		padding: 20px;
-	}
 }
 
 /* mobile breakpoint end */
