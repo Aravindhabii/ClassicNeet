@@ -776,9 +776,6 @@ option:hover {
 	.content2 pre {
 		width: 100% !important;
 	}
-	footer .salem {
-		color: yellow !important;
-	}
 }
 @media (max-width: 700px) {
 	.video {
