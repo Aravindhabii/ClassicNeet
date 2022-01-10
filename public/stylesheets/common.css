@@ -343,6 +343,14 @@ body.dark footer {
 .address-container h1 {
 	padding-bottom: 2rem;
 }
+
+.address-container.salem a {
+	color: red !important;
+}
+
+.address-container a {
+	color: white;
+}
 .address {
 	font-size: 1.2rem;
 }
@@ -470,6 +478,7 @@ body.dark footer {
 		width: 90%;
 		margin: 5%;
 	}
+
 	.footer_head {
 		flex-direction: column;
 	}
