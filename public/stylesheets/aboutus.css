@@ -502,7 +502,6 @@ option:hover {
 	border-radius: 5px 0 0 5px;
 }
 
-
 .pageButton#button_next {
 	/* border: 1px solid #289de9; */
 	padding: 0.2rem 0.6rem;
@@ -966,5 +965,10 @@ option:hover {
 	.imageabout img {
 		width: 73vw;
 		margin-bottom: 6%;
+	}
+	.pageButton#button_prev,
+	.pageButton#button_next,
+	.clickPageNumber {
+		padding: 0.1rem 0.4rem;
 	}
 }
