@@ -172,8 +172,15 @@
 				<% }) %>
 			</select>
 
-			<section class="galleryMain"></section>
-			<div id="pagination-container"></div>
+			<div class="pagination">
+				<section class="galleryMain tableList"></section>
+				<div class="tableList" id="listingTable"></div>
+				<div class="pagination-block">
+					<span class="pageButton outline-none" id="button_prev">Prev</span>
+					<span id="page_number" class="outline-none"></span>
+					<span class="pageButton outline-none" id="button_next">Next</span>
+				</div>
+			</div>
 		</section>
 
 		<%- include('./layout/footer') %>
@@ -181,12 +188,14 @@
 			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
 			referrerpolicy="no-referrer"
 		></script>
-		<script
+		<!-- <script
 			src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"
 			integrity="sha512-1zzZ0ynR2KXnFskJ1C2s+7TIEewmkB2y+5o/+ahF7mwNj9n3PnzARpqalvtjSbUETwx6yuxP5AJXZCpnjEJkQw=="
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
-		></script>
+		></script> -->
+		<script src="//cdnjs.cloudflare.com/ajax/libs/list.pagination.js/0.1.1/list.pagination.min.js"></script>
+
 		<script src="javascripts/aboutus.js"></script>
 		<script src="javascripts/nav.js"></script>
 		<script src="javascripts/common.js"></script>
