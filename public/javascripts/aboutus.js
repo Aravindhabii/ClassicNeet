@@ -30,7 +30,6 @@ window.addEventListener('load', (e) => {
 		success: function (response) {
 			(function () {
 				'use strict';
-
 				function Pagination() {
 					const objJson = response;
 
