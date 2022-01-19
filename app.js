@@ -8,7 +8,6 @@ const userRoutes = require('./routes/userRoute');
 const authentication = require('./routes/authentication');
 const db = require('./database');
 const methodOverride = require('method-override');
-const cpmpression = require('compression');
 const compression = require('compression');
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
