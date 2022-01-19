@@ -31,7 +31,7 @@ window.addEventListener('load', (e) => {
 			(function () {
 				'use strict';
 				function Pagination() {
-					const objJson = response;
+			const objJson = response;
 
 					const prevButton = document.getElementById('button_prev');
 					const nextButton = document.getElementById('button_next');
