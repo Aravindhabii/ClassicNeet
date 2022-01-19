@@ -223,7 +223,7 @@ dropdown.addEventListener('change', (e) => {
 							i++
 						) {
 							listingTable.innerHTML += `<div class="galleryItem">
-								<img onclick="galCLick(this)" id="imageid" src="../images/gallery/${dropdown.value}/${objJson[i]}" alt="">
+								<img onclick="galCLick(this)" id="imageid" src="../images/gallery/${e.target.value}/${objJson[i]}" alt="">
 							</div>`;
 						}
 						checkButtonOpacity();
