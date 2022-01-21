@@ -156,7 +156,7 @@ router.route('/').get(async (req, res) => {
 																						bank.push(image);
 																					}
 																					await db.query(
-																						'SELECT * FROM homeslider',
+																						'SELECT * FROM loadingimage',
 																						async (error, response) => {
 																							if (error) {
 																								console.log(error);
@@ -487,7 +487,7 @@ router
 				`ClassicNeetAcademy/${req.body.checkbox}`
 			);
 			await db.query(
-				'UPDATE loadingimage SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
+				'UPDATE loadingimage SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE id = 1',
 				[
 					req.files[0].path,
 					req.files[0].originalname,
@@ -513,7 +513,7 @@ router
 							`ClassicNeetAcademy/${req.body.checkbox[i]}`
 						);
 						await db.query(
-							'UPDATE loadingimage SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
+							'UPDATE loadingimage SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE id = 1',
 							[
 								req.files[j].path,
 								req.files[j].originalname,
