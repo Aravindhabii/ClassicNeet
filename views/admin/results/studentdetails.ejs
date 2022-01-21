@@ -110,6 +110,21 @@
                 id="uploadlink"
               />
             </div>
+            <div class="input-group d-flex flex-nowrap mb-3" style="width: 80%">
+              <span class="input-group-text" id="addon-wrapping"
+                >Add Mark</span
+              >
+              <input
+                type="number"
+                name="mark"
+                class="form-control"
+                aria-label="Username"
+                aria-describedby="addon-wrapping"
+                minlength="1"
+								maxlength="40"
+                id="uploadlink"
+              />
+            </div>
             <div class="input-group d-flex flex-nowrap" style="width: 80%">
               <span class="input-group-text" id="addon-wrapping">Add Year</span>
               <input
@@ -139,7 +154,7 @@
         <div class="preview2">
           <h1 class="mb-5 fs-4 fw-bold">Student Details</h1>
           <form
-            action="/admin/results/historyupdate"
+            action="/admin/results/studentupdate"
             method="post"
             class="d-flex justify-content-center align-items-center flex-column"
             style="width: 100%"
@@ -186,6 +201,20 @@
                 placeholder="CollegeName"
               />
             </div>
+            <div class="input-group d-flex flex-nowrap mb-3" style="width: 80%">
+              <span class="input-group-text" id="addon-wrapping"
+                >Add Mark</span
+              >
+              <input
+                type="number"
+                name="mark"
+                class="form-control editmark"
+                aria-label="Username"
+                aria-describedby="addon-wrapping"
+                id=" uploadlink"
+                placeholder="Mark"
+              />
+            </div>
 
             <div>
               <button
@@ -214,6 +243,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Image</th>
                 <th scope="col">College Name</th>
+                <th scope="col">Mark</th>
                 <th scope="col">Update</th>
                 <th scope="col">Year</th>
                 <th scope="col">Edit</th>

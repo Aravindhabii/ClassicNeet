@@ -39,6 +39,7 @@ window.addEventListener('load', (e) => {
 					<span>
 						<h3>${item.name}</h3>
 						<p>${item.collegename}</p>
+						<h3>${item.mark!=0 ? item.mark+'/720':''}</h3>
 					</span>
 				</div>
 			`;
@@ -75,6 +76,7 @@ dropdown.addEventListener('change', (e) => {
 					<span>
 						<h3>${item.name}</h3>
 						<p>${item.collegename}</p>
+						<h3>${item.mark!=0 ? item.mark+'/720':''}</h3>
 					</span>
 				</div>
 			`;

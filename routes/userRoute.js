@@ -156,7 +156,7 @@ router.route('/').get(async (req, res) => {
 																						bank.push(image);
 																					}
 																					await db.query(
-																						'SELECT * FROM homeslider',
+																						'SELECT * FROM loadingimage',
 																						async (error, response) => {
 																							if (error) {
 																								console.log(error);
@@ -487,7 +487,7 @@ router
 				`ClassicNeetAcademy/${req.body.checkbox}`
 			);
 			await db.query(
-				'UPDATE loadingimage SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
+				'UPDATE loadingimage SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE id = 1',
 				[
 					req.files[0].path,
 					req.files[0].originalname,
@@ -513,7 +513,7 @@ router
 							`ClassicNeetAcademy/${req.body.checkbox[i]}`
 						);
 						await db.query(
-							'UPDATE loadingimage SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE cloudinaryname = ?',
+							'UPDATE loadingimage SET sliderimg = ?, imgname = ?, cloudinaryname = ? WHERE id = 1',
 							[
 								req.files[j].path,
 								req.files[j].originalname,
@@ -1241,7 +1241,7 @@ router.route('/results').get(async (req, res) => {
 						var image1 = {
 							sliderimg: response[i].sliderimg,
 							imgname: response[i].imgname,
-							cloudinaryName: response[i].cloudinaryname
+							cloudinaryName: response[i].cloudinaryname,
 						};
 						slider.push(image1);
 					}
@@ -1290,6 +1290,7 @@ router
 		});
 	})
 	.post(upload.single('studentimg'), async (req, res) => {
+		const upmark = req.body.mark? req.body.mark : 0;
 		await db.query(
 			'INSERT INTO studentdetails SET ?',
 			{
@@ -1297,6 +1298,7 @@ router
 				collegename: req.body.collegeName,
 				image: req.file.path,
 				year: req.body.year,
+				mark: upmark,
 				cloudinaryname: req.file.filename.split('/')[1]
 			},
 			(err, response) => {
@@ -1386,8 +1388,8 @@ router
 	.route('/admin/results/studentupdate')
 	.post(isloggedin, async (req, res) => {
 		await db.query(
-			'UPDATE studentdetails SET name = ?, collegename = ? WHERE cloudinaryname = ?',
-			[req.body.stdname, req.body.clgname, req.body.oldname],
+			'UPDATE studentdetails SET name = ?, collegename = ?, mark = ? WHERE cloudinaryname = ?',
+			[req.body.stdname, req.body.clgname,req.body.mark, req.body.oldname],
 			(err, response) => {
 				if (err) {
 					req.flash('error', 'Error occurred while updating');
