@@ -1,72 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link
+			rel="shortcut icon"
+			href="images/home/classic-nee-tacademy-logo.png"
+			type="image/x-icon"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="stylesheets/salem.css" />
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+		/>
+		<link rel="stylesheet" href="stylesheets/chatbot.css" />
+		<link rel="stylesheet" href="stylesheets/pagination.css" />
+		<link
+			rel="shortcut icon"
+			href="../../images/home/classic-nee-tacademy-logo.png"
+			type="image/x-icon"
+		/>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<link rel="shortcut icon" href="images/home/classic-nee-tacademy-logo.png" type="image/x-icon" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="stylesheets/salem.css" />
-	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-	<link rel="stylesheet" href="stylesheets/chatbot.css" />
-	<link rel="stylesheet" href="stylesheets/pagination.css" />
-	<link rel="shortcut icon" href="../../images/home/classic-nee-tacademy-logo.png" type="image/x-icon" />
+		<title>Vellore</title>
+	</head>
 
-	<title>Vellore</title>
-</head>
-
-<body>
-	<%- include('./layout/header') %>
-		<%- include('./chatbot') %>
-			<section class="swiper">
-				<!-- Additional required wrapper -->
-				<div class="swiper-wrapper">
-					<!-- Slides -->
-					<% img.forEach(i => { %>
-						<div class="swiper-slide">
-							<img src="<%= i.sliderimg %> " alt="" />
-						</div>
-					<% }) %>
+	<body>
+		<%- include('./layout/header') %> <%- include('./chatbot') %>
+		<section class="swiper">
+			<!-- Additional required wrapper -->
+			<div class="swiper-wrapper">
+				<!-- Slides -->
+				<% img.forEach(i => { %>
+				<div class="swiper-slide">
+					<img src="<%= i.sliderimg %> " alt="" />
 				</div>
-				<!-- If we need pagination -->
-				<div class="swiper-pagination"></div>
+				<% }) %>
+			</div>
+			<!-- If we need pagination -->
+			<div class="swiper-pagination"></div>
 
-				<!-- If we need navigation buttons -->
-				<div class="swiper-button-prev"></div>
-				<div class="swiper-button-next"></div>
+			<!-- If we need navigation buttons -->
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
 
-				<!-- If we need scrollbar -->
-				<div class="swiper-scrollbar"></div>
-			</section>
-			<section class="about">
-				<h1 class="head">ABOUT VELLORE BRANCH</h1>
-				<span class="para"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum iure, distinctio eius quibusdam velit
-					fuga debitis maiores quo! Nisi iure, adipisci exercitationem dolores libero unde. Nulla architecto
-					provident vitae dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eum,
-					distinctio tempora cupiditate amet quod perspiciatis maxime odit deleniti commodi! Dolor sunt
-					officia fugiat maiores voluptate ducimus, ratione soluta explicabo. Lorem ipsum, dolor sit amet
-					consectetur adipisicing elit. Eius nostrum necessitatibus ut autem cupiditate animi amet esse
-					adipisci illum quisquam dolorum quam, expedita beatae, quod suscipit ea tenetur enim quos!</p></span>
-				<span class="para"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum iure, distinctio eius quibusdam velit
-					fuga debitis maiores quo! Nisi iure, adipisci exercitationem dolores libero unde. Nulla architecto
-					provident vitae dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eum,
-					distinctio tempora cupiditate amet quod perspiciatis maxime odit deleniti commodi! Dolor sunt
-					officia fugiat maiores voluptate ducimus, ratione soluta explicabo. Lorem ipsum, dolor sit amet
-					consectetur adipisicing elit. Eius nostrum necessitatibus ut autem cupiditate animi amet esse
-					adipisci illum quisquam dolorum quam, expedita beatae, quod suscipit ea tenetur enim quos!</p></span>
+			<!-- If we need scrollbar -->
+			<div class="swiper-scrollbar"></div>
+		</section>
+		<section class="about">
+			<h1 class="head">ABOUT Vellore BRANCH</h1>
+			<span class="para"><p><%= content1 %></p></span>
+			<span class="para"><p><%= content2 %></p></span>
+		</section>
 
-			</section>
-
-			<%- include('./layout/footer') %>
-				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-					referrerpolicy="no-referrer"></script>
-				<script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"
-					integrity="sha512-1zzZ0ynR2KXnFskJ1C2s+7TIEewmkB2y+5o/+ahF7mwNj9n3PnzARpqalvtjSbUETwx6yuxP5AJXZCpnjEJkQw=="
-					crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-				<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-				<script src="javascripts/salem.js"></script>
-				<script src="javascripts/nav.js"></script>
-				<script src="javascripts/chatbot.js"></script>
-</body>
-
+		<%- include('./layout/footer') %>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+			referrerpolicy="no-referrer"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"
+			integrity="sha512-1zzZ0ynR2KXnFskJ1C2s+7TIEewmkB2y+5o/+ahF7mwNj9n3PnzARpqalvtjSbUETwx6yuxP5AJXZCpnjEJkQw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+		<script src="javascripts/salem.js"></script>
+		<script src="javascripts/nav.js"></script>
+		<script src="javascripts/chatbot.js"></script>
+	</body>
 </html>

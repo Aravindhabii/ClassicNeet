@@ -26,7 +26,8 @@ function editbutton(edit) {
 	editname.value = namevalue;
 	const collegenamevalue = edit.parentNode.parentNode.children[2].innerText;
 	editcollegename.value = collegenamevalue;
-	const cloudinarynamevalue = edit.parentNode.parentNode.children[3].children[0].value;
+	const cloudinarynamevalue =
+		edit.parentNode.parentNode.children[3].children[0].value;
 	oldname.value = cloudinarynamevalue;
 }
 
@@ -71,13 +72,13 @@ function showImg(show) {
 
 const nocontentswal = () => {
 	Swal.fire({
-		position: "center",
-		icon: "warning",
-		title: "Please check any checkbox",
+		position: 'center',
+		icon: 'warning',
+		title: 'Please check any checkbox',
 		showConfirmButton: false,
-		timer: 2500,
+		timer: 2500
 	});
-}
+};
 
 const checkswal = () => {
 	Swal.fire({
@@ -93,29 +94,29 @@ const checkswal = () => {
 			document.querySelector('.latestupdateform').submit();
 		}
 	});
-  };
+};
 
 submitbtn.addEventListener('click', () => {
 	if (
-		submitbtn.getAttribute("type") == "button" &&
-		submitbtn.classList.contains("warningcheck")
-	  ) {
+		submitbtn.getAttribute('type') == 'button' &&
+		submitbtn.classList.contains('warningcheck')
+	) {
 		nocontentswal();
-	  } else if (
-		submitbtn.getAttribute("type") == "button" &&
-		!submitbtn.classList.contains("warningcheck")
-	  ) {
+	} else if (
+		submitbtn.getAttribute('type') == 'button' &&
+		!submitbtn.classList.contains('warningcheck')
+	) {
 		checkswal();
-	  } else {
+	} else {
 		return;
-	  }
+	}
 });
 
 function checkboxCheck(check) {
 	if (document.querySelectorAll('input[type="checkbox"]:checked').length) {
-		submitbtn.classList.remove("warningcheck")
+		submitbtn.classList.remove('warningcheck');
 	} else {
-		submitbtn.classList.add("warningcheck")
+		submitbtn.classList.add('warningcheck');
 	}
 }
 

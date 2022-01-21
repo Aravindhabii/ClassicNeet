@@ -1,5 +1,5 @@
 /* first page */
-.closeimage{
+.closeimage {
 	width: 100%;
 	height: 100vh;
 	position: absolute;
@@ -7,13 +7,11 @@
 	align-items: center;
 	justify-content: center;
 	background: rgba(36, 34, 34, 0.6);
-	z-index:10 ;
+	z-index: 10;
 	backdrop-filter: blur(5px);
-	
 }
-.closeimage img{
-	
-    width: 75vh;
+.closeimage img {
+	width: 75vh;
 	height: 55vh;
 }
 .exit1 {
@@ -21,7 +19,7 @@
 	right: 28%;
 	top: 15%;
 }
-.exit1 img{
+.exit1 img {
 	width: 4vw;
 	height: 8vh;
 }
@@ -1784,6 +1782,19 @@ iframe {
 	}
 }
 @media (max-width: 600px) {
+	.closeimage img {
+		width: 100vw !important;
+		height: auto;
+	}
+	.exit1 {
+		position: absolute;
+		right: 5%;
+		top: 25%;
+	}
+	.exit1 img {
+		width: 3rem !important;
+		height: auto;
+	}
 	.mySwiper2 .swiper-slide {
 		width: 22.5rem !important;
 	}

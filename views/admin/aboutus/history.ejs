@@ -5,7 +5,11 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Admin panel</title>
-		<link rel="shortcut icon" href="../../images/home/classic-nee-tacademy-logo.png" type="image/x-icon" />
+		<link
+			rel="shortcut icon"
+			href="../../images/home/classic-nee-tacademy-logo.png"
+			type="image/x-icon"
+		/>
 		<link rel="stylesheet" href="sweetalert2.min.css" />
 		<link rel="stylesheet" href="../../stylesheets/admin.css" />
 		<link rel="stylesheet" href="../../stylesheets/pagination.css" />
@@ -18,7 +22,6 @@
 		/>
 	</head>
 	<body>
-		
 		<%- include('../../layout/adminheader') %>
 		<section class="mainsection">
 			<div class="left"><%- include('../../layout/adminSideBar') %></div>
@@ -77,40 +80,40 @@
 				<div class="preview2">
 					<h1 class="mb-5 fs-4 fw-bold">Student Details</h1>
 					<form
-					  action="/admin/aboutus/historyupdate"
-					  method="post"
-					  class="d-flex justify-content-center align-items-center flex-column"
-					  style="width: 100%"
+						action="/admin/aboutus/historyupdate"
+						method="post"
+						class="d-flex justify-content-center align-items-center flex-column"
+						style="width: 100%"
 					>
-					  <div class="input-group d-flex flex-nowrap mb-3" style="width: 80%">
-						<span class="input-group-text" id="addon-wrapping">Id</span>
-						<input
-						  type="text"
-						  name="oldname"
-						  class="form-control oldid"
-						  aria-label="Username"
-						  aria-describedby="addon-wrapping"
-						  id=" uploadlink"
-						  placeholder="Student Name"
-						  readonly
-						/>
-					  </div>
-					  <div class="input-group flex-nowrap" style="width: 80%">
-						<span class="input-group-text" id="addon-wrapping">Content</span>
-						<textarea
-							class="form-control formtextarea1 editcontent"
-							name="content"
-							cols="60"
-							style="height: 90px; resize: none"
-							minlength="10"
-							maxlength="250"
-						></textarea>
-					</div>
-					<div class="d-flex justify-content-end" style="width: 80%">
-						<p class="spanp d-flex">
-							Characters left &nbsp;<span class="changablespan1">0</span>/250
-						</p>
-					</div>
+						<div class="input-group d-flex flex-nowrap mb-3" style="width: 80%">
+							<span class="input-group-text" id="addon-wrapping">Id</span>
+							<input
+								type="text"
+								name="oldname"
+								class="form-control oldid"
+								aria-label="Username"
+								aria-describedby="addon-wrapping"
+								id=" uploadlink"
+								placeholder="Student Name"
+								readonly
+							/>
+						</div>
+						<div class="input-group flex-nowrap" style="width: 80%">
+							<span class="input-group-text" id="addon-wrapping">Content</span>
+							<textarea
+								class="form-control formtextarea1 editcontent"
+								name="content"
+								cols="60"
+								style="height: 90px; resize: none"
+								minlength="10"
+								maxlength="250"
+							></textarea>
+						</div>
+						<div class="d-flex justify-content-end" style="width: 80%">
+							<p class="spanp d-flex">
+								Characters left &nbsp;<span class="changablespan1">0</span>/250
+							</p>
+						</div>
 						<div class="input-group flex-nowrap" style="width: 80%">
 							<span class="input-group-text" id="addon-wrapping">Year</span>
 							<input
@@ -124,19 +127,19 @@
 								required
 							/>
 						</div>
-					  <div>
-						<button
-						  type="button"
-						  class="btn btn-outline-secondary px-3 mt-5 me-5 backbtn2"
-						>
-						  Back
-						</button>
-						<button type="submit" class="btn btn-outline-primary mt-5">
-						  submit
-						</button>
-					  </div>
+						<div>
+							<button
+								type="button"
+								class="btn btn-outline-secondary px-3 mt-5 me-5 backbtn2"
+							>
+								Back
+							</button>
+							<button type="submit" class="btn btn-outline-primary mt-5">
+								submit
+							</button>
+						</div>
 					</form>
-				  </div>
+				</div>
 				<form
 					action="/admin/aboutus/history?_method=DELETE"
 					method="post"
@@ -163,7 +166,14 @@
 						</button>
 						<button
 							type="button"
-							class="btn btn-outline-danger submit ms-5 px-3 submitbtn warningcheck"
+							class="
+								btn btn-outline-danger
+								submit
+								ms-5
+								px-3
+								submitbtn
+								warningcheck
+							"
 						>
 							Delete
 						</button>

@@ -24,22 +24,22 @@ body::-webkit-scrollbar {
 
 /* Track */
 body::-webkit-scrollbar-track {
-	background: transparent;	  
+	background: transparent;
 }
 
 body.dark::-webkit-scrollbar-track {
-	background: black;	  
+	background: black;
 }
 
 /* Handle */
 body::-webkit-scrollbar-thumb {
-	background: linear-gradient(to top, #60EFFF, #2B72E4);
+	background: linear-gradient(to top, #60efff, #2b72e4);
 	border-radius: 10px;
 }
 
 /* Handle on hover */
 body::-webkit-scrollbar-thumb:hover {
-	background: linear-gradient(to bottom, #60EFFF, #2B72E4);
+	background: linear-gradient(to bottom, #60efff, #2b72e4);
 }
 
 /* NavBar */
@@ -141,7 +141,7 @@ nav.dark .navlinks a {
 	color: rgb(133, 171, 228) !important;
 }
 
-body.dark .salem{
+body.dark .salem {
 	color: yellow !important;
 }
 
@@ -300,7 +300,7 @@ body.dark footer {
 .addressbox {
 	display: flex;
 	justify-content: space-evenly;
-	width:100%;
+	width: 100%;
 	margin-top: 1rem;
 }
 .address-container {
@@ -342,6 +342,14 @@ body.dark footer {
 }
 .address-container h1 {
 	padding-bottom: 2rem;
+}
+
+.address-container.salem a {
+	color: red !important;
+}
+
+.address-container a {
+	color: white;
 }
 .address {
 	font-size: 1.2rem;
@@ -388,7 +396,6 @@ body.dark footer {
 }
 .mobspan {
 	margin-top: 1rem;
-	
 }
 
 /* swiper  */
@@ -471,6 +478,7 @@ body.dark footer {
 		width: 90%;
 		margin: 5%;
 	}
+
 	.footer_head {
 		flex-direction: column;
 	}
@@ -539,4 +547,3 @@ body.dark footer {
 		margin: 0rem;
 	}
 }
-
