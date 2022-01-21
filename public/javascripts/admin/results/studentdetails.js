@@ -12,6 +12,7 @@ const editbtn = document.querySelectorAll('.editbtn');
 const editname = document.querySelector('.editname');
 const editstudentimg = document.querySelector('.editstudentimg');
 const editcollegename = document.querySelector('.editcollegename');
+const editmark = document.querySelector('.editmark');
 const oldname = document.querySelector('.oldname');
 const select = document.querySelector('.form-select');
 const currentyear = document.querySelector('.currentYear');
@@ -27,8 +28,10 @@ function editbutton(edit) {
 	const collegenamevalue = edit.parentNode.parentNode.children[2].innerText;
 	editcollegename.value = collegenamevalue;
 	const cloudinarynamevalue =
-		edit.parentNode.parentNode.children[3].children[0].value;
+		edit.parentNode.parentNode.children[4].children[0].value;
 	oldname.value = cloudinarynamevalue;
+	const markvalue = edit.parentNode.parentNode.children[3].innerText;
+	editmark.value = markvalue;
 }
 
 addbtn.addEventListener('click', () => {
@@ -154,6 +157,9 @@ const loadDetails = async (page, type, year) => {
 		</td>
 		<td>
 			<p>${detail.collegename}</p>
+		</td>
+		<td>
+			<p>${detail.mark}</p>
 		</td>
 		<td>
 			<input
