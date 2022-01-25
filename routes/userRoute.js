@@ -300,7 +300,8 @@ router
 					var link1 = response[i].link;
 					arr.push({ link, link1 });
 				}
-				res.render('admin/home/latestUpdates', { arr: arr.reverse() });
+				// console.log(arr.reverse());
+				res.render('admin/home/latestUpdates', { arr });
 			}
 		});
 	})
@@ -2330,7 +2331,7 @@ router.get('/sql/latestupdates', isloggedin, async (req, res) => {
 				var link1 = response[i].link;
 				arr.push({ link, link1 });
 			}
-			res.json(arr);
+			res.json(arr.reverse());
 		}
 	});
 });
