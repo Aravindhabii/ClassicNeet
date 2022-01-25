@@ -5,7 +5,11 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Admin panel</title>
-		<link rel="shortcut icon" href="../../images/home/classic-nee-tacademy-logo.png" type="image/x-icon" />
+		<link
+			rel="shortcut icon"
+			href="../../images/home/classic-nee-tacademy-logo.png"
+			type="image/x-icon"
+		/>
 		<link rel="stylesheet" href="../../stylesheets/admin.css" />
 		<link rel="stylesheet" href="../../stylesheets/pagination.css" />
 
@@ -52,28 +56,19 @@
 				<div id="pagination-container"></div>
 
 				<% if (chatbot.length > 0) { %>
-					<form
-						action="/admin/chatbot?_method=DELETE"
-						method="post"
-						class="
-							d-flex
-							justify-content-center
-							align-items-center
-							flex-column
-							chatbotform imgform"
-						style="width: 100%"
+				<form
+					action="/admin/chatbot?_method=DELETE"
+					method="post"
+					class="d-flex justify-content-center align-items-center flex-column chatbotform imgform"
+					style="width: 100%"
 				>
 					<div class="buttondiv">
-						<button
-							type="button"
-							class="btn btn-outline-danger submit mt-3"
-						>
+						<button type="button" class="btn btn-outline-danger submit mt-3">
 							Empty Response
 						</button>
-						</div>
-					</form>
+					</div>
+				</form>
 				<% } %>
-				
 			</div>
 		</section>
 		<script
