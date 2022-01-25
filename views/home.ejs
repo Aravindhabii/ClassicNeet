@@ -109,7 +109,7 @@
 						<marquee class="news-box" direction="up" scrollamount="5" onmousedown='' onmouseup=''
 							onmouseover="this.stop();" onmouseout="this.start();" onmouseout="this.start();"
 							ontouchstart="this.stop()" ontouchend="this.start()">
-							<% latestupdates.reverse().forEach(update=> { %>
+							<% latestupdates.forEach(update=> { %>
 								<span class="p">
 									<%= update.link %>
 										<% if (!(update.link1=='no link' )) { %>

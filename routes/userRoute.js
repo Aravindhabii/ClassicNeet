@@ -173,7 +173,8 @@ router.route('/').get(async (req, res) => {
 																								img: arr,
 																								ourtoppers,
 																								calendar: calendar,
-																								latestupdates,
+																								latestupdates:
+																									latestupdates.reverse(),
 																								stutest,
 																								neetachieve,
 																								marq,
@@ -299,7 +300,7 @@ router
 					var link1 = response[i].link;
 					arr.push({ link, link1 });
 				}
-				res.render('admin/home/latestUpdates', { arr });
+				res.render('admin/home/latestUpdates', { arr: arr.reverse() });
 			}
 		});
 	})
