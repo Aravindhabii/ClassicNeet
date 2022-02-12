@@ -173,7 +173,8 @@ router.route('/').get(async (req, res) => {
 																								img: arr,
 																								ourtoppers,
 																								calendar: calendar,
-																								latestupdates,
+																								latestupdates:
+																									latestupdates.reverse(),
 																								stutest,
 																								neetachieve,
 																								marq,
@@ -299,6 +300,7 @@ router
 					var link1 = response[i].link;
 					arr.push({ link, link1 });
 				}
+				// console.log(arr.reverse());
 				res.render('admin/home/latestUpdates', { arr });
 			}
 		});
@@ -1241,7 +1243,7 @@ router.route('/results').get(async (req, res) => {
 						var image1 = {
 							sliderimg: response[i].sliderimg,
 							imgname: response[i].imgname,
-							cloudinaryName: response[i].cloudinaryname,
+							cloudinaryName: response[i].cloudinaryname
 						};
 						slider.push(image1);
 					}
@@ -1290,7 +1292,7 @@ router
 		});
 	})
 	.post(upload.single('studentimg'), async (req, res) => {
-		const upmark = req.body.mark? req.body.mark : 0;
+		const upmark = req.body.mark ? req.body.mark : 0;
 		await db.query(
 			'INSERT INTO studentdetails SET ?',
 			{
@@ -1389,7 +1391,7 @@ router
 	.post(isloggedin, async (req, res) => {
 		await db.query(
 			'UPDATE studentdetails SET name = ?, collegename = ?, mark = ? WHERE cloudinaryname = ?',
-			[req.body.stdname, req.body.clgname,req.body.mark, req.body.oldname],
+			[req.body.stdname, req.body.clgname, req.body.mark, req.body.oldname],
 			(err, response) => {
 				if (err) {
 					req.flash('error', 'Error occurred while updating');
@@ -2329,7 +2331,7 @@ router.get('/sql/latestupdates', isloggedin, async (req, res) => {
 				var link1 = response[i].link;
 				arr.push({ link, link1 });
 			}
-			res.json(arr);
+			res.json(arr.reverse());
 		}
 	});
 });
